@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="EDW_OLEDB_Connection_Manager"
+  DTS:DTSID="{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=cefcdevsqlsvr01.database.windows.net;User ID=yolinda.moodley;Initial Catalog=cefcdevsql01;Provider=SQLNCLI11.1;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkYzQoehdVEu9f2/pe+pEkQAAAAACAAAAAAAQZgAAAAEAACAAAADggd4j0Sr53SlgfRqrwZqHawlXgQdjMsDzVKVAVri+IgAAAAAOgAAAAAIAACAAAABFdyxR5bTA0z26SHhVsooUAJnopzA18NStFQz28WcALYAAAAAfPqo0BAVapBE4CGJyqKtPQICWbWejVwMpwucLRmvJzhSqtAJ2b9zewECgNHR9eGqdyeRGXEPArMhbUemwNvrcy0+nHG0xHmZyyw5yuUVg6RwCPD8bWiKuLtHLX3SlV1VXMMTHgpv8QWjxJ+gPj4IHNiEYNyifJ//XpQ14lzAHm0AAAABN88UJiZSqquW/kZa9/cUH7zzwA1ZcgQNsLrQDm6GtMHjuR/52pP0nBoXWVrg45QT7iOZSfZRC/3yAZymPpTP5</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

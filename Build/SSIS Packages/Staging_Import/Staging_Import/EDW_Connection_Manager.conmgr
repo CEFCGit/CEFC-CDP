@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="EDW_Connection_Manager"
+  DTS:DTSID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=cefcdevsqlsvr01.database.windows.net;User ID=yolinda.moodley;Initial Catalog=cefcdevsql01;Persist Security Info=True;Application Name=SSIS-Staging_Import-{8E16ACCB-0787-4D16-9937-2A153AD345E4}cefcdevsqlsvr01.database.windows.net.cefcdevsql01.yolinda.moodley1;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkYzQoehdVEu9f2/pe+pEkQAAAAACAAAAAAAQZgAAAAEAACAAAACl7bClTjG+cjCy8UxtSnoRegXNG/dcj5jWpQAi5UeCfgAAAAAOgAAAAAIAACAAAAC2n6OlgMiPVcuVc4rU+xClTZhSb8dJP+yVSQqTOy0+moAAAACUX8FKZ1STk+YDBCpplp7mNCjPHmA5++X/tV9iL6aYn0zPy6Axk5q50pLhLp2K0jTpuS9/sle77hYZWwIAXiR7oYL3cST7ow87UttyaafwODF+HFrOjfcDPLOpYzMwdxe1zwra10ruXVbVgk9RsQbnlj8PLEPLblqeb6o+TrHtxEAAAADVhHMhZCt3y53m0sWjKBiWkw7cHe+A4v2Cc00X0iSYPW0dt7mkF4jIGET1B98nus1OqVFmVXk+8BOm06JiALI1</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

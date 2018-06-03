@@ -1,0 +1,704 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/3/2018 4:53:54 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="cefcdevssis01"
+  DTS:CreatorName="cefcdevssis01\michael.king"
+  DTS:DTSID="{80572002-0F83-43C0-858F-26C30FAD7774}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="STGCDPReport_Close_DateLoad"
+  DTS:PackageType="5"
+  DTS:VersionBuild="12"
+  DTS:VersionGUID="{59944787-8C71-4BF5-BC09-4D63263616F0}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Data Flow Task"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{282E4395-5022-4638-82D1-59D22A9ACB46}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Data Flow Task"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Data Flow Task\DAT_Golden_Dates in Staging"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="DAT_Golden_Dates in Staging"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[staging].[DAT_Golden_Dates]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Connections[OleDbConnection]"
+                  connectionManagerID="{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[EDW_OLEDB_Connection_Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[ID_Gold]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[ID_Gold]"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[ID_Gold]"
+                      name="ID_Gold"
+                      precision="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Creation_date]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[Creation_date]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Creation_date]"
+                      name="Creation_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Creation_time]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[Creation_time]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Creation_time]"
+                      name="Creation_time"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Creation_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[Creation_name]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Creation_name]"
+                      name="Creation_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Modification_date]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[Modification_date]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Modification_date]"
+                      name="Modification_date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Modification_name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[Modification_name]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Modification_name]"
+                      name="Modification_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Modification_time]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[Modification_time]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Modification_time]"
+                      name="Modification_time"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[id_constant]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[id_constant]"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[id_constant]"
+                      name="id_constant"
+                      precision="4"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Label]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[Label]"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Label]"
+                      name="Label"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Target_Load_Date]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[Target_Load_Date]"
+                      length="20"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Target_Load_Date]"
+                      name="Target_Load_Date"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[ID_Gold]"
+                      dataType="numeric"
+                      name="ID_Gold"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[Creation_date]"
+                      dataType="wstr"
+                      length="20"
+                      name="Creation_date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[Creation_time]"
+                      dataType="wstr"
+                      length="20"
+                      name="Creation_time" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[Creation_name]"
+                      dataType="wstr"
+                      length="20"
+                      name="Creation_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[Modification_date]"
+                      dataType="wstr"
+                      length="20"
+                      name="Modification_date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[Modification_name]"
+                      dataType="wstr"
+                      length="20"
+                      name="Modification_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[Modification_time]"
+                      dataType="wstr"
+                      length="20"
+                      name="Modification_time" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[id_constant]"
+                      dataType="numeric"
+                      name="id_constant"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[Label]"
+                      dataType="wstr"
+                      length="50"
+                      name="Label" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].ExternalColumns[Target_Load_Date]"
+                      dataType="wstr"
+                      length="20"
+                      name="Target_Load_Date" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[ID_Gold]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[ID_Gold]"
+                      name="ID_Gold"
+                      precision="4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[Creation_date]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[Creation_date]"
+                      name="Creation_date" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[Creation_time]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[Creation_time]"
+                      name="Creation_time" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[Creation_name]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[Creation_name]"
+                      name="Creation_name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[Modification_date]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[Modification_date]"
+                      name="Modification_date" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[Modification_name]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[Modification_name]"
+                      name="Modification_name" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[Modification_time]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[Modification_time]"
+                      name="Modification_time" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[id_constant]"
+                      dataType="numeric"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[id_constant]"
+                      name="id_constant"
+                      precision="4" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[Label]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[Label]"
+                      name="Label" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[Target_Load_Date]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[Target_Load_Date]"
+                      name="Target_Load_Date" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Data Flow Task\Report_Close_Date in CDP"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Report_Close_Date in CDP"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[core].[Report_Close_Date]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Data Flow Task\Report_Close_Date in CDP.Connections[OleDbConnection]"
+                  connectionManagerID="{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[EDW_OLEDB_Connection_Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].Columns[ID_Gold]"
+                      cachedDataType="numeric"
+                      cachedName="ID_Gold"
+                      cachedPrecision="4"
+                      externalMetadataColumnId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[ID_Gold]"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[ID_Gold]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].Columns[Creation_date]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Creation_date"
+                      externalMetadataColumnId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[Creation_date]"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Creation_date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].Columns[Creation_time]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Creation_time"
+                      externalMetadataColumnId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[Creation_time]"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Creation_time]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].Columns[Creation_name]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Creation_name"
+                      externalMetadataColumnId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[Creation_name]"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Creation_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].Columns[Modification_date]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Modification_date"
+                      externalMetadataColumnId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[Modification_date]"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Modification_date]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].Columns[Modification_name]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Modification_name"
+                      externalMetadataColumnId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[Modification_name]"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Modification_name]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].Columns[Modification_time]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Modification_time"
+                      externalMetadataColumnId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[Modification_time]"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Modification_time]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].Columns[id_constant]"
+                      cachedDataType="numeric"
+                      cachedName="id_constant"
+                      cachedPrecision="4"
+                      externalMetadataColumnId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[id_constant]"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[id_constant]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].Columns[Label]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Label"
+                      externalMetadataColumnId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[Label]"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Label]" />
+                    <inputColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].Columns[Target_Load_Date]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Target_Load_Date"
+                      externalMetadataColumnId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[Target_Load_Date]"
+                      lineageId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output].Columns[Target_Load_Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[ID_Gold]"
+                      dataType="numeric"
+                      name="ID_Gold"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[Creation_date]"
+                      dataType="wstr"
+                      length="20"
+                      name="Creation_date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[Creation_time]"
+                      dataType="wstr"
+                      length="20"
+                      name="Creation_time" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[Creation_name]"
+                      dataType="wstr"
+                      length="20"
+                      name="Creation_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[Modification_date]"
+                      dataType="wstr"
+                      length="20"
+                      name="Modification_date" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[Modification_name]"
+                      dataType="wstr"
+                      length="20"
+                      name="Modification_name" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[Modification_time]"
+                      dataType="wstr"
+                      length="20"
+                      name="Modification_time" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[id_constant]"
+                      dataType="numeric"
+                      name="id_constant"
+                      precision="4" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[Label]"
+                      dataType="wstr"
+                      length="50"
+                      name="Label" />
+                    <externalMetadataColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input].ExternalColumns[Target_Load_Date]"
+                      dataType="wstr"
+                      length="20"
+                      name="Target_Load_Date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Data Flow Task\Report_Close_Date in CDP.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Report_Close_Date in CDP.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Data Flow Task\Report_Close_Date in CDP.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Data Flow Task\Report_Close_Date in CDP.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Data Flow Task.Paths[OLE DB Source Output]"
+              endId="Package\Data Flow Task\Report_Close_Date in CDP.Inputs[OLE DB Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Data Flow Task\DAT_Golden_Dates in Staging.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{189EE942-4A0E-48B3-953B-DA967B21DE10}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8E16ACCB-0787-4D16-9937-2A153AD345E4}"
+          SQLTask:SqlStatementSource="Truncate table [core].[Report_Close_Date]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{5857098B-612C-4E57-B52B-35B03D0B9BBA}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Data Flow Task" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.666666666667,42"
+          Id="Package\Data Flow Task"
+          TopLeft="205.666666666667,123.333333333333" />
+        <NodeLayout
+          Size="162.666666666667,42"
+          Id="Package\Execute SQL Task"
+          TopLeft="199,32" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="280.666666666667,74">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,49.3333333333333"
+              Start="0,0"
+              End="0,41.8333333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,41.8333333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\Data Flow Task\DAT_Golden_Dates in Staging"
+          TopLeft="238.666666666667,25.3333333333337" />
+        <NodeLayout
+          Size="169.333333333334,42.6666666666667"
+          Id="Package\Data Flow Task\Report_Close_Date in CDP"
+          TopLeft="250,131.333333333333" />
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="331.666666666667,68.0000000000004">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,63.3333333333326"
+              Start="0,0"
+              End="0,55.8333333333326">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,55.8333333333326" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Report_Close_Date in CDP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\DAT_Golden_Dates in Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

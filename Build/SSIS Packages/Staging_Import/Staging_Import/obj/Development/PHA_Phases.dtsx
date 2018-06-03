@@ -1,0 +1,969 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="4/23/2018 1:36:56 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="cefcdevssis01"
+  DTS:CreatorName="cefcdevssis01\yolinda.moodley"
+  DTS:DTSID="{C745B7CD-1399-4C41-8107-51C2C5513398}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.101"
+  DTS:LocaleID="3081"
+  DTS:ObjectName="PHA_Phases"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{EAE16FE8-07D4-47B4-8A17-927DA3E7AE44}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Load PHA_Phases Table from iMart into Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{D2D41D0F-9034-4B45-ADB4-3D1C83136E1C}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Load PHA_Phases Table from iMart into Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="Azure - Staging"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"staging"."PHA_Phases"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">false</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Connections[IDbConnection]"
+                  connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[cefcdevsqlsvr01.database.windows.net.cefcdevsql01.yolinda.moodley1]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[ID_Phase]"
+                      cachedDataType="r8"
+                      cachedName="ID_Phase"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[ID_Phase]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[ID_Phase]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Phase_Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Phase_Name"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Phase_Name]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Phase_Name]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Phase_Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Phase_Description"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Phase_Description]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Phase_Description]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Process_Link]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Process_Link"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Process_Link]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Process_Link]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Likelyhood]"
+                      cachedDataType="r8"
+                      cachedName="Likelyhood"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Likelyhood]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Likelyhood]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Likelyhood_Model]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Likelyhood_Model"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Likelyhood_Model]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Likelyhood_Model]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Phase_Name_Model]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Phase_Name_Model"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Phase_Name_Model]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Phase_Name_Model]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[_ID_Constant]"
+                      cachedDataType="r8"
+                      cachedName="_ID_Constant"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[_ID_Constant]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[_ID_Constant]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[DM_Documents_Required]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="DM_Documents_Required"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[DM_Documents_Required]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Documents_Required]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[DM_Activities]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="DM_Activities"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[DM_Activities]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Activities]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[DM_Information_Outcomes]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="DM_Information_Outcomes"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[DM_Information_Outcomes]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Information_Outcomes]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[DM_Target_Outcomes]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="DM_Target_Outcomes"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[DM_Target_Outcomes]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Target_Outcomes]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[DM_Gates]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="DM_Gates"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[DM_Gates]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Gates]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[DM_GateKeepers]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="DM_GateKeepers"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[DM_GateKeepers]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_GateKeepers]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[DM_Staff]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="DM_Staff"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[DM_Staff]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Staff]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[DM_Target_Days]"
+                      cachedDataType="r8"
+                      cachedName="DM_Target_Days"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[DM_Target_Days]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Target_Days]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Act_PhaseID]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Act_PhaseID"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Act_PhaseID]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Act_PhaseID]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Default]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Default"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Default_Field]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Default]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Field 12]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Field 12"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Field_12]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Field 12]" />
+                    <inputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Phase Gate Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="Phase Gate Description"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Phase_Gate_Description]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Phase Gate Description]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[ID_Phase]"
+                      dataType="numeric"
+                      name="ID_Phase"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[_ID_Constant]"
+                      dataType="numeric"
+                      name="_ID_Constant"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Act_PhaseID]"
+                      dataType="wstr"
+                      length="2"
+                      name="Act_PhaseID" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Default_Field]"
+                      dataType="wstr"
+                      length="3"
+                      name="Default_Field" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[DM_Activities]"
+                      dataType="wstr"
+                      length="50"
+                      name="DM_Activities" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[DM_Documents_Required]"
+                      dataType="wstr"
+                      length="50"
+                      name="DM_Documents_Required" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[DM_GateKeepers]"
+                      dataType="wstr"
+                      length="50"
+                      name="DM_GateKeepers" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[DM_Gates]"
+                      dataType="wstr"
+                      length="50"
+                      name="DM_Gates" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[DM_Information_Outcomes]"
+                      dataType="wstr"
+                      length="50"
+                      name="DM_Information_Outcomes" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[DM_Staff]"
+                      dataType="wstr"
+                      length="50"
+                      name="DM_Staff" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[DM_Target_Days]"
+                      dataType="numeric"
+                      name="DM_Target_Days"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[DM_Target_Outcomes]"
+                      dataType="wstr"
+                      length="50"
+                      name="DM_Target_Outcomes" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Field_12]"
+                      dataType="wstr"
+                      length="50"
+                      name="Field_12" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Likelyhood]"
+                      dataType="numeric"
+                      name="Likelyhood"
+                      precision="18" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Likelyhood_Model]"
+                      dataType="wstr"
+                      length="3"
+                      name="Likelyhood_Model" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Phase_Gate_Description]"
+                      dataType="wstr"
+                      length="111"
+                      name="Phase_Gate_Description" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Phase_Description]"
+                      dataType="wstr"
+                      length="44"
+                      name="Phase_Description" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Phase_Name]"
+                      dataType="wstr"
+                      length="111"
+                      name="Phase_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Phase_Name_Model]"
+                      dataType="wstr"
+                      length="5"
+                      name="Phase_Name_Model" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Process_Link]"
+                      dataType="wstr"
+                      length="50"
+                      name="Process_Link" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load PHA_Phases Table from iMart into Staging\iMart"
+              componentClassID="Attunity.SSISODBCSrc"
+              contactInfo="ODBC Source;Connector for Open Database Connectivity (ODBC) by Attunity; Attunity Ltd.; All Rights Reserved; http://www.attunity.com;7"
+              description="ODBC Source"
+              name="iMart"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The name of the table to be fetched."
+                  expressionType="Notify"
+                  name="TableName">"ꙸᥰ짬⹫ᓞ᳓질⹫∶᳒"."PHA_Phases"</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows fetched per batch."
+                  expressionType="Notify"
+                  name="BatchSize">1000</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determines the chunk size allocation for LOB columns"
+                  expressionType="Notify"
+                  name="LobChunkSize">32768</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Determines how the component exposes CHAR columns. If False, CHAR columns are exposed as (multi-)byte strings (DT_STR), if True, CHAR columns are exposed as wide strings (DT_WSTR)"
+                  expressionType="Notify"
+                  name="ExposeCharColumnsAsUnicode">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds to wait for an SQL statement to execute before returning to the application."
+                  expressionType="Notify"
+                  name="StatementTimeout">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The code page to use when code page information is unavailable from the data source."
+                  expressionType="Notify"
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Int32"
+                  description="The mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The method used for fetching data."
+                  expressionType="Notify"
+                  name="FetchMethod"
+                  typeConverter="FetchMethod">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="The ODBC C data type for binding numeric data."
+                  expressionType="Notify"
+                  name="BindNumericAs"
+                  typeConverter="BindNumericAs">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Determines how the component would bind columns of (multi)-byte string types (i.e., SQL_CHAR, SQL_VARCHAR, SQL_LONGVARCHAR). The options are: Unicode (SQL_C_WCHAR) and ANSI (SQL_C_CHAR)."
+                  expressionType="Notify"
+                  name="BindCharColumnsAs"
+                  typeConverter="BindCharColumnsAs">0</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Connections[ODBCConnection]"
+                  connectionManagerID="{008C0F63-1E11-407B-8388-12739C181A6E}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[iMart.svcTransit]"
+                  description="The ODBC runtime connection"
+                  name="ODBCConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output]"
+                  errorRowDisposition="FailComponent"
+                  name="ODBC Source Output"
+                  truncationRowDisposition="FailComponent">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[ID_Phase]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[ID_Phase]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[ID_Phase]"
+                      name="ID_Phase" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Phase_Name]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Phase_Name]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Phase_Name]"
+                      name="Phase_Name" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Phase_Description]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Phase_Description]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Phase_Description]"
+                      name="Phase_Description" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Process_Link]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Process_Link]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Process_Link]"
+                      name="Process_Link" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Likelyhood]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Likelyhood]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Likelyhood]"
+                      name="Likelyhood" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Likelyhood_Model]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Likelyhood_Model]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Likelyhood_Model]"
+                      name="Likelyhood_Model" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Phase_Name_Model]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Phase_Name_Model]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Phase_Name_Model]"
+                      name="Phase_Name_Model" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[_ID_Constant]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[_ID_Constant]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[_ID_Constant]"
+                      name="_ID_Constant" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Default]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Default]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Default]"
+                      name="Default" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Phase Gate Description]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Phase Gate Description]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Phase Gate Description]"
+                      name="Phase Gate Description" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Field 12]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Field 12]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Field 12]"
+                      name="Field 12" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Documents_Required]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Documents_Required]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Documents_Required]"
+                      name="DM_Documents_Required" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Activities]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Activities]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Activities]"
+                      name="DM_Activities" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Information_Outcomes]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Information_Outcomes]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Information_Outcomes]"
+                      name="DM_Information_Outcomes" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Target_Outcomes]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Target_Outcomes]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Target_Outcomes]"
+                      name="DM_Target_Outcomes" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Gates]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Gates]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Gates]"
+                      name="DM_Gates" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_GateKeepers]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_GateKeepers]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_GateKeepers]"
+                      name="DM_GateKeepers" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Staff]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Staff]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Staff]"
+                      name="DM_Staff" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Target_Days]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Target_Days]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[DM_Target_Days]"
+                      name="DM_Target_Days" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Act_PhaseID]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Act_PhaseID]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].Columns[Act_PhaseID]"
+                      name="Act_PhaseID" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[ID_Phase]"
+                      dataType="r8"
+                      name="ID_Phase" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Phase_Name]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Phase_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Phase_Description]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Phase_Description" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Process_Link]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Process_Link" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Likelyhood]"
+                      dataType="r8"
+                      name="Likelyhood" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Likelyhood_Model]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Likelyhood_Model" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Phase_Name_Model]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Phase_Name_Model" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[_ID_Constant]"
+                      dataType="r8"
+                      name="_ID_Constant" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Default]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Default" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Phase Gate Description]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Phase Gate Description" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Field 12]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Field 12" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Documents_Required]"
+                      codePage="1252"
+                      dataType="text"
+                      name="DM_Documents_Required" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Activities]"
+                      codePage="1252"
+                      dataType="text"
+                      name="DM_Activities" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Information_Outcomes]"
+                      codePage="1252"
+                      dataType="text"
+                      name="DM_Information_Outcomes" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Target_Outcomes]"
+                      codePage="1252"
+                      dataType="text"
+                      name="DM_Target_Outcomes" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Gates]"
+                      codePage="1252"
+                      dataType="text"
+                      name="DM_Gates" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_GateKeepers]"
+                      codePage="1252"
+                      dataType="text"
+                      name="DM_GateKeepers" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Staff]"
+                      codePage="1252"
+                      dataType="text"
+                      name="DM_Staff" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Target_Days]"
+                      dataType="r8"
+                      name="DM_Target_Days" />
+                    <externalMetadataColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Act_PhaseID]"
+                      codePage="1252"
+                      dataType="text"
+                      name="Act_PhaseID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output]"
+                  isErrorOut="true"
+                  name="ODBC Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[ID_Phase]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[ID_Phase]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[ID_Phase]"
+                      name="ID_Phase" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Phase_Name]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Phase_Name]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Phase_Name]"
+                      name="Phase_Name" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Phase_Description]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Phase_Description]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Phase_Description]"
+                      name="Phase_Description" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Process_Link]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Process_Link]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Process_Link]"
+                      name="Process_Link" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Likelyhood]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Likelyhood]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Likelyhood]"
+                      name="Likelyhood" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Likelyhood_Model]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Likelyhood_Model]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Likelyhood_Model]"
+                      name="Likelyhood_Model" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Phase_Name_Model]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Phase_Name_Model]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Phase_Name_Model]"
+                      name="Phase_Name_Model" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[_ID_Constant]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[_ID_Constant]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[_ID_Constant]"
+                      name="_ID_Constant" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Default]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Default]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Default]"
+                      name="Default" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Phase Gate Description]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Phase Gate Description]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Phase Gate Description]"
+                      name="Phase Gate Description" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Field 12]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Field 12]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Field 12]"
+                      name="Field 12" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[DM_Documents_Required]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Documents_Required]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[DM_Documents_Required]"
+                      name="DM_Documents_Required" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[DM_Activities]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Activities]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[DM_Activities]"
+                      name="DM_Activities" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[DM_Information_Outcomes]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Information_Outcomes]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[DM_Information_Outcomes]"
+                      name="DM_Information_Outcomes" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[DM_Target_Outcomes]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Target_Outcomes]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[DM_Target_Outcomes]"
+                      name="DM_Target_Outcomes" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[DM_Gates]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Gates]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[DM_Gates]"
+                      name="DM_Gates" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[DM_GateKeepers]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_GateKeepers]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[DM_GateKeepers]"
+                      name="DM_GateKeepers" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[DM_Staff]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Staff]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[DM_Staff]"
+                      name="DM_Staff" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[DM_Target_Days]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[DM_Target_Days]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[DM_Target_Days]"
+                      name="DM_Target_Days" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Act_PhaseID]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Act_PhaseID]"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[Act_PhaseID]"
+                      name="Act_PhaseID" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Load PHA_Phases Table from iMart into Staging.Paths[ODBC Source Output]"
+              endId="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging.Inputs[ADO NET Destination Input]"
+              name="ODBC Source Output"
+              startId="Package\Load PHA_Phases Table from iMart into Staging\iMart.Outputs[ODBC Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate table PHA_Phases on Staging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D868AA75-FCF6-4A59-9664-F761E310D628}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate table PHA_Phases on Staging"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{8E16ACCB-0787-4D16-9937-2A153AD345E4}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE STAGING.PHA_PHASES" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{FEB36947-EDE7-47F1-925E-39D2E81BF738}"
+      DTS:From="Package\Truncate table PHA_Phases on Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Load PHA_Phases Table from iMart into Staging" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="304,42.6666666666667"
+          Id="Package\Load PHA_Phases Table from iMart into Staging"
+          TopLeft="32.4999995157123,114.399997954369" />
+        <NodeLayout
+          Size="262.666666666667,42.6666666666667"
+          Id="Package\Truncate table PHA_Phases on Staging"
+          TopLeft="50.4999993294477,10.266666581432" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="183.166666089247,52.9333332480987">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.46666470627"
+              Start="0,0"
+              End="0,53.96666470627">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,53.96666470627" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Load PHA_Phases Table from iMart into Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="104,42.6666666666667"
+          Id="Package\Load PHA_Phases Table from iMart into Staging\iMart"
+          TopLeft="130.916664797813,6.36666665116946" />
+        <NodeLayout
+          Size="152,42.6666666666667"
+          Id="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging"
+          TopLeft="100.499999031425,100.533332194288" />
+        <EdgeLayout
+          Id="Package\Load PHA_Phases Table from iMart into Staging.Paths[ODBC Source Output]"
+          TopLeft="179.708331914619,49.0333333178361">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,51.4999988764519"
+              Start="0,0"
+              End="0,43.9999988764519">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43.9999988764519" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load PHA_Phases Table from iMart into Staging\iMart">
+    <Properties>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
