@@ -6,9 +6,10 @@
 -- 08/05(YM) : Commented out the check for the focus table as the Primary Focus ID is null
 -- 09/05(YM) : Added logic for the from and to dates to bring back the latest records from the dimension 
 -- 25/05(YM) : Removed the load date as a parameter. Pipeline shows the latest records
+-- 06/06(YM) : Removed all references to the Security Table
 -- ==========================================================================
 
-CREATE  procedure [core].[Pipeline_Report] --@load_date datetime
+CREATE or alter  procedure [core].[Pipeline_Report] --@load_date datetime
 as 
 
 declare @local_date datetime 
@@ -31,8 +32,9 @@ select
         ,max(cast(isnull(fd.Update_To_TS,@local_date) as datetime)) Update_To_TS_fd	
 */
 		--,
-		 us.UserID
-		,pd.Priority
+		 --us.UserID
+		--,
+		 pd.Priority
 		,bdf.ID_Priority as id_Priority
 		,bdf.ID_Phase as ID_Phase_Current
 		,pjd.ID_Master_Project
@@ -64,8 +66,8 @@ left join core.Sector_Dimension sd
 	on bdf.ID_Client_Sector = sd.Business_Platform
 left join core.Focus_Dimension fd
 	on sd.ID_PrimaryFocus = fd.ID_Focus
-left join security.User_Security us
-	on pjd.id_project_TNumber = us.Project_TNumber
+--left join security.User_Security us
+	--on pjd.id_project_TNumber = us.Project_TNumber
 
 where bdf.Update_to_TS is null
 and pjd.Update_To_TS is null
@@ -81,8 +83,9 @@ and @load_date >=  cast(phd.Update_From_TS as datetime) and @load_date < cast(is
 and @load_date >=  cast(sd.Update_From_TS as datetime) and @load_date < cast(isnull(sd.Update_To_TS,@local_date) as datetime)
 --and @load_date >=  cast(fd.Update_From_TS as datetime) and @load_date < cast(isnull(fd.Update_To_TS,@local_date) as datetime)
 */
-group by us.UserID
-		,pd.Priority
+group by --us.UserID
+		--,
+		 pd.Priority
 		,bdf.ID_Priority 
 		,bdf.ID_Phase 
 		,pjd.ID_Master_Project

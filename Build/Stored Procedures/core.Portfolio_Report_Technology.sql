@@ -4,9 +4,10 @@
 -- Description:	Create stored procedure to build the Portfolio Report by Technology
 -- Version Control
 --01/06/2018(YM) Added the Sub Amortisation Amount from Commitments_Deployments Fact
+--06/06/2018(YM) Removed all references to the Security Table
 -- ==========================================================================
 
-CREATE       procedure [core].[Portfolio_Report_Technology] @load_date datetime
+CREATE or alter procedure [core].[Portfolio_Report_Technology] @load_date datetime
 as 
 
 declare @local_date datetime 
@@ -26,7 +27,7 @@ SELECT @load_date AS ParamIn ,
        max(cast(td.Update_to_TS AS datetime)) Update_To_TS_td ,
 	   max(cast(tm.Update_From_TS AS datetime)) Update_From_TS_tm ,
        max(cast(tm.Update_to_TS AS datetime)) Update_To_TS_tm ,
-       us.UserID ,
+       --us.UserID ,
        p.Project_Borrower_Entity,
 	   p.Project_Name_Alias,
 	   p.ID_Project_TNumber,
@@ -96,7 +97,7 @@ FROM CORE.Base_Data_Fact b
 	  on b.ID_Project = td.ID_Project
     left join core.TechMatrix_Dimension tm
 	  on td.ID_Technology = tm.ID_Technology
-	LEFT JOIN security.User_Security us ON p.id_project_TNumber = us.Project_TNumber
+	--LEFT JOIN security.User_Security us ON p.id_project_TNumber = us.Project_TNumber
 	left join (select ID_Project_TNumber,
 					  sum(Gross_Principal) as Gross_Principal,
 					  sum(Capitalised_Interest) as Capitalised_Interest,
@@ -112,7 +113,7 @@ and @load_date >=  cast(pd.Update_From_TS as datetime) and @load_date < cast(isn
 and @load_date >=  cast(phd.Update_From_TS as datetime) and @load_date < cast(isnull(phd.Update_To_TS,@local_date) as datetime)
 and @load_date >=  cast(td.Update_From_TS as datetime) and @load_date < cast(isnull(td.Update_To_TS,@local_date) as datetime)
 and @load_date >=  cast(tm.Update_From_TS as datetime) and @load_date < cast(isnull(tm.Update_To_TS,@local_date) as datetime)
-group by us.UserID ,
+group by --us.UserID ,
        p.Project_Borrower_Entity,
 	   p.Project_Name_Alias,
 	   p.ID_Project_TNumber,

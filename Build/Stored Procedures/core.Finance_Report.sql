@@ -3,9 +3,10 @@
 -- Create date: 15/05/2018
 -- Description:	Create stored procedure to build the Finance Report
 -- Version Control
+--06/06(YM) Removed all reference to the Security Table
 -- ==========================================================================
 
-Create procedure [core].[Finance_Report] @load_date datetime
+Create or alter procedure [core].[Finance_Report] @load_date datetime
 as 
 
 declare @local_date datetime 
@@ -21,7 +22,7 @@ SELECT @load_date AS ParamIn ,
        max(cast(pd.Update_to_TS AS datetime)) Update_To_TS_pd ,
 	   max(cast(phd.Update_From_TS AS datetime)) Update_From_TS_phd ,
        max(cast(phd.Update_to_TS AS datetime)) Update_To_TS_phd ,
-	   us.UserID ,
+	   --us.UserID ,
 	   p.ID_Project_TNumber,
 	   case when cMasterProject is not null then cMasterProject else Project_Name end as Project_Name,
 	   p.Description,
@@ -54,14 +55,14 @@ left join core.Priority_Dimension pd
 	 on b.ID_Priority = pd.ID_Priority
 left join core.Phases_Dimension phd
 	  on b.ID_Phase = phd.ID_Phase
-left join security.User_Security us
-	 on p.id_project_TNumber = us.Project_TNumber
+--left join security.User_Security us
+	 --on p.id_project_TNumber = us.Project_TNumber
 
 WHERE @load_date >=  cast(b.Update_From_TS as datetime) and @load_date < cast(isnull(b.Update_To_TS,@local_date) as datetime)
 and @load_date >=  cast(p.Update_From_TS as datetime) and @load_date < cast(isnull(p.Update_To_TS,@local_date) as datetime)
 and @load_date >=  cast(pd.Update_From_TS as datetime) and @load_date < cast(isnull(pd.Update_To_TS,@local_date) as datetime)
 and @load_date >=  cast(phd.Update_From_TS as datetime) and @load_date < cast(isnull(phd.Update_To_TS,@local_date) as datetime)
-group by us.UserID ,
+group by --us.UserID ,
 	   p.ID_Project_TNumber,
 	   p.Project_Name,
 	   p.Description,
