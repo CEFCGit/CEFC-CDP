@@ -11,12 +11,30 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="IMTSTGLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="13"
-  DTS:VersionGUID="{18EC27B8-1376-42C7-BE00-BC111F022AD1}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{FAE9EFAE-5887-402F-90CD-EF62AFF833E0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
   <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Backup Staging and Core Tables"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{66764775-171D-4A7B-B7C9-2EC1D90F6BB0}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Backup Staging and Core Tables"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="execute core.Backup_CDP_Tables " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
     <DTS:Executable
       DTS:refId="Package\Load DAT_Golden_Dates Table from iMart to Staging"
       DTS:CreationName="Microsoft.Pipeline"
@@ -14831,6 +14849,14 @@
       DTS:ObjectName="Constraint 16"
       DTS:To="Package\Truncate table PRJ_Projects on Staging" />
     <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 17]"
+      DTS:CreationName=""
+      DTS:DTSID="{E8F11EF6-AF92-4FC5-A1B3-CE215B725365}"
+      DTS:From="Package\Backup Staging and Core Tables"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 17"
+      DTS:To="Package\Truncate DAT_Golden_Dates Table on Staging" />
+    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{486A0034-DDDA-4B78-B9E1-BAD8E95842C0}"
@@ -14910,81 +14936,89 @@
         <NodeLayout
           Size="329.333333333334,42.6666666666667"
           Id="Package\Load DAT_Golden_Dates Table from iMart to Staging"
-          TopLeft="174.666666666667,130.766664760511" />
+          TopLeft="174.666666666667,151.433331427178" />
         <NodeLayout
           Size="265.333333333334,42.6666666666667"
           Id="Package\Load Focus Table from iMart to Staging"
-          TopLeft="198,301.531975247734" />
+          TopLeft="198,322.198641914401" />
         <NodeLayout
           Size="302.666666666667,42.6666666666667"
           Id="Package\Load LOC_Location Table from iMart to Staging"
-          TopLeft="174,457.247617172457" />
+          TopLeft="174,477.914283839124" />
         <NodeLayout
           Size="304,42.6666666666667"
           Id="Package\Load PHA_Phases Table from iMart into Staging"
-          TopLeft="174,664.999996164442" />
+          TopLeft="174,685.666662831109" />
         <NodeLayout
           Size="302.666666666667,42.6666666666667"
           Id="Package\Load PRJ_Priority Table from iMart into Staging"
-          TopLeft="175.333333333333,859.099994529486" />
+          TopLeft="175.333333333333,879.766661196153" />
         <NodeLayout
           Size="298.666666666667,42.6666666666667"
           Id="Package\Load PRJ_Projects Table from iMart to Staging"
-          TopLeft="174,1641.85184309593" />
+          TopLeft="174,1662.5185097626" />
         <NodeLayout
           Size="268,42.6666666666667"
           Id="Package\Load Sector Table from iMart to Staging"
-          TopLeft="191.777777777778,1044.23332628985" />
+          TopLeft="191.777777777778,1064.89999295652" />
         <NodeLayout
           Size="224,42.6666666666667"
           Id="Package\Load TEC_Matrix table from iMart to Staging"
-          TopLeft="208.074074074074,1237.41851147504" />
+          TopLeft="208.074074074074,1258.08517814171" />
+        <NodeLayout
+          Size="250.666666666667,42.6666666666667"
+          Id="Package\Load TEC_Technology Table from IMART to Staging"
+          TopLeft="199.925925925926,1464.08517814171" />
         <NodeLayout
           Size="298.666666666667,42.6666666666667"
           Id="Package\Truncate DAT_Golden_Dates Table on Staging"
-          TopLeft="187.916666337599,18" />
+          TopLeft="183.916666337599,83.3333333333334" />
         <NodeLayout
           Size="185.333333333334,42.6666666666667"
           Id="Package\Truncate Focus table on Staging"
-          TopLeft="239.08333314086,208.099998093844" />
+          TopLeft="239.08333314086,228.766664760511" />
         <NodeLayout
           Size="242.666666666667,42.6666666666667"
           Id="Package\Truncate LOC_Location on Staging"
-          TopLeft="205.249999534339,384.666666666667" />
+          TopLeft="205.249999534339,405.333333333334" />
         <NodeLayout
           Size="262.666666666667,42.6666666666667"
           Id="Package\Truncate table PHA_Phases on Staging"
-          TopLeft="191.999999813735,560.866664791505" />
+          TopLeft="191.999999813735,581.533331458171" />
         <NodeLayout
           Size="264,42.6666666666667"
           Id="Package\Truncate Table PRJ_Priority on Staging"
-          TopLeft="194.833333022892,767.666662831108" />
+          TopLeft="194.833333022892,788.333329497775" />
         <NodeLayout
           Size="265.333333333334,42.6666666666667"
           Id="Package\Truncate table PRJ_Projects on Staging"
-          TopLeft="187.333333134651,1546.08517814171" />
+          TopLeft="187.333333134651,1566.75184480838" />
         <NodeLayout
           Size="237.333333333334,42.6666666666667"
           Id="Package\Truncate Table Sector on Staging"
-          TopLeft="208.944444369939,966.211105640597" />
+          TopLeft="208.944444369939,986.877772307264" />
         <NodeLayout
           Size="204,42.6666666666667"
           Id="Package\Truncate TEC_Matrix table on Staging"
-          TopLeft="219.851851851852,1148.381474438" />
+          TopLeft="219.851851851852,1169.04814110467" />
+        <NodeLayout
+          Size="222.666666666667,42.6666666666667"
+          Id="Package\Truncate TEC_Technology table on Staging"
+          TopLeft="213.62962962963,1359.27036332689" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="338.291666502133,60.6666666666667">
+          TopLeft="336.291666502133,126">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,70.099998093844"
+              EndConnector="0,25.4333314271776"
               Start="0,0"
-              End="0,62.599998093844">
+              End="0,17.9333314271776">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,62.599998093844" />
+                    End="0,17.9333314271776" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -14995,7 +15029,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="331.208333237097,250.766664760511">
+          TopLeft="331.208333237097,271.433331427178">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15017,7 +15051,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="327.138888851636,901.766661196153">
+          TopLeft="327.138888851636,922.43332786282">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15039,7 +15073,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 11]"
-          TopLeft="320.962962962963,1191.04814110467">
+          TopLeft="320.962962962963,1211.71480777134">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15061,7 +15095,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="323.814814814815,1086.89999295652">
+          TopLeft="323.814814814815,1107.56665962319">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15082,8 +15116,30 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 13]"
+          TopLeft="325.111111111111,1401.93702999356">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,62.1481481481487"
+              Start="0,0"
+              End="0,54.6481481481487">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.6481481481487" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 14]"
-          TopLeft="322.518518518519,1280.08517814171">
+          TopLeft="322.518518518519,1300.75184480838">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15105,7 +15161,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 15]"
-          TopLeft="321.666666567326,1588.75184480837">
+          TopLeft="321.666666567326,1609.41851147504">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15127,7 +15183,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 16]"
-          TopLeft="322.629629530288,1486.08517814171">
+          TopLeft="322.629629530288,1506.75184480838">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15149,7 +15205,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="335.54166657043,173.433331427177">
+          TopLeft="335.54166657043,194.099998093844">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15171,7 +15227,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="325.958333100503,427.333333333333">
+          TopLeft="325.958333100503,448">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15193,7 +15249,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="328.624999767169,344.198641914401">
+          TopLeft="328.624999767169,364.865308581068">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15215,7 +15271,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="324.666666573535,603.533331458171">
+          TopLeft="324.666666573535,624.199998124838">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15237,7 +15293,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="324.333333240201,499.914283839124">
+          TopLeft="324.333333240201,520.580950505791">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15259,7 +15315,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="326.749999844779,810.333329497775">
+          TopLeft="326.749999844779,830.999996164442">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15281,7 +15337,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="326.416666511446,707.666662831108">
+          TopLeft="326.416666511446,728.333329497775">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15303,7 +15359,7 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="326.694444407192,1008.87777230726">
+          TopLeft="326.694444407192,1029.54443897393">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15323,20 +15379,24 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="186.666666666667,42.6666666666667"
+          Id="Package\Backup Staging and Core Tables"
+          TopLeft="246.166666666667,13.5226140283634" />
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 13]"
-          TopLeft="325.111111111111,1381.27036332689">
+          Id="Package.PrecedenceConstraints[Constraint 17]"
+          TopLeft="336.374999835466,56.18928069503">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,62.1481481481487"
+              EndConnector="0,27.1440526383033"
               Start="0,0"
-              End="0,54.6481481481487">
+              End="0,19.6440526383033">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.6481481481487" />
+                    End="0,19.6440526383033" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15345,14 +15405,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="250.666666666667,42.6666666666667"
-          Id="Package\Load TEC_Technology Table from IMART to Staging"
-          TopLeft="199.925925925926,1443.41851147504" />
-        <NodeLayout
-          Size="222.666666666667,42.6666666666667"
-          Id="Package\Truncate TEC_Technology table on Staging"
-          TopLeft="213.62962962963,1338.60369666022" />
       </GraphLayout>
     </LayoutInfo>
   </Package>

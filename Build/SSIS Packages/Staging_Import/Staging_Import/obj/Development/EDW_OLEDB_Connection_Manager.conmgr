@@ -8,7 +8,7 @@
       DTS:ConnectionString="Data Source=cefcdevsqlsvr01.database.windows.net;User ID=yolinda.moodley;Initial Catalog=cefcdevsql01;Provider=SQLNCLI11.1;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkYzQoehdVEu9f2/pe+pEkQAAAAACAAAAAAAQZgAAAAEAACAAAADggd4j0Sr53SlgfRqrwZqHawlXgQdjMsDzVKVAVri+IgAAAAAOgAAAAAIAACAAAABFdyxR5bTA0z26SHhVsooUAJnopzA18NStFQz28WcALYAAAAAfPqo0BAVapBE4CGJyqKtPQICWbWejVwMpwucLRmvJzhSqtAJ2b9zewECgNHR9eGqdyeRGXEPArMhbUemwNvrcy0+nHG0xHmZyyw5yuUVg6RwCPD8bWiKuLtHLX3SlV1VXMMTHgpv8QWjxJ+gPj4IHNiEYNyifJ//XpQ14lzAHm0AAAABN88UJiZSqquW/kZa9/cUH7zzwA1ZcgQNsLrQDm6GtMHjuR/52pP0nBoXWVrg45QT7iOZSfZRC/3yAZymPpTP5</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkYzQoehdVEu9f2/pe+pEkQAAAAACAAAAAAAQZgAAAAEAACAAAAD+M3FZC38spwrvLArSliF1MwXpxG4coWtjGbxyfiHwqwAAAAAOgAAAAAIAACAAAAAv/v0v8GFOZqTczmhP87+olC9zSK1P/2uL0QgzR+v3PoAAAADDDgQYtI5n7NvQF3OZcxGy/0F4NOV2NyL1JigVKiw2KNidA9NHRxOP5DjkZ/jEQPstHnFV3YaJbUMFHqM5rHeeFPIBxRyezfA65GTt8V2P/0b2zEuvZkd8sg188sEwYnTHxAo3MdTxlgRy1T/9SVqCGdyx5FrKiI/mU0xA21mGLkAAAABPqXsVlTXdi4YkW9effmo3VovYsVQOQrNrJNYqWPuTSDhUZw+6SAC6DR2Zl+YY/76dxg/0vehkBREKYqCmT9n/</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
