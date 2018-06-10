@@ -5,10 +5,10 @@
   DTS:CreationName="OLEDB">
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="Data Source=cefcdevsqlsvr01.database.windows.net;User ID=yolinda.moodley;Initial Catalog=cefcdevsql01;Provider=SQLNCLI11.1;Auto Translate=False;">
+      DTS:ConnectionString="Data Source=cefcdevsqlsvr01.database.windows.net;User ID=cdp_root;Initial Catalog=cefcdevsql01;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkYzQoehdVEu9f2/pe+pEkQAAAAACAAAAAAAQZgAAAAEAACAAAADvmMLNr2iUH2HnPKYS7sW1N3JuF5Si8C5bKKmNe+jWdgAAAAAOgAAAAAIAACAAAAC0XjdcU79LQ9+HiOXPxQWPl1HTbW3xp2BJNW9mkGlRRIAAAACxGGtLIPGMFXKQZBwNlmg1xoTko8ogy00HYq9ScXVc719CIOkYky+nB1Cc+28GyM0vDDTnO1FSC6BCN4yohaCpmKhxKUkGtADHOQKCBtvrMUIBuR8a0dBHdTqmUEN8JBs0hQiuiHQr6EcH2LusmTRzkLXvsEFevdqFv2fXu+SDK0AAAABZLTU1NSeLoJQkoKqka4EFBZ2rK8Er8oySYeCJODxjVh5h2thI1fz10DkjukjYVlE71xVx8WwNVGkOzXhR/VIy</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkYzQoehdVEu9f2/pe+pEkQAAAAACAAAAAAAQZgAAAAEAACAAAAAmEk42eTpwd0IMipSRL4evmgmAiM9VMh/KnliU/KsF8AAAAAAOgAAAAAIAACAAAAAZMRXU4JV7c7eDr9B+oXPBi83P5DHtEYKRTiOZXwMr54AAAABMhewRyuFEj3dj1Fu5znHYbvTwcFcpYqElENj7XPiRLBGibnruuCM3iSaHV1qW04Wx/ct6kWvqKvdWt2yCoSRfMwThBc/3aHkPFd7nGzDH4K+sarbN0dqQq5EgNam9X6wO5zpVXUVWsJX41dH5QSvV/nyJqLDqYXvqbK53LdJd2EAAAAAVGUi99Ciis85NKqXIZm3iSAiWOs6/I11IqVjXorIdi1jWWql62W+BjPR/kkn/GFgvHJSoQENyikPumV1Yl5QL</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
