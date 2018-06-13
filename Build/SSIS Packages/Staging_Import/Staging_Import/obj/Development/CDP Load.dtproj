@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">cefcdevssis01</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkYzQoehdVEu9f2/pe+pEkQAAAAACAAAAAAAQZgAAAAEAACAAAAAPNeeNT7x4ngH2Ak7MfCkYSL8J/8weqm+GnQA1l/CSAwAAAAAOgAAAAAIAACAAAAA+P1ENvBFmMcUXjfOnE6TB+Rh+IbME4BIKlUBlNzqwvpAAAADtAg9QHDqSeoRmK20i+MC50Ou2lgMQokZdP41P+xv9b1vjw+rW0jVD1H3K5mIYWFhDQc3jmsNVGLBaDGiXegZl0KTkxMxVggZICy/Ixwqls3sStDNvAae/OOZmxnXetVK2O+tL0Ey2J2J8XOXZ4r2Fm/VFp7TQAIloH9kUDtttRm/ftFoHtpjU1S9PZVXpdRxAAAAAu1XA7uNI3qHFwehm3/iUNtuUYzeAy5MbfHEOAABhej37CsjN8edQIw+iM9imv+5lN7l3Fyk/l6ssAPHp06oJzQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkYzQoehdVEu9f2/pe+pEkQAAAAACAAAAAAAQZgAAAAEAACAAAADL+AltDKyEb5+x5jB9Rp5WgCNu/RBA8ZVFX+7AFBEyAQAAAAAOgAAAAAIAACAAAADyjrzHtfQ5m8SXoY8S/QrhHe3LvD1tjHR7ZyKn437xA5AAAADhB+XpOKSc395ccWs5S5YYuSSzQ6hdqhtglaDZXFCQ1rp0m9jXY3t3UzIOO4veh7Laq5HW/DIRIm5omyuQd1KhGAUZHJaDBr857AXawYu3PL4dwazkDk7RNORgIpBkrPvGJEP0mGKVhWjbGU2ZWnUGZ/JNHuhDvIOPNE21rjWYMWI1kP8Wqo//FbQRH4FxZNFAAAAAqshZWvbwZgdoDp7xiqOHJ0eU0TlfM4qVkO1QVwxUA4oB4sHkljh64tUgESLtEjd6cfejwZxis43OEbVCfqYLhA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -319,7 +319,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=C:\Finance Files\BI - Portfolio Analysis.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=excel 12.0;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=C:\Finance Files\BI - Portfolio Analysis.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Persist Security Info=False;Extended Properties=excel 12.0;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -403,10 +403,10 @@
                 <SSIS:Property SSIS:Name="Name">STGCDPDimFactLoad</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">73</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">74</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{A34E9DF2-4E0B-44DD-89C1-0CB4DAAEE3DE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{C65951F6-0C63-4522-8BBD-0E530415EE2B}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -437,10 +437,10 @@
                 <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">43</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">45</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{ECFFFFB1-20F2-4319-BCE2-92EB58285E11}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{2CFB8A98-5450-41E3-9B7A-8F74A29E10C6}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -454,10 +454,10 @@
                 <SSIS:Property SSIS:Name="Name">STGCDPFinDimFactLoad</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">18</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">19</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{6B55A4EE-5C36-4022-BD4B-790B4017A16C}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{FB135CE5-6C5A-48A5-889B-DFAD453FCDA2}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

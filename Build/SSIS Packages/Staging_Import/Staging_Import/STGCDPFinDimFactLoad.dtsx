@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="STGCDPFinDimFactLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{6B55A4EE-5C36-4022-BD4B-790B4017A16C}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{FB135CE5-6C5A-48A5-889B-DFAD453FCDA2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1504,12 +1504,12 @@
                       externalMetadataColumnId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Business_Platform]"
                       lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[Business Platform]" />
                     <inputColumn
-                      refId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].Columns[From Date]"
+                      refId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].Columns[To Period]"
                       cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="From Date"
-                      externalMetadataColumnId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].ExternalColumns[From_Date]"
-                      lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[From Date]" />
+                      cachedLength="3"
+                      cachedName="To Period"
+                      externalMetadataColumnId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].ExternalColumns[To_Period]"
+                      lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[To Period]" />
                     <inputColumn
                       refId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].Columns[To Date]"
                       cachedDataType="wstr"
@@ -1857,10 +1857,10 @@
                       length="50"
                       name="Business_Platform" />
                     <externalMetadataColumn
-                      refId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].ExternalColumns[From_Date]"
-                      dataType="wstr"
-                      length="20"
-                      name="From_Date" />
+                      refId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].ExternalColumns[To_Period]"
+                      dataType="numeric"
+                      name="To_Period"
+                      precision="3" />
                     <externalMetadataColumn
                       refId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].ExternalColumns[To_Date]"
                       dataType="wstr"
@@ -2055,7 +2055,7 @@
       ,[Remaining To Fund]
       ,[Code]
       ,[Business Platform]
-      ,[From Date]
+      ,[To Period]
       ,[To Date]
   FROM [staging].[Commitments_Deployments]
 WHERE [Project Name] is NOT NULL</property>
@@ -2706,14 +2706,14 @@ WHERE [Project Name] is NOT NULL</property>
                       name="Business Platform"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[From Date]"
+                      refId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[To Period]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[From Date]"
-                      length="20"
-                      lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[From Date]"
-                      name="From Date"
+                      externalMetadataColumnId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[To Period]"
+                      length="3"
+                      lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[To Period]"
+                      name="To Period"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[To Date]"
@@ -3059,10 +3059,10 @@ WHERE [Project Name] is NOT NULL</property>
                       length="50"
                       name="Business Platform" />
                     <externalMetadataColumn
-                      refId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[From Date]"
+                      refId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[To Period]"
                       dataType="wstr"
-                      length="20"
-                      name="From Date" />
+                      length="3"
+                      name="To Period" />
                     <externalMetadataColumn
                       refId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[To Date]"
                       dataType="wstr"
@@ -3462,11 +3462,11 @@ WHERE [Project Name] is NOT NULL</property>
                       lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Business Platform]"
                       name="Business Platform" />
                     <outputColumn
-                      refId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Error Output].Columns[From Date]"
+                      refId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Error Output].Columns[To Period]"
                       dataType="wstr"
-                      length="20"
-                      lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Error Output].Columns[From Date]"
-                      name="From Date" />
+                      length="3"
+                      lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Error Output].Columns[To Period]"
+                      name="To Period" />
                     <outputColumn
                       refId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Error Output].Columns[To Date]"
                       dataType="wstr"

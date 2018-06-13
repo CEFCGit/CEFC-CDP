@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{ECFFFFB1-20F2-4319-BCE2-92EB58285E11}">
+  DTS:VersionBuild="45"
+  DTS:VersionGUID="{2CFB8A98-5450-41E3-9B7A-8F74A29E10C6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -385,6 +385,12 @@
                       externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[FX Translation Gain/Loss (BFB)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[FX Translation Gain/Loss (BFB)]" />
                     <inputColumn
+                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Fees Accrued (BFB)]"
+                      cachedDataType="r8"
+                      cachedName="Fees Accrued (BFB)"
+                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Fees Accrued (BFB)]"
+                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fees Accrued (BFB)]" />
+                    <inputColumn
                       refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Net Interest Accrued (BFB)]"
                       cachedDataType="r8"
                       cachedName="Net Interest Accrued (BFB)"
@@ -663,29 +669,24 @@
                       externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Business Platform]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Business Platform]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[From Date]"
-                      cachedDataType="date"
-                      cachedName="From Date"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[From Date]"
-                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[From Date]" />
-                    <inputColumn
                       refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[To Date]"
                       cachedDataType="date"
                       cachedName="To Date"
                       externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[To Date]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[To Date]" />
                     <inputColumn
+                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[To Period]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="To Period"
+                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[To Period]"
+                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[To Period]" />
+                    <inputColumn
                       refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Book value excluding accrued interest &amp; fees]"
                       cachedDataType="r8"
                       cachedName="Book value excluding accrued interest &amp; fees"
                       externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Book value excluding accrued interest &amp; fees less Net Concession]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Book value excluding accrued interest &amp; fees]" />
-                    <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Fees Accrued (BFB)]"
-                      cachedDataType="r8"
-                      cachedName="Fees Accrued (BFB)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Fees Accrued (BFB)]"
-                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fees Accrued (BFB)]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1015,10 +1016,10 @@
                       length="50"
                       name="Business Platform" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[From Date]"
+                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[To Period]"
                       dataType="wstr"
-                      length="20"
-                      name="From Date" />
+                      length="3"
+                      name="To Period" />
                     <externalMetadataColumn
                       refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[To Date]"
                       dataType="wstr"
@@ -1614,13 +1615,14 @@
                       name="Business Platform"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[From Date]"
-                      dataType="date"
+                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[To Period]"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[From Date]"
-                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[From Date]"
-                      name="From Date"
+                      externalMetadataColumnId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[To Period]"
+                      length="255"
+                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[To Period]"
+                      name="To Period"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[To Date]"
@@ -1886,13 +1888,19 @@
                       length="255"
                       name="Business Platform" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[From Date]"
-                      dataType="date"
-                      name="From Date" />
+                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[To Period]"
+                      dataType="wstr"
+                      length="255"
+                      name="To Period" />
                     <externalMetadataColumn
                       refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[To Date]"
                       dataType="date"
                       name="To Date" />
+                    <externalMetadataColumn
+                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F64]"
+                      dataType="wstr"
+                      length="255"
+                      name="F64" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -2181,10 +2189,11 @@
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Business Platform]"
                       name="Business Platform" />
                     <outputColumn
-                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[From Date]"
-                      dataType="date"
-                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[From Date]"
-                      name="From Date" />
+                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[To Period]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[To Period]"
+                      name="To Period" />
                     <outputColumn
                       refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[To Date]"
                       dataType="date"
@@ -3527,6 +3536,10 @@
           Id="Package\Truncate AASB9 Table on Staging"
           TopLeft="170.166666666667,347.5" />
         <NodeLayout
+          Size="340,42.6666666666667"
+          Id="Package\Truncate Deployments_Commitments Table on Staging"
+          TopLeft="110.708331765607,531.999990585447" />
+        <NodeLayout
           Size="193.333333333334,42.6666666666667"
           Id="Package\Truncate FinDeal Table on Staging"
           TopLeft="170.166666666666,186.166666666667" />
@@ -3644,10 +3657,6 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="340,42.6666666666667"
-          Id="Package\Truncate Deployments_Commitments Table on Staging"
-          TopLeft="110.708331765607,531.999990585447" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="276.77083254947,481.5">
@@ -3741,33 +3750,46 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\AASB9 Subcategory\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Deployments_Commitments">
     <LayoutInfo>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="229.333333333334,42.6666666666667"
+          Size="294.666666666667,42.6666666666667"
           Id="Package\Deployments_Commitments\Commitments_Deployments Table on Staging"
-          TopLeft="166.833333333333,188.833333333333" />
+          TopLeft="102.250000962366,182.766666775147" />
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Deployments_Commitments\OLE DB Source"
-          TopLeft="209.5,18.1666666666667" />
+          TopLeft="175.499997466803,14.5999998372793" />
         <EdgeLayout
           Id="Package\Deployments_Commitments.Paths[OLE DB Source Output]"
-          TopLeft="283.166666666667,60.8333333333333">
+          TopLeft="250.208332547918,57.266666503946">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,128"
+              EndConnector="0,125.500000271201"
               Start="0,0"
-              End="0,120.5">
+              End="0,118.000000271201">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,120.5" />
+                    End="0,118.000000271201" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -3833,6 +3855,19 @@
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FinDeal\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Investment Type">
     <LayoutInfo>
@@ -3881,32 +3916,6 @@
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Investment Type\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\FinDeal\OLE DB Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\AASB9 Subcategory\OLE DB Source">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
