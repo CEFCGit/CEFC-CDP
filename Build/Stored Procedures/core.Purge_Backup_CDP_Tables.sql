@@ -1,3 +1,10 @@
+/****** Object:  StoredProcedure [core].[Purge_Backup_CDP_Tables]    Script Date: 19/06/2018 9:36:15 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
 -- ==========================================================================
 -- Created by: Yolinda Moodley
 -- Create date: 13/06/2018
@@ -5,7 +12,7 @@
 -- Version Control
 -- ==========================================================================
 
-create or alter   procedure [core].[Purge_Backup_CDP_Tables]
+create or alter    procedure [core].[Purge_Backup_CDP_Tables]
 as
 
 declare @SqlStatement nvarchar(400)
@@ -16,25 +23,20 @@ declare @tabname nvarchar(100)
 --Drop Tables
 --===============================================================
 declare table_cursor cursor for 
-		with back_up 
-		as
-
-		(	select	st.name as table_name,
-					bk_sh.name as schema_name,
-					format(create_date,'yyyy-MM-dd hh:mm') create_date,
-					dense_rank() over (order by format(create_date,'yyyy-MM-dd hh:mm') desc) rownum
+		select	st.name as table_name,
+					bk_sh.name as schema_name
 			from sys.tables st
-			inner join (select schema_id,name
+			inner join (select distinct name,
+			             schema_id 
 						from sys.schemas
 						where name like 'backup_%'
+						and schema_id < (select max(schema_id)
+										from sys.schemas
+										 where name like 'backup_%'
+										 )
 						) as bk_sh
 				on st.schema_id = bk_sh.schema_id
-		)
-
-		select schema_name,
-			   table_name
-		from back_up
-		where rownum > 1
+				
 
 open table_cursor
 	fetch next from table_cursor 
@@ -60,23 +62,14 @@ DEALLOCATE table_cursor
 --Drop Schemas
 --===============================================================
 declare schema_cursor cursor for
-  with back_up 
-		as
-
-		(	select	bk_sh.name as schema_name,
-					dense_rank() over (order by format(create_date,'yyyy-MM-dd hh:mm') desc) rownum
-			from sys.tables st
-			inner join (select schema_id,name
-						from sys.schemas
-						where name like 'backup_%'
-						) as bk_sh
-				on st.schema_id = bk_sh.schema_id
-		)
-
-		select distinct schema_name
-		from back_up
-		where rownum > 1
-
+  select distinct name as schema_name
+            from sys.schemas
+			where name like 'backup_%'
+			and schema_id < (select max(schema_id)
+			                 from sys.schemas
+							 where name like 'backup_%'
+							 )
+				
 	open schema_cursor
 	fetch next from schema_cursor
 	into @schname
