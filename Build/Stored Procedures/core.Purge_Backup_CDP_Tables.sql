@@ -1,9 +1,10 @@
-/****** Object:  StoredProcedure [core].[Purge_Backup_CDP_Tables]    Script Date: 19/06/2018 9:36:15 AM ******/
+/****** Object:  StoredProcedure [core].[Purge_Backup_CDP_Tables]    Script Date: 19/06/2018 10:19:10 AM ******/
 SET ANSI_NULLS ON
 GO
 
 SET QUOTED_IDENTIFIER ON
 GO
+
 
 -- ==========================================================================
 -- Created by: Yolinda Moodley
@@ -12,7 +13,7 @@ GO
 -- Version Control
 -- ==========================================================================
 
-create or alter    procedure [core].[Purge_Backup_CDP_Tables]
+ALTER      procedure [core].[Purge_Backup_CDP_Tables]
 as
 
 declare @SqlStatement nvarchar(400)
@@ -23,8 +24,8 @@ declare @tabname nvarchar(100)
 --Drop Tables
 --===============================================================
 declare table_cursor cursor for 
-		select	st.name as table_name,
-					bk_sh.name as schema_name
+		select	bk_sh.name as schema_name,
+				st.name as table_name					
 			from sys.tables st
 			inner join (select distinct name,
 			             schema_id 
