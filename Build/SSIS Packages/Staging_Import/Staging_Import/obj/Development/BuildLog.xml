@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>CDP Load</Name>
-    <LastWriteTime>2018-06-12T11:30:36.4165778Z</LastWriteTime>
+    <LastWriteTime>2018-06-28T06:01:29.3775703Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -17,13 +17,23 @@
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>FINSTGLoad.dtsx</Name>
-      <LastWriteTime>2018-06-14T12:57:07.3476017Z</LastWriteTime>
+      <Name>FINSTGComDepLoad.dtsx</Name>
+      <LastWriteTime>2018-06-28T02:47:11.1234534Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>STGCDPFinDimFactLoad.dtsx</Name>
-      <LastWriteTime>2018-06-15T01:17:18.4369937Z</LastWriteTime>
+      <Name>STGCDPFinDimFactComDepLoad.dtsx</Name>
+      <LastWriteTime>2018-06-28T06:01:29.3536006Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>FINSTGRevLoad.dtsx</Name>
+      <LastWriteTime>2018-06-28T04:08:48.1757974Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>STGCDPFinFactRevLoad.dtsx</Name>
+      <LastWriteTime>2018-06-28T06:01:28.3772226Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

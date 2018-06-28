@@ -1,18 +1,18 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="5/29/2018 12:09:31 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="cefcdevssis01"
   DTS:CreatorName="cefcdevssis01\yolinda.moodley"
-  DTS:DTSID="{B10CAAC9-6A74-4616-87AA-835AE76B3A8C}"
+  DTS:DTSID="{C05B985A-5C89-48B7-A438-9A858A68AA83}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="14.0.3002.106"
   DTS:LocaleID="3081"
-  DTS:ObjectName="STGCDPFinDimFactLoad"
+  DTS:ObjectName="STGCDPFinDimFactComDepLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{37387A81-4B2D-4FD2-8BB5-FAD8CD711DE6}">
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{403BDFEF-8720-479D-A5BC-57D28C919CC1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -20005,9 +20005,7 @@ WHERE [Project Name] is NOT NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20041,9 +20039,7 @@ WHERE [Project Name] is NOT NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20173,9 +20169,7 @@ WHERE [Project Name] is NOT NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20209,9 +20203,7 @@ WHERE [Project Name] is NOT NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -20233,9 +20225,7 @@ WHERE [Project Name] is NOT NULL</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -20629,7 +20619,7 @@ WHERE [Project Name] is NOT NULL</property>
         <NodeLayout
           Size="104.666666666667,42.6666666666667"
           Id="Package\Commitments_Deployments Fact\Staging"
-          TopLeft="214.833333333333,25.5" />
+          TopLeft="215.5,25.5" />
         <NodeLayout
           Size="190.666666666667,42.6666666666667"
           Id="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact"
@@ -20662,18 +20652,18 @@ WHERE [Project Name] is NOT NULL</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Commitments_Deployments Fact.Paths[ADO NET Source Output]"
-          TopLeft="268.666666666667,68.1666666666666">
+          TopLeft="269,68.1666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,48"
+              EndConnector="0,48.0000000000004"
               Start="0,0"
-              End="0,40.5">
+              End="0,40.5000000000004">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,40.5" />
+                    End="0,40.5000000000004" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -21724,14 +21714,6 @@ WHERE [Project Name] is NOT NULL</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\FinDeal Dim\Staging">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\FinDeal Dim\Slowly Changing Dimension">
     <Properties>
       <Property>
@@ -21883,6 +21865,14 @@ WHERE [Project Name] is NOT NULL</property>
   &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
   &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\FinDeal Dim\Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

@@ -26,20 +26,23 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">cefcdevssis01</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkYzQoehdVEu9f2/pe+pEkQAAAAACAAAAAAAQZgAAAAEAACAAAACriPuE26htRsnJc0dhk2z8RTdwkMu0BYgxNSClMZK9bQAAAAAOgAAAAAIAACAAAAAM1EdNqvzEnBNC3SZG1Cyw9k0utRDvra6jMrDlH2Zb15AAAACXSU7vfR2qieYXiZt3R/CKhBT6hY/tBTUjBpyyft7KvZTLXSJkQu2qjmVQrGHTDMj+Qey85s/3q4ODTlHDjEnIsqzvy/isgWYxUuOBrhc8F4R6NCfHraTVaEjzqftQ+FHA2hIo4S6Y3svu6chuDmzw4nbHErMFbkaYWuMDSTKwENgk62rhXqeHcvEs8rMtVElAAAAAGKce6Jy0UoE2ozm0gSXz9QrEmCDeFxXkMYlRf7MahsmQnQqDAhSwQrpXgEn1AuxfXiYneUNhGzwKGwl62iAWFw==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkYzQoehdVEu9f2/pe+pEkQAAAAACAAAAAAAQZgAAAAEAACAAAADVfWlF5njf7QcqCs+ilClaYv1sCWF7KmMfAZy477qV2QAAAAAOgAAAAAIAACAAAAABKa+KuUeIZqdx8QYO/D/1EHN79tfZt/O+Z8j879gwopAAAADGrf8IPtQ/pvh/BCcDBBZOQm2wMm2aV4XRuRu0X9NKqRf6b6Qtv+/71DZPCPbvcU0KrC0LHIHxQicsId6H2iIqgag/r8yF2DYafJ2mJJBmgOh/mVyWMU4J3XC9H2bvfE+LPPruf0uLIpYlQ2WWAMdQH33U8qRVr8rCfmCCYzQxY0LZSJE+jInvT1s3oLvdO15AAAAAIkNnx5M+7/U2B0wlbzMIGdU6bX29FIKDpF/5F8cnwtxTbwc5HNODdOwaHJMvk2yPbt/6ZObyN+WVc/MIQegnaQ==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="STGCDPDimFactLoad.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="IMTSTGLoad.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="FINSTGLoad.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="STGCDPFinDimFactLoad.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="FINSTGComDepLoad.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="STGCDPFinDimFactComDepLoad.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="FINSTGRevLoad.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="STGCDPFinFactRevLoad.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="EDW_Connection_Manager.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="IMART_Connection_Manager.conmgr" />
           <SSIS:ConnectionManager SSIS:Name="EDW_OLEDB_Connection_Manager.conmgr" />
-          <SSIS:ConnectionManager SSIS:Name="FIN_Connection_Manager.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="FINComDep_Connection_Manager.conmgr" />
+          <SSIS:ConnectionManager SSIS:Name="FINRev_Connection_Manager.conmgr" />
         </SSIS:ConnectionManagers>
         <SSIS:DeploymentInfo>
           <SSIS:ProjectConnectionParameters>
@@ -308,7 +311,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.FIN_Connection_Manager.ConnectionString">
+            <SSIS:Parameter SSIS:Name="CM.FINComDep_Connection_Manager.ConnectionString">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -323,7 +326,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.FIN_Connection_Manager.InitialCatalog">
+            <SSIS:Parameter SSIS:Name="CM.FINComDep_Connection_Manager.InitialCatalog">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -337,7 +340,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.FIN_Connection_Manager.Password">
+            <SSIS:Parameter SSIS:Name="CM.FINComDep_Connection_Manager.Password">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -351,7 +354,7 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.FIN_Connection_Manager.RetainSameConnection">
+            <SSIS:Parameter SSIS:Name="CM.FINComDep_Connection_Manager.RetainSameConnection">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -366,7 +369,7 @@
                 <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.FIN_Connection_Manager.ServerName">
+            <SSIS:Parameter SSIS:Name="CM.FINComDep_Connection_Manager.ServerName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -381,7 +384,94 @@
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
-            <SSIS:Parameter SSIS:Name="CM.FIN_Connection_Manager.UserName">
+            <SSIS:Parameter SSIS:Name="CM.FINComDep_Connection_Manager.UserName">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.FINRev_Connection_Manager.ConnectionString">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=C:\Finance Files\BI - Revenue Ledger Analysis by Inv.Type.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=excel 12.0;</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.FINRev_Connection_Manager.InitialCatalog">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.FINRev_Connection_Manager.Password">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.FINRev_Connection_Manager.RetainSameConnection">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">false</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">3</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.FINRev_Connection_Manager.ServerName">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="CreationName">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Finance Files\BI - Revenue Ledger Analysis by Inv.Type.xlsx</SSIS:Property>
+                <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
+              </SSIS:Properties>
+            </SSIS:Parameter>
+            <SSIS:Parameter SSIS:Name="CM.FINRev_Connection_Manager.UserName">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">
                 </SSIS:Property>
@@ -403,10 +493,10 @@
                 <SSIS:Property SSIS:Name="Name">STGCDPDimFactLoad</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">74</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">73</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{C65951F6-0C63-4522-8BBD-0E530415EE2B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{A34E9DF2-4E0B-44DD-89C1-0CB4DAAEE3DE}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -431,16 +521,16 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="FINSTGLoad.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="FINSTGComDepLoad.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{E4031AEE-02F6-4CD2-BC2C-4E77A629C0EC}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{0B396E36-4CDF-4FD6-80D9-2CE0CB5636BB}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">FINSTGComDepLoad</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">63</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">64</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{79C47471-2FB1-4656-A693-96AC45699DBA}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F975BD0F-62D4-4CA8-9319-A7ACABCF39ED}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -448,16 +538,50 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="STGCDPFinDimFactLoad.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="STGCDPFinDimFactComDepLoad.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{B10CAAC9-6A74-4616-87AA-835AE76B3A8C}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">STGCDPFinDimFactLoad</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{C05B985A-5C89-48B7-A438-9A858A68AA83}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">STGCDPFinDimFactComDepLoad</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">32</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">34</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{37387A81-4B2D-4FD2-8BB5-FAD8CD711DE6}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{403BDFEF-8720-479D-A5BC-57D28C919CC1}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="FINSTGRevLoad.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{0F5AFF54-7EBF-47E0-9788-1428E677D091}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">FINSTGRevLoad</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">5</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{C9CF802B-67E8-4021-B2AE-20AC9BEE30A9}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="STGCDPFinFactRevLoad.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{D28CD6FA-C5E1-44E5-BB73-F1572B1CCD5B}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">STGCDPFinFactRevLoad</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">4</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{F4100F87-747A-41CA-B6CB-6D79180CC022}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

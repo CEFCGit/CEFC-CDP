@@ -8,7 +8,7 @@
       DTS:ConnectionString="Data Source=cefcdevsqlsvr01.database.windows.net;User ID=cdp_root;Initial Catalog=cefcdevsql01;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkYzQoehdVEu9f2/pe+pEkQAAAAACAAAAAAAQZgAAAAEAACAAAAAYDaDzes4d1Pj7V4M5ap7dWrcXCi47Skp4WwCrQUpjLgAAAAAOgAAAAAIAACAAAAAN+udJJMFzOGklU8BpSXotb/ZyyQEv0s0NfKPl3mwlFIAAAAAgy7UAAQx12jiw+QPj68X9EufRKFTlZUejev3XdFj7+J3BISQ0ryd2mx4TFOyh41EUYX5zQ2UgckoOBydJ7+I4QKqvV+QIPgeRCMzIDrpKqz85eMCQDB7S/0/6g2AM8gnZIueq6tWzwj46tW2tA/EI5NDIUVfWhwM8WpQlzmfUq0AAAACWTkSpiTOIHSKuldiMcaeY2P8zCLJ/vx5x45h6ejzNI9it3Kt0gORNXq3ITDlbjsnIWchhUd4BlPpPSFgHpGqk</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkYzQoehdVEu9f2/pe+pEkQAAAAACAAAAAAAQZgAAAAEAACAAAABhbqzwojR4XUBruFbAaosD9QYbgTBa3RbuzjMdDjg7jgAAAAAOgAAAAAIAACAAAACPdmRNaQ8tPFLxhJby1sXFyLhroxL2XbEDvCi/+H1K8YAAAAC4q7to4QY1DSbAFA4FJnd/hWdcC3iM5r3ecZi7UBPhhGrDjoEA8yrV4jQWJtID2iuEzGPkzS+OlPLfO89Ec8conqgNg65aDHwVAf83ODvdx/hSjkHNYLHL3WQtvW1NCVLPN7wgQDIlnq2CTPX6XTyuUFT7LUyKr+TS23dxaeZmOkAAAAD7Kb6KDO4ARzNqidzQ2ztTvkC6CNQGuDZHtwE99WxRDhExixUovLzyUgi1yOaJnbKqo3BSytaj5445DSRmwaMj</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

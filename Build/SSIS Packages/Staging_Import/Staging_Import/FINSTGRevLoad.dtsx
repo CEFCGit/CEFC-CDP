@@ -1,0 +1,917 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/28/2018 12:47:22 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="cefcdevssis01"
+  DTS:CreatorName="cefcdevssis01\yolinda.moodley"
+  DTS:DTSID="{0F5AFF54-7EBF-47E0-9788-1428E677D091}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="14.0.3002.106"
+  DTS:LocaleID="3081"
+  DTS:ObjectName="FINSTGRevLoad"
+  DTS:PackageType="5"
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{C9CF802B-67E8-4021-B2AE-20AC9BEE30A9}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Revenue"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{B604B9CF-5ED6-413A-BE1B-790E7FCA97CB}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Revenue"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Revenue\OLE DB Source"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select *
+FROM [Sheet1Report$B2:W]</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Revenue\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{688EE2FF-C88E-4431-A99F-A19F42885434}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[FINRev_Connection_Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[Deal #]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Deal #]"
+                      length="255"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[Deal #]"
+                      name="Deal #"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[Deal Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Deal Name]"
+                      length="255"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[Deal Name]"
+                      name="Deal Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[iMart#]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[iMart#]"
+                      length="255"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[iMart#]"
+                      name="iMart#"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[Project]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Project]"
+                      length="255"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[Project]"
+                      name="Project"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[Inv#Type]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Inv#Type]"
+                      length="255"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[Inv#Type]"
+                      name="Inv#Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[13 - Dividend/Trust Distributions]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[13 - Dividend/Trust Distributions]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[13 - Dividend/Trust Distributions]"
+                      name="13 - Dividend/Trust Distributions"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[15 - Loan Interest]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[15 - Loan Interest]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[15 - Loan Interest]"
+                      name="15 - Loan Interest"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[16 - Committment Fees]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[16 - Committment Fees]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[16 - Committment Fees]"
+                      name="16 - Committment Fees"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[17 - Establishment Fees]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[17 - Establishment Fees]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[17 - Establishment Fees]"
+                      name="17 - Establishment Fees"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[18 - Concession Unwind]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[18 - Concession Unwind]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[18 - Concession Unwind]"
+                      name="18 - Concession Unwind"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[19 - SFA Interest Received]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[19 - SFA Interest Received]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[19 - SFA Interest Received]"
+                      name="19 - SFA Interest Received"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[20 - Bank Interest Income]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[20 - Bank Interest Income]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[20 - Bank Interest Income]"
+                      name="20 - Bank Interest Income"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[YTD Total TY]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[YTD Total TY]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[YTD Total TY]"
+                      name="YTD Total TY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[YTD Total LY]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[YTD Total LY]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[YTD Total LY]"
+                      name="YTD Total LY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[Variance]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Variance]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[Variance]"
+                      name="Variance"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[70 - Initial Concessional Charge]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[70 - Initial Concessional Charge]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[70 - Initial Concessional Charge]"
+                      name="70 - Initial Concessional Charge"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[To Period]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[To Period]"
+                      length="255"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[To Period]"
+                      name="To Period"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[To Date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[To Date]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[To Date]"
+                      name="To Date"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Deal #]"
+                      dataType="wstr"
+                      length="255"
+                      name="Deal #" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Deal Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Deal Name" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[iMart#]"
+                      dataType="wstr"
+                      length="255"
+                      name="iMart#" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Project]"
+                      dataType="wstr"
+                      length="255"
+                      name="Project" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Inv#Type]"
+                      dataType="wstr"
+                      length="255"
+                      name="Inv#Type" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[13 - Dividend/Trust Distributions]"
+                      dataType="r8"
+                      name="13 - Dividend/Trust Distributions" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[15 - Loan Interest]"
+                      dataType="r8"
+                      name="15 - Loan Interest" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[16 - Committment Fees]"
+                      dataType="r8"
+                      name="16 - Committment Fees" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[17 - Establishment Fees]"
+                      dataType="r8"
+                      name="17 - Establishment Fees" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[18 - Concession Unwind]"
+                      dataType="r8"
+                      name="18 - Concession Unwind" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[19 - SFA Interest Received]"
+                      dataType="r8"
+                      name="19 - SFA Interest Received" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[20 - Bank Interest Income]"
+                      dataType="r8"
+                      name="20 - Bank Interest Income" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[YTD Total TY]"
+                      dataType="r8"
+                      name="YTD Total TY" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[YTD Total LY]"
+                      dataType="r8"
+                      name="YTD Total LY" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Variance]"
+                      dataType="r8"
+                      name="Variance" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[70 - Initial Concessional Charge]"
+                      dataType="r8"
+                      name="70 - Initial Concessional Charge" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[To Period]"
+                      dataType="wstr"
+                      length="255"
+                      name="To Period" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[To Date]"
+                      dataType="date"
+                      name="To Date" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F13]"
+                      dataType="r8"
+                      name="F13" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F15]"
+                      dataType="r8"
+                      name="F15" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F17]"
+                      dataType="r8"
+                      name="F17" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F19]"
+                      dataType="wstr"
+                      length="255"
+                      name="F19" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Deal #]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Deal #]"
+                      name="Deal #" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Deal Name]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Deal Name]"
+                      name="Deal Name" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[iMart#]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[iMart#]"
+                      name="iMart#" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Project]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Project]"
+                      name="Project" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Inv#Type]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Inv#Type]"
+                      name="Inv#Type" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[13 - Dividend/Trust Distributions]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[13 - Dividend/Trust Distributions]"
+                      name="13 - Dividend/Trust Distributions" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[15 - Loan Interest]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[15 - Loan Interest]"
+                      name="15 - Loan Interest" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[16 - Committment Fees]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[16 - Committment Fees]"
+                      name="16 - Committment Fees" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[17 - Establishment Fees]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[17 - Establishment Fees]"
+                      name="17 - Establishment Fees" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[18 - Concession Unwind]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[18 - Concession Unwind]"
+                      name="18 - Concession Unwind" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[19 - SFA Interest Received]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[19 - SFA Interest Received]"
+                      name="19 - SFA Interest Received" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[20 - Bank Interest Income]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[20 - Bank Interest Income]"
+                      name="20 - Bank Interest Income" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[YTD Total TY]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[YTD Total TY]"
+                      name="YTD Total TY" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[YTD Total LY]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[YTD Total LY]"
+                      name="YTD Total LY" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Variance]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Variance]"
+                      name="Variance" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[70 - Initial Concessional Charge]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[70 - Initial Concessional Charge]"
+                      name="70 - Initial Concessional Charge" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[To Period]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[To Period]"
+                      name="To Period" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[To Date]"
+                      dataType="date"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[To Date]"
+                      name="To Date" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Revenue\Staging"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
+              name="Staging"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="The Destination database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"staging"."Revenue"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the number of rows per batch. The default is 0 which uses the same size as SSIS internal buffer. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">false</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Revenue\Staging.Connections[IDbConnection]"
+                  connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="ADO NET Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[Deal #]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Deal #"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Deal #]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[Deal #]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[Deal Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Deal Name"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Deal Name]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[Deal Name]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[iMart#]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="iMart#"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[iMart#]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[iMart#]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[Project]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Project"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Project]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[Project]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[13 - Dividend/Trust Distributions]"
+                      cachedDataType="r8"
+                      cachedName="13 - Dividend/Trust Distributions"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[13 - Dividend/Trust Distributions]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[13 - Dividend/Trust Distributions]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[15 - Loan Interest]"
+                      cachedDataType="r8"
+                      cachedName="15 - Loan Interest"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[15 - Loan Interest]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[15 - Loan Interest]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[16 - Committment Fees]"
+                      cachedDataType="r8"
+                      cachedName="16 - Committment Fees"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[16 - Committment Fees]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[16 - Committment Fees]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[17 - Establishment Fees]"
+                      cachedDataType="r8"
+                      cachedName="17 - Establishment Fees"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[17 - Establishment Fees]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[17 - Establishment Fees]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[18 - Concession Unwind]"
+                      cachedDataType="r8"
+                      cachedName="18 - Concession Unwind"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[18 - Concession Unwind]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[18 - Concession Unwind]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[19 - SFA Interest Received]"
+                      cachedDataType="r8"
+                      cachedName="19 - SFA Interest Received"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[19 - SFA Interest Received]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[19 - SFA Interest Received]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[20 - Bank Interest Income]"
+                      cachedDataType="r8"
+                      cachedName="20 - Bank Interest Income"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[20 - Bank Interest Income]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[20 - Bank Interest Income]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[YTD Total TY]"
+                      cachedDataType="r8"
+                      cachedName="YTD Total TY"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[YTD Total TY]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[YTD Total TY]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[YTD Total LY]"
+                      cachedDataType="r8"
+                      cachedName="YTD Total LY"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[YTD Total LY]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[YTD Total LY]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[Variance]"
+                      cachedDataType="r8"
+                      cachedName="Variance"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Variance]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[Variance]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[70 - Initial Concessional Charge]"
+                      cachedDataType="r8"
+                      cachedName="70 - Initial Concessional Charge"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[70 - Initial Concessional Charge]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[70 - Initial Concessional Charge]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[To Period]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="To Period"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[To Period]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[To Period]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[To Date]"
+                      cachedDataType="date"
+                      cachedName="To Date"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[To Date]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[To Date]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[Inv#Type]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Inv#Type"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Inv.Type]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[Inv#Type]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Deal #]"
+                      dataType="wstr"
+                      length="50"
+                      name="Deal #" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Deal Name]"
+                      dataType="wstr"
+                      length="100"
+                      name="Deal Name" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[iMart#]"
+                      dataType="wstr"
+                      length="50"
+                      name="iMart#" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Project]"
+                      dataType="wstr"
+                      length="100"
+                      name="Project" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Inv.Type]"
+                      dataType="wstr"
+                      length="3"
+                      name="Inv.Type" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[13 - Dividend/Trust Distributions]"
+                      dataType="numeric"
+                      name="13 - Dividend/Trust Distributions"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[15 - Loan Interest]"
+                      dataType="numeric"
+                      name="15 - Loan Interest"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[16 - Committment Fees]"
+                      dataType="numeric"
+                      name="16 - Committment Fees"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[17 - Establishment Fees]"
+                      dataType="numeric"
+                      name="17 - Establishment Fees"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[18 - Concession Unwind]"
+                      dataType="numeric"
+                      name="18 - Concession Unwind"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[19 - SFA Interest Received]"
+                      dataType="numeric"
+                      name="19 - SFA Interest Received"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[20 - Bank Interest Income]"
+                      dataType="numeric"
+                      name="20 - Bank Interest Income"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[YTD Total TY]"
+                      dataType="numeric"
+                      name="YTD Total TY"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[YTD Total LY]"
+                      dataType="numeric"
+                      name="YTD Total LY"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Variance]"
+                      dataType="numeric"
+                      name="Variance"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[70 - Initial Concessional Charge]"
+                      dataType="numeric"
+                      name="70 - Initial Concessional Charge"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[To Period]"
+                      dataType="wstr"
+                      length="3"
+                      name="To Period" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[To Date]"
+                      dataType="wstr"
+                      length="20"
+                      name="To Date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Revenue\Staging.Outputs[ADO NET Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="ADO NET Destination Error Output"
+                  synchronousInputId="Package\Revenue\Staging.Inputs[ADO NET Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Revenue.Paths[OLE DB Source Output]"
+              endId="Package\Revenue\Staging.Inputs[ADO NET Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Truncate Revenue Table on Staging"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{631F8DFA-E5F8-48A4-B178-7F9DDC626107}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Truncate Revenue Table on Staging"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE staging.Revenue" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{6F62361A-FD04-4F9C-9F07-1526DEB154EC}"
+      DTS:From="Package\Truncate Revenue Table on Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Revenue" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="120,42.6666666666667"
+          Id="Package\Revenue"
+          TopLeft="128.833331495523,88.2666651866834" />
+        <NodeLayout
+          Size="248,42.6666666666667"
+          Id="Package\Truncate Revenue Table on Staging"
+          TopLeft="66.3333328738808,17.3000003254414" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="189.583332184702,59.966666992108">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.2999981945753"
+              Start="0,0"
+              End="0,20.7999981945753">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,20.7999981945753" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Revenue">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\Revenue\OLE DB Source"
+          TopLeft="122.999998696148,9.06666713933149" />
+        <NodeLayout
+          Size="114.666666666667,42.6666666666667"
+          Id="Package\Revenue\Staging"
+          TopLeft="142.583332184702,126.166665581862" />
+        <EdgeLayout
+          Id="Package\Revenue.Paths[OLE DB Source Output]"
+          TopLeft="199.124998773759,51.7333338059982">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,74.433331775864"
+              Start="0,0"
+              End="0,66.933331775864">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66.933331775864" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Revenue\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Revenue\Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
