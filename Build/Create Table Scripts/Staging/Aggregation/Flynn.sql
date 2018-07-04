@@ -1,0 +1,36 @@
+create table staging.ContractSummary_Flynn
+(
+[Lease Id] nvarchar(20),
+[Vehicle Id] nvarchar(20),
+[Registration] nvarchar(20),
+[Finance Company] nvarchar(50),
+[Bond Code] nvarchar(20),
+[Customer Code (Level 1)] nvarchar(20),
+[Lease Type] nvarchar(20),
+[Lease Type Description] nvarchar(20),
+[Vehicle Group] nvarchar(20),
+[Vehicle Category] nvarchar(50),
+[New/Used] nvarchar(20),
+[CO2 Rating] nvarchar(20),
+[Make] nvarchar(50),
+[Model] nvarchar(50),
+[Derivative] nvarchar(100),
+[Activation Date] nvarchar(20),
+[Start Date] nvarchar(20),
+[End Date] nvarchar(20),
+[Term] numeric(3),
+[Init Funded Cap] numeric(15,2),
+[Current Value] numeric(15,2),
+[WDV as at previous waterfall month end pool cut] numeric(15,2),
+[GST on IFC] numeric(15,2),
+[Total Init Funded Cap] numeric(15,2),
+[Final Funded Cap] numeric(15,2),
+[Base Rate Code] nvarchar(20),
+[Lease BRFM1 funder margin] numeric(5,2),
+[Refinance ?] nvarchar(1),
+[State] nvarchar(20),
+[Post code] nvarchar(10),
+[Before discount margin] numeric(5,2)
+)
+
+
