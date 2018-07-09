@@ -6,16 +6,16 @@ create table staging.ContractSummary_Natalie
 [Equipment type] nvarchar(50),
 [Make] nvarchar(50),
 [Model] nvarchar(100),
-[Year] numeric(4),
-[Interest rate] numeric(6,4),
-[Discretion applied] numeric(6,4),
+[Year] nvarchar(4),
+[Interest rate] nvarchar(6),
+[Discretion applied] nvarchar(6),
 [Check] nvarchar(3),
 [Repayment frequency] nvarchar(20),
-[Total amount financed] numeric(15,2),
-[Term] numeric(3),
-[Outstanding balance] numeric(15,2),
-[Principal Outstanding] numeric(15,2),
-[ Balloon / Residual amount ] numeric(15,2),
+[Total amount financed] nvarchar(15),
+[Term] nvarchar(3),
+[Outstanding balance] nvarchar(15),
+[Principal Outstanding] nvarchar(15),
+[ Balloon / Residual amount ] nvarchar(15),
 [LOIS CEFC Note] nvarchar(100),
 [LQS CEFC Note] nvarchar(100),
 [Asset Group] nvarchar(50),
@@ -23,14 +23,16 @@ create table staging.ContractSummary_Natalie
 [Postcode] nvarchar(10),
 [Industry class] nvarchar(20),
 [Drawdown date] nvarchar(20),
-[Day Count] numeric(3),
-[Monthly Day Count] numeric(3),
-[CEFC Rate Adjustment] numeric(15,2),
-[Total repayable amount] numeric(15,2)
+[Day Count] nvarchar(3),
+[Monthly Day Count] nvarchar(3),
+[CEFC Rate Adjustment] nvarchar(15),
+[Total repayable amount] nvarchar(15),
+[FileDate] nvarchar(20)
 )
 
 create table staging.RemovedAssets_Natalie
 (
   [Contract] nvarchar(20),
-  [Reason] nvarchar(50)
+  [Reason] nvarchar(50),
+  [FileDate] nvarchar(20)
 )

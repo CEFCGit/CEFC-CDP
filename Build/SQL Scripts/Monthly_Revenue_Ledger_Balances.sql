@@ -4,6 +4,7 @@ as
 	select 
 	    Account_Number,
 		Investment_Type,
+		year(To_Date) as [year],
 		sum(case when To_Period = 1 then YTD_Total_TY end) Jul,
 		sum(case when To_Period = 2 then YTD_Total_TY end) Aug, 
 		sum(case when To_Period = 3 then YTD_Total_TY end) Sep, 
@@ -18,13 +19,15 @@ as
 		sum(case when To_Period = 12 then YTD_Total_TY end) Jun 
 	from core.Revenue_Fact 
 	group by Account_Number,
-			 Investment_Type
+			 Investment_Type,
+			 year(To_Date)
 )
 
 select	fd.iMart_TNum as [iMart Deal],
 		fd.Project_Name as Project,
 		fd.Account_Number+' - '+fd.Account_Description as [Financial Deal],
 		pt.Investment_Type,
+		[year],
 		Jul as July,
 		Aug-Jul as August,
 		Sep-Aug as September,

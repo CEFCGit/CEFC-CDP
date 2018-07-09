@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="AGGFlynn_Connection_Manager"
+  DTS:DTSID="{92CFE0F1-B915-430F-9D80-CA924A47412E}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=C:\Aggregation Files\Flynn.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=excel 12.0;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

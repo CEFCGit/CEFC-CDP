@@ -13,23 +13,23 @@ create table staging.ContractSummary_Macleay
 [Sec_VehicleCategory] nvarchar(50),
 [GV_VehicleSegment] nvarchar(50),
 [GV_ClassName] nvarchar(50),
-[DiscountedRate] numeric(5,3),
-[UndiscountedRate] numeric(5,3),
-[Quo_AmountFinanced] numeric(15,2),
-[Quo_GSTFinanced] numeric(15,2),
-[TermPeriod] numeric(3),
-[CurrentLoanAmt] numeric(15,2),
-[WDV] numeric(15,2),
-[Quo_ResidualAmount] numeric(15,2),
-[Quo_ResidualPercent] numeric(15,2),
+[DiscountedRate] nvarchar(5),
+[UndiscountedRate] nvarchar(5),
+[Quo_AmountFinanced] nvarchar(15),
+[Quo_GSTFinanced] nvarchar(15),
+[TermPeriod] nvarchar(3),
+[CurrentLoanAmt] nvarchar(15),
+[WDV] nvarchar(15),
+[Quo_ResidualAmount] nvarchar(15),
+[Quo_ResidualPercent] nvarchar(15),
 [Add_PostCode] nvarchar(10),
 [Add_State] nvarchar(20),
 [Status] nvarchar(20),
 [DateSubmitted] nvarchar(20),
 [DateSettled] nvarchar(20),
 [MaturityDate] nvarchar(20),
-[FinalisedDate] nvarchar(20)
-
+[FinalisedDate] nvarchar(20),
+[FileDate] nvarchar(20)
 )
 
 

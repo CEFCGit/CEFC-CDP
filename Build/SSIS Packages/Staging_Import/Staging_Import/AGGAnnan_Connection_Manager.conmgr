@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="AGGAnnan_Connection_Manager"
+  DTS:DTSID="{553710F6-3454-438D-B5C1-48664426C5BF}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=C:\Aggregation Files\Annan.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=&quot;excel 12.0;IMEX=1;&quot;;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

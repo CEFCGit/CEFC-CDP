@@ -13,12 +13,12 @@ create table staging.RemovedAssets_Condamine
 [ASSET_DESCRIPTION] nvarchar(100),
 [REVIEW] nvarchar(100),
 [FUNDING_DATE] nvarchar(20),
-[SCHEDULE_TERM] numeric(3),
-[TOTAL_AMOUNT_FINANCED] numeric(15,2),
-[FINACIER_INT_RATE] numeric(15,2),
-[TOTAL_CEFC_REBATE_TODATE] numeric(15,2),
-[REMOVAL MONTH] nvarchar(20)
-
+[SCHEDULE_TERM] nvarchar(3),
+[TOTAL_AMOUNT_FINANCED] nvarchar(15),
+[FINACIER_INT_RATE] nvarchar(15),
+[TOTAL_CEFC_REBATE_TODATE] nvarchar(15),
+[REMOVAL MONTH] nvarchar(20),
+[FileDate] nvarchar(20)
 )
 
 
@@ -36,27 +36,28 @@ create table staging.ContractSummary_Condamine
 [INTRODUCER] nvarchar(20),
 [SEGMENT] nvarchar(20),
 [DEPT_NAME] nvarchar(100),
-[RESIDUAL] numeric(15,2),
+[RESIDUAL] nvarchar(15),
 [ASSET_TYPE] nvarchar(50),
 [EEF_FLAG] nvarchar(20),
 [TECHNOLOGY] nvarchar(100),
 [ASSET_DESCRIPTION] nvarchar(100),
 [FUNDING_DATE] nvarchar(20),
 [PAYMENT_FREQUENCY] nvarchar(20),
-[SCHEDULE_TERM] numeric(3),
+[SCHEDULE_TERM] nvarchar(3),
 [SCHEDULE_MATURITY_DATE] nvarchar(20),
-[NPV] numeric(15,2),
+[NPV] nvarchar(15),
 [TERMINATION_DATE] nvarchar(20),
-[TOTAL_AMOUNT_FINANCED] numeric(15,2),
-[Financier Rate] numeric(15,2),
-[Customer Rate] numeric(15,2),
-[MONTHLY_INTEREST_INCOME] numeric(15,2),
-[MTHLY_TERMINATION_INC] numeric(15,2),
-[TOTAL_MONTHLY_INCOME] numeric(15,2),
-[TOTAL_INTEREST_INCOME_TODATE] numeric(15,2),
-[TOTAL_TERMINATION_INCOME_TODATE] numeric(15,2),
-[TOTAL_INCOME_TODATE] numeric(15,2),
-[CEFC_MONTHLY_REBATE] numeric(15,2),
-[TOTAL_CEFC_REBATE_TODATE] numeric(15,2)
+[TOTAL_AMOUNT_FINANCED] nvarchar(15),
+[Financier Rate] nvarchar(15),
+[Customer Rate] nvarchar(15),
+[MONTHLY_INTEREST_INCOME] nvarchar(15),
+[MTHLY_TERMINATION_INC] nvarchar(15),
+[TOTAL_MONTHLY_INCOME] nvarchar(15),
+[TOTAL_INTEREST_INCOME_TODATE] nvarchar(15),
+[TOTAL_TERMINATION_INCOME_TODATE] nvarchar(15),
+[TOTAL_INCOME_TODATE] nvarchar(15),
+[CEFC_MONTHLY_REBATE] nvarchar(15),
+[TOTAL_CEFC_REBATE_TODATE] nvarchar(15),
+[FileDate] nvarchar(20)
 
 )

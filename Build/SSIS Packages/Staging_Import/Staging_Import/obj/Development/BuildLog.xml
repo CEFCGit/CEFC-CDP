@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>CDP Load</Name>
-    <LastWriteTime>2018-06-28T06:01:29.3775703Z</LastWriteTime>
+    <LastWriteTime>2018-07-09T00:01:25.2304042Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -34,6 +34,11 @@
     <ProjectBuildItemInfo>
       <Name>STGCDPFinFactRevLoad.dtsx</Name>
       <LastWriteTime>2018-06-28T06:01:28.3772226Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>AGGSTGLoad.dtsx</Name>
+      <LastWriteTime>2018-07-09T00:32:37.5983918Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

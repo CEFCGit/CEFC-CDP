@@ -4,13 +4,13 @@ create table staging.ContractSummary_Wingercarribee
 [Contract_Number] nvarchar(20),
 [Customer_ID] nvarchar(20),
 [Product_Type] nvarchar(20),
-[Discounted_Rate] numeric(6,4),
-[Undiscounted_Rate] numeric(6,4),
+[Discounted_Rate] nvarchar(6),
+[Undiscounted_Rate] nvarchar(6),
 [Repayment_Frequency] nvarchar(10),
-[Amount_Financed] numeric(15,2),
-[Contract_Term_Months] numeric(3),
-[Balance_Outstanding] numeric(15,2),
-[Balloon_Amount] numeric(15,2),
+[Amount_Financed] nvarchar(15),
+[Contract_Term_Months] nvarchar(3),
+[Balance_Outstanding] nvarchar(15),
+[Balloon_Amount] nvarchar(15),
 [State] nvarchar(10),
 [Postcode] nvarchar(10),
 [ANZSIC_Code] nvarchar(10),
@@ -19,8 +19,9 @@ create table staging.ContractSummary_Wingercarribee
 [Drawdown_Date] nvarchar(20),
 [Maturity_Date] nvarchar(20),
 [GST_Indicator] nvarchar(3),
-[CEFC_Rate_Adjusted_Amount] numeric(15,2),
-[GST_Adjustment] numeric(15,2)
+[CEFC_Rate_Adjusted_Amount] nvarchar(15),
+[GST_Adjustment] nvarchar(15),
+[FileDate] nvarchar(20)
 )
 
 
@@ -35,7 +36,8 @@ create table staging.AssetDetailsWBC_Wingercarribee
 [MANUFACTURE_YEAR] nvarchar(4),
 [ASSET TYPE] nvarchar(50),
 [ASSET GROUP] nvarchar(1),
-[ASSET SUB GROUP] nvarchar(50)
+[ASSET SUB GROUP] nvarchar(50),
+[FileDate] nvarchar(20)
 
 )
 
@@ -49,7 +51,8 @@ create table staging.AssetDetailsSBG_Wingercarribee
 [Year] nvarchar(4),
 [ASSET TYPE] nvarchar(50),
 [ASSET GROUP] nvarchar(1),
-[ASSET SUB GROUP] nvarchar(50)
+[ASSET SUB GROUP] nvarchar(50),
+[FileDate] nvarchar(20)
 )
 
 
@@ -63,7 +66,8 @@ create table staging.AssetDetailsCFAL_Wingercarribee
 [Year] nvarchar(4),
 [ASSET TYPE] nvarchar(50),
 [ASSET GROUP] nvarchar(1),
-[ASSET SUB GROUP] nvarchar(50)
+[ASSET SUB GROUP] nvarchar(50),
+[FileDate] nvarchar(20)
 )
 
 
@@ -83,13 +87,13 @@ create table staging.AssetDetailsNQ_Wingercarribee
 [Contract_Number] nvarchar(20),
 [Customer_ID] nvarchar(20),
 [Product_Type] nvarchar(20),
-[Discounted_Rate] numeric(6,4),
-[Undiscounted_Rate] numeric(6,4),
+[Discounted_Rate] nvarchar(6),
+[Undiscounted_Rate] nvarchar(6),
 [Repayment_Frequency] nvarchar(10),
-[Amount_Financed] numeric(15,2),
-[Contract_Term_Months] numeric(3),
-[Balance_Outstanding] numeric(15,2),
-[Balloon_Amount] numeric(15,2),
+[Amount_Financed] nvarchar(15),
+[Contract_Term_Months] nvarchar(3),
+[Balance_Outstanding] nvarchar(15),
+[Balloon_Amount] nvarchar(15),
 [State] nvarchar(10),
 [Postcode] nvarchar(10),
 [ANZSIC_Code] nvarchar(10),
@@ -98,7 +102,8 @@ create table staging.AssetDetailsNQ_Wingercarribee
 [Drawdown_Date] nvarchar(20),
 [Maturity_Date] nvarchar(20),
 [GST_Indicator] nvarchar(3),
-[CEFC_Rate_Adjusted_Amount] numeric(15,2),
-[GST_Adjustment] numeric(15,2)
+[CEFC_Rate_Adjusted_Amount] nvarchar(15),
+[GST_Adjustment] nvarchar(15),
+[FileDate] nvarchar(20)
 
 )

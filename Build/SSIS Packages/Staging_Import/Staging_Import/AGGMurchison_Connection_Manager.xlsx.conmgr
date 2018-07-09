@@ -1,0 +1,10 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="AGGMurchison_Connection_Manager xlsx"
+  DTS:DTSID="{D5CAFC1F-4DD4-4FA0-AD4B-A6426DD0BC68}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=C:\Aggregation Files\Murchison.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=excel 12.0;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

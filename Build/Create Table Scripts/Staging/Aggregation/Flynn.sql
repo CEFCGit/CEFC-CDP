@@ -18,19 +18,20 @@ create table staging.ContractSummary_Flynn
 [Activation Date] nvarchar(20),
 [Start Date] nvarchar(20),
 [End Date] nvarchar(20),
-[Term] numeric(3),
-[Init Funded Cap] numeric(15,2),
-[Current Value] numeric(15,2),
-[WDV as at previous waterfall month end pool cut] numeric(15,2),
-[GST on IFC] numeric(15,2),
-[Total Init Funded Cap] numeric(15,2),
-[Final Funded Cap] numeric(15,2),
+[Term] nvarchar(3),
+[Init Funded Cap] nvarchar(15),
+[Current Value] nvarchar(15),
+[WDV as at previous waterfall month end pool cut] nvarchar(15),
+[GST on IFC] nvarchar(15),
+[Total Init Funded Cap] nvarchar(15),
+[Final Funded Cap] nvarchar(15),
 [Base Rate Code] nvarchar(20),
-[Lease BRFM1 funder margin] numeric(5,2),
+[Lease BRFM1 funder margin] nvarchar(5),
 [Refinance ?] nvarchar(1),
 [State] nvarchar(20),
 [Post code] nvarchar(10),
-[Before discount margin] numeric(5,2)
+[Before discount margin] nvarchar(5),
+[FileDate] nvarchar(20)
 )
 
 
