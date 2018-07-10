@@ -3,7 +3,7 @@ create table staging.ContractSummary_Roper
 [ContractID] nvarchar(20),
 [ContractDate] nvarchar(20),
 [LoanTerm] nvarchar(3),
-[AnnualRate] nvarchar(5),
+[AnnualRate] nvarchar(10),
 [FinanceAmount] nvarchar(15),
 [PrincipalOutstanding] nvarchar(15),
 [FinancePurpose] nvarchar(50),

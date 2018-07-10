@@ -46,7 +46,7 @@ create table staging.AssetDetailsSBG_Wingercarribee
 [Acct_Key] nvarchar(50),
 [Equipment_Type] nvarchar(50),
 [Description] nvarchar(100),
-[Make] nvarchar(50),
+[Make] nvarchar(100),
 [Model] nvarchar(100),
 [Year] nvarchar(4),
 [ASSET TYPE] nvarchar(50),
@@ -64,12 +64,11 @@ create table staging.AssetDetailsCFAL_Wingercarribee
 [Make] nvarchar(50),
 [Model] nvarchar(100),
 [Year] nvarchar(4),
-[ASSET TYPE] nvarchar(50),
+[ASSET TYPE] nvarchar(100),
 [ASSET GROUP] nvarchar(1),
 [ASSET SUB GROUP] nvarchar(50),
 [FileDate] nvarchar(20)
 )
-
 
 create table staging.AssetDetailsNQ_Wingercarribee
 (
@@ -80,13 +79,13 @@ create table staging.AssetDetailsNQ_Wingercarribee
 [COLLATERAL_MODEL] nvarchar(100),
 [MANUFACTURE_YEAR] nvarchar(4),
 [ASSET TYPE] nvarchar(50),
-[ASSET GROUP] nvarchar(1),
+[ASSET GROUP] nvarchar(2),
 [ASSET SUB GROUP] nvarchar(50),
 [Rebate Month] nvarchar(50),
 [Brand] nvarchar(20),
 [Contract_Number] nvarchar(20),
 [Customer_ID] nvarchar(20),
-[Product_Type] nvarchar(20),
+[Product_Type] nvarchar(50),
 [Discounted_Rate] nvarchar(6),
 [Undiscounted_Rate] nvarchar(6),
 [Repayment_Frequency] nvarchar(10),
