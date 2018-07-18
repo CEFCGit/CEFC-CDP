@@ -5,6 +5,7 @@
 -- Version Control
 --01/06/18(YM) Added the Sub Amortisation Amount from the Commitments_Deployments
 --06/06/18(YM) Removed all references to the Security Table
+--16/07/18(YM) Added the Live Commitment and NonTriggered Commitment
 -- ==========================================================================
 
 CREATE or alter procedure [core].[Portfolio_Report_Location] @load_date datetime
@@ -83,8 +84,9 @@ SELECT @load_date AS ParamIn ,
 	   sum(b.Amt_cCommitment*l.Percent_of_Project_Amt) as Amt_cCommitment,
 	   sum(cdf.Gross_Principal*l.Percent_of_Project_Amt) as Gross_Principal,
 	   sum(cdf.Capitalised_Interest*l.Percent_of_Project_Amt) as Capitalised_Interest,
-	   sum(cdf.Capitalised_Fees*l.Percent_of_Project_Amt) as Capitalised_Fees  
-
+	   sum(cdf.Capitalised_Fees*l.Percent_of_Project_Amt) as Capitalised_Fees,
+	   sum([Amt_cLiveCommitment]) as Amt_cLiveCommitment,
+	   sum([Amt_cNonTriggeredCommitment]) as Amt_cNonTriggeredCommitment   
 FROM CORE.Base_Data_Fact b
 	left join core.Projects_Dimension p
 	on b.ID_Project = p.ID_Project

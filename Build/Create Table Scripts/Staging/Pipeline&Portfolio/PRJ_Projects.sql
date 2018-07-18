@@ -317,6 +317,8 @@ CREATE TABLE [staging].[PRJ_Projects](
 	[Finance_Type_End_Borrower_Risk] [nvarchar](100) NULL,
 	[Direct_Indirect] [nvarchar](50) NULL,
 	[Nameplate_Generation_CapacityMW_new] [numeric](12, 6) NULL,
+	[Amt_cLiveCommitment] numeric(15,2),
+	[Amt_cNonTriggeredCommitment] numeric(15,2),
 PRIMARY KEY([ID_Project])
 )
 GO

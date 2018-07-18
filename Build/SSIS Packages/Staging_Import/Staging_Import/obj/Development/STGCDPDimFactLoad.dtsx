@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="STGCDPDimFactLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="74"
-  DTS:VersionGUID="{C65951F6-0C63-4522-8BBD-0E530415EE2B}">
+  DTS:VersionBuild="75"
+  DTS:VersionGUID="{D5B7FF8A-35E4-4A59-875F-80FBAB8AECC9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -45,7 +45,8 @@
                   description="Specifies the SQL statement used by the component to extract data."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT   StgBaseFact_view.*
+FROM     core.StgBaseFact_view</property>
                 <property
                   dataType="System.Int32"
                   description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
@@ -64,7 +65,7 @@
                   dataType="System.Int32"
                   description="Specify the mode to retrieve external column information"
                   name="AccessMode"
-                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">2</property>
                 <property
                   dataType="System.String"
                   name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
@@ -319,6 +320,28 @@
                       name="AMT_CYIELD"
                       precision="15"
                       scale="10"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CLIVECOMMITMENT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[AMT_CLIVECOMMITMENT]"
+                      lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CLIVECOMMITMENT]"
+                      name="AMT_CLIVECOMMITMENT"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CNONTRIGGEREDCOMMITMENT]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[AMT_CNONTRIGGEREDCOMMITMENT]"
+                      lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CNONTRIGGEREDCOMMITMENT]"
+                      name="AMT_CNONTRIGGEREDCOMMITMENT"
+                      precision="15"
+                      scale="2"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[C_SUM_CONFIRMED_DRAWDOWNS]"
@@ -1382,6 +1405,18 @@
                       precision="15"
                       scale="10" />
                     <externalMetadataColumn
+                      refId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[AMT_CLIVECOMMITMENT]"
+                      dataType="numeric"
+                      name="AMT_CLIVECOMMITMENT"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[AMT_CNONTRIGGEREDCOMMITMENT]"
+                      dataType="numeric"
+                      name="AMT_CNONTRIGGEREDCOMMITMENT"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
                       refId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[C_SUM_CONFIRMED_DRAWDOWNS]"
                       dataType="numeric"
                       name="C_SUM_CONFIRMED_DRAWDOWNS"
@@ -2023,6 +2058,20 @@
                       name="AMT_CYIELD"
                       precision="15"
                       scale="10" />
+                    <outputColumn
+                      refId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[AMT_CLIVECOMMITMENT]"
+                      dataType="numeric"
+                      lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[AMT_CLIVECOMMITMENT]"
+                      name="AMT_CLIVECOMMITMENT"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[AMT_CNONTRIGGEREDCOMMITMENT]"
+                      dataType="numeric"
+                      lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[AMT_CNONTRIGGEREDCOMMITMENT]"
+                      name="AMT_CNONTRIGGEREDCOMMITMENT"
+                      precision="15"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[C_SUM_CONFIRMED_DRAWDOWNS]"
                       dataType="numeric"
@@ -3604,6 +3653,22 @@
                       cachedName="Update_From_TS"
                       externalMetadataColumnId="Package\Base Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Update_From_TS]"
                       lineageId="Package\Base Fact\Derived Column 1.Outputs[Derived Column Output].Columns[Update_From_TS]" />
+                    <inputColumn
+                      refId="Package\Base Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[AMT_CLIVECOMMITMENT]"
+                      cachedDataType="numeric"
+                      cachedName="AMT_CLIVECOMMITMENT"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Base Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Amt_cLiveCommitment]"
+                      lineageId="Package\Base Fact\Union All.Outputs[Union All Output 1].Columns[AMT_CLIVECOMMITMENT]" />
+                    <inputColumn
+                      refId="Package\Base Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[AMT_CNONTRIGGEREDCOMMITMENT]"
+                      cachedDataType="numeric"
+                      cachedName="AMT_CNONTRIGGEREDCOMMITMENT"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Base Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Amt_cNonTriggeredCommitment]"
+                      lineageId="Package\Base Fact\Union All.Outputs[Union All Output 1].Columns[AMT_CNONTRIGGEREDCOMMITMENT]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4257,6 +4322,18 @@
                       dataType="wstr"
                       length="20"
                       name="Update_Reason" />
+                    <externalMetadataColumn
+                      refId="Package\Base Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Amt_cLiveCommitment]"
+                      dataType="numeric"
+                      name="Amt_cLiveCommitment"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Base Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Amt_cNonTriggeredCommitment]"
+                      dataType="numeric"
+                      name="Amt_cNonTriggeredCommitment"
+                      precision="15"
+                      scale="2" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -4417,7 +4494,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Base_Data_Fact] SET [Amt_cBoardApproved] = ?,[Amt_cBoardApproved_Expiry] = ?,[Amt_cBoardApprovedNotes] = ?,[Amt_cCEFC] = ?,[Amt_cCEFC_Renewable] = ?,[Amt_cCEFCweighted] = ?,[Amt_cCGBR_5yr] = ?,[Amt_cCommitment] = ?,[Amt_cCommitment_Copy] = ?,[Amt_cConcessionality] = ?,[Amt_cEquity_Internal] = ?,[Amt_cEquity_Other] = ?,[Amt_cFunding_3rd_Party] = ?,[Amt_cFunding_Grant] = ?,[Amt_cFunding_Partner] = ?,[Amt_cProject] = ?,[Amt_cSubProjects_CEFC] = ?,[Amt_cSum_Funding_Other] = ?,[Amt_cTenor] = ?,[Amt_cYield] = ?,[c_Sum_Confirmed_Drawdowns] = ?,[c_Sum_Drawdowns] = ?,[calc_sort_due_month] = ?,[calc_sort_due_year] = ?,[calc_sort_end_month] = ?,[calc_sort_end_year] = ?,[calc_sort_start_month] = ?,[calc_sort_start_year] = ?,[cAssessment_Assumed_Project_Life] = ?,[cAssessment_Bond_Rate_Day_of_Commitment] = ?,[cAssessment_Consumption_Savings_GJ] = ?,[cAssessment_Consumption_Savings_GJ_Life] = ?,[cAssessment_Cost_of_Carbon] = ?,[cAssessment_count] = ?,[cAssessment_Credit_Risk] = ?,[cAssessment_NPV_CEFC_Cost] = ?,[cAssessment_NPV_Gov_Cost] = ?,[cAssessment_Savings_Annual_EnergyDollars] = ?,[cAssessment_Savings_Annual_GJ] = ?,[cAssessment_Savings_Annual_OperationDollars] = ?,[cAssessment_Savings_Annual_TCO2] = ?,[cAssessment_Savings_Annual_TCO2_Assumption] = ?,[cAssessment_Savings_Lifetime_EnergyDollars] = ?,[cAssessment_Savings_Lifetime_GJ] = ?,[cAssessment_Savings_Lifetime_OperationDollars] = ?,[cAssessment_Savings_TCO2_Life] = ?,[cAssessment_Savings_TCO2_toDate] = ?,[cCount_CMS_Docs_by_Project] = ?,[cCount_Obligations_by_ActiveUser] = ?,[cCount_Obligations_by_Project] = ?,[Ccount_SubProjects] = ?,[cCountOrganisations] = ?,[cIndustry_Capital_Sum] = ?,[CO2_dol_per_t] = ?,[CO2_te_savings] = ?,[countContracts] = ?,[countObligations] = ?,[countObligations_Due] = ?,[countObligations_Past_Due] = ?,[countObligationsNa] = ?,[countObligationsOpen] = ?,[countObligationsSatisfied] = ?,[countORG_Contacts] = ?,[countPhases] = ?,[countStrategicPartners] = ?,[cSubProjectcount] = ?,[cTechnologies_Sum] = ?,[cTechnology_C02_Sum] = ?,[cTechnology_Capital_Sum] = ?,[cTechnology_Renewable_Sum] = ?,[days_in_phase] = ?,[Days_Open] = ?,[ID_Client_Sector] = ?,[ID_Phase] = ?,[ID_Priority] = ?,[Leverage_PrivateSector] = ?,[Leverage_Total] = ?,[Loss_Estimated_dollar] = ?,[Loss_Estimated_pct] = ?,[Loss_Given_Default_pct] = ?,[Nameplate_Generation_CapacityMW_Existing] = ?,[Nameplate_Generation_CapacityMW_New] = ?,[Referral_Project_Amt] = ?,[Secondary_Leverage_Amt] = ?,[sum_Amt_CEFC] = ?,[sum_Amt_CEFC_Renewable] = ?,[sum_Amt_CEFCConcessionality] = ?,[sum_Amt_CEFCweighted] = ?,[sum_Amt_Commitment] = ?,[sum_Amt_Project] = ?,[sum_by_account] = ?,[sum_by_due] = ?,[sum_by_end] = ?,[sum_by_start] = ?,[sum_by_status] = ?,[sum_Obligations_Due] = ?,[sum_Obligations_Past_Due] = ?,[sum_Obligations_Total] = ?,[sumCount] = ?,[sumCountProjects] = ? WHERE [ID_Project] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Base_Data_Fact] SET [Amt_cBoardApproved] = ?,[Amt_cBoardApproved_Expiry] = ?,[Amt_cBoardApprovedNotes] = ?,[Amt_cCEFC] = ?,[Amt_cCEFC_Renewable] = ?,[Amt_cCEFCweighted] = ?,[Amt_cCGBR_5yr] = ?,[Amt_cCommitment] = ?,[Amt_cCommitment_Copy] = ?,[Amt_cConcessionality] = ?,[Amt_cEquity_Internal] = ?,[Amt_cEquity_Other] = ?,[Amt_cFunding_3rd_Party] = ?,[Amt_cFunding_Grant] = ?,[Amt_cFunding_Partner] = ?,[Amt_cLiveCommitment] = ?,[Amt_cNonTriggeredCommitment] = ?,[Amt_cProject] = ?,[Amt_cSubProjects_CEFC] = ?,[Amt_cSum_Funding_Other] = ?,[Amt_cTenor] = ?,[Amt_cYield] = ?,[c_Sum_Confirmed_Drawdowns] = ?,[c_Sum_Drawdowns] = ?,[calc_sort_due_month] = ?,[calc_sort_due_year] = ?,[calc_sort_end_month] = ?,[calc_sort_end_year] = ?,[calc_sort_start_month] = ?,[calc_sort_start_year] = ?,[cAssessment_Assumed_Project_Life] = ?,[cAssessment_Bond_Rate_Day_of_Commitment] = ?,[cAssessment_Consumption_Savings_GJ] = ?,[cAssessment_Consumption_Savings_GJ_Life] = ?,[cAssessment_Cost_of_Carbon] = ?,[cAssessment_count] = ?,[cAssessment_Credit_Risk] = ?,[cAssessment_NPV_CEFC_Cost] = ?,[cAssessment_NPV_Gov_Cost] = ?,[cAssessment_Savings_Annual_EnergyDollars] = ?,[cAssessment_Savings_Annual_GJ] = ?,[cAssessment_Savings_Annual_OperationDollars] = ?,[cAssessment_Savings_Annual_TCO2] = ?,[cAssessment_Savings_Annual_TCO2_Assumption] = ?,[cAssessment_Savings_Lifetime_EnergyDollars] = ?,[cAssessment_Savings_Lifetime_GJ] = ?,[cAssessment_Savings_Lifetime_OperationDollars] = ?,[cAssessment_Savings_TCO2_Life] = ?,[cAssessment_Savings_TCO2_toDate] = ?,[cCount_CMS_Docs_by_Project] = ?,[cCount_Obligations_by_ActiveUser] = ?,[cCount_Obligations_by_Project] = ?,[Ccount_SubProjects] = ?,[cCountOrganisations] = ?,[cIndustry_Capital_Sum] = ?,[CO2_dol_per_t] = ?,[CO2_te_savings] = ?,[countContracts] = ?,[countObligations] = ?,[countObligations_Due] = ?,[countObligations_Past_Due] = ?,[countObligationsNa] = ?,[countObligationsOpen] = ?,[countObligationsSatisfied] = ?,[countORG_Contacts] = ?,[countPhases] = ?,[countStrategicPartners] = ?,[cSubProjectcount] = ?,[cTechnologies_Sum] = ?,[cTechnology_C02_Sum] = ?,[cTechnology_Capital_Sum] = ?,[cTechnology_Renewable_Sum] = ?,[days_in_phase] = ?,[Days_Open] = ?,[ID_Client_Sector] = ?,[ID_Phase] = ?,[ID_Priority] = ?,[Leverage_PrivateSector] = ?,[Leverage_Total] = ?,[Loss_Estimated_dollar] = ?,[Loss_Estimated_pct] = ?,[Loss_Given_Default_pct] = ?,[Nameplate_Generation_CapacityMW_Existing] = ?,[Nameplate_Generation_CapacityMW_New] = ?,[Referral_Project_Amt] = ?,[Secondary_Leverage_Amt] = ?,[sum_Amt_CEFC] = ?,[sum_Amt_CEFC_Renewable] = ?,[sum_Amt_CEFCConcessionality] = ?,[sum_Amt_CEFCweighted] = ?,[sum_Amt_Commitment] = ?,[sum_Amt_Project] = ?,[sum_by_account] = ?,[sum_by_due] = ?,[sum_by_end] = ?,[sum_by_start] = ?,[sum_by_status] = ?,[sum_Obligations_Due] = ?,[sum_Obligations_Past_Due] = ?,[sum_Obligations_Total] = ?,[sumCount] = ?,[sumCountProjects] = ? WHERE [ID_Project] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4558,12 +4635,28 @@
                       externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CFUNDING_PARTNER]" />
                     <inputColumn
+                      refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[AMT_CLIVECOMMITMENT]"
+                      cachedDataType="numeric"
+                      cachedName="AMT_CLIVECOMMITMENT"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                      lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CLIVECOMMITMENT]" />
+                    <inputColumn
+                      refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[AMT_CNONTRIGGEREDCOMMITMENT]"
+                      cachedDataType="numeric"
+                      cachedName="AMT_CNONTRIGGEREDCOMMITMENT"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                      lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CNONTRIGGEREDCOMMITMENT]" />
+                    <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[AMT_CPROJECT]"
                       cachedDataType="numeric"
                       cachedName="AMT_CPROJECT"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CPROJECT]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[AMT_CSUBPROJECTS_CEFC]"
@@ -4571,7 +4664,7 @@
                       cachedName="AMT_CSUBPROJECTS_CEFC"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CSUBPROJECTS_CEFC]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[AMT_CSUM_FUNDING_OTHER]"
@@ -4579,7 +4672,7 @@
                       cachedName="AMT_CSUM_FUNDING_OTHER"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CSUM_FUNDING_OTHER]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[AMT_CTENOR]"
@@ -4587,7 +4680,7 @@
                       cachedName="AMT_CTENOR"
                       cachedPrecision="10"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CTENOR]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[AMT_CYIELD]"
@@ -4595,7 +4688,7 @@
                       cachedName="AMT_CYIELD"
                       cachedPrecision="15"
                       cachedScale="10"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CYIELD]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[C_SUM_CONFIRMED_DRAWDOWNS]"
@@ -4603,7 +4696,7 @@
                       cachedName="C_SUM_CONFIRMED_DRAWDOWNS"
                       cachedPrecision="17"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[C_SUM_CONFIRMED_DRAWDOWNS]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[C_SUM_DRAWDOWNS]"
@@ -4611,56 +4704,56 @@
                       cachedName="C_SUM_DRAWDOWNS"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_21]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[C_SUM_DRAWDOWNS]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CALC_SORT_DUE_MONTH]"
                       cachedDataType="numeric"
                       cachedName="CALC_SORT_DUE_MONTH"
                       cachedPrecision="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_24]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CALC_SORT_DUE_MONTH]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CALC_SORT_DUE_YEAR]"
                       cachedDataType="numeric"
                       cachedName="CALC_SORT_DUE_YEAR"
                       cachedPrecision="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_25]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CALC_SORT_DUE_YEAR]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CALC_SORT_END_MONTH]"
                       cachedDataType="numeric"
                       cachedName="CALC_SORT_END_MONTH"
                       cachedPrecision="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_24]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_26]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CALC_SORT_END_MONTH]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CALC_SORT_END_YEAR]"
                       cachedDataType="numeric"
                       cachedName="CALC_SORT_END_YEAR"
                       cachedPrecision="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_25]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_27]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CALC_SORT_END_YEAR]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CALC_SORT_START_MONTH]"
                       cachedDataType="numeric"
                       cachedName="CALC_SORT_START_MONTH"
                       cachedPrecision="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_26]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_28]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CALC_SORT_START_MONTH]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CALC_SORT_START_YEAR]"
                       cachedDataType="numeric"
                       cachedName="CALC_SORT_START_YEAR"
                       cachedPrecision="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_27]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_29]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CALC_SORT_START_YEAR]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_ASSUMED_PROJECT_LIFE]"
                       cachedDataType="numeric"
                       cachedName="CASSESSMENT_ASSUMED_PROJECT_LIFE"
                       cachedPrecision="20"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_28]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_30]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_ASSUMED_PROJECT_LIFE]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_BOND_RATE_DAY_OF_COMMITMENT]"
@@ -4668,7 +4761,7 @@
                       cachedName="CASSESSMENT_BOND_RATE_DAY_OF_COMMITMENT"
                       cachedPrecision="8"
                       cachedScale="6"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_29]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_31]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_BOND_RATE_DAY_OF_COMMITMENT]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_CONSUMPTION_SAVINGS_GJ]"
@@ -4676,7 +4769,7 @@
                       cachedName="CASSESSMENT_CONSUMPTION_SAVINGS_GJ"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_30]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_32]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_CONSUMPTION_SAVINGS_GJ]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_CONSUMPTION_SAVINGS_GJ_LIFE]"
@@ -4684,7 +4777,7 @@
                       cachedName="CASSESSMENT_CONSUMPTION_SAVINGS_GJ_LIFE"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_31]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_33]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_CONSUMPTION_SAVINGS_GJ_LIFE]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_COST_OF_CARBON]"
@@ -4692,21 +4785,21 @@
                       cachedName="CASSESSMENT_COST_OF_CARBON"
                       cachedPrecision="12"
                       cachedScale="6"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_32]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_34]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_COST_OF_CARBON]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_COUNT]"
                       cachedDataType="numeric"
                       cachedName="CASSESSMENT_COUNT"
                       cachedPrecision="4"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_33]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_35]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_COUNT]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_CREDIT_RISK]"
                       cachedDataType="numeric"
                       cachedName="CASSESSMENT_CREDIT_RISK"
                       cachedPrecision="4"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_34]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_36]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_CREDIT_RISK]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_NPV_CEFC_COST]"
@@ -4714,7 +4807,7 @@
                       cachedName="CASSESSMENT_NPV_CEFC_COST"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_35]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_37]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_NPV_CEFC_COST]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_NPV_GOV_COST]"
@@ -4722,7 +4815,7 @@
                       cachedName="CASSESSMENT_NPV_GOV_COST"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_36]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_38]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_NPV_GOV_COST]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_SAVINGS_ANNUAL_ENERGYDOLLARS]"
@@ -4730,7 +4823,7 @@
                       cachedName="CASSESSMENT_SAVINGS_ANNUAL_ENERGYDOLLARS"
                       cachedPrecision="12"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_37]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_39]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_SAVINGS_ANNUAL_ENERGYDOLLARS]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_SAVINGS_ANNUAL_GJ]"
@@ -4738,7 +4831,7 @@
                       cachedName="CASSESSMENT_SAVINGS_ANNUAL_GJ"
                       cachedPrecision="12"
                       cachedScale="6"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_38]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_40]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_SAVINGS_ANNUAL_GJ]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_SAVINGS_ANNUAL_OPERATIONDOLLARS]"
@@ -4746,7 +4839,7 @@
                       cachedName="CASSESSMENT_SAVINGS_ANNUAL_OPERATIONDOLLARS"
                       cachedPrecision="12"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_39]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_41]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_SAVINGS_ANNUAL_OPERATIONDOLLARS]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_SAVINGS_ANNUAL_TCO2]"
@@ -4754,7 +4847,7 @@
                       cachedName="CASSESSMENT_SAVINGS_ANNUAL_TCO2"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_40]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_42]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_SAVINGS_ANNUAL_TCO2]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_SAVINGS_ANNUAL_TCO2_ASSUMPTION]"
@@ -4762,7 +4855,7 @@
                       cachedName="CASSESSMENT_SAVINGS_ANNUAL_TCO2_ASSUMPTION"
                       cachedPrecision="12"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_41]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_43]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_SAVINGS_ANNUAL_TCO2_ASSUMPTION]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_SAVINGS_LIFETIME_ENERGYDOLLARS]"
@@ -4770,7 +4863,7 @@
                       cachedName="CASSESSMENT_SAVINGS_LIFETIME_ENERGYDOLLARS"
                       cachedPrecision="12"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_42]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_44]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_SAVINGS_LIFETIME_ENERGYDOLLARS]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_SAVINGS_LIFETIME_GJ]"
@@ -4778,7 +4871,7 @@
                       cachedName="CASSESSMENT_SAVINGS_LIFETIME_GJ"
                       cachedPrecision="12"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_43]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_45]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_SAVINGS_LIFETIME_GJ]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_SAVINGS_LIFETIME_OPERATIONDOLLARS]"
@@ -4786,7 +4879,7 @@
                       cachedName="CASSESSMENT_SAVINGS_LIFETIME_OPERATIONDOLLARS"
                       cachedPrecision="12"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_44]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_46]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_SAVINGS_LIFETIME_OPERATIONDOLLARS]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_SAVINGS_TCO2_LIFE]"
@@ -4794,56 +4887,56 @@
                       cachedName="CASSESSMENT_SAVINGS_TCO2_LIFE"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_45]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_47]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_SAVINGS_TCO2_LIFE]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CASSESSMENT_SAVINGS_TCO2_TODATE]"
                       cachedDataType="numeric"
                       cachedName="CASSESSMENT_SAVINGS_TCO2_TODATE"
                       cachedPrecision="20"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_46]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_48]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CASSESSMENT_SAVINGS_TCO2_TODATE]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CCOUNT_CMS_DOCS_BY_PROJECT]"
                       cachedDataType="numeric"
                       cachedName="CCOUNT_CMS_DOCS_BY_PROJECT"
                       cachedPrecision="4"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_47]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_49]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CCOUNT_CMS_DOCS_BY_PROJECT]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CCOUNT_OBLIGATIONS_BY_ACTIVEUSER]"
                       cachedDataType="numeric"
                       cachedName="CCOUNT_OBLIGATIONS_BY_ACTIVEUSER"
                       cachedPrecision="4"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_48]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_50]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CCOUNT_OBLIGATIONS_BY_ACTIVEUSER]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CCOUNT_OBLIGATIONS_BY_PROJECT]"
                       cachedDataType="numeric"
                       cachedName="CCOUNT_OBLIGATIONS_BY_PROJECT"
                       cachedPrecision="4"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_49]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_51]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CCOUNT_OBLIGATIONS_BY_PROJECT]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CCOUNT_SUBPROJECTS]"
                       cachedDataType="numeric"
                       cachedName="CCOUNT_SUBPROJECTS"
                       cachedPrecision="4"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_50]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_52]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CCOUNT_SUBPROJECTS]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CCOUNTORGANISATIONS]"
                       cachedDataType="numeric"
                       cachedName="CCOUNTORGANISATIONS"
                       cachedPrecision="10"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_51]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_53]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CCOUNTORGANISATIONS]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CINDUSTRY_CAPITAL_SUM]"
                       cachedDataType="numeric"
                       cachedName="CINDUSTRY_CAPITAL_SUM"
                       cachedPrecision="8"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_52]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_54]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CINDUSTRY_CAPITAL_SUM]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CO2_DOL_PER_T]"
@@ -4851,7 +4944,7 @@
                       cachedName="CO2_DOL_PER_T"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_53]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_55]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CO2_DOL_PER_T]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CO2_TE_SAVINGS]"
@@ -4859,84 +4952,84 @@
                       cachedName="CO2_TE_SAVINGS"
                       cachedPrecision="10"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_54]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_56]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CO2_TE_SAVINGS]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[COUNTCONTRACTS]"
                       cachedDataType="numeric"
                       cachedName="COUNTCONTRACTS"
                       cachedPrecision="4"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_55]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_57]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[COUNTCONTRACTS]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[COUNTOBLIGATIONS]"
                       cachedDataType="numeric"
                       cachedName="COUNTOBLIGATIONS"
                       cachedPrecision="4"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_56]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_58]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[COUNTOBLIGATIONS]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[COUNTOBLIGATIONS_DUE]"
                       cachedDataType="numeric"
                       cachedName="COUNTOBLIGATIONS_DUE"
                       cachedPrecision="4"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_57]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_59]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[COUNTOBLIGATIONS_DUE]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[COUNTOBLIGATIONS_PAST_DUE]"
                       cachedDataType="numeric"
                       cachedName="COUNTOBLIGATIONS_PAST_DUE"
                       cachedPrecision="4"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_58]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_60]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[COUNTOBLIGATIONS_PAST_DUE]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[COUNTOBLIGATIONSNA]"
                       cachedDataType="numeric"
                       cachedName="COUNTOBLIGATIONSNA"
                       cachedPrecision="4"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_59]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_61]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[COUNTOBLIGATIONSNA]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[COUNTOBLIGATIONSOPEN]"
                       cachedDataType="numeric"
                       cachedName="COUNTOBLIGATIONSOPEN"
                       cachedPrecision="4"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_60]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_62]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[COUNTOBLIGATIONSOPEN]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[COUNTOBLIGATIONSSATISFIED]"
                       cachedDataType="numeric"
                       cachedName="COUNTOBLIGATIONSSATISFIED"
                       cachedPrecision="4"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_61]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_63]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[COUNTOBLIGATIONSSATISFIED]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[COUNTORG_CONTACTS]"
                       cachedDataType="numeric"
                       cachedName="COUNTORG_CONTACTS"
                       cachedPrecision="3"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_62]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_64]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[COUNTORG_CONTACTS]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[COUNTPHASES]"
                       cachedDataType="numeric"
                       cachedName="COUNTPHASES"
                       cachedPrecision="3"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_63]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_65]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[COUNTPHASES]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[COUNTSTRATEGICPARTNERS]"
                       cachedDataType="numeric"
                       cachedName="COUNTSTRATEGICPARTNERS"
                       cachedPrecision="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_64]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_66]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[COUNTSTRATEGICPARTNERS]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CSUBPROJECTCOUNT]"
                       cachedDataType="numeric"
                       cachedName="CSUBPROJECTCOUNT"
                       cachedPrecision="4"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_65]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_67]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CSUBPROJECTCOUNT]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CTECHNOLOGIES_SUM]"
@@ -4944,21 +5037,21 @@
                       cachedName="CTECHNOLOGIES_SUM"
                       cachedPrecision="10"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_66]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_68]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CTECHNOLOGIES_SUM]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CTECHNOLOGY_C02_SUM]"
                       cachedDataType="numeric"
                       cachedName="CTECHNOLOGY_C02_SUM"
                       cachedPrecision="3"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_67]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_69]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CTECHNOLOGY_C02_SUM]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CTECHNOLOGY_CAPITAL_SUM]"
                       cachedDataType="numeric"
                       cachedName="CTECHNOLOGY_CAPITAL_SUM"
                       cachedPrecision="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_68]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_70]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CTECHNOLOGY_CAPITAL_SUM]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CTECHNOLOGY_RENEWABLE_SUM]"
@@ -4966,49 +5059,49 @@
                       cachedName="CTECHNOLOGY_RENEWABLE_SUM"
                       cachedPrecision="4"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_69]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_71]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CTECHNOLOGY_RENEWABLE_SUM]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DAYS_IN_PHASE]"
                       cachedDataType="numeric"
                       cachedName="DAYS_IN_PHASE"
                       cachedPrecision="7"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_70]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_72]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[DAYS_IN_PHASE]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[DAYS_OPEN]"
                       cachedDataType="numeric"
                       cachedName="DAYS_OPEN"
                       cachedPrecision="7"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_71]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_73]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[DAYS_OPEN]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CEFC_SECTOR]"
                       cachedDataType="wstr"
                       cachedLength="200"
                       cachedName="CEFC_SECTOR"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_72]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_74]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[CEFC_SECTOR]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_PHASE_CURRENT]"
                       cachedDataType="numeric"
                       cachedName="ID_PHASE_CURRENT"
                       cachedPrecision="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_73]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_75]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[ID_PHASE_CURRENT]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_PRIORITY]"
                       cachedDataType="wstr"
                       cachedLength="3"
                       cachedName="ID_PRIORITY"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_74]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_76]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[ID_PRIORITY]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_PROJECT]"
                       cachedDataType="wstr"
                       cachedLength="100"
                       cachedName="ID_PROJECT"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_100]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_102]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[ID_PROJECT]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[LEVERAGE_PRIVATESECTOR]"
@@ -5016,7 +5109,7 @@
                       cachedName="LEVERAGE_PRIVATESECTOR"
                       cachedPrecision="15"
                       cachedScale="9"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_75]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_77]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[LEVERAGE_PRIVATESECTOR]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[LEVERAGE_TOTAL]"
@@ -5024,7 +5117,7 @@
                       cachedName="LEVERAGE_TOTAL"
                       cachedPrecision="10"
                       cachedScale="9"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_76]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_78]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[LEVERAGE_TOTAL]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[LOSS_ESTIMATED_$]"
@@ -5032,7 +5125,7 @@
                       cachedName="LOSS_ESTIMATED_$"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_77]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_79]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[LOSS_ESTIMATED_$]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[LOSS_ESTIMATED_%]"
@@ -5040,7 +5133,7 @@
                       cachedName="LOSS_ESTIMATED_%"
                       cachedPrecision="12"
                       cachedScale="8"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_78]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_80]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[LOSS_ESTIMATED_%]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[LOSS_GIVEN_DEFAULT_%]"
@@ -5048,7 +5141,7 @@
                       cachedName="LOSS_GIVEN_DEFAULT_%"
                       cachedPrecision="8"
                       cachedScale="4"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_79]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_81]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[LOSS_GIVEN_DEFAULT_%]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[NAMEPLATE_GENERATION_CAPACITYMW]"
@@ -5056,7 +5149,7 @@
                       cachedName="NAMEPLATE_GENERATION_CAPACITYMW"
                       cachedPrecision="12"
                       cachedScale="6"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_80]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_82]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[NAMEPLATE_GENERATION_CAPACITYMW]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[NAMEPLATE_GENERATION_CAPACITYMW_NEW]"
@@ -5064,7 +5157,7 @@
                       cachedName="NAMEPLATE_GENERATION_CAPACITYMW_NEW"
                       cachedPrecision="12"
                       cachedScale="6"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_81]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_83]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[NAMEPLATE_GENERATION_CAPACITYMW_NEW]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[REFERRAL_PROJECT_AMT]"
@@ -5072,7 +5165,7 @@
                       cachedName="REFERRAL_PROJECT_AMT"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_82]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_84]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[REFERRAL_PROJECT_AMT]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SECONDARY_LEVERAGE_AMT]"
@@ -5080,7 +5173,7 @@
                       cachedName="SECONDARY_LEVERAGE_AMT"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_83]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_85]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[SECONDARY_LEVERAGE_AMT]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SUM_AMT_CEFC]"
@@ -5088,7 +5181,7 @@
                       cachedName="SUM_AMT_CEFC"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_84]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_86]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[SUM_AMT_CEFC]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SUM_AMT_CEFC_RENEWABLE]"
@@ -5096,7 +5189,7 @@
                       cachedName="SUM_AMT_CEFC_RENEWABLE"
                       cachedPrecision="17"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_85]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_87]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[SUM_AMT_CEFC_RENEWABLE]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SUM_AMT_CEFCCONCESSIONALITY]"
@@ -5104,7 +5197,7 @@
                       cachedName="SUM_AMT_CEFCCONCESSIONALITY"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_86]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_88]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[SUM_AMT_CEFCCONCESSIONALITY]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SUM_AMT_CEFCWEIGHTED]"
@@ -5112,7 +5205,7 @@
                       cachedName="SUM_AMT_CEFCWEIGHTED"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_87]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_89]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[SUM_AMT_CEFCWEIGHTED]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SUM_AMT_COMMITMENT]"
@@ -5120,7 +5213,7 @@
                       cachedName="SUM_AMT_COMMITMENT"
                       cachedPrecision="17"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_88]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_90]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[SUM_AMT_COMMITMENT]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SUM_AMT_PROJECT]"
@@ -5128,42 +5221,42 @@
                       cachedName="SUM_AMT_PROJECT"
                       cachedPrecision="17"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_89]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_91]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[SUM_AMT_PROJECT]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SUM_BY_ACCOUNT]"
                       cachedDataType="numeric"
                       cachedName="SUM_BY_ACCOUNT"
                       cachedPrecision="10"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_90]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_92]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[SUM_BY_ACCOUNT]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SUM_BY_DUE]"
                       cachedDataType="numeric"
                       cachedName="SUM_BY_DUE"
                       cachedPrecision="10"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_91]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_93]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[SUM_BY_DUE]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SUM_BY_END]"
                       cachedDataType="numeric"
                       cachedName="SUM_BY_END"
                       cachedPrecision="10"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_92]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_94]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[SUM_BY_END]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SUM_BY_START]"
                       cachedDataType="numeric"
                       cachedName="SUM_BY_START"
                       cachedPrecision="10"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_93]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_95]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[SUM_BY_START]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SUM_BY_STATUS]"
                       cachedDataType="numeric"
                       cachedName="SUM_BY_STATUS"
                       cachedPrecision="10"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_94]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_96]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[SUM_BY_STATUS]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SUM_OBLIGATIONS_DUE]"
@@ -5171,7 +5264,7 @@
                       cachedName="SUM_OBLIGATIONS_DUE"
                       cachedPrecision="17"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_95]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_97]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[SUM_OBLIGATIONS_DUE]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SUM_OBLIGATIONS_PAST_DUE]"
@@ -5179,7 +5272,7 @@
                       cachedName="SUM_OBLIGATIONS_PAST_DUE"
                       cachedPrecision="17"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_96]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_98]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[SUM_OBLIGATIONS_PAST_DUE]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SUM_OBLIGATIONS_TOTAL]"
@@ -5187,21 +5280,21 @@
                       cachedName="SUM_OBLIGATIONS_TOTAL"
                       cachedPrecision="17"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_97]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_99]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[SUM_OBLIGATIONS_TOTAL]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SUMCOUNT]"
                       cachedDataType="numeric"
                       cachedName="SUMCOUNT"
                       cachedPrecision="8"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_98]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_100]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[SUMCOUNT]" />
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[SUMCOUNTPROJECTS]"
                       cachedDataType="numeric"
                       cachedName="SUMCOUNTPROJECTS"
                       cachedPrecision="8"
-                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_99]"
+                      externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_101]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[SUMCOUNTPROJECTS]" />
                   </inputColumns>
                   <externalMetadataColumns
@@ -5442,7 +5535,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
                       dataType="numeric"
                       name="Param_18"
-                      precision="10"
+                      precision="15"
                       scale="2">
                       <properties>
                         <property
@@ -5456,7 +5549,7 @@
                       dataType="numeric"
                       name="Param_19"
                       precision="15"
-                      scale="10">
+                      scale="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5468,7 +5561,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_20]"
                       dataType="numeric"
                       name="Param_20"
-                      precision="17"
+                      precision="10"
                       scale="2">
                       <properties>
                         <property
@@ -5482,7 +5575,7 @@
                       dataType="numeric"
                       name="Param_21"
                       precision="15"
-                      scale="2">
+                      scale="10">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5494,7 +5587,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_22]"
                       dataType="numeric"
                       name="Param_22"
-                      precision="2">
+                      precision="17"
+                      scale="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5506,7 +5600,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_23]"
                       dataType="numeric"
                       name="Param_23"
-                      precision="2">
+                      precision="15"
+                      scale="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5566,7 +5661,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_28]"
                       dataType="numeric"
                       name="Param_28"
-                      precision="20">
+                      precision="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5578,8 +5673,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_29]"
                       dataType="numeric"
                       name="Param_29"
-                      precision="8"
-                      scale="6">
+                      precision="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5591,8 +5685,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_30]"
                       dataType="numeric"
                       name="Param_30"
-                      precision="15"
-                      scale="2">
+                      precision="20">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5604,8 +5697,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_31]"
                       dataType="numeric"
                       name="Param_31"
-                      precision="15"
-                      scale="2">
+                      precision="8"
+                      scale="6">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5617,8 +5710,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_32]"
                       dataType="numeric"
                       name="Param_32"
-                      precision="12"
-                      scale="6">
+                      precision="15"
+                      scale="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5630,7 +5723,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_33]"
                       dataType="numeric"
                       name="Param_33"
-                      precision="4">
+                      precision="15"
+                      scale="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5642,7 +5736,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_34]"
                       dataType="numeric"
                       name="Param_34"
-                      precision="4">
+                      precision="12"
+                      scale="6">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5654,8 +5749,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_35]"
                       dataType="numeric"
                       name="Param_35"
-                      precision="15"
-                      scale="2">
+                      precision="4">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5667,8 +5761,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_36]"
                       dataType="numeric"
                       name="Param_36"
-                      precision="15"
-                      scale="2">
+                      precision="4">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5680,7 +5773,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_37]"
                       dataType="numeric"
                       name="Param_37"
-                      precision="12"
+                      precision="15"
                       scale="2">
                       <properties>
                         <property
@@ -5693,8 +5786,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_38]"
                       dataType="numeric"
                       name="Param_38"
-                      precision="12"
-                      scale="6">
+                      precision="15"
+                      scale="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5719,8 +5812,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_40]"
                       dataType="numeric"
                       name="Param_40"
-                      precision="15"
-                      scale="2">
+                      precision="12"
+                      scale="6">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5745,7 +5838,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_42]"
                       dataType="numeric"
                       name="Param_42"
-                      precision="12"
+                      precision="15"
                       scale="2">
                       <properties>
                         <property
@@ -5784,7 +5877,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_45]"
                       dataType="numeric"
                       name="Param_45"
-                      precision="15"
+                      precision="12"
                       scale="2">
                       <properties>
                         <property
@@ -5797,7 +5890,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_46]"
                       dataType="numeric"
                       name="Param_46"
-                      precision="20">
+                      precision="12"
+                      scale="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5809,7 +5903,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_47]"
                       dataType="numeric"
                       name="Param_47"
-                      precision="4">
+                      precision="15"
+                      scale="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5821,7 +5916,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_48]"
                       dataType="numeric"
                       name="Param_48"
-                      precision="4">
+                      precision="20">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5857,7 +5952,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_51]"
                       dataType="numeric"
                       name="Param_51"
-                      precision="10">
+                      precision="4">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5869,7 +5964,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_52]"
                       dataType="numeric"
                       name="Param_52"
-                      precision="8">
+                      precision="4">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5881,8 +5976,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_53]"
                       dataType="numeric"
                       name="Param_53"
-                      precision="15"
-                      scale="2">
+                      precision="10">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5894,8 +5988,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_54]"
                       dataType="numeric"
                       name="Param_54"
-                      precision="10"
-                      scale="2">
+                      precision="8">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5907,7 +6000,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_55]"
                       dataType="numeric"
                       name="Param_55"
-                      precision="4">
+                      precision="15"
+                      scale="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5919,7 +6013,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_56]"
                       dataType="numeric"
                       name="Param_56"
-                      precision="4">
+                      precision="10"
+                      scale="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -5991,7 +6086,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_62]"
                       dataType="numeric"
                       name="Param_62"
-                      precision="3">
+                      precision="4">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6003,7 +6098,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_63]"
                       dataType="numeric"
                       name="Param_63"
-                      precision="3">
+                      precision="4">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6015,7 +6110,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_64]"
                       dataType="numeric"
                       name="Param_64"
-                      precision="2">
+                      precision="3">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6027,7 +6122,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_65]"
                       dataType="numeric"
                       name="Param_65"
-                      precision="4">
+                      precision="3">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6039,8 +6134,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_66]"
                       dataType="numeric"
                       name="Param_66"
-                      precision="10"
-                      scale="2">
+                      precision="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6052,7 +6146,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_67]"
                       dataType="numeric"
                       name="Param_67"
-                      precision="3">
+                      precision="4">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6064,7 +6158,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_68]"
                       dataType="numeric"
                       name="Param_68"
-                      precision="2">
+                      precision="10"
+                      scale="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6076,8 +6171,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_69]"
                       dataType="numeric"
                       name="Param_69"
-                      precision="4"
-                      scale="2">
+                      precision="3">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6089,7 +6183,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_70]"
                       dataType="numeric"
                       name="Param_70"
-                      precision="7">
+                      precision="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6101,7 +6195,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_71]"
                       dataType="numeric"
                       name="Param_71"
-                      precision="7">
+                      precision="4"
+                      scale="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6111,21 +6206,21 @@
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_72]"
-                      dataType="wstr"
-                      length="50"
-                      name="Param_72">
+                      dataType="numeric"
+                      name="Param_72"
+                      precision="7">
                       <properties>
                         <property
                           dataType="System.Int32"
                           description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
+                          name="DBParamInfoFlags">81</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_73]"
                       dataType="numeric"
                       name="Param_73"
-                      precision="18">
+                      precision="7">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6136,7 +6231,7 @@
                     <externalMetadataColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_74]"
                       dataType="wstr"
-                      length="3"
+                      length="50"
                       name="Param_74">
                       <properties>
                         <property
@@ -6149,8 +6244,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_75]"
                       dataType="numeric"
                       name="Param_75"
-                      precision="15"
-                      scale="9">
+                      precision="18">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6160,15 +6254,14 @@
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_76]"
-                      dataType="numeric"
-                      name="Param_76"
-                      precision="10"
-                      scale="9">
+                      dataType="wstr"
+                      length="3"
+                      name="Param_76">
                       <properties>
                         <property
                           dataType="System.Int32"
                           description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
+                          name="DBParamInfoFlags">65</property>
                       </properties>
                     </externalMetadataColumn>
                     <externalMetadataColumn
@@ -6176,7 +6269,7 @@
                       dataType="numeric"
                       name="Param_77"
                       precision="15"
-                      scale="2">
+                      scale="9">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6188,8 +6281,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_78]"
                       dataType="numeric"
                       name="Param_78"
-                      precision="12"
-                      scale="8">
+                      precision="10"
+                      scale="9">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6201,8 +6294,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_79]"
                       dataType="numeric"
                       name="Param_79"
-                      precision="8"
-                      scale="4">
+                      precision="15"
+                      scale="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6215,7 +6308,7 @@
                       dataType="numeric"
                       name="Param_80"
                       precision="12"
-                      scale="6">
+                      scale="8">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6227,8 +6320,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_81]"
                       dataType="numeric"
                       name="Param_81"
-                      precision="12"
-                      scale="6">
+                      precision="8"
+                      scale="4">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6240,8 +6333,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_82]"
                       dataType="numeric"
                       name="Param_82"
-                      precision="15"
-                      scale="2">
+                      precision="12"
+                      scale="6">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6253,8 +6346,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_83]"
                       dataType="numeric"
                       name="Param_83"
-                      precision="15"
-                      scale="2">
+                      precision="12"
+                      scale="6">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6279,7 +6372,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_85]"
                       dataType="numeric"
                       name="Param_85"
-                      precision="17"
+                      precision="15"
                       scale="2">
                       <properties>
                         <property
@@ -6305,7 +6398,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_87]"
                       dataType="numeric"
                       name="Param_87"
-                      precision="15"
+                      precision="17"
                       scale="2">
                       <properties>
                         <property
@@ -6318,7 +6411,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_88]"
                       dataType="numeric"
                       name="Param_88"
-                      precision="17"
+                      precision="15"
                       scale="2">
                       <properties>
                         <property
@@ -6331,7 +6424,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_89]"
                       dataType="numeric"
                       name="Param_89"
-                      precision="17"
+                      precision="15"
                       scale="2">
                       <properties>
                         <property
@@ -6344,7 +6437,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_90]"
                       dataType="numeric"
                       name="Param_90"
-                      precision="10">
+                      precision="17"
+                      scale="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6356,7 +6450,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_91]"
                       dataType="numeric"
                       name="Param_91"
-                      precision="10">
+                      precision="17"
+                      scale="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6404,8 +6499,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_95]"
                       dataType="numeric"
                       name="Param_95"
-                      precision="17"
-                      scale="2">
+                      precision="10">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6417,8 +6511,7 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_96]"
                       dataType="numeric"
                       name="Param_96"
-                      precision="17"
-                      scale="2">
+                      precision="10">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6443,7 +6536,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_98]"
                       dataType="numeric"
                       name="Param_98"
-                      precision="8">
+                      precision="17"
+                      scale="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6455,7 +6549,8 @@
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_99]"
                       dataType="numeric"
                       name="Param_99"
-                      precision="8">
+                      precision="17"
+                      scale="2">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6465,9 +6560,33 @@
                     </externalMetadataColumn>
                     <externalMetadataColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_100]"
+                      dataType="numeric"
+                      name="Param_100"
+                      precision="8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_101]"
+                      dataType="numeric"
+                      name="Param_101"
+                      precision="8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_102]"
                       dataType="wstr"
                       length="100"
-                      name="Param_100">
+                      name="Param_102">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -6522,7 +6641,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Amt_cBoardApproved], [Amt_cBoardApproved_Expiry], [Amt_cBoardApprovedNotes], [Amt_cCEFC], [Amt_cCEFC_Renewable], [Amt_cCEFCweighted], [Amt_cCGBR_5yr], [Amt_cCommitment], [Amt_cCommitment_Copy], [Amt_cConcessionality], [Amt_cEquity_Internal], [Amt_cEquity_Other], [Amt_cFunding_3rd_Party], [Amt_cFunding_Grant], [Amt_cFunding_Partner], [Amt_cProject], [Amt_cSubProjects_CEFC], [Amt_cSum_Funding_Other], [Amt_cTenor], [Amt_cYield], [c_Sum_Confirmed_Drawdowns], [c_Sum_Drawdowns], [calc_sort_due_month], [calc_sort_due_year], [calc_sort_end_month], [calc_sort_end_year], [calc_sort_start_month], [calc_sort_start_year], [cAssessment_Assumed_Project_Life], [cAssessment_Bond_Rate_Day_of_Commitment], [cAssessment_Consumption_Savings_GJ], [cAssessment_Consumption_Savings_GJ_Life], [cAssessment_Cost_of_Carbon], [cAssessment_count], [cAssessment_Credit_Risk], [cAssessment_NPV_CEFC_Cost], [cAssessment_NPV_Gov_Cost], [cAssessment_Savings_Annual_EnergyDollars], [cAssessment_Savings_Annual_GJ], [cAssessment_Savings_Annual_OperationDollars], [cAssessment_Savings_Annual_TCO2], [cAssessment_Savings_Annual_TCO2_Assumption], [cAssessment_Savings_Lifetime_EnergyDollars], [cAssessment_Savings_Lifetime_GJ], [cAssessment_Savings_Lifetime_OperationDollars], [cAssessment_Savings_TCO2_Life], [cAssessment_Savings_TCO2_toDate], [cCount_CMS_Docs_by_Project], [cCount_Obligations_by_ActiveUser], [cCount_Obligations_by_Project], [Ccount_SubProjects], [cCountOrganisations], [cIndustry_Capital_Sum], [CO2_dol_per_t], [CO2_te_savings], [countContracts], [countObligations], [countObligations_Due], [countObligations_Past_Due], [countObligationsNa], [countObligationsOpen], [countObligationsSatisfied], [countORG_Contacts], [countPhases], [countStrategicPartners], [cSubProjectcount], [cTechnologies_Sum], [cTechnology_C02_Sum], [cTechnology_Capital_Sum], [cTechnology_Renewable_Sum], [days_in_phase], [Days_Open], [ID_Client_Sector], [ID_Phase], [ID_Priority], [ID_Project], [Leverage_PrivateSector], [Leverage_Total], [Loss_Estimated_dollar], [Loss_Estimated_pct], [Loss_Given_Default_pct], [Nameplate_Generation_CapacityMW_Existing], [Nameplate_Generation_CapacityMW_New], [Referral_Project_Amt], [Secondary_Leverage_Amt], [sum_Amt_CEFC], [sum_Amt_CEFC_Renewable], [sum_Amt_CEFCConcessionality], [sum_Amt_CEFCweighted], [sum_Amt_Commitment], [sum_Amt_Project], [sum_by_account], [sum_by_due], [sum_by_end], [sum_by_start], [sum_by_status], [sum_Obligations_Due], [sum_Obligations_Past_Due], [sum_Obligations_Total], [sumCount], [sumCountProjects],[Update_From_TS],[Update_to_TS] FROM [core].[Base_Data_Fact]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Amt_cBoardApproved], [Amt_cBoardApproved_Expiry], [Amt_cBoardApprovedNotes], [Amt_cCEFC], [Amt_cCEFC_Renewable], [Amt_cCEFCweighted], [Amt_cCGBR_5yr], [Amt_cCommitment], [Amt_cCommitment_Copy], [Amt_cConcessionality], [Amt_cEquity_Internal], [Amt_cEquity_Other], [Amt_cFunding_3rd_Party], [Amt_cFunding_Grant], [Amt_cFunding_Partner], [Amt_cLiveCommitment], [Amt_cNonTriggeredCommitment], [Amt_cProject], [Amt_cSubProjects_CEFC], [Amt_cSum_Funding_Other], [Amt_cTenor], [Amt_cYield], [c_Sum_Confirmed_Drawdowns], [c_Sum_Drawdowns], [calc_sort_due_month], [calc_sort_due_year], [calc_sort_end_month], [calc_sort_end_year], [calc_sort_start_month], [calc_sort_start_year], [cAssessment_Assumed_Project_Life], [cAssessment_Bond_Rate_Day_of_Commitment], [cAssessment_Consumption_Savings_GJ], [cAssessment_Consumption_Savings_GJ_Life], [cAssessment_Cost_of_Carbon], [cAssessment_count], [cAssessment_Credit_Risk], [cAssessment_NPV_CEFC_Cost], [cAssessment_NPV_Gov_Cost], [cAssessment_Savings_Annual_EnergyDollars], [cAssessment_Savings_Annual_GJ], [cAssessment_Savings_Annual_OperationDollars], [cAssessment_Savings_Annual_TCO2], [cAssessment_Savings_Annual_TCO2_Assumption], [cAssessment_Savings_Lifetime_EnergyDollars], [cAssessment_Savings_Lifetime_GJ], [cAssessment_Savings_Lifetime_OperationDollars], [cAssessment_Savings_TCO2_Life], [cAssessment_Savings_TCO2_toDate], [cCount_CMS_Docs_by_Project], [cCount_Obligations_by_ActiveUser], [cCount_Obligations_by_Project], [Ccount_SubProjects], [cCountOrganisations], [cIndustry_Capital_Sum], [CO2_dol_per_t], [CO2_te_savings], [countContracts], [countObligations], [countObligations_Due], [countObligations_Past_Due], [countObligationsNa], [countObligationsOpen], [countObligationsSatisfied], [countORG_Contacts], [countPhases], [countStrategicPartners], [cSubProjectcount], [cTechnologies_Sum], [cTechnology_C02_Sum], [cTechnology_Capital_Sum], [cTechnology_Renewable_Sum], [days_in_phase], [Days_Open], [ID_Client_Sector], [ID_Phase], [ID_Priority], [ID_Project], [Leverage_PrivateSector], [Leverage_Total], [Loss_Estimated_dollar], [Loss_Estimated_pct], [Loss_Given_Default_pct], [Nameplate_Generation_CapacityMW_Existing], [Nameplate_Generation_CapacityMW_New], [Referral_Project_Amt], [Secondary_Leverage_Amt], [sum_Amt_CEFC], [sum_Amt_CEFC_Renewable], [sum_Amt_CEFCConcessionality], [sum_Amt_CEFCweighted], [sum_Amt_Commitment], [sum_Amt_Project], [sum_by_account], [sum_by_due], [sum_by_end], [sum_by_start], [sum_by_status], [sum_Obligations_Due], [sum_Obligations_Past_Due], [sum_Obligations_Total], [sumCount], [sumCountProjects],[Update_From_TS],[Update_to_TS] FROM [core].[Base_Data_Fact]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -6786,6 +6905,36 @@
                       cachedScale="2"
                       externalMetadataColumnId="Package\Base Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Amt_cFunding_Partner]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CFUNDING_PARTNER]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Base Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[AMT_CLIVECOMMITMENT]"
+                      cachedDataType="numeric"
+                      cachedName="AMT_CLIVECOMMITMENT"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Base Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Amt_cLiveCommitment]"
+                      lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CLIVECOMMITMENT]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Base Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[AMT_CNONTRIGGEREDCOMMITMENT]"
+                      cachedDataType="numeric"
+                      cachedName="AMT_CNONTRIGGEREDCOMMITMENT"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Base Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Amt_cNonTriggeredCommitment]"
+                      lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CNONTRIGGEREDCOMMITMENT]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -8133,6 +8282,18 @@
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
+                      refId="Package\Base Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Amt_cLiveCommitment]"
+                      dataType="numeric"
+                      name="Amt_cLiveCommitment"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Base Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Amt_cNonTriggeredCommitment]"
+                      dataType="numeric"
+                      name="Amt_cNonTriggeredCommitment"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
                       refId="Package\Base Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Amt_cProject]"
                       dataType="numeric"
                       name="Amt_cProject"
@@ -9004,6 +9165,36 @@
                           dataType="System.Int32"
                           description="Output column lineage ID"
                           name="OutputColumnLineageID">#{Package\Base Fact\Union All.Outputs[Union All Output 1].Columns[AMT_CYIELD]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Base Fact\Union All.Inputs[Union All Input 1].Columns[AMT_CLIVECOMMITMENT]"
+                      cachedDataType="numeric"
+                      cachedName="AMT_CLIVECOMMITMENT"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CLIVECOMMITMENT]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Base Fact\Union All.Outputs[Union All Output 1].Columns[AMT_CLIVECOMMITMENT]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Base Fact\Union All.Inputs[Union All Input 1].Columns[AMT_CNONTRIGGEREDCOMMITMENT]"
+                      cachedDataType="numeric"
+                      cachedName="AMT_CNONTRIGGEREDCOMMITMENT"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CNONTRIGGEREDCOMMITMENT]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Base Fact\Union All.Outputs[Union All Output 1].Columns[AMT_CNONTRIGGEREDCOMMITMENT]}</property>
                       </properties>
                     </inputColumn>
                     <inputColumn
@@ -10627,6 +10818,36 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
+                      refId="Package\Base Fact\Union All.Inputs[Union All Input 2].Columns[AMT_CLIVECOMMITMENT]"
+                      cachedDataType="numeric"
+                      cachedName="AMT_CLIVECOMMITMENT"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CLIVECOMMITMENT]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Base Fact\Union All.Outputs[Union All Output 1].Columns[AMT_CLIVECOMMITMENT]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Base Fact\Union All.Inputs[Union All Input 2].Columns[AMT_CNONTRIGGEREDCOMMITMENT]"
+                      cachedDataType="numeric"
+                      cachedName="AMT_CNONTRIGGEREDCOMMITMENT"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CNONTRIGGEREDCOMMITMENT]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Base Fact\Union All.Outputs[Union All Output 1].Columns[AMT_CNONTRIGGEREDCOMMITMENT]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
                       refId="Package\Base Fact\Union All.Inputs[Union All Input 2].Columns[C_SUM_CONFIRMED_DRAWDOWNS]"
                       cachedDataType="numeric"
                       cachedName="C_SUM_CONFIRMED_DRAWDOWNS"
@@ -12078,6 +12299,20 @@
                       name="AMT_CYIELD"
                       precision="15"
                       scale="10" />
+                    <outputColumn
+                      refId="Package\Base Fact\Union All.Outputs[Union All Output 1].Columns[AMT_CLIVECOMMITMENT]"
+                      dataType="numeric"
+                      lineageId="Package\Base Fact\Union All.Outputs[Union All Output 1].Columns[AMT_CLIVECOMMITMENT]"
+                      name="AMT_CLIVECOMMITMENT"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Base Fact\Union All.Outputs[Union All Output 1].Columns[AMT_CNONTRIGGEREDCOMMITMENT]"
+                      dataType="numeric"
+                      lineageId="Package\Base Fact\Union All.Outputs[Union All Output 1].Columns[AMT_CNONTRIGGEREDCOMMITMENT]"
+                      name="AMT_CNONTRIGGEREDCOMMITMENT"
+                      precision="15"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Base Fact\Union All.Outputs[Union All Output 1].Columns[C_SUM_CONFIRMED_DRAWDOWNS]"
                       dataType="numeric"
@@ -50408,6 +50643,10 @@
           Id="Package\Dim Technology"
           TopLeft="229.333333333333,814" />
         <NodeLayout
+          Size="149.333333333334,42.6666666666667"
+          Id="Package\Purge Backups"
+          TopLeft="209.666663624346,1163.27777002917" />
+        <NodeLayout
           Size="216,42.6666666666667"
           Id="Package\Truncate Report Close Date Table in CDP"
           TopLeft="181.333333333333,20" />
@@ -50491,6 +50730,28 @@
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,50.6666666666674" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 12]"
+          TopLeft="286.583331812173,1124.83333333334">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,38.4444366958376"
+              Start="0,0"
+              End="0,30.9444366958376">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.9444366958376" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -50690,32 +50951,6 @@
             </mssge:FontInfo>
           </AnnotationLayout.FontInfo>
         </AnnotationLayout>
-        <NodeLayout
-          Size="149.333333333334,42.6666666666667"
-          Id="Package\Purge Backups"
-          TopLeft="209.666663624346,1163.27777002917" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="286.583331812173,1124.83333333334">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.4444366958376"
-              Start="0,0"
-              End="0,30.9444366958376">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.9444366958376" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -50725,192 +50960,16 @@
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="138,42.6666666666667"
-          Id="Package\Base Fact\Derived Column 1"
-          TopLeft="147.833333333333,520.166666666667" />
-        <NodeLayout
-          Size="109.333333333334,42.6666666666667"
-          Id="Package\Base Fact\Union All"
-          TopLeft="164.166666666667,418.166666666667" />
-        <NodeLayout
           Size="170.666666666667,42.6666666666667"
           Id="Package\Base Fact\Slowly Changing Dimension"
-          TopLeft="123.5,108.166666666666" />
+          TopLeft="147.5,108.166666666666" />
         <NodeLayout
-          Size="137.333333333334,42.6666666666667"
-          Id="Package\Base Fact\Insert Destination"
-          TopLeft="140.166666666667,621.5" />
-        <NodeLayout
-          Size="132,42.6666666666667"
-          Id="Package\Base Fact\Derived Column"
-          TopLeft="15.8333333333334,210.833333333333" />
-        <NodeLayout
-          Size="142.666666666667,42.6666666666667"
-          Id="Package\Base Fact\OLE DB Command"
-          TopLeft="5.50000000000004,313.5" />
-        <NodeLayout
-          Size="148,42.6666666666667"
-          Id="Package\Base Fact\OLE DB Command 1"
-          TopLeft="269.833333333333,210.833333333333" />
-        <NodeLayout
-          Size="137.333333333334,42.6666666666667"
+          Size="158.666666666667,42.6666666666667"
           Id="Package\Base Fact\ADO NET Source"
-          TopLeft="140.166666666667,5.49999999999993" />
-        <EdgeLayout
-          Id="Package\Base Fact.Paths[New Output]"
-          TopLeft="208.833333333333,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="26.8888888888889,267.333333333333"
-              Start="0,0"
-              End="26.8888888888889,259.833333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,154.086538461539" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,154.086538461539"
-                    Point2="0,158.086538461539"
-                    Point3="4,158.086538461539" />
-                  <mssgle:LineSegment
-                    End="22.8888888888889,158.086538461539" />
-                  <mssgle:CubicBezierSegment
-                    Point1="22.8888888888889,158.086538461539"
-                    Point2="26.8888888888889,158.086538461539"
-                    Point3="26.8888888888889,162.086538461539" />
-                  <mssgle:LineSegment
-                    End="26.8888888888889,259.833333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-13.6469422743055,163.086538461539,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Base Fact.Paths[Inferred Member Updates Output]"
-          TopLeft="249.5,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="94.3333333333333,59.9999999999999"
-              Start="0,0"
-              End="94.3333333333333,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.6153846153846" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.6153846153846"
-                    Point2="0,20.6153846153846"
-                    Point3="4,20.6153846153846" />
-                  <mssgle:LineSegment
-                    End="90.3333333333333,20.6153846153846" />
-                  <mssgle:CubicBezierSegment
-                    Point1="90.3333333333333,20.6153846153846"
-                    Point2="94.3333333333333,20.6153846153846"
-                    Point3="94.3333333333333,24.6153846153846" />
-                  <mssgle:LineSegment
-                    End="94.3333333333333,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-27.2363216145833,25.6153846153846,148.8059765625,11.658203125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Base Fact.Paths[Historical Attribute Inserts Output]"
-          TopLeft="168.166666666667,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-86.3333333333333,59.9999999999999"
-              Start="0,0"
-              End="-86.3333333333333,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.6153846153846" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.6153846153846"
-                    Point2="0,20.6153846153846"
-                    Point3="-4,20.6153846153846" />
-                  <mssgle:LineSegment
-                    End="-82.3333333333333,20.6153846153846" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-82.3333333333333,20.6153846153846"
-                    Point2="-86.3333333333333,20.6153846153846"
-                    Point3="-86.3333333333333,24.6153846153846" />
-                  <mssgle:LineSegment
-                    End="-86.3333333333333,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-118.223053385417,25.6153846153846,150.1127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Base Fact.Paths[Derived Column Output1]"
-          TopLeft="212.833333333333,562.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,58.6666666666669"
-              Start="0,0"
-              End="0,51.1666666666669">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,51.1666666666669" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Base Fact.Paths[Derived Column Output]"
-          TopLeft="79.3333333333334,253.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          TopLeft="153.5,5.49999999999993" />
         <EdgeLayout
           Id="Package\Base Fact.Paths[ADO NET Source Output]"
-          TopLeft="208.833333333333,48.1666666666666">
+          TopLeft="232.833333333333,48.1666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
@@ -50930,20 +50989,64 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Base Fact\Derived Column"
+          TopLeft="17.5,210.833333333333" />
         <EdgeLayout
-          Id="Package\Base Fact.Paths[Union All Output 1]"
-          TopLeft="217.833333333333,460.833333333333">
+          Id="Package\Base Fact.Paths[Historical Attribute Inserts Output]"
+          TopLeft="192.166666666667,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,59.3333333333333"
+              EndConnector="-97.3333333333333,59.9999999999999"
               Start="0,0"
-              End="0,51.8333333333333">
+              End="-97.3333333333333,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.8333333333333" />
+                    End="0,16.6153846153846" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.6153846153846"
+                    Point2="0,20.6153846153846"
+                    Point3="-4,20.6153846153846" />
+                  <mssgle:LineSegment
+                    End="-93.3333333333333,20.6153846153846" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-93.3333333333333,20.6153846153846"
+                    Point2="-97.3333333333333,20.6153846153846"
+                    Point3="-97.3333333333333,24.6153846153846" />
+                  <mssgle:LineSegment
+                    End="-97.3333333333333,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-123.723053385417,25.6153846153846,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Base Fact\OLE DB Command"
+          TopLeft="5.50000000000004,313.5" />
+        <EdgeLayout
+          Id="Package\Base Fact.Paths[Derived Column Output]"
+          TopLeft="91.8333333333334,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -50952,38 +51055,170 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\Base Fact\Union All"
+          TopLeft="172.166666666667,416.166666666667" />
         <EdgeLayout
-          Id="Package\Base Fact.Paths[OLE DB Command Output]"
-          TopLeft="76.8333333333334,356.166666666667">
+          Id="Package\Base Fact.Paths[New Output]"
+          TopLeft="232.833333333333,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="125.111111111111,62.0000000000001"
+              EndConnector="18.8888888888889,265.333333333333"
               Start="0,0"
-              End="125.111111111111,54.5000000000001">
+              End="18.8888888888889,257.833333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.6634615384616" />
+                    End="0,153.127982646421" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,32.6634615384616"
-                    Point2="0,36.6634615384616"
-                    Point3="4,36.6634615384616" />
+                    Point1="0,153.127982646421"
+                    Point2="0,157.127982646421"
+                    Point3="4,157.127982646421" />
                   <mssgle:LineSegment
-                    End="121.111111111111,36.6634615384616" />
+                    End="14.8888888888889,157.127982646421" />
                   <mssgle:CubicBezierSegment
-                    Point1="121.111111111111,36.6634615384616"
-                    Point2="125.111111111111,36.6634615384616"
-                    Point3="125.111111111111,40.6634615384616" />
+                    Point1="14.8888888888889,157.127982646421"
+                    Point2="18.8888888888889,157.127982646421"
+                    Point3="18.8888888888889,161.127982646421" />
                   <mssgle:LineSegment
-                    End="125.111111111111,54.5000000000001" />
+                    End="18.8888888888889,257.833333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.6469422743055,162.127982646421,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Base Fact.Paths[OLE DB Command Output]"
+          TopLeft="88.8333333333334,356.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="125.111111111111,60.0000000000001"
+              Start="0,0"
+              End="125.111111111111,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.531453362256"
+                    Point2="0,35.531453362256"
+                    Point3="4,35.531453362256" />
+                  <mssgle:LineSegment
+                    End="121.111111111111,35.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.111111111111,35.531453362256"
+                    Point2="125.111111111111,35.531453362256"
+                    Point3="125.111111111111,39.531453362256" />
+                  <mssgle:LineSegment
+                    End="125.111111111111,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Base Fact\Derived Column 1"
+          TopLeft="150.833333333333,518.833333333333" />
+        <EdgeLayout
+          Id="Package\Base Fact.Paths[Union All Output 1]"
+          TopLeft="232.833333333333,458.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Base Fact\Insert Destination"
+          TopLeft="150.833333333333,621.5" />
+        <EdgeLayout
+          Id="Package\Base Fact.Paths[Derived Column Output1]"
+          TopLeft="232.833333333333,561.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\Base Fact\OLE DB Command 1"
+          TopLeft="293.833333333333,210.833333333333" />
+        <EdgeLayout
+          Id="Package\Base Fact.Paths[Inferred Member Updates Output]"
+          TopLeft="273.5,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="108.333333333333,59.9999999999999"
+              Start="0,0"
+              End="108.333333333333,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.6153846153846" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.6153846153846"
+                    Point2="0,20.6153846153846"
+                    Point3="4,20.6153846153846" />
+                  <mssgle:LineSegment
+                    End="104.333333333333,20.6153846153846" />
+                  <mssgle:CubicBezierSegment
+                    Point1="104.333333333333,20.6153846153846"
+                    Point2="108.333333333333,20.6153846153846"
+                    Point3="108.333333333333,24.6153846153846" />
+                  <mssgle:LineSegment
+                    End="108.333333333333,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-20.2363216145833,25.6153846153846,148.8059765625,11.658203125"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -51087,6 +51322,18 @@
     &lt;InputColumnToDBColumn&gt;
       &lt;IdentificationString&gt;ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CFUNDING_PARTNER]&lt;/IdentificationString&gt;
       &lt;ColumnName&gt;Amt_cFunding_Partner&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CLIVECOMMITMENT]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Amt_cLiveCommitment&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CNONTRIGGEREDCOMMITMENT]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Amt_cNonTriggeredCommitment&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
@@ -51627,19 +51874,6 @@
   &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
   &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Base Fact\Insert Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

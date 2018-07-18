@@ -1,11 +1,11 @@
-create table staging.ContractSummary_Wingercarribee
+create table staging.ContractSummary_Wingecarribee
 (
 [Brand] nvarchar(20),
 [Contract_Number] nvarchar(20),
 [Customer_ID] nvarchar(20),
-[Product_Type] nvarchar(20),
-[Discounted_Rate] nvarchar(6),
-[Undiscounted_Rate] nvarchar(6),
+[Product_Type] nvarchar(50),
+[Discounted_Rate] nvarchar(10),
+[Undiscounted_Rate] nvarchar(10),
 [Repayment_Frequency] nvarchar(10),
 [Amount_Financed] nvarchar(15),
 [Contract_Term_Months] nvarchar(3),
@@ -26,7 +26,8 @@ create table staging.ContractSummary_Wingercarribee
 
 
 
-create table staging.AssetDetailsWBC_Wingercarribee
+
+create table staging.AssetDetailsWBC_Wingecarribee
 (
 [ACCOUNT_ID] nvarchar(50),
 [COLLATERAL_TYPE_DESC] nvarchar(50),
@@ -41,7 +42,7 @@ create table staging.AssetDetailsWBC_Wingercarribee
 
 )
 
-create table staging.AssetDetailsSBG_Wingercarribee
+create table staging.AssetDetailsSBG_Wingecarribee
 (
 [Acct_Key] nvarchar(50),
 [Equipment_Type] nvarchar(50),
@@ -56,7 +57,7 @@ create table staging.AssetDetailsSBG_Wingercarribee
 )
 
 
-create table staging.AssetDetailsCFAL_Wingercarribee
+create table staging.AssetDetailsCFAL_Wingecarribee
 (
 [Contract_Number] nvarchar(50),
 [Equipment_Type] nvarchar(50),
@@ -70,7 +71,7 @@ create table staging.AssetDetailsCFAL_Wingercarribee
 [FileDate] nvarchar(20)
 )
 
-create table staging.AssetDetailsNQ_Wingercarribee
+create table staging.AssetDetailsNQ_Wingecarribee
 (
 [ACCOUNT_ID] nvarchar(50),
 [COLLATERAL_TYPE_DESC] nvarchar(50),

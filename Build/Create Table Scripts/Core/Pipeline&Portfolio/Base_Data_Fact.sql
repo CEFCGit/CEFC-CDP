@@ -112,6 +112,8 @@ CREATE TABLE [core].[Base_Data_Fact](
 	[Total_Funds_Mobilised_Calc]  AS ((([Amt_cCEFC]+[Amt_cFunding_Partner])+[Amt_cEquity_Other])+[Amt_cFunding_Grant]),
 	[Private_Sector_Leverage_Calc]  AS (([Amt_cEquity_Other]+[Amt_cFunding_Partner])/nullif([Amt_cCEFC],(0))),
 	[Project_Capital_per_tCO2_Calc]  AS (((([Amt_cCEFC]+[Amt_cFunding_Partner])+[Amt_cEquity_Other])+[Amt_cFunding_Grant])/nullif([cAssessment_Savings_TCO2_Life],(0))),
+	[Amt_cLiveCommitment] numeric(15,2),
+	[Amt_cNonTriggeredCommitment] numeric(15,2),
 	[Update_From_TS] [datetime] NOT NULL,
 	[Update_to_TS] [datetime] NULL,
 	[Updated_by] [nvarchar](20) NULL,
