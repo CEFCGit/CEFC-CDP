@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="AGGSTGLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="93"
-  DTS:VersionGUID="{0D37D179-FE98-4A40-9333-185090DC825E}">
+  DTS:VersionBuild="101"
+  DTS:VersionGUID="{DEAB55B3-DFD5-46FB-959E-14D4C50B8474}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -660,10 +660,11 @@ from [contractSummary$A4:T]</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Agreement]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Agreement]"
+                      length="255"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Agreement]"
                       name="Agreement"
                       truncationRowDisposition="FailComponent" />
@@ -679,10 +680,11 @@ from [contractSummary$A4:T]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Cust Number]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Cust Number]"
+                      length="255"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Cust Number]"
                       name="Cust Number"
                       truncationRowDisposition="FailComponent" />
@@ -698,19 +700,21 @@ from [contractSummary$A4:T]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[DiscIntRateAvg]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DiscIntRateAvg]"
+                      length="255"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[DiscIntRateAvg]"
                       name="DiscIntRateAvg"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[DiscrAppl/UndiscRateAvg]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DiscrAppl/UndiscRateAvg]"
+                      length="255"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[DiscrAppl/UndiscRateAvg]"
                       name="DiscrAppl/UndiscRateAvg"
                       truncationRowDisposition="FailComponent" />
@@ -726,28 +730,31 @@ from [contractSummary$A4:T]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Amount Financed]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Total Amount Financed]"
+                      length="255"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Amount Financed]"
                       name="Total Amount Financed"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Residual / Balloon Amount]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Residual / Balloon Amount]"
+                      length="255"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Residual / Balloon Amount]"
                       name="Residual / Balloon Amount"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Term (months)]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Term (months)]"
+                      length="255"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Term (months)]"
                       name="Term (months)"
                       truncationRowDisposition="FailComponent" />
@@ -851,7 +858,8 @@ from [contractSummary$A4:T]</property>
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Agreement]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Agreement" />
                     <externalMetadataColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Brand]"
@@ -860,7 +868,8 @@ from [contractSummary$A4:T]</property>
                       name="Brand" />
                     <externalMetadataColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Cust Number]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Cust Number" />
                     <externalMetadataColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Product / Loan Type]"
@@ -869,11 +878,13 @@ from [contractSummary$A4:T]</property>
                       name="Product / Loan Type" />
                     <externalMetadataColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DiscIntRateAvg]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="DiscIntRateAvg" />
                     <externalMetadataColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DiscrAppl/UndiscRateAvg]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="DiscrAppl/UndiscRateAvg" />
                     <externalMetadataColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Repayment Frequency]"
@@ -882,15 +893,18 @@ from [contractSummary$A4:T]</property>
                       name="Repayment Frequency" />
                     <externalMetadataColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Total Amount Financed]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Total Amount Financed" />
                     <externalMetadataColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Residual / Balloon Amount]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Residual / Balloon Amount" />
                     <externalMetadataColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Term (months)]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Term (months)" />
                     <externalMetadataColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Asset Group (A â€“ D)]"
@@ -946,7 +960,8 @@ from [contractSummary$A4:T]</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Agreement]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Agreement]"
                       name="Agreement" />
                     <outputColumn
@@ -957,7 +972,8 @@ from [contractSummary$A4:T]</property>
                       name="Brand" />
                     <outputColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Cust Number]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Cust Number]"
                       name="Cust Number" />
                     <outputColumn
@@ -968,12 +984,14 @@ from [contractSummary$A4:T]</property>
                       name="Product / Loan Type" />
                     <outputColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DiscIntRateAvg]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DiscIntRateAvg]"
                       name="DiscIntRateAvg" />
                     <outputColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DiscrAppl/UndiscRateAvg]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DiscrAppl/UndiscRateAvg]"
                       name="DiscrAppl/UndiscRateAvg" />
                     <outputColumn
@@ -984,17 +1002,20 @@ from [contractSummary$A4:T]</property>
                       name="Repayment Frequency" />
                     <outputColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total Amount Financed]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total Amount Financed]"
                       name="Total Amount Financed" />
                     <outputColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Residual / Balloon Amount]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Residual / Balloon Amount]"
                       name="Residual / Balloon Amount" />
                     <outputColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Term (months)]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Term (months)]"
                       name="Term (months)" />
                     <outputColumn
@@ -1120,7 +1141,8 @@ from [contractSummary$A4:T]</property>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Annan ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[Agreement]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Agreement"
                       externalMetadataColumnId="Package\Annan ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Agreement]"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Agreement]" />
@@ -1133,7 +1155,8 @@ from [contractSummary$A4:T]</property>
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Brand]" />
                     <inputColumn
                       refId="Package\Annan ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[Cust Number]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Cust Number"
                       externalMetadataColumnId="Package\Annan ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Cust Number]"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Cust Number]" />
@@ -1146,13 +1169,15 @@ from [contractSummary$A4:T]</property>
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Product / Loan Type]" />
                     <inputColumn
                       refId="Package\Annan ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[DiscIntRateAvg]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="DiscIntRateAvg"
                       externalMetadataColumnId="Package\Annan ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[DiscIntRateAvg]"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[DiscIntRateAvg]" />
                     <inputColumn
                       refId="Package\Annan ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[DiscrAppl/UndiscRateAvg]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="DiscrAppl/UndiscRateAvg"
                       externalMetadataColumnId="Package\Annan ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[DiscrAppl/UndiscRateAvg]"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[DiscrAppl/UndiscRateAvg]" />
@@ -1165,19 +1190,22 @@ from [contractSummary$A4:T]</property>
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Repayment Frequency]" />
                     <inputColumn
                       refId="Package\Annan ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[Total Amount Financed]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Total Amount Financed"
                       externalMetadataColumnId="Package\Annan ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Total Amount Financed]"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Amount Financed]" />
                     <inputColumn
                       refId="Package\Annan ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[Residual / Balloon Amount]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Residual / Balloon Amount"
                       externalMetadataColumnId="Package\Annan ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Residual / Balloon Amount]"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Residual / Balloon Amount]" />
                     <inputColumn
                       refId="Package\Annan ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[Term (months)]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Term (months)"
                       externalMetadataColumnId="Package\Annan ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Term (months)]"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Term (months)]" />
@@ -3206,10 +3234,11 @@ from [contractSummary$A4:T]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[RESIDUAL]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RESIDUAL]"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[RESIDUAL]"
                       name="RESIDUAL"
                       truncationRowDisposition="FailComponent" />
@@ -3275,10 +3304,11 @@ from [contractSummary$A4:T]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[SCHEDULE_TERM]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SCHEDULE_TERM]"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[SCHEDULE_TERM]"
                       name="SCHEDULE_TERM"
                       truncationRowDisposition="FailComponent" />
@@ -3294,118 +3324,131 @@ from [contractSummary$A4:T]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[NPV]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NPV]"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[NPV]"
                       name="NPV"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TERMINATION_DATE]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TERMINATION_DATE]"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TERMINATION_DATE]"
                       name="TERMINATION_DATE"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOTAL_AMOUNT_FINANCED]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_AMOUNT_FINANCED]"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOTAL_AMOUNT_FINANCED]"
                       name="TOTAL_AMOUNT_FINANCED"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Financier Rate]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Financier Rate]"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Financier Rate]"
                       name="Financier Rate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Customer Rate]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Customer Rate]"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Customer Rate]"
                       name="Customer Rate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[MONTHLY_INTEREST_INCOME]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MONTHLY_INTEREST_INCOME]"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[MONTHLY_INTEREST_INCOME]"
                       name="MONTHLY_INTEREST_INCOME"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[MTHLY_TERMINATION_INC]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MTHLY_TERMINATION_INC]"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[MTHLY_TERMINATION_INC]"
                       name="MTHLY_TERMINATION_INC"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOTAL_MONTHLY_INCOME]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_MONTHLY_INCOME]"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOTAL_MONTHLY_INCOME]"
                       name="TOTAL_MONTHLY_INCOME"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOTAL_INTEREST_INCOME_TODATE]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_INTEREST_INCOME_TODATE]"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOTAL_INTEREST_INCOME_TODATE]"
                       name="TOTAL_INTEREST_INCOME_TODATE"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOTAL_TERMINATION_INCOME_TODATE]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_TERMINATION_INCOME_TODATE]"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOTAL_TERMINATION_INCOME_TODATE]"
                       name="TOTAL_TERMINATION_INCOME_TODATE"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOTAL_INCOME_TODATE]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_INCOME_TODATE]"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOTAL_INCOME_TODATE]"
                       name="TOTAL_INCOME_TODATE"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[CEFC_MONTHLY_REBATE]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CEFC_MONTHLY_REBATE]"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[CEFC_MONTHLY_REBATE]"
                       name="CEFC_MONTHLY_REBATE"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOTAL_CEFC_REBATE_TODATE]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_CEFC_REBATE_TODATE]"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOTAL_CEFC_REBATE_TODATE]"
                       name="TOTAL_CEFC_REBATE_TODATE"
                       truncationRowDisposition="FailComponent" />
@@ -3483,7 +3526,8 @@ from [contractSummary$A4:T]</property>
                       name="DEPT_NAME" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[RESIDUAL]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="RESIDUAL" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ASSET_TYPE]"
@@ -3517,7 +3561,8 @@ from [contractSummary$A4:T]</property>
                       name="PAYMENT_FREQUENCY" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SCHEDULE_TERM]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="SCHEDULE_TERM" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[SCHEDULE_MATURITY_DATE]"
@@ -3526,55 +3571,68 @@ from [contractSummary$A4:T]</property>
                       name="SCHEDULE_MATURITY_DATE" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[NPV]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="NPV" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TERMINATION_DATE]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="TERMINATION_DATE" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_AMOUNT_FINANCED]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="TOTAL_AMOUNT_FINANCED" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Financier Rate]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Financier Rate" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Customer Rate]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Customer Rate" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MONTHLY_INTEREST_INCOME]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="MONTHLY_INTEREST_INCOME" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MTHLY_TERMINATION_INC]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="MTHLY_TERMINATION_INC" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_MONTHLY_INCOME]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="TOTAL_MONTHLY_INCOME" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_INTEREST_INCOME_TODATE]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="TOTAL_INTEREST_INCOME_TODATE" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_TERMINATION_INCOME_TODATE]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="TOTAL_TERMINATION_INCOME_TODATE" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_INCOME_TODATE]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="TOTAL_INCOME_TODATE" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CEFC_MONTHLY_REBATE]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="CEFC_MONTHLY_REBATE" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TOTAL_CEFC_REBATE_TODATE]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="TOTAL_CEFC_REBATE_TODATE" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FileDate]"
@@ -3661,7 +3719,8 @@ from [contractSummary$A4:T]</property>
                       name="DEPT_NAME" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RESIDUAL]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[RESIDUAL]"
                       name="RESIDUAL" />
                     <outputColumn
@@ -3702,7 +3761,8 @@ from [contractSummary$A4:T]</property>
                       name="PAYMENT_FREQUENCY" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SCHEDULE_TERM]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[SCHEDULE_TERM]"
                       name="SCHEDULE_TERM" />
                     <outputColumn
@@ -3713,67 +3773,80 @@ from [contractSummary$A4:T]</property>
                       name="SCHEDULE_MATURITY_DATE" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NPV]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[NPV]"
                       name="NPV" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TERMINATION_DATE]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TERMINATION_DATE]"
                       name="TERMINATION_DATE" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TOTAL_AMOUNT_FINANCED]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TOTAL_AMOUNT_FINANCED]"
                       name="TOTAL_AMOUNT_FINANCED" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Financier Rate]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Financier Rate]"
                       name="Financier Rate" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Customer Rate]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Customer Rate]"
                       name="Customer Rate" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MONTHLY_INTEREST_INCOME]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MONTHLY_INTEREST_INCOME]"
                       name="MONTHLY_INTEREST_INCOME" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MTHLY_TERMINATION_INC]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MTHLY_TERMINATION_INC]"
                       name="MTHLY_TERMINATION_INC" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TOTAL_MONTHLY_INCOME]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TOTAL_MONTHLY_INCOME]"
                       name="TOTAL_MONTHLY_INCOME" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TOTAL_INTEREST_INCOME_TODATE]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TOTAL_INTEREST_INCOME_TODATE]"
                       name="TOTAL_INTEREST_INCOME_TODATE" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TOTAL_TERMINATION_INCOME_TODATE]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TOTAL_TERMINATION_INCOME_TODATE]"
                       name="TOTAL_TERMINATION_INCOME_TODATE" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TOTAL_INCOME_TODATE]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TOTAL_INCOME_TODATE]"
                       name="TOTAL_INCOME_TODATE" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CEFC_MONTHLY_REBATE]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CEFC_MONTHLY_REBATE]"
                       name="CEFC_MONTHLY_REBATE" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TOTAL_CEFC_REBATE_TODATE]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TOTAL_CEFC_REBATE_TODATE]"
                       name="TOTAL_CEFC_REBATE_TODATE" />
                     <outputColumn
@@ -3933,7 +4006,8 @@ from [contractSummary$A4:T]</property>
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[DEPT_NAME]" />
                     <inputColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[RESIDUAL]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="RESIDUAL"
                       externalMetadataColumnId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[RESIDUAL]"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[RESIDUAL]" />
@@ -3981,7 +4055,8 @@ from [contractSummary$A4:T]</property>
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[PAYMENT_FREQUENCY]" />
                     <inputColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[SCHEDULE_TERM]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="SCHEDULE_TERM"
                       externalMetadataColumnId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[SCHEDULE_TERM]"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[SCHEDULE_TERM]" />
@@ -3994,79 +4069,92 @@ from [contractSummary$A4:T]</property>
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[SCHEDULE_MATURITY_DATE]" />
                     <inputColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[NPV]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="NPV"
                       externalMetadataColumnId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[NPV]"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[NPV]" />
                     <inputColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[TERMINATION_DATE]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="TERMINATION_DATE"
                       externalMetadataColumnId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[TERMINATION_DATE]"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TERMINATION_DATE]" />
                     <inputColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[TOTAL_AMOUNT_FINANCED]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="TOTAL_AMOUNT_FINANCED"
                       externalMetadataColumnId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[TOTAL_AMOUNT_FINANCED]"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOTAL_AMOUNT_FINANCED]" />
                     <inputColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[Financier Rate]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Financier Rate"
                       externalMetadataColumnId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Financier Rate]"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Financier Rate]" />
                     <inputColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[Customer Rate]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Customer Rate"
                       externalMetadataColumnId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Customer Rate]"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Customer Rate]" />
                     <inputColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[MONTHLY_INTEREST_INCOME]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="MONTHLY_INTEREST_INCOME"
                       externalMetadataColumnId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[MONTHLY_INTEREST_INCOME]"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[MONTHLY_INTEREST_INCOME]" />
                     <inputColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[MTHLY_TERMINATION_INC]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="MTHLY_TERMINATION_INC"
                       externalMetadataColumnId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[MTHLY_TERMINATION_INC]"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[MTHLY_TERMINATION_INC]" />
                     <inputColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[TOTAL_MONTHLY_INCOME]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="TOTAL_MONTHLY_INCOME"
                       externalMetadataColumnId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[TOTAL_MONTHLY_INCOME]"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOTAL_MONTHLY_INCOME]" />
                     <inputColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[TOTAL_INTEREST_INCOME_TODATE]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="TOTAL_INTEREST_INCOME_TODATE"
                       externalMetadataColumnId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[TOTAL_INTEREST_INCOME_TODATE]"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOTAL_INTEREST_INCOME_TODATE]" />
                     <inputColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[TOTAL_TERMINATION_INCOME_TODATE]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="TOTAL_TERMINATION_INCOME_TODATE"
                       externalMetadataColumnId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[TOTAL_TERMINATION_INCOME_TODATE]"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOTAL_TERMINATION_INCOME_TODATE]" />
                     <inputColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[TOTAL_INCOME_TODATE]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="TOTAL_INCOME_TODATE"
                       externalMetadataColumnId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[TOTAL_INCOME_TODATE]"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOTAL_INCOME_TODATE]" />
                     <inputColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[CEFC_MONTHLY_REBATE]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="CEFC_MONTHLY_REBATE"
                       externalMetadataColumnId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[CEFC_MONTHLY_REBATE]"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[CEFC_MONTHLY_REBATE]" />
                     <inputColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[TOTAL_CEFC_REBATE_TODATE]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="TOTAL_CEFC_REBATE_TODATE"
                       externalMetadataColumnId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[TOTAL_CEFC_REBATE_TODATE]"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[TOTAL_CEFC_REBATE_TODATE]" />
@@ -5209,7 +5297,8 @@ from [contractSummary$A4:T]</property>
                   description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT   *
-FROM  [Cumulative Green Receivables $A5:AF]</property>
+FROM  [Cumulative Green Receivables $A5:AF]
+WHERE [Lease Id] is not NULL</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -5247,10 +5336,11 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lease Id]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Lease Id]"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lease Id]"
                       name="Lease Id"
                       truncationRowDisposition="FailComponent" />
@@ -5423,64 +5513,71 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Term]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Term]"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Term]"
                       name="Term"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Init Funded Cap]"
-                      dataType="cy"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Init Funded Cap]"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Init Funded Cap]"
                       name="Init Funded Cap"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Current Value]"
-                      dataType="cy"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Current Value]"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Current Value]"
                       name="Current Value"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[WDV as at previous waterfall month end pool cut]"
-                      dataType="cy"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WDV as at previous waterfall month end pool cut]"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[WDV as at previous waterfall month end pool cut]"
                       name="WDV as at previous waterfall month end pool cut"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[GST on IFC]"
-                      dataType="cy"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GST on IFC]"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[GST on IFC]"
                       name="GST on IFC"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Init Funded Cap]"
-                      dataType="cy"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Total Init Funded Cap]"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Init Funded Cap]"
                       name="Total Init Funded Cap"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Final Funded Cap]"
-                      dataType="cy"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Final Funded Cap]"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Final Funded Cap]"
                       name="Final Funded Cap"
                       truncationRowDisposition="FailComponent" />
@@ -5496,10 +5593,11 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lease BRFM1 funder margin]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Lease BRFM1 funder margin]"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lease BRFM1 funder margin]"
                       name="Lease BRFM1 funder margin"
                       truncationRowDisposition="FailComponent" />
@@ -5525,19 +5623,21 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Post code]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Post code]"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Post code]"
                       name="Post code"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Before discount margin]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Before discount margin]"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Before discount margin]"
                       name="Before discount margin"
                       truncationRowDisposition="FailComponent" />
@@ -5555,7 +5655,8 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Lease Id]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Lease Id" />
                     <externalMetadataColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Vehicle Id]"
@@ -5641,31 +5742,38 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       name="End Date" />
                     <externalMetadataColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Term]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Term" />
                     <externalMetadataColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Init Funded Cap]"
-                      dataType="cy"
+                      dataType="wstr"
+                      length="255"
                       name="Init Funded Cap" />
                     <externalMetadataColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Current Value]"
-                      dataType="cy"
+                      dataType="wstr"
+                      length="255"
                       name="Current Value" />
                     <externalMetadataColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WDV as at previous waterfall month end pool cut]"
-                      dataType="cy"
+                      dataType="wstr"
+                      length="255"
                       name="WDV as at previous waterfall month end pool cut" />
                     <externalMetadataColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GST on IFC]"
-                      dataType="cy"
+                      dataType="wstr"
+                      length="255"
                       name="GST on IFC" />
                     <externalMetadataColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Total Init Funded Cap]"
-                      dataType="cy"
+                      dataType="wstr"
+                      length="255"
                       name="Total Init Funded Cap" />
                     <externalMetadataColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Final Funded Cap]"
-                      dataType="cy"
+                      dataType="wstr"
+                      length="255"
                       name="Final Funded Cap" />
                     <externalMetadataColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Base Rate Code]"
@@ -5674,7 +5782,8 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       name="Base Rate Code" />
                     <externalMetadataColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Lease BRFM1 funder margin]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Lease BRFM1 funder margin" />
                     <externalMetadataColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Refinance ?]"
@@ -5688,11 +5797,13 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       name="State" />
                     <externalMetadataColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Post code]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Post code" />
                     <externalMetadataColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Before discount margin]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Before discount margin" />
                     <externalMetadataColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FileDate]"
@@ -5707,7 +5818,8 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                   <outputColumns>
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Lease Id]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Lease Id]"
                       name="Lease Id" />
                     <outputColumn
@@ -5811,37 +5923,44 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       name="End Date" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Term]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Term]"
                       name="Term" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Init Funded Cap]"
-                      dataType="cy"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Init Funded Cap]"
                       name="Init Funded Cap" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Current Value]"
-                      dataType="cy"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Current Value]"
                       name="Current Value" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WDV as at previous waterfall month end pool cut]"
-                      dataType="cy"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[WDV as at previous waterfall month end pool cut]"
                       name="WDV as at previous waterfall month end pool cut" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GST on IFC]"
-                      dataType="cy"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GST on IFC]"
                       name="GST on IFC" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total Init Funded Cap]"
-                      dataType="cy"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total Init Funded Cap]"
                       name="Total Init Funded Cap" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Final Funded Cap]"
-                      dataType="cy"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Final Funded Cap]"
                       name="Final Funded Cap" />
                     <outputColumn
@@ -5852,7 +5971,8 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       name="Base Rate Code" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Lease BRFM1 funder margin]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Lease BRFM1 funder margin]"
                       name="Lease BRFM1 funder margin" />
                     <outputColumn
@@ -5869,12 +5989,14 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       name="State" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Post code]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Post code]"
                       name="Post code" />
                     <outputColumn
                       refId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Before discount margin]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Before discount margin]"
                       name="Before discount margin" />
                     <outputColumn
@@ -5950,7 +6072,8 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                   <inputColumns>
                     <inputColumn
                       refId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].Columns[Lease Id]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Lease Id"
                       externalMetadataColumnId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Lease Id]"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lease Id]" />
@@ -6072,43 +6195,50 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[End Date]" />
                     <inputColumn
                       refId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].Columns[Term]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Term"
                       externalMetadataColumnId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Term]"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Term]" />
                     <inputColumn
                       refId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].Columns[Init Funded Cap]"
-                      cachedDataType="cy"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Init Funded Cap"
                       externalMetadataColumnId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Init Funded Cap]"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Init Funded Cap]" />
                     <inputColumn
                       refId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].Columns[Current Value]"
-                      cachedDataType="cy"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Current Value"
                       externalMetadataColumnId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Current Value]"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Current Value]" />
                     <inputColumn
                       refId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].Columns[WDV as at previous waterfall month end pool cut]"
-                      cachedDataType="cy"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="WDV as at previous waterfall month end pool cut"
                       externalMetadataColumnId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].ExternalColumns[WDV as at previous waterfall month end pool cut]"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[WDV as at previous waterfall month end pool cut]" />
                     <inputColumn
                       refId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].Columns[GST on IFC]"
-                      cachedDataType="cy"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="GST on IFC"
                       externalMetadataColumnId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].ExternalColumns[GST on IFC]"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[GST on IFC]" />
                     <inputColumn
                       refId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].Columns[Total Init Funded Cap]"
-                      cachedDataType="cy"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Total Init Funded Cap"
                       externalMetadataColumnId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Total Init Funded Cap]"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Init Funded Cap]" />
                     <inputColumn
                       refId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].Columns[Final Funded Cap]"
-                      cachedDataType="cy"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Final Funded Cap"
                       externalMetadataColumnId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Final Funded Cap]"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Final Funded Cap]" />
@@ -6121,7 +6251,8 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Base Rate Code]" />
                     <inputColumn
                       refId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].Columns[Lease BRFM1 funder margin]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Lease BRFM1 funder margin"
                       externalMetadataColumnId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Lease BRFM1 funder margin]"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Lease BRFM1 funder margin]" />
@@ -6141,13 +6272,15 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]" />
                     <inputColumn
                       refId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].Columns[Post code]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Post code"
                       externalMetadataColumnId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Post code]"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Post code]" />
                     <inputColumn
                       refId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].Columns[Before discount margin]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Before discount margin"
                       externalMetadataColumnId="Package\Flynn\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Before discount margin]"
                       lineageId="Package\Flynn\OLE DB Source.Outputs[OLE DB Source Output].Columns[Before discount margin]" />
@@ -6486,10 +6619,11 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[Sec_CO2]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Sec_CO2]"
+                      length="255"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[Sec_CO2]"
                       name="Sec_CO2"
                       truncationRowDisposition="FailComponent" />
@@ -6565,28 +6699,31 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[DiscountedRate]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DiscountedRate]"
+                      length="255"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[DiscountedRate]"
                       name="DiscountedRate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[UndiscountedRate]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UndiscountedRate]"
+                      length="255"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[UndiscountedRate]"
                       name="UndiscountedRate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quo_AmountFinanced]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quo_AmountFinanced]"
+                      length="255"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quo_AmountFinanced]"
                       name="Quo_AmountFinanced"
                       truncationRowDisposition="FailComponent" />
@@ -6602,19 +6739,21 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[TermPeriod]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TermPeriod]"
+                      length="255"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[TermPeriod]"
                       name="TermPeriod"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrentLoanAmt]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CurrentLoanAmt]"
+                      length="255"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrentLoanAmt]"
                       name="CurrentLoanAmt"
                       truncationRowDisposition="FailComponent" />
@@ -6630,19 +6769,21 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quo_ResidualAmount]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quo_ResidualAmount]"
+                      length="255"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quo_ResidualAmount]"
                       name="Quo_ResidualAmount"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quo_ResidualPercent]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quo_ResidualPercent]"
+                      length="255"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quo_ResidualPercent]"
                       name="Quo_ResidualPercent"
                       truncationRowDisposition="FailComponent" />
@@ -6752,7 +6893,8 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       name="Sec_AssetType" />
                     <externalMetadataColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Sec_CO2]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Sec_CO2" />
                     <externalMetadataColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Sec_Make]"
@@ -6791,15 +6933,18 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       name="GV_ClassName" />
                     <externalMetadataColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DiscountedRate]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="DiscountedRate" />
                     <externalMetadataColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[UndiscountedRate]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="UndiscountedRate" />
                     <externalMetadataColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quo_AmountFinanced]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Quo_AmountFinanced" />
                     <externalMetadataColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quo_GSTFinanced]"
@@ -6808,11 +6953,13 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       name="Quo_GSTFinanced" />
                     <externalMetadataColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[TermPeriod]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="TermPeriod" />
                     <externalMetadataColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CurrentLoanAmt]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="CurrentLoanAmt" />
                     <externalMetadataColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[WDV]"
@@ -6821,11 +6968,13 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       name="WDV" />
                     <externalMetadataColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quo_ResidualAmount]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Quo_ResidualAmount" />
                     <externalMetadataColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Quo_ResidualPercent]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Quo_ResidualPercent" />
                     <externalMetadataColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Add_PostCode]"
@@ -6902,7 +7051,8 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       name="Sec_AssetType" />
                     <outputColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Sec_CO2]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Sec_CO2]"
                       name="Sec_CO2" />
                     <outputColumn
@@ -6949,17 +7099,20 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       name="GV_ClassName" />
                     <outputColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DiscountedRate]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DiscountedRate]"
                       name="DiscountedRate" />
                     <outputColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UndiscountedRate]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[UndiscountedRate]"
                       name="UndiscountedRate" />
                     <outputColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quo_AmountFinanced]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quo_AmountFinanced]"
                       name="Quo_AmountFinanced" />
                     <outputColumn
@@ -6970,12 +7123,14 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       name="Quo_GSTFinanced" />
                     <outputColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TermPeriod]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TermPeriod]"
                       name="TermPeriod" />
                     <outputColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CurrentLoanAmt]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CurrentLoanAmt]"
                       name="CurrentLoanAmt" />
                     <outputColumn
@@ -6986,12 +7141,14 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       name="WDV" />
                     <outputColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quo_ResidualAmount]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quo_ResidualAmount]"
                       name="Quo_ResidualAmount" />
                     <outputColumn
                       refId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quo_ResidualPercent]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Quo_ResidualPercent]"
                       name="Quo_ResidualPercent" />
                     <outputColumn
@@ -7141,7 +7298,8 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[Sec_AssetType]" />
                     <inputColumn
                       refId="Package\Macleay\Staging.Inputs[ADO NET Destination Input].Columns[Sec_CO2]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Sec_CO2"
                       externalMetadataColumnId="Package\Macleay\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Sec_CO2]"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[Sec_CO2]" />
@@ -7196,19 +7354,22 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[GV_ClassName]" />
                     <inputColumn
                       refId="Package\Macleay\Staging.Inputs[ADO NET Destination Input].Columns[DiscountedRate]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="DiscountedRate"
                       externalMetadataColumnId="Package\Macleay\Staging.Inputs[ADO NET Destination Input].ExternalColumns[DiscountedRate]"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[DiscountedRate]" />
                     <inputColumn
                       refId="Package\Macleay\Staging.Inputs[ADO NET Destination Input].Columns[UndiscountedRate]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="UndiscountedRate"
                       externalMetadataColumnId="Package\Macleay\Staging.Inputs[ADO NET Destination Input].ExternalColumns[UndiscountedRate]"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[UndiscountedRate]" />
                     <inputColumn
                       refId="Package\Macleay\Staging.Inputs[ADO NET Destination Input].Columns[Quo_AmountFinanced]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Quo_AmountFinanced"
                       externalMetadataColumnId="Package\Macleay\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Quo_AmountFinanced]"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quo_AmountFinanced]" />
@@ -7221,13 +7382,15 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quo_GSTFinanced]" />
                     <inputColumn
                       refId="Package\Macleay\Staging.Inputs[ADO NET Destination Input].Columns[TermPeriod]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="TermPeriod"
                       externalMetadataColumnId="Package\Macleay\Staging.Inputs[ADO NET Destination Input].ExternalColumns[TermPeriod]"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[TermPeriod]" />
                     <inputColumn
                       refId="Package\Macleay\Staging.Inputs[ADO NET Destination Input].Columns[CurrentLoanAmt]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="CurrentLoanAmt"
                       externalMetadataColumnId="Package\Macleay\Staging.Inputs[ADO NET Destination Input].ExternalColumns[CurrentLoanAmt]"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[CurrentLoanAmt]" />
@@ -7240,13 +7403,15 @@ FROM  [Cumulative Green Receivables $A5:AF]</property>
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[WDV]" />
                     <inputColumn
                       refId="Package\Macleay\Staging.Inputs[ADO NET Destination Input].Columns[Quo_ResidualAmount]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Quo_ResidualAmount"
                       externalMetadataColumnId="Package\Macleay\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Quo_ResidualAmount]"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quo_ResidualAmount]" />
                     <inputColumn
                       refId="Package\Macleay\Staging.Inputs[ADO NET Destination Input].Columns[Quo_ResidualPercent]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Quo_ResidualPercent"
                       externalMetadataColumnId="Package\Macleay\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Quo_ResidualPercent]"
                       lineageId="Package\Macleay\OLE DB Source.Outputs[OLE DB Source Output].Columns[Quo_ResidualPercent]" />
@@ -7573,10 +7738,11 @@ FROM
                   <outputColumns>
                     <outputColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tranche]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Tranche]"
+                      length="255"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tranche]"
                       name="Tranche"
                       truncationRowDisposition="FailComponent" />
@@ -7642,10 +7808,11 @@ FROM
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Residual Value]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Residual Value]"
+                      length="255"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Residual Value]"
                       name="Residual Value"
                       truncationRowDisposition="FailComponent" />
@@ -7710,10 +7877,11 @@ FROM
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Schedule Term ]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Schedule Term ]"
+                      length="255"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Schedule Term ]"
                       name="Schedule Term "
                       truncationRowDisposition="FailComponent" />
@@ -7767,28 +7935,31 @@ FROM
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Original Amount Financed ]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Original Amount Financed ]"
+                      length="255"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Original Amount Financed ]"
                       name="Original Amount Financed "
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Net Present Value ]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Net Present Value ]"
+                      length="255"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Net Present Value ]"
                       name="Net Present Value "
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Rebate Calc]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Rebate Calc]"
+                      length="255"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Rebate Calc]"
                       name="Rebate Calc"
                       truncationRowDisposition="FailComponent" />
@@ -7814,10 +7985,11 @@ FROM
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Rebate (inc GST)]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Total Rebate (inc GST)]"
+                      length="255"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Rebate (inc GST)]"
                       name="Total Rebate (inc GST)"
                       truncationRowDisposition="FailComponent" />
@@ -7835,7 +8007,8 @@ FROM
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Tranche]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Tranche" />
                     <externalMetadataColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Asset Number]"
@@ -7869,7 +8042,8 @@ FROM
                       name="Product" />
                     <externalMetadataColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Residual Value]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Residual Value" />
                     <externalMetadataColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Entity Originator]"
@@ -7902,7 +8076,8 @@ FROM
                       name="Repayment Frequency " />
                     <externalMetadataColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Schedule Term ]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Schedule Term " />
                     <externalMetadataColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Schedule Maturity Date ]"
@@ -7929,15 +8104,18 @@ FROM
                       name="Negative Equity Financed" />
                     <externalMetadataColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Original Amount Financed ]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Original Amount Financed " />
                     <externalMetadataColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Net Present Value ]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Net Present Value " />
                     <externalMetadataColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Rebate Calc]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Rebate Calc" />
                     <externalMetadataColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GST]"
@@ -7951,7 +8129,8 @@ FROM
                       name="Less: Reimbursable GST" />
                     <externalMetadataColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Total Rebate (inc GST)]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Total Rebate (inc GST)" />
                     <externalMetadataColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FileDate]"
@@ -7966,7 +8145,8 @@ FROM
                   <outputColumns>
                     <outputColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Tranche]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Tranche]"
                       name="Tranche" />
                     <outputColumn
@@ -8007,7 +8187,8 @@ FROM
                       name="Product" />
                     <outputColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Residual Value]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Residual Value]"
                       name="Residual Value" />
                     <outputColumn
@@ -8047,7 +8228,8 @@ FROM
                       name="Repayment Frequency " />
                     <outputColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Schedule Term ]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Schedule Term ]"
                       name="Schedule Term " />
                     <outputColumn
@@ -8080,17 +8262,20 @@ FROM
                       name="Negative Equity Financed" />
                     <outputColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Original Amount Financed ]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Original Amount Financed ]"
                       name="Original Amount Financed " />
                     <outputColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Net Present Value ]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Net Present Value ]"
                       name="Net Present Value " />
                     <outputColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Rebate Calc]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Rebate Calc]"
                       name="Rebate Calc" />
                     <outputColumn
@@ -8107,7 +8292,8 @@ FROM
                       name="Less: Reimbursable GST" />
                     <outputColumn
                       refId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total Rebate (inc GST)]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total Rebate (inc GST)]"
                       name="Total Rebate (inc GST)" />
                     <outputColumn
@@ -8183,7 +8369,8 @@ FROM
                   <inputColumns>
                     <inputColumn
                       refId="Package\Murchison\Staging.Inputs[ADO NET Destination Input].Columns[Tranche]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Tranche"
                       externalMetadataColumnId="Package\Murchison\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Tranche]"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Tranche]" />
@@ -8231,7 +8418,8 @@ FROM
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Product]" />
                     <inputColumn
                       refId="Package\Murchison\Staging.Inputs[ADO NET Destination Input].Columns[Residual Value]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Residual Value"
                       externalMetadataColumnId="Package\Murchison\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Residual Value]"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Residual Value]" />
@@ -8278,7 +8466,8 @@ FROM
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Repayment Frequency ]" />
                     <inputColumn
                       refId="Package\Murchison\Staging.Inputs[ADO NET Destination Input].Columns[Schedule Term ]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Schedule Term "
                       externalMetadataColumnId="Package\Murchison\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Schedule Term ]"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Schedule Term ]" />
@@ -8317,19 +8506,22 @@ FROM
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Negative Equity Financed]" />
                     <inputColumn
                       refId="Package\Murchison\Staging.Inputs[ADO NET Destination Input].Columns[Original Amount Financed ]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Original Amount Financed "
                       externalMetadataColumnId="Package\Murchison\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Original Amount Financed ]"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Original Amount Financed ]" />
                     <inputColumn
                       refId="Package\Murchison\Staging.Inputs[ADO NET Destination Input].Columns[Net Present Value ]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Net Present Value "
                       externalMetadataColumnId="Package\Murchison\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Net Present Value ]"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Net Present Value ]" />
                     <inputColumn
                       refId="Package\Murchison\Staging.Inputs[ADO NET Destination Input].Columns[Rebate Calc]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Rebate Calc"
                       externalMetadataColumnId="Package\Murchison\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Rebate Calc]"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Rebate Calc]" />
@@ -8349,7 +8541,8 @@ FROM
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Less: Reimbursable GST]" />
                     <inputColumn
                       refId="Package\Murchison\Staging.Inputs[ADO NET Destination Input].Columns[Total Rebate (inc GST)]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Total Rebate (inc GST)"
                       externalMetadataColumnId="Package\Murchison\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Total Rebate (inc GST)]"
                       lineageId="Package\Murchison\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total Rebate (inc GST)]" />
@@ -8888,6 +9081,24 @@ FROM
                       lineageId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[FileDate]"
                       name="FileDate"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[31/03/2018]"
+                      dataType="date"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[31/03/2018]"
+                      lineageId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[31/03/2018]"
+                      name="31/03/2018"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[1/02/2017]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[1/02/2017]"
+                      lineageId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[1/02/2017]"
+                      name="1/02/2017"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -9026,7 +9237,8 @@ FROM
                       name="Total repayable amount" />
                     <externalMetadataColumn
                       refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[31]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="31" />
                     <externalMetadataColumn
                       refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Concatenate]"
@@ -9038,13 +9250,13 @@ FROM
                       dataType="date"
                       name="FileDate" />
                     <externalMetadataColumn
-                      refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[43190]"
-                      dataType="r8"
-                      name="43190" />
+                      refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[31/03/2018]"
+                      dataType="date"
+                      name="31/03/2018" />
                     <externalMetadataColumn
-                      refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[42767]"
+                      refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[1/02/2017]"
                       dataType="r8"
-                      name="42767" />
+                      name="1/02/2017" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -9213,6 +9425,11 @@ FROM
                       lineageId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total repayable amount]"
                       name="Total repayable amount" />
                     <outputColumn
+                      refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[31/03/2018]"
+                      dataType="date"
+                      lineageId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[31/03/2018]"
+                      name="31/03/2018" />
+                    <outputColumn
                       refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FileDate]"
                       dataType="date"
                       lineageId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FileDate]"
@@ -9223,6 +9440,11 @@ FROM
                       lineageId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[1/02/2017]"
+                      dataType="r8"
+                      lineageId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[1/02/2017]"
+                      name="1/02/2017" />
                     <outputColumn
                       refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
@@ -10119,28 +10341,31 @@ FROM
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Output].Columns[Amount Claimed]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Amount Claimed]"
+                      length="255"
                       lineageId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Output].Columns[Amount Claimed]"
                       name="Amount Claimed"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Output].Columns[Term]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Term]"
+                      length="255"
                       lineageId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Output].Columns[Term]"
                       name="Term"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Output].Columns[Claim]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Claim]"
+                      length="255"
                       lineageId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Output].Columns[Claim]"
                       name="Claim"
                       truncationRowDisposition="FailComponent" />
@@ -10187,15 +10412,18 @@ FROM
                       name="Postcode" />
                     <externalMetadataColumn
                       refId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Amount Claimed]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Amount Claimed" />
                     <externalMetadataColumn
                       refId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Term]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Term" />
                     <externalMetadataColumn
                       refId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Claim]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="Claim" />
                     <externalMetadataColumn
                       refId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Category]"
@@ -10238,17 +10466,20 @@ FROM
                       name="Postcode" />
                     <outputColumn
                       refId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Amount Claimed]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Amount Claimed]"
                       name="Amount Claimed" />
                     <outputColumn
                       refId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Term]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Term]"
                       name="Term" />
                     <outputColumn
                       refId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Claim]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Claim]"
                       name="Claim" />
                     <outputColumn
@@ -10350,19 +10581,22 @@ FROM
                       lineageId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Output].Columns[Postcode]" />
                     <inputColumn
                       refId="Package\Othello\Staging.Inputs[ADO NET Destination Input].Columns[Amount Claimed]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Amount Claimed"
                       externalMetadataColumnId="Package\Othello\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Amount Claimed]"
                       lineageId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Output].Columns[Amount Claimed]" />
                     <inputColumn
                       refId="Package\Othello\Staging.Inputs[ADO NET Destination Input].Columns[Term]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Term"
                       externalMetadataColumnId="Package\Othello\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Term]"
                       lineageId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Output].Columns[Term]" />
                     <inputColumn
                       refId="Package\Othello\Staging.Inputs[ADO NET Destination Input].Columns[Claim]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="Claim"
                       externalMetadataColumnId="Package\Othello\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Claim]"
                       lineageId="Package\Othello\OLE DB Source.Outputs[OLE DB Source Output].Columns[Claim]" />
@@ -10571,37 +10805,41 @@ FROM     [RSLoanBook$A9:P]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].Columns[LoanTerm]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LoanTerm]"
+                      length="255"
                       lineageId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].Columns[LoanTerm]"
                       name="LoanTerm"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].Columns[AnnualRate]"
-                      dataType="r8"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AnnualRate]"
+                      length="255"
                       lineageId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].Columns[AnnualRate]"
                       name="AnnualRate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].Columns[FinanceAmount]"
-                      dataType="cy"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FinanceAmount]"
+                      length="255"
                       lineageId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].Columns[FinanceAmount]"
                       name="FinanceAmount"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].Columns[PrincipalOutstanding]"
-                      dataType="cy"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PrincipalOutstanding]"
+                      length="255"
                       lineageId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].Columns[PrincipalOutstanding]"
                       name="PrincipalOutstanding"
                       truncationRowDisposition="FailComponent" />
@@ -10718,19 +10956,23 @@ FROM     [RSLoanBook$A9:P]</property>
                       name="ContractDate" />
                     <externalMetadataColumn
                       refId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[LoanTerm]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="LoanTerm" />
                     <externalMetadataColumn
                       refId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[AnnualRate]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       name="AnnualRate" />
                     <externalMetadataColumn
                       refId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FinanceAmount]"
-                      dataType="cy"
+                      dataType="wstr"
+                      length="255"
                       name="FinanceAmount" />
                     <externalMetadataColumn
                       refId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[PrincipalOutstanding]"
-                      dataType="cy"
+                      dataType="wstr"
+                      length="255"
                       name="PrincipalOutstanding" />
                     <externalMetadataColumn
                       refId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FinancePurpose]"
@@ -10801,22 +11043,26 @@ FROM     [RSLoanBook$A9:P]</property>
                       name="ContractDate" />
                     <outputColumn
                       refId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LoanTerm]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[LoanTerm]"
                       name="LoanTerm" />
                     <outputColumn
                       refId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AnnualRate]"
-                      dataType="r8"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[AnnualRate]"
                       name="AnnualRate" />
                     <outputColumn
                       refId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FinanceAmount]"
-                      dataType="cy"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FinanceAmount]"
                       name="FinanceAmount" />
                     <outputColumn
                       refId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PrincipalOutstanding]"
-                      dataType="cy"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[PrincipalOutstanding]"
                       name="PrincipalOutstanding" />
                     <outputColumn
@@ -10959,25 +11205,29 @@ FROM     [RSLoanBook$A9:P]</property>
                       lineageId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].Columns[ContractDate]" />
                     <inputColumn
                       refId="Package\Roper\Staging.Inputs[ADO NET Destination Input].Columns[LoanTerm]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="LoanTerm"
                       externalMetadataColumnId="Package\Roper\Staging.Inputs[ADO NET Destination Input].ExternalColumns[LoanTerm]"
                       lineageId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].Columns[LoanTerm]" />
                     <inputColumn
                       refId="Package\Roper\Staging.Inputs[ADO NET Destination Input].Columns[AnnualRate]"
-                      cachedDataType="r8"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="AnnualRate"
                       externalMetadataColumnId="Package\Roper\Staging.Inputs[ADO NET Destination Input].ExternalColumns[AnnualRate]"
                       lineageId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].Columns[AnnualRate]" />
                     <inputColumn
                       refId="Package\Roper\Staging.Inputs[ADO NET Destination Input].Columns[FinanceAmount]"
-                      cachedDataType="cy"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="FinanceAmount"
                       externalMetadataColumnId="Package\Roper\Staging.Inputs[ADO NET Destination Input].ExternalColumns[FinanceAmount]"
                       lineageId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].Columns[FinanceAmount]" />
                     <inputColumn
                       refId="Package\Roper\Staging.Inputs[ADO NET Destination Input].Columns[PrincipalOutstanding]"
-                      cachedDataType="cy"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="PrincipalOutstanding"
                       externalMetadataColumnId="Package\Roper\Staging.Inputs[ADO NET Destination Input].ExternalColumns[PrincipalOutstanding]"
                       lineageId="Package\Roper\OLE DB Source.Outputs[OLE DB Source Output].Columns[PrincipalOutstanding]" />
@@ -15165,7 +15415,7 @@ WHERE   (Contract_Number IS NOT NULL)</property>
         <NodeLayout
           Size="117.333333333334,42.6666666666667"
           Id="Package\Macleay"
-          TopLeft="127.999998174608,486.065900146458" />
+          TopLeft="127.58333151415,486.065900146458" />
         <NodeLayout
           Size="128,42.6666666666667"
           Id="Package\Murchison"
@@ -15564,7 +15814,7 @@ WHERE   (Contract_Number IS NOT NULL)</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="186.208331467584,436.433327940305">
+          TopLeft="185.999998137355,436.433327940305">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15586,18 +15836,18 @@ WHERE   (Contract_Number IS NOT NULL)</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="185.374998233591,528.732566813124">
+          TopLeft="185.166664903363,528.732566813125">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30.2674292738307"
+              EndConnector="0,30.2674292738303"
               Start="0,0"
-              End="0,22.7674292738307">
+              End="0,22.7674292738303">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.7674292738307" />
+                    End="0,22.7674292738303" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15918,7 +16168,7 @@ WHERE   (Contract_Number IS NOT NULL)</property>
     design-time-name="Package\ANZSIC Codes - Murchison">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\ANZSIC Codes - Murchison\OLE DB Source"
@@ -15946,9 +16196,7 @@ WHERE   (Contract_Number IS NOT NULL)</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16227,25 +16475,25 @@ WHERE   (Contract_Number IS NOT NULL)</property>
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Flynn\OLE DB Source"
-          TopLeft="217.5,19.5" />
+          TopLeft="217.5,18.8333333333333" />
         <NodeLayout
           Size="114.666666666667,42.6666666666667"
           Id="Package\Flynn\Staging"
           TopLeft="237.5,134.833333333333" />
         <EdgeLayout
           Id="Package\Flynn.Paths[OLE DB Source Output]"
-          TopLeft="293.833333333333,62.1666666666667">
+          TopLeft="293.833333333333,61.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,72.6666666666663"
+              EndConnector="0,73.333333333333"
               Start="0,0"
-              End="0,65.1666666666663">
+              End="0,65.833333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,65.1666666666663" />
+                    End="0,65.833333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -16340,37 +16588,35 @@ WHERE   (Contract_Number IS NOT NULL)</property>
     design-time-name="Package\Murchison">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Murchison\OLE DB Source"
-          TopLeft="206.833333333333,22.1666666666667" />
+          TopLeft="207.5,22.8333333333334" />
         <NodeLayout
           Size="114.666666666667,42.6666666666667"
           Id="Package\Murchison\Staging"
           TopLeft="222.166666666667,121.5" />
         <EdgeLayout
           Id="Package\Murchison.Paths[OLE DB Source Output]"
-          TopLeft="280.833333333333,64.8333333333333">
+          TopLeft="281.166666666667,65.5000000000001">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,56.6666666666667"
+              EndConnector="0,56"
               Start="0,0"
-              End="0,49.1666666666667">
+              End="0,48.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.1666666666667" />
+                    End="0,48.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16398,13 +16644,13 @@ WHERE   (Contract_Number IS NOT NULL)</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="150.666666666667,42.6666666666667"
-          Id="Package\Natalie ContractSummary\OLE DB Source"
-          TopLeft="220.166666666667,16.8333333333333" />
-        <NodeLayout
           Size="114.666666666667,42.6666666666667"
           Id="Package\Natalie ContractSummary\Staging"
           TopLeft="240.833333333333,118.166666666667" />
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\Natalie ContractSummary\OLE DB Source"
+          TopLeft="220.166666666667,16.8333333333333" />
         <EdgeLayout
           Id="Package\Natalie ContractSummary.Paths[OLE DB Source Output]"
           TopLeft="296.833333333333,59.5">
@@ -16701,15 +16947,15 @@ WHERE   (Contract_Number IS NOT NULL)</property>
     design-time-name="Package\Wingecarribee ContractSummary">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="114.666666666667,42.6666666666667"
-          Id="Package\Wingecarribee ContractSummary\Staging"
-          TopLeft="137.999998472631,97.8999988842011" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Wingecarribee ContractSummary\OLE DB Source"
           TopLeft="114.666665934026,8.73333434840041" />
+        <NodeLayout
+          Size="114.666666666667,42.6666666666667"
+          Id="Package\Wingecarribee ContractSummary\Staging"
+          TopLeft="137.999998472631,97.8999988842011" />
         <EdgeLayout
           Id="Package\Wingecarribee ContractSummary.Paths[OLE DB Source Output]"
           TopLeft="192.666665536662,51.4000010150671">
@@ -16729,7 +16975,9 @@ WHERE   (Contract_Number IS NOT NULL)</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

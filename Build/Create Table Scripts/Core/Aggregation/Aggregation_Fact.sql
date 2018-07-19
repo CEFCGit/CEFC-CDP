@@ -11,7 +11,7 @@ create table [core].[Aggregation_Fact]
 	[Discounted_Interest_Rate] numeric(10,2) ,
 	[Funder_Margin] numeric(10,2),
 	[Maturity_Date] nvarchar(20),
-	[Postcode] nvarchar(4) ,
+	[Postcode] nvarchar(5) ,
 	[Principal_Outstanding] numeric(20,2),
 	[Product_Type] nvarchar(50) ,
 	[Repayment_Frequency] nvarchar(20),

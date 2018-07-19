@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="STGCDPAggDimFactLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="26"
-  DTS:VersionGUID="{DF832F78-75E9-4718-B779-04BD4DADA7EB}">
+  DTS:VersionBuild="41"
+  DTS:VersionGUID="{0B2519F2-B5DC-4DBF-A74F-4BFF179A17A0}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,7 +21,7 @@
       DTS:refId="Package\Aggregation Fact"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{BE564C5A-AA3B-4D21-9EB7-F11B91A34C8A}"
+      DTS:DTSID="{9C92F6C3-FFD5-472D-B7F3-C88DD83C1481}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Aggregation Fact"
@@ -31,307 +31,6 @@
         <pipeline
           version="1">
           <components>
-            <component
-              refId="Package\Aggregation Fact\Data Conversion"
-              componentClassID="Microsoft.DataConvert"
-              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
-              description="Data Conversion"
-              name="Data Conversion"
-              usesDispositions="true">
-              <inputs>
-                <input
-                  refId="Package\Aggregation Fact\Data Conversion.Inputs[Data Conversion Input]"
-                  name="Data Conversion Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Inputs[Data Conversion Input].Columns[Balloon_Amount]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
-                      cachedName="Balloon_Amount"
-                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Balloon_Amount]" />
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Inputs[Data Conversion Input].Columns[CEFC_Rebate_Monthly]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="CEFC_Rebate_Monthly"
-                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[CEFC_Rebate_Monthly]" />
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Inputs[Data Conversion Input].Columns[Discounted_Interest_Rate]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
-                      cachedName="Discounted_Interest_Rate"
-                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Discounted_Interest_Rate]" />
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Inputs[Data Conversion Input].Columns[Funder_Margin]"
-                      cachedDataType="wstr"
-                      cachedLength="5"
-                      cachedName="Funder_Margin"
-                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Funder_Margin]" />
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Inputs[Data Conversion Input].Columns[Principal_Outstanding]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
-                      cachedName="Principal_Outstanding"
-                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Principal_Outstanding]" />
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Inputs[Data Conversion Input].Columns[Total_Amount_Financed]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
-                      cachedName="Total_Amount_Financed"
-                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Amount_Financed]" />
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Inputs[Data Conversion Input].Columns[Total_Rebate_to_date_exclGST]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
-                      cachedName="Total_Rebate_to_date_exclGST"
-                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_exclGST]" />
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Inputs[Data Conversion Input].Columns[Total_Rebate_to_date_inclGST]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
-                      cachedName="Total_Rebate_to_date_inclGST"
-                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_inclGST]" />
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Inputs[Data Conversion Input].Columns[Term]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
-                      cachedName="Term"
-                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Term]" />
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output]"
-                  exclusionGroup="1"
-                  name="Data Conversion Output"
-                  synchronousInputId="Package\Aggregation Fact\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Balloon_Amount_NUMERIC]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Balloon_Amount_NUMERIC]"
-                      name="Balloon_Amount_NUMERIC"
-                      precision="20"
-                      scale="2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Balloon_Amount]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[CEFC_Rebate_Monthly_NUMERIC]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[CEFC_Rebate_Monthly_NUMERIC]"
-                      name="CEFC_Rebate_Monthly_NUMERIC"
-                      precision="20"
-                      scale="4"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[CEFC_Rebate_Monthly]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Discounted_Interest_Rate_NUMERIC]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Discounted_Interest_Rate_NUMERIC]"
-                      name="Discounted_Interest_Rate_NUMERIC"
-                      precision="10"
-                      scale="4"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Discounted_Interest_Rate]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Funder_Margin_NUMERIC]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Funder_Margin_NUMERIC]"
-                      name="Funder_Margin_NUMERIC"
-                      precision="10"
-                      scale="4"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Funder_Margin]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Principal_Outstanding_NUMERIC]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Principal_Outstanding_NUMERIC]"
-                      name="Principal_Outstanding_NUMERIC"
-                      precision="20"
-                      scale="2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Principal_Outstanding]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Total_Amount_Financed_NUMERIC]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Total_Amount_Financed_NUMERIC]"
-                      name="Total_Amount_Financed_NUMERIC"
-                      precision="20"
-                      scale="2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Amount_Financed]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Total_Rebate_to_date_exclGST_NUMERIC]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Total_Rebate_to_date_exclGST_NUMERIC]"
-                      name="Total_Rebate_to_date_exclGST_NUMERIC"
-                      precision="20"
-                      scale="2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_exclGST]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Total_Rebate_to_date_inclGST_NUMERIC]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Total_Rebate_to_date_inclGST_NUMERIC]"
-                      name="Total_Rebate_to_date_inclGST_NUMERIC"
-                      precision="20"
-                      scale="2"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_inclGST]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Term_NUMERIC]"
-                      dataType="numeric"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Term_NUMERIC]"
-                      name="Term_NUMERIC"
-                      precision="3"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Specifies the input column used as the source of data for the conversion."
-                          name="SourceInputColumnLineageID">#{Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Term]}</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
-                          name="FastParse">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-                <output
-                  refId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Data Conversion Error Output"
-                  synchronousInputId="Package\Aggregation Fact\Data Conversion.Inputs[Data Conversion Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
             <component
               refId="Package\Aggregation Fact\Derived Column"
               componentClassID="Microsoft.DerivedColumn"
@@ -581,13 +280,13 @@
                       externalMetadataColumnId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ANZSIC_Code]"
                       lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[ANZSIC_Code]" />
                     <inputColumn
-                      refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Balloon_Amount_NUMERIC]"
+                      refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Balloon_Amount]"
                       cachedDataType="numeric"
-                      cachedName="Balloon_Amount_NUMERIC"
+                      cachedName="Balloon_Amount"
                       cachedPrecision="20"
                       cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Balloon_Amount]"
-                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Balloon_Amount_NUMERIC]" />
+                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Balloon_Amount]" />
                     <inputColumn
                       refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Brand]"
                       cachedDataType="wstr"
@@ -596,13 +295,13 @@
                       externalMetadataColumnId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Brand]"
                       lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Brand]" />
                     <inputColumn
-                      refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[CEFC_Rebate_Monthly_NUMERIC]"
+                      refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[CEFC_Rebate_Monthly]"
                       cachedDataType="numeric"
-                      cachedName="CEFC_Rebate_Monthly_NUMERIC"
+                      cachedName="CEFC_Rebate_Monthly"
                       cachedPrecision="20"
                       cachedScale="4"
                       externalMetadataColumnId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CEFC_Rebate_Monthly]"
-                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[CEFC_Rebate_Monthly_NUMERIC]" />
+                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[CEFC_Rebate_Monthly]" />
                     <inputColumn
                       refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Contract_Start_Date]"
                       cachedDataType="wstr"
@@ -611,21 +310,21 @@
                       externalMetadataColumnId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Contract_Start_Date]"
                       lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Contract_Start_Date]" />
                     <inputColumn
-                      refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Discounted_Interest_Rate_NUMERIC]"
+                      refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Discounted_Interest_Rate]"
                       cachedDataType="numeric"
-                      cachedName="Discounted_Interest_Rate_NUMERIC"
+                      cachedName="Discounted_Interest_Rate"
                       cachedPrecision="10"
-                      cachedScale="4"
+                      cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Discounted_Interest_Rate]"
-                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Discounted_Interest_Rate_NUMERIC]" />
+                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Discounted_Interest_Rate]" />
                     <inputColumn
-                      refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Funder_Margin_NUMERIC]"
+                      refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Funder_Margin]"
                       cachedDataType="numeric"
-                      cachedName="Funder_Margin_NUMERIC"
+                      cachedName="Funder_Margin"
                       cachedPrecision="10"
-                      cachedScale="4"
+                      cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Funder_Margin]"
-                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Funder_Margin_NUMERIC]" />
+                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Funder_Margin]" />
                     <inputColumn
                       refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Maturity Date]"
                       cachedDataType="wstr"
@@ -641,13 +340,13 @@
                       externalMetadataColumnId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Postcode]"
                       lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[PostCode]" />
                     <inputColumn
-                      refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Principal_Outstanding_NUMERIC]"
+                      refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Principal_Outstanding]"
                       cachedDataType="numeric"
-                      cachedName="Principal_Outstanding_NUMERIC"
+                      cachedName="Principal_Outstanding"
                       cachedPrecision="20"
                       cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Principal_Outstanding]"
-                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Principal_Outstanding_NUMERIC]" />
+                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Principal_Outstanding]" />
                     <inputColumn
                       refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Product_Type]"
                       cachedDataType="wstr"
@@ -670,12 +369,12 @@
                       externalMetadataColumnId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
                       lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[State]" />
                     <inputColumn
-                      refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Term_NUMERIC]"
+                      refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Term]"
                       cachedDataType="numeric"
-                      cachedName="Term_NUMERIC"
+                      cachedName="Term"
                       cachedPrecision="3"
                       externalMetadataColumnId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Term]"
-                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Term_NUMERIC]" />
+                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Term]" />
                     <inputColumn
                       refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Termination_Date]"
                       cachedDataType="wstr"
@@ -684,29 +383,29 @@
                       externalMetadataColumnId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Termination_Date]"
                       lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Termination_Date]" />
                     <inputColumn
-                      refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Total_Amount_Financed_NUMERIC]"
+                      refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Total_Amount_Financed]"
                       cachedDataType="numeric"
-                      cachedName="Total_Amount_Financed_NUMERIC"
+                      cachedName="Total_Amount_Financed"
                       cachedPrecision="20"
                       cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Total_Amount_Financed]"
-                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Amount_Financed_NUMERIC]" />
+                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Amount_Financed]" />
                     <inputColumn
-                      refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Total_Rebate_to_date_exclGST_NUMERIC]"
+                      refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Total_Rebate_to_date_exclGST]"
                       cachedDataType="numeric"
-                      cachedName="Total_Rebate_to_date_exclGST_NUMERIC"
+                      cachedName="Total_Rebate_to_date_exclGST"
                       cachedPrecision="20"
                       cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Total_Rebate_to_date_exclGST]"
-                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Rebate_to_date_exclGST_NUMERIC]" />
+                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Rebate_to_date_exclGST]" />
                     <inputColumn
-                      refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Total_Rebate_to_date_inclGST_NUMERIC]"
+                      refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[Total_Rebate_to_date_inclGST]"
                       cachedDataType="numeric"
-                      cachedName="Total_Rebate_to_date_inclGST_NUMERIC"
+                      cachedName="Total_Rebate_to_date_inclGST"
                       cachedPrecision="20"
                       cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Total_Rebate_to_date_inclGST]"
-                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Rebate_to_date_inclGST_NUMERIC]" />
+                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Rebate_to_date_inclGST]" />
                     <inputColumn
                       refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[FileDate]"
                       cachedDataType="wstr"
@@ -785,7 +484,7 @@
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Postcode]"
                       dataType="wstr"
-                      length="4"
+                      length="5"
                       name="Postcode" />
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Principal_Outstanding]"
@@ -1094,13 +793,13 @@
                       externalMetadataColumnId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_19]"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Asset_Number]" />
                     <inputColumn
-                      refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Balloon_Amount_NUMERIC]"
+                      refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Balloon_Amount]"
                       cachedDataType="numeric"
-                      cachedName="Balloon_Amount_NUMERIC"
+                      cachedName="Balloon_Amount"
                       cachedPrecision="20"
                       cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Balloon_Amount_NUMERIC]" />
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Balloon_Amount]" />
                     <inputColumn
                       refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Brand]"
                       cachedDataType="wstr"
@@ -1109,13 +808,13 @@
                       externalMetadataColumnId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Brand]" />
                     <inputColumn
-                      refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CEFC_Rebate_Monthly_NUMERIC]"
+                      refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CEFC_Rebate_Monthly]"
                       cachedDataType="numeric"
-                      cachedName="CEFC_Rebate_Monthly_NUMERIC"
+                      cachedName="CEFC_Rebate_Monthly"
                       cachedPrecision="20"
                       cachedScale="4"
                       externalMetadataColumnId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[CEFC_Rebate_Monthly_NUMERIC]" />
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[CEFC_Rebate_Monthly]" />
                     <inputColumn
                       refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Contract_Number]"
                       cachedDataType="wstr"
@@ -1131,13 +830,13 @@
                       externalMetadataColumnId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Contract_Start_Date]" />
                     <inputColumn
-                      refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Discounted_Interest_Rate_NUMERIC]"
+                      refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Discounted_Interest_Rate]"
                       cachedDataType="numeric"
-                      cachedName="Discounted_Interest_Rate_NUMERIC"
+                      cachedName="Discounted_Interest_Rate"
                       cachedPrecision="10"
-                      cachedScale="4"
+                      cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Discounted_Interest_Rate_NUMERIC]" />
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Discounted_Interest_Rate]" />
                     <inputColumn
                       refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[FileDate]"
                       cachedDataType="wstr"
@@ -1146,13 +845,13 @@
                       externalMetadataColumnId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[FileDate]" />
                     <inputColumn
-                      refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Funder_Margin_NUMERIC]"
+                      refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Funder_Margin]"
                       cachedDataType="numeric"
-                      cachedName="Funder_Margin_NUMERIC"
+                      cachedName="Funder_Margin"
                       cachedPrecision="10"
-                      cachedScale="4"
+                      cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Funder_Margin_NUMERIC]" />
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Funder_Margin]" />
                     <inputColumn
                       refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_Project]"
                       cachedDataType="wstr"
@@ -1175,13 +874,13 @@
                       externalMetadataColumnId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[PostCode]" />
                     <inputColumn
-                      refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Principal_Outstanding_NUMERIC]"
+                      refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Principal_Outstanding]"
                       cachedDataType="numeric"
-                      cachedName="Principal_Outstanding_NUMERIC"
+                      cachedName="Principal_Outstanding"
                       cachedPrecision="20"
                       cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Principal_Outstanding_NUMERIC]" />
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Principal_Outstanding]" />
                     <inputColumn
                       refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Product_Type]"
                       cachedDataType="wstr"
@@ -1204,12 +903,12 @@
                       externalMetadataColumnId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[State]" />
                     <inputColumn
-                      refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Term_NUMERIC]"
+                      refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Term]"
                       cachedDataType="numeric"
-                      cachedName="Term_NUMERIC"
+                      cachedName="Term"
                       cachedPrecision="3"
                       externalMetadataColumnId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Term_NUMERIC]" />
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Term]" />
                     <inputColumn
                       refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Termination_Date]"
                       cachedDataType="wstr"
@@ -1218,29 +917,29 @@
                       externalMetadataColumnId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_15]"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Termination_Date]" />
                     <inputColumn
-                      refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Total_Amount_Financed_NUMERIC]"
+                      refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Total_Amount_Financed]"
                       cachedDataType="numeric"
-                      cachedName="Total_Amount_Financed_NUMERIC"
+                      cachedName="Total_Amount_Financed"
                       cachedPrecision="20"
                       cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_16]"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Total_Amount_Financed_NUMERIC]" />
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Amount_Financed]" />
                     <inputColumn
-                      refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Total_Rebate_to_date_exclGST_NUMERIC]"
+                      refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Total_Rebate_to_date_exclGST]"
                       cachedDataType="numeric"
-                      cachedName="Total_Rebate_to_date_exclGST_NUMERIC"
+                      cachedName="Total_Rebate_to_date_exclGST"
                       cachedPrecision="20"
                       cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_17]"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Total_Rebate_to_date_exclGST_NUMERIC]" />
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_exclGST]" />
                     <inputColumn
-                      refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Total_Rebate_to_date_inclGST_NUMERIC]"
+                      refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Total_Rebate_to_date_inclGST]"
                       cachedDataType="numeric"
-                      cachedName="Total_Rebate_to_date_inclGST_NUMERIC"
+                      cachedName="Total_Rebate_to_date_inclGST"
                       cachedPrecision="20"
                       cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_18]"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Total_Rebate_to_date_inclGST_NUMERIC]" />
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_inclGST]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1359,7 +1058,7 @@
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
                       dataType="wstr"
-                      length="4"
+                      length="5"
                       name="Param_9">
                       <properties>
                         <property
@@ -1640,13 +1339,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Balloon_Amount_NUMERIC]"
+                      refId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Balloon_Amount]"
                       cachedDataType="numeric"
-                      cachedName="Balloon_Amount_NUMERIC"
+                      cachedName="Balloon_Amount"
                       cachedPrecision="20"
                       cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Balloon_Amount]"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Balloon_Amount_NUMERIC]">
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Balloon_Amount]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1669,13 +1368,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[CEFC_Rebate_Monthly_NUMERIC]"
+                      refId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[CEFC_Rebate_Monthly]"
                       cachedDataType="numeric"
-                      cachedName="CEFC_Rebate_Monthly_NUMERIC"
+                      cachedName="CEFC_Rebate_Monthly"
                       cachedPrecision="20"
                       cachedScale="4"
                       externalMetadataColumnId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CEFC_Rebate_Monthly]"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[CEFC_Rebate_Monthly_NUMERIC]">
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[CEFC_Rebate_Monthly]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1712,13 +1411,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Discounted_Interest_Rate_NUMERIC]"
+                      refId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Discounted_Interest_Rate]"
                       cachedDataType="numeric"
-                      cachedName="Discounted_Interest_Rate_NUMERIC"
+                      cachedName="Discounted_Interest_Rate"
                       cachedPrecision="10"
-                      cachedScale="4"
+                      cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Discounted_Interest_Rate]"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Discounted_Interest_Rate_NUMERIC]">
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Discounted_Interest_Rate]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1741,13 +1440,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Funder_Margin_NUMERIC]"
+                      refId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Funder_Margin]"
                       cachedDataType="numeric"
-                      cachedName="Funder_Margin_NUMERIC"
+                      cachedName="Funder_Margin"
                       cachedPrecision="10"
-                      cachedScale="4"
+                      cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Funder_Margin]"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Funder_Margin_NUMERIC]">
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Funder_Margin]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1798,13 +1497,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Principal_Outstanding_NUMERIC]"
+                      refId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Principal_Outstanding]"
                       cachedDataType="numeric"
-                      cachedName="Principal_Outstanding_NUMERIC"
+                      cachedName="Principal_Outstanding"
                       cachedPrecision="20"
                       cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Principal_Outstanding]"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Principal_Outstanding_NUMERIC]">
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Principal_Outstanding]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1855,12 +1554,12 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Term_NUMERIC]"
+                      refId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Term]"
                       cachedDataType="numeric"
-                      cachedName="Term_NUMERIC"
+                      cachedName="Term"
                       cachedPrecision="3"
                       externalMetadataColumnId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Term]"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Term_NUMERIC]">
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Term]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1883,13 +1582,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Total_Amount_Financed_NUMERIC]"
+                      refId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Total_Amount_Financed]"
                       cachedDataType="numeric"
-                      cachedName="Total_Amount_Financed_NUMERIC"
+                      cachedName="Total_Amount_Financed"
                       cachedPrecision="20"
                       cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Total_Amount_Financed]"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Total_Amount_Financed_NUMERIC]">
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Amount_Financed]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1898,13 +1597,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Total_Rebate_to_date_exclGST_NUMERIC]"
+                      refId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Total_Rebate_to_date_exclGST]"
                       cachedDataType="numeric"
-                      cachedName="Total_Rebate_to_date_exclGST_NUMERIC"
+                      cachedName="Total_Rebate_to_date_exclGST"
                       cachedPrecision="20"
                       cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Total_Rebate_to_date_exclGST]"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Total_Rebate_to_date_exclGST_NUMERIC]">
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_exclGST]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -1913,13 +1612,13 @@
                       </properties>
                     </inputColumn>
                     <inputColumn
-                      refId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Total_Rebate_to_date_inclGST_NUMERIC]"
+                      refId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Total_Rebate_to_date_inclGST]"
                       cachedDataType="numeric"
-                      cachedName="Total_Rebate_to_date_inclGST_NUMERIC"
+                      cachedName="Total_Rebate_to_date_inclGST"
                       cachedPrecision="20"
                       cachedScale="2"
                       externalMetadataColumnId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Total_Rebate_to_date_inclGST]"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Total_Rebate_to_date_inclGST_NUMERIC]">
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_inclGST]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -2127,244 +1826,253 @@
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct p.ID_Project,
 a.Agreement as [Contract_Number],
 'Not Available' as [Asset_Number],
-a.ANZSIC as [ANZSIC_Code],
-isnull(a.[Residual / Balloon Amount],'0') as [Balloon_Amount],
+isnull(a.ANZSIC,'0') as [ANZSIC_Code],
+convert(numeric(20,2),isnull(a.[Residual / Balloon Amount],'0')) as [Balloon_Amount],
 a.Brand as [Brand],
-a.[Sum of Rebate Calc / Amount] as [CEFC_Rebate_Monthly],
+convert(numeric(20,4),isnull(a.[Sum of Rebate Calc / Amount],'0')) as [CEFC_Rebate_Monthly],
 a.[Funding Date] as [Contract_Start_Date],
-a.DiscIntRateAvg as [Discounted_Interest_Rate],
-'0' as [Funder_Margin],
+convert(numeric(10,2),isnull(a.DiscIntRateAvg,'0')) as [Discounted_Interest_Rate],
+convert(numeric(10,2),'0') as [Funder_Margin],
 a.[Maturity Date],
 a.[Post Code] as PostCode,
-a.[Min of Principal Outstanding] as [Principal_Outstanding],
+convert(numeric(20,2),isnull(a.[Min of Principal Outstanding],'0')) as [Principal_Outstanding],
 a.[Product / Loan Type] as [Product_Type],
 a.[Repayment Frequency] as [Repayment_Frequency],
 a.State,
-a.[Term (months)] as [Term],
+convert(numeric(3),isnull(a.[Term (months)],'0')) as [Term],
 a.[Termination Date (AS applicable)] as [Termination_Date],
-a.[Total Amount Financed] as [Total_Amount_Financed],
-'0' as [Total_Rebate_to_date_exclGST],
-'0' as [Total_Rebate_to_date_inclGST],
+convert(numeric(20,2),isnull(a.[Total Amount Financed],'0')) as [Total_Amount_Financed],
+convert(numeric(20,2),'0') as [Total_Rebate_to_date_exclGST],
+convert(numeric(20,2),'0') as [Total_Rebate_to_date_inclGST],
 a.FileDate
 from staging.ContractSummary_Annan a
   inner join core.Projects_Dimension p
 	on p.Project_Name = 'Annan'
+where a.Agreement is not null
 
 UNION ALL
 select distinct p.ID_Project,
 a.Agreement as [Contract_Number],
 a.ASSET_NUMBER as [Asset_Number],
-a.ANZSIC as [ANZSIC_Code],
-isnull(a.RESIDUAL,'0') as [Balloon_Amount],
+isnull(a.ANZSIC,'0') as [ANZSIC_Code],
+convert(numeric(20,2),isnull(a.RESIDUAL,'0')) as [Balloon_Amount],
 a.ENTITY as [Brand],
-a.CEFC_MONTHLY_REBATE as [CEFC_Rebate_Monthly],
+convert(numeric(20,4),isnull(a.CEFC_MONTHLY_REBATE,'0')) as [CEFC_Rebate_Monthly],
 a.FUNDING_DATE as [Contract_Start_Date],
-a.[Customer Rate] as [Discounted_Interest_Rate],
-'0' as [Funder_Margin],
+convert(numeric(10,2),isnull(a.[Customer Rate],'0')) as [Discounted_Interest_Rate],
+convert(numeric(10,2),'0') as [Funder_Margin],
 a.SCHEDULE_MATURITY_DATE as [Maturity_Date],
 a.POST_CODE as PostCode,
-a.NPV as [Principal_Outstanding],
+convert(numeric(20,2),isnull(a.NPV,'0')) as [Principal_Outstanding],
 a.PRODUCT as [Product_Type],
 a.PAYMENT_FREQUENCY as [Repayment_Frequency],
 a.ASSET_STATE_LOCATION as [State],
-a.SCHEDULE_TERM as [Term],
+convert(numeric(3),isnull(a.SCHEDULE_TERM,'0')) as [Term],
 a.TERMINATION_DATE as [Termination_Date],
-a.TOTAL_AMOUNT_FINANCED as [Total_Amount_Financed],
-a.TOTAL_CEFC_REBATE_TODATE as [Total_Rebate_to_date_exclGST],
-'0' as [Total_Rebate_to_date_inclGST],
+convert(numeric(20,2),isnull(a.TOTAL_AMOUNT_FINANCED,'0')) as [Total_Amount_Financed],
+convert(numeric(20,2),isnull(a.TOTAL_CEFC_REBATE_TODATE,'0')) as [Total_Rebate_to_date_exclGST],
+convert(numeric(20,2),'0') as [Total_Rebate_to_date_inclGST],
 a.FileDate
 from staging.ContractSummary_Condamine a
   inner join core.Projects_Dimension p
 	on p.Project_Name = 'Condamine'
+where a.Agreement is not null
 
 UNION ALL
 select distinct p.ID_Project,
 a.[Lease Id] as [Contract_Number],
 'Not Available' as [Asset_Number],
-'Not Available' as [ANZSIC_Code],
-'0' as [Balloon_Amount],
+'0' as [ANZSIC_Code],
+convert(numeric(20,2),'0') as [Balloon_Amount],
 'Not Available' as [Brand],
-'0' as [CEFC_Rebate_Monthly],
+convert(numeric(20,4),'0') as [CEFC_Rebate_Monthly],
 a.[Start Date] as [Contract_Start_Date],
-'0' as [Discounted_Interest_Rate],
-a.[Lease BRFM1 funder margin] as [Funder_Margin],
+convert(numeric(10,2),'0') as [Discounted_Interest_Rate],
+convert(numeric(10,2),isnull(a.[Lease BRFM1 funder margin],'0')) as [Funder_Margin],
 'Not Available' as [Maturity_Date],
 a.[Post code] as PostCode,
-a.[Current Value] as [Principal_Outstanding],
+convert(numeric(20,2),isnull(a.[Current Value],'0')) as [Principal_Outstanding],
 a.[Lease Type Description] as [Product_Type],
 'Not Available' as [Repayment_Frequency],
 a.State as [State],
-a.Term as [Term],
+convert(numeric(3),isnull(a.Term,'0')) as [Term],
 'Not Available' as [Termination_Date],
-a.[Init Funded Cap] as [Total_Amount_Financed],
-'0' as [Total_Rebate_to_date_exclGST],
-'0' as [Total_Rebate_to_date_inclGST],
+convert(numeric(20,2),isnull(a.[Init Funded Cap],'0')) as [Total_Amount_Financed],
+convert(numeric(20,2),'0') as [Total_Rebate_to_date_exclGST],
+convert(numeric(20,2),'0') as [Total_Rebate_to_date_inclGST],
 a.FileDate
 from staging.ContractSummary_Flynn a
   inner join core.Projects_Dimension p
 	on p.Project_Name = 'Flynn'
+where a.[Lease Id] is not null
 
 UNION ALL
 select distinct p.ID_Project,
 a.Loan_Number as [Contract_Number],
 'Not Available' as [Asset_Number],
-'Not Available' as [ANZSIC_Code],
-'0' as [Balloon_Amount],
+'0' as [ANZSIC_Code],
+convert(numeric(20,2),'0') as [Balloon_Amount],
 'Not Available' as [Brand],
-'0' as [CEFC_Rebate_Monthly],
+convert(numeric(20,4),'0') as [CEFC_Rebate_Monthly],
 a.DateSettled as [Contract_Start_Date],
-a.DiscountedRate as [Discounted_Interest_Rate],
-'0' as [Funder_Margin],
+convert(numeric(10,2),isnull(a.DiscountedRate,'0')) as [Discounted_Interest_Rate],
+convert(numeric(10,2),'0') as [Funder_Margin],
 a.MaturityDate as [Maturity_Date],
 a.Add_PostCode as PostCode,
-a.CurrentLoanAmt as [Principal_Outstanding],
+convert(numeric(20,2),isnull(a.CurrentLoanAmt,'0')) as [Principal_Outstanding],
 a.FacilityType as [Product_Type],
 'Not Available' as [Repayment_Frequency],
 a.Add_State as [State],
-a.TermPeriod as [Term],
+convert(numeric(3),isnull(a.TermPeriod,'0')) as [Term],
 'Not Available' as [Termination_Date],
-a.Quo_AmountFinanced as [Total_Amount_Financed],
-'0' as [Total_Rebate_to_date_exclGST],
-'0' as [Total_Rebate_to_date_inclGST],
+convert(numeric(20,2),isnull(a.Quo_AmountFinanced,'0')) as [Total_Amount_Financed],
+convert(numeric(20,2),'0') as [Total_Rebate_to_date_exclGST],
+convert(numeric(20,2),'0') as [Total_Rebate_to_date_inclGST],
 a.FileDate
 from staging.ContractSummary_Macleay a
   inner join core.Projects_Dimension p
 	on p.Project_Name = 'Macleay'
+where a.Loan_Number is not null
 
 UNION ALL
 select distinct p.ID_Project,
 a.[Agmt Number] as [Contract_Number],
 a.[Asset Number] as [Asset_Number],
-a.ANZIC as [ANZSIC_Code],
-isnull(a.[Residual Value],'0') as [Balloon_Amount],
+isnull(a.ANZIC,'0') as [ANZSIC_Code],
+convert(numeric(20,2),isnull(case when a.[Residual Value] like '-%' then '0' else a.[Residual Value] end ,'0')) as [Balloon_Amount],
 'Not Available' as [Brand],
-a.[Rebate Calc] as [CEFC_Rebate_Monthly],
+convert(numeric(20,4),isnull(a.[Rebate Calc],'0')) as [CEFC_Rebate_Monthly],
 a.[Funding Date ] as [Contract_Start_Date],
-a.[Customer Rate ] as [Discounted_Interest_Rate],
-'0' as [Funder_Margin],
+convert(numeric(10,2),isnull(a.[Customer Rate ],'0')) as [Discounted_Interest_Rate],
+convert(numeric(10,2),'0') as [Funder_Margin],
 a.[Schedule Maturity Date ] as [Maturity_Date],
 a.Postcode as PostCode,
-a.[Net Present Value ] as [Principal_Outstanding],
+convert(numeric(20,2),isnull(a.[Net Present Value ],'0')) as [Principal_Outstanding],
 a.Product as [Product_Type],
 a.[Repayment Frequency ] as [Repayment_Frequency],
 a.[Cust State] as [State],
-a.[Schedule Term ] as [Term],
+convert(numeric(3),isnull(a.[Schedule Term ],'0')) as [Term],
 a.[Termination Date ] as [Termination_Date],
-a.[Original Amount Financed ] as [Total_Amount_Financed],
-'0' as [Total_Rebate_to_date_exclGST],
-a.[Total Rebate (inc GST)] as [Total_Rebate_to_date_inclGST],
+convert(numeric(20,2),isnull(a.[Original Amount Financed ],'0')) as [Total_Amount_Financed],
+convert(numeric(20,2),'0') as [Total_Rebate_to_date_exclGST],
+convert(numeric(20,2),isnull(a.[Total Rebate (inc GST)],'0')) as [Total_Rebate_to_date_inclGST],
 a.FileDate
 from staging.ContractSummary_Murchison a
   inner join core.Projects_Dimension p
 	on p.Project_Name = 'Murchison'
+where a.[Agmt Number] is not null
 
 UNION ALL
 select distinct p.ID_Project,
 a.[Contract No.] as [Contract_Number],
 a.[Asset No.] as [Asset_Number],
-a.[Industry class] as [ANZSIC_Code],
-isnull(a.[ Balloon / Residual amount ],'0') as [Balloon_Amount],
+isnull(a.[Industry class],'0') as [ANZSIC_Code],
+convert(numeric(20,2),isnull(case when a.[ Balloon / Residual amount ] = 'NULL' then '0' else a.[ Balloon / Residual amount ] end ,'0')) as [Balloon_Amount],
 'Not Available' as [Brand],
-a.[CEFC Rate Adjustment] [CEFC_Rebate_Monthly],
+convert(numeric(20,4),isnull(a.[CEFC Rate Adjustment],'0')) [CEFC_Rebate_Monthly],
 a.[Drawdown date] as [Contract_Start_Date],
-a.[Interest rate] as [Discounted_Interest_Rate],
-'0' as [Funder_Margin],
+convert(numeric(10,2),isnull(a.[Interest rate],'0')) as [Discounted_Interest_Rate],
+convert(numeric(10,2),'0') as [Funder_Margin],
 'Not Available' as [Maturity_Date],
 a.Postcode as PostCode,
-a.[Principal Outstanding] as [Principal_Outstanding],
+convert(numeric(20,2),isnull(a.[Principal Outstanding],'0')) as [Principal_Outstanding],
 a.[Lease type] as [Product_Type],
 a.[Repayment frequency] as [Repayment_Frequency],
 a.[State] as [State],
-a.Term as [Term],
+convert(numeric(3),isnull(a.Term,'0')) as [Term],
 'Not Available' as [Termination_Date],
-a.[Total amount financed] as [Total_Amount_Financed],
-'0' as [Total_Rebate_to_date_exclGST],
-'0' as [Total_Rebate_to_date_inclGST],
+convert(numeric(20,2),isnull(a.[Total amount financed],'0')) as [Total_Amount_Financed],
+convert(numeric(20,2),'0') as [Total_Rebate_to_date_exclGST],
+convert(numeric(20,2),'0') as [Total_Rebate_to_date_inclGST],
 a.FileDate
 from staging.ContractSummary_Natalie a
   inner join core.Projects_Dimension p
 	on p.Project_Name = 'Natalie'
+where a.[Contract No.] is not null
 
 UNION ALL
 select distinct p.ID_Project,
 a.[Reference No.] as [Contract_Number],
 'Not Available' as [Asset_Number],
-'Not Available' as [ANZSIC_Code],
-'0' as [Balloon_Amount],
+'0' as [ANZSIC_Code],
+convert(numeric(20,2),'0') as [Balloon_Amount],
 'Not Available' as [Brand],
-'0'[CEFC_Rebate_Monthly],
+convert(numeric(20,4),'0') as [CEFC_Rebate_Monthly],
 a.[Installation Date] as [Contract_Start_Date],
-'0'as [Discounted_Interest_Rate],
-'0' as [Funder_Margin],
+convert(numeric(10,2),'0') as [Discounted_Interest_Rate],
+convert(numeric(10,2),'0') as [Funder_Margin],
 'Not Available' as [Maturity_Date],
 a.Postcode as PostCode,
-'0' as [Principal_Outstanding],
+convert(numeric(20,2),'0') as [Principal_Outstanding],
 'Not Available' as [Product_Type],
 'Not Available' as [Repayment_Frequency],
 a.[Installation: State] as [State],
-a.Term as [Term],
+convert(numeric(3),isnull(a.Term,'0')) as [Term],
 'Not Available' as [Termination_Date],
-a.[Amount Claimed] as [Total_Amount_Financed],
-'0' as [Total_Rebate_to_date_exclGST],
-'0' as [Total_Rebate_to_date_inclGST],
+convert(numeric(20,2),isnull(a.[Amount Claimed],'0')) as [Total_Amount_Financed],
+convert(numeric(20,2),'0') as [Total_Rebate_to_date_exclGST],
+convert(numeric(20,2),'0') as [Total_Rebate_to_date_inclGST],
 a.FileDate
 from staging.ContractSummary_Othello a
   inner join core.Projects_Dimension p
 	on p.Project_Name = 'Othello'
+where a.[Reference No.] is not null
 
 UNION ALL
 select distinct p.ID_Project,
 a.ContractID as [Contract_Number],
 'Not Available' as [Asset_Number],
-'Not Available' as [ANZSIC_Code],
-'0' as [Balloon_Amount],
+'0' as [ANZSIC_Code],
+convert(numeric(20,2),'0') as [Balloon_Amount],
 'Not Available' as [Brand],
-'0' as [CEFC_Rebate_Monthly],
+convert(numeric(20,4),'0') as [CEFC_Rebate_Monthly],
 a.ContractDate as [Contract_Start_Date],
-a.AnnualRate as [Discounted_Interest_Rate],
-'0' as [Funder_Margin],
+convert(numeric(10,2),isnull(a.AnnualRate,'0')) as [Discounted_Interest_Rate],
+convert(numeric(10,2),'0') as [Funder_Margin],
 'Not Available' as [Maturity_Date],
-'NA' as PostCode,
-a.PrincipalOutstanding as [Principal_Outstanding],
+'0' as PostCode,
+convert(numeric(20,2),isnull(a.PrincipalOutstanding,'0')) as [Principal_Outstanding],
 'Not Available' as [Product_Type],
 'Not Available' as [Repayment_Frequency],
 a.BorrowerState as [State],
-a.LoanTerm as [Term],
+convert(numeric(3),isnull(a.LoanTerm,'0')) as [Term],
 'Not Available' as [Termination_Date],
-a.FinanceAmount as [Total_Amount_Financed],
-'0' as [Total_Rebate_to_date_exclGST],
-'0' as [Total_Rebate_to_date_inclGST],
+convert(numeric(20,2),isnull(a.FinanceAmount,'0')) as [Total_Amount_Financed],
+convert(numeric(20,2),'0') as [Total_Rebate_to_date_exclGST],
+convert(numeric(20,2),'0') as [Total_Rebate_to_date_inclGST],
 a.FileDate
 from staging.ContractSummary_Roper a
   inner join core.Projects_Dimension p
 	on p.Project_Name = 'Roper'
+where a.ContractID is not null
 
 UNION ALL
 select distinct p.ID_Project,
 a.Contract_Number as [Contract_Number],
 'Not Available' as [Asset_Number],
-a.ANZSIC_Code as [ANZSIC_Code],
-isnull(a.Balloon_Amount,'0') as [Balloon_Amount],
+isnull(a.ANZSIC_Code,'0') as [ANZSIC_Code],
+convert(numeric(20,2),isnull(a.Balloon_Amount,'0')) as [Balloon_Amount],
 a.Brand as [Brand],
-a.CEFC_Rate_Adjusted_Amount as [CEFC_Rebate_Monthly],
+convert(numeric(20,4),isnull(a.CEFC_Rate_Adjusted_Amount,'0')) as [CEFC_Rebate_Monthly],
 a.Drawdown_Date as [Contract_Start_Date],
-a.Discounted_Rate as [Discounted_Interest_Rate],
-'0' as [Funder_Margin],
+convert(numeric(10,2),isnull(a.Discounted_Rate,'0')) as [Discounted_Interest_Rate],
+convert(numeric(10,2),'0') as [Funder_Margin],
 a.Maturity_Date as [Maturity_Date],
 a.Postcode as PostCode,
-a.Balance_Outstanding as [Principal_Outstanding],
+convert(numeric(20,2),isnull(a.Balance_Outstanding,'0')) as [Principal_Outstanding],
 a.Product_Type as [Product_Type],
 a.Repayment_Frequency as [Repayment_Frequency],
 a.State as [State],
-a.Contract_Term_Months as [Term],
+convert(numeric(3),isnull(a.Contract_Term_Months,'0')) as [Term],
 'Not Available' as [Termination_Date],
-a.Amount_Financed as [Total_Amount_Financed],
-'0' as [Total_Rebate_to_date_exclGST],
-'0' as [Total_Rebate_to_date_inclGST],
+convert(numeric(20,2),isnull(a.Amount_Financed,'0')) as [Total_Amount_Financed],
+convert(numeric(20,2),'0') as [Total_Rebate_to_date_exclGST],
+convert(numeric(20,2),'0') as [Total_Rebate_to_date_inclGST],
 a.FileDate
 from staging.ContractSummary_Wingecarribee a
   inner join core.Projects_Dimension p
-	on p.Project_Name = 'Wingecarribee'</property>
+	on p.Project_Name = 'Wingecarribee'
+where a.Contract_Number is not null</property>
                 <property
                   dataType="System.Int32"
                   description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
@@ -2443,13 +2151,14 @@ from staging.ContractSummary_Wingecarribee a
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Balloon_Amount]"
-                      dataType="wstr"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Balloon_Amount]"
-                      length="15"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Balloon_Amount]"
                       name="Balloon_Amount"
+                      precision="20"
+                      scale="2"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Brand]"
@@ -2463,13 +2172,14 @@ from staging.ContractSummary_Wingecarribee a
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[CEFC_Rebate_Monthly]"
-                      dataType="wstr"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[CEFC_Rebate_Monthly]"
-                      length="20"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[CEFC_Rebate_Monthly]"
                       name="CEFC_Rebate_Monthly"
+                      precision="20"
+                      scale="4"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Contract_Start_Date]"
@@ -2483,23 +2193,25 @@ from staging.ContractSummary_Wingecarribee a
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Discounted_Interest_Rate]"
-                      dataType="wstr"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Discounted_Interest_Rate]"
-                      length="15"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Discounted_Interest_Rate]"
                       name="Discounted_Interest_Rate"
+                      precision="10"
+                      scale="2"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Funder_Margin]"
-                      dataType="wstr"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Funder_Margin]"
-                      length="5"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Funder_Margin]"
                       name="Funder_Margin"
+                      precision="10"
+                      scale="2"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Maturity Date]"
@@ -2523,13 +2235,14 @@ from staging.ContractSummary_Wingecarribee a
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Principal_Outstanding]"
-                      dataType="wstr"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Principal_Outstanding]"
-                      length="15"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Principal_Outstanding]"
                       name="Principal_Outstanding"
+                      precision="20"
+                      scale="2"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Product_Type]"
@@ -2563,13 +2276,13 @@ from staging.ContractSummary_Wingecarribee a
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Term]"
-                      dataType="wstr"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Term]"
-                      length="3"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Term]"
                       name="Term"
+                      precision="3"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Termination_Date]"
@@ -2583,33 +2296,36 @@ from staging.ContractSummary_Wingecarribee a
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Amount_Financed]"
-                      dataType="wstr"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Total_Amount_Financed]"
-                      length="15"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Amount_Financed]"
                       name="Total_Amount_Financed"
+                      precision="20"
+                      scale="2"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_exclGST]"
-                      dataType="wstr"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Total_Rebate_to_date_exclGST]"
-                      length="15"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_exclGST]"
                       name="Total_Rebate_to_date_exclGST"
+                      precision="20"
+                      scale="2"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_inclGST]"
-                      dataType="wstr"
+                      dataType="numeric"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Total_Rebate_to_date_inclGST]"
-                      length="15"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_inclGST]"
                       name="Total_Rebate_to_date_inclGST"
+                      precision="20"
+                      scale="2"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[FileDate]"
@@ -2646,9 +2362,10 @@ from staging.ContractSummary_Wingecarribee a
                       name="ANZSIC_Code" />
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Balloon_Amount]"
-                      dataType="wstr"
-                      length="15"
-                      name="Balloon_Amount" />
+                      dataType="numeric"
+                      name="Balloon_Amount"
+                      precision="20"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Brand]"
                       dataType="wstr"
@@ -2656,9 +2373,10 @@ from staging.ContractSummary_Wingecarribee a
                       name="Brand" />
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[CEFC_Rebate_Monthly]"
-                      dataType="wstr"
-                      length="20"
-                      name="CEFC_Rebate_Monthly" />
+                      dataType="numeric"
+                      name="CEFC_Rebate_Monthly"
+                      precision="20"
+                      scale="4" />
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Contract_Start_Date]"
                       dataType="wstr"
@@ -2666,14 +2384,16 @@ from staging.ContractSummary_Wingecarribee a
                       name="Contract_Start_Date" />
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Discounted_Interest_Rate]"
-                      dataType="wstr"
-                      length="15"
-                      name="Discounted_Interest_Rate" />
+                      dataType="numeric"
+                      name="Discounted_Interest_Rate"
+                      precision="10"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Funder_Margin]"
-                      dataType="wstr"
-                      length="5"
-                      name="Funder_Margin" />
+                      dataType="numeric"
+                      name="Funder_Margin"
+                      precision="10"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Maturity Date]"
                       dataType="wstr"
@@ -2686,9 +2406,10 @@ from staging.ContractSummary_Wingecarribee a
                       name="PostCode" />
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Principal_Outstanding]"
-                      dataType="wstr"
-                      length="15"
-                      name="Principal_Outstanding" />
+                      dataType="numeric"
+                      name="Principal_Outstanding"
+                      precision="20"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Product_Type]"
                       dataType="wstr"
@@ -2706,9 +2427,9 @@ from staging.ContractSummary_Wingecarribee a
                       name="State" />
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Term]"
-                      dataType="wstr"
-                      length="3"
-                      name="Term" />
+                      dataType="numeric"
+                      name="Term"
+                      precision="3" />
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Termination_Date]"
                       dataType="wstr"
@@ -2716,19 +2437,22 @@ from staging.ContractSummary_Wingecarribee a
                       name="Termination_Date" />
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Total_Amount_Financed]"
-                      dataType="wstr"
-                      length="15"
-                      name="Total_Amount_Financed" />
+                      dataType="numeric"
+                      name="Total_Amount_Financed"
+                      precision="20"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Total_Rebate_to_date_exclGST]"
-                      dataType="wstr"
-                      length="15"
-                      name="Total_Rebate_to_date_exclGST" />
+                      dataType="numeric"
+                      name="Total_Rebate_to_date_exclGST"
+                      precision="20"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Total_Rebate_to_date_inclGST]"
-                      dataType="wstr"
-                      length="15"
-                      name="Total_Rebate_to_date_inclGST" />
+                      dataType="numeric"
+                      name="Total_Rebate_to_date_inclGST"
+                      precision="20"
+                      scale="2" />
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[FileDate]"
                       dataType="wstr"
@@ -2767,10 +2491,11 @@ from staging.ContractSummary_Wingecarribee a
                       name="ANZSIC_Code" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Balloon_Amount]"
-                      dataType="wstr"
-                      length="15"
+                      dataType="numeric"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Balloon_Amount]"
-                      name="Balloon_Amount" />
+                      name="Balloon_Amount"
+                      precision="20"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Brand]"
                       dataType="wstr"
@@ -2779,10 +2504,11 @@ from staging.ContractSummary_Wingecarribee a
                       name="Brand" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[CEFC_Rebate_Monthly]"
-                      dataType="wstr"
-                      length="20"
+                      dataType="numeric"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[CEFC_Rebate_Monthly]"
-                      name="CEFC_Rebate_Monthly" />
+                      name="CEFC_Rebate_Monthly"
+                      precision="20"
+                      scale="4" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Contract_Start_Date]"
                       dataType="wstr"
@@ -2791,16 +2517,18 @@ from staging.ContractSummary_Wingecarribee a
                       name="Contract_Start_Date" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Discounted_Interest_Rate]"
-                      dataType="wstr"
-                      length="15"
+                      dataType="numeric"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Discounted_Interest_Rate]"
-                      name="Discounted_Interest_Rate" />
+                      name="Discounted_Interest_Rate"
+                      precision="10"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Funder_Margin]"
-                      dataType="wstr"
-                      length="5"
+                      dataType="numeric"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Funder_Margin]"
-                      name="Funder_Margin" />
+                      name="Funder_Margin"
+                      precision="10"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Maturity Date]"
                       dataType="wstr"
@@ -2815,10 +2543,11 @@ from staging.ContractSummary_Wingecarribee a
                       name="PostCode" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Principal_Outstanding]"
-                      dataType="wstr"
-                      length="15"
+                      dataType="numeric"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Principal_Outstanding]"
-                      name="Principal_Outstanding" />
+                      name="Principal_Outstanding"
+                      precision="20"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Product_Type]"
                       dataType="wstr"
@@ -2839,10 +2568,10 @@ from staging.ContractSummary_Wingecarribee a
                       name="State" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Term]"
-                      dataType="wstr"
-                      length="3"
+                      dataType="numeric"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Term]"
-                      name="Term" />
+                      name="Term"
+                      precision="3" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Termination_Date]"
                       dataType="wstr"
@@ -2851,22 +2580,25 @@ from staging.ContractSummary_Wingecarribee a
                       name="Termination_Date" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Total_Amount_Financed]"
-                      dataType="wstr"
-                      length="15"
+                      dataType="numeric"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Total_Amount_Financed]"
-                      name="Total_Amount_Financed" />
+                      name="Total_Amount_Financed"
+                      precision="20"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Total_Rebate_to_date_exclGST]"
-                      dataType="wstr"
-                      length="15"
+                      dataType="numeric"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Total_Rebate_to_date_exclGST]"
-                      name="Total_Rebate_to_date_exclGST" />
+                      name="Total_Rebate_to_date_exclGST"
+                      precision="20"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Total_Rebate_to_date_inclGST]"
-                      dataType="wstr"
-                      length="15"
+                      dataType="numeric"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Total_Rebate_to_date_inclGST]"
-                      name="Total_Rebate_to_date_inclGST" />
+                      name="Total_Rebate_to_date_inclGST"
+                      precision="20"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[FileDate]"
                       dataType="wstr"
@@ -2960,9 +2692,10 @@ from staging.ContractSummary_Wingecarribee a
                     </inputColumn>
                     <inputColumn
                       refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 1].Columns[Balloon_Amount]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
+                      cachedDataType="numeric"
                       cachedName="Balloon_Amount"
+                      cachedPrecision="20"
+                      cachedScale="2"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Balloon_Amount]">
                       <properties>
                         <property
@@ -2988,9 +2721,10 @@ from staging.ContractSummary_Wingecarribee a
                     </inputColumn>
                     <inputColumn
                       refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 1].Columns[CEFC_Rebate_Monthly]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
+                      cachedDataType="numeric"
                       cachedName="CEFC_Rebate_Monthly"
+                      cachedPrecision="20"
+                      cachedScale="4"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[CEFC_Rebate_Monthly]">
                       <properties>
                         <property
@@ -3016,9 +2750,10 @@ from staging.ContractSummary_Wingecarribee a
                     </inputColumn>
                     <inputColumn
                       refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 1].Columns[Discounted_Interest_Rate]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
+                      cachedDataType="numeric"
                       cachedName="Discounted_Interest_Rate"
+                      cachedPrecision="10"
+                      cachedScale="2"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Discounted_Interest_Rate]">
                       <properties>
                         <property
@@ -3030,9 +2765,10 @@ from staging.ContractSummary_Wingecarribee a
                     </inputColumn>
                     <inputColumn
                       refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 1].Columns[Funder_Margin]"
-                      cachedDataType="wstr"
-                      cachedLength="5"
+                      cachedDataType="numeric"
                       cachedName="Funder_Margin"
+                      cachedPrecision="10"
+                      cachedScale="2"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Funder_Margin]">
                       <properties>
                         <property
@@ -3072,9 +2808,10 @@ from staging.ContractSummary_Wingecarribee a
                     </inputColumn>
                     <inputColumn
                       refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 1].Columns[Principal_Outstanding]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
+                      cachedDataType="numeric"
                       cachedName="Principal_Outstanding"
+                      cachedPrecision="20"
+                      cachedScale="2"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Principal_Outstanding]">
                       <properties>
                         <property
@@ -3128,9 +2865,9 @@ from staging.ContractSummary_Wingecarribee a
                     </inputColumn>
                     <inputColumn
                       refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 1].Columns[Term]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
+                      cachedDataType="numeric"
                       cachedName="Term"
+                      cachedPrecision="3"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Term]">
                       <properties>
                         <property
@@ -3156,9 +2893,10 @@ from staging.ContractSummary_Wingecarribee a
                     </inputColumn>
                     <inputColumn
                       refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 1].Columns[Total_Amount_Financed]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
+                      cachedDataType="numeric"
                       cachedName="Total_Amount_Financed"
+                      cachedPrecision="20"
+                      cachedScale="2"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Amount_Financed]">
                       <properties>
                         <property
@@ -3170,9 +2908,10 @@ from staging.ContractSummary_Wingecarribee a
                     </inputColumn>
                     <inputColumn
                       refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 1].Columns[Total_Rebate_to_date_exclGST]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
+                      cachedDataType="numeric"
                       cachedName="Total_Rebate_to_date_exclGST"
+                      cachedPrecision="20"
+                      cachedScale="2"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_exclGST]">
                       <properties>
                         <property
@@ -3184,9 +2923,10 @@ from staging.ContractSummary_Wingecarribee a
                     </inputColumn>
                     <inputColumn
                       refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 1].Columns[Total_Rebate_to_date_inclGST]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
+                      cachedDataType="numeric"
                       cachedName="Total_Rebate_to_date_inclGST"
+                      cachedPrecision="20"
+                      cachedScale="2"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_inclGST]">
                       <properties>
                         <property
@@ -3208,140 +2948,6 @@ from staging.ContractSummary_Wingecarribee a
                           dataType="System.Int32"
                           description="Output column lineage ID"
                           name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[FileDate]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 1].Columns[Balloon_Amount_NUMERIC]"
-                      cachedDataType="numeric"
-                      cachedName="Balloon_Amount_NUMERIC"
-                      cachedPrecision="20"
-                      cachedScale="2"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Balloon_Amount_NUMERIC]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Balloon_Amount_NUMERIC]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 1].Columns[CEFC_Rebate_Monthly_NUMERIC]"
-                      cachedDataType="numeric"
-                      cachedName="CEFC_Rebate_Monthly_NUMERIC"
-                      cachedPrecision="20"
-                      cachedScale="4"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[CEFC_Rebate_Monthly_NUMERIC]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[CEFC_Rebate_Monthly_NUMERIC]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 1].Columns[Discounted_Interest_Rate_NUMERIC]"
-                      cachedDataType="numeric"
-                      cachedName="Discounted_Interest_Rate_NUMERIC"
-                      cachedPrecision="10"
-                      cachedScale="4"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Discounted_Interest_Rate_NUMERIC]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Discounted_Interest_Rate_NUMERIC]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 1].Columns[Funder_Margin_NUMERIC]"
-                      cachedDataType="numeric"
-                      cachedName="Funder_Margin_NUMERIC"
-                      cachedPrecision="10"
-                      cachedScale="4"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Funder_Margin_NUMERIC]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Funder_Margin_NUMERIC]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 1].Columns[Principal_Outstanding_NUMERIC]"
-                      cachedDataType="numeric"
-                      cachedName="Principal_Outstanding_NUMERIC"
-                      cachedPrecision="20"
-                      cachedScale="2"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Principal_Outstanding_NUMERIC]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Principal_Outstanding_NUMERIC]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 1].Columns[Total_Amount_Financed_NUMERIC]"
-                      cachedDataType="numeric"
-                      cachedName="Total_Amount_Financed_NUMERIC"
-                      cachedPrecision="20"
-                      cachedScale="2"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Total_Amount_Financed_NUMERIC]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Amount_Financed_NUMERIC]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 1].Columns[Total_Rebate_to_date_exclGST_NUMERIC]"
-                      cachedDataType="numeric"
-                      cachedName="Total_Rebate_to_date_exclGST_NUMERIC"
-                      cachedPrecision="20"
-                      cachedScale="2"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Total_Rebate_to_date_exclGST_NUMERIC]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Rebate_to_date_exclGST_NUMERIC]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 1].Columns[Total_Rebate_to_date_inclGST_NUMERIC]"
-                      cachedDataType="numeric"
-                      cachedName="Total_Rebate_to_date_inclGST_NUMERIC"
-                      cachedPrecision="20"
-                      cachedScale="2"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Total_Rebate_to_date_inclGST_NUMERIC]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Rebate_to_date_inclGST_NUMERIC]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 1].Columns[Term_NUMERIC]"
-                      cachedDataType="numeric"
-                      cachedName="Term_NUMERIC"
-                      cachedPrecision="3"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Term_NUMERIC]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Term_NUMERIC]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -3410,9 +3016,10 @@ from staging.ContractSummary_Wingecarribee a
                     </inputColumn>
                     <inputColumn
                       refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 2].Columns[Balloon_Amount]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
+                      cachedDataType="numeric"
                       cachedName="Balloon_Amount"
+                      cachedPrecision="20"
+                      cachedScale="2"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Balloon_Amount]">
                       <properties>
                         <property
@@ -3438,9 +3045,10 @@ from staging.ContractSummary_Wingecarribee a
                     </inputColumn>
                     <inputColumn
                       refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 2].Columns[CEFC_Rebate_Monthly]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
+                      cachedDataType="numeric"
                       cachedName="CEFC_Rebate_Monthly"
+                      cachedPrecision="20"
+                      cachedScale="4"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[CEFC_Rebate_Monthly]">
                       <properties>
                         <property
@@ -3466,9 +3074,10 @@ from staging.ContractSummary_Wingecarribee a
                     </inputColumn>
                     <inputColumn
                       refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 2].Columns[Discounted_Interest_Rate]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
+                      cachedDataType="numeric"
                       cachedName="Discounted_Interest_Rate"
+                      cachedPrecision="10"
+                      cachedScale="2"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Discounted_Interest_Rate]">
                       <properties>
                         <property
@@ -3480,9 +3089,10 @@ from staging.ContractSummary_Wingecarribee a
                     </inputColumn>
                     <inputColumn
                       refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 2].Columns[Funder_Margin]"
-                      cachedDataType="wstr"
-                      cachedLength="5"
+                      cachedDataType="numeric"
                       cachedName="Funder_Margin"
+                      cachedPrecision="10"
+                      cachedScale="2"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Funder_Margin]">
                       <properties>
                         <property
@@ -3522,9 +3132,10 @@ from staging.ContractSummary_Wingecarribee a
                     </inputColumn>
                     <inputColumn
                       refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 2].Columns[Principal_Outstanding]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
+                      cachedDataType="numeric"
                       cachedName="Principal_Outstanding"
+                      cachedPrecision="20"
+                      cachedScale="2"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Principal_Outstanding]">
                       <properties>
                         <property
@@ -3578,9 +3189,9 @@ from staging.ContractSummary_Wingecarribee a
                     </inputColumn>
                     <inputColumn
                       refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 2].Columns[Term]"
-                      cachedDataType="wstr"
-                      cachedLength="3"
+                      cachedDataType="numeric"
                       cachedName="Term"
+                      cachedPrecision="3"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Term]">
                       <properties>
                         <property
@@ -3606,9 +3217,10 @@ from staging.ContractSummary_Wingecarribee a
                     </inputColumn>
                     <inputColumn
                       refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 2].Columns[Total_Amount_Financed]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
+                      cachedDataType="numeric"
                       cachedName="Total_Amount_Financed"
+                      cachedPrecision="20"
+                      cachedScale="2"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Amount_Financed]">
                       <properties>
                         <property
@@ -3620,9 +3232,10 @@ from staging.ContractSummary_Wingecarribee a
                     </inputColumn>
                     <inputColumn
                       refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 2].Columns[Total_Rebate_to_date_exclGST]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
+                      cachedDataType="numeric"
                       cachedName="Total_Rebate_to_date_exclGST"
+                      cachedPrecision="20"
+                      cachedScale="2"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_exclGST]">
                       <properties>
                         <property
@@ -3634,9 +3247,10 @@ from staging.ContractSummary_Wingecarribee a
                     </inputColumn>
                     <inputColumn
                       refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 2].Columns[Total_Rebate_to_date_inclGST]"
-                      cachedDataType="wstr"
-                      cachedLength="15"
+                      cachedDataType="numeric"
                       cachedName="Total_Rebate_to_date_inclGST"
+                      cachedPrecision="20"
+                      cachedScale="2"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_inclGST]">
                       <properties>
                         <property
@@ -3658,140 +3272,6 @@ from staging.ContractSummary_Wingecarribee a
                           dataType="System.Int32"
                           description="Output column lineage ID"
                           name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[FileDate]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 2].Columns[Balloon_Amount_NUMERIC]"
-                      cachedDataType="numeric"
-                      cachedName="Balloon_Amount_NUMERIC"
-                      cachedPrecision="20"
-                      cachedScale="2"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Balloon_Amount_NUMERIC]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Balloon_Amount_NUMERIC]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 2].Columns[CEFC_Rebate_Monthly_NUMERIC]"
-                      cachedDataType="numeric"
-                      cachedName="CEFC_Rebate_Monthly_NUMERIC"
-                      cachedPrecision="20"
-                      cachedScale="4"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[CEFC_Rebate_Monthly_NUMERIC]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[CEFC_Rebate_Monthly_NUMERIC]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 2].Columns[Discounted_Interest_Rate_NUMERIC]"
-                      cachedDataType="numeric"
-                      cachedName="Discounted_Interest_Rate_NUMERIC"
-                      cachedPrecision="10"
-                      cachedScale="4"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Discounted_Interest_Rate_NUMERIC]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Discounted_Interest_Rate_NUMERIC]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 2].Columns[Funder_Margin_NUMERIC]"
-                      cachedDataType="numeric"
-                      cachedName="Funder_Margin_NUMERIC"
-                      cachedPrecision="10"
-                      cachedScale="4"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Funder_Margin_NUMERIC]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Funder_Margin_NUMERIC]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 2].Columns[Principal_Outstanding_NUMERIC]"
-                      cachedDataType="numeric"
-                      cachedName="Principal_Outstanding_NUMERIC"
-                      cachedPrecision="20"
-                      cachedScale="2"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Principal_Outstanding_NUMERIC]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Principal_Outstanding_NUMERIC]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 2].Columns[Total_Amount_Financed_NUMERIC]"
-                      cachedDataType="numeric"
-                      cachedName="Total_Amount_Financed_NUMERIC"
-                      cachedPrecision="20"
-                      cachedScale="2"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Total_Amount_Financed_NUMERIC]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Amount_Financed_NUMERIC]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 2].Columns[Total_Rebate_to_date_exclGST_NUMERIC]"
-                      cachedDataType="numeric"
-                      cachedName="Total_Rebate_to_date_exclGST_NUMERIC"
-                      cachedPrecision="20"
-                      cachedScale="2"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Total_Rebate_to_date_exclGST_NUMERIC]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Rebate_to_date_exclGST_NUMERIC]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 2].Columns[Total_Rebate_to_date_inclGST_NUMERIC]"
-                      cachedDataType="numeric"
-                      cachedName="Total_Rebate_to_date_inclGST_NUMERIC"
-                      cachedPrecision="20"
-                      cachedScale="2"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Total_Rebate_to_date_inclGST_NUMERIC]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Rebate_to_date_inclGST_NUMERIC]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Aggregation Fact\Union All.Inputs[Union All Input 2].Columns[Term_NUMERIC]"
-                      cachedDataType="numeric"
-                      cachedName="Term_NUMERIC"
-                      cachedPrecision="3"
-                      lineageId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output].Columns[Term_NUMERIC]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Term_NUMERIC]}</property>
                       </properties>
                     </inputColumn>
                   </inputColumns>
@@ -3836,10 +3316,11 @@ from staging.ContractSummary_Wingecarribee a
                       name="ANZSIC_Code" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Balloon_Amount]"
-                      dataType="wstr"
-                      length="15"
+                      dataType="numeric"
                       lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Balloon_Amount]"
-                      name="Balloon_Amount" />
+                      name="Balloon_Amount"
+                      precision="20"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Brand]"
                       dataType="wstr"
@@ -3848,10 +3329,11 @@ from staging.ContractSummary_Wingecarribee a
                       name="Brand" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[CEFC_Rebate_Monthly]"
-                      dataType="wstr"
-                      length="20"
+                      dataType="numeric"
                       lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[CEFC_Rebate_Monthly]"
-                      name="CEFC_Rebate_Monthly" />
+                      name="CEFC_Rebate_Monthly"
+                      precision="20"
+                      scale="4" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Contract_Start_Date]"
                       dataType="wstr"
@@ -3860,16 +3342,18 @@ from staging.ContractSummary_Wingecarribee a
                       name="Contract_Start_Date" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Discounted_Interest_Rate]"
-                      dataType="wstr"
-                      length="15"
+                      dataType="numeric"
                       lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Discounted_Interest_Rate]"
-                      name="Discounted_Interest_Rate" />
+                      name="Discounted_Interest_Rate"
+                      precision="10"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Funder_Margin]"
-                      dataType="wstr"
-                      length="5"
+                      dataType="numeric"
                       lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Funder_Margin]"
-                      name="Funder_Margin" />
+                      name="Funder_Margin"
+                      precision="10"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Maturity Date]"
                       dataType="wstr"
@@ -3884,10 +3368,11 @@ from staging.ContractSummary_Wingecarribee a
                       name="PostCode" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Principal_Outstanding]"
-                      dataType="wstr"
-                      length="15"
+                      dataType="numeric"
                       lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Principal_Outstanding]"
-                      name="Principal_Outstanding" />
+                      name="Principal_Outstanding"
+                      precision="20"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Product_Type]"
                       dataType="wstr"
@@ -3908,10 +3393,10 @@ from staging.ContractSummary_Wingecarribee a
                       name="State" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Term]"
-                      dataType="wstr"
-                      length="3"
+                      dataType="numeric"
                       lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Term]"
-                      name="Term" />
+                      name="Term"
+                      precision="3" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Termination_Date]"
                       dataType="wstr"
@@ -3920,90 +3405,31 @@ from staging.ContractSummary_Wingecarribee a
                       name="Termination_Date" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Amount_Financed]"
-                      dataType="wstr"
-                      length="15"
+                      dataType="numeric"
                       lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Amount_Financed]"
-                      name="Total_Amount_Financed" />
+                      name="Total_Amount_Financed"
+                      precision="20"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Rebate_to_date_exclGST]"
-                      dataType="wstr"
-                      length="15"
+                      dataType="numeric"
                       lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Rebate_to_date_exclGST]"
-                      name="Total_Rebate_to_date_exclGST" />
+                      name="Total_Rebate_to_date_exclGST"
+                      precision="20"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Rebate_to_date_inclGST]"
-                      dataType="wstr"
-                      length="15"
+                      dataType="numeric"
                       lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Rebate_to_date_inclGST]"
-                      name="Total_Rebate_to_date_inclGST" />
+                      name="Total_Rebate_to_date_inclGST"
+                      precision="20"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[FileDate]"
                       dataType="wstr"
                       length="20"
                       lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[FileDate]"
                       name="FileDate" />
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Balloon_Amount_NUMERIC]"
-                      dataType="numeric"
-                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Balloon_Amount_NUMERIC]"
-                      name="Balloon_Amount_NUMERIC"
-                      precision="20"
-                      scale="2" />
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[CEFC_Rebate_Monthly_NUMERIC]"
-                      dataType="numeric"
-                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[CEFC_Rebate_Monthly_NUMERIC]"
-                      name="CEFC_Rebate_Monthly_NUMERIC"
-                      precision="20"
-                      scale="4" />
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Discounted_Interest_Rate_NUMERIC]"
-                      dataType="numeric"
-                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Discounted_Interest_Rate_NUMERIC]"
-                      name="Discounted_Interest_Rate_NUMERIC"
-                      precision="10"
-                      scale="4" />
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Funder_Margin_NUMERIC]"
-                      dataType="numeric"
-                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Funder_Margin_NUMERIC]"
-                      name="Funder_Margin_NUMERIC"
-                      precision="10"
-                      scale="4" />
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Principal_Outstanding_NUMERIC]"
-                      dataType="numeric"
-                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Principal_Outstanding_NUMERIC]"
-                      name="Principal_Outstanding_NUMERIC"
-                      precision="20"
-                      scale="2" />
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Amount_Financed_NUMERIC]"
-                      dataType="numeric"
-                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Amount_Financed_NUMERIC]"
-                      name="Total_Amount_Financed_NUMERIC"
-                      precision="20"
-                      scale="2" />
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Rebate_to_date_exclGST_NUMERIC]"
-                      dataType="numeric"
-                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Rebate_to_date_exclGST_NUMERIC]"
-                      name="Total_Rebate_to_date_exclGST_NUMERIC"
-                      precision="20"
-                      scale="2" />
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Rebate_to_date_inclGST_NUMERIC]"
-                      dataType="numeric"
-                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Total_Rebate_to_date_inclGST_NUMERIC]"
-                      name="Total_Rebate_to_date_inclGST_NUMERIC"
-                      precision="20"
-                      scale="2" />
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Term_NUMERIC]"
-                      dataType="numeric"
-                      lineageId="Package\Aggregation Fact\Union All.Outputs[Union All Output 1].Columns[Term_NUMERIC]"
-                      name="Term_NUMERIC"
-                      precision="3" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -4013,14 +3439,9 @@ from staging.ContractSummary_Wingecarribee a
           <paths>
             <path
               refId="Package\Aggregation Fact.Paths[ADO NET Source Output]"
-              endId="Package\Aggregation Fact\Data Conversion.Inputs[Data Conversion Input]"
+              endId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
               name="ADO NET Source Output"
               startId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Output]" />
-            <path
-              refId="Package\Aggregation Fact.Paths[Data Conversion Output]"
-              endId="Package\Aggregation Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
-              name="Data Conversion Output"
-              startId="Package\Aggregation Fact\Data Conversion.Outputs[Data Conversion Output]" />
             <path
               refId="Package\Aggregation Fact.Paths[Derived Column Output]"
               endId="Package\Aggregation Fact\OLE DB Command.Inputs[OLE DB Command Input]"
@@ -9251,7 +8672,7 @@ where a.[Contract] is not null</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{5E8C737E-107F-49DE-9B7D-87279E261419}"
+      DTS:DTSID="{2FB46336-FA10-43CB-92DD-34EAF44C7F11}"
       DTS:From="Package\Update FileDate for Removed Other"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -9269,10 +8690,6 @@ where a.[Contract] is not null</property>
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="160,42.6666666666667"
-          Id="Package\Aggregation Fact"
-          TopLeft="96.3333319798112,414.533330024679" />
         <NodeLayout
           Size="168,42.6666666666667"
           Id="Package\ANZSIC Dimension"
@@ -9292,7 +8709,7 @@ where a.[Contract] is not null</property>
         <NodeLayout
           Size="248,42.6666666666667"
           Id="Package\Update FileDate for Removed Other"
-          TopLeft="53.4166659526527,338.766662590901" />
+          TopLeft="54.2499992735684,338.766662590901" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="197.66666517655,58.1333331551155">
@@ -9321,14 +8738,14 @@ where a.[Contract] is not null</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.7333319850763"
+              EndConnector="0,32.733331985076"
               Start="0,0"
-              End="0,25.2333319850763">
+              End="0,25.233331985076">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.2333319850763" />
+                    End="0,25.233331985076" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9361,7 +8778,7 @@ where a.[Contract] is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="180.833332786957,301.799997109771">
+          TopLeft="181.249999447415,301.799997109771">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9381,20 +8798,24 @@ where a.[Contract] is not null</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="160,42.6666666666667"
+          Id="Package\Aggregation Fact"
+          TopLeft="95.4999986588955,419.633331566652" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
           TopLeft="176.874998966232,381.433329257568">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.1000007671115"
+              EndConnector="0,38.200002309084"
               Start="0,0"
-              End="0,25.6000007671115">
+              End="0,30.700002309084">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.6000007671115" />
+                    End="0,30.700002309084" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9406,477 +8827,6 @@ where a.[Contract] is not null</property>
       </GraphLayout>
     </LayoutInfo>
   </Package>
-  <TaskHost
-    design-time-name="Package\Aggregation Fact">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="114.666666666667,42.6666666666667"
-          Id="Package\Aggregation Fact\Staging"
-          TopLeft="175.5,5.49999999999993" />
-        <NodeLayout
-          Size="209.333333333334,42.6666666666667"
-          Id="Package\Aggregation Fact\Slowly Changing Dimension"
-          TopLeft="128.166666666667,210.833333333333" />
-        <NodeLayout
-          Size="157.333333333334,42.6666666666667"
-          Id="Package\Aggregation Fact\Data Conversion"
-          TopLeft="154.166666666667,108.166666666666" />
-        <EdgeLayout
-          Id="Package\Aggregation Fact.Paths[ADO NET Source Output]"
-          TopLeft="232.833333333333,48.1666666666666">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Aggregation Fact.Paths[Data Conversion Output]"
-          TopLeft="232.833333333333,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999998"
-              Start="0,0"
-              End="0,52.4999999999998">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999998" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154.666666666667,42.6666666666667"
-          Id="Package\Aggregation Fact\Derived Column"
-          TopLeft="17.5,313.5" />
-        <EdgeLayout
-          Id="Package\Aggregation Fact.Paths[Historical Attribute Inserts Output]"
-          TopLeft="182.5,253.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-87.6666666666667,60"
-              Start="0,0"
-              End="-87.6666666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.5031446540881" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.5031446540881"
-                    Point2="0,20.5031446540881"
-                    Point3="-4,20.5031446540881" />
-                  <mssgle:LineSegment
-                    End="-83.6666666666667,20.5031446540881" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-83.6666666666667,20.5031446540881"
-                    Point2="-87.6666666666667,20.5031446540881"
-                    Point3="-87.6666666666667,24.5031446540881" />
-                  <mssgle:LineSegment
-                    End="-87.6666666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-118.889720052083,25.5031446540881,150.1127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166.666666666667,42.6666666666667"
-          Id="Package\Aggregation Fact\OLE DB Command"
-          TopLeft="5.50000000000004,416.166666666666" />
-        <EdgeLayout
-          Id="Package\Aggregation Fact.Paths[Derived Column Output]"
-          TopLeft="91.8333333333334,356.166666666666">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="121.333333333334,42.6666666666667"
-          Id="Package\Aggregation Fact\Union All"
-          TopLeft="172.166666666667,518.833333333333" />
-        <EdgeLayout
-          Id="Package\Aggregation Fact.Paths[New Output]"
-          TopLeft="232.833333333333,253.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="18.8888888888889,265.333333333333"
-              Start="0,0"
-              End="18.8888888888889,257.833333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,153.127982646421" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,153.127982646421"
-                    Point2="0,157.127982646421"
-                    Point3="4,157.127982646421" />
-                  <mssgle:LineSegment
-                    End="14.8888888888889,157.127982646421" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.8888888888889,157.127982646421"
-                    Point2="18.8888888888889,157.127982646421"
-                    Point3="18.8888888888889,161.127982646421" />
-                  <mssgle:LineSegment
-                    End="18.8888888888889,257.833333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-17.6469422743055,162.127982646421,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Aggregation Fact.Paths[OLE DB Command Output]"
-          TopLeft="88.8333333333334,458.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="125.111111111111,60"
-              Start="0,0"
-              End="125.111111111111,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.531453362256" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.531453362256"
-                    Point2="0,35.531453362256"
-                    Point3="4,35.531453362256" />
-                  <mssgle:LineSegment
-                    End="121.111111111111,35.531453362256" />
-                  <mssgle:CubicBezierSegment
-                    Point1="121.111111111111,35.531453362256"
-                    Point2="125.111111111111,35.531453362256"
-                    Point3="125.111111111111,39.531453362256" />
-                  <mssgle:LineSegment
-                    End="125.111111111111,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Aggregation Fact\Derived Column 1"
-          TopLeft="150.833333333333,621.5" />
-        <EdgeLayout
-          Id="Package\Aggregation Fact.Paths[Union All Output 1]"
-          TopLeft="232.833333333333,561.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Aggregation Fact\Insert Destination"
-          TopLeft="150.833333333333,724.166666666667" />
-        <EdgeLayout
-          Id="Package\Aggregation Fact.Paths[Derived Column Output1]"
-          TopLeft="232.833333333333,664.166666666666">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="176,42.6666666666667"
-          Id="Package\Aggregation Fact\OLE DB Command 1"
-          TopLeft="293.833333333333,313.5" />
-        <EdgeLayout
-          Id="Package\Aggregation Fact.Paths[Inferred Member Updates Output]"
-          TopLeft="283.166666666667,253.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="98.6666666666667,60"
-              Start="0,0"
-              End="98.6666666666667,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.5031446540881" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.5031446540881"
-                    Point2="0,20.5031446540881"
-                    Point3="4,20.5031446540881" />
-                  <mssgle:LineSegment
-                    End="94.6666666666667,20.5031446540881" />
-                  <mssgle:CubicBezierSegment
-                    Point1="94.6666666666667,20.5031446540881"
-                    Point2="98.6666666666667,20.5031446540881"
-                    Point3="98.6666666666667,24.5031446540881" />
-                  <mssgle:LineSegment
-                    End="98.6666666666667,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-25.0696549479167,25.5031446540881,148.8059765625,11.658203125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Aggregation Fact\Slowly Changing Dimension">
-    <Properties>
-      <Property>
-        <Name>SCDMetadata</Name>
-        <Value
-          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionID&gt;{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}&lt;/ConnectionID&gt;
-  &lt;TableName&gt;[core].[Aggregation_Fact]&lt;/TableName&gt;
-  &lt;InputToColumnsCollection&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[ANZSIC_Code]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ANZSIC_Code&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Asset_Number]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Asset_Number&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Balloon_Amount_NUMERIC]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Balloon_Amount&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Brand]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Brand&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[CEFC_Rebate_Monthly_NUMERIC]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;CEFC_Rebate_Monthly&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Contract_Number]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Contract_Number&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Contract_Start_Date]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Contract_Start_Date&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Discounted_Interest_Rate_NUMERIC]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Discounted_Interest_Rate&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[FileDate]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;File_Date&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Funder_Margin_NUMERIC]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Funder_Margin&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[ID_Project]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ID_Project&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Maturity Date]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Maturity_Date&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[PostCode]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Postcode&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Principal_Outstanding_NUMERIC]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Principal_Outstanding&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Product_Type]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Product_Type&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Repayment_Frequency]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Repayment_Frequency&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[State]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;State&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Term_NUMERIC]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Term&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Termination_Date]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Termination_Date&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Total_Amount_Financed_NUMERIC]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Total_Amount_Financed&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Total_Rebate_to_date_exclGST_NUMERIC]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Total_Rebate_to_date_exclGST&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Data Conversion.Outputs[Data Conversion Output].Columns[Total_Rebate_to_date_inclGST_NUMERIC]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Total_Rebate_to_date_inclGST&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-  &lt;/InputToColumnsCollection&gt;
-  &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
-  &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
-  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
-  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
-  &lt;CurrentIndicatorColumn /&gt;
-  &lt;InferredIndicatorColumn /&gt;
-  &lt;ValueCurrent /&gt;
-  &lt;ValueExpired /&gt;
-  &lt;StartDateColumn&gt;Update_from_TS&lt;/StartDateColumn&gt;
-  &lt;EndDateColumn&gt;Update_to_TS&lt;/EndDateColumn&gt;
-  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
-  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
-&lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Aggregation Fact\Staging">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\ANZSIC Dimension">
     <LayoutInfo>
@@ -10286,9 +9236,7 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10322,9 +9270,7 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10359,7 +9305,7 @@ where a.[Contract] is not null</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-17.6469422743055,162.127982646421,54.1827734375,11.43359375"
+              BoundingBox="-17.6469422743056,162.127982646421,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -10454,9 +9400,7 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10478,9 +9422,7 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10502,9 +9444,7 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10784,6 +9724,464 @@ where a.[Contract] is not null</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Aggregation Fact">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="114.666666666667,42.6666666666667"
+          Id="Package\Aggregation Fact\Staging"
+          TopLeft="175.5,5.49999999999993" />
+        <NodeLayout
+          Size="209.333333333334,42.6666666666667"
+          Id="Package\Aggregation Fact\Slowly Changing Dimension"
+          TopLeft="126.833333333333,108.166666666666" />
+        <EdgeLayout
+          Id="Package\Aggregation Fact.Paths[ADO NET Source Output]"
+          TopLeft="232.166666666667,48.1666666666666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Aggregation Fact\Derived Column"
+          TopLeft="17.5,210.833333333333" />
+        <EdgeLayout
+          Id="Package\Aggregation Fact.Paths[Historical Attribute Inserts Output]"
+          TopLeft="181.166666666667,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-86.3333333333333,59.9999999999999"
+              Start="0,0"
+              End="-86.3333333333333,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.503144654088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.503144654088"
+                    Point2="0,20.503144654088"
+                    Point3="-4,20.503144654088" />
+                  <mssgle:LineSegment
+                    End="-82.3333333333333,20.503144654088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-82.3333333333333,20.503144654088"
+                    Point2="-86.3333333333333,20.503144654088"
+                    Point3="-86.3333333333333,24.503144654088" />
+                  <mssgle:LineSegment
+                    End="-86.3333333333333,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-118.223053385417,25.503144654088,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Aggregation Fact\OLE DB Command"
+          TopLeft="5.50000000000004,313.5" />
+        <EdgeLayout
+          Id="Package\Aggregation Fact.Paths[Derived Column Output]"
+          TopLeft="91.8333333333334,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\Aggregation Fact\Union All"
+          TopLeft="172.166666666667,416.166666666667" />
+        <EdgeLayout
+          Id="Package\Aggregation Fact.Paths[New Output]"
+          TopLeft="231.5,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.2222222222222,265.333333333333"
+              Start="0,0"
+              End="20.2222222222222,257.833333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,153.127982646421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,153.127982646421"
+                    Point2="0,157.127982646421"
+                    Point3="4,157.127982646421" />
+                  <mssgle:LineSegment
+                    End="16.2222222222222,157.127982646421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.2222222222222,157.127982646421"
+                    Point2="20.2222222222222,157.127982646421"
+                    Point3="20.2222222222222,161.127982646421" />
+                  <mssgle:LineSegment
+                    End="20.2222222222222,257.833333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-16.9802756076389,162.127982646421,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Aggregation Fact.Paths[OLE DB Command Output]"
+          TopLeft="88.8333333333334,356.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125.111111111111,60.0000000000001"
+              Start="0,0"
+              End="125.111111111111,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.531453362256"
+                    Point2="0,35.531453362256"
+                    Point3="4,35.531453362256" />
+                  <mssgle:LineSegment
+                    End="121.111111111111,35.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.111111111111,35.531453362256"
+                    Point2="125.111111111111,35.531453362256"
+                    Point3="125.111111111111,39.531453362256" />
+                  <mssgle:LineSegment
+                    End="125.111111111111,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Aggregation Fact\Derived Column 1"
+          TopLeft="150.833333333333,518.833333333333" />
+        <EdgeLayout
+          Id="Package\Aggregation Fact.Paths[Union All Output 1]"
+          TopLeft="232.833333333333,458.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Aggregation Fact\Insert Destination"
+          TopLeft="150.833333333333,621.5" />
+        <EdgeLayout
+          Id="Package\Aggregation Fact.Paths[Derived Column Output1]"
+          TopLeft="232.833333333333,561.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\Aggregation Fact\OLE DB Command 1"
+          TopLeft="293.833333333333,210.833333333333" />
+        <EdgeLayout
+          Id="Package\Aggregation Fact.Paths[Inferred Member Updates Output]"
+          TopLeft="281.833333333333,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100,59.9999999999999"
+              Start="0,0"
+              End="100,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.503144654088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.503144654088"
+                    Point2="0,20.503144654088"
+                    Point3="4,20.503144654088" />
+                  <mssgle:LineSegment
+                    End="96,20.503144654088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="96,20.503144654088"
+                    Point2="100,20.503144654088"
+                    Point3="100,24.503144654088" />
+                  <mssgle:LineSegment
+                    End="100,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-24.40298828125,25.503144654088,148.8059765625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Aggregation Fact\Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Aggregation Fact\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[core].[Aggregation_Fact]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[ANZSIC_Code]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ANZSIC_Code&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Asset_Number]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Asset_Number&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Balloon_Amount]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Balloon_Amount&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Brand]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Brand&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[CEFC_Rebate_Monthly]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CEFC_Rebate_Monthly&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Contract_Number]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Contract_Number&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Contract_Start_Date]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Contract_Start_Date&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Discounted_Interest_Rate]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Discounted_Interest_Rate&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[FileDate]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;File_Date&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Funder_Margin]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Funder_Margin&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[ID_Project]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ID_Project&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Maturity Date]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Maturity_Date&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[PostCode]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Postcode&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Principal_Outstanding]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Principal_Outstanding&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Product_Type]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Product_Type&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Repayment_Frequency]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Repayment_Frequency&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[State]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;State&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Term]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Term&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Termination_Date]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Termination_Date&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Total_Amount_Financed]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Total_Amount_Financed&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_exclGST]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Total_Rebate_to_date_exclGST&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_inclGST]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Total_Rebate_to_date_inclGST&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;Update_from_TS&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;Update_to_TS&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Aggregation Fact\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
