@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="STGCDPAggDimFactLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="41"
-  DTS:VersionGUID="{0B2519F2-B5DC-4DBF-A74F-4BFF179A17A0}">
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{46A728C6-53A9-4745-9BED-FB6FF1BCA56A}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -2466,6 +2466,18 @@ where a.Contract_Number is not null</property>
                   name="ADO NET Source Error Output">
                   <outputColumns>
                     <outputColumn
+                      refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                    <outputColumn
                       refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[ID_Project]"
                       dataType="wstr"
                       length="100"
@@ -2605,18 +2617,6 @@ where a.Contract_Number is not null</property>
                       length="20"
                       lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[FileDate]"
                       name="FileDate" />
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Aggregation Fact\Staging.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -8618,6 +8618,23 @@ where a.[Contract] is not null</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
+      DTS:refId="Package\Rename_Tab and Add FileDate"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{FC997A56-5AB3-4CA0-AC6C-07EA6151301A}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Rename_Tab and Add FileDate"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+          Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Annan.xlsx&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
       DTS:refId="Package\Update FileDate for Removed Other"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -8677,6 +8694,14 @@ where a.[Contract] is not null</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
       DTS:To="Package\Aggregation Fact" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{E9E3C0D5-4215-4F48-9AF4-8FD4FD23E4DB}"
+      DTS:From="Package\Rename_Tab and Add FileDate"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 5"
+      DTS:To="Package\ANZSIC Dimension" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -8693,26 +8718,26 @@ where a.[Contract] is not null</property>
         <NodeLayout
           Size="168,42.6666666666667"
           Id="Package\ANZSIC Dimension"
-          TopLeft="115.91666502133,15.4666664884488" />
+          TopLeft="113.833331719041,89.9333319308361" />
         <NodeLayout
           Size="200.666666666667,42.6666666666667"
           Id="Package\Assets Dimension - Active"
-          TopLeft="95.0833319984376,89.9999984890223" />
+          TopLeft="92.9999986961484,164.46666393141" />
         <NodeLayout
           Size="246.666666666667,42.6666666666667"
           Id="Package\Assets Dimension - Removed Other"
-          TopLeft="60.9166662879288,259.133330443104" />
+          TopLeft="58.8333329856396,333.599995885491" />
         <NodeLayout
           Size="313.333333333334,42.6666666666667"
           Id="Package\Assets Dimension - Removed(Natalie,Condamine)"
-          TopLeft="35.0833328925073,165.399997140765" />
+          TopLeft="32.9999995902181,239.866662583152" />
         <NodeLayout
           Size="248,42.6666666666667"
           Id="Package\Update FileDate for Removed Other"
-          TopLeft="54.2499992735684,338.766662590901" />
+          TopLeft="52.1666659712791,413.233328033288" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="197.66666517655,58.1333331551155">
+          TopLeft="195.583331874261,132.599998597503">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8734,7 +8759,7 @@ where a.[Contract] is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="193.583332445472,132.666665155689">
+          TopLeft="191.499999143183,207.133330598076">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8756,7 +8781,7 @@ where a.[Contract] is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="187.999999590218,208.066663807432">
+          TopLeft="185.916666287929,282.533329249819">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8778,7 +8803,7 @@ where a.[Contract] is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="181.249999447415,301.799997109771">
+          TopLeft="179.166666145126,376.266662552158">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8801,10 +8826,10 @@ where a.[Contract] is not null</property>
         <NodeLayout
           Size="160,42.6666666666667"
           Id="Package\Aggregation Fact"
-          TopLeft="95.4999986588955,419.633331566652" />
+          TopLeft="93.4166653566063,494.099997009039" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="176.874998966232,381.433329257568">
+          TopLeft="174.791665663943,455.899994699955">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -8816,6 +8841,32 @@ where a.[Contract] is not null</property>
                   Capacity="5">
                   <mssgle:LineSegment
                     End="0,30.700002309084" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="225.333333333334,42.6666666666667"
+          Id="Package\Rename_Tab and Add FileDate"
+          TopLeft="87.1666654497385,21.5178694777964" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 5]"
+          TopLeft="198.833331917723,64.1845361444631">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.748795786373"
+              Start="0,0"
+              End="0,18.248795786373">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.248795786373" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9739,10 +9790,10 @@ where a.[Contract] is not null</property>
         <NodeLayout
           Size="209.333333333334,42.6666666666667"
           Id="Package\Aggregation Fact\Slowly Changing Dimension"
-          TopLeft="126.833333333333,108.166666666666" />
+          TopLeft="126.166666666667,108.166666666666" />
         <EdgeLayout
           Id="Package\Aggregation Fact.Paths[ADO NET Source Output]"
-          TopLeft="232.166666666667,48.1666666666666">
+          TopLeft="231.833333333333,48.1666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -9768,13 +9819,13 @@ where a.[Contract] is not null</property>
           TopLeft="17.5,210.833333333333" />
         <EdgeLayout
           Id="Package\Aggregation Fact.Paths[Historical Attribute Inserts Output]"
-          TopLeft="181.166666666667,150.833333333333">
+          TopLeft="180.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-86.3333333333333,59.9999999999999"
+              EndConnector="-85.6666666666667,59.9999999999999"
               Start="0,0"
-              End="-86.3333333333333,52.4999999999999">
+              End="-85.6666666666667,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -9785,20 +9836,20 @@ where a.[Contract] is not null</property>
                     Point2="0,20.503144654088"
                     Point3="-4,20.503144654088" />
                   <mssgle:LineSegment
-                    End="-82.3333333333333,20.503144654088" />
+                    End="-81.6666666666667,20.503144654088" />
                   <mssgle:CubicBezierSegment
-                    Point1="-82.3333333333333,20.503144654088"
-                    Point2="-86.3333333333333,20.503144654088"
-                    Point3="-86.3333333333333,24.503144654088" />
+                    Point1="-81.6666666666667,20.503144654088"
+                    Point2="-85.6666666666667,20.503144654088"
+                    Point3="-85.6666666666667,24.503144654088" />
                   <mssgle:LineSegment
-                    End="-86.3333333333333,52.4999999999999" />
+                    End="-85.6666666666667,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-118.223053385417,25.503144654088,150.1127734375,11.609375"
+              BoundingBox="-117.889720052083,25.503144654088,150.1127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9834,13 +9885,13 @@ where a.[Contract] is not null</property>
           TopLeft="172.166666666667,416.166666666667" />
         <EdgeLayout
           Id="Package\Aggregation Fact.Paths[New Output]"
-          TopLeft="231.5,150.833333333333">
+          TopLeft="230.833333333333,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="20.2222222222222,265.333333333333"
+              EndConnector="20.8888888888889,265.333333333333"
               Start="0,0"
-              End="20.2222222222222,257.833333333333">
+              End="20.8888888888889,257.833333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -9851,20 +9902,20 @@ where a.[Contract] is not null</property>
                     Point2="0,157.127982646421"
                     Point3="4,157.127982646421" />
                   <mssgle:LineSegment
-                    End="16.2222222222222,157.127982646421" />
+                    End="16.8888888888889,157.127982646421" />
                   <mssgle:CubicBezierSegment
-                    Point1="16.2222222222222,157.127982646421"
-                    Point2="20.2222222222222,157.127982646421"
-                    Point3="20.2222222222222,161.127982646421" />
+                    Point1="16.8888888888889,157.127982646421"
+                    Point2="20.8888888888889,157.127982646421"
+                    Point3="20.8888888888889,161.127982646421" />
                   <mssgle:LineSegment
-                    End="20.2222222222222,257.833333333333" />
+                    End="20.8888888888889,257.833333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-16.9802756076389,162.127982646421,54.1827734375,11.43359375"
+              BoundingBox="-16.6469422743055,162.127982646421,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9960,13 +10011,13 @@ where a.[Contract] is not null</property>
           TopLeft="293.833333333333,210.833333333333" />
         <EdgeLayout
           Id="Package\Aggregation Fact.Paths[Inferred Member Updates Output]"
-          TopLeft="281.833333333333,150.833333333333">
+          TopLeft="281.166666666667,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="100,59.9999999999999"
+              EndConnector="100.666666666667,59.9999999999999"
               Start="0,0"
-              End="100,52.4999999999999">
+              End="100.666666666667,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -9977,20 +10028,20 @@ where a.[Contract] is not null</property>
                     Point2="0,20.503144654088"
                     Point3="4,20.503144654088" />
                   <mssgle:LineSegment
-                    End="96,20.503144654088" />
+                    End="96.6666666666667,20.503144654088" />
                   <mssgle:CubicBezierSegment
-                    Point1="96,20.503144654088"
-                    Point2="100,20.503144654088"
-                    Point3="100,24.503144654088" />
+                    Point1="96.6666666666667,20.503144654088"
+                    Point2="100.666666666667,20.503144654088"
+                    Point3="100.666666666667,24.503144654088" />
                   <mssgle:LineSegment
-                    End="100,52.4999999999999" />
+                    End="100.666666666667,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-24.40298828125,25.503144654088,148.8059765625,11.658203125"
+              BoundingBox="-24.0696549479167,25.503144654088,148.8059765625,11.658203125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
