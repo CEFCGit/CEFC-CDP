@@ -5,6 +5,8 @@ create table [core].[ANZSIC_Dimension]
 	[Division] nvarchar(100),
 	[Subdivision] nvarchar(100),
 	[Description] nvarchar(100),
+	[ABS_Division] nvarchar(100),
+	[ABS_Subdivision] nvarchar(100),
 	[Updated_by] nvarchar(20) ,
 	[Update_from_TS] datetime ,
 	[Update_to_TS] datetime ,
