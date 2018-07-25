@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="STGCDPDimFactLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="76"
-  DTS:VersionGUID="{A046755B-630C-43C4-8469-5C49BB4C65AD}">
+  DTS:VersionBuild="79"
+  DTS:VersionGUID="{89B6DC84-65E9-4653-829C-7EBEF71B96FB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -60,7 +60,7 @@ FROM     core.StgBaseFact_view</property>
                   description="The Source database table name."
                   expressionType="Notify"
                   name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"core"."StgBaseFact_view"</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
                 <property
                   dataType="System.Int32"
                   description="Specify the mode to retrieve external column information"
@@ -130,7 +130,7 @@ FROM     core.StgBaseFact_view</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[AMT_CBOARDAPPROVEDNOTES]"
-                      length="900"
+                      length="2000"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CBOARDAPPROVEDNOTES]"
                       name="AMT_CBOARDAPPROVEDNOTES"
                       truncationRowDisposition="FailComponent" />
@@ -1300,7 +1300,7 @@ FROM     core.StgBaseFact_view</property>
                     <externalMetadataColumn
                       refId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[AMT_CBOARDAPPROVEDNOTES]"
                       dataType="wstr"
-                      length="900"
+                      length="2000"
                       name="AMT_CBOARDAPPROVEDNOTES" />
                     <externalMetadataColumn
                       refId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].ExternalColumns[AMT_CCEFC]"
@@ -1936,7 +1936,7 @@ FROM     core.StgBaseFact_view</property>
                     <outputColumn
                       refId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[AMT_CBOARDAPPROVEDNOTES]"
                       dataType="wstr"
-                      length="900"
+                      length="2000"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Error Output].Columns[AMT_CBOARDAPPROVEDNOTES]"
                       name="AMT_CBOARDAPPROVEDNOTES" />
                     <outputColumn
@@ -2929,7 +2929,7 @@ FROM     core.StgBaseFact_view</property>
                     <inputColumn
                       refId="Package\Base Fact\Insert Destination.Inputs[OLE DB Destination Input].Columns[AMT_CBOARDAPPROVEDNOTES]"
                       cachedDataType="wstr"
-                      cachedLength="900"
+                      cachedLength="2000"
                       cachedName="AMT_CBOARDAPPROVEDNOTES"
                       externalMetadataColumnId="Package\Base Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Amt_cBoardApprovedNotes]"
                       lineageId="Package\Base Fact\Union All.Outputs[Union All Output 1].Columns[AMT_CBOARDAPPROVEDNOTES]" />
@@ -4534,7 +4534,7 @@ FROM     core.StgBaseFact_view</property>
                     <inputColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[AMT_CBOARDAPPROVEDNOTES]"
                       cachedDataType="wstr"
-                      cachedLength="900"
+                      cachedLength="2000"
                       cachedName="AMT_CBOARDAPPROVEDNOTES"
                       externalMetadataColumnId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CBOARDAPPROVEDNOTES]" />
@@ -6721,7 +6721,7 @@ FROM     core.StgBaseFact_view</property>
                     <inputColumn
                       refId="Package\Base Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[AMT_CBOARDAPPROVEDNOTES]"
                       cachedDataType="wstr"
-                      cachedLength="900"
+                      cachedLength="2000"
                       cachedName="AMT_CBOARDAPPROVEDNOTES"
                       externalMetadataColumnId="Package\Base Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Amt_cBoardApprovedNotes]"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CBOARDAPPROVEDNOTES]">
@@ -8901,7 +8901,7 @@ FROM     core.StgBaseFact_view</property>
                     <inputColumn
                       refId="Package\Base Fact\Union All.Inputs[Union All Input 1].Columns[AMT_CBOARDAPPROVEDNOTES]"
                       cachedDataType="wstr"
-                      cachedLength="900"
+                      cachedLength="2000"
                       cachedName="AMT_CBOARDAPPROVEDNOTES"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CBOARDAPPROVEDNOTES]">
                       <properties>
@@ -10551,7 +10551,7 @@ FROM     core.StgBaseFact_view</property>
                     <inputColumn
                       refId="Package\Base Fact\Union All.Inputs[Union All Input 2].Columns[AMT_CBOARDAPPROVEDNOTES]"
                       cachedDataType="wstr"
-                      cachedLength="900"
+                      cachedLength="2000"
                       cachedName="AMT_CBOARDAPPROVEDNOTES"
                       lineageId="Package\Base Fact\ADO NET Source.Outputs[ADO NET Source Output].Columns[AMT_CBOARDAPPROVEDNOTES]">
                       <properties>
@@ -12177,7 +12177,7 @@ FROM     core.StgBaseFact_view</property>
                     <outputColumn
                       refId="Package\Base Fact\Union All.Outputs[Union All Output 1].Columns[AMT_CBOARDAPPROVEDNOTES]"
                       dataType="wstr"
-                      length="900"
+                      length="2000"
                       lineageId="Package\Base Fact\Union All.Outputs[Union All Output 1].Columns[AMT_CBOARDAPPROVEDNOTES]"
                       name="AMT_CBOARDAPPROVEDNOTES" />
                     <outputColumn
@@ -50593,7 +50593,7 @@ FROM     core.StgBaseFact_view</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
           Size="112,42.6666666666667"
           Id="Package\Base Fact"
@@ -50655,7 +50655,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="287.731934731935,261.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,42.5"
               Start="0,0"
               End="0,35">
@@ -50677,7 +50677,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="287.065268065269,346.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,30.0000000000007"
               Start="0,0"
               End="0,22.5000000000007">
@@ -50699,7 +50699,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="286.666666666667,62.6666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,55.9999999999997"
               Start="0,0"
               End="0,48.4999999999997">
@@ -50721,7 +50721,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="286.365967365968,161.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,58.1666666666674"
               Start="0,0"
               End="0,50.6666666666674">
@@ -50743,7 +50743,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="286.583331812173,1124.83333333334">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,38.4444366958376"
               Start="0,0"
               End="0,30.9444366958376">
@@ -50765,7 +50765,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="290.731934731935,419.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,47.3333333333327"
               Start="0,0"
               End="0,39.8333333333327">
@@ -50787,7 +50787,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="296.065268065268,509.333333333332">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,33.5000000000007"
               Start="0,0"
               End="0,26.0000000000007">
@@ -50809,7 +50809,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="296.032634032634,585.499999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,57.1666666666672"
               Start="0,0"
               End="0,49.6666666666672">
@@ -50831,7 +50831,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="289.282634032634,1035.53846153846">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,46.6282051282026"
               Start="0,0"
               End="0,39.1282051282026">
@@ -50853,7 +50853,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="289.565268065268,953.999999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,38.8717948717981"
               Start="0,0"
               End="0,31.3717948717981">
@@ -50875,7 +50875,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="295.5,685.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,44.6666666666667"
               Start="0,0"
               End="0,37.1666666666667">
@@ -50897,7 +50897,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="296.166666666667,772.666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,41.3333333333331"
               Start="0,0"
               End="0,33.8333333333331">
@@ -50919,7 +50919,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="292.365967365968,856.666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,54.6666666666662"
               Start="0,0"
               End="0,47.1666666666662">
@@ -50960,9 +50960,9 @@ FROM     core.StgBaseFact_view</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="170.666666666667,42.6666666666667"
+          Size="209.333333333334,42"
           Id="Package\Base Fact\Slowly Changing Dimension"
-          TopLeft="147.5,108.166666666666" />
+          TopLeft="128.166666666667,108.166666666667" />
         <NodeLayout
           Size="158.666666666667,42.6666666666667"
           Id="Package\Base Fact\ADO NET Source"
@@ -50992,50 +50992,50 @@ FROM     core.StgBaseFact_view</property>
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\Base Fact\Derived Column"
-          TopLeft="17.5,210.833333333333" />
+          TopLeft="17.5,210.166666666667" />
         <EdgeLayout
           Id="Package\Base Fact.Paths[Historical Attribute Inserts Output]"
-          TopLeft="192.166666666667,150.833333333333">
+          TopLeft="182.5,150.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="-97.3333333333333,59.9999999999999"
+              EndConnector="-87.6666666666667,60"
               Start="0,0"
-              End="-97.3333333333333,52.4999999999999">
+              End="-87.6666666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.6153846153846" />
+                    End="0,16.5031446540881" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.6153846153846"
-                    Point2="0,20.6153846153846"
-                    Point3="-4,20.6153846153846" />
+                    Point1="0,16.5031446540881"
+                    Point2="0,20.5031446540881"
+                    Point3="-4,20.5031446540881" />
                   <mssgle:LineSegment
-                    End="-93.3333333333333,20.6153846153846" />
+                    End="-83.6666666666667,20.5031446540881" />
                   <mssgle:CubicBezierSegment
-                    Point1="-93.3333333333333,20.6153846153846"
-                    Point2="-97.3333333333333,20.6153846153846"
-                    Point3="-97.3333333333333,24.6153846153846" />
+                    Point1="-83.6666666666667,20.5031446540881"
+                    Point2="-87.6666666666667,20.5031446540881"
+                    Point3="-87.6666666666667,24.5031446540881" />
                   <mssgle:LineSegment
-                    End="-97.3333333333333,52.4999999999999" />
+                    End="-87.6666666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-123.723053385417,25.6153846153846,150.1127734375,11.609375"
+              BoundingBox="-118.889720052083,25.5031446540881,150.1127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
           Size="166.666666666667,42.6666666666667"
           Id="Package\Base Fact\OLE DB Command"
-          TopLeft="5.50000000000004,313.5" />
+          TopLeft="5.50000000000004,312.833333333333" />
         <EdgeLayout
           Id="Package\Base Fact.Paths[Derived Column Output]"
-          TopLeft="91.8333333333334,253.5">
+          TopLeft="91.8333333333334,252.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
@@ -51058,16 +51058,16 @@ FROM     core.StgBaseFact_view</property>
         <NodeLayout
           Size="121.333333333334,42.6666666666667"
           Id="Package\Base Fact\Union All"
-          TopLeft="172.166666666667,416.166666666667" />
+          TopLeft="172.166666666667,415.5" />
         <EdgeLayout
           Id="Package\Base Fact.Paths[New Output]"
-          TopLeft="232.833333333333,150.833333333333">
+          TopLeft="232.833333333333,150.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="18.8888888888889,265.333333333333"
+              EndConnector="18.8888888888889,265.333333333334"
               Start="0,0"
-              End="18.8888888888889,257.833333333333">
+              End="18.8888888888889,257.833333333334">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -51084,7 +51084,7 @@ FROM     core.StgBaseFact_view</property>
                     Point2="18.8888888888889,157.127982646421"
                     Point3="18.8888888888889,161.127982646421" />
                   <mssgle:LineSegment
-                    End="18.8888888888889,257.833333333333" />
+                    End="18.8888888888889,257.833333333334" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -51097,7 +51097,7 @@ FROM     core.StgBaseFact_view</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Base Fact.Paths[OLE DB Command Output]"
-          TopLeft="88.8333333333334,356.166666666667">
+          TopLeft="88.8333333333334,355.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
@@ -51132,10 +51132,10 @@ FROM     core.StgBaseFact_view</property>
         <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\Base Fact\Derived Column 1"
-          TopLeft="150.833333333333,518.833333333333" />
+          TopLeft="150.833333333333,518.166666666667" />
         <EdgeLayout
           Id="Package\Base Fact.Paths[Union All Output 1]"
-          TopLeft="232.833333333333,458.833333333333">
+          TopLeft="232.833333333333,458.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
@@ -51158,10 +51158,10 @@ FROM     core.StgBaseFact_view</property>
         <NodeLayout
           Size="164,42.6666666666667"
           Id="Package\Base Fact\Insert Destination"
-          TopLeft="150.833333333333,621.5" />
+          TopLeft="150.833333333333,620.833333333333" />
         <EdgeLayout
           Id="Package\Base Fact.Paths[Derived Column Output1]"
-          TopLeft="232.833333333333,561.5">
+          TopLeft="232.833333333333,560.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
@@ -51184,40 +51184,40 @@ FROM     core.StgBaseFact_view</property>
         <NodeLayout
           Size="176,42.6666666666667"
           Id="Package\Base Fact\OLE DB Command 1"
-          TopLeft="293.833333333333,210.833333333333" />
+          TopLeft="293.833333333333,210.166666666667" />
         <EdgeLayout
           Id="Package\Base Fact.Paths[Inferred Member Updates Output]"
-          TopLeft="273.5,150.833333333333">
+          TopLeft="283.166666666667,150.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="108.333333333333,59.9999999999999"
+              EndConnector="98.6666666666667,60"
               Start="0,0"
-              End="108.333333333333,52.4999999999999">
+              End="98.6666666666667,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.6153846153846" />
+                    End="0,16.5031446540881" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.6153846153846"
-                    Point2="0,20.6153846153846"
-                    Point3="4,20.6153846153846" />
+                    Point1="0,16.5031446540881"
+                    Point2="0,20.5031446540881"
+                    Point3="4,20.5031446540881" />
                   <mssgle:LineSegment
-                    End="104.333333333333,20.6153846153846" />
+                    End="94.6666666666667,20.5031446540881" />
                   <mssgle:CubicBezierSegment
-                    Point1="104.333333333333,20.6153846153846"
-                    Point2="108.333333333333,20.6153846153846"
-                    Point3="108.333333333333,24.6153846153846" />
+                    Point1="94.6666666666667,20.5031446540881"
+                    Point2="98.6666666666667,20.5031446540881"
+                    Point3="98.6666666666667,24.5031446540881" />
                   <mssgle:LineSegment
-                    End="108.333333333333,52.4999999999999" />
+                    End="98.6666666666667,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-20.2363216145833,25.6153846153846,148.8059765625,11.658203125"
+              BoundingBox="-25.0696549479167,25.5031446540881,148.8059765625,11.658203125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -51877,14 +51877,6 @@ FROM     core.StgBaseFact_view</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Base Fact\ADO NET Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Dim Business Platform">
     <LayoutInfo>
@@ -51903,10 +51895,6 @@ FROM     core.StgBaseFact_view</property>
           Id="Package\Dim Business Platform\OLE DB Source"
           TopLeft="110.666666666667,5.49999999999993" />
         <NodeLayout
-          Size="108,42"
-          Id="Package\Dim Business Platform\Insert Destination"
-          TopLeft="122.166666666666,618.833333333333" />
-        <NodeLayout
           Size="94,42"
           Id="Package\Dim Business Platform\Union All"
           TopLeft="129.833333333333,414.833333333333" />
@@ -51914,6 +51902,10 @@ FROM     core.StgBaseFact_view</property>
           Size="170.666666666667,42.6666666666667"
           Id="Package\Dim Business Platform\Slowly Changing Dimension"
           TopLeft="91.3333333333334,108.166666666666" />
+        <NodeLayout
+          Size="108,42"
+          Id="Package\Dim Business Platform\Insert Destination"
+          TopLeft="122.166666666666,618.833333333333" />
         <NodeLayout
           Size="110.666666666667,42"
           Id="Package\Dim Business Platform\OLE DB Command"
@@ -51941,7 +51933,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -51963,7 +51957,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -51997,7 +51993,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52127,7 +52125,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52149,7 +52149,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -52284,6 +52286,42 @@ FROM     core.StgBaseFact_view</property>
           Id="Package\Dim Focus\Derived Column"
           TopLeft="10.0000000000001,210.833333333333" />
         <EdgeLayout
+          Id="Package\Dim Focus.Paths[OLE DB Command Output]"
+          TopLeft="60.6666666666667,354.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="101.722222222222,60"
+              Start="0,0"
+              End="101.722222222222,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.3953813855843" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.3953813855843"
+                    Point2="0,35.3953813855843"
+                    Point3="4,35.3953813855843" />
+                  <mssgle:LineSegment
+                    End="97.7222222222222,35.3953813855843" />
+                  <mssgle:CubicBezierSegment
+                    Point1="97.7222222222222,35.3953813855843"
+                    Point2="101.722222222222,35.3953813855843"
+                    Point3="101.722222222222,39.3953813855843" />
+                  <mssgle:LineSegment
+                    End="101.722222222222,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
           Id="Package\Dim Focus.Paths[New Output]"
           TopLeft="176.666666666667,150.833333333333">
           <EdgeLayout.Curve>
@@ -52410,7 +52448,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52432,7 +52472,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52454,7 +52496,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52476,41 +52520,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim Focus.Paths[OLE DB Command Output]"
-          TopLeft="60.6666666666667,354.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="101.722222222222,60"
-              Start="0,0"
-              End="101.722222222222,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.3953813855843" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.3953813855843"
-                    Point2="0,35.3953813855843"
-                    Point3="4,35.3953813855843" />
-                  <mssgle:LineSegment
-                    End="97.7222222222222,35.3953813855843" />
-                  <mssgle:CubicBezierSegment
-                    Point1="97.7222222222222,35.3953813855843"
-                    Point2="101.722222222222,35.3953813855843"
-                    Point3="101.722222222222,39.3953813855843" />
-                  <mssgle:LineSegment
-                    End="101.722222222222,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -52655,6 +52667,10 @@ FROM     core.StgBaseFact_view</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="142.666666666667,42.6666666666667"
+          Id="Package\Dim Location\OLE DB Command"
+          TopLeft="10.1666666666667,340.166666666666" />
+        <NodeLayout
           Size="148,42.6666666666667"
           Id="Package\Dim Location\OLE DB Command 1"
           TopLeft="415.833333333333,221.5" />
@@ -52663,13 +52679,17 @@ FROM     core.StgBaseFact_view</property>
           Id="Package\Dim Location\LOC_Location Table on Staging"
           TopLeft="205.5,6.83333333333326" />
         <NodeLayout
-          Size="109.333333333334,42.6666666666667"
-          Id="Package\Dim Location\Union All"
-          TopLeft="251.5,336.166666666667" />
-        <NodeLayout
           Size="138,42.6666666666667"
           Id="Package\Dim Location\Derived Column 1"
           TopLeft="243.166666666667,474.166666666667" />
+        <NodeLayout
+          Size="132,42.6666666666667"
+          Id="Package\Dim Location\Derived Column"
+          TopLeft="15.8333333333334,210.833333333333" />
+        <NodeLayout
+          Size="109.333333333334,42.6666666666667"
+          Id="Package\Dim Location\Union All"
+          TopLeft="251.5,336.166666666667" />
         <NodeLayout
           Size="137.333333333334,42.6666666666667"
           Id="Package\Dim Location\Insert Destination"
@@ -52678,14 +52698,6 @@ FROM     core.StgBaseFact_view</property>
           Size="146.666666666667,42.6666666666667"
           Id="Package\Dim Location\Location_Dimension"
           TopLeft="227.5,106.166666666666" />
-        <NodeLayout
-          Size="132,42.6666666666667"
-          Id="Package\Dim Location\Derived Column"
-          TopLeft="15.8333333333334,210.833333333333" />
-        <NodeLayout
-          Size="142.666666666667,42.6666666666667"
-          Id="Package\Dim Location\OLE DB Command"
-          TopLeft="10.1666666666667,340.166666666666" />
         <EdgeLayout
           Id="Package\Dim Location.Paths[Union All Output 1]"
           TopLeft="309.166666666667,378.833333333333">
@@ -52705,7 +52717,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52727,7 +52741,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52845,7 +52861,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52867,7 +52885,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52889,7 +52909,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -52964,7 +52986,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -52986,7 +53010,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -53020,7 +53046,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -53150,7 +53178,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -53172,7 +53202,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -53377,6 +53409,10 @@ FROM     core.StgBaseFact_view</property>
           Id="Package\Dim Priority\Derived Column 1"
           TopLeft="122.5,516.833333333333" />
         <NodeLayout
+          Size="108,42"
+          Id="Package\Dim Priority\Insert Destination"
+          TopLeft="122.833333333333,618.833333333333" />
+        <NodeLayout
           Size="110.666666666667,42"
           Id="Package\Dim Priority\OLE DB Command"
           TopLeft="5.50000000000008,312.833333333333" />
@@ -53384,10 +53420,6 @@ FROM     core.StgBaseFact_view</property>
           Size="113.333333333334,42"
           Id="Package\Dim Priority\OLE DB Command 1"
           TopLeft="238,210.833333333333" />
-        <NodeLayout
-          Size="108,42"
-          Id="Package\Dim Priority\Insert Destination"
-          TopLeft="122.833333333333,618.833333333333" />
         <NodeLayout
           Size="105.333333333334,42"
           Id="Package\Dim Priority\Derived Column"
@@ -53415,7 +53447,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -53437,7 +53471,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -53471,7 +53507,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -53601,7 +53639,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -53623,7 +53663,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -55012,10 +55054,6 @@ FROM     core.StgBaseFact_view</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="94,42"
-          Id="Package\Dim Sector\Union All"
-          TopLeft="129.833333333333,414.833333333333" />
-        <NodeLayout
           Size="108.666666666667,42"
           Id="Package\Dim Sector\Derived Column 1"
           TopLeft="122.5,516.833333333333" />
@@ -55024,9 +55062,9 @@ FROM     core.StgBaseFact_view</property>
           Id="Package\Dim Sector\OLE DB Source"
           TopLeft="110.666666666667,6.16666666666659" />
         <NodeLayout
-          Size="110.666666666667,42"
-          Id="Package\Dim Sector\OLE DB Command"
-          TopLeft="5.50000000000008,312.833333333333" />
+          Size="94,42"
+          Id="Package\Dim Sector\Union All"
+          TopLeft="129.833333333333,414.833333333333" />
         <NodeLayout
           Size="170.666666666667,42.6666666666667"
           Id="Package\Dim Sector\Slowly Changing Dimension"
@@ -55039,6 +55077,10 @@ FROM     core.StgBaseFact_view</property>
           Size="105.333333333334,42"
           Id="Package\Dim Sector\Derived Column"
           TopLeft="10.0000000000001,210.833333333333" />
+        <NodeLayout
+          Size="110.666666666667,42"
+          Id="Package\Dim Sector\OLE DB Command"
+          TopLeft="5.50000000000008,312.833333333333" />
         <NodeLayout
           Size="113.333333333334,42"
           Id="Package\Dim Sector\OLE DB Command 1"
@@ -55062,7 +55104,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -55084,7 +55128,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -55118,7 +55164,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -55248,7 +55296,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -55270,7 +55320,9 @@ FROM     core.StgBaseFact_view</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -56005,5 +56057,13 @@ FROM     core.StgBaseFact_view</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Base Fact\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
