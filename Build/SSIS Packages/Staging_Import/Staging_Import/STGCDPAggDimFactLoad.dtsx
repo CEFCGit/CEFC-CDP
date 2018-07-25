@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="STGCDPAggDimFactLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="51"
-  DTS:VersionGUID="{A6FA4BDA-924C-4838-B07D-842833DAB326}">
+  DTS:VersionBuild="53"
+  DTS:VersionGUID="{5745490F-35BB-448F-BCF2-7AA5A59172C9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -8687,159 +8687,6 @@ where a.[Contract] is not null</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Rename_Tab and Add FileDate - Annan"
-      DTS:CreationName="Microsoft.ExecuteProcess"
-      DTS:Description="Execute Process Task"
-      DTS:DTSID="{FC997A56-5AB3-4CA0-AC6C-07EA6151301A}"
-      DTS:ExecutableType="Microsoft.ExecuteProcess"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Rename_Tab and Add FileDate - Annan"
-      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecuteProcessData
-          Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
-          Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Annan.xlsx&quot;" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Rename_Tab and Add FileDate - Condamine"
-      DTS:CreationName="Microsoft.ExecuteProcess"
-      DTS:Description="Execute Process Task"
-      DTS:DTSID="{5b4475b7-1837-400e-a72e-3f0a6916b9be}"
-      DTS:ExecutableType="Microsoft.ExecuteProcess"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Rename_Tab and Add FileDate - Condamine"
-      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecuteProcessData
-          Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
-          Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Condamine.xlsx&quot;" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Rename_Tab and Add FileDate - Flynn"
-      DTS:CreationName="Microsoft.ExecuteProcess"
-      DTS:Description="Execute Process Task"
-      DTS:DTSID="{f09f9e24-fe99-45ff-88d4-7adf2c67ff77}"
-      DTS:ExecutableType="Microsoft.ExecuteProcess"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Rename_Tab and Add FileDate - Flynn"
-      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecuteProcessData
-          Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
-          Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Flynn.xlsx&quot;" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Rename_Tab and Add FileDate - Macleay"
-      DTS:CreationName="Microsoft.ExecuteProcess"
-      DTS:Description="Execute Process Task"
-      DTS:DTSID="{0760f4b7-f4b5-4736-a303-17e776240ee2}"
-      DTS:ExecutableType="Microsoft.ExecuteProcess"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Rename_Tab and Add FileDate - Macleay"
-      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecuteProcessData
-          Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
-          Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Macleay.xlsx&quot;" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Rename_Tab and Add FileDate - Murchison"
-      DTS:CreationName="Microsoft.ExecuteProcess"
-      DTS:Description="Execute Process Task"
-      DTS:DTSID="{e5ca1613-d7af-4301-ae30-0abf341b167e}"
-      DTS:ExecutableType="Microsoft.ExecuteProcess"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Rename_Tab and Add FileDate - Murchison"
-      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecuteProcessData
-          Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
-          Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Murchison.xlsx&quot;" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Rename_Tab and Add FileDate - Natalie"
-      DTS:CreationName="Microsoft.ExecuteProcess"
-      DTS:Description="Execute Process Task"
-      DTS:DTSID="{710e02fd-234f-4de2-94e1-c611f3c733a1}"
-      DTS:ExecutableType="Microsoft.ExecuteProcess"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Rename_Tab and Add FileDate - Natalie"
-      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecuteProcessData
-          Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
-          Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Natalie.xlsx&quot;" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Rename_Tab and Add FileDate - Othello"
-      DTS:CreationName="Microsoft.ExecuteProcess"
-      DTS:Description="Execute Process Task"
-      DTS:DTSID="{9b992b09-07d4-4c9f-a5b7-05996d72fe9e}"
-      DTS:ExecutableType="Microsoft.ExecuteProcess"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Rename_Tab and Add FileDate - Othello"
-      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecuteProcessData
-          Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
-          Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Othello.xlsx&quot;" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Rename_Tab and Add FileDate - Roper"
-      DTS:CreationName="Microsoft.ExecuteProcess"
-      DTS:Description="Execute Process Task"
-      DTS:DTSID="{e4948baa-bb28-4966-bd7b-15921286e77d}"
-      DTS:ExecutableType="Microsoft.ExecuteProcess"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Rename_Tab and Add FileDate - Roper"
-      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecuteProcessData
-          Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
-          Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Roper.xlsx&quot;" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
-      DTS:refId="Package\Rename_Tab and Add FileDate - Wingecarribee"
-      DTS:CreationName="Microsoft.ExecuteProcess"
-      DTS:Description="Execute Process Task"
-      DTS:DTSID="{f21b8686-8fd9-4455-9a72-f5c464002bf6}"
-      DTS:ExecutableType="Microsoft.ExecuteProcess"
-      DTS:LocaleID="-1"
-      DTS:ObjectName="Rename_Tab and Add FileDate - Wingecarribee"
-      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
-      DTS:ThreadHint="0">
-      <DTS:Variables />
-      <DTS:ObjectData>
-        <ExecuteProcessData
-          Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
-          Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Wingecarribee.xlsx&quot;" />
-      </DTS:ObjectData>
-    </DTS:Executable>
-    <DTS:Executable
       DTS:refId="Package\Update FileDate for Removed Other"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
@@ -8894,38 +8741,6 @@ where a.[Contract] is not null</property>
       DTS:ObjectName="Constraint 1"
       DTS:To="Package\Assets Dimension - Removed Other" />
     <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
-      DTS:CreationName=""
-      DTS:DTSID="{652A3810-786B-43F2-9F17-F2191DE2101B}"
-      DTS:From="Package\Rename_Tab and Add FileDate - Natalie"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 10"
-      DTS:To="Package\Rename_Tab and Add FileDate - Othello" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
-      DTS:CreationName=""
-      DTS:DTSID="{2B0DBB8D-1EAE-4499-82A7-33C2D2A472EE}"
-      DTS:From="Package\Rename_Tab and Add FileDate - Othello"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 11"
-      DTS:To="Package\Rename_Tab and Add FileDate - Roper" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 12]"
-      DTS:CreationName=""
-      DTS:DTSID="{30049E98-CB73-4FBD-B4F3-2153A0636A6D}"
-      DTS:From="Package\Rename_Tab and Add FileDate - Roper"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 12"
-      DTS:To="Package\Rename_Tab and Add FileDate - Wingecarribee" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 13]"
-      DTS:CreationName=""
-      DTS:DTSID="{02FE1DE9-4BBB-4BC2-9147-9FFBD4E24AFB}"
-      DTS:From="Package\Rename_Tab and Add FileDate - Wingecarribee"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 13"
-      DTS:To="Package\ANZSIC Dimension" />
-    <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
       DTS:DTSID="{EBDF7255-9F0E-42EC-AD2B-6F639F68A942}"
@@ -8949,46 +8764,6 @@ where a.[Contract] is not null</property>
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
       DTS:To="Package\Aggregation Fact" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
-      DTS:CreationName=""
-      DTS:DTSID="{B0E22713-3E1E-4F1D-9107-B9DBE4D97936}"
-      DTS:From="Package\Rename_Tab and Add FileDate - Annan"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 5"
-      DTS:To="Package\Rename_Tab and Add FileDate - Condamine" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
-      DTS:CreationName=""
-      DTS:DTSID="{4B904CAC-D1A3-4989-A7EC-DC624BD424CF}"
-      DTS:From="Package\Rename_Tab and Add FileDate - Condamine"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 6"
-      DTS:To="Package\Rename_Tab and Add FileDate - Flynn" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
-      DTS:CreationName=""
-      DTS:DTSID="{20225487-2928-4C9A-BF7F-64BE91FD8A75}"
-      DTS:From="Package\Rename_Tab and Add FileDate - Flynn"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 7"
-      DTS:To="Package\Rename_Tab and Add FileDate - Macleay" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
-      DTS:CreationName=""
-      DTS:DTSID="{D3426CB7-A99C-4C4B-8CCF-05DDFEA3DFD0}"
-      DTS:From="Package\Rename_Tab and Add FileDate - Macleay"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 8"
-      DTS:To="Package\Rename_Tab and Add FileDate - Murchison" />
-    <DTS:PrecedenceConstraint
-      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
-      DTS:CreationName=""
-      DTS:DTSID="{07E29180-E3C8-4832-A2B5-D41A7A0871AF}"
-      DTS:From="Package\Rename_Tab and Add FileDate - Murchison"
-      DTS:LogicalAnd="True"
-      DTS:ObjectName="Constraint 9"
-      DTS:To="Package\Rename_Tab and Add FileDate - Natalie" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -9001,73 +8776,37 @@ where a.[Contract] is not null</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="160,42.6666666666667"
           Id="Package\Aggregation Fact"
-          TopLeft="103.879628163659,1099.76665662448" />
+          TopLeft="762.212951687061,542.933333248104" />
         <NodeLayout
           Size="168,42.6666666666667"
           Id="Package\ANZSIC Dimension"
-          TopLeft="107.999998472631,629.29999273181" />
+          TopLeft="766.333321996033,72.4666693554325" />
         <NodeLayout
           Size="200.666666666667,42.6666666666667"
           Id="Package\Assets Dimension - Active"
-          TopLeft="83.8333321660756,699.499991476535" />
+          TopLeft="742.166655689478,142.666668100157" />
         <NodeLayout
           Size="246.666666666667,42.6666666666667"
           Id="Package\Assets Dimension - Removed Other"
-          TopLeft="57.6296292998724,856.329620221102" />
+          TopLeft="715.962952823275,299.496296844725" />
         <NodeLayout
           Size="313.333333333334,42.6666666666667"
           Id="Package\Assets Dimension - Removed(Natalie,Condamine)"
-          TopLeft="255.833331272006,768.207397655359" />
-        <NodeLayout
-          Size="265.333333333334,42.6666666666667"
-          Id="Package\Rename_Tab and Add FileDate - Annan"
-          TopLeft="50.0833326689899,8.51786971025461" />
-        <NodeLayout
-          Size="288,42.6666666666667"
-          Id="Package\Rename_Tab and Add FileDate - Condamine"
-          TopLeft="42.9166660271585,82.7666651866834" />
-        <NodeLayout
-          Size="261.333333333334,42.6666666666667"
-          Id="Package\Rename_Tab and Add FileDate - Flynn"
-          TopLeft="49.999999254942,149.533330838283" />
-        <NodeLayout
-          Size="273.333333333334,42.6666666666667"
-          Id="Package\Rename_Tab and Add FileDate - Macleay"
-          TopLeft="50.4166659153999,218.433329606255" />
-        <NodeLayout
-          Size="284,42.6666666666667"
-          Id="Package\Rename_Tab and Add FileDate - Murchison"
-          TopLeft="51.2499992363154,286.566664582292" />
-        <NodeLayout
-          Size="268,42.6666666666667"
-          Id="Package\Rename_Tab and Add FileDate - Natalie"
-          TopLeft="52.916665878147,351.766663714449" />
-        <NodeLayout
-          Size="269.333333333334,42.6666666666667"
-          Id="Package\Rename_Tab and Add FileDate - Othello"
-          TopLeft="56.2499991618097,423.466662575404" />
-        <NodeLayout
-          Size="264,42.6666666666667"
-          Id="Package\Rename_Tab and Add FileDate - Roper"
-          TopLeft="55.416665840894,489.066662296454" />
-        <NodeLayout
-          Size="302.666666666667,42.6666666666667"
-          Id="Package\Rename_Tab and Add FileDate - Wingecarribee"
-          TopLeft="43.7499993480743,557.933328327735" />
+          TopLeft="914.166654795409,211.374074278982" />
         <NodeLayout
           Size="248,42.6666666666667"
           Id="Package\Update FileDate for Removed Other"
-          TopLeft="59.7592584507332,924.481470818541" />
+          TopLeft="718.092581974136,367.648147442163" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="188.08333198602,671.966659398477">
+          TopLeft="846.416655509422,115.133336022099">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,27.5333320780589"
               Start="0,0"
               End="0,20.0333320780589">
@@ -9085,99 +8824,11 @@ where a.[Contract] is not null</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 10]"
-          TopLeft="188.916665853312,394.433330381115">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,29.0333321942885"
-              Start="0,0"
-              End="0,21.5333321942885">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.5333321942885" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 11]"
-          TopLeft="189.166665834685,466.133329242071">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,22.9333330543836"
-              Start="0,0"
-              End="0,15.4333330543836">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.4333330543836" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 12]"
-          TopLeft="191.249999261151,531.733328963121">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,26.1999993646144"
-              Start="0,0"
-              End="0,18.6999993646144">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.6999993646144" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 13]"
-          TopLeft="193.541665577019,600.599994994402">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,28.699997737408"
-              Start="0,0"
-              End="0,21.199997737408">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.199997737408" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="182.361110541969,898.996286887769">
+          TopLeft="840.694434065372,342.162963511391">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,25.4851839307723"
               Start="0,0"
               End="0,17.9851839307723">
@@ -9195,121 +8846,11 @@ where a.[Contract] is not null</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="184.833332681408,51.1845363769213">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,31.5821288097621"
-              Start="0,0"
-              End="0,24.0821288097621">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,24.0821288097621" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 6]"
-          TopLeft="183.791665974384,125.43333185335">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,24.0999989849329"
-              Start="0,0"
-              End="0,16.5999989849329">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.5999989849329" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="183.874999251838,192.19999750495">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,26.2333321013057"
-              Start="0,0"
-              End="0,18.7333321013057">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.7333321013057" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="190.166665909191,261.099996272922">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,25.4666683093704"
-              Start="0,0"
-              End="0,17.9666683093704">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.9666683093704" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="190.083332557231,329.233331248959">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,22.5333324654897"
-              Start="0,0"
-              End="0,15.0333324654897">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.0333324654897" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="182.564814066307,742.166658143202">
+          TopLeft="840.89813758971,185.333334766824">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,114.1629620779"
               Start="0,0"
               End="0,106.6629620779">
@@ -9329,13 +8870,13 @@ where a.[Contract] is not null</property>
         <NodeLayout
           Size="197.333333333334,42.6666666666667"
           Id="Package\Update Status for Repaid"
-          TopLeft="83.264867256491,999.211553013254" />
+          TopLeft="741.598190779893,442.378229636877" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="182.845396186945,967.148137485208">
+          TopLeft="841.178719710348,410.31481410883">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,32.0634155280464"
               Start="0,0"
               End="0,24.5634155280464">
@@ -9354,10 +8895,10 @@ where a.[Contract] is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="182.905581043408,1041.87821967992">
+          TopLeft="841.23890456681,485.044896303544">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,57.88843694456"
               Start="0,0"
               End="0,50.38843694456">
@@ -9381,7 +8922,7 @@ where a.[Contract] is not null</property>
     design-time-name="Package\Aggregation Fact">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="114.666666666667,42.6666666666667"
           Id="Package\Aggregation Fact\Staging"
@@ -9419,7 +8960,7 @@ where a.[Contract] is not null</property>
           TopLeft="232.833333333333,458.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,60"
               Start="0,0"
               End="0,52.5">
@@ -9441,7 +8982,7 @@ where a.[Contract] is not null</property>
           TopLeft="88.8333333333334,356.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="125.111111111111,60.0000000000001"
               Start="0,0"
               End="125.111111111111,52.5000000000001">
@@ -9475,7 +9016,7 @@ where a.[Contract] is not null</property>
           TopLeft="230.833333333333,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="20.8888888888889,265.333333333333"
               Start="0,0"
               End="20.8888888888889,257.833333333333">
@@ -9511,7 +9052,7 @@ where a.[Contract] is not null</property>
           TopLeft="281.166666666667,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="100.666666666667,59.9999999999999"
               Start="0,0"
               End="100.666666666667,52.4999999999999">
@@ -9547,7 +9088,7 @@ where a.[Contract] is not null</property>
           TopLeft="180.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-85.6666666666667,59.9999999999999"
               Start="0,0"
               End="-85.6666666666667,52.4999999999999">
@@ -9583,7 +9124,7 @@ where a.[Contract] is not null</property>
           TopLeft="232.833333333333,561.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,60.0000000000001"
               Start="0,0"
               End="0,52.5000000000001">
@@ -9605,7 +9146,7 @@ where a.[Contract] is not null</property>
           TopLeft="91.8333333333334,253.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,60.0000000000001"
               Start="0,0"
               End="0,52.5000000000001">
@@ -9627,7 +9168,7 @@ where a.[Contract] is not null</property>
           TopLeft="231.166666666667,48.1666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,59.9999999999994"
               Start="0,0"
               End="0,52.4999999999994">
@@ -9839,7 +9380,7 @@ where a.[Contract] is not null</property>
     design-time-name="Package\ANZSIC Dimension">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="114.666666666667,42.6666666666667"
           Id="Package\ANZSIC Dimension\Staging"
@@ -9853,7 +9394,7 @@ where a.[Contract] is not null</property>
           TopLeft="232.833333333333,48.1666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,59.9999999999999"
               Start="0,0"
               End="0,52.4999999999999">
@@ -9879,7 +9420,7 @@ where a.[Contract] is not null</property>
           TopLeft="192.833333333333,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-98,59.9999999999999"
               Start="0,0"
               End="-98,52.4999999999999">
@@ -9919,7 +9460,7 @@ where a.[Contract] is not null</property>
           TopLeft="91.8333333333334,253.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,60.0000000000001"
               Start="0,0"
               End="0,52.5000000000001">
@@ -9945,7 +9486,7 @@ where a.[Contract] is not null</property>
           TopLeft="232.833333333333,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="18.8888888888889,265.333333333333"
               Start="0,0"
               End="18.8888888888889,257.833333333333">
@@ -9981,7 +9522,7 @@ where a.[Contract] is not null</property>
           TopLeft="88.8333333333334,356.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="125.111111111111,60.0000000000001"
               Start="0,0"
               End="125.111111111111,52.5000000000001">
@@ -10019,7 +9560,7 @@ where a.[Contract] is not null</property>
           TopLeft="232.833333333333,458.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,60"
               Start="0,0"
               End="0,52.5">
@@ -10045,7 +9586,7 @@ where a.[Contract] is not null</property>
           TopLeft="232.833333333333,561.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,60.0000000000001"
               Start="0,0"
               End="0,52.5000000000001">
@@ -10071,7 +9612,7 @@ where a.[Contract] is not null</property>
           TopLeft="272.833333333333,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="109,59.9999999999999"
               Start="0,0"
               End="109,52.4999999999999">
@@ -10182,7 +9723,7 @@ where a.[Contract] is not null</property>
     design-time-name="Package\Assets Dimension - Active">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="209.333333333334,42.6666666666667"
           Id="Package\Assets Dimension - Active\Slowly Changing Dimension"
@@ -10220,7 +9761,7 @@ where a.[Contract] is not null</property>
           TopLeft="232.833333333333,458.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,60"
               Start="0,0"
               End="0,52.5">
@@ -10242,7 +9783,7 @@ where a.[Contract] is not null</property>
           TopLeft="88.8333333333334,356.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="125.111111111111,60.0000000000001"
               Start="0,0"
               End="125.111111111111,52.5000000000001">
@@ -10276,7 +9817,7 @@ where a.[Contract] is not null</property>
           TopLeft="232.833333333333,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="18.8888888888889,265.333333333333"
               Start="0,0"
               End="18.8888888888889,257.833333333333">
@@ -10312,7 +9853,7 @@ where a.[Contract] is not null</property>
           TopLeft="283.166666666667,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="98.6666666666667,59.9999999999999"
               Start="0,0"
               End="98.6666666666667,52.4999999999999">
@@ -10348,7 +9889,7 @@ where a.[Contract] is not null</property>
           TopLeft="182.5,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="-87.6666666666667,59.9999999999999"
               Start="0,0"
               End="-87.6666666666667,52.4999999999999">
@@ -10384,7 +9925,7 @@ where a.[Contract] is not null</property>
           TopLeft="232.833333333333,561.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,60.0000000000001"
               Start="0,0"
               End="0,52.5000000000001">
@@ -10406,7 +9947,7 @@ where a.[Contract] is not null</property>
           TopLeft="91.8333333333334,253.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,60.0000000000001"
               Start="0,0"
               End="0,52.5000000000001">
@@ -10428,7 +9969,7 @@ where a.[Contract] is not null</property>
           TopLeft="232.833333333333,48.1666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,59.9999999999999"
               Start="0,0"
               End="0,52.4999999999999">
@@ -10561,7 +10102,7 @@ where a.[Contract] is not null</property>
     design-time-name="Package\Assets Dimension - Removed Other">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="114.666666666667,42.6666666666667"
           Id="Package\Assets Dimension - Removed Other\Staging"
@@ -10579,7 +10120,7 @@ where a.[Contract] is not null</property>
           TopLeft="289.5,58.8333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,46"
               Start="0,0"
               End="0,38.5">
@@ -10601,7 +10142,7 @@ where a.[Contract] is not null</property>
           TopLeft="286.666666666667,147.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,44.6666666666667"
               Start="0,0"
               End="0,37.1666666666667">
@@ -10641,7 +10182,7 @@ where a.[Contract] is not null</property>
     design-time-name="Package\Assets Dimension - Removed(Natalie,Condamine)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\Assets Dimension - Removed(Natalie,Condamine)\Derived Column"
@@ -10659,7 +10200,7 @@ where a.[Contract] is not null</property>
           TopLeft="293,149.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,46"
               Start="0,0"
               End="0,38.5">
@@ -10681,7 +10222,7 @@ where a.[Contract] is not null</property>
           TopLeft="292.833333333333,54.8333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{assembly:Null}"
+              StartConnector="{x:Null}"
               EndConnector="0,52"
               Start="0,0"
               End="0,44.5">
