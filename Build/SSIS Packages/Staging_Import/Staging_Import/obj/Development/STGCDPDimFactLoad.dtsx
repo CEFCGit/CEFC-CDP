@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="STGCDPDimFactLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="75"
-  DTS:VersionGUID="{D5B7FF8A-35E4-4A59-875F-80FBAB8AECC9}">
+  DTS:VersionBuild="76"
+  DTS:VersionGUID="{A046755B-630C-43C4-8469-5C49BB4C65AD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -3716,7 +3716,7 @@ FROM     core.StgBaseFact_view</property>
                     <externalMetadataColumn
                       refId="Package\Base Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Amt_cBoardApprovedNotes]"
                       dataType="wstr"
-                      length="900"
+                      length="2000"
                       name="Amt_cBoardApprovedNotes" />
                     <externalMetadataColumn
                       refId="Package\Base Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Amt_cCEFC]"
@@ -5327,7 +5327,7 @@ FROM     core.StgBaseFact_view</property>
                     <externalMetadataColumn
                       refId="Package\Base Fact\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       dataType="wstr"
-                      length="900"
+                      length="2000"
                       name="Param_2">
                       <properties>
                         <property
@@ -8207,7 +8207,7 @@ FROM     core.StgBaseFact_view</property>
                     <externalMetadataColumn
                       refId="Package\Base Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Amt_cBoardApprovedNotes]"
                       dataType="wstr"
-                      length="900"
+                      length="2000"
                       name="Amt_cBoardApprovedNotes" />
                     <externalMetadataColumn
                       refId="Package\Base Fact\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Amt_cCEFC]"

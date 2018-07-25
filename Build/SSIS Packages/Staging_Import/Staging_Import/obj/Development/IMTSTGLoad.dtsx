@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="IMTSTGLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="16"
-  DTS:VersionGUID="{D257D040-D1BB-4A38-82A9-0F60AEDA917C}">
+  DTS:VersionBuild="17"
+  DTS:VersionGUID="{235597FA-761C-4469-8109-3D17A3489AC6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -10649,12 +10649,6 @@
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Amt_cNonTriggeredCommitment]"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Amt_cNonTriggeredCommitment]" />
                     <inputColumn
-                      refId="Package\Load PRJ_Projects Table from iMart to Staging\Staging.Inputs[ADO NET Destination Input].Columns[Amt_cCommitment Copy]"
-                      cachedDataType="r8"
-                      cachedName="Amt_cCommitment Copy"
-                      externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Amt_cCommitment_Copy]"
-                      lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Amt_cCommitment Copy]" />
-                    <inputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\Staging.Inputs[ADO NET Destination Input].Columns[Doc_Folder_Display_Path Copy]"
                       cachedCodepage="1252"
                       cachedDataType="text"
@@ -10769,6 +10763,12 @@
                       cachedName="sum_Obligations Due"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\Staging.Inputs[ADO NET Destination Input].ExternalColumns[sum_Obligations_Due]"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[sum_Obligations Due]" />
+                    <inputColumn
+                      refId="Package\Load PRJ_Projects Table from iMart to Staging\Staging.Inputs[ADO NET Destination Input].Columns[Amt_cCommitment Copy]"
+                      cachedDataType="r8"
+                      cachedName="Amt_cCommitment Copy"
+                      externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Amt_cCommitment_Copy]"
+                      lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Amt_cCommitment Copy]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -10796,7 +10796,7 @@
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Amt_cBoardApprovedNotes]"
                       dataType="wstr"
-                      length="900"
+                      length="2000"
                       name="Amt_cBoardApprovedNotes" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Amt_cCEFC]"
@@ -14988,7 +14988,7 @@
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="186.666666666667,42.6666666666667"
           Id="Package\Backup Staging and Core Tables"
@@ -15016,7 +15016,7 @@
         <NodeLayout
           Size="298.666666666667,42.6666666666667"
           Id="Package\Load PRJ_Projects Table from iMart to Staging"
-          TopLeft="174.416666660458,1662.5185097626" />
+          TopLeft="174,1662.5185097626" />
         <NodeLayout
           Size="268,42.6666666666667"
           Id="Package\Load Sector Table from iMart to Staging"
@@ -15070,7 +15070,7 @@
           TopLeft="336.291666502133,126">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,25.4333314271776"
               Start="0,0"
               End="0,17.9333314271776">
@@ -15092,7 +15092,7 @@
           TopLeft="331.208333237097,271.433331427178">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,50.7653104872232"
               Start="0,0"
               End="0,43.2653104872232">
@@ -15114,7 +15114,7 @@
           TopLeft="327.138888851636,922.43332786282">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,64.4444444444443"
               Start="0,0"
               End="0,56.9444444444443">
@@ -15136,7 +15136,7 @@
           TopLeft="320.962962962963,1211.71480777134">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,46.3703703703707"
               Start="0,0"
               End="0,38.8703703703707">
@@ -15158,7 +15158,7 @@
           TopLeft="323.814814814815,1107.56665962319">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,61.4814814814815"
               Start="0,0"
               End="0,53.9814814814815">
@@ -15180,7 +15180,7 @@
           TopLeft="325.111111111111,1401.93702999356">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,62.1481481481487"
               Start="0,0"
               End="0,54.6481481481487">
@@ -15202,7 +15202,7 @@
           TopLeft="322.518518518519,1300.75184480838">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,58.5185185185187"
               Start="0,0"
               End="0,51.0185185185187">
@@ -15221,10 +15221,10 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 15]"
-          TopLeft="321.874999897554,1609.41851147505">
+          TopLeft="321.666666567326,1609.41851147505">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,53.0999982875533"
               Start="0,0"
               End="0,45.5999982875533">
@@ -15246,7 +15246,7 @@
           TopLeft="322.629629530288,1506.75184480838">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,60"
               Start="0,0"
               End="0,52.5">
@@ -15268,7 +15268,7 @@
           TopLeft="336.374999835466,56.18928069503">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,27.1440526383033"
               Start="0,0"
               End="0,19.6440526383033">
@@ -15290,7 +15290,7 @@
           TopLeft="335.54166657043,194.099998093844">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,34.6666666666667"
               Start="0,0"
               End="0,27.1666666666667">
@@ -15312,7 +15312,7 @@
           TopLeft="325.958333100503,448">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,29.9142838391238"
               Start="0,0"
               End="0,22.4142838391238">
@@ -15334,7 +15334,7 @@
           TopLeft="328.624999767169,364.865308581068">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,40.4680247522661"
               Start="0,0"
               End="0,32.9680247522661">
@@ -15356,7 +15356,7 @@
           TopLeft="324.666666573535,624.199998124838">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,61.46666470627"
               Start="0,0"
               End="0,53.96666470627">
@@ -15378,7 +15378,7 @@
           TopLeft="324.333333240201,520.580950505791">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,60.9523809523809"
               Start="0,0"
               End="0,53.4523809523809">
@@ -15400,7 +15400,7 @@
           TopLeft="326.749999844779,830.999996164442">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,48.7666650317113"
               Start="0,0"
               End="0,41.2666650317113">
@@ -15422,7 +15422,7 @@
           TopLeft="326.416666511446,728.333329497775">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,60"
               Start="0,0"
               End="0,52.5">
@@ -15444,7 +15444,7 @@
           TopLeft="326.694444407192,1029.54443897393">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,35.3555539825887"
               Start="0,0"
               End="0,27.8555539825887">
@@ -15468,7 +15468,7 @@
     design-time-name="Package\Load DAT_Golden_Dates Table from iMart to Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="104,42.6666666666667"
           Id="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart"
@@ -15482,7 +15482,7 @@
           TopLeft="181.999999217689,64.73333357354">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,78.4333322407802"
               Start="0,0"
               End="0,70.9333322407802">
@@ -15508,7 +15508,7 @@
     design-time-name="Package\Load Focus Table from iMart to Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="104,42.6666666666667"
           Id="Package\Load Focus Table from iMart to Staging\iMart"
@@ -15522,7 +15522,7 @@
           TopLeft="175.083331719041,53.7999998992681">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,63.099998093844"
               Start="0,0"
               End="0,55.599998093844">
@@ -15558,7 +15558,7 @@
     design-time-name="Package\Load LOC_Location Table from iMart to Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="104,42.6666666666667"
           Id="Package\Load LOC_Location Table from iMart to Staging\iMart"
@@ -15572,7 +15572,7 @@
           TopLeft="179.083331923932,121.399998690486">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,38.4666657523314"
               Start="0,0"
               End="0,30.9666657523314">
@@ -15598,7 +15598,7 @@
     design-time-name="Package\Load PHA_Phases Table from iMart into Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="104,42.6666666666667"
           Id="Package\Load PHA_Phases Table from iMart into Staging\iMart"
@@ -15612,7 +15612,7 @@
           TopLeft="179.708331914619,49.0333333178361">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,51.4999988764519"
               Start="0,0"
               End="0,43.9999988764519">
@@ -15638,7 +15638,7 @@
     design-time-name="Package\Load PRJ_Priority Table from iMart into Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="104,42.6666666666667"
           Id="Package\Load PRJ_Priority Table from iMart into Staging\iMart"
@@ -15652,7 +15652,7 @@
           TopLeft="200.541664937511,52.0666665969292">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,49.2999988919497"
               Start="0,0"
               End="0,41.7999988919497">
@@ -15678,7 +15678,7 @@
     design-time-name="Package\Load PRJ_Projects Table from iMart to Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="114.666666666667,42.6666666666667"
           Id="Package\Load PRJ_Projects Table from iMart to Staging\Staging"
@@ -15692,7 +15692,7 @@
           TopLeft="190.999998497467,53.5666665581862">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,48.7666661165158"
               Start="0,0"
               End="0,41.2666661165158">
@@ -15706,9 +15706,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15736,7 +15734,7 @@
     design-time-name="Package\Load Sector Table from iMart to Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="152,42.6666666666667"
           Id="Package\Load Sector Table from iMart to Staging\Azure - Staging"
@@ -15750,7 +15748,7 @@
           TopLeft="193.583331402391,42.6666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,32.4999980241062"
               Start="0,0"
               End="0,24.9999980241062">
@@ -15776,7 +15774,7 @@
     design-time-name="Package\Load TEC_Matrix table from iMart to Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="130.666666666667,42.6666666666667"
           Id="Package\Load TEC_Matrix table from iMart to Staging\Azure - Staging"
@@ -15790,7 +15788,7 @@
           TopLeft="282.166666666667,82.1666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,80"
               Start="0,0"
               End="0,72.5">
@@ -15816,7 +15814,7 @@
     design-time-name="Package\Load TEC_Technology Table from IMART to Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="96,42.6666666666667"
           Id="Package\Load TEC_Technology Table from IMART to Staging\iMart"
@@ -15830,7 +15828,7 @@
           TopLeft="271.5,66.1666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,84.6666666666667"
               Start="0,0"
               End="0,77.1666666666667">

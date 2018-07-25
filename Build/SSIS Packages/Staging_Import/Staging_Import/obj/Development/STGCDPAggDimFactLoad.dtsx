@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="STGCDPAggDimFactLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="43"
-  DTS:VersionGUID="{46A728C6-53A9-4745-9BED-FB6FF1BCA56A}">
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{A6FA4BDA-924C-4838-B07D-842833DAB326}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -4022,6 +4022,16 @@ where a.Contract_Number is not null</property>
                       dataType="wstr"
                       length="20"
                       name="Update_Reason" />
+                    <externalMetadataColumn
+                      refId="Package\ANZSIC Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ABS_Division]"
+                      dataType="wstr"
+                      length="100"
+                      name="ABS_Division" />
+                    <externalMetadataColumn
+                      refId="Package\ANZSIC Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ABS_Subdivision]"
+                      dataType="wstr"
+                      length="100"
+                      name="ABS_Subdivision" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -6174,7 +6184,7 @@ select distinct p.ID_Project,
        a.[Contract No.] as [Contract_Number],
 	   a.[Asset No.] as [Asset_Number] ,
 	   a.[Asset Group] as [Category],
-	   'Not Available' as [Description],
+	   a.[Equipment type] as [Description],
 	   null as [Variant],
 	   a.Make as [Make],
 	   a.Model as [Model],
@@ -7665,6 +7675,64 @@ and asd.Contract_Number = sa.Contract_Number
 and asd.Description = sa.Description 
 where asd.Status = 'WBC'
 and asd.ID_Project = 'S2634'
+and sa.Contract_Number is null
+
+UNION ALL
+select asd.ID_Project,
+       asd.Contract_Number,
+	   asd.Asset_Number,
+	   asd.Category,
+	   asd.Description,
+	   asd.Variant,
+	   asd.Make,
+	   asd.Model,
+	   asd.Year,
+	   'Removed' as Status	   
+from [core].[Assets_Dimension] asd
+left join
+(select distinct p.ID_Project,
+       a.Agreement as [Contract_Number],
+	   a.ASSET_NUMBER as [Asset_Number] ,
+	   a.ASSET_DESCRIPTION as [Description]
+	   from staging.RemovedAssets_Condamine a
+  inner join core.Projects_Dimension p
+	on p.Project_Name = 'Condamine'
+where a.AGREEMENT is not null) sa
+on asd.ID_Project = sa.ID_Project
+and asd.Asset_Number = sa.Asset_Number
+and asd.Contract_Number = sa.Contract_Number
+and asd.Description = sa.Description 
+where asd.Status = 'Active'
+and asd.ID_Project = 'S2809'
+and sa.Contract_Number is null
+
+UNION ALL
+select asd.ID_Project,
+       asd.Contract_Number,
+	   asd.Asset_Number,
+	   asd.Category,
+	   asd.Description,
+	   asd.Variant,
+	   asd.Make,
+	   asd.Model,
+	   asd.Year,
+	   'Removed' as Status	   
+from [core].[Assets_Dimension] asd
+left join
+(select distinct p.ID_Project,
+       a.[Contract] as [Contract_Number],
+	   'Not Available' as [Asset_Number] ,
+	   'Not Available' as [Description]
+from staging.RemovedAssets_Natalie a
+  inner join core.Projects_Dimension p
+	on p.Project_Name = 'Natalie'
+where a.[Contract] is not null) sa
+on asd.ID_Project = sa.ID_Project
+and asd.Asset_Number = sa.Asset_Number
+and asd.Contract_Number = sa.Contract_Number
+and asd.Description = sa.Description 
+where asd.Status = 'Active'
+and asd.ID_Project = 'S2051'
 and sa.Contract_Number is null</property>
                 <property
                   dataType="System.Int32"
@@ -7959,6 +8027,7 @@ and sa.Contract_Number is null</property>
       DTS:refId="Package\Assets Dimension - Removed(Natalie,Condamine)"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
+      DTS:Disabled="True"
       DTS:DTSID="{26F32DE4-3217-4F43-84A4-C624D8E01635}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -8618,13 +8687,13 @@ where a.[Contract] is not null</property>
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
-      DTS:refId="Package\Rename_Tab and Add FileDate"
+      DTS:refId="Package\Rename_Tab and Add FileDate - Annan"
       DTS:CreationName="Microsoft.ExecuteProcess"
       DTS:Description="Execute Process Task"
       DTS:DTSID="{FC997A56-5AB3-4CA0-AC6C-07EA6151301A}"
       DTS:ExecutableType="Microsoft.ExecuteProcess"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Rename_Tab and Add FileDate"
+      DTS:ObjectName="Rename_Tab and Add FileDate - Annan"
       DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
       DTS:ThreadHint="0">
       <DTS:Variables />
@@ -8632,6 +8701,142 @@ where a.[Contract] is not null</property>
         <ExecuteProcessData
           Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
           Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Annan.xlsx&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Rename_Tab and Add FileDate - Condamine"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{5b4475b7-1837-400e-a72e-3f0a6916b9be}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Rename_Tab and Add FileDate - Condamine"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+          Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Condamine.xlsx&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Rename_Tab and Add FileDate - Flynn"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{f09f9e24-fe99-45ff-88d4-7adf2c67ff77}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Rename_Tab and Add FileDate - Flynn"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+          Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Flynn.xlsx&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Rename_Tab and Add FileDate - Macleay"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{0760f4b7-f4b5-4736-a303-17e776240ee2}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Rename_Tab and Add FileDate - Macleay"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+          Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Macleay.xlsx&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Rename_Tab and Add FileDate - Murchison"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{e5ca1613-d7af-4301-ae30-0abf341b167e}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Rename_Tab and Add FileDate - Murchison"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+          Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Murchison.xlsx&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Rename_Tab and Add FileDate - Natalie"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{710e02fd-234f-4de2-94e1-c611f3c733a1}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Rename_Tab and Add FileDate - Natalie"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+          Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Natalie.xlsx&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Rename_Tab and Add FileDate - Othello"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{9b992b09-07d4-4c9f-a5b7-05996d72fe9e}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Rename_Tab and Add FileDate - Othello"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+          Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Othello.xlsx&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Rename_Tab and Add FileDate - Roper"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{e4948baa-bb28-4966-bd7b-15921286e77d}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Rename_Tab and Add FileDate - Roper"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+          Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Roper.xlsx&quot;" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Rename_Tab and Add FileDate - Wingecarribee"
+      DTS:CreationName="Microsoft.ExecuteProcess"
+      DTS:Description="Execute Process Task"
+      DTS:DTSID="{f21b8686-8fd9-4455-9a72-f5c464002bf6}"
+      DTS:ExecutableType="Microsoft.ExecuteProcess"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Rename_Tab and Add FileDate - Wingecarribee"
+      DTS:TaskContact="Execute Process Task;Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecuteProcessData
+          Executable="C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe"
+          Arguments="-ExecutionPolicy Unrestricted -File  &quot;C:\Aggregation Files\rename_tab.ps1&quot; &quot;Wingecarribee.xlsx&quot;" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -8652,6 +8857,24 @@ where a.[Contract] is not null</property>
           SQLTask:SqlStatementSource="update core.Assets_Dimension &#xA;set FileDate = &#xA;(select max(FileDate) as FileDate &#xA;from &#xA;(&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetails_Annan&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetailsCFAL_Wingecarribee&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetailsNQ_Wingecarribee&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetailsSBG_Wingecarribee&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetailsWBC_Wingecarribee&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Annan&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Flynn&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Macleay&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Murchison&#xA;UNION&#xA;select max(FileDate) FileDate&#xA;from staging.ContractSummary_Othello&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Roper&#xA;) as a&#xA;)&#xA;where Status = 'Removed'&#xA;and FileDate is null &#xA;&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update Status for Repaid"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{9CC15E51-9422-4DB8-BA56-7DED97931149}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update Status for Repaid"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2017 RC1; © 2017 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="UPDATE &#xA;    core.Assets_Dimension&#xA;SET &#xA;     Status= 'Repaid' &#xA;from core.Aggregation_Fact af&#xA;join core.Assets_Dimension ad&#xA;  on af.ID_Project = ad.ID_Project&#xA;  and af.Contract_Number = ad.Contract_Number&#xA;  and af.Asset_Number = ad.Asset_Number&#xA;where Maturity_Date &lt;&gt; 'Not Available'&#xA;and convert(datetime,Maturity_Date) &lt; convert(datetime,af.File_Date)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:PrecedenceConstraints>
     <DTS:PrecedenceConstraint
@@ -8665,19 +8888,51 @@ where a.[Contract] is not null</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{8B01A613-3E18-4D75-82D7-B124E88EC324}"
+      DTS:DTSID="{10E28EC3-A7DF-4C48-9822-77511970B8FF}"
       DTS:From="Package\Assets Dimension - Active"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
-      DTS:To="Package\Assets Dimension - Removed(Natalie,Condamine)" />
+      DTS:To="Package\Assets Dimension - Removed Other" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 10]"
+      DTS:CreationName=""
+      DTS:DTSID="{652A3810-786B-43F2-9F17-F2191DE2101B}"
+      DTS:From="Package\Rename_Tab and Add FileDate - Natalie"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 10"
+      DTS:To="Package\Rename_Tab and Add FileDate - Othello" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 11]"
+      DTS:CreationName=""
+      DTS:DTSID="{2B0DBB8D-1EAE-4499-82A7-33C2D2A472EE}"
+      DTS:From="Package\Rename_Tab and Add FileDate - Othello"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 11"
+      DTS:To="Package\Rename_Tab and Add FileDate - Roper" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 12]"
+      DTS:CreationName=""
+      DTS:DTSID="{30049E98-CB73-4FBD-B4F3-2153A0636A6D}"
+      DTS:From="Package\Rename_Tab and Add FileDate - Roper"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 12"
+      DTS:To="Package\Rename_Tab and Add FileDate - Wingecarribee" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 13]"
+      DTS:CreationName=""
+      DTS:DTSID="{02FE1DE9-4BBB-4BC2-9147-9FFBD4E24AFB}"
+      DTS:From="Package\Rename_Tab and Add FileDate - Wingecarribee"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 13"
+      DTS:To="Package\ANZSIC Dimension" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{D3323FAA-CB1F-48A9-B1AF-8EE5690D309D}"
-      DTS:From="Package\Assets Dimension - Removed(Natalie,Condamine)"
+      DTS:DTSID="{EBDF7255-9F0E-42EC-AD2B-6F639F68A942}"
+      DTS:From="Package\Update FileDate for Removed Other"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
-      DTS:To="Package\Assets Dimension - Removed Other" />
+      DTS:To="Package\Update Status for Repaid" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
@@ -8689,19 +8944,51 @@ where a.[Contract] is not null</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{2FB46336-FA10-43CB-92DD-34EAF44C7F11}"
-      DTS:From="Package\Update FileDate for Removed Other"
+      DTS:DTSID="{3F61ECB1-A498-4F8C-8FB7-DEB9B6004A1B}"
+      DTS:From="Package\Update Status for Repaid"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
       DTS:To="Package\Aggregation Fact" />
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{E9E3C0D5-4215-4F48-9AF4-8FD4FD23E4DB}"
-      DTS:From="Package\Rename_Tab and Add FileDate"
+      DTS:DTSID="{B0E22713-3E1E-4F1D-9107-B9DBE4D97936}"
+      DTS:From="Package\Rename_Tab and Add FileDate - Annan"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
-      DTS:To="Package\ANZSIC Dimension" />
+      DTS:To="Package\Rename_Tab and Add FileDate - Condamine" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{4B904CAC-D1A3-4989-A7EC-DC624BD424CF}"
+      DTS:From="Package\Rename_Tab and Add FileDate - Condamine"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 6"
+      DTS:To="Package\Rename_Tab and Add FileDate - Flynn" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
+      DTS:CreationName=""
+      DTS:DTSID="{20225487-2928-4C9A-BF7F-64BE91FD8A75}"
+      DTS:From="Package\Rename_Tab and Add FileDate - Flynn"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 7"
+      DTS:To="Package\Rename_Tab and Add FileDate - Macleay" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 8]"
+      DTS:CreationName=""
+      DTS:DTSID="{D3426CB7-A99C-4C4B-8CCF-05DDFEA3DFD0}"
+      DTS:From="Package\Rename_Tab and Add FileDate - Macleay"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 8"
+      DTS:To="Package\Rename_Tab and Add FileDate - Murchison" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 9]"
+      DTS:CreationName=""
+      DTS:DTSID="{07E29180-E3C8-4832-A2B5-D41A7A0871AF}"
+      DTS:From="Package\Rename_Tab and Add FileDate - Murchison"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 9"
+      DTS:To="Package\Rename_Tab and Add FileDate - Natalie" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
@@ -8714,41 +9001,81 @@ where a.[Contract] is not null</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="160,42.6666666666667"
+          Id="Package\Aggregation Fact"
+          TopLeft="103.879628163659,1099.76665662448" />
         <NodeLayout
           Size="168,42.6666666666667"
           Id="Package\ANZSIC Dimension"
-          TopLeft="113.833331719041,89.9333319308361" />
+          TopLeft="107.999998472631,629.29999273181" />
         <NodeLayout
           Size="200.666666666667,42.6666666666667"
           Id="Package\Assets Dimension - Active"
-          TopLeft="92.9999986961484,164.46666393141" />
+          TopLeft="83.8333321660756,699.499991476535" />
         <NodeLayout
           Size="246.666666666667,42.6666666666667"
           Id="Package\Assets Dimension - Removed Other"
-          TopLeft="58.8333329856396,333.599995885491" />
+          TopLeft="57.6296292998724,856.329620221102" />
         <NodeLayout
           Size="313.333333333334,42.6666666666667"
           Id="Package\Assets Dimension - Removed(Natalie,Condamine)"
-          TopLeft="32.9999995902181,239.866662583152" />
+          TopLeft="255.833331272006,768.207397655359" />
+        <NodeLayout
+          Size="265.333333333334,42.6666666666667"
+          Id="Package\Rename_Tab and Add FileDate - Annan"
+          TopLeft="50.0833326689899,8.51786971025461" />
+        <NodeLayout
+          Size="288,42.6666666666667"
+          Id="Package\Rename_Tab and Add FileDate - Condamine"
+          TopLeft="42.9166660271585,82.7666651866834" />
+        <NodeLayout
+          Size="261.333333333334,42.6666666666667"
+          Id="Package\Rename_Tab and Add FileDate - Flynn"
+          TopLeft="49.999999254942,149.533330838283" />
+        <NodeLayout
+          Size="273.333333333334,42.6666666666667"
+          Id="Package\Rename_Tab and Add FileDate - Macleay"
+          TopLeft="50.4166659153999,218.433329606255" />
+        <NodeLayout
+          Size="284,42.6666666666667"
+          Id="Package\Rename_Tab and Add FileDate - Murchison"
+          TopLeft="51.2499992363154,286.566664582292" />
+        <NodeLayout
+          Size="268,42.6666666666667"
+          Id="Package\Rename_Tab and Add FileDate - Natalie"
+          TopLeft="52.916665878147,351.766663714449" />
+        <NodeLayout
+          Size="269.333333333334,42.6666666666667"
+          Id="Package\Rename_Tab and Add FileDate - Othello"
+          TopLeft="56.2499991618097,423.466662575404" />
+        <NodeLayout
+          Size="264,42.6666666666667"
+          Id="Package\Rename_Tab and Add FileDate - Roper"
+          TopLeft="55.416665840894,489.066662296454" />
+        <NodeLayout
+          Size="302.666666666667,42.6666666666667"
+          Id="Package\Rename_Tab and Add FileDate - Wingecarribee"
+          TopLeft="43.7499993480743,557.933328327735" />
         <NodeLayout
           Size="248,42.6666666666667"
           Id="Package\Update FileDate for Removed Other"
-          TopLeft="52.1666659712791,413.233328033288" />
+          TopLeft="59.7592584507332,924.481470818541" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="195.583331874261,132.599998597503">
+          TopLeft="188.08333198602,671.966659398477">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,31.8666653339068"
+              EndConnector="0,27.5333320780589"
               Start="0,0"
-              End="0,24.3666653339068">
+              End="0,20.0333320780589">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.3666653339068" />
+                    End="0,20.0333320780589" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8758,19 +9085,19 @@ where a.[Contract] is not null</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="191.499999143183,207.133330598076">
+          Id="Package.PrecedenceConstraints[Constraint 10]"
+          TopLeft="188.916665853312,394.433330381115">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.733331985076"
+              EndConnector="0,29.0333321942885"
               Start="0,0"
-              End="0,25.233331985076">
+              End="0,21.5333321942885">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.233331985076" />
+                    End="0,21.5333321942885" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8780,19 +9107,63 @@ where a.[Contract] is not null</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="185.916666287929,282.533329249819">
+          Id="Package.PrecedenceConstraints[Constraint 11]"
+          TopLeft="189.166665834685,466.133329242071">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,51.0666666356722"
+              EndConnector="0,22.9333330543836"
               Start="0,0"
-              End="0,43.5666666356722">
+              End="0,15.4333330543836">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,43.5666666356722" />
+                    End="0,15.4333330543836" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 12]"
+          TopLeft="191.249999261151,531.733328963121">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.1999993646144"
+              Start="0,0"
+              End="0,18.6999993646144">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.6999993646144" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 13]"
+          TopLeft="193.541665577019,600.599994994402">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,28.699997737408"
+              Start="0,0"
+              End="0,21.199997737408">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21.199997737408" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8803,18 +9174,18 @@ where a.[Contract] is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="179.166666145126,376.266662552158">
+          TopLeft="182.361110541969,898.996286887769">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.9666654811303"
+              EndConnector="0,25.4851839307723"
               Start="0,0"
-              End="0,29.4666654811303">
+              End="0,17.9851839307723">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,29.4666654811303" />
+                    End="0,17.9851839307723" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8823,50 +9194,178 @@ where a.[Contract] is not null</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="160,42.6666666666667"
-          Id="Package\Aggregation Fact"
-          TopLeft="93.4166653566063,494.099997009039" />
-        <EdgeLayout
-          Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="174.791665663943,455.899994699955">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,38.200002309084"
-              Start="0,0"
-              End="0,30.700002309084">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,30.700002309084" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="225.333333333334,42.6666666666667"
-          Id="Package\Rename_Tab and Add FileDate"
-          TopLeft="87.1666654497385,21.5178694777964" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
-          TopLeft="198.833331917723,64.1845361444631">
+          TopLeft="184.833332681408,51.1845363769213">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,25.748795786373"
+              EndConnector="0,31.5821288097621"
               Start="0,0"
-              End="0,18.248795786373">
+              End="0,24.0821288097621">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,18.248795786373" />
+                    End="0,24.0821288097621" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 6]"
+          TopLeft="183.791665974384,125.43333185335">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.0999989849329"
+              Start="0,0"
+              End="0,16.5999989849329">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.5999989849329" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 7]"
+          TopLeft="183.874999251838,192.19999750495">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,26.2333321013057"
+              Start="0,0"
+              End="0,18.7333321013057">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.7333321013057" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 8]"
+          TopLeft="190.166665909191,261.099996272922">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,25.4666683093704"
+              Start="0,0"
+              End="0,17.9666683093704">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,17.9666683093704" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 9]"
+          TopLeft="190.083332557231,329.233331248959">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,22.5333324654897"
+              Start="0,0"
+              End="0,15.0333324654897">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,15.0333324654897" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="182.564814066307,742.166658143202">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,114.1629620779"
+              Start="0,0"
+              End="0,106.6629620779">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,106.6629620779" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="197.333333333334,42.6666666666667"
+          Id="Package\Update Status for Repaid"
+          TopLeft="83.264867256491,999.211553013254" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="182.845396186945,967.148137485208">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,32.0634155280464"
+              Start="0,0"
+              End="0,24.5634155280464">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.5634155280464" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 4]"
+          TopLeft="182.905581043408,1041.87821967992">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,57.88843694456"
+              Start="0,0"
+              End="0,50.38843694456">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,50.38843694456" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -8879,44 +9378,44 @@ where a.[Contract] is not null</property>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\ANZSIC Dimension">
+    design-time-name="Package\Aggregation Fact">
     <LayoutInfo>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="114.666666666667,42.6666666666667"
+          Id="Package\Aggregation Fact\Staging"
+          TopLeft="174.166666666667,5.49999999999993" />
+        <NodeLayout
+          Size="209.333333333334,42.6666666666667"
+          Id="Package\Aggregation Fact\Slowly Changing Dimension"
+          TopLeft="126.166666666667,108.166666666666" />
+        <NodeLayout
           Size="164,42.6666666666667"
-          Id="Package\ANZSIC Dimension\Derived Column 1"
+          Id="Package\Aggregation Fact\Derived Column 1"
           TopLeft="150.833333333333,518.833333333333" />
         <NodeLayout
-          Size="114.666666666667,42.6666666666667"
-          Id="Package\ANZSIC Dimension\Staging"
-          TopLeft="175.5,5.49999999999993" />
-        <NodeLayout
-          Size="176,42.6666666666667"
-          Id="Package\ANZSIC Dimension\OLE DB Command 1"
-          TopLeft="293.833333333333,210.833333333333" />
-        <NodeLayout
-          Size="166.666666666667,42.6666666666667"
-          Id="Package\ANZSIC Dimension\OLE DB Command"
-          TopLeft="5.50000000000004,313.5" />
-        <NodeLayout
           Size="121.333333333334,42.6666666666667"
-          Id="Package\ANZSIC Dimension\Union All"
+          Id="Package\Aggregation Fact\Union All"
           TopLeft="172.166666666667,416.166666666667" />
         <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\Aggregation Fact\OLE DB Command 1"
+          TopLeft="293.833333333333,210.833333333333" />
+        <NodeLayout
           Size="164,42.6666666666667"
-          Id="Package\ANZSIC Dimension\Insert Destination"
+          Id="Package\Aggregation Fact\Insert Destination"
           TopLeft="150.833333333333,621.5" />
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
-          Id="Package\ANZSIC Dimension\Derived Column"
+          Id="Package\Aggregation Fact\Derived Column"
           TopLeft="17.5,210.833333333333" />
         <NodeLayout
-          Size="168,42.6666666666667"
-          Id="Package\ANZSIC Dimension\ANZSIC Dimension"
-          TopLeft="148.833333333333,108.166666666666" />
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Aggregation Fact\OLE DB Command"
+          TopLeft="5.50000000000004,313.5" />
         <EdgeLayout
-          Id="Package\ANZSIC Dimension.Paths[Union All Output 1]"
+          Id="Package\Aggregation Fact.Paths[Union All Output 1]"
           TopLeft="232.833333333333,458.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8934,13 +9433,11 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\ANZSIC Dimension.Paths[OLE DB Command Output]"
+          Id="Package\Aggregation Fact.Paths[OLE DB Command Output]"
           TopLeft="88.8333333333334,356.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
@@ -8970,11 +9467,479 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Aggregation Fact.Paths[New Output]"
+          TopLeft="230.833333333333,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="20.8888888888889,265.333333333333"
+              Start="0,0"
+              End="20.8888888888889,257.833333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,153.127982646421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,153.127982646421"
+                    Point2="0,157.127982646421"
+                    Point3="4,157.127982646421" />
+                  <mssgle:LineSegment
+                    End="16.8888888888889,157.127982646421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.8888888888889,157.127982646421"
+                    Point2="20.8888888888889,157.127982646421"
+                    Point3="20.8888888888889,161.127982646421" />
+                  <mssgle:LineSegment
+                    End="20.8888888888889,257.833333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-16.6469422743056,162.127982646421,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Aggregation Fact.Paths[Inferred Member Updates Output]"
+          TopLeft="281.166666666667,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="100.666666666667,59.9999999999999"
+              Start="0,0"
+              End="100.666666666667,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.503144654088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.503144654088"
+                    Point2="0,20.503144654088"
+                    Point3="4,20.503144654088" />
+                  <mssgle:LineSegment
+                    End="96.6666666666667,20.503144654088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="96.6666666666667,20.503144654088"
+                    Point2="100.666666666667,20.503144654088"
+                    Point3="100.666666666667,24.503144654088" />
+                  <mssgle:LineSegment
+                    End="100.666666666667,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-24.0696549479167,25.503144654088,148.8059765625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Aggregation Fact.Paths[Historical Attribute Inserts Output]"
+          TopLeft="180.5,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-85.6666666666667,59.9999999999999"
+              Start="0,0"
+              End="-85.6666666666667,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.503144654088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.503144654088"
+                    Point2="0,20.503144654088"
+                    Point3="-4,20.503144654088" />
+                  <mssgle:LineSegment
+                    End="-81.6666666666667,20.503144654088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-81.6666666666667,20.503144654088"
+                    Point2="-85.6666666666667,20.503144654088"
+                    Point3="-85.6666666666667,24.503144654088" />
+                  <mssgle:LineSegment
+                    End="-85.6666666666667,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-117.889720052083,25.503144654088,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Aggregation Fact.Paths[Derived Column Output1]"
+          TopLeft="232.833333333333,561.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Aggregation Fact.Paths[Derived Column Output]"
+          TopLeft="91.8333333333334,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Aggregation Fact.Paths[ADO NET Source Output]"
+          TopLeft="231.166666666667,48.1666666666666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999994"
+              Start="0,0"
+              End="0,52.4999999999994">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999994" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Aggregation Fact\Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Aggregation Fact\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[core].[Aggregation_Fact]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[ANZSIC_Code]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ANZSIC_Code&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Asset_Number]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Asset_Number&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Balloon_Amount]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Balloon_Amount&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Brand]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Brand&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[CEFC_Rebate_Monthly]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CEFC_Rebate_Monthly&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Contract_Number]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Contract_Number&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Contract_Start_Date]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Contract_Start_Date&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Discounted_Interest_Rate]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Discounted_Interest_Rate&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[FileDate]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;File_Date&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Funder_Margin]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Funder_Margin&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[ID_Project]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ID_Project&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Maturity Date]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Maturity_Date&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[PostCode]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Postcode&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Principal_Outstanding]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Principal_Outstanding&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Product_Type]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Product_Type&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Repayment_Frequency]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Repayment_Frequency&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[State]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;State&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Term]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Term&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Termination_Date]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Termination_Date&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Total_Amount_Financed]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Total_Amount_Financed&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_exclGST]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Total_Rebate_to_date_exclGST&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_inclGST]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Total_Rebate_to_date_inclGST&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;Update_from_TS&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;Update_to_TS&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Aggregation Fact\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\ANZSIC Dimension">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="114.666666666667,42.6666666666667"
+          Id="Package\ANZSIC Dimension\Staging"
+          TopLeft="175.5,5.49999999999993" />
+        <NodeLayout
+          Size="168,42.6666666666667"
+          Id="Package\ANZSIC Dimension\ANZSIC Dimension"
+          TopLeft="148.833333333333,108.166666666666" />
+        <EdgeLayout
+          Id="Package\ANZSIC Dimension.Paths[ADO NET Source Output]"
+          TopLeft="232.833333333333,48.1666666666666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\ANZSIC Dimension\Derived Column"
+          TopLeft="17.5,210.833333333333" />
+        <EdgeLayout
+          Id="Package\ANZSIC Dimension.Paths[Historical Attribute Inserts Output]"
+          TopLeft="192.833333333333,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-98,59.9999999999999"
+              Start="0,0"
+              End="-98,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.625"
+                    Point2="0,20.625"
+                    Point3="-4,20.625" />
+                  <mssgle:LineSegment
+                    End="-94,20.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-94,20.625"
+                    Point2="-98,20.625"
+                    Point3="-98,24.625" />
+                  <mssgle:LineSegment
+                    End="-98,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-124.05638671875,25.625,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\ANZSIC Dimension\OLE DB Command"
+          TopLeft="5.50000000000004,313.5" />
+        <EdgeLayout
+          Id="Package\ANZSIC Dimension.Paths[Derived Column Output]"
+          TopLeft="91.8333333333334,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\ANZSIC Dimension\Union All"
+          TopLeft="172.166666666667,416.166666666667" />
         <EdgeLayout
           Id="Package\ANZSIC Dimension.Paths[New Output]"
           TopLeft="232.833333333333,150.833333333333">
@@ -9012,6 +9977,96 @@ where a.[Contract] is not null</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
+          Id="Package\ANZSIC Dimension.Paths[OLE DB Command Output]"
+          TopLeft="88.8333333333334,356.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125.111111111111,60.0000000000001"
+              Start="0,0"
+              End="125.111111111111,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.531453362256"
+                    Point2="0,35.531453362256"
+                    Point3="4,35.531453362256" />
+                  <mssgle:LineSegment
+                    End="121.111111111111,35.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.111111111111,35.531453362256"
+                    Point2="125.111111111111,35.531453362256"
+                    Point3="125.111111111111,39.531453362256" />
+                  <mssgle:LineSegment
+                    End="125.111111111111,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\ANZSIC Dimension\Derived Column 1"
+          TopLeft="150.833333333333,518.833333333333" />
+        <EdgeLayout
+          Id="Package\ANZSIC Dimension.Paths[Union All Output 1]"
+          TopLeft="232.833333333333,458.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\ANZSIC Dimension\Insert Destination"
+          TopLeft="150.833333333333,621.5" />
+        <EdgeLayout
+          Id="Package\ANZSIC Dimension.Paths[Derived Column Output1]"
+          TopLeft="232.833333333333,561.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\ANZSIC Dimension\OLE DB Command 1"
+          TopLeft="293.833333333333,210.833333333333" />
+        <EdgeLayout
           Id="Package\ANZSIC Dimension.Paths[Inferred Member Updates Output]"
           TopLeft="272.833333333333,150.833333333333">
           <EdgeLayout.Curve>
@@ -9044,114 +10099,6 @@ where a.[Contract] is not null</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-19.90298828125,25.625,148.8059765625,11.658203125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ANZSIC Dimension.Paths[Historical Attribute Inserts Output]"
-          TopLeft="192.833333333333,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-98,59.9999999999999"
-              Start="0,0"
-              End="-98,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.625" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.625"
-                    Point2="0,20.625"
-                    Point3="-4,20.625" />
-                  <mssgle:LineSegment
-                    End="-94,20.625" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-94,20.625"
-                    Point2="-98,20.625"
-                    Point3="-98,24.625" />
-                  <mssgle:LineSegment
-                    End="-98,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-124.05638671875,25.625,150.1127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ANZSIC Dimension.Paths[Derived Column Output1]"
-          TopLeft="232.833333333333,561.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ANZSIC Dimension.Paths[Derived Column Output]"
-          TopLeft="91.8333333333334,253.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\ANZSIC Dimension.Paths[ADO NET Source Output]"
-          TopLeft="232.833333333333,48.1666666666666">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -9614,7 +10561,7 @@ where a.[Contract] is not null</property>
     design-time-name="Package\Assets Dimension - Removed Other">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="114.666666666667,42.6666666666667"
           Id="Package\Assets Dimension - Removed Other\Staging"
@@ -9646,9 +10593,7 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9670,9 +10615,7 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9698,7 +10641,7 @@ where a.[Contract] is not null</property>
     design-time-name="Package\Assets Dimension - Removed(Natalie,Condamine)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\Assets Dimension - Removed(Natalie,Condamine)\Derived Column"
@@ -9730,9 +10673,7 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -9754,9 +10695,7 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -9775,464 +10714,6 @@ where a.[Contract] is not null</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Aggregation Fact">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="114.666666666667,42.6666666666667"
-          Id="Package\Aggregation Fact\Staging"
-          TopLeft="175.5,5.49999999999993" />
-        <NodeLayout
-          Size="209.333333333334,42.6666666666667"
-          Id="Package\Aggregation Fact\Slowly Changing Dimension"
-          TopLeft="126.166666666667,108.166666666666" />
-        <EdgeLayout
-          Id="Package\Aggregation Fact.Paths[ADO NET Source Output]"
-          TopLeft="231.833333333333,48.1666666666666">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="154.666666666667,42.6666666666667"
-          Id="Package\Aggregation Fact\Derived Column"
-          TopLeft="17.5,210.833333333333" />
-        <EdgeLayout
-          Id="Package\Aggregation Fact.Paths[Historical Attribute Inserts Output]"
-          TopLeft="180.5,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-85.6666666666667,59.9999999999999"
-              Start="0,0"
-              End="-85.6666666666667,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.503144654088" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.503144654088"
-                    Point2="0,20.503144654088"
-                    Point3="-4,20.503144654088" />
-                  <mssgle:LineSegment
-                    End="-81.6666666666667,20.503144654088" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-81.6666666666667,20.503144654088"
-                    Point2="-85.6666666666667,20.503144654088"
-                    Point3="-85.6666666666667,24.503144654088" />
-                  <mssgle:LineSegment
-                    End="-85.6666666666667,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-117.889720052083,25.503144654088,150.1127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166.666666666667,42.6666666666667"
-          Id="Package\Aggregation Fact\OLE DB Command"
-          TopLeft="5.50000000000004,313.5" />
-        <EdgeLayout
-          Id="Package\Aggregation Fact.Paths[Derived Column Output]"
-          TopLeft="91.8333333333334,253.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="121.333333333334,42.6666666666667"
-          Id="Package\Aggregation Fact\Union All"
-          TopLeft="172.166666666667,416.166666666667" />
-        <EdgeLayout
-          Id="Package\Aggregation Fact.Paths[New Output]"
-          TopLeft="230.833333333333,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="20.8888888888889,265.333333333333"
-              Start="0,0"
-              End="20.8888888888889,257.833333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,153.127982646421" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,153.127982646421"
-                    Point2="0,157.127982646421"
-                    Point3="4,157.127982646421" />
-                  <mssgle:LineSegment
-                    End="16.8888888888889,157.127982646421" />
-                  <mssgle:CubicBezierSegment
-                    Point1="16.8888888888889,157.127982646421"
-                    Point2="20.8888888888889,157.127982646421"
-                    Point3="20.8888888888889,161.127982646421" />
-                  <mssgle:LineSegment
-                    End="20.8888888888889,257.833333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-16.6469422743055,162.127982646421,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Aggregation Fact.Paths[OLE DB Command Output]"
-          TopLeft="88.8333333333334,356.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="125.111111111111,60.0000000000001"
-              Start="0,0"
-              End="125.111111111111,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.531453362256" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.531453362256"
-                    Point2="0,35.531453362256"
-                    Point3="4,35.531453362256" />
-                  <mssgle:LineSegment
-                    End="121.111111111111,35.531453362256" />
-                  <mssgle:CubicBezierSegment
-                    Point1="121.111111111111,35.531453362256"
-                    Point2="125.111111111111,35.531453362256"
-                    Point3="125.111111111111,39.531453362256" />
-                  <mssgle:LineSegment
-                    End="125.111111111111,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Aggregation Fact\Derived Column 1"
-          TopLeft="150.833333333333,518.833333333333" />
-        <EdgeLayout
-          Id="Package\Aggregation Fact.Paths[Union All Output 1]"
-          TopLeft="232.833333333333,458.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Aggregation Fact\Insert Destination"
-          TopLeft="150.833333333333,621.5" />
-        <EdgeLayout
-          Id="Package\Aggregation Fact.Paths[Derived Column Output1]"
-          TopLeft="232.833333333333,561.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="176,42.6666666666667"
-          Id="Package\Aggregation Fact\OLE DB Command 1"
-          TopLeft="293.833333333333,210.833333333333" />
-        <EdgeLayout
-          Id="Package\Aggregation Fact.Paths[Inferred Member Updates Output]"
-          TopLeft="281.166666666667,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="100.666666666667,59.9999999999999"
-              Start="0,0"
-              End="100.666666666667,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,16.503144654088" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.503144654088"
-                    Point2="0,20.503144654088"
-                    Point3="4,20.503144654088" />
-                  <mssgle:LineSegment
-                    End="96.6666666666667,20.503144654088" />
-                  <mssgle:CubicBezierSegment
-                    Point1="96.6666666666667,20.503144654088"
-                    Point2="100.666666666667,20.503144654088"
-                    Point3="100.666666666667,24.503144654088" />
-                  <mssgle:LineSegment
-                    End="100.666666666667,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-24.0696549479167,25.503144654088,148.8059765625,11.658203125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Aggregation Fact\Staging">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Aggregation Fact\Slowly Changing Dimension">
-    <Properties>
-      <Property>
-        <Name>SCDMetadata</Name>
-        <Value
-          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionID&gt;{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}&lt;/ConnectionID&gt;
-  &lt;TableName&gt;[core].[Aggregation_Fact]&lt;/TableName&gt;
-  &lt;InputToColumnsCollection&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[ANZSIC_Code]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ANZSIC_Code&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Asset_Number]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Asset_Number&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Balloon_Amount]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Balloon_Amount&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Brand]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Brand&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[CEFC_Rebate_Monthly]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;CEFC_Rebate_Monthly&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Contract_Number]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Contract_Number&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Contract_Start_Date]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Contract_Start_Date&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Discounted_Interest_Rate]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Discounted_Interest_Rate&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[FileDate]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;File_Date&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Funder_Margin]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Funder_Margin&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[ID_Project]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;ID_Project&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Maturity Date]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Maturity_Date&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[PostCode]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Postcode&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Principal_Outstanding]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Principal_Outstanding&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Product_Type]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Product_Type&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Repayment_Frequency]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Repayment_Frequency&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[State]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;State&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Term]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Term&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Termination_Date]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Termination_Date&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Total_Amount_Financed]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Total_Amount_Financed&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_exclGST]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Total_Rebate_to_date_exclGST&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Total_Rebate_to_date_inclGST]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Total_Rebate_to_date_inclGST&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-  &lt;/InputToColumnsCollection&gt;
-  &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
-  &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
-  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
-  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
-  &lt;CurrentIndicatorColumn /&gt;
-  &lt;InferredIndicatorColumn /&gt;
-  &lt;ValueCurrent /&gt;
-  &lt;ValueExpired /&gt;
-  &lt;StartDateColumn&gt;Update_from_TS&lt;/StartDateColumn&gt;
-  &lt;EndDateColumn&gt;Update_to_TS&lt;/EndDateColumn&gt;
-  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
-  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
-&lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Aggregation Fact\Insert Destination">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

@@ -7,7 +7,7 @@ CREATE TABLE [core].[Base_Data_Fact](
 	[ID_Phase] [numeric](18, 0) NULL,
 	[Amt_cBoardApproved] [numeric](15, 2) NULL,
 	[Amt_cBoardApproved_Expiry] [nvarchar](60) NULL,
-	[Amt_cBoardApprovedNotes] [nvarchar](900) NULL,
+	[Amt_cBoardApprovedNotes] [nvarchar](2000) NULL,
 	[Amt_cCEFC] [numeric](15, 2) NULL,
 	[Amt_cCEFC_Renewable] [numeric](15, 2) NULL,
 	[Amt_cCEFCweighted] [numeric](15, 2) NULL,
