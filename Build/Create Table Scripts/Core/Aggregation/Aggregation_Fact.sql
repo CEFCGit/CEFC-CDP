@@ -3,7 +3,7 @@ create table [core].[Aggregation_Fact]
 	[ID_Project] nvarchar(100),
 	[Contract_Number] nvarchar(50) ,
 	[Asset_Number] nvarchar(20),
-	[ANZSIC_Code] nvarchar(5),
+	[ANZSIC_Code] nvarchar(6),
 	[Balloon_Amount] numeric(20,2),
 	[Brand] nvarchar(20),
 	[CEFC_Rebate_Monthly] numeric(20,4)  ,

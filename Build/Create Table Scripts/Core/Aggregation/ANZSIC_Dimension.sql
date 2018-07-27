@@ -1,7 +1,7 @@
 create table [core].[ANZSIC_Dimension]
 (
 	[ID_Project] nvarchar(100),
-	[Code] nvarchar(5),
+	[Code] nvarchar(6),
 	[Division] nvarchar(100),
 	[Subdivision] nvarchar(100),
 	[Description] nvarchar(100),

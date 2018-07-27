@@ -15,6 +15,7 @@ CREATE TABLE [staging].[AssetDetails_Annan]
 ) 
 
 
+
 CREATE TABLE [staging].[ContractSummary_Annan]
 (
 	[Agreement] [nvarchar](20) ,
@@ -24,8 +25,8 @@ CREATE TABLE [staging].[ContractSummary_Annan]
 	[DiscIntRateAvg] [nvarchar](5) ,
 	[DiscrAppl/UndiscRateAvg] [nvarchar](5) ,
 	[Repayment Frequency] [nvarchar](20) ,
-	[Total Amount Financed] [nvarchar](15) ,
-	[Residual / Balloon Amount] [nvarchar](15) ,
+	[Total Amount Financed] [nvarchar](20) ,
+	[Residual / Balloon Amount] [nvarchar](20) ,
 	[Term (months)] [nvarchar](3) ,
 	[Asset Group] [nvarchar](50) ,
 	[Post Code] [nvarchar](20) ,
@@ -34,7 +35,7 @@ CREATE TABLE [staging].[ContractSummary_Annan]
 	[Funding Date] [nvarchar](20) ,
 	[Maturity Date] [nvarchar](20) ,
 	[Termination Date (AS applicable)] [nvarchar](20) ,
-	[Sum of Rebate Calc / Amount] [nvarchar](15) ,
-	[Min of Principal Outstanding] [nvarchar](15) ,
+	[Sum of Rebate Calc / Amount] [nvarchar](20) ,
+	[Min of Principal Outstanding] [nvarchar](20) ,
 	[FileDate] [nvarchar](20) 
 ) 
