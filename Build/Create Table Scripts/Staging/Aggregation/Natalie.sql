@@ -16,7 +16,7 @@ create table staging.ContractSummary_Natalie
 [Outstanding balance] nvarchar(15),
 [Principal Outstanding] nvarchar(15),
 [ Balloon / Residual amount ] nvarchar(15),
-[LOIS CEFC Note] nvarchar(300),
+[LOIS CEFC Note] nvarchar(400),
 [LQS CEFC Note] nvarchar(100),
 [Asset Group] nvarchar(50),
 [State] nvarchar(20),

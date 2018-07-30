@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="AGGSTGLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="121"
-  DTS:VersionGUID="{87DA1973-B0DB-46EF-B20B-C25041133F1F}">
+  DTS:VersionBuild="131"
+  DTS:VersionGUID="{CD178AC0-6E4E-48B6-A053-1558ECC5CC16}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -771,16 +771,6 @@ from [contractSummary$A4:T]</property>
                       name="Term (months)"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Asset Group (A â€“ D)]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Asset Group (A â€“ D)]"
-                      length="255"
-                      lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Asset Group (A â€“ D)]"
-                      name="Asset Group (A â€“ D)"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Post Code]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -867,6 +857,16 @@ from [contractSummary$A4:T]</property>
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[FileDate]"
                       name="FileDate"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Asset Group (A - D)_curr]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Asset Group (A - D)_curr]"
+                      length="255"
+                      lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Asset Group (A - D)_curr]"
+                      name="Asset Group (A - D)_curr"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -921,11 +921,6 @@ from [contractSummary$A4:T]</property>
                       length="255"
                       name="Term (months)" />
                     <externalMetadataColumn
-                      refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Asset Group (A â€“ D)]"
-                      dataType="wstr"
-                      length="255"
-                      name="Asset Group (A â€“ D)" />
-                    <externalMetadataColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Post Code]"
                       dataType="wstr"
                       length="255"
@@ -967,6 +962,11 @@ from [contractSummary$A4:T]</property>
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FileDate]"
                       dataType="date"
                       name="FileDate" />
+                    <externalMetadataColumn
+                      refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Asset Group (A - D)_curr]"
+                      dataType="wstr"
+                      length="255"
+                      name="Asset Group (A - D)_curr" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1035,11 +1035,11 @@ from [contractSummary$A4:T]</property>
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Term (months)]"
                       name="Term (months)" />
                     <outputColumn
-                      refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Asset Group (A â€“ D)]"
+                      refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Asset Group (A - D)_curr]"
                       dataType="wstr"
                       length="255"
-                      lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Asset Group (A â€“ D)]"
-                      name="Asset Group (A â€“ D)" />
+                      lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Asset Group (A - D)_curr]"
+                      name="Asset Group (A - D)_curr" />
                     <outputColumn
                       refId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Post Code]"
                       dataType="wstr"
@@ -1288,12 +1288,12 @@ from [contractSummary$A4:T]</property>
                       externalMetadataColumnId="Package\Annan ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Post Code]"
                       lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Post Code]" />
                     <inputColumn
-                      refId="Package\Annan ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[Asset Group (A â€“ D)]"
+                      refId="Package\Annan ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[Asset Group (A - D)_curr]"
                       cachedDataType="wstr"
                       cachedLength="255"
-                      cachedName="Asset Group (A â€“ D)"
+                      cachedName="Asset Group (A - D)_curr"
                       externalMetadataColumnId="Package\Annan ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Asset Group]"
-                      lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Asset Group (A â€“ D)]" />
+                      lineageId="Package\Annan ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Asset Group (A - D)_curr]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -3383,16 +3383,6 @@ from [contractSummary$A4:T]</property>
                       name="Financier Rate"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Customer Rate]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Customer Rate]"
-                      length="255"
-                      lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Customer Rate]"
-                      name="Customer Rate"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[MONTHLY_INTEREST_INCOME]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversion"
@@ -3480,6 +3470,16 @@ from [contractSummary$A4:T]</property>
                       externalMetadataColumnId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FileDate]"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[FileDate]"
                       name="FileDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[CUSTOMER_INT_RATE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_INT_RATE]"
+                      length="255"
+                      lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[CUSTOMER_INT_RATE]"
+                      name="CUSTOMER_INT_RATE"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
@@ -3610,11 +3610,6 @@ from [contractSummary$A4:T]</property>
                       length="255"
                       name="Financier Rate" />
                     <externalMetadataColumn
-                      refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Customer Rate]"
-                      dataType="wstr"
-                      length="255"
-                      name="Customer Rate" />
-                    <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[MONTHLY_INTEREST_INCOME]"
                       dataType="wstr"
                       length="255"
@@ -3658,6 +3653,11 @@ from [contractSummary$A4:T]</property>
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FileDate]"
                       dataType="date"
                       name="FileDate" />
+                    <externalMetadataColumn
+                      refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CUSTOMER_INT_RATE]"
+                      dataType="wstr"
+                      length="255"
+                      name="CUSTOMER_INT_RATE" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -3810,17 +3810,17 @@ from [contractSummary$A4:T]</property>
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[TOTAL_AMOUNT_FINANCED]"
                       name="TOTAL_AMOUNT_FINANCED" />
                     <outputColumn
+                      refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_INT_RATE]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CUSTOMER_INT_RATE]"
+                      name="CUSTOMER_INT_RATE" />
+                    <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Financier Rate]"
                       dataType="wstr"
                       length="255"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Financier Rate]"
                       name="Financier Rate" />
-                    <outputColumn
-                      refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Customer Rate]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Customer Rate]"
-                      name="Customer Rate" />
                     <outputColumn
                       refId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[MONTHLY_INTEREST_INCOME]"
                       dataType="wstr"
@@ -4116,13 +4116,6 @@ from [contractSummary$A4:T]</property>
                       externalMetadataColumnId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Financier Rate]"
                       lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Financier Rate]" />
                     <inputColumn
-                      refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[Customer Rate]"
-                      cachedDataType="wstr"
-                      cachedLength="255"
-                      cachedName="Customer Rate"
-                      externalMetadataColumnId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Customer Rate]"
-                      lineageId="Package\Condamine ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[Customer Rate]" />
-                    <inputColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].Columns[MONTHLY_INTEREST_INCOME]"
                       cachedDataType="wstr"
                       cachedLength="255"
@@ -4250,7 +4243,7 @@ from [contractSummary$A4:T]</property>
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[RESIDUAL]"
                       dataType="wstr"
-                      length="15"
+                      length="20"
                       name="RESIDUAL" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[ASSET_TYPE]"
@@ -4295,7 +4288,7 @@ from [contractSummary$A4:T]</property>
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[NPV]"
                       dataType="wstr"
-                      length="15"
+                      length="20"
                       name="NPV" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[TERMINATION_DATE]"
@@ -4305,57 +4298,57 @@ from [contractSummary$A4:T]</property>
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[TOTAL_AMOUNT_FINANCED]"
                       dataType="wstr"
-                      length="15"
+                      length="20"
                       name="TOTAL_AMOUNT_FINANCED" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Financier Rate]"
                       dataType="wstr"
-                      length="15"
+                      length="20"
                       name="Financier Rate" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Customer Rate]"
                       dataType="wstr"
-                      length="15"
+                      length="20"
                       name="Customer Rate" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[MONTHLY_INTEREST_INCOME]"
                       dataType="wstr"
-                      length="15"
+                      length="20"
                       name="MONTHLY_INTEREST_INCOME" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[MTHLY_TERMINATION_INC]"
                       dataType="wstr"
-                      length="15"
+                      length="20"
                       name="MTHLY_TERMINATION_INC" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[TOTAL_MONTHLY_INCOME]"
                       dataType="wstr"
-                      length="15"
+                      length="20"
                       name="TOTAL_MONTHLY_INCOME" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[TOTAL_INTEREST_INCOME_TODATE]"
                       dataType="wstr"
-                      length="15"
+                      length="20"
                       name="TOTAL_INTEREST_INCOME_TODATE" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[TOTAL_TERMINATION_INCOME_TODATE]"
                       dataType="wstr"
-                      length="15"
+                      length="20"
                       name="TOTAL_TERMINATION_INCOME_TODATE" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[TOTAL_INCOME_TODATE]"
                       dataType="wstr"
-                      length="15"
+                      length="20"
                       name="TOTAL_INCOME_TODATE" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[CEFC_MONTHLY_REBATE]"
                       dataType="wstr"
-                      length="15"
+                      length="20"
                       name="CEFC_MONTHLY_REBATE" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[TOTAL_CEFC_REBATE_TODATE]"
                       dataType="wstr"
-                      length="15"
+                      length="20"
                       name="TOTAL_CEFC_REBATE_TODATE" />
                     <externalMetadataColumn
                       refId="Package\Condamine ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[FileDate]"
@@ -5216,17 +5209,17 @@ from [contractSummary$A4:T]</property>
                     <externalMetadataColumn
                       refId="Package\Condamine Removed Assets\Staging.Inputs[ADO NET Destination Input].ExternalColumns[TOTAL_AMOUNT_FINANCED]"
                       dataType="wstr"
-                      length="15"
+                      length="20"
                       name="TOTAL_AMOUNT_FINANCED" />
                     <externalMetadataColumn
                       refId="Package\Condamine Removed Assets\Staging.Inputs[ADO NET Destination Input].ExternalColumns[FINACIER_INT_RATE]"
                       dataType="wstr"
-                      length="15"
+                      length="20"
                       name="FINACIER_INT_RATE" />
                     <externalMetadataColumn
                       refId="Package\Condamine Removed Assets\Staging.Inputs[ADO NET Destination Input].ExternalColumns[TOTAL_CEFC_REBATE_TODATE]"
                       dataType="wstr"
-                      length="15"
+                      length="20"
                       name="TOTAL_CEFC_REBATE_TODATE" />
                     <externalMetadataColumn
                       refId="Package\Condamine Removed Assets\Staging.Inputs[ADO NET Destination Input].ExternalColumns[REMOVAL MONTH]"
@@ -8788,7 +8781,10 @@ FROM
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT   [Contract No#], [Asset No#], [Lease type], [Equipment type], Make, Model, [Year], [Interest rate], [Discretion applied], [Check], [Repayment frequency], [Total amount financed], Term, [Outstanding balance], [Principal Outstanding], [ Balloon / Residual amount ], [LOIS CEFC Note], [LQS CEFC Note], [Asset Group], State, Postcode, 
+             [Industry class], [Drawdown date], [Day Count], [Monthly Day Count], [CEFC Rate Adjustment], [Total repayable amount], FileDate
+FROM     [ContractSummary$]
+WHERE   ([Contract No#] IS NOT NULL)</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -8805,7 +8801,7 @@ FROM
                   dataType="System.Int32"
                   description="Specifies the mode used to access the database."
                   name="AccessMode"
-                  typeConverter="AccessMode">0</property>
+                  typeConverter="AccessMode">2</property>
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
@@ -9101,34 +9097,6 @@ FROM
                       lineageId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[FileDate]"
                       name="FileDate"
                       truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[1/02/2017]"
-                      dataType="r8"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[1/02/2017]"
-                      lineageId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[1/02/2017]"
-                      name="1/02/2017"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[30/04/2018]"
-                      dataType="date"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[30/04/2018]"
-                      lineageId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[30/04/2018]"
-                      name="30/04/2018"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
-                      refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[30]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[30]"
-                      length="255"
-                      lineageId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].Columns[30]"
-                      name="30"
-                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -9266,27 +9234,9 @@ FROM
                       length="255"
                       name="Total repayable amount" />
                     <externalMetadataColumn
-                      refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Concatenate]"
-                      dataType="wstr"
-                      length="255"
-                      name="Concatenate" />
-                    <externalMetadataColumn
                       refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FileDate]"
                       dataType="date"
                       name="FileDate" />
-                    <externalMetadataColumn
-                      refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[1/02/2017]"
-                      dataType="r8"
-                      name="1/02/2017" />
-                    <externalMetadataColumn
-                      refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[30/04/2018]"
-                      dataType="date"
-                      name="30/04/2018" />
-                    <externalMetadataColumn
-                      refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[30]"
-                      dataType="wstr"
-                      length="255"
-                      name="30" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -9455,17 +9405,6 @@ FROM
                       lineageId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Total repayable amount]"
                       name="Total repayable amount" />
                     <outputColumn
-                      refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[30/04/2018]"
-                      dataType="date"
-                      lineageId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[30/04/2018]"
-                      name="30/04/2018" />
-                    <outputColumn
-                      refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[30]"
-                      dataType="wstr"
-                      length="255"
-                      lineageId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[30]"
-                      name="30" />
-                    <outputColumn
                       refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FileDate]"
                       dataType="date"
                       lineageId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FileDate]"
@@ -9476,11 +9415,6 @@ FROM
                       lineageId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[1/02/2017]"
-                      dataType="r8"
-                      lineageId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[1/02/2017]"
-                      name="1/02/2017" />
                     <outputColumn
                       refId="Package\Natalie ContractSummary\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
@@ -9820,7 +9754,7 @@ FROM
                     <externalMetadataColumn
                       refId="Package\Natalie ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[LOIS CEFC Note]"
                       dataType="wstr"
-                      length="300"
+                      length="400"
                       name="LOIS CEFC Note" />
                     <externalMetadataColumn
                       refId="Package\Natalie ContractSummary\Staging.Inputs[ADO NET Destination Input].ExternalColumns[LQS CEFC Note]"
@@ -15462,11 +15396,11 @@ WHERE   (Contract_Number IS NOT NULL)</property>
         <NodeLayout
           Size="200,42.6666666666667"
           Id="Package\Natalie ContractSummary"
-          TopLeft="191.268515740419,700.500000852347" />
+          TopLeft="190.018515759045,699.633334201177" />
         <NodeLayout
           Size="198.666666666667,42"
           Id="Package\Natalie Deleted Contracts"
-          TopLeft="195.851849005455,631.066666829387" />
+          TopLeft="197.101848986829,630.633333503802" />
         <NodeLayout
           Size="113.333333333334,42.6666666666667"
           Id="Package\Othello"
@@ -15733,7 +15667,7 @@ WHERE   (Contract_Number IS NOT NULL)</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,6.77332252125893,50.60890625,11.609375"
+              BoundingBox="-25.304453125,6.77332252125895,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15757,7 +15691,7 @@ WHERE   (Contract_Number IS NOT NULL)</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,8.75063640871929,50.60890625,11.609375"
+              BoundingBox="-25.304453125,8.7506364087193,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15859,18 +15793,18 @@ WHERE   (Contract_Number IS NOT NULL)</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="291.185182127688,353.133335712156">
+          TopLeft="291.185182127689,353.133335712155">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,39.1666631410512"
+              EndConnector="0,39.1666631410513"
               Start="0,0"
-              End="0,31.6666631410512">
+              End="0,31.6666631410513">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.6666631410512" />
+                    End="0,31.6666631410513" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15931,73 +15865,85 @@ WHERE   (Contract_Number IS NOT NULL)</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 7]"
-          TopLeft="291.476848797459,600.200000333187">
+          TopLeft="287.768515256131,600.200000333194">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,30.8666664961975"
+              EndConnector="8.66666706403089,30.4333331706086"
               Start="0,0"
-              End="0,23.3666664961975">
+              End="8.66666706403089,22.9333331706086">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.3666664961975" />
+                    End="0,11.2166665853043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.2166665853043"
+                    Point2="0,15.2166665853043"
+                    Point3="4,15.2166665853043" />
+                  <mssgle:LineSegment
+                    End="4.66666706403089,15.2166665853043" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.66666706403089,15.2166665853043"
+                    Point2="8.66666706403089,15.2166665853043"
+                    Point3="8.66666706403089,19.2166665853043" />
+                  <mssgle:LineSegment
+                    End="8.66666706403089,22.9333331706086" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,5.87864574809875,50.60890625,11.609375"
+              BoundingBox="-20.9711195929846,20.2166665853043,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 8]"
-          TopLeft="293.226849039603,673.066666829387">
+          TopLeft="293.226849039604,672.633333503802">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27.4333340229591"
+              EndConnector="0,27.0000006973752"
               Start="0,0"
-              End="0,19.9333340229591">
+              End="0,19.5000006973752">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.9333340229591" />
+                    End="0,19.5000006973752" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,4.16197951147955,50.60890625,11.609375"
+              BoundingBox="-25.304453125,3.94531284868759,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 9]"
-          TopLeft="292.101848738476,743.166667519017">
+          TopLeft="291.476848747789,742.300000867844">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.3666694019241"
+              EndConnector="0,33.2333360530929"
               Start="0,0"
-              End="0,24.8666694019241">
+              End="0,25.7333360530929">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.8666694019241" />
+                    End="0,25.7333360530929" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,6.62864720096205,50.60890625,11.609375"
+              BoundingBox="-25.304453125,7.06198052654645,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -16069,7 +16015,7 @@ WHERE   (Contract_Number IS NOT NULL)</property>
     design-time-name="Package\Annan ContractSummary">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Annan ContractSummary\OLE DB Source"
@@ -16097,7 +16043,9 @@ WHERE   (Contract_Number IS NOT NULL)</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16123,7 +16071,7 @@ WHERE   (Contract_Number IS NOT NULL)</property>
     design-time-name="Package\ANZSIC Codes - Annan">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\ANZSIC Codes - Annan\OLE DB Source"
@@ -16151,7 +16099,9 @@ WHERE   (Contract_Number IS NOT NULL)</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16182,7 +16132,7 @@ WHERE   (Contract_Number IS NOT NULL)</property>
     design-time-name="Package\ANZSIC Codes - Condamine">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\ANZSIC Codes - Condamine\OLE DB Source"
@@ -16210,7 +16160,9 @@ WHERE   (Contract_Number IS NOT NULL)</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16241,7 +16193,7 @@ WHERE   (Contract_Number IS NOT NULL)</property>
     design-time-name="Package\ANZSIC Codes - Murchison">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\ANZSIC Codes - Murchison\OLE DB Source"
@@ -16269,7 +16221,9 @@ WHERE   (Contract_Number IS NOT NULL)</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16300,7 +16254,7 @@ WHERE   (Contract_Number IS NOT NULL)</property>
     design-time-name="Package\ANZSIC Codes - Natalie">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\ANZSIC Codes - Natalie\OLE DB Source"
@@ -16328,7 +16282,9 @@ WHERE   (Contract_Number IS NOT NULL)</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16359,7 +16315,7 @@ WHERE   (Contract_Number IS NOT NULL)</property>
     design-time-name="Package\ANZSIC Codes - Wingecarribee">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\ANZSIC Codes - Wingecarribee\OLE DB Source"
@@ -16387,7 +16343,9 @@ WHERE   (Contract_Number IS NOT NULL)</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -16713,7 +16671,7 @@ WHERE   (Contract_Number IS NOT NULL)</property>
     design-time-name="Package\Natalie ContractSummary">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="114.666666666667,42.6666666666667"
           Id="Package\Natalie ContractSummary\Staging"
@@ -16741,9 +16699,7 @@ WHERE   (Contract_Number IS NOT NULL)</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -17079,7 +17035,7 @@ WHERE   (Contract_Number IS NOT NULL)</property>
     design-time-name="Package\Wingecarribee NQ Assets">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Wingecarribee NQ Assets\OLE DB Source"
@@ -17107,7 +17063,9 @@ WHERE   (Contract_Number IS NOT NULL)</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

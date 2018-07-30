@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="STGCDPAggDimFactLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="61"
-  DTS:VersionGUID="{4F514D0B-14C6-45A3-9628-6FB9068E0C4F}">
+  DTS:VersionBuild="62"
+  DTS:VersionGUID="{6C2C22CE-D3FD-49CA-8166-3A9595DA909C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -9978,7 +9978,7 @@ where a.[Contract] is not null</property>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="update core.Assets_Dimension &#xA;set FileDate = &#xA;(select max(FileDate) as FileDate &#xA;from &#xA;(&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetails_Annan&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetailsCFAL_Wingecarribee&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetailsNQ_Wingecarribee&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetailsSBG_Wingecarribee&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetailsWBC_Wingecarribee&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Annan&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Flynn&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Macleay&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Murchison&#xA;UNION&#xA;select max(FileDate) FileDate&#xA;from staging.ContractSummary_Othello&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Roper&#xA;) as a&#xA;)&#xA;where Status = 'Removed'&#xA;and FileDate is null &#xA;&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="update core.Assets_Dimension &#xA;set FileDate = &#xA;(select case when len(max(FileDate)) = 6 then '01-'+max(FileDate) else max(FileDate) end as FileDate &#xA;from &#xA;(&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetails_Annan&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetailsCFAL_Wingecarribee&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetailsNQ_Wingecarribee&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetailsSBG_Wingecarribee&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetailsWBC_Wingecarribee&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Annan&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Flynn&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Macleay&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Murchison&#xA;UNION&#xA;select max(FileDate) FileDate&#xA;from staging.ContractSummary_Othello&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Roper&#xA;) as a&#xA;)&#xA;where Status = 'Removed'&#xA;and FileDate is null &#xA;&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
