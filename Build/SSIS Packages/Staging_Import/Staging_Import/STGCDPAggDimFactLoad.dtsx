@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="STGCDPAggDimFactLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="62"
-  DTS:VersionGUID="{6C2C22CE-D3FD-49CA-8166-3A9595DA909C}">
+  DTS:VersionBuild="70"
+  DTS:VersionGUID="{24C1A6D1-0835-4552-9A03-8EBD9CC57347}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -5341,7 +5341,7 @@ where a.Contract_Number is not null</property>
                     <inputColumn
                       refId="Package\Assets Dimension - Active\OLE DB Command.Inputs[OLE DB Command Input].Columns[Status]"
                       cachedDataType="wstr"
-                      cachedLength="14"
+                      cachedLength="6"
                       cachedName="Status"
                       externalMetadataColumnId="Package\Assets Dimension - Active\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
                       lineageId="Package\Assets Dimension - Active\Staging.Outputs[ADO NET Source Output].Columns[Status]" />
@@ -5559,7 +5559,7 @@ where a.Contract_Number is not null</property>
                     <inputColumn
                       refId="Package\Assets Dimension - Active\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Status]"
                       cachedDataType="wstr"
-                      cachedLength="14"
+                      cachedLength="6"
                       cachedName="Status"
                       externalMetadataColumnId="Package\Assets Dimension - Active\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
                       lineageId="Package\Assets Dimension - Active\Staging.Outputs[ADO NET Source Output].Columns[Status]" />
@@ -5922,7 +5922,7 @@ where a.Contract_Number is not null</property>
                     <inputColumn
                       refId="Package\Assets Dimension - Active\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Status]"
                       cachedDataType="wstr"
-                      cachedLength="14"
+                      cachedLength="6"
                       cachedName="Status"
                       externalMetadataColumnId="Package\Assets Dimension - Active\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Status]"
                       lineageId="Package\Assets Dimension - Active\Staging.Outputs[ADO NET Source Output].Columns[Status]">
@@ -6097,9 +6097,9 @@ where a.Contract_Number is not null</property>
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct p.ID_Project,
        a.Agreement as [Contract_Number] ,
-	   a.[Asset Number] as [Asset_Number],
+	   isnull(a.[Asset Number],'Not Available') as [Asset_Number],
 	   a.[Asset Group A-D ] as [Category],
-	   a.[Asset Description] as [Description],
+	   isnull(a.[Asset Description],'Not Available') as [Description],
 	   null as [Variant],
 	   a.Make,
 	   a.Model as [Model],
@@ -6114,9 +6114,9 @@ where a.Agreement is not null
 UNION ALL
 select distinct p.ID_Project,
        a.Agreement as [Contract_Number],
-	   a.ASSET_NUMBER as [Asset_Number] ,
+	   isnull(a.ASSET_NUMBER,'Not Available') as [Asset_Number] ,
 	   a.technology as [Category],
-	   a.ASSET_DESCRIPTION as [Description],
+	   isnull(a.ASSET_DESCRIPTION,'Not Available') as [Description],
 	   null as [Variant],
 	   null as [Make],
 	   null as [Model],
@@ -6131,7 +6131,7 @@ where a.Agreement is not null
 UNION ALL
 select distinct p.ID_Project,
        a.[Lease Id] as [Contract_Number],
-	   a.[Vehicle Id] as [Asset_Number] ,
+	   isnull(a.[Vehicle Id],'Not Available') as [Asset_Number] ,
 	   a.[Vehicle Category] as [Category],
 	   'Not Available' as [Description],
 	   a.Derivative as [Variant],
@@ -6165,9 +6165,9 @@ where a.[Loan_Number] is not null
 UNION ALL
 select distinct p.ID_Project,
        a.[Agmt Number] as [Contract_Number],
-	   a.[Asset Number] as [Asset_Number] ,
+	   isnull(a.[Asset Number],'Not Available') as [Asset_Number] ,
 	   a.[Portfolio AssetGroup (A – D)] as [Category],
-	   a.[Asset Type Desc] as [Description],
+	   isnull(a.[Asset Type Desc],'Not Available') as [Description],
 	   null as [Variant],
 	   null as [Make],
 	   null as [Model],
@@ -6182,9 +6182,9 @@ where a.[Agmt Number] is not null
 UNION ALL
 select distinct p.ID_Project,
        a.[Contract No.] as [Contract_Number],
-	   a.[Asset No.] as [Asset_Number] ,
+	   isnull(a.[Asset No.],'Not Available') as [Asset_Number] ,
 	   a.[Asset Group] as [Category],
-	   a.[Equipment type] as [Description],
+	   isnull(a.[Equipment type],'Not Available') as [Description],
 	   null as [Variant],
 	   a.Make as [Make],
 	   a.Model as [Model],
@@ -6219,7 +6219,7 @@ select distinct p.ID_Project,
        a.ContractID as [Contract_Number],
 	   'Not Available' as [Asset_Number] ,
 	   null as [Category],
-	   a.FinancePurpose as [Description],
+	   isnull(a.FinancePurpose,'Not Available') as [Description],
 	   null as [Variant],
 	   null as [Make],
 	   null as [Model],
@@ -6232,72 +6232,19 @@ from staging.ContractSummary_Roper a
 where a.ContractID is not null
 
 UNION ALL
-select distinct p.ID_Project,
-       a.Contract_Number as [Contract_Number],
-	   'Not Available' as [Asset_Number] ,
-	   a.[ASSET GROUP] as [Category],
-	   a.Equipment_Type as [Description],
-	   null as [Variant],
-	   a.Make as [Make],
-	   a.Equipment_Type as [Model],
-	   null as [Year],
-	   'CFAL' as [Status],
-	   a.FileDate	   
-from staging.AssetDetailsCFAL_Wingecarribee a
-  inner join core.Projects_Dimension p
-	on p.Project_Name = 'Wingecarribee'
-where a.Contract_Number is not null
-
-UNION ALL
-
-select distinct p.ID_Project,
-       a.Contract_Number as [Contract_Number],
-	   'Not Available' as [Asset_Number] ,
-	   a.[ASSET GROUP] as [Category],
-	   a.COLLATERAL_DESCRIPTION as [Description],
-	   null as [Variant],
-	   a.COLLATERAL_MAKE as [Make],
-	   a.COLLATERAL_MODEL as [Model],
-	   a.MANUFACTURE_YEAR as [Year],
-	   'Non-Qualifying' as [Status],
-	   a.FileDate	   
-from staging.AssetDetailsNQ_Wingecarribee a
-  inner join core.Projects_Dimension p
-	on p.Project_Name = 'Wingecarribee'
-where a.Contract_Number is not null
-
-UNION ALL
-
-select distinct p.ID_Project,
-       a.Acct_Key as [Contract_Number],
-	   'Not Available' as [Asset_Number] ,
-	   a.[ASSET GROUP] as [Category],
-	   a.Description as [Description],
-	   null as [Variant],
-	   a.Make as [Make],
-	   a.Model as [Model],
-	   a.Year as [Year],
-	   'SBG' as [Status],
-	   a.FileDate	   
-from staging.AssetDetailsSBG_Wingecarribee a
-  inner join core.Projects_Dimension p
-	on p.Project_Name = 'Wingecarribee'
-where a.Acct_Key is not null
-
-UNION ALL
 
 select distinct p.ID_Project,
        a.ACCOUNT_ID as [Contract_Number],
 	   'Not Available' as [Asset_Number] ,
 	   a.[ASSET GROUP] as [Category],
-	   a.COLLATERAL_DESCRIPTION as [Description],
+	   isnull(a.COLLATERAL_DESCRIPTION,'Not Available') as [Description],
 	   null as [Variant],
 	   a.COLLATERAL_MAKE as [Make],
 	   a.COLLATERAL_MODEL as [Model],
 	   a.MANUFACTURE_YEAR as [Year],
-	   'WBC' as [Status],
+	   'Active' as [Status],
 	   a.FileDate	   
-from staging.AssetDetailsWBC_Wingecarribee a
+from staging.AssetDetails_Wingecarribee a
   inner join core.Projects_Dimension p
 	on p.Project_Name = 'Wingecarribee'
 where a.ACCOUNT_ID is not null</property>
@@ -6433,7 +6380,7 @@ where a.ACCOUNT_ID is not null</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Assets Dimension - Active\Staging.Outputs[ADO NET Source Output].ExternalColumns[Status]"
-                      length="14"
+                      length="6"
                       lineageId="Package\Assets Dimension - Active\Staging.Outputs[ADO NET Source Output].Columns[Status]"
                       name="Status"
                       truncationRowDisposition="FailComponent" />
@@ -6498,7 +6445,7 @@ where a.ACCOUNT_ID is not null</property>
                     <externalMetadataColumn
                       refId="Package\Assets Dimension - Active\Staging.Outputs[ADO NET Source Output].ExternalColumns[Status]"
                       dataType="wstr"
-                      length="14"
+                      length="6"
                       name="Status" />
                     <externalMetadataColumn
                       refId="Package\Assets Dimension - Active\Staging.Outputs[ADO NET Source Output].ExternalColumns[FileDate]"
@@ -6569,7 +6516,7 @@ where a.ACCOUNT_ID is not null</property>
                     <outputColumn
                       refId="Package\Assets Dimension - Active\Staging.Outputs[ADO NET Source Error Output].Columns[Status]"
                       dataType="wstr"
-                      length="14"
+                      length="6"
                       lineageId="Package\Assets Dimension - Active\Staging.Outputs[ADO NET Source Error Output].Columns[Status]"
                       name="Status" />
                     <outputColumn
@@ -6736,7 +6683,7 @@ where a.ACCOUNT_ID is not null</property>
                     <inputColumn
                       refId="Package\Assets Dimension - Active\Union All.Inputs[Union All Input 1].Columns[Status]"
                       cachedDataType="wstr"
-                      cachedLength="14"
+                      cachedLength="6"
                       cachedName="Status"
                       lineageId="Package\Assets Dimension - Active\Staging.Outputs[ADO NET Source Output].Columns[Status]">
                       <properties>
@@ -6898,7 +6845,7 @@ where a.ACCOUNT_ID is not null</property>
                     <inputColumn
                       refId="Package\Assets Dimension - Active\Union All.Inputs[Union All Input 2].Columns[Status]"
                       cachedDataType="wstr"
-                      cachedLength="14"
+                      cachedLength="6"
                       cachedName="Status"
                       lineageId="Package\Assets Dimension - Active\Staging.Outputs[ADO NET Source Output].Columns[Status]">
                       <properties>
@@ -8238,7 +8185,7 @@ where a.ACCOUNT_ID is not null</property>
                   description="Specifies the SQL statement used by the component to extract data."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select asd.ID_Project,
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select distinct asd.ID_Project,
        asd.Contract_Number,
 	   asd.Asset_Number,
 	   asd.Category,
@@ -8252,8 +8199,8 @@ from [core].[Assets_Dimension] asd
 left join
 (select distinct p.ID_Project,
        a.Agreement as [Contract_Number] ,
-	   a.[Asset Number] as [Asset_Number],
-	   a.[Asset Description] as [Description]
+	   isnull(a.[Asset Number],'Not Available') as [Asset_Number],
+	   isnull(a.[Asset Description],'Not Available') as [Description]
 from staging.AssetDetails_Annan a
   inner join core.Projects_Dimension p
 	on p.Project_Name = 'Annan'
@@ -8269,7 +8216,7 @@ and (select count(1) from staging.AssetDetails_Annan) &gt; 0
  
 
 UNION ALL
-select asd.ID_Project,
+select distinct asd.ID_Project,
        asd.Contract_Number,
 	   asd.Asset_Number,
 	   asd.Category,
@@ -8283,7 +8230,7 @@ from [core].[Assets_Dimension] asd
 left join
 (select distinct p.ID_Project,
        a.[Lease Id] as [Contract_Number],
-	   a.[Vehicle Id] as [Asset_Number] ,
+	   isnull(a.[Vehicle Id],'Not Available') as [Asset_Number] ,
 	   'Not Available' as [Description]
 from staging.ContractSummary_Flynn a
   inner join core.Projects_Dimension p
@@ -8299,7 +8246,7 @@ and sa.Contract_Number is null
 and (select count(1) from staging.ContractSummary_Flynn ) &gt; 0  
 
 UNION ALL
-select asd.ID_Project,
+select distinct asd.ID_Project,
        asd.Contract_Number,
 	   asd.Asset_Number,
 	   asd.Category,
@@ -8329,7 +8276,7 @@ and sa.Contract_Number is null
 and (select count(1) from staging.ContractSummary_Macleay ) &gt; 0  
 
 UNION ALL
-select asd.ID_Project,
+select distinct asd.ID_Project,
        asd.Contract_Number,
 	   asd.Asset_Number,
 	   asd.Category,
@@ -8343,8 +8290,8 @@ from [core].[Assets_Dimension] asd
 left join
 (select distinct p.ID_Project,
        a.[Agmt Number] as [Contract_Number],
-	   a.[Asset Number] as [Asset_Number] ,
-	   a.[Asset Type Desc] as [Description]
+	   isnull(a.[Asset Number],'Not Available') as [Asset_Number] ,
+	   isnull(a.[Asset Type Desc],'Not Available') as [Description]
 from staging.ContractSummary_Murchison a
   inner join core.Projects_Dimension p
 	on p.Project_Name = 'Murchison'
@@ -8360,7 +8307,7 @@ and (select count(1) from staging.ContractSummary_Murchison ) &gt; 0
 
 
 UNION ALL
-select asd.ID_Project,
+select distinct asd.ID_Project,
        asd.Contract_Number,
 	   asd.Asset_Number,
 	   asd.Category,
@@ -8390,7 +8337,7 @@ and sa.Contract_Number is null
 and (select count(1) from staging.ContractSummary_Othello ) &gt; 0  
 
 UNION ALL
-select asd.ID_Project,
+select distinct asd.ID_Project,
        asd.Contract_Number,
 	   asd.Asset_Number,
 	   asd.Category,
@@ -8405,7 +8352,7 @@ left join
 (select distinct p.ID_Project,
        a.ContractID as [Contract_Number],
 	   'Not Available' as [Asset_Number] ,
-	   a.FinancePurpose as [Description]
+	   isnull(a.FinancePurpose,'Not Available') as [Description]
 from staging.ContractSummary_Roper a
   inner join core.Projects_Dimension p
 	on p.Project_Name = 'Roper'
@@ -8419,100 +8366,8 @@ and asd.ID_Project = 'S2537'
 and sa.Contract_Number is null
 and (select count(1) from staging.ContractSummary_Roper  ) &gt; 0  
 
-
 UNION ALL
-select asd.ID_Project,
-       asd.Contract_Number,
-	   asd.Asset_Number,
-	   asd.Category,
-	   asd.Description,
-	   asd.Variant,
-	   asd.Make,
-	   asd.Model,
-	   asd.Year,
-	   'Removed' as Status	   
-from [core].[Assets_Dimension] asd
-left join
-(select distinct p.ID_Project,
-       a.Contract_Number as [Contract_Number],
-	   'Not Available' as [Asset_Number] ,
-	   a.Equipment_Type as [Description]
-from staging.AssetDetailsCFAL_Wingecarribee a
-  inner join core.Projects_Dimension p
-	on p.Project_Name = 'Wingecarribee'
-where a.Contract_Number is not null) sa
-on asd.ID_Project = sa.ID_Project
-and asd.Asset_Number = sa.Asset_Number
-and asd.Contract_Number = sa.Contract_Number
-and asd.Description = sa.Description 
-where asd.Status = 'CFAL'
-and asd.ID_Project = 'S2634'
-and sa.Contract_Number is null
-and (select count(1) from staging.AssetDetailsCFAL_Wingecarribee ) &gt; 0  
-
-
-UNION ALL
-select asd.ID_Project,
-       asd.Contract_Number,
-	   asd.Asset_Number,
-	   asd.Category,
-	   asd.Description,
-	   asd.Variant,
-	   asd.Make,
-	   asd.Model,
-	   asd.Year,
-	   'Removed' as Status	   
-from [core].[Assets_Dimension] asd
-left join
-(select distinct p.ID_Project,
-       a.Contract_Number as [Contract_Number],
-	   'Not Available' as [Asset_Number] ,
-	   a.COLLATERAL_DESCRIPTION as [Description]
-from staging.AssetDetailsNQ_Wingecarribee a
-  inner join core.Projects_Dimension p
-	on p.Project_Name = 'Wingecarribee'
-where a.Contract_Number is not null) sa
-on asd.ID_Project = sa.ID_Project
-and asd.Asset_Number = sa.Asset_Number
-and asd.Contract_Number = sa.Contract_Number
-and asd.Description = sa.Description 
-where asd.Status = 'Non-Qualifying'
-and asd.ID_Project = 'S2634'
-and sa.Contract_Number is null
-and (select count(1) from staging.AssetDetailsNQ_Wingecarribee ) &gt; 0 
-
-UNION ALL
-select asd.ID_Project,
-       asd.Contract_Number,
-	   asd.Asset_Number,
-	   asd.Category,
-	   asd.Description,
-	   asd.Variant,
-	   asd.Make,
-	   asd.Model,
-	   asd.Year,
-	   'Removed' as Status	   
-from [core].[Assets_Dimension] asd
-left join
-(select distinct p.ID_Project,
-       a.Acct_Key as [Contract_Number],
-	   'Not Available' as [Asset_Number] ,
-	   a.Description as [Description]
-from staging.AssetDetailsSBG_Wingecarribee a
-  inner join core.Projects_Dimension p
-	on p.Project_Name = 'Wingecarribee'
-where a.Acct_Key is not null) sa
-on asd.ID_Project = sa.ID_Project
-and asd.Asset_Number = sa.Asset_Number
-and asd.Contract_Number = sa.Contract_Number
-and asd.Description = sa.Description 
-where asd.Status = 'SBG'
-and asd.ID_Project = 'S2634'
-and sa.Contract_Number is null
-and (select count(1) from staging.AssetDetailsSBG_Wingecarribee ) &gt; 0 
-
-UNION ALL
-select asd.ID_Project,
+select distinct asd.ID_Project,
        asd.Contract_Number,
 	   asd.Asset_Number,
 	   asd.Category,
@@ -8527,8 +8382,8 @@ left join
 (select distinct p.ID_Project,
        a.ACCOUNT_ID as [Contract_Number],
 	   'Not Available' as [Asset_Number] ,
-	   a.COLLATERAL_DESCRIPTION as [Description]
-from staging.AssetDetailsWBC_Wingecarribee a
+	   isnull(a.COLLATERAL_DESCRIPTION,'Not Available') as [Description]
+from staging.AssetDetails_Wingecarribee a
   inner join core.Projects_Dimension p
 	on p.Project_Name = 'Wingecarribee'
 where a.ACCOUNT_ID is not null) sa
@@ -8536,13 +8391,13 @@ on asd.ID_Project = sa.ID_Project
 and asd.Asset_Number = sa.Asset_Number
 and asd.Contract_Number = sa.Contract_Number
 and asd.Description = sa.Description 
-where asd.Status = 'WBC'
+where asd.Status = 'Active'
 and asd.ID_Project = 'S2634'
 and sa.Contract_Number is null
-and (select count(1) from staging.AssetDetailsWBC_Wingecarribee ) &gt; 0 
+and (select count(1) from staging.AssetDetails_Wingecarribee ) &gt; 0 
 
 UNION ALL
-select asd.ID_Project,
+select distinct asd.ID_Project,
        asd.Contract_Number,
 	   asd.Asset_Number,
 	   asd.Category,
@@ -8556,8 +8411,8 @@ from [core].[Assets_Dimension] asd
 left join
 (select distinct p.ID_Project,
        a.Agreement as [Contract_Number],
-	   a.ASSET_NUMBER as [Asset_Number] ,
-	   a.ASSET_DESCRIPTION as [Description]
+	   isnull(a.ASSET_NUMBER,'Not Available') as [Asset_Number] ,
+	   isnull(a.ASSET_DESCRIPTION,'Not Available') as [Description]
 	   from staging.ContractSummary_Condamine a
   inner join core.Projects_Dimension p
 	on p.Project_Name = 'Condamine'
@@ -8572,7 +8427,7 @@ and sa.Contract_Number is null
 and (select count(1) from staging.ContractSummary_Condamine ) &gt; 0 
 
 UNION ALL
-select asd.ID_Project,
+select distinct asd.ID_Project,
        asd.Contract_Number,
 	   asd.Asset_Number,
 	   asd.Category,
@@ -8586,8 +8441,8 @@ from [core].[Assets_Dimension] asd
 left join
 (select distinct p.ID_Project,
        a.[Contract No.] as [Contract_Number],
-	   a.[Asset No.] as [Asset_Number] ,
-	   a.[Equipment type] as [Description]
+	   isnull(a.[Asset No.],'Not Available') as [Asset_Number] ,
+	   isnull(a.[Equipment type],'Not Available') as [Description]
 from staging.ContractSummary_Natalie a
   inner join core.Projects_Dimension p
 	on p.Project_Name = 'Natalie'
@@ -9978,7 +9833,7 @@ where a.[Contract] is not null</property>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="update core.Assets_Dimension &#xA;set FileDate = &#xA;(select case when len(max(FileDate)) = 6 then '01-'+max(FileDate) else max(FileDate) end as FileDate &#xA;from &#xA;(&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetails_Annan&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetailsCFAL_Wingecarribee&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetailsNQ_Wingecarribee&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetailsSBG_Wingecarribee&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetailsWBC_Wingecarribee&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Annan&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Flynn&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Macleay&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Murchison&#xA;UNION&#xA;select max(FileDate) FileDate&#xA;from staging.ContractSummary_Othello&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Roper&#xA;) as a&#xA;)&#xA;where Status = 'Removed'&#xA;and FileDate is null &#xA;&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="update core.Assets_Dimension &#xA;set FileDate = &#xA;(select case when len(max(FileDate)) = 6 then '01-'+max(FileDate) else max(FileDate) end as FileDate &#xA;from &#xA;(&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetails_Annan&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.AssetDetails_Wingecarribee&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Annan&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Flynn&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Macleay&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Murchison&#xA;UNION&#xA;select max(FileDate) FileDate&#xA;from staging.ContractSummary_Othello&#xA;UNION&#xA;select max(FileDate) as FileDate&#xA;from staging.ContractSummary_Roper&#xA;) as a&#xA;)&#xA;where Status = 'Removed'&#xA;and FileDate is null &#xA;&#xA;&#xA;&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -10065,7 +9920,7 @@ where a.[Contract] is not null</property>
         <NodeLayout
           Size="200.666666666667,42.6666666666667"
           Id="Package\Assets Dimension - Active"
-          TopLeft="743.416655670852,143.100001425742" />
+          TopLeft="743.83332233131,143.100001425742" />
         <NodeLayout
           Size="246.666666666667,42.6666666666667"
           Id="Package\Assets Dimension - Removed Other"
@@ -10084,18 +9939,18 @@ where a.[Contract] is not null</property>
           TopLeft="741.598190779893,442.378229636877" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="847.041655500109,115.133336022099">
+          TopLeft="847.249988830338,115.133336022099">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27.9666654036426"
+              EndConnector="0,27.9666654036428"
               Start="0,0"
-              End="0,20.4666654036426">
+              End="0,20.4666654036428">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.4666654036426" />
+                    End="0,20.4666654036428" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10106,18 +9961,18 @@ where a.[Contract] is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="841.314804250168,185.766668092408">
+          TopLeft="841.523137580397,185.766668092409">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,113.729628752317"
+              EndConnector="0,113.729628752316"
               Start="0,0"
-              End="0,106.229628752317">
+              End="0,106.229628752316">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,106.229628752317" />
+                    End="0,106.229628752316" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10251,7 +10106,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10285,7 +10142,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10415,7 +10274,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10437,7 +10298,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10459,7 +10322,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10663,101 +10528,93 @@ where a.[Contract] is not null</property>
           Id="Package\ANZSIC Dimension\Staging"
           TopLeft="175.5,5.49999999999993" />
         <NodeLayout
-          Size="168,42.6666666666667"
-          Id="Package\ANZSIC Dimension\ANZSIC Dimension"
-          TopLeft="148.833333333333,108.166666666666" />
-        <EdgeLayout
-          Id="Package\ANZSIC Dimension.Paths[ADO NET Source Output]"
-          TopLeft="232.833333333333,48.1666666666666">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+          Size="164,42.6666666666667"
+          Id="Package\ANZSIC Dimension\Derived Column 1"
+          TopLeft="150.833333333333,518.833333333333" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\ANZSIC Dimension\Insert Destination"
+          TopLeft="150.833333333333,621.5" />
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\ANZSIC Dimension\Union All"
+          TopLeft="172.166666666667,416.166666666667" />
+        <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\ANZSIC Dimension\OLE DB Command 1"
+          TopLeft="293.833333333333,210.833333333333" />
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\ANZSIC Dimension\OLE DB Command"
+          TopLeft="5.50000000000004,313.5" />
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\ANZSIC Dimension\Derived Column"
           TopLeft="17.5,210.833333333333" />
+        <NodeLayout
+          Size="168,42.6666666666667"
+          Id="Package\ANZSIC Dimension\ANZSIC Dimension"
+          TopLeft="148.833333333333,108.166666666666" />
         <EdgeLayout
-          Id="Package\ANZSIC Dimension.Paths[Historical Attribute Inserts Output]"
-          TopLeft="192.833333333333,150.833333333333">
+          Id="Package\ANZSIC Dimension.Paths[Union All Output 1]"
+          TopLeft="232.833333333333,458.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-98,59.9999999999999"
+              EndConnector="0,60"
               Start="0,0"
-              End="-98,52.4999999999999">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.625" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.625"
-                    Point2="0,20.625"
-                    Point3="-4,20.625" />
-                  <mssgle:LineSegment
-                    End="-94,20.625" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-94,20.625"
-                    Point2="-98,20.625"
-                    Point3="-98,24.625" />
-                  <mssgle:LineSegment
-                    End="-98,52.4999999999999" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-124.05638671875,25.625,150.1127734375,11.609375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="166.666666666667,42.6666666666667"
-          Id="Package\ANZSIC Dimension\OLE DB Command"
-          TopLeft="5.50000000000004,313.5" />
         <EdgeLayout
-          Id="Package\ANZSIC Dimension.Paths[Derived Column Output]"
-          TopLeft="91.8333333333334,253.5">
+          Id="Package\ANZSIC Dimension.Paths[OLE DB Command Output]"
+          TopLeft="88.8333333333334,356.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="125.111111111111,60.0000000000001"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="125.111111111111,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,31.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.531453362256"
+                    Point2="0,35.531453362256"
+                    Point3="4,35.531453362256" />
+                  <mssgle:LineSegment
+                    End="121.111111111111,35.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.111111111111,35.531453362256"
+                    Point2="125.111111111111,35.531453362256"
+                    Point3="125.111111111111,39.531453362256" />
+                  <mssgle:LineSegment
+                    End="125.111111111111,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="121.333333333334,42.6666666666667"
-          Id="Package\ANZSIC Dimension\Union All"
-          TopLeft="172.166666666667,416.166666666667" />
         <EdgeLayout
           Id="Package\ANZSIC Dimension.Paths[New Output]"
           TopLeft="232.833333333333,150.833333333333">
@@ -10795,96 +10652,6 @@ where a.[Contract] is not null</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\ANZSIC Dimension.Paths[OLE DB Command Output]"
-          TopLeft="88.8333333333334,356.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="125.111111111111,60.0000000000001"
-              Start="0,0"
-              End="125.111111111111,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.531453362256" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.531453362256"
-                    Point2="0,35.531453362256"
-                    Point3="4,35.531453362256" />
-                  <mssgle:LineSegment
-                    End="121.111111111111,35.531453362256" />
-                  <mssgle:CubicBezierSegment
-                    Point1="121.111111111111,35.531453362256"
-                    Point2="125.111111111111,35.531453362256"
-                    Point3="125.111111111111,39.531453362256" />
-                  <mssgle:LineSegment
-                    End="125.111111111111,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\ANZSIC Dimension\Derived Column 1"
-          TopLeft="150.833333333333,518.833333333333" />
-        <EdgeLayout
-          Id="Package\ANZSIC Dimension.Paths[Union All Output 1]"
-          TopLeft="232.833333333333,458.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60"
-              Start="0,0"
-              End="0,52.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\ANZSIC Dimension\Insert Destination"
-          TopLeft="150.833333333333,621.5" />
-        <EdgeLayout
-          Id="Package\ANZSIC Dimension.Paths[Derived Column Output1]"
-          TopLeft="232.833333333333,561.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="176,42.6666666666667"
-          Id="Package\ANZSIC Dimension\OLE DB Command 1"
-          TopLeft="293.833333333333,210.833333333333" />
-        <EdgeLayout
           Id="Package\ANZSIC Dimension.Paths[Inferred Member Updates Output]"
           TopLeft="272.833333333333,150.833333333333">
           <EdgeLayout.Curve>
@@ -10917,6 +10684,114 @@ where a.[Contract] is not null</property>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
               BoundingBox="-19.90298828125,25.625,148.8059765625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ANZSIC Dimension.Paths[Historical Attribute Inserts Output]"
+          TopLeft="192.833333333333,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-98,59.9999999999999"
+              Start="0,0"
+              End="-98,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.625"
+                    Point2="0,20.625"
+                    Point3="-4,20.625" />
+                  <mssgle:LineSegment
+                    End="-94,20.625" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-94,20.625"
+                    Point2="-98,20.625"
+                    Point3="-98,24.625" />
+                  <mssgle:LineSegment
+                    End="-98,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-124.05638671875,25.625,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ANZSIC Dimension.Paths[Derived Column Output1]"
+          TopLeft="232.833333333333,561.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ANZSIC Dimension.Paths[Derived Column Output]"
+          TopLeft="91.8333333333334,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\ANZSIC Dimension.Paths[ADO NET Source Output]"
+          TopLeft="232.833333333333,48.1666666666666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -11381,139 +11256,57 @@ where a.[Contract] is not null</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\Assets Dimension - Removed Other\Union All"
+          TopLeft="172.166666666667,416.166666666667" />
+        <NodeLayout
           Size="114.666666666667,42.6666666666667"
           Id="Package\Assets Dimension - Removed Other\Staging"
-          TopLeft="175.5,5.49999999999993" />
+          TopLeft="175.5,5.93333332558466" />
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Assets Dimension - Removed Other\OLE DB Command"
+          TopLeft="5.50000000000004,313.5" />
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Assets Dimension - Removed Other\Derived Column 1"
+          TopLeft="150.833333333333,518.833333333333" />
         <NodeLayout
           Size="209.333333333334,42.6666666666667"
           Id="Package\Assets Dimension - Removed Other\Slowly Changing Dimension"
           TopLeft="128.166666666667,108.166666666666" />
-        <EdgeLayout
-          Id="Package\Assets Dimension - Removed Other.Paths[ADO NET Source Output]"
-          TopLeft="232.833333333333,48.1666666666666">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Assets Dimension - Removed Other\Insert Destination"
+          TopLeft="150.833333333333,621.5" />
+        <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\Assets Dimension - Removed Other\OLE DB Command 1"
+          TopLeft="293.833333333333,210.833333333333" />
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\Assets Dimension - Removed Other\Derived Column"
           TopLeft="17.5,210.833333333333" />
         <EdgeLayout
-          Id="Package\Assets Dimension - Removed Other.Paths[Historical Attribute Inserts Output]"
-          TopLeft="182.5,150.833333333333">
+          Id="Package\Assets Dimension - Removed Other.Paths[Union All Output 1]"
+          TopLeft="232.833333333333,458.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-87.6666666666667,59.9999999999999"
+              EndConnector="0,60"
               Start="0,0"
-              End="-87.6666666666667,52.4999999999999">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.503144654088" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,16.503144654088"
-                    Point2="0,20.503144654088"
-                    Point3="-4,20.503144654088" />
-                  <mssgle:LineSegment
-                    End="-83.6666666666667,20.503144654088" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-83.6666666666667,20.503144654088"
-                    Point2="-87.6666666666667,20.503144654088"
-                    Point3="-87.6666666666667,24.503144654088" />
-                  <mssgle:LineSegment
-                    End="-87.6666666666667,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-118.889720052083,25.503144654088,150.1127734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="166.666666666667,42.6666666666667"
-          Id="Package\Assets Dimension - Removed Other\OLE DB Command"
-          TopLeft="5.50000000000004,313.5" />
-        <EdgeLayout
-          Id="Package\Assets Dimension - Removed Other.Paths[Derived Column Output]"
-          TopLeft="91.8333333333334,253.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="121.333333333334,42.6666666666667"
-          Id="Package\Assets Dimension - Removed Other\Union All"
-          TopLeft="172.166666666667,416.166666666667" />
-        <EdgeLayout
-          Id="Package\Assets Dimension - Removed Other.Paths[New Output]"
-          TopLeft="232.833333333333,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="18.8888888888889,265.333333333333"
-              Start="0,0"
-              End="18.8888888888889,257.833333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,153.127982646421" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,153.127982646421"
-                    Point2="0,157.127982646421"
-                    Point3="4,157.127982646421" />
-                  <mssgle:LineSegment
-                    End="14.8888888888889,157.127982646421" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.8888888888889,157.127982646421"
-                    Point2="18.8888888888889,157.127982646421"
-                    Point3="18.8888888888889,161.127982646421" />
-                  <mssgle:LineSegment
-                    End="18.8888888888889,257.833333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-17.6469422743055,162.127982646421,54.1827734375,11.43359375"
-              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11550,62 +11343,42 @@ where a.[Contract] is not null</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Assets Dimension - Removed Other\Derived Column 1"
-          TopLeft="150.833333333333,518.833333333333" />
         <EdgeLayout
-          Id="Package\Assets Dimension - Removed Other.Paths[Union All Output 1]"
-          TopLeft="232.833333333333,458.833333333333">
+          Id="Package\Assets Dimension - Removed Other.Paths[New Output]"
+          TopLeft="232.833333333333,150.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="18.8888888888889,265.333333333333"
               Start="0,0"
-              End="0,52.5">
+              End="18.8888888888889,257.833333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,153.127982646421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,153.127982646421"
+                    Point2="0,157.127982646421"
+                    Point3="4,157.127982646421" />
+                  <mssgle:LineSegment
+                    End="14.8888888888889,157.127982646421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.8888888888889,157.127982646421"
+                    Point2="18.8888888888889,157.127982646421"
+                    Point3="18.8888888888889,161.127982646421" />
+                  <mssgle:LineSegment
+                    End="18.8888888888889,257.833333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="-17.6469422743056,162.127982646421,54.1827734375,11.43359375"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="164,42.6666666666667"
-          Id="Package\Assets Dimension - Removed Other\Insert Destination"
-          TopLeft="150.833333333333,621.5" />
-        <EdgeLayout
-          Id="Package\Assets Dimension - Removed Other.Paths[Derived Column Output1]"
-          TopLeft="232.833333333333,561.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="176,42.6666666666667"
-          Id="Package\Assets Dimension - Removed Other\OLE DB Command 1"
-          TopLeft="293.833333333333,210.833333333333" />
         <EdgeLayout
           Id="Package\Assets Dimension - Removed Other.Paths[Inferred Member Updates Output]"
           TopLeft="283.166666666667,150.833333333333">
@@ -11642,95 +11415,113 @@ where a.[Contract] is not null</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Assets Dimension - Removed Other.Paths[Historical Attribute Inserts Output]"
+          TopLeft="182.5,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-87.6666666666667,59.9999999999999"
+              Start="0,0"
+              End="-87.6666666666667,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.503144654088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.503144654088"
+                    Point2="0,20.503144654088"
+                    Point3="-4,20.503144654088" />
+                  <mssgle:LineSegment
+                    End="-83.6666666666667,20.503144654088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-83.6666666666667,20.503144654088"
+                    Point2="-87.6666666666667,20.503144654088"
+                    Point3="-87.6666666666667,24.503144654088" />
+                  <mssgle:LineSegment
+                    End="-87.6666666666667,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-118.889720052083,25.503144654088,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Assets Dimension - Removed Other.Paths[Derived Column Output1]"
+          TopLeft="232.833333333333,561.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Assets Dimension - Removed Other.Paths[Derived Column Output]"
+          TopLeft="91.8333333333334,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Assets Dimension - Removed Other.Paths[ADO NET Source Output]"
+          TopLeft="232.833333333333,48.5999999922513">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.5666666744147"
+              Start="0,0"
+              End="0,52.0666666744147">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.0666666744147" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
     design-time-name="Package\Assets Dimension - Removed Other\Staging">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Assets Dimension - Removed(Natalie,Condamine)">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="154.666666666667,42.6666666666667"
-          Id="Package\Assets Dimension - Removed(Natalie,Condamine)\Derived Column"
-          TopLeft="214.833333333333,106.833333333333" />
-        <NodeLayout
-          Size="100.666666666667,42.6666666666667"
-          Id="Package\Assets Dimension - Removed(Natalie,Condamine)\Core"
-          TopLeft="243.5,195.5" />
-        <NodeLayout
-          Size="114.666666666667,42.6666666666667"
-          Id="Package\Assets Dimension - Removed(Natalie,Condamine)\Staging"
-          TopLeft="236.166666666667,12.1666666666667" />
-        <EdgeLayout
-          Id="Package\Assets Dimension - Removed(Natalie,Condamine).Paths[Derived Column Output]"
-          TopLeft="293,149.5">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,46"
-              Start="0,0"
-              End="0,38.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,38.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Assets Dimension - Removed(Natalie,Condamine).Paths[ADO NET Source Output]"
-          TopLeft="292.833333333333,54.8333333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52"
-              Start="0,0"
-              End="0,44.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Assets Dimension - Removed(Natalie,Condamine)\Core">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Assets Dimension - Removed(Natalie,Condamine)\Staging">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -11829,6 +11620,90 @@ where a.[Contract] is not null</property>
   &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
   &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
 &lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Assets Dimension - Removed(Natalie,Condamine)">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Assets Dimension - Removed(Natalie,Condamine)\Derived Column"
+          TopLeft="214.833333333333,106.833333333333" />
+        <NodeLayout
+          Size="100.666666666667,42.6666666666667"
+          Id="Package\Assets Dimension - Removed(Natalie,Condamine)\Core"
+          TopLeft="243.5,195.5" />
+        <NodeLayout
+          Size="114.666666666667,42.6666666666667"
+          Id="Package\Assets Dimension - Removed(Natalie,Condamine)\Staging"
+          TopLeft="236.166666666667,12.1666666666667" />
+        <EdgeLayout
+          Id="Package\Assets Dimension - Removed(Natalie,Condamine).Paths[Derived Column Output]"
+          TopLeft="293,149.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46"
+              Start="0,0"
+              End="0,38.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Assets Dimension - Removed(Natalie,Condamine).Paths[ADO NET Source Output]"
+          TopLeft="292.833333333333,54.8333333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52"
+              Start="0,0"
+              End="0,44.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,44.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Assets Dimension - Removed(Natalie,Condamine)\Core">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Assets Dimension - Removed(Natalie,Condamine)\Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
