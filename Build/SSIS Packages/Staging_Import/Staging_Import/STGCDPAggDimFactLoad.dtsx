@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="STGCDPAggDimFactLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="70"
-  DTS:VersionGUID="{24C1A6D1-0835-4552-9A03-8EBD9CC57347}">
+  DTS:VersionBuild="74"
+  DTS:VersionGUID="{4F178D2E-BAA0-4E22-B02D-1C7908685F13}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -8458,7 +8458,7 @@ and (select count(1) from staging.ContractSummary_Natalie ) &gt; 0</property>
                 <property
                   dataType="System.Int32"
                   description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">30</property>
+                  name="CommandTimeout">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
@@ -9912,7 +9912,7 @@ where a.[Contract] is not null</property>
         <NodeLayout
           Size="160,42.6666666666667"
           Id="Package\Aggregation Fact"
-          TopLeft="762.212951687061,542.933333248104" />
+          TopLeft="762.212951687061,543.799999899273" />
         <NodeLayout
           Size="168,42.6666666666667"
           Id="Package\ANZSIC Dimension"
@@ -9932,7 +9932,7 @@ where a.[Contract] is not null</property>
         <NodeLayout
           Size="248,42.6666666666667"
           Id="Package\Update FileDate for Removed Other"
-          TopLeft="718.092581974136,367.648147442163" />
+          TopLeft="718.092581974136,367.214814116578" />
         <NodeLayout
           Size="197.333333333334,42.6666666666667"
           Id="Package\Update Status for Repaid"
@@ -9983,18 +9983,18 @@ where a.[Contract] is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="841.178719710348,410.31481410883">
+          TopLeft="841.178719710348,409.881480783245">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.0634155280464"
+              EndConnector="0,32.496748853632"
               Start="0,0"
-              End="0,24.5634155280464">
+              End="0,24.996748853632">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.5634155280464" />
+                    End="0,24.996748853632" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10009,14 +10009,14 @@ where a.[Contract] is not null</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,25.4851839307713"
+              EndConnector="0,25.0518506051866"
               Start="0,0"
-              End="0,17.9851839307713">
+              End="0,17.5518506051866">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.9851839307713" />
+                    End="0,17.5518506051866" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10031,14 +10031,14 @@ where a.[Contract] is not null</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57.88843694456"
+              EndConnector="0,58.7551035957297"
               Start="0,0"
-              End="0,50.38843694456">
+              End="0,51.2551035957297">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.38843694456" />
+                    End="0,51.2551035957297" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10927,7 +10927,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10961,7 +10963,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11091,7 +11095,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11113,7 +11119,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11135,7 +11143,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

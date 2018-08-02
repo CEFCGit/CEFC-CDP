@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="AGGSTGLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="138"
-  DTS:VersionGUID="{63376A31-97F0-4F7D-AC8A-EC08523B2E40}">
+  DTS:VersionBuild="141"
+  DTS:VersionGUID="{0FD8F1D7-9C4E-442C-B9EA-B442C5E0A6D3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -11407,7 +11407,7 @@ FROM     [RSLoanBook$A9:P]</property>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[AssetDetails_Annan]&#xA;TRUNCATE TABLE [staging].[ContractSummary_Annan]&#xA;TRUNCATE TABLE  [staging].[ContractSummary_Condamine]&#xA;TRUNCATE TABLE  [staging].[ContractSummary_Flynn]&#xA;TRUNCATE TABLE  [staging].[ContractSummary_Macleay]&#xA;TRUNCATE TABLE  [staging].[ContractSummary_Murchison]&#xA;TRUNCATE TABLE  [staging].[ContractSummary_Natalie]&#xA;TRUNCATE TABLE  [staging].[ContractSummary_Othello]&#xA;TRUNCATE TABLE  [staging].[ContractSummary_Roper]&#xA;TRUNCATE TABLE  [staging].[ContractSummary_Wingecarribee]&#xA;TRUNCATE TABLE  [staging].[RemovedAssets_Condamine]&#xA;TRUNCATE TABLE  [staging].[RemovedAssets_Natalie]&#xA;TRUNCATE TABLE  [staging].[AssetDetailsCFAL_Wingecarribee]&#xA;TRUNCATE TABLE  [staging].[AssetDetailsNQ_Wingecarribee]&#xA;TRUNCATE TABLE  [staging].[AssetDetailsSBG_Wingecarribee]&#xA;TRUNCATE TABLE  [staging].[AssetDetailsWBC_Wingecarribee]&#xA;TRUNCATE TABLE [staging].[ANZSIC_Natalie]&#xA;TRUNCATE TABLE [staging].[ANZSIC_Condamine]&#xA;TRUNCATE TABLE [staging].[ANZSIC_Wingecarribee]&#xA;TRUNCATE TABLE [staging].[ANZSIC_Murchison]&#xA;TRUNCATE TABLE [staging].[ANZSIC_Annan]&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [staging].[AssetDetails_Annan]&#xA;TRUNCATE TABLE [staging].[ContractSummary_Annan]&#xA;TRUNCATE TABLE  [staging].[ContractSummary_Condamine]&#xA;TRUNCATE TABLE  [staging].[ContractSummary_Flynn]&#xA;TRUNCATE TABLE  [staging].[ContractSummary_Macleay]&#xA;TRUNCATE TABLE  [staging].[ContractSummary_Murchison]&#xA;TRUNCATE TABLE  [staging].[ContractSummary_Natalie]&#xA;TRUNCATE TABLE  [staging].[ContractSummary_Othello]&#xA;TRUNCATE TABLE  [staging].[ContractSummary_Roper]&#xA;TRUNCATE TABLE  [staging].[ContractSummary_Wingecarribee]&#xA;TRUNCATE TABLE  [staging].[RemovedAssets_Condamine]&#xA;TRUNCATE TABLE  [staging].[RemovedAssets_Natalie]&#xA;TRUNCATE TABLE  [staging].[AssetDetails_Wingecarribee]&#xA;TRUNCATE TABLE  [staging].[AssetDetailsNQ_Wingecarribee]&#xA;TRUNCATE TABLE [staging].[ANZSIC_Natalie]&#xA;TRUNCATE TABLE [staging].[ANZSIC_Condamine]&#xA;TRUNCATE TABLE [staging].[ANZSIC_Wingecarribee]&#xA;TRUNCATE TABLE [staging].[ANZSIC_Murchison]&#xA;TRUNCATE TABLE [staging].[ANZSIC_Annan]&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
     <DTS:Executable
@@ -14120,7 +14120,7 @@ FROM     [RSLoanBook$A9:P]</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,4.94530967176109,50.60890625,11.609375"
+              BoundingBox="-25.304453125,4.9453096717611,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14168,7 +14168,7 @@ FROM     [RSLoanBook$A9:P]</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,9.56940188811166,50.60890625,11.609375"
+              BoundingBox="-25.304453125,9.56940188811165,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14192,7 +14192,7 @@ FROM     [RSLoanBook$A9:P]</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,4.84531254649164,50.60890625,11.609375"
+              BoundingBox="-25.304453125,4.84531254649165,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14216,7 +14216,7 @@ FROM     [RSLoanBook$A9:P]</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,6.77332252125893,50.60890625,11.609375"
+              BoundingBox="-25.304453125,6.77332252125895,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14240,7 +14240,7 @@ FROM     [RSLoanBook$A9:P]</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,8.75063640871929,50.60890625,11.609375"
+              BoundingBox="-25.304453125,8.7506364087193,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -14264,7 +14264,7 @@ FROM     [RSLoanBook$A9:P]</property>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,9.59567371121329,50.60890625,11.609375"
+              BoundingBox="-25.304453125,9.5956737112133,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -15220,7 +15220,7 @@ FROM     [RSLoanBook$A9:P]</property>
     design-time-name="Package\Natalie ContractSummary">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="114.666666666667,42.6666666666667"
           Id="Package\Natalie ContractSummary\Staging"
@@ -15248,7 +15248,9 @@ FROM     [RSLoanBook$A9:P]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15401,7 +15403,7 @@ FROM     [RSLoanBook$A9:P]</property>
     design-time-name="Package\Roper">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="114.666666666667,42.6666666666667"
           Id="Package\Roper\Staging"
@@ -15412,7 +15414,7 @@ FROM     [RSLoanBook$A9:P]</property>
           TopLeft="231.5,26.8333333333333" />
         <EdgeLayout
           Id="Package\Roper.Paths[OLE DB Source Output]"
-          TopLeft="308.166666666667,69.5">
+          TopLeft="307.750000006209,69.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -15429,9 +15431,7 @@ FROM     [RSLoanBook$A9:P]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15462,15 +15462,15 @@ FROM     [RSLoanBook$A9:P]</property>
     design-time-name="Package\Wingecarribee Assets">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150.666666666667,42.6666666666667"
-          Id="Package\Wingecarribee Assets\OLE DB Source"
-          TopLeft="118.833331644535,11.5666665581862" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="114.666666666667,42.6666666666667"
           Id="Package\Wingecarribee Assets\Staging"
           TopLeft="133.416665207595,87.4999990701675" />
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\Wingecarribee Assets\OLE DB Source"
+          TopLeft="118.833331644535,11.5666665581862" />
         <EdgeLayout
           Id="Package\Wingecarribee Assets.Paths[OLE DB Source Output]"
           TopLeft="192.458331759398,54.2333332248529">
@@ -15490,7 +15490,9 @@ FROM     [RSLoanBook$A9:P]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15521,15 +15523,15 @@ FROM     [RSLoanBook$A9:P]</property>
     design-time-name="Package\Wingecarribee ContractSummary">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="114.666666666667,42.6666666666667"
-          Id="Package\Wingecarribee ContractSummary\Staging"
-          TopLeft="137.999998472631,97.8999988842011" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Wingecarribee ContractSummary\OLE DB Source"
           TopLeft="114.666665934026,8.73333434840041" />
+        <NodeLayout
+          Size="114.666666666667,42.6666666666667"
+          Id="Package\Wingecarribee ContractSummary\Staging"
+          TopLeft="137.999998472631,97.8999988842011" />
         <EdgeLayout
           Id="Package\Wingecarribee ContractSummary.Paths[OLE DB Source Output]"
           TopLeft="192.666665536662,51.4000010150671">
@@ -15549,7 +15551,9 @@ FROM     [RSLoanBook$A9:P]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -15580,15 +15584,15 @@ FROM     [RSLoanBook$A9:P]</property>
     design-time-name="Package\Wingecarribee NQ Assets">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150.666666666667,42.6666666666667"
-          Id="Package\Wingecarribee NQ Assets\OLE DB Source"
-          TopLeft="251.5,27.5" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="114.666666666667,42.6666666666667"
           Id="Package\Wingecarribee NQ Assets\Staging"
           TopLeft="273.5,128.833333333333" />
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\Wingecarribee NQ Assets\OLE DB Source"
+          TopLeft="251.5,27.5" />
         <EdgeLayout
           Id="Package\Wingecarribee NQ Assets.Paths[OLE DB Source Output]"
           TopLeft="328.833333333333,70.1666666666667">
@@ -15608,7 +15612,9 @@ FROM     [RSLoanBook$A9:P]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
