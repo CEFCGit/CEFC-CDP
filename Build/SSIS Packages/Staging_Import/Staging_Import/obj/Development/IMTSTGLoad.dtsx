@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="IMTSTGLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="17"
-  DTS:VersionGUID="{235597FA-761C-4469-8109-3D17A3489AC6}">
+  DTS:VersionBuild="18"
+  DTS:VersionGUID="{2A56D9EE-3D23-433C-AC1E-437D480C74D3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -14412,6 +14412,13 @@
                       externalMetadataColumnId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Percent_renewable_calc]"
                       lineageId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].Columns[Percent_renewable_calc]"
                       name="Percent_renewable_calc" />
+                    <outputColumn
+                      refId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].Columns[cProject]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cProject]"
+                      lineageId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].Columns[cProject]"
+                      name="cProject" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -14508,6 +14515,11 @@
                       refId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Percent_renewable_calc]"
                       dataType="r8"
                       name="Percent_renewable_calc" />
+                    <externalMetadataColumn
+                      refId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cProject]"
+                      codePage="1252"
+                      dataType="text"
+                      name="cProject" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -14648,6 +14660,13 @@
                       externalMetadataColumnId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Percent_renewable_calc]"
                       lineageId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Percent_renewable_calc]"
                       name="Percent_renewable_calc" />
+                    <outputColumn
+                      refId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Error Output].Columns[cProject]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cProject]"
+                      lineageId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Error Output].Columns[cProject]"
+                      name="cProject" />
                     <outputColumn
                       refId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -15064,7 +15083,7 @@
         <NodeLayout
           Size="222.666666666667,42.6666666666667"
           Id="Package\Truncate TEC_Technology table on Staging"
-          TopLeft="213.62962962963,1359.27036332689" />
+          TopLeft="213.62962962963,1359.70369665247" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
           TopLeft="336.291666502133,126">
@@ -15177,18 +15196,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 13]"
-          TopLeft="325.111111111111,1401.93702999356">
+          TopLeft="325.111111111111,1402.37036331914">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,62.1481481481487"
+              EndConnector="0,61.7148148225685"
               Start="0,0"
-              End="0,54.6481481481487">
+              End="0,54.2148148225685">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.6481481481487" />
+                    End="0,54.2148148225685" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15203,14 +15222,14 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,58.5185185185187"
+              EndConnector="0,58.951851844098"
               Start="0,0"
-              End="0,51.0185185185187">
+              End="0,51.451851844098">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,51.0185185185187" />
+                    End="0,51.451851844098" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -15814,7 +15833,7 @@
     design-time-name="Package\Load TEC_Technology Table from IMART to Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="96,42.6666666666667"
           Id="Package\Load TEC_Technology Table from IMART to Staging\iMart"
@@ -15842,13 +15861,29 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load TEC_Technology Table from IMART to Staging\Azure - Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load TEC_Technology Table from IMART to Staging\iMart">
+    <Properties>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
