@@ -85,8 +85,8 @@ SELECT @load_date AS ParamIn ,
 	   sum(cdf.Gross_Principal*l.Percent_of_Project_Amt) as Gross_Principal,
 	   sum(cdf.Capitalised_Interest*l.Percent_of_Project_Amt) as Capitalised_Interest,
 	   sum(cdf.Capitalised_Fees*l.Percent_of_Project_Amt) as Capitalised_Fees,
-	   sum([Amt_cLiveCommitment]) as Amt_cLiveCommitment,
-	   sum([Amt_cNonTriggeredCommitment]) as Amt_cNonTriggeredCommitment   
+	   sum([Amt_cLiveCommitment]*l.Percent_of_Project_Amt) as Amt_cLiveCommitment,
+	   sum([Amt_cNonTriggeredCommitment]*l.Percent_of_Project_Amt) as Amt_cNonTriggeredCommitment   
 FROM CORE.Base_Data_Fact b
 	left join core.Projects_Dimension p
 	on b.ID_Project = p.ID_Project
