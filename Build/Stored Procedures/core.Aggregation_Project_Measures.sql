@@ -60,17 +60,17 @@ as
 							 b.Project_Name  ) pd2
 				on pd.Project_Name like pd2.Project_Name+'%'
 				where EOMONTH(@file_date) >= convert(datetime,pd.Update_From_TS) 
-				and EOMONTH(@file_date) <= convert(datetime,isnull(pd.Update_to_TS,DBO.FN_LOCALDATE(GETDATE())))
+				and EOMONTH(@file_date) <= convert(datetime,isnull(pd.Update_to_TS,@local_date))
 				group by pd.ID_Project,
 						 pd.Project_Name) pd1
 			on bdf.ID_Project = pd1.ID_Project
 			where EOMONTH(@file_date) >= convert(datetime,bdf.Update_From_TS) 
-			and EOMONTH(@file_date) <= convert(datetime,isnull(bdf.Update_to_TS,DBO.FN_LOCALDATE(GETDATE())))
+			and EOMONTH(@file_date) <= convert(datetime,isnull(bdf.Update_to_TS,@local_date))
 			group by case when charindex('II',pd1.Project_Name) > 0 then substring(pd1.Project_name,1,(charindex('II',pd1.Project_Name)-2)) else pd1.Project_Name end       
 			) as camt
 		on prjd.Project_Name = camt.Project_Name
 		where EOMONTH(@file_date) >= convert(datetime,prjd.Update_From_TS) 
-		and EOMONTH(@file_date) <= convert(datetime,isnull(prjd.Update_to_TS,DBO.FN_LOCALDATE(GETDATE())))
+		and EOMONTH(@file_date) <= convert(datetime,isnull(prjd.Update_to_TS,@local_date))
 		group by prjd.ID_Project,
 				prjd.Project_Name,
 				prjd.Description,
