@@ -130,7 +130,7 @@ as
 	  on af.ID_Project = ad.ID_Project
 	  and af.ANZSIC_Code = ad.Code
 	  and EOMONTH(@file_date) >= convert(datetime,ad.Update_From_TS)
-	  and EOMONTH(@file_date) <= convert(datetime,isnull(ad.Update_to_TS,DBO.FN_LOCALDATE(GETDATE())))
+	  and EOMONTH(@file_date) <= convert(datetime,isnull(ad.Update_to_TS,@local_date))
     left join temp t
 	  on af.ID_Project = t.ID_Project
 
