@@ -3,6 +3,7 @@
 -- Create date: 08/08/2018
 -- Description:	Create stored procedure to get the relevant commitment amounts based on Aggregation File Date
 -- Version Control
+-- 16/08/2018(YM) : Added logic for adding the commitment for multiple projects linked to one contract. e.g Condamine
 -- ==========================================================================
 
 CREATE or alter  procedure [core].Aggregation_Project_Measures @file_date datetime
@@ -19,25 +20,63 @@ as
 	with temp
 	as 
 	    (
-		select  b.ID_Project,
-		max(b.Update_From_TS) b_Update_From_TS,
-		max(b.Update_to_TS) b_Update_To_TS,
-		max(p.Update_From_TS) p_Update_From_TS,
-		max(p.Update_to_TS) p_Update_To_TS,
-		sum(Amt_cCEFC) as Amt_cCEFC,
-		sum(Amt_cCommitment) as Amt_cCommitment,
-		p.Project_Name,
-		p.cOrganisations 
-		from core.Base_Data_Fact b
-		left join core.Projects_Dimension p
-			on b.ID_Project = p.ID_Project
-		where EOMONTH(@file_date) >= convert(datetime,b.Update_From_TS) 
-		and EOMONTH(@file_date) <= convert(datetime,isnull(b.Update_to_TS,DBO.FN_LOCALDATE(GETDATE())))
-		and EOMONTH(@file_date) >= convert(datetime,p.Update_From_TS) 
-		and EOMONTH(@file_date) <= convert(datetime,isnull(p.Update_to_TS,DBO.FN_LOCALDATE(GETDATE())))
-		group by	b.ID_Project,
-					p.Project_Name,
-					p.cOrganisations 
+		select	max(prjd.Update_From_TS) b_Update_From_TS,
+		max(prjd.Update_to_TS) b_Update_To_TS, 
+	    prjd.ID_Project,
+		prjd.Project_Name,
+		prjd.Description,
+		prjd.rpt_Project_Description,
+		prjd.Finance_Type_End_Borrower_Risk,
+		prjd.cOrganisations,
+		sum(Amt_CEFC) as Amt_CEFC
+		from core.Projects_Dimension prjd
+		join 
+		(select max(bdf.Update_From_TS) b_Update_From_TS,
+				max(bdf.Update_to_TS) b_Update_To_TS,
+			    sum(bdf.Amt_cCEFC) as Amt_CEFC,
+				case when charindex('II',pd1.Project_Name) > 0 then substring(pd1.Project_name,1,(charindex('II',pd1.Project_Name)-2)) else pd1.Project_Name end  as Project_Name     
+		 from core.Base_Data_Fact bdf
+			join 
+			(
+			select	 max(pd.Update_From_TS) a_Update_From_TS,
+					 max(pd.Update_to_TS) a_Update_To_TS,
+					 pd.ID_Project,
+					 pd.Project_Name
+			from core.Projects_Dimension pd
+				join 
+					(select max(a.Update_From_TS) a_Update_From_TS,
+							max(a.Update_to_TS) a_Update_To_TS,
+							max(b.Update_From_TS) b_Update_From_TS,
+							max(b.Update_to_TS) b_Update_To_TS,
+							a.ID_Project,
+							b.Project_Name
+					from core.Aggregation_Fact a
+					join core.Projects_Dimension b
+					  on a.ID_Project = b.ID_Project
+					where EOMONTH(@file_date) >= convert(datetime,b.Update_From_TS) 
+					and EOMONTH(@file_date) <= convert(datetime,isnull(b.Update_to_TS,@local_date))
+					and a.File_Date = @file_date 
+					group by a.ID_Project,
+							 b.Project_Name  ) pd2
+				on pd.Project_Name like pd2.Project_Name+'%'
+				where EOMONTH(@file_date) >= convert(datetime,pd.Update_From_TS) 
+				and EOMONTH(@file_date) <= convert(datetime,isnull(pd.Update_to_TS,DBO.FN_LOCALDATE(GETDATE())))
+				group by pd.ID_Project,
+						 pd.Project_Name) pd1
+			on bdf.ID_Project = pd1.ID_Project
+			where EOMONTH(@file_date) >= convert(datetime,bdf.Update_From_TS) 
+			and EOMONTH(@file_date) <= convert(datetime,isnull(bdf.Update_to_TS,DBO.FN_LOCALDATE(GETDATE())))
+			group by case when charindex('II',pd1.Project_Name) > 0 then substring(pd1.Project_name,1,(charindex('II',pd1.Project_Name)-2)) else pd1.Project_Name end       
+			) as camt
+		on prjd.Project_Name = camt.Project_Name
+		where EOMONTH(@file_date) >= convert(datetime,prjd.Update_From_TS) 
+		and EOMONTH(@file_date) <= convert(datetime,isnull(prjd.Update_to_TS,DBO.FN_LOCALDATE(GETDATE())))
+		group by prjd.ID_Project,
+				prjd.Project_Name,
+				prjd.Description,
+				prjd.rpt_Project_Description,
+				prjd.Finance_Type_End_Borrower_Risk,
+				prjd.cOrganisations
 		) 
 
     select af.[ID_Project]
@@ -75,10 +114,12 @@ as
       ,ad.[Description]
 	  ,ad.ABS_Division
 	  ,ad.ABS_Subdivision
-	  ,t.Amt_cCEFC
-	  ,t.Amt_cCommitment
+	  ,t.Amt_CEFC
 	  ,t.Project_Name
 	  ,t.cOrganisations
+	  ,t.Description
+	  ,t.rpt_Project_Description
+	  ,t.Finance_Type_End_Borrower_Risk
 	from core.Aggregation_Fact af
 	left join [core].[Assets_Dimension] asd
 	  on af.ID_Project = asd.ID_Project
