@@ -102,7 +102,7 @@ as
       ,af.[Total_Rebate_to_date_inclGST]
       ,af.[File_Date]
 	  ,asd.[Category]
-	  ,asd.[Description]
+	  ,asd.[Description] as Asset_Description
 	  ,asd.[Variant]
 	  ,asd.[Make]
 	  ,asd.[Model]
@@ -111,13 +111,13 @@ as
 	  ,ad.[Code]
       ,ad.[Division]
       ,ad.[Subdivision]
-      ,ad.[Description]
+      ,ad.[Description] as ANZSIC_Description
 	  ,ad.ABS_Division
 	  ,ad.ABS_Subdivision
 	  ,t.Amt_CEFC
 	  ,t.Project_Name
 	  ,t.cOrganisations
-	  ,t.Description
+	  ,t.Description as Project_Descriptiom
 	  ,t.rpt_Project_Description
 	  ,t.Finance_Type_End_Borrower_Risk
 	from core.Aggregation_Fact af
