@@ -2,6 +2,7 @@ CREATE TABLE [core].[Location_Dimension](
 	[ID_Location] [nvarchar](50) NULL,
 	[ID_LocationLink] [nvarchar](50) NOT NULL,
 	[id_project] [nvarchar](100) NULL,
+	[ID_Technology] [nvarchar](6),
 	[Created_By] [nvarchar](41) NULL,
 	[Created_Date] [nvarchar](27) NULL,
 	[id_constant] [numeric](2, 0) NULL,

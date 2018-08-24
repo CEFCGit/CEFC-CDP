@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="IMTSTGLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="18"
-  DTS:VersionGUID="{2A56D9EE-3D23-433C-AC1E-437D480C74D3}">
+  DTS:VersionBuild="19"
+  DTS:VersionGUID="{FE3860F0-D34B-4AA5-B7F2-A09219A17216}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -1231,6 +1231,13 @@
                       cachedName="Loc_Electorate"
                       externalMetadataColumnId="Package\Load LOC_Location Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Loc_Electorate]"
                       lineageId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Loc_Electorate]" />
+                    <inputColumn
+                      refId="Package\Load LOC_Location Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[ID_Technology]"
+                      cachedCodepage="1252"
+                      cachedDataType="text"
+                      cachedName="ID_Technology"
+                      externalMetadataColumnId="Package\Load LOC_Location Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[ID_Technology]"
+                      lineageId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[ID_Technology]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1306,6 +1313,11 @@
                       dataType="wstr"
                       length="150"
                       name="zzzid_organisation" />
+                    <externalMetadataColumn
+                      refId="Package\Load LOC_Location Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[ID_Technology]"
+                      dataType="wstr"
+                      length="6"
+                      name="ID_Technology" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -1510,6 +1522,13 @@
                       externalMetadataColumnId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Loc_Electorate]"
                       lineageId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Loc_Electorate]"
                       name="Loc_Electorate" />
+                    <outputColumn
+                      refId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[ID_Technology]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[ID_Technology]"
+                      lineageId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[ID_Technology]"
+                      name="ID_Technology" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -1578,6 +1597,11 @@
                       codePage="1252"
                       dataType="text"
                       name="Loc_Electorate" />
+                    <externalMetadataColumn
+                      refId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[ID_Technology]"
+                      codePage="1252"
+                      dataType="text"
+                      name="ID_Technology" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -1678,6 +1702,13 @@
                       externalMetadataColumnId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Loc_Electorate]"
                       lineageId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Loc_Electorate]"
                       name="Loc_Electorate" />
+                    <outputColumn
+                      refId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[ID_Technology]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[ID_Technology]"
+                      lineageId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[ID_Technology]"
+                      name="ID_Technology" />
                     <outputColumn
                       refId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -5094,6 +5125,12 @@
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Amt_cNonTriggeredCommitment]"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Amt_cNonTriggeredCommitment]"
                       name="Amt_cNonTriggeredCommitment" />
+                    <outputColumn
+                      refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[cCount_Locations]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cCount_Locations]"
+                      lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[cCount_Locations]"
+                      name="cCount_Locations" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -6538,6 +6575,10 @@
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Amt_cNonTriggeredCommitment]"
                       dataType="r8"
                       name="Amt_cNonTriggeredCommitment" />
+                    <externalMetadataColumn
+                      refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cCount_Locations]"
+                      dataType="r8"
+                      name="cCount_Locations" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -8624,6 +8665,12 @@
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Amt_cNonTriggeredCommitment]"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Amt_cNonTriggeredCommitment]"
                       name="Amt_cNonTriggeredCommitment" />
+                    <outputColumn
+                      refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[cCount_Locations]"
+                      dataType="r8"
+                      externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cCount_Locations]"
+                      lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[cCount_Locations]"
+                      name="cCount_Locations" />
                     <outputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -13703,6 +13750,13 @@
                       externalMetadataColumnId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Renewable]"
                       lineageId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Renewable]"
                       name="Renewable" />
+                    <outputColumn
+                      refId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[cSection - Technology]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cSection - Technology]"
+                      lineageId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[cSection - Technology]"
+                      name="cSection - Technology" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -13757,6 +13811,11 @@
                       refId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Renewable]"
                       dataType="r8"
                       name="Renewable" />
+                    <externalMetadataColumn
+                      refId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cSection - Technology]"
+                      codePage="1252"
+                      dataType="text"
+                      name="cSection - Technology" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -13837,6 +13896,13 @@
                       externalMetadataColumnId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Renewable]"
                       lineageId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Renewable]"
                       name="Renewable" />
+                    <outputColumn
+                      refId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[cSection - Technology]"
+                      codePage="1252"
+                      dataType="text"
+                      externalMetadataColumnId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cSection - Technology]"
+                      lineageId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[cSection - Technology]"
+                      name="cSection - Technology" />
                     <outputColumn
                       refId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -15577,42 +15643,50 @@
     design-time-name="Package\Load LOC_Location Table from iMart to Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="104,42.6666666666667"
           Id="Package\Load LOC_Location Table from iMart to Staging\iMart"
-          TopLeft="129.249998155981,78.7333320238193" />
+          TopLeft="129.666664816439,79.166665349404" />
         <NodeLayout
           Size="152,42.6666666666667"
           Id="Package\Load LOC_Location Table from iMart to Staging\Azure - Staging"
-          TopLeft="100.916665691882,159.866664442817" />
+          TopLeft="107.583331812173,168.866663745443" />
         <EdgeLayout
           Id="Package\Load LOC_Location Table from iMart to Staging.Paths[ODBC Source Output]"
-          TopLeft="179.083331923932,121.399998690486">
+          TopLeft="182.624998314306,121.833332016071">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,38.4666657523314"
+              EndConnector="0,47.0333317293724"
               Start="0,0"
-              End="0,30.9666657523314">
+              End="0,39.5333317293724">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30.9666657523314" />
+                    End="0,39.5333317293724" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load LOC_Location Table from iMart to Staging\iMart">
+    <Properties>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load PHA_Phases Table from iMart into Staging">
     <LayoutInfo>
@@ -15882,6 +15956,14 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load LOC_Location Table from iMart to Staging\Azure - Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

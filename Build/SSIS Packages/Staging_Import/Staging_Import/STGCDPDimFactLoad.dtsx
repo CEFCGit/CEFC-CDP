@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="STGCDPDimFactLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="79"
-  DTS:VersionGUID="{89B6DC84-65E9-4653-829C-7EBEF71B96FB}">
+  DTS:VersionBuild="80"
+  DTS:VersionGUID="{62A63265-EA47-42BE-AE06-ACC4409411EF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -16446,6 +16446,154 @@ FROM     core.StgBaseFact_view</property>
               </outputs>
             </component>
             <component
+              refId="Package\Dim Location\Derived Column 2"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 2"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Dim Location\Derived Column 2.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim Location\Derived Column 2.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Dim Location\Derived Column 2.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Location\Derived Column 2.Outputs[Derived Column Output].Columns[Update_to_TS]"
+                      dataType="dbTimeStamp"
+                      description="Update_to_TS"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Dim Location\Derived Column 2.Outputs[Derived Column Output].Columns[Update_to_TS]"
+                      name="Update_to_TS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim Location\Derived Column 2.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Dim Location\Derived Column 2.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Location\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim Location\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim Location\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim Location\Derived Column 2.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dim Location\Derived Column 3"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 3"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Dim Location\Derived Column 3.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim Location\Derived Column 3.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Dim Location\Derived Column 3.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Location\Derived Column 3.Outputs[Derived Column Output].Columns[Update_from_TS]"
+                      dataType="dbTimeStamp"
+                      description="Update_from_TS"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Dim Location\Derived Column 3.Outputs[Derived Column Output].Columns[Update_from_TS]"
+                      name="Update_from_TS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim Location\Derived Column 3.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Dim Location\Derived Column 3.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Location\Derived Column 3.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim Location\Derived Column 3.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim Location\Derived Column 3.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim Location\Derived Column 3.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Dim Location\Insert Destination"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
@@ -16716,6 +16864,11 @@ FROM     core.StgBaseFact_view</property>
                       dataType="wstr"
                       length="20"
                       name="Update_Reason" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID_Technology]"
+                      dataType="wstr"
+                      length="6"
+                      name="ID_Technology" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -16745,6 +16898,317 @@ FROM     core.StgBaseFact_view</property>
               </outputs>
             </component>
             <component
+              refId="Package\Dim Location\Insert Destination 1"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination 1"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[core].[Location_Dimension]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim Location\Insert Destination 1.Connections[OleDbConnection]"
+                  connectionManagerID="{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[EDW_OLEDB_Connection_Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[ID_Location]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ID_Location"
+                      externalMetadataColumnId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ID_Location]"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_Location]" />
+                    <inputColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[ID_LocationLink]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ID_LocationLink"
+                      externalMetadataColumnId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ID_LocationLink]"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_LocationLink]" />
+                    <inputColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[ID_Project]"
+                      cachedDataType="wstr"
+                      cachedLength="87"
+                      cachedName="ID_Project"
+                      externalMetadataColumnId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[id_project]"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_Project]" />
+                    <inputColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Created_By]"
+                      cachedDataType="wstr"
+                      cachedLength="41"
+                      cachedName="Created_By"
+                      externalMetadataColumnId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Created_By]"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Created_By]" />
+                    <inputColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Created_Date]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="Created_Date"
+                      externalMetadataColumnId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Created_Date]"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Created_Date]" />
+                    <inputColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[id_constant]"
+                      cachedDataType="numeric"
+                      cachedName="id_constant"
+                      cachedPrecision="2"
+                      externalMetadataColumnId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[id_constant]"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[id_constant]" />
+                    <inputColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Loc_Electorate]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="Loc_Electorate"
+                      externalMetadataColumnId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Loc_Electorate]"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Loc_Electorate]" />
+                    <inputColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Loc_Postcode]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="Loc_Postcode"
+                      externalMetadataColumnId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Loc_Postcode]"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Loc_Postcode]" />
+                    <inputColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Loc_State]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Loc_State"
+                      externalMetadataColumnId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Loc_State]"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Loc_State]" />
+                    <inputColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Modified_By]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="Modified_By"
+                      externalMetadataColumnId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Modified_By]"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Modified_By]" />
+                    <inputColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Modified_Date]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="Modified_Date"
+                      externalMetadataColumnId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Modified_Date]"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Modified_Date]" />
+                    <inputColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Percent_of_Project_Amt]"
+                      cachedDataType="numeric"
+                      cachedName="Percent_of_Project_Amt"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Percent_of_Project_Amt]"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Percent_of_Project_Amt]" />
+                    <inputColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Percent_of_Project_tCO2_savings]"
+                      cachedDataType="numeric"
+                      cachedName="Percent_of_Project_tCO2_savings"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Percent_of_Project_tCO2_savings]"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Percent_of_Project_tCO2_savings]" />
+                    <inputColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[zzzid_organisation]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="zzzid_organisation"
+                      externalMetadataColumnId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[zzzid_organisation]"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[zzzid_organisation]" />
+                    <inputColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[Update_from_TS]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Update_from_TS"
+                      externalMetadataColumnId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Update_from_TS]"
+                      lineageId="Package\Dim Location\Derived Column 3.Outputs[Derived Column Output].Columns[Update_from_TS]" />
+                    <inputColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].Columns[ID_Technology]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="ID_Technology"
+                      externalMetadataColumnId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ID_Technology]"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_Technology]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ID_Location]"
+                      dataType="wstr"
+                      length="50"
+                      name="ID_Location" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ID_LocationLink]"
+                      dataType="wstr"
+                      length="50"
+                      name="ID_LocationLink" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[id_project]"
+                      dataType="wstr"
+                      length="100"
+                      name="id_project" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Created_By]"
+                      dataType="wstr"
+                      length="41"
+                      name="Created_By" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Created_Date]"
+                      dataType="wstr"
+                      length="27"
+                      name="Created_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[id_constant]"
+                      dataType="numeric"
+                      name="id_constant"
+                      precision="2" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Loc_Electorate]"
+                      dataType="wstr"
+                      length="36"
+                      name="Loc_Electorate" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Loc_Postcode]"
+                      dataType="wstr"
+                      length="12"
+                      name="Loc_Postcode" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Loc_State]"
+                      dataType="wstr"
+                      length="20"
+                      name="Loc_State" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Modified_By]"
+                      dataType="wstr"
+                      length="36"
+                      name="Modified_By" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Modified_Date]"
+                      dataType="wstr"
+                      length="27"
+                      name="Modified_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Percent_of_Project_Amt]"
+                      dataType="numeric"
+                      name="Percent_of_Project_Amt"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Percent_of_Project_tCO2_savings]"
+                      dataType="numeric"
+                      name="Percent_of_Project_tCO2_savings"
+                      precision="5"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[zzzid_organisation]"
+                      dataType="wstr"
+                      length="150"
+                      name="zzzid_organisation" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Updated_by]"
+                      dataType="wstr"
+                      length="20"
+                      name="Updated_by" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Update_from_TS]"
+                      dataType="dbTimeStamp"
+                      name="Update_from_TS" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Update_to_TS]"
+                      dataType="dbTimeStamp"
+                      name="Update_to_TS" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Update_Reason]"
+                      dataType="wstr"
+                      length="20"
+                      name="Update_Reason" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[ID_Technology]"
+                      dataType="wstr"
+                      length="6"
+                      name="ID_Technology" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim Location\Insert Destination 1.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Location\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim Location\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim Location\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim Location\Insert Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Dim Location\Location_Dimension"
               componentClassID="Microsoft.SCD"
               contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
@@ -16756,7 +17220,7 @@ FROM     core.StgBaseFact_view</property>
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Created_By], [Created_Date], [id_constant], [ID_Location], [ID_LocationLink], [id_project], [Loc_Electorate], [Loc_Postcode], [Loc_State], [Modified_By], [Modified_Date], [Percent_of_Project_Amt], [Percent_of_Project_tCO2_savings], [zzzid_organisation],[Update_from_TS],[Update_to_TS] FROM [core].[Location_Dimension]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Created_By], [Created_Date], [id_constant], [ID_Location], [ID_LocationLink], [id_project], [ID_Technology], [Loc_Electorate], [Loc_Postcode], [Loc_State], [Modified_By], [Modified_Date], [Percent_of_Project_Amt], [Percent_of_Project_tCO2_savings], [zzzid_organisation],[Update_from_TS],[Update_to_TS] FROM [core].[Location_Dimension]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -16881,6 +17345,20 @@ FROM     core.StgBaseFact_view</property>
                       cachedName="ID_Project"
                       externalMetadataColumnId="Package\Dim Location\Location_Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[id_project]"
                       lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Project]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Location_Dimension.Inputs[Slowly Changing Dimension Input].Columns[ID_Technology]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="ID_Technology"
+                      externalMetadataColumnId="Package\Dim Location\Location_Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Technology]"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Technology]">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -17036,6 +17514,11 @@ FROM     core.StgBaseFact_view</property>
                       length="100"
                       name="id_project" />
                     <externalMetadataColumn
+                      refId="Package\Dim Location\Location_Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[ID_Technology]"
+                      dataType="wstr"
+                      length="6"
+                      name="ID_Technology" />
+                    <externalMetadataColumn
                       refId="Package\Dim Location\Location_Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Loc_Electorate]"
                       dataType="wstr"
                       length="36"
@@ -17153,7 +17636,7 @@ FROM     core.StgBaseFact_view</property>
                   description="Specifies the SQL statement used by the component to extract data."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select 1 = 1</property>
                 <property
                   dataType="System.Int32"
                   description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
@@ -17332,6 +17815,16 @@ FROM     core.StgBaseFact_view</property>
                       lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[zzzid_organisation]"
                       name="zzzid_organisation"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Technology]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].ExternalColumns[ID_Technology]"
+                      length="6"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Technology]"
+                      name="ID_Technology"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -17407,6 +17900,11 @@ FROM     core.StgBaseFact_view</property>
                       dataType="wstr"
                       length="150"
                       name="zzzid_organisation" />
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].ExternalColumns[ID_Technology]"
+                      dataType="wstr"
+                      length="6"
+                      name="ID_Technology" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -17500,6 +17998,12 @@ FROM     core.StgBaseFact_view</property>
                       length="150"
                       lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Error Output].Columns[zzzid_organisation]"
                       name="zzzid_organisation" />
+                    <outputColumn
+                      refId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Error Output].Columns[ID_Technology]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Error Output].Columns[ID_Technology]"
+                      name="ID_Technology" />
                     <outputColumn
                       refId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -17649,7 +18153,7 @@ FROM     core.StgBaseFact_view</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Location_Dimension] SET [Created_By] = ?,[Created_Date] = ?,[id_constant] = ?,[ID_Location] = ?,[id_project] = ?,[Loc_Electorate] = ?,[Loc_Postcode] = ?,[Loc_State] = ?,[Modified_By] = ?,[Modified_Date] = ?,[Percent_of_Project_Amt] = ?,[Percent_of_Project_tCO2_savings] = ?,[zzzid_organisation] = ? WHERE [ID_LocationLink] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Location_Dimension] SET [Update_to_TS] = ? WHERE [ID_LocationLink] = ? AND [Update_to_TS] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -17672,112 +18176,24 @@ FROM     core.StgBaseFact_view</property>
                   name="OLE DB Command Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Created_By]"
-                      cachedDataType="wstr"
-                      cachedLength="41"
-                      cachedName="Created_By"
-                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Created_By]" />
-                    <inputColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Created_Date]"
-                      cachedDataType="wstr"
-                      cachedLength="27"
-                      cachedName="Created_Date"
-                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Created_Date]" />
-                    <inputColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[id_constant]"
-                      cachedDataType="numeric"
-                      cachedName="id_constant"
-                      cachedPrecision="2"
-                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[id_constant]" />
-                    <inputColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_Location]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="ID_Location"
-                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Location]" />
-                    <inputColumn
                       refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_LocationLink]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="ID_LocationLink"
-                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_LocationLink]" />
                     <inputColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[ID_Project]"
-                      cachedDataType="wstr"
-                      cachedLength="87"
-                      cachedName="ID_Project"
-                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Project]" />
-                    <inputColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Loc_Electorate]"
-                      cachedDataType="wstr"
-                      cachedLength="36"
-                      cachedName="Loc_Electorate"
-                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Loc_Electorate]" />
-                    <inputColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Loc_Postcode]"
-                      cachedDataType="wstr"
-                      cachedLength="12"
-                      cachedName="Loc_Postcode"
-                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Loc_Postcode]" />
-                    <inputColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Loc_State]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="Loc_State"
-                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Loc_State]" />
-                    <inputColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Modified_By]"
-                      cachedDataType="wstr"
-                      cachedLength="36"
-                      cachedName="Modified_By"
-                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Modified_By]" />
-                    <inputColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Modified_Date]"
-                      cachedDataType="wstr"
-                      cachedLength="27"
-                      cachedName="Modified_Date"
-                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Modified_Date]" />
-                    <inputColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Percent_of_Project_Amt]"
-                      cachedDataType="numeric"
-                      cachedName="Percent_of_Project_Amt"
-                      cachedPrecision="5"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Percent_of_Project_Amt]" />
-                    <inputColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Percent_of_Project_tCO2_savings]"
-                      cachedDataType="numeric"
-                      cachedName="Percent_of_Project_tCO2_savings"
-                      cachedPrecision="5"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Percent_of_Project_tCO2_savings]" />
-                    <inputColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[zzzid_organisation]"
-                      cachedDataType="wstr"
-                      cachedLength="150"
-                      cachedName="zzzid_organisation"
-                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[zzzid_organisation]" />
+                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Update_to_TS]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Update_to_TS"
+                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Dim Location\Derived Column 2.Outputs[Derived Column Output].Columns[Update_to_TS]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
-                      dataType="wstr"
-                      length="41"
+                      dataType="dbTimeStamp"
                       name="Param_0">
                       <properties>
                         <property
@@ -17789,154 +18205,8 @@ FROM     core.StgBaseFact_view</property>
                     <externalMetadataColumn
                       refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
                       dataType="wstr"
-                      length="27"
+                      length="50"
                       name="Param_1">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
-                      dataType="numeric"
-                      name="Param_2"
-                      precision="2">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
-                      dataType="wstr"
-                      length="50"
-                      name="Param_3">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
-                      dataType="wstr"
-                      length="100"
-                      name="Param_4">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
-                      dataType="wstr"
-                      length="36"
-                      name="Param_5">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
-                      dataType="wstr"
-                      length="12"
-                      name="Param_6">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
-                      dataType="wstr"
-                      length="20"
-                      name="Param_7">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
-                      dataType="wstr"
-                      length="36"
-                      name="Param_8">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
-                      dataType="wstr"
-                      length="27"
-                      name="Param_9">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
-                      dataType="numeric"
-                      name="Param_10"
-                      precision="5"
-                      scale="2">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
-                      dataType="numeric"
-                      name="Param_11"
-                      precision="5"
-                      scale="2">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">81</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
-                      dataType="wstr"
-                      length="150"
-                      name="Param_12">
-                      <properties>
-                        <property
-                          dataType="System.Int32"
-                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
-                          name="DBParamInfoFlags">65</property>
-                      </properties>
-                    </externalMetadataColumn>
-                    <externalMetadataColumn
-                      refId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
-                      dataType="wstr"
-                      length="50"
-                      name="Param_13">
                       <properties>
                         <property
                           dataType="System.Int32"
@@ -17980,6 +18250,373 @@ FROM     core.StgBaseFact_view</property>
               </outputs>
             </component>
             <component
+              refId="Package\Dim Location\OLE DB Command 2"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command 2"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Location_Dimension] SET [Created_By] = ?,[Created_Date] = ?,[id_constant] = ?,[ID_Location] = ?,[id_project] = ?,[ID_Technology] = ?,[Loc_Electorate] = ?,[Loc_Postcode] = ?,[Loc_State] = ?,[Modified_By] = ?,[Modified_Date] = ?,[Percent_of_Project_Amt] = ?,[Percent_of_Project_tCO2_savings] = ?,[zzzid_organisation] = ? WHERE [ID_LocationLink] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dim Location\OLE DB Command 2.Connections[OleDbConnection]"
+                  connectionManagerID="{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[EDW_OLEDB_Connection_Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Created_By]"
+                      cachedDataType="wstr"
+                      cachedLength="41"
+                      cachedName="Created_By"
+                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Created_By]" />
+                    <inputColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Created_Date]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="Created_Date"
+                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Created_Date]" />
+                    <inputColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[id_constant]"
+                      cachedDataType="numeric"
+                      cachedName="id_constant"
+                      cachedPrecision="2"
+                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[id_constant]" />
+                    <inputColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[ID_Location]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ID_Location"
+                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Location]" />
+                    <inputColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[ID_LocationLink]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ID_LocationLink"
+                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_LocationLink]" />
+                    <inputColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[ID_Project]"
+                      cachedDataType="wstr"
+                      cachedLength="87"
+                      cachedName="ID_Project"
+                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Project]" />
+                    <inputColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[ID_Technology]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="ID_Technology"
+                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Technology]" />
+                    <inputColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Loc_Electorate]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="Loc_Electorate"
+                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Loc_Electorate]" />
+                    <inputColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Loc_Postcode]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="Loc_Postcode"
+                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Loc_Postcode]" />
+                    <inputColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Loc_State]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Loc_State"
+                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Loc_State]" />
+                    <inputColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Modified_By]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="Modified_By"
+                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Modified_By]" />
+                    <inputColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Modified_Date]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="Modified_Date"
+                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Modified_Date]" />
+                    <inputColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Percent_of_Project_Amt]"
+                      cachedDataType="numeric"
+                      cachedName="Percent_of_Project_Amt"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Percent_of_Project_Amt]" />
+                    <inputColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[Percent_of_Project_tCO2_savings]"
+                      cachedDataType="numeric"
+                      cachedName="Percent_of_Project_tCO2_savings"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Percent_of_Project_tCO2_savings]" />
+                    <inputColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].Columns[zzzid_organisation]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="zzzid_organisation"
+                      externalMetadataColumnId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[zzzid_organisation]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="41"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="27"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
+                      dataType="numeric"
+                      name="Param_2"
+                      precision="2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_4]"
+                      dataType="wstr"
+                      length="100"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_5]"
+                      dataType="wstr"
+                      length="6"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_6]"
+                      dataType="wstr"
+                      length="36"
+                      name="Param_6">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_7]"
+                      dataType="wstr"
+                      length="12"
+                      name="Param_7">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_8]"
+                      dataType="wstr"
+                      length="20"
+                      name="Param_8">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_9]"
+                      dataType="wstr"
+                      length="36"
+                      name="Param_9">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_10]"
+                      dataType="wstr"
+                      length="27"
+                      name="Param_10">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_11]"
+                      dataType="numeric"
+                      name="Param_11"
+                      precision="5"
+                      scale="2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_12]"
+                      dataType="numeric"
+                      name="Param_12"
+                      precision="5"
+                      scale="2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">81</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_13]"
+                      dataType="wstr"
+                      length="150"
+                      name="Param_13">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input].ExternalColumns[Param_14]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_14">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim Location\OLE DB Command 2.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dim Location\OLE DB Command 2.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dim Location\OLE DB Command 2.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dim Location\OLE DB Command 2.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dim Location\OLE DB Command 2.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
               refId="Package\Dim Location\Union All"
               componentClassID="Microsoft.UnionAll"
               contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
@@ -17987,211 +18624,6 @@ FROM     core.StgBaseFact_view</property>
               name="Union All"
               version="1">
               <inputs>
-                <input
-                  refId="Package\Dim Location\Union All.Inputs[Union All Input 1]"
-                  name="Union All Input 1">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Dim Location\Union All.Inputs[Union All Input 1].Columns[ID_Location]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="ID_Location"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Location]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Dim Location\Union All.Outputs[Union All Output 1].Columns[ID_Location]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Dim Location\Union All.Inputs[Union All Input 1].Columns[ID_LocationLink]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="ID_LocationLink"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_LocationLink]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Dim Location\Union All.Outputs[Union All Output 1].Columns[ID_LocationLink]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Dim Location\Union All.Inputs[Union All Input 1].Columns[ID_Project]"
-                      cachedDataType="wstr"
-                      cachedLength="87"
-                      cachedName="ID_Project"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Project]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Dim Location\Union All.Outputs[Union All Output 1].Columns[ID_Project]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Dim Location\Union All.Inputs[Union All Input 1].Columns[Created_By]"
-                      cachedDataType="wstr"
-                      cachedLength="41"
-                      cachedName="Created_By"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Created_By]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Dim Location\Union All.Outputs[Union All Output 1].Columns[Created_By]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Dim Location\Union All.Inputs[Union All Input 1].Columns[Created_Date]"
-                      cachedDataType="wstr"
-                      cachedLength="27"
-                      cachedName="Created_Date"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Created_Date]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Dim Location\Union All.Outputs[Union All Output 1].Columns[Created_Date]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Dim Location\Union All.Inputs[Union All Input 1].Columns[id_constant]"
-                      cachedDataType="numeric"
-                      cachedName="id_constant"
-                      cachedPrecision="2"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[id_constant]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Dim Location\Union All.Outputs[Union All Output 1].Columns[id_constant]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Dim Location\Union All.Inputs[Union All Input 1].Columns[Loc_Electorate]"
-                      cachedDataType="wstr"
-                      cachedLength="36"
-                      cachedName="Loc_Electorate"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Loc_Electorate]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Dim Location\Union All.Outputs[Union All Output 1].Columns[Loc_Electorate]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Dim Location\Union All.Inputs[Union All Input 1].Columns[Loc_Postcode]"
-                      cachedDataType="wstr"
-                      cachedLength="12"
-                      cachedName="Loc_Postcode"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Loc_Postcode]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Dim Location\Union All.Outputs[Union All Output 1].Columns[Loc_Postcode]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Dim Location\Union All.Inputs[Union All Input 1].Columns[Loc_State]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="Loc_State"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Loc_State]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Dim Location\Union All.Outputs[Union All Output 1].Columns[Loc_State]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Dim Location\Union All.Inputs[Union All Input 1].Columns[Modified_By]"
-                      cachedDataType="wstr"
-                      cachedLength="36"
-                      cachedName="Modified_By"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Modified_By]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Dim Location\Union All.Outputs[Union All Output 1].Columns[Modified_By]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Dim Location\Union All.Inputs[Union All Input 1].Columns[Modified_Date]"
-                      cachedDataType="wstr"
-                      cachedLength="27"
-                      cachedName="Modified_Date"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Modified_Date]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Dim Location\Union All.Outputs[Union All Output 1].Columns[Modified_Date]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Dim Location\Union All.Inputs[Union All Input 1].Columns[Percent_of_Project_Amt]"
-                      cachedDataType="numeric"
-                      cachedName="Percent_of_Project_Amt"
-                      cachedPrecision="5"
-                      cachedScale="2"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Percent_of_Project_Amt]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Dim Location\Union All.Outputs[Union All Output 1].Columns[Percent_of_Project_Amt]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Dim Location\Union All.Inputs[Union All Input 1].Columns[Percent_of_Project_tCO2_savings]"
-                      cachedDataType="numeric"
-                      cachedName="Percent_of_Project_tCO2_savings"
-                      cachedPrecision="5"
-                      cachedScale="2"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Percent_of_Project_tCO2_savings]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Dim Location\Union All.Outputs[Union All Output 1].Columns[Percent_of_Project_tCO2_savings]}</property>
-                      </properties>
-                    </inputColumn>
-                    <inputColumn
-                      refId="Package\Dim Location\Union All.Inputs[Union All Input 1].Columns[zzzid_organisation]"
-                      cachedDataType="wstr"
-                      cachedLength="150"
-                      cachedName="zzzid_organisation"
-                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[zzzid_organisation]">
-                      <properties>
-                        <property
-                          containsID="true"
-                          dataType="System.Int32"
-                          description="Output column lineage ID"
-                          name="OutputColumnLineageID">#{Package\Dim Location\Union All.Outputs[Union All Output 1].Columns[zzzid_organisation]}</property>
-                      </properties>
-                    </inputColumn>
-                  </inputColumns>
-                  <externalMetadataColumns />
-                </input>
                 <input
                   refId="Package\Dim Location\Union All.Inputs[Union All Input 2]"
                   hasSideEffects="true"
@@ -18502,6 +18934,563 @@ FROM     core.StgBaseFact_view</property>
                 </output>
               </outputs>
             </component>
+            <component
+              refId="Package\Dim Location\Union All 1"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All 1"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Dim Location\Union All 1.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 1].Columns[ID_Location]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ID_Location"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Location]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_Location]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 1].Columns[ID_LocationLink]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ID_LocationLink"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_LocationLink]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_LocationLink]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 1].Columns[ID_Project]"
+                      cachedDataType="wstr"
+                      cachedLength="87"
+                      cachedName="ID_Project"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Project]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_Project]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 1].Columns[Created_By]"
+                      cachedDataType="wstr"
+                      cachedLength="41"
+                      cachedName="Created_By"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Created_By]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Created_By]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 1].Columns[Created_Date]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="Created_Date"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Created_Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Created_Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 1].Columns[id_constant]"
+                      cachedDataType="numeric"
+                      cachedName="id_constant"
+                      cachedPrecision="2"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[id_constant]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[id_constant]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 1].Columns[Loc_Electorate]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="Loc_Electorate"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Loc_Electorate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Loc_Electorate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 1].Columns[Loc_Postcode]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="Loc_Postcode"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Loc_Postcode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Loc_Postcode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 1].Columns[Loc_State]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Loc_State"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Loc_State]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Loc_State]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 1].Columns[Modified_By]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="Modified_By"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Modified_By]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Modified_By]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 1].Columns[Modified_Date]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="Modified_Date"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Modified_Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Modified_Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 1].Columns[Percent_of_Project_Amt]"
+                      cachedDataType="numeric"
+                      cachedName="Percent_of_Project_Amt"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Percent_of_Project_Amt]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Percent_of_Project_Amt]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 1].Columns[Percent_of_Project_tCO2_savings]"
+                      cachedDataType="numeric"
+                      cachedName="Percent_of_Project_tCO2_savings"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Percent_of_Project_tCO2_savings]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Percent_of_Project_tCO2_savings]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 1].Columns[zzzid_organisation]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="zzzid_organisation"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[zzzid_organisation]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[zzzid_organisation]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 1].Columns[ID_Technology]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="ID_Technology"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Technology]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_Technology]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Dim Location\Union All 1.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 2].Columns[ID_Location]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ID_Location"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Location]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_Location]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 2].Columns[ID_LocationLink]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="ID_LocationLink"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_LocationLink]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_LocationLink]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 2].Columns[ID_Project]"
+                      cachedDataType="wstr"
+                      cachedLength="87"
+                      cachedName="ID_Project"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Project]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_Project]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 2].Columns[Created_By]"
+                      cachedDataType="wstr"
+                      cachedLength="41"
+                      cachedName="Created_By"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Created_By]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Created_By]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 2].Columns[Created_Date]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="Created_Date"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Created_Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Created_Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 2].Columns[id_constant]"
+                      cachedDataType="numeric"
+                      cachedName="id_constant"
+                      cachedPrecision="2"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[id_constant]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[id_constant]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 2].Columns[Loc_Electorate]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="Loc_Electorate"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Loc_Electorate]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Loc_Electorate]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 2].Columns[Loc_Postcode]"
+                      cachedDataType="wstr"
+                      cachedLength="12"
+                      cachedName="Loc_Postcode"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Loc_Postcode]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Loc_Postcode]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 2].Columns[Loc_State]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Loc_State"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Loc_State]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Loc_State]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 2].Columns[Modified_By]"
+                      cachedDataType="wstr"
+                      cachedLength="36"
+                      cachedName="Modified_By"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Modified_By]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Modified_By]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 2].Columns[Modified_Date]"
+                      cachedDataType="wstr"
+                      cachedLength="27"
+                      cachedName="Modified_Date"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Modified_Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Modified_Date]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 2].Columns[Percent_of_Project_Amt]"
+                      cachedDataType="numeric"
+                      cachedName="Percent_of_Project_Amt"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Percent_of_Project_Amt]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Percent_of_Project_Amt]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 2].Columns[Percent_of_Project_tCO2_savings]"
+                      cachedDataType="numeric"
+                      cachedName="Percent_of_Project_tCO2_savings"
+                      cachedPrecision="5"
+                      cachedScale="2"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Percent_of_Project_tCO2_savings]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Percent_of_Project_tCO2_savings]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 2].Columns[zzzid_organisation]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="zzzid_organisation"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[zzzid_organisation]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[zzzid_organisation]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dim Location\Union All 1.Inputs[Union All Input 2].Columns[ID_Technology]"
+                      cachedDataType="wstr"
+                      cachedLength="6"
+                      cachedName="ID_Technology"
+                      lineageId="Package\Dim Location\LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Technology]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_Technology]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Dim Location\Union All 1.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dim Location\Union All 1.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_Location]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_Location]"
+                      name="ID_Location" />
+                    <outputColumn
+                      refId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_LocationLink]"
+                      dataType="wstr"
+                      length="50"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_LocationLink]"
+                      name="ID_LocationLink" />
+                    <outputColumn
+                      refId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_Project]"
+                      dataType="wstr"
+                      length="87"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_Project]"
+                      name="ID_Project" />
+                    <outputColumn
+                      refId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Created_By]"
+                      dataType="wstr"
+                      length="41"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Created_By]"
+                      name="Created_By" />
+                    <outputColumn
+                      refId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Created_Date]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Created_Date]"
+                      name="Created_Date" />
+                    <outputColumn
+                      refId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[id_constant]"
+                      dataType="numeric"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[id_constant]"
+                      name="id_constant"
+                      precision="2" />
+                    <outputColumn
+                      refId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Loc_Electorate]"
+                      dataType="wstr"
+                      length="36"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Loc_Electorate]"
+                      name="Loc_Electorate" />
+                    <outputColumn
+                      refId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Loc_Postcode]"
+                      dataType="wstr"
+                      length="12"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Loc_Postcode]"
+                      name="Loc_Postcode" />
+                    <outputColumn
+                      refId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Loc_State]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Loc_State]"
+                      name="Loc_State" />
+                    <outputColumn
+                      refId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Modified_By]"
+                      dataType="wstr"
+                      length="36"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Modified_By]"
+                      name="Modified_By" />
+                    <outputColumn
+                      refId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Modified_Date]"
+                      dataType="wstr"
+                      length="27"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Modified_Date]"
+                      name="Modified_Date" />
+                    <outputColumn
+                      refId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Percent_of_Project_Amt]"
+                      dataType="numeric"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Percent_of_Project_Amt]"
+                      name="Percent_of_Project_Amt"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Percent_of_Project_tCO2_savings]"
+                      dataType="numeric"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[Percent_of_Project_tCO2_savings]"
+                      name="Percent_of_Project_tCO2_savings"
+                      precision="5"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[zzzid_organisation]"
+                      dataType="wstr"
+                      length="150"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[zzzid_organisation]"
+                      name="zzzid_organisation" />
+                    <outputColumn
+                      refId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_Technology]"
+                      dataType="wstr"
+                      length="6"
+                      lineageId="Package\Dim Location\Union All 1.Outputs[Union All Output 1].Columns[ID_Technology]"
+                      name="ID_Technology" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
           </components>
           <paths>
             <path
@@ -18520,18 +19509,28 @@ FROM     core.StgBaseFact_view</property>
               name="Derived Column Output"
               startId="Package\Dim Location\Derived Column 1.Outputs[Derived Column Output]" />
             <path
+              refId="Package\Dim Location.Paths[Derived Column Output2]"
+              endId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Dim Location\Derived Column 2.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Dim Location.Paths[Derived Column Output3]"
+              endId="Package\Dim Location\Insert Destination 1.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Dim Location\Derived Column 3.Outputs[Derived Column Output]" />
+            <path
               refId="Package\Dim Location.Paths[Historical Attribute Inserts Output]"
-              endId="Package\Dim Location\Derived Column.Inputs[Derived Column Input]"
+              endId="Package\Dim Location\Derived Column 2.Inputs[Derived Column Input]"
               name="Historical Attribute Inserts Output"
               startId="Package\Dim Location\Location_Dimension.Outputs[Historical Attribute Inserts Output]" />
             <path
               refId="Package\Dim Location.Paths[Inferred Member Updates Output]"
-              endId="Package\Dim Location\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              endId="Package\Dim Location\OLE DB Command 2.Inputs[OLE DB Command Input]"
               name="Inferred Member Updates Output"
               startId="Package\Dim Location\Location_Dimension.Outputs[Inferred Member Updates Output]" />
             <path
               refId="Package\Dim Location.Paths[New Output]"
-              endId="Package\Dim Location\Union All.Inputs[Union All Input 1]"
+              endId="Package\Dim Location\Union All 1.Inputs[Union All Input 1]"
               name="New Output"
               startId="Package\Dim Location\Location_Dimension.Outputs[New Output]" />
             <path
@@ -18540,10 +19539,20 @@ FROM     core.StgBaseFact_view</property>
               name="OLE DB Command Output"
               startId="Package\Dim Location\OLE DB Command.Outputs[OLE DB Command Output]" />
             <path
+              refId="Package\Dim Location.Paths[OLE DB Command Output1]"
+              endId="Package\Dim Location\Union All 1.Inputs[Union All Input 2]"
+              name="OLE DB Command Output"
+              startId="Package\Dim Location\OLE DB Command 1.Outputs[OLE DB Command Output]" />
+            <path
               refId="Package\Dim Location.Paths[Union All Output 1]"
               endId="Package\Dim Location\Derived Column 1.Inputs[Derived Column Input]"
               name="Union All Output 1"
               startId="Package\Dim Location\Union All.Outputs[Union All Output 1]" />
+            <path
+              refId="Package\Dim Location.Paths[Union All Output 11]"
+              endId="Package\Dim Location\Derived Column 3.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Dim Location\Union All 1.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -50593,7 +51602,7 @@ FROM     core.StgBaseFact_view</property>
     design-time-name="Package">
     <LayoutInfo>
       <GraphLayout
-        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssge="clr-namespace:Microsoft.SqlServer.Graph.Extended;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:av="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
         <NodeLayout
           Size="112,42.6666666666667"
           Id="Package\Base Fact"
@@ -50655,7 +51664,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="287.731934731935,261.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,42.5"
               Start="0,0"
               End="0,35">
@@ -50677,7 +51686,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="287.065268065269,346.666666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,30.0000000000007"
               Start="0,0"
               End="0,22.5000000000007">
@@ -50699,7 +51708,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="286.666666666667,62.6666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,55.9999999999997"
               Start="0,0"
               End="0,48.4999999999997">
@@ -50721,7 +51730,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="286.365967365968,161.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,58.1666666666674"
               Start="0,0"
               End="0,50.6666666666674">
@@ -50743,7 +51752,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="286.583331812173,1124.83333333334">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,38.4444366958376"
               Start="0,0"
               End="0,30.9444366958376">
@@ -50765,7 +51774,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="290.731934731935,419.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,47.3333333333327"
               Start="0,0"
               End="0,39.8333333333327">
@@ -50787,7 +51796,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="296.065268065268,509.333333333332">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,33.5000000000007"
               Start="0,0"
               End="0,26.0000000000007">
@@ -50809,7 +51818,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="296.032634032634,585.499999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,57.1666666666672"
               Start="0,0"
               End="0,49.6666666666672">
@@ -50831,7 +51840,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="289.282634032634,1035.53846153846">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,46.6282051282026"
               Start="0,0"
               End="0,39.1282051282026">
@@ -50853,7 +51862,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="289.565268065268,953.999999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,38.8717948717981"
               Start="0,0"
               End="0,31.3717948717981">
@@ -50875,7 +51884,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="295.5,685.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,44.6666666666667"
               Start="0,0"
               End="0,37.1666666666667">
@@ -50897,7 +51906,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="296.166666666667,772.666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,41.3333333333331"
               Start="0,0"
               End="0,33.8333333333331">
@@ -50919,7 +51928,7 @@ FROM     core.StgBaseFact_view</property>
           TopLeft="292.365967365968,856.666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
-              StartConnector="{x:Null}"
+              StartConnector="{assembly:Null}"
               EndConnector="0,54.6666666666662"
               Start="0,0"
               End="0,47.1666666666662">
@@ -51877,6 +52886,14 @@ FROM     core.StgBaseFact_view</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Base Fact\ADO NET Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Dim Business Platform">
     <LayoutInfo>
@@ -52665,258 +53682,392 @@ FROM     core.StgBaseFact_view</property>
     design-time-name="Package\Dim Location">
     <LayoutInfo>
       <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="142.666666666667,42.6666666666667"
           Id="Package\Dim Location\OLE DB Command"
-          TopLeft="10.1666666666667,340.166666666666" />
-        <NodeLayout
-          Size="148,42.6666666666667"
-          Id="Package\Dim Location\OLE DB Command 1"
-          TopLeft="415.833333333333,221.5" />
+          TopLeft="535.166666666667,313.5" />
         <NodeLayout
           Size="184,42.6666666666667"
           Id="Package\Dim Location\LOC_Location Table on Staging"
-          TopLeft="205.5,6.83333333333326" />
+          TopLeft="150.5,5.49999999999993" />
         <NodeLayout
           Size="138,42.6666666666667"
           Id="Package\Dim Location\Derived Column 1"
-          TopLeft="243.166666666667,474.166666666667" />
+          TopLeft="537.5,518.833333333333" />
         <NodeLayout
           Size="132,42.6666666666667"
           Id="Package\Dim Location\Derived Column"
-          TopLeft="15.8333333333334,210.833333333333" />
+          TopLeft="540.5,210.833333333333" />
         <NodeLayout
           Size="109.333333333334,42.6666666666667"
           Id="Package\Dim Location\Union All"
-          TopLeft="251.5,336.166666666667" />
+          TopLeft="551.833333333333,416.166666666667" />
         <NodeLayout
           Size="137.333333333334,42.6666666666667"
           Id="Package\Dim Location\Insert Destination"
-          TopLeft="244.166666666667,598.833333333333" />
+          TopLeft="537.833333333333,621.5" />
         <NodeLayout
           Size="146.666666666667,42.6666666666667"
           Id="Package\Dim Location\Location_Dimension"
-          TopLeft="227.5,106.166666666666" />
+          TopLeft="169.166666666667,108.166666666666" />
         <EdgeLayout
           Id="Package\Dim Location.Paths[Union All Output 1]"
-          TopLeft="309.166666666667,378.833333333333">
+          TopLeft="606.5,458.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,95.3333333333333"
+              EndConnector="0,60"
               Start="0,0"
-              End="0,87.8333333333333">
+              End="0,52.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,87.8333333333333" />
+                    End="0,52.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim Location.Paths[OLE DB Command Output]"
-          TopLeft="152.833333333333,359.5">
+          TopLeft="606.5,356.166666666667">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="98.6666666666667,0"
+              EndConnector="0,60.0000000000001"
               Start="0,0"
-              End="91.1666666666667,0">
+              End="0,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="91.1666666666667,0" />
+                    End="0,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim Location.Paths[New Output]"
-          TopLeft="303.5,148.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="0,187.333333333333"
-              Start="0,0"
-              End="0,179.833333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,179.833333333333" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-27.09138671875,84.1998697916667,54.1827734375,11.43359375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim Location.Paths[Inferred Member Updates Output]"
-          TopLeft="335.5,148.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="154.333333333333,72.6666666666666"
-              Start="0,0"
-              End="154.333333333333,65.1666666666666">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,21.0873015873016" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,21.0873015873016"
-                    Point2="0,25.0873015873016"
-                    Point3="4,25.0873015873016" />
-                  <mssgle:LineSegment
-                    End="150.333333333333,25.0873015873016" />
-                  <mssgle:CubicBezierSegment
-                    Point1="150.333333333333,25.0873015873016"
-                    Point2="154.333333333333,25.0873015873016"
-                    Point3="154.333333333333,29.0873015873016" />
-                  <mssgle:LineSegment
-                    End="154.333333333333,65.1666666666666" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="2.76367838541663,30.0873015873016,148.8059765625,11.658203125"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dim Location.Paths[Historical Attribute Inserts Output]"
-          TopLeft="266.166666666667,148.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{x:Null}"
-              EndConnector="-184.333333333333,61.9999999999999"
-              Start="0,0"
-              End="-184.333333333333,54.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,17.4047619047619" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,17.4047619047619"
-                    Point2="0,21.4047619047619"
-                    Point3="-4,21.4047619047619" />
-                  <mssgle:LineSegment
-                    End="-180.333333333333,21.4047619047619" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-180.333333333333,21.4047619047619"
-                    Point2="-184.333333333333,21.4047619047619"
-                    Point3="-184.333333333333,25.4047619047619" />
-                  <mssgle:LineSegment
-                    End="-184.333333333333,54.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-167.223053385417,26.4047619047619,150.1127734375,11.609375"
+              BoundingBox="-8,18.25,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim Location.Paths[Derived Column Output1]"
-          TopLeft="312.5,516.833333333333">
+          TopLeft="606.5,561.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,82.0000000000002"
+              EndConnector="0,60.0000000000001"
               Start="0,0"
-              End="0,74.5000000000002">
+              End="0,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,74.5000000000002" />
+                    End="0,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim Location.Paths[Derived Column Output]"
-          TopLeft="81.6666666666667,253.5">
+          TopLeft="606.5,253.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,86.6666666666663"
+              EndConnector="0,60.0000000000001"
               Start="0,0"
-              End="0,79.1666666666663">
+              End="0,52.5000000000001">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,79.1666666666663" />
+                    End="0,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-8,18.2500000000001,16,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Dim Location.Paths[ADO NET Source Output]"
-          TopLeft="299.166666666667,49.4999999999999">
+          TopLeft="242.5,48.1666666666666">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{x:Null}"
-              EndConnector="0,56.6666666666665"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="0,49.1666666666665">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,49.1666666666665" />
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Dim Location\Derived Column 2"
+          TopLeft="17.5,210.833333333333" />
+        <EdgeLayout
+          Id="Package\Dim Location.Paths[Historical Attribute Inserts Output]"
+          TopLeft="207.833333333333,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="-108.333333333333,60.0000000000001"
+              Start="0,0"
+              End="-108.333333333333,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.7142857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.7142857142857"
+                    Point2="0,20.7142857142857"
+                    Point3="-4,20.7142857142857" />
+                  <mssgle:LineSegment
+                    End="-104.333333333333,20.7142857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-104.333333333333,20.7142857142857"
+                    Point2="-108.333333333333,20.7142857142857"
+                    Point3="-108.333333333333,24.7142857142857" />
+                  <mssgle:LineSegment
+                    End="-108.333333333333,52.5000000000001" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
+              BoundingBox="-129.223053385417,25.7142857142857,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\Dim Location\OLE DB Command 1"
+          TopLeft="5.5,313.5" />
+        <EdgeLayout
+          Id="Package\Dim Location.Paths[Derived Column Output2]"
+          TopLeft="96.5,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="130.666666666667,42.6666666666667"
+          Id="Package\Dim Location\Union All 1"
+          TopLeft="177.166666666667,416.166666666667" />
+        <EdgeLayout
+          Id="Package\Dim Location.Paths[New Output]"
+          TopLeft="242.5,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="20.4444444444445,265.333333333333"
+              Start="0,0"
+              End="20.4444444444445,257.833333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,153.274193548387" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,153.274193548387"
+                    Point2="0,157.274193548387"
+                    Point3="4,157.274193548387" />
+                  <mssgle:LineSegment
+                    End="16.4444444444445,157.274193548387" />
+                  <mssgle:CubicBezierSegment
+                    Point1="16.4444444444445,157.274193548387"
+                    Point2="20.4444444444445,157.274193548387"
+                    Point3="20.4444444444445,161.274193548387" />
+                  <mssgle:LineSegment
+                    End="20.4444444444445,257.833333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-16.8691644965278,162.274193548387,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dim Location.Paths[OLE DB Command Output1]"
+          TopLeft="93.5,356.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="128.555555555556,59.9999999999999"
+              Start="0,0"
+              End="128.555555555556,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.5645161290322" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.5645161290322"
+                    Point2="0,35.5645161290322"
+                    Point3="4,35.5645161290322" />
+                  <mssgle:LineSegment
+                    End="124.555555555556,35.5645161290322" />
+                  <mssgle:CubicBezierSegment
+                    Point1="124.555555555556,35.5645161290322"
+                    Point2="128.555555555556,35.5645161290322"
+                    Point3="128.555555555556,39.5645161290322" />
+                  <mssgle:LineSegment
+                    End="128.555555555556,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Dim Location\Derived Column 3"
+          TopLeft="160.5,518.833333333333" />
+        <EdgeLayout
+          Id="Package\Dim Location.Paths[Union All Output 11]"
+          TopLeft="242.5,458.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="173.333333333334,42.6666666666667"
+          Id="Package\Dim Location\Insert Destination 1"
+          TopLeft="155.833333333333,621.5" />
+        <EdgeLayout
+          Id="Package\Dim Location.Paths[Derived Column Output3]"
+          TopLeft="242.5,561.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\Dim Location\OLE DB Command 2"
+          TopLeft="303.5,210.833333333333" />
+        <EdgeLayout
+          Id="Package\Dim Location.Paths[Inferred Member Updates Output]"
+          TopLeft="277.166666666667,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{x:Null}"
+              EndConnector="114.333333333333,59.9999999999999"
+              Start="0,0"
+              End="114.333333333333,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.7142857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.7142857142857"
+                    Point2="0,20.7142857142857"
+                    Point3="4,20.7142857142857" />
+                  <mssgle:LineSegment
+                    End="110.333333333333,20.7142857142857" />
+                  <mssgle:CubicBezierSegment
+                    Point1="110.333333333333,20.7142857142857"
+                    Point2="114.333333333333,20.7142857142857"
+                    Point3="114.333333333333,24.7142857142857" />
+                  <mssgle:LineSegment
+                    End="114.333333333333,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.2363216145833,25.7142857142857,148.8059765625,11.658203125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim Location\LOC_Location Table on Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Dim Location\Insert Destination">
     <Properties>
@@ -52927,6 +54078,131 @@ FROM     core.StgBaseFact_view</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dim Location\Location_Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[core].[Location_Dimension]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Created_By]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Created_By&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Created_Date]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Created_Date&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[id_constant]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;id_constant&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Location]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ID_Location&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_LocationLink]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ID_LocationLink&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Project]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;id_project&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[ID_Technology]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;ID_Technology&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Loc_Electorate]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Loc_Electorate&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Loc_Postcode]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Loc_Postcode&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Loc_State]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Loc_State&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Modified_By]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Modified_By&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Modified_Date]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Modified_Date&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Percent_of_Project_Amt]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Percent_of_Project_Amt&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[Percent_of_Project_tCO2_savings]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Percent_of_Project_tCO2_savings&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;LOC_Location Table on Staging.Outputs[ADO NET Source Output].Columns[zzzid_organisation]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;zzzid_organisation&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 2&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 3&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 2&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;Update_from_TS&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;Update_to_TS&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -56057,13 +57333,5 @@ FROM     core.StgBaseFact_view</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Base Fact\ADO NET Source">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
 </Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>

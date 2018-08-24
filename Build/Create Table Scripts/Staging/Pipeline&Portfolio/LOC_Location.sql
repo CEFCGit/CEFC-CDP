@@ -2,6 +2,7 @@ CREATE TABLE [staging].[LOC_Location](
 	[ID_Location] [nvarchar](50) NULL,
 	[ID_LocationLink] [nvarchar](50) NULL,
 	[ID_Project] [nvarchar](87) NULL,
+	[ID_Technology] [nvarchar](6) NULL,
 	[Created_By] [nvarchar](41) NULL,
 	[Created_Date] [nvarchar](27) NULL,
 	[id_constant] [numeric](2, 0) NULL,
