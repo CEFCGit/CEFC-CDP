@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="STGCDPAggDimFactLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="75"
-  DTS:VersionGUID="{DD6CDE0C-C9BD-45F5-A89C-94D5BD9E0EA3}">
+  DTS:VersionBuild="76"
+  DTS:VersionGUID="{857CC7DE-CA8D-44F7-AB4D-EBD762B0D5F1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -9851,7 +9851,7 @@ where a.[Contract] is not null</property>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="UPDATE &#xA;    core.Assets_Dimension&#xA;SET &#xA;     Status= 'Repaid' &#xA;from core.Aggregation_Fact af&#xA;join core.Assets_Dimension ad&#xA;  on af.ID_Project = ad.ID_Project&#xA;  and af.Contract_Number = ad.Contract_Number&#xA;  and af.Asset_Number = ad.Asset_Number&#xA;where Maturity_Date &lt;&gt; 'Not Available'&#xA;and convert(datetime,Maturity_Date) &lt; convert(datetime,af.File_Date)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="UPDATE &#xA;    core.Assets_Dimension&#xA;SET &#xA;     Status= 'Repaid' &#xA;from core.Aggregation_Fact af&#xA;join core.Assets_Dimension ad&#xA;  on af.ID_Project = ad.ID_Project&#xA;  and af.Contract_Number = ad.Contract_Number&#xA;  and case when af.Asset_Number = 'Not Available' then ad.Asset_Number end = ad.Asset_Number&#xA;where Maturity_Date &lt;&gt; 'Not Available'&#xA;and convert(datetime,Maturity_Date) &lt; convert(datetime,af.File_Date)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>

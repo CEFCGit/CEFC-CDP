@@ -125,7 +125,16 @@ as
 			  ,t.Description as Project_Description
 			  ,t.rpt_Project_Description
 			  ,t.Project_Borrower_Entity
-			  ,t.ID_Project_TNumber  
+			  ,t.ID_Project_TNumber
+			  ,b.state as postcode_state
+			  ,b.suburb
+			  ,b.dc
+			  ,b.type as postcode_type
+			  ,b.latitude
+			  ,b.longitude
+			  ,c.Electoral_division as Electorate
+			  ,c.[Percent] as Electorate_perc
+			    
 		from core.Aggregation_Fact af
 		join (select  max(convert(datetime,af1.File_Date)) as Agg_FileDate
 				,af1.[ID_Project]   	    	  
@@ -137,13 +146,17 @@ as
 		left join [core].[Assets_Dimension] asd
 		 on af.ID_Project = asd.ID_Project
 		    and af.Contract_Number = asd.Contract_Number
-		    and af.Asset_Number = asd.Asset_Number
-		    and af.File_Date = asd.FileDate
+		    and case when af.Asset_Number = 'Not Available' then asd.Asset_Number end = asd.Asset_Number
+		    and convert(datetime,af.File_Date) = convert(datetime,asd.FileDate)
 		left join core.ANZSIC_Dimension ad
 		 on af.ID_Project = ad.ID_Project
 		    and af.ANZSIC_Code = ad.Code
 		left join temp t
-		 on af.ID_Project = t.ID_Project    
+		 on af.ID_Project = t.ID_Project
+		left join core.Post_Codes b
+		 on (case when substring(af.Postcode,1,1) = '0' then substring(af.Postcode,2,len(af.Postcode)-1) else af.Postcode end) = b.postcode
+		left join core.Post_Codes_Electorate c
+		on b.postcode = c.Postcode    
 		     
 	  
 	
