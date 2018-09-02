@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="STGCDPFinFactRevLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="4"
-  DTS:VersionGUID="{F4100F87-747A-41CA-B6CB-6D79180CC022}">
+  DTS:VersionBuild="5"
+  DTS:VersionGUID="{6C179BF3-A737-4A77-805C-C7A5B76758A8}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -105,11 +105,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Revenue\Revenue_Fact"
+              refId="Package\Revenue\Revenue"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
               description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
-              name="Revenue_Fact"
+              name="Revenue"
               usesDispositions="true"
               version="2">
               <properties>
@@ -140,7 +140,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Revenue\Revenue_Fact.Connections[IDbConnection]"
+                  refId="Package\Revenue\Revenue.Connections[IDbConnection]"
                   connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
                   connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                   description="Managed connection manager"
@@ -148,261 +148,373 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input]"
+                  refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input]"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="ADO NET Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].Columns[Account_Number]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[Account_Number]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Account_Number"
-                      externalMetadataColumnId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Account_Number]"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Account_Number]"
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[Account_Number]" />
                     <inputColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].Columns[Variance]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[Variance]"
                       cachedDataType="numeric"
                       cachedName="Variance"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Variance]"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Variance]"
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[Variance]" />
                     <inputColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].Columns[iMart#]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[iMart#]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="iMart#"
-                      externalMetadataColumnId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[iMart_TNum]"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[iMart_TNum]"
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[iMart#]" />
                     <inputColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].Columns[ID_Project_TNum]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[ID_Project_TNum]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="ID_Project_TNum"
-                      externalMetadataColumnId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[ID_Project_TNumber]"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[ID_Project_TNumber]"
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[ID_Project_TNum]" />
                     <inputColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].Columns[Inv.Type]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[Inv.Type]"
                       cachedDataType="wstr"
                       cachedLength="3"
                       cachedName="Inv.Type"
-                      externalMetadataColumnId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Investment_Type]"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Investment_Type]"
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[Inv.Type]" />
                     <inputColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].Columns[13 - Dividend/Trust Distributions]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[13 - Dividend/Trust Distributions]"
                       cachedDataType="numeric"
                       cachedName="13 - Dividend/Trust Distributions"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Dividend/Trust_Distributions]"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Dividend/Trust_Distributions]"
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[13 - Dividend/Trust Distributions]" />
                     <inputColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].Columns[15 - Loan Interest]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[15 - Loan Interest]"
                       cachedDataType="numeric"
                       cachedName="15 - Loan Interest"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Loan_Interest]"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Loan_Interest]"
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[15 - Loan Interest]" />
                     <inputColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].Columns[16 - Committment Fees]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[16 - Committment Fees]"
                       cachedDataType="numeric"
                       cachedName="16 - Committment Fees"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Committment_Fees]"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Committment_Fees]"
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[16 - Committment Fees]" />
                     <inputColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].Columns[17 - Establishment Fees]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[17 - Establishment Fees]"
                       cachedDataType="numeric"
                       cachedName="17 - Establishment Fees"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Establishment_Fees]"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Establishment_Fees]"
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[17 - Establishment Fees]" />
                     <inputColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].Columns[18 - Concession Unwind]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[18 - Concession Unwind]"
                       cachedDataType="numeric"
                       cachedName="18 - Concession Unwind"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Concession_Unwind]"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Concession_Unwind]"
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[18 - Concession Unwind]" />
                     <inputColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].Columns[19 - SFA Interest Received]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[19 - SFA Interest Received]"
                       cachedDataType="numeric"
                       cachedName="19 - SFA Interest Received"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[SFA_Interest_Received]"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[SFA_Interest_Received]"
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[19 - SFA Interest Received]" />
                     <inputColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].Columns[20 - Bank Interest Income]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[20 - Bank Interest Income]"
                       cachedDataType="numeric"
                       cachedName="20 - Bank Interest Income"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Bank_Interest_Income]"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Bank_Interest_Income]"
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[20 - Bank Interest Income]" />
                     <inputColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].Columns[YTD Total TY]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[21 - Profit on sale of asset]"
+                      cachedDataType="numeric"
+                      cachedName="21 - Profit on sale of asset"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Profit_On_Sale_Of_Asset]"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[21 - Profit on sale of asset]" />
+                    <inputColumn
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[71 - Fair value gains - Bonds]"
+                      cachedDataType="numeric"
+                      cachedName="71 - Fair value gains - Bonds"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Fair_Value_Gains_Bonds]"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[71 - Fair value gains - Bonds]" />
+                    <inputColumn
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[72 - Fair value gains – Equity]"
+                      cachedDataType="numeric"
+                      cachedName="72 - Fair value gains – Equity"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Fair_Value_Gains_Equity]"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[72 - Fair value gains – Equity]" />
+                    <inputColumn
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[73 - Fair value gains Loans and advances]"
+                      cachedDataType="numeric"
+                      cachedName="73 - Fair value gains Loans and advances"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Fair_Value_Gains_Loans/Advances]"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[73 - Fair value gains Loans and advances]" />
+                    <inputColumn
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[74 - Fair value losses - Bonds]"
+                      cachedDataType="numeric"
+                      cachedName="74 - Fair value losses - Bonds"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Fair_Value_Losses_Bonds]"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[74 - Fair value losses - Bonds]" />
+                    <inputColumn
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[75 - Fair value losses – Equity]"
+                      cachedDataType="numeric"
+                      cachedName="75 - Fair value losses – Equity"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Fair_Value_Losses_Equity]"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[75 - Fair value losses – Equity]" />
+                    <inputColumn
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[76 - Fair value losses Loans and advances]"
+                      cachedDataType="numeric"
+                      cachedName="76 - Fair value losses Loans and advances"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Fair_Value_Losses_Loans/Advances]"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[76 - Fair value losses Loans and advances]" />
+                    <inputColumn
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[77 - Share of Profit/(Loss) in Assoc.&amp; JVs]"
+                      cachedDataType="numeric"
+                      cachedName="77 - Share of Profit/(Loss) in Assoc.&amp; JVs"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Share_Of_Profit/(Loss)_Assoc/JVs]"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[77 - Share of Profit/(Loss) in Assoc.&amp; JVs]" />
+                    <inputColumn
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[YTD Total TY]"
                       cachedDataType="numeric"
                       cachedName="YTD Total TY"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[YTD_Total_TY]"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[YTD_Total_TY]"
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[YTD Total TY]" />
                     <inputColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].Columns[YTD Total LY]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[YTD Total LY]"
                       cachedDataType="numeric"
                       cachedName="YTD Total LY"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[YTD_Total_LY]"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[YTD_Total_LY]"
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[YTD Total LY]" />
                     <inputColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].Columns[70 - Initial Concessional Charge]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[70 - Initial Concessional Charge]"
                       cachedDataType="numeric"
                       cachedName="70 - Initial Concessional Charge"
                       cachedPrecision="15"
                       cachedScale="2"
-                      externalMetadataColumnId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Initial_Concessional_Charge]"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Initial_Concessional_Charge]"
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[70 - Initial Concessional Charge]" />
                     <inputColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].Columns[To Period]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[To Period]"
                       cachedDataType="wstr"
                       cachedLength="3"
                       cachedName="To Period"
-                      externalMetadataColumnId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[To_Period]"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[To_Period]"
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[To Period]" />
                     <inputColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].Columns[To Date]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[To Date]"
                       cachedDataType="wstr"
                       cachedLength="20"
                       cachedName="To Date"
-                      externalMetadataColumnId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[To_Date]"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[To_Date]"
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[To Date]" />
                     <inputColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].Columns[Update_F_TS]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].Columns[Update_F_TS]"
                       cachedDataType="date"
                       cachedName="Update_F_TS"
-                      externalMetadataColumnId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Update_from_TS]"
+                      externalMetadataColumnId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Update_from_TS]"
                       lineageId="Package\Revenue\Derived Column.Outputs[Derived Column Output].Columns[Update_F_TS]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Account_Number]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Account_Number]"
                       dataType="wstr"
                       length="5"
                       name="Account_Number" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[iMart_TNum]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[iMart_TNum]"
                       dataType="wstr"
                       length="10"
                       name="iMart_TNum" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[ID_Project_TNumber]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[ID_Project_TNumber]"
                       dataType="wstr"
                       length="20"
                       name="ID_Project_TNumber" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Investment_Type]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Investment_Type]"
                       dataType="numeric"
                       name="Investment_Type"
                       precision="3" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Dividend/Trust_Distributions]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Dividend/Trust_Distributions]"
                       dataType="numeric"
                       name="Dividend/Trust_Distributions"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Loan_Interest]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Loan_Interest]"
                       dataType="numeric"
                       name="Loan_Interest"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Committment_Fees]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Committment_Fees]"
                       dataType="numeric"
                       name="Committment_Fees"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Establishment_Fees]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Establishment_Fees]"
                       dataType="numeric"
                       name="Establishment_Fees"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Concession_Unwind]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Concession_Unwind]"
                       dataType="numeric"
                       name="Concession_Unwind"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[SFA_Interest_Received]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[SFA_Interest_Received]"
                       dataType="numeric"
                       name="SFA_Interest_Received"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Bank_Interest_Income]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Bank_Interest_Income]"
                       dataType="numeric"
                       name="Bank_Interest_Income"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[YTD_Total_TY]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Profit_On_Sale_Of_Asset]"
+                      dataType="numeric"
+                      name="Profit_On_Sale_Of_Asset"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Fair_Value_Gains_Bonds]"
+                      dataType="numeric"
+                      name="Fair_Value_Gains_Bonds"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Fair_Value_Gains_Equity]"
+                      dataType="numeric"
+                      name="Fair_Value_Gains_Equity"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Fair_Value_Gains_Loans/Advances]"
+                      dataType="numeric"
+                      name="Fair_Value_Gains_Loans/Advances"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Fair_Value_Losses_Bonds]"
+                      dataType="numeric"
+                      name="Fair_Value_Losses_Bonds"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Fair_Value_Losses_Equity]"
+                      dataType="numeric"
+                      name="Fair_Value_Losses_Equity"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Fair_Value_Losses_Loans/Advances]"
+                      dataType="numeric"
+                      name="Fair_Value_Losses_Loans/Advances"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Share_Of_Profit/(Loss)_Assoc/JVs]"
+                      dataType="numeric"
+                      name="Share_Of_Profit/(Loss)_Assoc/JVs"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[YTD_Total_TY]"
                       dataType="numeric"
                       name="YTD_Total_TY"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[YTD_Total_LY]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[YTD_Total_LY]"
                       dataType="numeric"
                       name="YTD_Total_LY"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Variance]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Variance]"
                       dataType="numeric"
                       name="Variance"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Initial_Concessional_Charge]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Initial_Concessional_Charge]"
                       dataType="numeric"
                       name="Initial_Concessional_Charge"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[To_Period]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[To_Period]"
                       dataType="wstr"
                       length="3"
                       name="To_Period" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[To_Date]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[To_Date]"
                       dataType="wstr"
                       length="20"
                       name="To_Date" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Updated_by]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Updated_by]"
                       dataType="wstr"
                       length="20"
                       name="Updated_by" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Update_from_TS]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Update_from_TS]"
                       dataType="dbTimeStamp"
                       name="Update_from_TS" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Update_to_TS]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Update_to_TS]"
                       dataType="dbTimeStamp"
                       name="Update_to_TS" />
                     <externalMetadataColumn
-                      refId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Update_Reason]"
+                      refId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input].ExternalColumns[Update_Reason]"
                       dataType="wstr"
                       length="20"
                       name="Update_Reason" />
@@ -411,22 +523,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Revenue\Revenue_Fact.Outputs[ADO NET Destination Error Output]"
+                  refId="Package\Revenue\Revenue.Outputs[ADO NET Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="ADO NET Destination Error Output"
-                  synchronousInputId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input]">
+                  synchronousInputId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Revenue\Revenue_Fact.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Revenue\Revenue.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Revenue\Revenue_Fact.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Revenue\Revenue.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Revenue\Revenue_Fact.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Revenue\Revenue.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Revenue\Revenue_Fact.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Revenue\Revenue.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -448,25 +560,11 @@
                   description="Specifies the SQL statement used by the component to extract data."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Deal #] as  Account_Number
-,case when (charindex('-',[iMart#])) &gt; 0 then substring([iMart#],1,(charindex('-',[iMart#])-1)) else [iMart#] end as ID_Project_TNum 
-,[iMart#]
-,[Inv.Type]
-,[13 - Dividend/Trust Distributions]
-,[15 - Loan Interest]
-,[16 - Committment Fees]
-,[17 - Establishment Fees]
-,[18 - Concession Unwind]
-,[19 - SFA Interest Received]
-,[20 - Bank Interest Income]
-,[YTD Total TY]
-,[YTD Total LY]
-,[Variance]
-,[70 - Initial Concessional Charge]
-,[To Period]
-,[To Date]    
-FROM [staging].[Revenue]
-where [Deal #] is not null</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT   [Deal #] AS Account_Number, CASE WHEN (charindex('-', [iMart#])) &gt; 0 THEN substring([iMart#], 1, (charindex('-', [iMart#]) - 1)) ELSE [iMart#] END AS ID_Project_TNum, iMart#, [Inv.Type], [13 - Dividend/Trust Distributions], [15 - Loan Interest], [16 - Committment Fees], [17 - Establishment Fees], [18 - Concession Unwind], 
+             [19 - SFA Interest Received], [20 - Bank Interest Income], [YTD Total TY], [YTD Total LY], Variance, [70 - Initial Concessional Charge], [To Period], [To Date], [21 - Profit on sale of asset], [71 - Fair value gains - Bonds], [72 - Fair value gains – Equity], [73 - Fair value gains Loans and advances], [74 - Fair value losses - Bonds], 
+             [75 - Fair value losses – Equity], [76 - Fair value losses Loans and advances], [77 - Share of Profit/(Loss) in Assoc.&amp; JVs]
+FROM     staging.Revenue
+WHERE   ([Deal #] IS NOT NULL)</property>
                 <property
                   dataType="System.Int32"
                   description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
@@ -684,6 +782,94 @@ where [Deal #] is not null</property>
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[To Date]"
                       name="To Date"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[21 - Profit on sale of asset]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\Staging.Outputs[ADO NET Source Output].ExternalColumns[21 - Profit on sale of asset]"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[21 - Profit on sale of asset]"
+                      name="21 - Profit on sale of asset"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[71 - Fair value gains - Bonds]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\Staging.Outputs[ADO NET Source Output].ExternalColumns[71 - Fair value gains - Bonds]"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[71 - Fair value gains - Bonds]"
+                      name="71 - Fair value gains - Bonds"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[72 - Fair value gains – Equity]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\Staging.Outputs[ADO NET Source Output].ExternalColumns[72 - Fair value gains – Equity]"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[72 - Fair value gains – Equity]"
+                      name="72 - Fair value gains – Equity"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[73 - Fair value gains Loans and advances]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\Staging.Outputs[ADO NET Source Output].ExternalColumns[73 - Fair value gains Loans and advances]"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[73 - Fair value gains Loans and advances]"
+                      name="73 - Fair value gains Loans and advances"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[74 - Fair value losses - Bonds]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\Staging.Outputs[ADO NET Source Output].ExternalColumns[74 - Fair value losses - Bonds]"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[74 - Fair value losses - Bonds]"
+                      name="74 - Fair value losses - Bonds"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[75 - Fair value losses – Equity]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\Staging.Outputs[ADO NET Source Output].ExternalColumns[75 - Fair value losses – Equity]"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[75 - Fair value losses – Equity]"
+                      name="75 - Fair value losses – Equity"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[76 - Fair value losses Loans and advances]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\Staging.Outputs[ADO NET Source Output].ExternalColumns[76 - Fair value losses Loans and advances]"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[76 - Fair value losses Loans and advances]"
+                      name="76 - Fair value losses Loans and advances"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[77 - Share of Profit/(Loss) in Assoc.&amp; JVs]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\Staging.Outputs[ADO NET Source Output].ExternalColumns[77 - Share of Profit/(Loss) in Assoc.&amp; JVs]"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Output].Columns[77 - Share of Profit/(Loss) in Assoc.&amp; JVs]"
+                      name="77 - Share of Profit/(Loss) in Assoc.&amp; JVs"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -783,6 +969,54 @@ where [Deal #] is not null</property>
                       dataType="wstr"
                       length="20"
                       name="To Date" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Output].ExternalColumns[21 - Profit on sale of asset]"
+                      dataType="numeric"
+                      name="21 - Profit on sale of asset"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Output].ExternalColumns[71 - Fair value gains - Bonds]"
+                      dataType="numeric"
+                      name="71 - Fair value gains - Bonds"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Output].ExternalColumns[72 - Fair value gains – Equity]"
+                      dataType="numeric"
+                      name="72 - Fair value gains – Equity"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Output].ExternalColumns[73 - Fair value gains Loans and advances]"
+                      dataType="numeric"
+                      name="73 - Fair value gains Loans and advances"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Output].ExternalColumns[74 - Fair value losses - Bonds]"
+                      dataType="numeric"
+                      name="74 - Fair value losses - Bonds"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Output].ExternalColumns[75 - Fair value losses – Equity]"
+                      dataType="numeric"
+                      name="75 - Fair value losses – Equity"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Output].ExternalColumns[76 - Fair value losses Loans and advances]"
+                      dataType="numeric"
+                      name="76 - Fair value losses Loans and advances"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Output].ExternalColumns[77 - Share of Profit/(Loss) in Assoc.&amp; JVs]"
+                      dataType="numeric"
+                      name="77 - Share of Profit/(Loss) in Assoc.&amp; JVs"
+                      precision="15"
+                      scale="2" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -904,6 +1138,62 @@ where [Deal #] is not null</property>
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[To Date]"
                       name="To Date" />
                     <outputColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[21 - Profit on sale of asset]"
+                      dataType="numeric"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[21 - Profit on sale of asset]"
+                      name="21 - Profit on sale of asset"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[71 - Fair value gains - Bonds]"
+                      dataType="numeric"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[71 - Fair value gains - Bonds]"
+                      name="71 - Fair value gains - Bonds"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[72 - Fair value gains – Equity]"
+                      dataType="numeric"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[72 - Fair value gains – Equity]"
+                      name="72 - Fair value gains – Equity"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[73 - Fair value gains Loans and advances]"
+                      dataType="numeric"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[73 - Fair value gains Loans and advances]"
+                      name="73 - Fair value gains Loans and advances"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[74 - Fair value losses - Bonds]"
+                      dataType="numeric"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[74 - Fair value losses - Bonds]"
+                      name="74 - Fair value losses - Bonds"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[75 - Fair value losses – Equity]"
+                      dataType="numeric"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[75 - Fair value losses – Equity]"
+                      name="75 - Fair value losses – Equity"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[76 - Fair value losses Loans and advances]"
+                      dataType="numeric"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[76 - Fair value losses Loans and advances]"
+                      name="76 - Fair value losses Loans and advances"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
+                      refId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[77 - Share of Profit/(Loss) in Assoc.&amp; JVs]"
+                      dataType="numeric"
+                      lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[77 - Share of Profit/(Loss) in Assoc.&amp; JVs]"
+                      name="77 - Share of Profit/(Loss) in Assoc.&amp; JVs"
+                      precision="15"
+                      scale="2" />
+                    <outputColumn
                       refId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
                       lineageId="Package\Revenue\Staging.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
@@ -929,7 +1219,7 @@ where [Deal #] is not null</property>
               startId="Package\Revenue\Staging.Outputs[ADO NET Source Output]" />
             <path
               refId="Package\Revenue.Paths[Derived Column Output]"
-              endId="Package\Revenue\Revenue_Fact.Inputs[ADO NET Destination Input]"
+              endId="Package\Revenue\Revenue.Inputs[ADO NET Destination Input]"
               name="Derived Column Output"
               startId="Package\Revenue\Derived Column.Outputs[Derived Column Output]" />
           </paths>
@@ -964,25 +1254,25 @@ where [Deal #] is not null</property>
         <NodeLayout
           Size="114.666666666667,42.6666666666667"
           Id="Package\Revenue\Staging"
-          TopLeft="111.333331756294,14.1666665116946" />
+          TopLeft="111.333331756294,13.7333331861099" />
         <NodeLayout
           Size="154.666666666667,42.6666666666667"
           Id="Package\Revenue\Derived Column"
-          TopLeft="94.6666657850146,97.8999988842011" />
+          TopLeft="95.0833324454725,98.7666655353706" />
         <EdgeLayout
           Id="Package\Revenue.Paths[ADO NET Source Output]"
-          TopLeft="170.333332103988,56.8333331783613">
+          TopLeft="170.541665434217,56.3999998527765">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41.0666657058398"
+              EndConnector="0,42.366665682594"
               Start="0,0"
-              End="0,33.5666657058398">
+              End="0,34.866665682594">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.5666657058398" />
+                    End="0,34.866665682594" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -992,23 +1282,23 @@ where [Deal #] is not null</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="145.333333333334,42.6666666666667"
-          Id="Package\Revenue\Revenue_Fact"
-          TopLeft="97.5833328552544,173.833331396182" />
+          Size="120,42.6666666666667"
+          Id="Package\Revenue\Revenue"
+          TopLeft="108.833331793547,193.133329978188" />
         <EdgeLayout
           Id="Package\Revenue.Paths[Derived Column Output]"
-          TopLeft="171.124999320134,140.566665550868">
+          TopLeft="170.624998786176,141.433332202037">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,33.2666658453147"
+              EndConnector="0,51.6999977761507"
               Start="0,0"
-              End="0,25.7666658453147">
+              End="0,44.1999977761507">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.7666658453147" />
+                    End="0,44.1999977761507" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1029,7 +1319,7 @@ where [Deal #] is not null</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Revenue\Revenue_Fact">
+    design-time-name="Package\Revenue\Revenue">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

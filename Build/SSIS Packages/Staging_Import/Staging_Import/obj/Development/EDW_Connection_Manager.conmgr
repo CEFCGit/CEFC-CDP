@@ -8,7 +8,7 @@
       DTS:ConnectionString="Data Source=cefcdevsqlsvr01.database.windows.net;User ID=cdp_root;Initial Catalog=cefcdevsql01;Persist Security Info=True;Application Name=SSIS-Staging_Import-{8E16ACCB-0787-4D16-9937-2A153AD345E4}cefcdevsqlsvr01.database.windows.net.cefcdevsql01.yolinda.moodley1;">
       <DTS:Password
         DTS:Name="Password"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAESFoBBvKNESj9o6+ZqZCgQAAAAACAAAAAAAQZgAAAAEAACAAAACmR4qidOocWbo8rAeGxmNfedJwRiZwsSm1F9u9modGlwAAAAAOgAAAAAIAACAAAAASKjSdyUjjOgyvpS48CfAvUjorNJmZMz9+39CP0sefToAAAABf1A2PaW8OCzZTD0YpOS+dSAt/Qo8mJqs1OAPfPpy/NDpBG/N35zEDsc8P+WscJ2xwy0fmyWkW+E30v8zg8mz47CDYfj09tWaIbnAZmg2LPi1nrFduCY1b7XYSnoMmvPk3iGmVQtACn2IGZjMWZnsKeOvIwbHPFQaC/MeNskFEdUAAAACjencjmnzbDr/FeTlaWK0BDLL5inG6SIkweUzivmDNH9v1AGxUlE0KifC4Or9SI9xkJoiP0TV0nh5ClfZ87dW9</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAESFoBBvKNESj9o6+ZqZCgQAAAAACAAAAAAAQZgAAAAEAACAAAADMUXoa+8oQaAEzljBMzDNnKneTajr7gMkaEPzruSZhwAAAAAAOgAAAAAIAACAAAAAbStO69d4glNKVXLRgA96E6ReWweyYWMFrnqI50Hi1N4AAAAAqQ5LhdEMnE9VcoaNqNYuj1my8LHO8kFHqG6KpmeX/4R5mR60GFcehXz540MPRY7LZTeJPFo+lr9uf6RWIcRVBZx1ptbKyeA656zSCjqJD+rp5c9eGXkfy0P7b2xZcDBPD/vReqAEat4jd1/uoJBxhT7WP7JqHfjjFJRQhitZs5kAAAAA0W4tHVp1rdN/sawQPS51/RM8F6Bmr+XQaVVc8X8KVam7VRX/CB9q/T1Wx9kYn41+iBRblRWy9wgEajgzb5Kbn</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

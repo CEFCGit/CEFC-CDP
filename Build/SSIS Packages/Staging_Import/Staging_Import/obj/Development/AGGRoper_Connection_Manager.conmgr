@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="AGGRoper_Connection_Manager"
   DTS:DTSID="{885D3335-E3DD-4BDE-8E5E-5F6431A32535}"

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="AGGOthello_Connection_Manager"
   DTS:DTSID="{2B656386-4AD8-463E-97D0-D44834BCE771}"

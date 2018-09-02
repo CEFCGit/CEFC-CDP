@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="AGGFlynn_Connection_Manager"
   DTS:DTSID="{92CFE0F1-B915-430F-9D80-CA924A47412E}"

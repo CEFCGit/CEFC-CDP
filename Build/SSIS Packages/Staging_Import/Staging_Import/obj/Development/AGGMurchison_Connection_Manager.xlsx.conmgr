@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="AGGMurchison_Connection_Manager xlsx"
   DTS:DTSID="{D5CAFC1F-4DD4-4FA0-AD4B-A6426DD0BC68}"

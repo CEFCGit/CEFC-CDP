@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="FINSTGRevLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{C9CF802B-67E8-4021-B2AE-20AC9BEE30A9}">
+  DTS:VersionBuild="6"
+  DTS:VersionGUID="{F1511E81-BEF3-4A5C-AC5D-B5C3B6C964B6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -57,7 +57,7 @@
                   description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select *
-FROM [Sheet1Report$B2:W]</property>
+FROM [Sheet1Report$B2:AE]</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -216,6 +216,78 @@ FROM [Sheet1Report$B2:W]</property>
                       name="YTD Total TY"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[21 - Profit on sale of asset]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[21 - Profit on sale of asset]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[21 - Profit on sale of asset]"
+                      name="21 - Profit on sale of asset"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[71 - Fair value gains - Bonds]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[71 - Fair value gains - Bonds]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[71 - Fair value gains - Bonds]"
+                      name="71 - Fair value gains - Bonds"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[72 - Fair value gains – Equity]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[72 - Fair value gains – Equity]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[72 - Fair value gains – Equity]"
+                      name="72 - Fair value gains – Equity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[73 - Fair value gains Loans and advances]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[73 - Fair value gains Loans and advances]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[73 - Fair value gains Loans and advances]"
+                      name="73 - Fair value gains Loans and advances"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[74 - Fair value losses - Bonds]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[74 - Fair value losses - Bonds]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[74 - Fair value losses - Bonds]"
+                      name="74 - Fair value losses - Bonds"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[75 - Fair value losses – Equity]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[75 - Fair value losses – Equity]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[75 - Fair value losses – Equity]"
+                      name="75 - Fair value losses – Equity"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[76 - Fair value losses Loans and advances]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[76 - Fair value losses Loans and advances]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[76 - Fair value losses Loans and advances]"
+                      name="76 - Fair value losses Loans and advances"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[77 - Share of Profit/(Loss) in Assoc#&amp; JVs]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[77 - Share of Profit/(Loss) in Assoc#&amp; JVs]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[77 - Share of Profit/(Loss) in Assoc#&amp; JVs]"
+                      name="77 - Share of Profit/(Loss) in Assoc#&amp; JVs"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
                       refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[YTD Total LY]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
@@ -254,10 +326,11 @@ FROM [Sheet1Report$B2:W]</property>
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[To Date]"
-                      dataType="date"
+                      dataType="wstr"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[To Date]"
+                      length="255"
                       lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[To Date]"
                       name="To Date"
                       truncationRowDisposition="FailComponent" />
@@ -322,13 +395,62 @@ FROM [Sheet1Report$B2:W]</property>
                       dataType="r8"
                       name="YTD Total TY" />
                     <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[21 - Profit on sale of asset]"
+                      dataType="r8"
+                      name="21 - Profit on sale of asset" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[71 - Fair value gains - Bonds]"
+                      dataType="r8"
+                      name="71 - Fair value gains - Bonds" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[72 - Fair value gains – Equity]"
+                      dataType="r8"
+                      name="72 - Fair value gains – Equity" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[73 - Fair value gains Loans and advances]"
+                      dataType="r8"
+                      name="73 - Fair value gains Loans and advances" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[74 - Fair value losses - Bonds]"
+                      dataType="r8"
+                      name="74 - Fair value losses - Bonds" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[75 - Fair value losses – Equity]"
+                      dataType="r8"
+                      name="75 - Fair value losses – Equity" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[76 - Fair value losses Loans and advances]"
+                      dataType="r8"
+                      name="76 - Fair value losses Loans and advances" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[77 - Share of Profit/(Loss) in Assoc#&amp; JVs]"
+                      dataType="r8"
+                      name="77 - Share of Profit/(Loss) in Assoc#&amp; JVs" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F21]"
+                      dataType="r8"
+                      name="F21" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F23]"
+                      dataType="r8"
+                      name="F23" />
+                    <externalMetadataColumn
                       refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[YTD Total LY]"
                       dataType="r8"
                       name="YTD Total LY" />
                     <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F25]"
+                      dataType="r8"
+                      name="F25" />
+                    <externalMetadataColumn
                       refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Variance]"
                       dataType="r8"
                       name="Variance" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F27]"
+                      dataType="wstr"
+                      length="255"
+                      name="F27" />
                     <externalMetadataColumn
                       refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[70 - Initial Concessional Charge]"
                       dataType="r8"
@@ -340,25 +462,9 @@ FROM [Sheet1Report$B2:W]</property>
                       name="To Period" />
                     <externalMetadataColumn
                       refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[To Date]"
-                      dataType="date"
-                      name="To Date" />
-                    <externalMetadataColumn
-                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F13]"
-                      dataType="r8"
-                      name="F13" />
-                    <externalMetadataColumn
-                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F15]"
-                      dataType="r8"
-                      name="F15" />
-                    <externalMetadataColumn
-                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F17]"
-                      dataType="r8"
-                      name="F17" />
-                    <externalMetadataColumn
-                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F19]"
                       dataType="wstr"
                       length="255"
-                      name="F19" />
+                      name="To Date" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -432,6 +538,46 @@ FROM [Sheet1Report$B2:W]</property>
                       lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[20 - Bank Interest Income]"
                       name="20 - Bank Interest Income" />
                     <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[21 - Profit on sale of asset]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[21 - Profit on sale of asset]"
+                      name="21 - Profit on sale of asset" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[71 - Fair value gains - Bonds]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[71 - Fair value gains - Bonds]"
+                      name="71 - Fair value gains - Bonds" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[72 - Fair value gains – Equity]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[72 - Fair value gains – Equity]"
+                      name="72 - Fair value gains – Equity" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[73 - Fair value gains Loans and advances]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[73 - Fair value gains Loans and advances]"
+                      name="73 - Fair value gains Loans and advances" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[74 - Fair value losses - Bonds]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[74 - Fair value losses - Bonds]"
+                      name="74 - Fair value losses - Bonds" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[75 - Fair value losses – Equity]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[75 - Fair value losses – Equity]"
+                      name="75 - Fair value losses – Equity" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[76 - Fair value losses Loans and advances]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[76 - Fair value losses Loans and advances]"
+                      name="76 - Fair value losses Loans and advances" />
+                    <outputColumn
+                      refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[77 - Share of Profit/(Loss) in Assoc#&amp; JVs]"
+                      dataType="r8"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[77 - Share of Profit/(Loss) in Assoc#&amp; JVs]"
+                      name="77 - Share of Profit/(Loss) in Assoc#&amp; JVs" />
+                    <outputColumn
                       refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[YTD Total TY]"
                       dataType="r8"
                       lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[YTD Total TY]"
@@ -459,7 +605,8 @@ FROM [Sheet1Report$B2:W]</property>
                       name="To Period" />
                     <outputColumn
                       refId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[To Date]"
-                      dataType="date"
+                      dataType="wstr"
+                      length="255"
                       lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[To Date]"
                       name="To Date" />
                     <outputColumn
@@ -605,6 +752,48 @@ FROM [Sheet1Report$B2:W]</property>
                       externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[YTD Total TY]"
                       lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[YTD Total TY]" />
                     <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[21 - Profit on sale of asset]"
+                      cachedDataType="r8"
+                      cachedName="21 - Profit on sale of asset"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[21 - Profit on sale of asset]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[21 - Profit on sale of asset]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[71 - Fair value gains - Bonds]"
+                      cachedDataType="r8"
+                      cachedName="71 - Fair value gains - Bonds"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[71 - Fair value gains - Bonds]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[71 - Fair value gains - Bonds]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[72 - Fair value gains – Equity]"
+                      cachedDataType="r8"
+                      cachedName="72 - Fair value gains – Equity"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[72 - Fair value gains – Equity]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[72 - Fair value gains – Equity]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[73 - Fair value gains Loans and advances]"
+                      cachedDataType="r8"
+                      cachedName="73 - Fair value gains Loans and advances"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[73 - Fair value gains Loans and advances]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[73 - Fair value gains Loans and advances]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[74 - Fair value losses - Bonds]"
+                      cachedDataType="r8"
+                      cachedName="74 - Fair value losses - Bonds"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[74 - Fair value losses - Bonds]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[74 - Fair value losses - Bonds]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[75 - Fair value losses – Equity]"
+                      cachedDataType="r8"
+                      cachedName="75 - Fair value losses – Equity"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[75 - Fair value losses – Equity]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[75 - Fair value losses – Equity]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[76 - Fair value losses Loans and advances]"
+                      cachedDataType="r8"
+                      cachedName="76 - Fair value losses Loans and advances"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[76 - Fair value losses Loans and advances]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[76 - Fair value losses Loans and advances]" />
+                    <inputColumn
                       refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[YTD Total LY]"
                       cachedDataType="r8"
                       cachedName="YTD Total LY"
@@ -631,7 +820,8 @@ FROM [Sheet1Report$B2:W]</property>
                       lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[To Period]" />
                     <inputColumn
                       refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[To Date]"
-                      cachedDataType="date"
+                      cachedDataType="wstr"
+                      cachedLength="255"
                       cachedName="To Date"
                       externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[To Date]"
                       lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[To Date]" />
@@ -642,6 +832,12 @@ FROM [Sheet1Report$B2:W]</property>
                       cachedName="Inv#Type"
                       externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[Inv.Type]"
                       lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[Inv#Type]" />
+                    <inputColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].Columns[77 - Share of Profit/(Loss) in Assoc#&amp; JVs]"
+                      cachedDataType="r8"
+                      cachedName="77 - Share of Profit/(Loss) in Assoc#&amp; JVs"
+                      externalMetadataColumnId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[77 - Share of Profit/(Loss) in Assoc.&amp; JVs]"
+                      lineageId="Package\Revenue\OLE DB Source.Outputs[OLE DB Source Output].Columns[77 - Share of Profit/(Loss) in Assoc#&amp; JVs]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -710,6 +906,54 @@ FROM [Sheet1Report$B2:W]</property>
                       refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[20 - Bank Interest Income]"
                       dataType="numeric"
                       name="20 - Bank Interest Income"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[21 - Profit on sale of asset]"
+                      dataType="numeric"
+                      name="21 - Profit on sale of asset"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[71 - Fair value gains - Bonds]"
+                      dataType="numeric"
+                      name="71 - Fair value gains - Bonds"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[72 - Fair value gains – Equity]"
+                      dataType="numeric"
+                      name="72 - Fair value gains – Equity"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[73 - Fair value gains Loans and advances]"
+                      dataType="numeric"
+                      name="73 - Fair value gains Loans and advances"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[74 - Fair value losses - Bonds]"
+                      dataType="numeric"
+                      name="74 - Fair value losses - Bonds"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[75 - Fair value losses – Equity]"
+                      dataType="numeric"
+                      name="75 - Fair value losses – Equity"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[76 - Fair value losses Loans and advances]"
+                      dataType="numeric"
+                      name="76 - Fair value losses Loans and advances"
+                      precision="15"
+                      scale="2" />
+                    <externalMetadataColumn
+                      refId="Package\Revenue\Staging.Inputs[ADO NET Destination Input].ExternalColumns[77 - Share of Profit/(Loss) in Assoc.&amp; JVs]"
+                      dataType="numeric"
+                      name="77 - Share of Profit/(Loss) in Assoc.&amp; JVs"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
@@ -867,25 +1111,25 @@ FROM [Sheet1Report$B2:W]</property>
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Revenue\OLE DB Source"
-          TopLeft="122.999998696148,9.06666713933149" />
+          TopLeft="123.416665356606,9.06666713933149" />
         <NodeLayout
           Size="114.666666666667,42.6666666666667"
           Id="Package\Revenue\Staging"
-          TopLeft="142.583332184702,126.166665581862" />
+          TopLeft="137.16666470468,115.133331372937" />
         <EdgeLayout
           Id="Package\Revenue.Paths[OLE DB Source Output]"
-          TopLeft="199.124998773759,51.7333338059982">
+          TopLeft="196.624998363976,51.7333338059982">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,74.433331775864"
+              EndConnector="0,63.3999975669384"
               Start="0,0"
-              End="0,66.933331775864">
+              End="0,55.8999975669384">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,66.933331775864" />
+                    End="0,55.8999975669384" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

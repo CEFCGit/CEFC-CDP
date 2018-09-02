@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="FINComDep_Connection_Manager"
   DTS:DTSID="{2DBE07A5-1B57-4AEE-8D2D-388E479A0FF0}"

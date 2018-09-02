@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="AGGANZSIC_Connection_Manager"
   DTS:DTSID="{4BECFFBF-3067-4E93-95DB-6AF4FDD4AF60}"

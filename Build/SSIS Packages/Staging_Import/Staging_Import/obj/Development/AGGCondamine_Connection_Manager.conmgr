@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="AGGCondamine_Connection_Manager"
   DTS:DTSID="{E8285585-DBE4-407C-A66C-F90B1530E606}"

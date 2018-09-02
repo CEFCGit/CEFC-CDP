@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:ObjectName="IMART_Connection_Manager"
   DTS:DTSID="{008C0F63-1E11-407B-8388-12739C181A6E}"
@@ -8,7 +8,7 @@
       DTS:ConnectionString="uid=svcTransit;Dsn=iMart;">
       <DTS:Password
         DTS:Name="pwd"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAkYzQoehdVEu9f2/pe+pEkQAAAAACAAAAAAAQZgAAAAEAACAAAAD0LjaKdJbrihYso0o99MGn1WzSjuf4PyANL9kMg7A/xwAAAAAOgAAAAAIAACAAAAAqtVaSyNWi1GxppWs2zBgaix1gvAWPAm6cxSCMjC3eGIAAAADE589LL97YbOHRaA9IyMOtnRvB7l4kxroXYEf0RV6+Yp6fS8Z8CAI1Reh4R6iciGAC3Nw+IDeUFJUtW7wJqG/Af/EoxpgFzOmZ94yCe85TNtdIMaF7g05D3xlCFpcler7cjOhhoeN+KyX/nQGQmrcth6gF/oOqF0V7zh5eHlUYD0AAAACrAWWqeYz1iwcMY7W+jIUj448NmuUS9bL97qZcKAiytPAb69hkHML0RG0XBq6czi17M5M21xn1USkTcxeuixzJ</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAESFoBBvKNESj9o6+ZqZCgQAAAAACAAAAAAAQZgAAAAEAACAAAACHPCN5BBW1UHrvAMGJlAvz/es40qj/ZIiEiS4cB8KV9gAAAAAOgAAAAAIAACAAAADE3lY3ICm7KAEkQDF9Bmi9HNgrn/kOJgcL+CceL3x0sYAAAACOgQd3hvJAEO9OOtlft92n7JfPbN0pRW4yJ/MnzLcolQtNRHNdg5wM4u68zs4ZZu/cMmrZqMnKzTdqKmoqk83GivPFOHUKc4jMEOdPLb4i53hzjbISVoxu1BdPNIsgefpmnpwtwL/yw46iTsbNsY9owthcxwS7E+uHwNR7GbYWVUAAAADnHx8Uy+ApUdmupUfoTqkO3n8OJE1WvY7NJCoHkqDrGMCSe8KcbD2ls50AtwKHih+M09t1UXlbjWwQxCHqAP60</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
