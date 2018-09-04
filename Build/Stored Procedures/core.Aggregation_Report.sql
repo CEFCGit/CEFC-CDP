@@ -20,7 +20,9 @@ as
 
   	select @local_date =  DBO.FN_LOCALDATE (GETDATE());
 
-	select @t_file_date = case when @file_date = 'Mar  1 2018 12:00AM' then 'Apr  1 2018 12:00AM' else @file_date end; 
+	select @file_date = cast(@file_date as datetime);
+
+	select @t_file_date = case when @file_date = 'Mar  1 2018 12:00AM' then cast('Apr  1 2018 12:00AM' as datetime) else cast(@file_date as datetime) end; 
 
 	with temp
 	as 
@@ -59,24 +61,24 @@ as
 					from core.Aggregation_Fact a
 					join core.Projects_Dimension b
 					  on a.ID_Project = b.ID_Project
-					where EOMONTH(convert(datetime,@t_file_date)) >= convert(datetime,b.Update_From_TS) 
-					and EOMONTH(convert(datetime,@t_file_date)) <= convert(datetime,isnull(b.Update_to_TS,@local_date))
+					where EOMONTH(@t_file_date) >= cast(b.Update_From_TS as datetime) 
+					and EOMONTH(@t_file_date) <= cast(isnull(b.Update_to_TS,@local_date) as datetime)
 					--and a.File_Date = @file_date 
 					group by a.ID_Project,
 							 b.Project_Name  ) pd2
 				on pd.Project_Name like pd2.Project_Name+'%'
-				where EOMONTH(convert(datetime,@t_file_date)) >= convert(datetime,pd.Update_From_TS) 
-				and EOMONTH(convert(datetime,@t_file_date)) <= convert(datetime,isnull(pd.Update_to_TS,@local_date))
+				where EOMONTH(@t_file_date) >= cast(pd.Update_From_TS as datetime ) 
+				and EOMONTH(@t_file_date) <= cast(isnull(pd.Update_to_TS,@local_date) as datetime)
 				group by pd.ID_Project,
 						 pd.Project_Name) pd1
 			on bdf.ID_Project = pd1.ID_Project
-			where EOMONTH(convert(datetime,@t_file_date)) >= convert(datetime,bdf.Update_From_TS) 
-			and EOMONTH(convert(datetime,@t_file_date)) <= convert(datetime,isnull(bdf.Update_to_TS,@local_date))
+			where EOMONTH(@t_file_date) >= cast(bdf.Update_From_TS as datetime) 
+			and EOMONTH(@t_file_date) <= cast(isnull(bdf.Update_to_TS,@local_date) as datetime)
 			group by case when charindex('II',pd1.Project_Name) > 0 then substring(pd1.Project_name,1,(charindex('II',pd1.Project_Name)-2)) else pd1.Project_Name end       
 			) as camt
 		on prjd.Project_Name = camt.Project_Name
-		where EOMONTH(convert(datetime,@t_file_date)) >= convert(datetime,prjd.Update_From_TS) 
-		and EOMONTH(convert(datetime,@t_file_date)) <= convert(datetime,isnull(prjd.Update_to_TS,@local_date))
+		where EOMONTH(@t_file_date) >= cast(prjd.Update_From_TS as datetime) 
+		and EOMONTH(@t_file_date) <= cast(isnull(prjd.Update_to_TS,@local_date) as datetime)
 		group by prjd.ID_Project,
 				prjd.Project_Name,
 				prjd.Description,
@@ -115,12 +117,12 @@ as
 			  ,asd.[Model]
 			  ,asd.[Year]
 			  ,asd.[Status]
-			  ,ad.[Code]
-			  ,ad.[Division]
-			  ,ad.[Subdivision]
-			  ,ad.[Description] as ANZSIC_Description
-			  ,ad.ABS_Division
-			  ,ad.ABS_Subdivision
+			  ,ad1.[Code]
+			  ,ad1.[Division]
+			  ,ad1.[Subdivision]
+			  ,ad1.[Description] as ANZSIC_Description
+			  ,ad1.ABS_Division
+			  ,ad1.ABS_Subdivision
 			  ,t.Amt_CEFC
 			  ,t.Project_Name
 			  ,t.cOrganisations
@@ -136,12 +138,13 @@ as
 			  ,b.longitude
 			  ,c.Electoral_division as Electorate
 			  ,c.[Percent] as Electorate_perc
+			  ,case when acd1.CEFC_Technology = '' then acd1.Asset_Category else acd1.CEFC_Technology end as CEFC_Technology
 			    
 		from core.Aggregation_Fact af
-		join (select  max(convert(datetime,af1.File_Date)) as Agg_FileDate
+		join (select  max(cast(af1.File_Date as datetime)) as Agg_FileDate
 				,af1.[ID_Project]   	    	  
 				from core.Aggregation_Fact af1
-				where convert(datetime,af1.file_date) <= eomonth(format(@file_date,'yyyy-MM-dd'))   
+				where cast(af1.file_date as datetime) <= eomonth(format(@file_date,'yyyy-MM-dd'))   
 				group by af1.[ID_Project]) max_dates 
 		 on af.File_Date = max_dates.Agg_FileDate
 			and af.ID_Project = max_dates.ID_Project
@@ -149,19 +152,51 @@ as
 		 on af.ID_Project = asd.ID_Project
 		    and af.Contract_Number = asd.Contract_Number
 		    and case when af.Asset_Number = 'Not Available' then asd.Asset_Number end = asd.Asset_Number
-		    and convert(datetime,af.File_Date) = convert(datetime,asd.FileDate)
-		left join core.ANZSIC_Dimension ad
-		 on af.ID_Project = ad.ID_Project
-		    and af.ANZSIC_Code = ad.Code
+		    and cast(af.File_Date as datetime) = cast(asd.FileDate as datetime)
+		left join (select max(ad.Update_From_TS) ad_Update_From_TS
+						 ,max(ad.Update_to_TS) ad_Update_To_TS 
+						 ,ad.ABS_Division
+						 ,ad.ABS_Subdivision
+						 ,ad.Code
+						 ,ad.Description
+						 ,ad.Division
+						 ,ad.ID_Project
+						 ,ad.Subdivision
+			        from core.ANZSIC_Dimension ad
+					where EOMONTH(@file_date) >= cast(isnull(ad.Update_From_TS,@file_date) as datetime) 
+					  and EOMONTH(@file_date) <= cast(isnull(ad.Update_to_TS,@local_date) as datetime)
+					group by ad.ABS_Division
+						 ,ad.ABS_Subdivision
+						 ,ad.Code
+						 ,ad.Description
+						 ,ad.Division
+						 ,ad.ID_Project
+						 ,ad.Subdivision
+				   ) ad1
+		 on af.ID_Project = ad1.ID_Project
+		    and af.ANZSIC_Code = ad1.Code
 		left join temp t
 		 on af.ID_Project = t.ID_Project
 		left join core.Post_Codes b
 		 on (case when substring(af.Postcode,1,1) = '0' then substring(af.Postcode,2,len(af.Postcode)-1) else af.Postcode end) = b.postcode
 		left join core.Post_Codes_Electorate c
-		on b.postcode = c.Postcode  
+		on b.postcode = c.Postcode 
+		left join (select max(acd.Update_From_TS) acd_Update_From_TS
+						 ,max(acd.Update_to_TS) acd_Update_To_TS
+						 ,acd.Asset_Category
+						 ,acd.CEFC_Technology 
+					from core.Asset_Category_Dimension acd
+					where EOMONTH(@file_date) >= cast(isnull(acd.Update_From_TS,@file_date) as datetime) 
+					and EOMONTH(@file_date) <= cast(isnull(acd.Update_to_TS,@local_date) as datetime)
+					group by acd.Asset_Category
+							,acd.CEFC_Technology ) acd1
+		  on asd.Category = acd1.Asset_Category
    where (af.ID_Project = 'S2537'
-   and asd.Description in ('Solar Energy Battery','Solar Energy Equipment','Solar Energy Panels','Solar Water Heater')) or
-   af.ID_Project != 'S2537'
+   and asd.Description in ('Solar Energy Battery','Solar Energy Equipment','Solar Energy Panels','Solar Water Heater'))
+    or
+   af.ID_Project != 'S2537' 
+
+  
 	
 GO
 
