@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="STGCDPAggDimFactLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="76"
-  DTS:VersionGUID="{857CC7DE-CA8D-44F7-AB4D-EBD762B0D5F1}">
+  DTS:VersionBuild="78"
+  DTS:VersionGUID="{FA8621FB-EB70-4F9D-B75D-983339B332F6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -4845,6 +4845,987 @@ where a.Contract_Number is not null</property>
               endId="Package\ANZSIC Dimension\Derived Column 1.Inputs[Derived Column Input]"
               name="Union All Output 1"
               startId="Package\ANZSIC Dimension\Union All.Outputs[Union All Output 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Asset Category Dimension"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{94BB7B3E-01A5-48BE-92B0-DA9DF755312F}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Asset Category Dimension"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Asset Category Dimension\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Asset Category Dimension\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Asset Category Dimension\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Asset Category Dimension\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\Derived Column.Outputs[Derived Column Output].Columns[Update_to_TS]"
+                      dataType="dbTimeStamp"
+                      description="Update_to_TS"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Asset Category Dimension\Derived Column.Outputs[Derived Column Output].Columns[Update_to_TS]"
+                      name="Update_to_TS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Asset Category Dimension\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Asset Category Dimension\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Asset Category Dimension\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Asset Category Dimension\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Asset Category Dimension\Derived Column 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Asset Category Dimension\Derived Column 1.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Asset Category Dimension\Derived Column 1.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Asset Category Dimension\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[Update_from_TS]"
+                      dataType="dbTimeStamp"
+                      description="Update_from_TS"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Asset Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[Update_from_TS]"
+                      name="Update_from_TS"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DBTIMESTAMP)(@[System::StartTime])</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Asset Category Dimension\Derived Column 1.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Asset Category Dimension\Derived Column 1.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Asset Category Dimension\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Asset Category Dimension\Derived Column 1.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Asset Category Dimension\Insert Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Insert Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[core].[Asset_Category_Dimension]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Asset Category Dimension\Insert Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[EDW_OLEDB_Connection_Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Asset Category Dimension\Insert Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Asset Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].Columns[Asset_Category]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Asset_Category"
+                      externalMetadataColumnId="Package\Asset Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Asset_Category]"
+                      lineageId="Package\Asset Category Dimension\Union All.Outputs[Union All Output 1].Columns[Asset_Category]" />
+                    <inputColumn
+                      refId="Package\Asset Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].Columns[CEFC_Technology]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="CEFC_Technology"
+                      externalMetadataColumnId="Package\Asset Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CEFC_Technology]"
+                      lineageId="Package\Asset Category Dimension\Union All.Outputs[Union All Output 1].Columns[CEFC_Technology]" />
+                    <inputColumn
+                      refId="Package\Asset Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].Columns[Update_from_TS]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Update_from_TS"
+                      externalMetadataColumnId="Package\Asset Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Update_from_TS]"
+                      lineageId="Package\Asset Category Dimension\Derived Column 1.Outputs[Derived Column Output].Columns[Update_from_TS]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Asset Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Asset_Category]"
+                      dataType="wstr"
+                      length="100"
+                      name="Asset_Category" />
+                    <externalMetadataColumn
+                      refId="Package\Asset Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[CEFC_Technology]"
+                      dataType="wstr"
+                      length="100"
+                      name="CEFC_Technology" />
+                    <externalMetadataColumn
+                      refId="Package\Asset Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Updated_by]"
+                      dataType="wstr"
+                      length="20"
+                      name="Updated_by" />
+                    <externalMetadataColumn
+                      refId="Package\Asset Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Update_from_TS]"
+                      dataType="dbTimeStamp"
+                      name="Update_from_TS" />
+                    <externalMetadataColumn
+                      refId="Package\Asset Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Update_to_TS]"
+                      dataType="dbTimeStamp"
+                      name="Update_to_TS" />
+                    <externalMetadataColumn
+                      refId="Package\Asset Category Dimension\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Update_Reason]"
+                      dataType="wstr"
+                      length="20"
+                      name="Update_Reason" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Asset Category Dimension\Insert Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Asset Category Dimension\Insert Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Asset Category Dimension\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Asset Category Dimension\Insert Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Asset Category Dimension\OLE DB Command"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Asset_Category_Dimension] SET [Update_to_TS] = ? WHERE [Asset_Category] = ? AND [Update_to_TS] IS NULL</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Asset Category Dimension\OLE DB Command.Connections[OleDbConnection]"
+                  connectionManagerID="{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[EDW_OLEDB_Connection_Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Asset Category Dimension\OLE DB Command.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Asset Category Dimension\OLE DB Command.Inputs[OLE DB Command Input].Columns[Asset_Category]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Asset_Category"
+                      externalMetadataColumnId="Package\Asset Category Dimension\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output].Columns[Asset_Category]" />
+                    <inputColumn
+                      refId="Package\Asset Category Dimension\OLE DB Command.Inputs[OLE DB Command Input].Columns[Update_to_TS]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="Update_to_TS"
+                      externalMetadataColumnId="Package\Asset Category Dimension\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Asset Category Dimension\Derived Column.Outputs[Derived Column Output].Columns[Update_to_TS]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Asset Category Dimension\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="dbTimeStamp"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Asset Category Dimension\OLE DB Command.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="100"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Asset Category Dimension\OLE DB Command.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Asset Category Dimension\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Asset Category Dimension\OLE DB Command.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Asset Category Dimension\OLE DB Command.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Asset Category Dimension\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Asset Category Dimension\OLE DB Command.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Asset Category Dimension\OLE DB Command 1"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="OLE DB Command;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
+              description="Runs an SQL statement for each row in a data flow. For example, call a 'new employee setup' stored procedure for each row in the 'new employees' table. Note: running an SQL statement for each row of a large data flow may take a long time."
+              name="OLE DB Command 1"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Asset_Category_Dimension] SET [CEFC_Technology] = ? WHERE [Asset_Category] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Asset Category Dimension\OLE DB Command 1.Connections[OleDbConnection]"
+                  connectionManagerID="{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[EDW_OLEDB_Connection_Manager]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Asset Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input]"
+                  errorOrTruncationOperation="Command Execution"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Command Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Asset Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Asset_Category]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Asset_Category"
+                      externalMetadataColumnId="Package\Asset Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      lineageId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output].Columns[Asset_Category]" />
+                    <inputColumn
+                      refId="Package\Asset Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[CEFC_Technology]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="CEFC_Technology"
+                      externalMetadataColumnId="Package\Asset Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      lineageId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output].Columns[CEFC_Technology]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Asset Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="100"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Asset Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="100"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Parameter information.  Matches OLE DB's DBPARAMFLAGSENUM values."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Asset Category Dimension\OLE DB Command 1.Outputs[OLE DB Command Output]"
+                  exclusionGroup="1"
+                  name="OLE DB Command Output"
+                  synchronousInputId="Package\Asset Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Asset Category Dimension\OLE DB Command 1.Outputs[OLE DB Command Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Command Error Output"
+                  synchronousInputId="Package\Asset Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Asset Category Dimension\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Asset Category Dimension\OLE DB Command 1.Outputs[OLE DB Command Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Asset Category Dimension\Slowly Changing Dimension"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Slowly Changing Dimension;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;3"
+              description="Updates a SQL Server Analysis Services data warehouse dimension. Update dimension records that are already present and  insert dimension records that aren't. For example, update the DimProduct table of the AdventureWorksDW OLAP database with data from the Products table in the AdventureWorks OLTP database."
+              name="Slowly Changing Dimension"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SELECT statement used to create a schema rowset."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Asset_Category], [CEFC_Technology],[Update_from_TS],[Update_to_TS] FROM [core].[Asset_Category_Dimension]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
+                  name="CurrentRowWhere">[Update_from_TS] IS NOT NULL AND [Update_to_TS] IS NULL</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether historical attribute updates are directed to the transformation output for changing attribute updates."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when columns with fixed attributes contain changes."
+                  name="FailOnFixedAttributeChange">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the column name for the inferred member."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether inferred member updates are detected."
+                  name="EnableInferredMember">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the transformation fails when a lookup of an existing record fails."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies that all rows in the input are new or the transformation detects the change type."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Asset Category Dimension\Slowly Changing Dimension.Connections[LookupConnection]"
+                  connectionManagerID="{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[EDW_OLEDB_Connection_Manager]"
+                  description="Defines the connection to use for lookups in the dimension table"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Asset Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+                  name="Slowly Changing Dimension Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Asset Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Asset_Category]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Asset_Category"
+                      externalMetadataColumnId="Package\Asset Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Asset_Category]"
+                      lineageId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output].Columns[Asset_Category]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Asset Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[CEFC_Technology]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="CEFC_Technology"
+                      externalMetadataColumnId="Package\Asset Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CEFC_Technology]"
+                      lineageId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output].Columns[CEFC_Technology]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">3</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Asset Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Asset_Category]"
+                      dataType="wstr"
+                      length="100"
+                      name="Asset_Category" />
+                    <externalMetadataColumn
+                      refId="Package\Asset Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[CEFC_Technology]"
+                      dataType="wstr"
+                      length="100"
+                      name="CEFC_Technology" />
+                    <externalMetadataColumn
+                      refId="Package\Asset Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Update_from_TS]"
+                      dataType="dbTimeStamp"
+                      name="Update_from_TS" />
+                    <externalMetadataColumn
+                      refId="Package\Asset Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Update_to_TS]"
+                      dataType="dbTimeStamp"
+                      name="Update_to_TS" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Asset Category Dimension\Slowly Changing Dimension.Outputs[Unchanged Output]"
+                  description="Unchanged rows"
+                  exclusionGroup="1"
+                  name="Unchanged Output"
+                  synchronousInputId="Package\Asset Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Asset Category Dimension\Slowly Changing Dimension.Outputs[New Output]"
+                  description="New rows"
+                  exclusionGroup="1"
+                  name="New Output"
+                  synchronousInputId="Package\Asset Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Asset Category Dimension\Slowly Changing Dimension.Outputs[Fixed Attribute Output]"
+                  description="Rows with changes in columns tagged FixedAttribute"
+                  exclusionGroup="1"
+                  name="Fixed Attribute Output"
+                  synchronousInputId="Package\Asset Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Asset Category Dimension\Slowly Changing Dimension.Outputs[Changing Attribute Updates Output]"
+                  description="These rows contain new information for ChangingAttribute (Type 1) column changes"
+                  exclusionGroup="1"
+                  name="Changing Attribute Updates Output"
+                  synchronousInputId="Package\Asset Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Asset Category Dimension\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]"
+                  description="HistoricalAttribute (Type 2) changes result in these new rows"
+                  exclusionGroup="2"
+                  name="Historical Attribute Inserts Output"
+                  synchronousInputId="Package\Asset Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Asset Category Dimension\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]"
+                  description="Information to update unpopulated initial dimension row"
+                  exclusionGroup="1"
+                  name="Inferred Member Updates Output"
+                  synchronousInputId="Package\Asset Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Asset Category Dimension\Staging"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="Consumes data from SQL Server, OLE DB, ODBC, or Oracle, using the corresponding .NET Framework data provider. Use a Transact-SQL statement to define the result set. For example, extract data from SQL Server with the .NET Framework data provider for SQL Server."
+              name="Staging"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Specifies the SQL statement used by the component to extract data."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether to allow non-string external columns to be implicitly converted to strings at the output columns."
+                  name="AllowImplicitStringConversion">true</property>
+                <property
+                  dataType="System.String"
+                  description="The Source database table name."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"staging"."Asset_Cat_Lookup"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specify the mode to retrieve external column information"
+                  name="AccessMode"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.DataReaderSourceAdapter+EnumToStringConverter">0</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.DataReaderSourceAdapter</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Asset Category Dimension\Staging.Connections[IDbConnection]"
+                  connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
+                  description="Managed connection manager"
+                  name="IDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output]"
+                  name="ADO NET Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output].Columns[Asset_Category]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output].ExternalColumns[Asset_Category]"
+                      length="100"
+                      lineageId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output].Columns[Asset_Category]"
+                      name="Asset_Category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output].Columns[CEFC_Technology]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output].ExternalColumns[CEFC_Technology]"
+                      length="100"
+                      lineageId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output].Columns[CEFC_Technology]"
+                      name="CEFC_Technology"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output].ExternalColumns[Asset_Category]"
+                      dataType="wstr"
+                      length="100"
+                      name="Asset_Category" />
+                    <externalMetadataColumn
+                      refId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output].ExternalColumns[CEFC_Technology]"
+                      dataType="wstr"
+                      length="100"
+                      name="CEFC_Technology" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Error Output]"
+                  isErrorOut="true"
+                  name="ADO NET Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Error Output].Columns[Asset_Category]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Error Output].Columns[Asset_Category]"
+                      name="Asset_Category" />
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Error Output].Columns[CEFC_Technology]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Error Output].Columns[CEFC_Technology]"
+                      name="CEFC_Technology" />
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Asset Category Dimension\Union All"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Union All;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Combines rows from multiple data flows without sorting. For example, add rows back to a data flow after correction of errors. If sorting is important, we recommend using the Merge transformation."
+              name="Union All"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Asset Category Dimension\Union All.Inputs[Union All Input 1]"
+                  name="Union All Input 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Asset Category Dimension\Union All.Inputs[Union All Input 1].Columns[Asset_Category]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Asset_Category"
+                      lineageId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output].Columns[Asset_Category]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Asset Category Dimension\Union All.Outputs[Union All Output 1].Columns[Asset_Category]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Asset Category Dimension\Union All.Inputs[Union All Input 1].Columns[CEFC_Technology]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="CEFC_Technology"
+                      lineageId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output].Columns[CEFC_Technology]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Asset Category Dimension\Union All.Outputs[Union All Output 1].Columns[CEFC_Technology]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Asset Category Dimension\Union All.Inputs[Union All Input 2]"
+                  hasSideEffects="true"
+                  name="Union All Input 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Asset Category Dimension\Union All.Inputs[Union All Input 2].Columns[Asset_Category]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="Asset_Category"
+                      lineageId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output].Columns[Asset_Category]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Asset Category Dimension\Union All.Outputs[Union All Output 1].Columns[Asset_Category]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Asset Category Dimension\Union All.Inputs[Union All Input 2].Columns[CEFC_Technology]"
+                      cachedDataType="wstr"
+                      cachedLength="100"
+                      cachedName="CEFC_Technology"
+                      lineageId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output].Columns[CEFC_Technology]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Output column lineage ID"
+                          name="OutputColumnLineageID">#{Package\Asset Category Dimension\Union All.Outputs[Union All Output 1].Columns[CEFC_Technology]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Asset Category Dimension\Union All.Inputs[Union All Input 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Union All Input 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Asset Category Dimension\Union All.Outputs[Union All Output 1]"
+                  name="Union All Output 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\Union All.Outputs[Union All Output 1].Columns[Asset_Category]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Asset Category Dimension\Union All.Outputs[Union All Output 1].Columns[Asset_Category]"
+                      name="Asset_Category" />
+                    <outputColumn
+                      refId="Package\Asset Category Dimension\Union All.Outputs[Union All Output 1].Columns[CEFC_Technology]"
+                      dataType="wstr"
+                      length="100"
+                      lineageId="Package\Asset Category Dimension\Union All.Outputs[Union All Output 1].Columns[CEFC_Technology]"
+                      name="CEFC_Technology" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Asset Category Dimension.Paths[ADO NET Source Output]"
+              endId="Package\Asset Category Dimension\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input]"
+              name="ADO NET Source Output"
+              startId="Package\Asset Category Dimension\Staging.Outputs[ADO NET Source Output]" />
+            <path
+              refId="Package\Asset Category Dimension.Paths[Derived Column Output]"
+              endId="Package\Asset Category Dimension\OLE DB Command.Inputs[OLE DB Command Input]"
+              name="Derived Column Output"
+              startId="Package\Asset Category Dimension\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Asset Category Dimension.Paths[Derived Column Output1]"
+              endId="Package\Asset Category Dimension\Insert Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Asset Category Dimension\Derived Column 1.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Asset Category Dimension.Paths[Historical Attribute Inserts Output]"
+              endId="Package\Asset Category Dimension\Derived Column.Inputs[Derived Column Input]"
+              name="Historical Attribute Inserts Output"
+              startId="Package\Asset Category Dimension\Slowly Changing Dimension.Outputs[Historical Attribute Inserts Output]" />
+            <path
+              refId="Package\Asset Category Dimension.Paths[Inferred Member Updates Output]"
+              endId="Package\Asset Category Dimension\OLE DB Command 1.Inputs[OLE DB Command Input]"
+              name="Inferred Member Updates Output"
+              startId="Package\Asset Category Dimension\Slowly Changing Dimension.Outputs[Inferred Member Updates Output]" />
+            <path
+              refId="Package\Asset Category Dimension.Paths[New Output]"
+              endId="Package\Asset Category Dimension\Union All.Inputs[Union All Input 1]"
+              name="New Output"
+              startId="Package\Asset Category Dimension\Slowly Changing Dimension.Outputs[New Output]" />
+            <path
+              refId="Package\Asset Category Dimension.Paths[OLE DB Command Output]"
+              endId="Package\Asset Category Dimension\Union All.Inputs[Union All Input 2]"
+              name="OLE DB Command Output"
+              startId="Package\Asset Category Dimension\OLE DB Command.Outputs[OLE DB Command Output]" />
+            <path
+              refId="Package\Asset Category Dimension.Paths[Union All Output 1]"
+              endId="Package\Asset Category Dimension\Derived Column 1.Inputs[Derived Column Input]"
+              name="Union All Output 1"
+              startId="Package\Asset Category Dimension\Union All.Outputs[Union All Output 1]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -9851,7 +10832,7 @@ where a.[Contract] is not null</property>
         <SQLTask:SqlTaskData
           SQLTask:Connection="{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}"
           SQLTask:BypassPrepare="False"
-          SQLTask:SqlStatementSource="UPDATE &#xA;    core.Assets_Dimension&#xA;SET &#xA;     Status= 'Repaid' &#xA;from core.Aggregation_Fact af&#xA;join core.Assets_Dimension ad&#xA;  on af.ID_Project = ad.ID_Project&#xA;  and af.Contract_Number = ad.Contract_Number&#xA;  and case when af.Asset_Number = 'Not Available' then ad.Asset_Number end = ad.Asset_Number&#xA;where Maturity_Date &lt;&gt; 'Not Available'&#xA;and convert(datetime,Maturity_Date) &lt; convert(datetime,af.File_Date)&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+          SQLTask:SqlStatementSource="UPDATE &#xA;    core.Assets_Dimension&#xA;SET &#xA;     Status= 'Repaid' &#xA;from core.Aggregation_Fact af&#xA;join core.Assets_Dimension ad&#xA;  on af.ID_Project = ad.ID_Project&#xA;  and af.Contract_Number = ad.Contract_Number&#xA;  and case when af.Asset_Number = 'Not Available' then ad.Asset_Number end = ad.Asset_Number&#xA;where (case when  Maturity_Date &lt;&gt; 'Not Available' then convert(datetime,Maturity_Date) end &lt; convert(datetime,af.File_Date)&#xA;or af.Principal_Outstanding = 0)&#xA;and status &lt;&gt; 'Removed'&#xA;" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
   </DTS:Executables>
@@ -9912,45 +10893,45 @@ where a.[Contract] is not null</property>
         <NodeLayout
           Size="160,42.6666666666667"
           Id="Package\Aggregation Fact"
-          TopLeft="762.212951687061,543.799999899273" />
+          TopLeft="762.212951687061,558.966666294738" />
         <NodeLayout
           Size="168,42.6666666666667"
           Id="Package\ANZSIC Dimension"
-          TopLeft="766.333321996033,72.4666693554325" />
+          TopLeft="766.333321996033,87.633335750898" />
         <NodeLayout
           Size="200.666666666667,42.6666666666667"
           Id="Package\Assets Dimension - Active"
-          TopLeft="743.83332233131,143.100001425742" />
+          TopLeft="743.83332233131,157.833334495623" />
         <NodeLayout
           Size="246.666666666667,42.6666666666667"
           Id="Package\Assets Dimension - Removed Other"
-          TopLeft="715.546286162817,299.496296844725" />
+          TopLeft="715.546286162817,314.66296324019" />
         <NodeLayout
           Size="313.333333333334,42.6666666666667"
           Id="Package\Assets Dimension - Removed(Natalie,Condamine)"
-          TopLeft="914.166654795409,211.374074278982" />
+          TopLeft="914.166654795409,226.540740674448" />
         <NodeLayout
           Size="248,42.6666666666667"
           Id="Package\Update FileDate for Removed Other"
-          TopLeft="718.092581974136,367.214814116578" />
+          TopLeft="718.092581974136,382.381480512043" />
         <NodeLayout
           Size="197.333333333334,42.6666666666667"
           Id="Package\Update Status for Repaid"
-          TopLeft="741.598190779893,442.378229636877" />
+          TopLeft="741.598190779893,457.544896032342" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="847.249988830338,115.133336022099">
+          TopLeft="847.249988830338,130.300002417565">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27.9666654036428"
+              EndConnector="0,27.5333320780581"
               Start="0,0"
-              End="0,20.4666654036428">
+              End="0,20.0333320780581">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.4666654036428" />
+                    End="0,20.0333320780581" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9961,18 +10942,18 @@ where a.[Contract] is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="841.523137580397,185.766668092409">
+          TopLeft="841.523137580397,200.500001162289">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,113.729628752316"
+              EndConnector="0,114.162962077901"
               Start="0,0"
-              End="0,106.229628752316">
+              End="0,106.662962077901">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,106.229628752316" />
+                    End="0,106.662962077901" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9983,7 +10964,7 @@ where a.[Contract] is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="841.178719710348,409.881480783245">
+          TopLeft="841.178719710348,425.04814717871">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -10005,7 +10986,7 @@ where a.[Contract] is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="840.486100735143,342.162963511392">
+          TopLeft="840.486100735143,357.329629906857">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -10027,7 +11008,7 @@ where a.[Contract] is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="841.23890456681,485.044896303544">
+          TopLeft="841.23890456681,500.211562699009">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -10047,6 +11028,10 @@ where a.[Contract] is not null</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="202.666666666667,42.6666666666667"
+          Id="Package\Asset Category Dimension"
+          TopLeft="742.287962395691,13.1666737178961" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -10106,7 +11091,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10140,7 +11127,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10270,7 +11259,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10292,7 +11283,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -10314,7 +11307,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -11296,7 +12291,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11330,7 +12327,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11460,7 +12459,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11482,7 +12483,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -11504,7 +12507,9 @@ where a.[Contract] is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -11694,6 +12699,331 @@ where a.[Contract] is not null</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Asset Category Dimension">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="114.666666666667,42.6666666666667"
+          Id="Package\Asset Category Dimension\Staging"
+          TopLeft="175.5,5.49999999999993" />
+        <NodeLayout
+          Size="209.333333333334,42.6666666666667"
+          Id="Package\Asset Category Dimension\Slowly Changing Dimension"
+          TopLeft="128.166666666667,108.166666666666" />
+        <EdgeLayout
+          Id="Package\Asset Category Dimension.Paths[ADO NET Source Output]"
+          TopLeft="232.833333333333,48.1666666666666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999999"
+              Start="0,0"
+              End="0,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="154.666666666667,42.6666666666667"
+          Id="Package\Asset Category Dimension\Derived Column"
+          TopLeft="17.5,210.833333333333" />
+        <EdgeLayout
+          Id="Package\Asset Category Dimension.Paths[Historical Attribute Inserts Output]"
+          TopLeft="182.5,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-87.6666666666667,59.9999999999999"
+              Start="0,0"
+              End="-87.6666666666667,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.503144654088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.503144654088"
+                    Point2="0,20.503144654088"
+                    Point3="-4,20.503144654088" />
+                  <mssgle:LineSegment
+                    End="-83.6666666666667,20.503144654088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-83.6666666666667,20.503144654088"
+                    Point2="-87.6666666666667,20.503144654088"
+                    Point3="-87.6666666666667,24.503144654088" />
+                  <mssgle:LineSegment
+                    End="-87.6666666666667,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-118.889720052083,25.503144654088,150.1127734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="166.666666666667,42.6666666666667"
+          Id="Package\Asset Category Dimension\OLE DB Command"
+          TopLeft="5.50000000000004,313.5" />
+        <EdgeLayout
+          Id="Package\Asset Category Dimension.Paths[Derived Column Output]"
+          TopLeft="91.8333333333334,253.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="121.333333333334,42.6666666666667"
+          Id="Package\Asset Category Dimension\Union All"
+          TopLeft="172.166666666667,416.166666666667" />
+        <EdgeLayout
+          Id="Package\Asset Category Dimension.Paths[New Output]"
+          TopLeft="232.833333333333,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="18.8888888888889,265.333333333333"
+              Start="0,0"
+              End="18.8888888888889,257.833333333333">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,153.127982646421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,153.127982646421"
+                    Point2="0,157.127982646421"
+                    Point3="4,157.127982646421" />
+                  <mssgle:LineSegment
+                    End="14.8888888888889,157.127982646421" />
+                  <mssgle:CubicBezierSegment
+                    Point1="14.8888888888889,157.127982646421"
+                    Point2="18.8888888888889,157.127982646421"
+                    Point3="18.8888888888889,161.127982646421" />
+                  <mssgle:LineSegment
+                    End="18.8888888888889,257.833333333333" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-17.6469422743055,162.127982646421,54.1827734375,11.43359375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Asset Category Dimension.Paths[OLE DB Command Output]"
+          TopLeft="88.8333333333334,356.166666666667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="125.111111111111,60.0000000000001"
+              Start="0,0"
+              End="125.111111111111,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,31.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,31.531453362256"
+                    Point2="0,35.531453362256"
+                    Point3="4,35.531453362256" />
+                  <mssgle:LineSegment
+                    End="121.111111111111,35.531453362256" />
+                  <mssgle:CubicBezierSegment
+                    Point1="121.111111111111,35.531453362256"
+                    Point2="125.111111111111,35.531453362256"
+                    Point3="125.111111111111,39.531453362256" />
+                  <mssgle:LineSegment
+                    End="125.111111111111,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Asset Category Dimension\Derived Column 1"
+          TopLeft="150.833333333333,518.833333333333" />
+        <EdgeLayout
+          Id="Package\Asset Category Dimension.Paths[Union All Output 1]"
+          TopLeft="232.833333333333,458.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="164,42.6666666666667"
+          Id="Package\Asset Category Dimension\Insert Destination"
+          TopLeft="150.833333333333,621.5" />
+        <EdgeLayout
+          Id="Package\Asset Category Dimension.Paths[Derived Column Output1]"
+          TopLeft="232.833333333333,561.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176,42.6666666666667"
+          Id="Package\Asset Category Dimension\OLE DB Command 1"
+          TopLeft="293.833333333333,210.833333333333" />
+        <EdgeLayout
+          Id="Package\Asset Category Dimension.Paths[Inferred Member Updates Output]"
+          TopLeft="283.166666666667,150.833333333333">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="98.6666666666667,59.9999999999999"
+              Start="0,0"
+              End="98.6666666666667,52.4999999999999">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.503144654088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.503144654088"
+                    Point2="0,20.503144654088"
+                    Point3="4,20.503144654088" />
+                  <mssgle:LineSegment
+                    End="94.6666666666667,20.503144654088" />
+                  <mssgle:CubicBezierSegment
+                    Point1="94.6666666666667,20.503144654088"
+                    Point2="98.6666666666667,20.503144654088"
+                    Point3="98.6666666666667,24.503144654088" />
+                  <mssgle:LineSegment
+                    End="98.6666666666667,52.4999999999999" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-25.0696549479167,25.503144654088,148.8059765625,11.658203125"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Asset Category Dimension\Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Asset Category Dimension\Slowly Changing Dimension">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{3D8B3EE6-F19A-47F5-80A3-D73D7DABE6A2}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[core].[Asset_Category_Dimension]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[Asset_Category]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Asset_Category&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Staging.Outputs[ADO NET Source Output].Columns[CEFC_Technology]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;CEFC_Technology&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;HistoricalAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Union All&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Derived Column 1&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Insert Destination&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;OLE DB Command 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;true&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;true&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn&gt;Update_from_TS&lt;/StartDateColumn&gt;
+  &lt;EndDateColumn&gt;Update_to_TS&lt;/EndDateColumn&gt;
+  &lt;DateVariable&gt;System::StartTime&lt;/DateVariable&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

@@ -16,9 +16,11 @@ as
 
 	declare @local_date datetime
 
+	declare @t_file_date datetime
+
   	select @local_date =  DBO.FN_LOCALDATE (GETDATE());
 
-	--select @t_file_date = EOMONTH(case when len(@file_date) = 6 then '01-'+@file_date else @file_date end); 
+	select @t_file_date = case when @file_date = 'Mar  1 2018 12:00AM' then 'Apr  1 2018 12:00AM' else @file_date end; 
 
 	with temp
 	as 
@@ -57,24 +59,24 @@ as
 					from core.Aggregation_Fact a
 					join core.Projects_Dimension b
 					  on a.ID_Project = b.ID_Project
-					where EOMONTH(convert(datetime,@file_date)) >= convert(datetime,b.Update_From_TS) 
-					and EOMONTH(convert(datetime,@file_date)) <= convert(datetime,isnull(b.Update_to_TS,@local_date))
-					and a.File_Date = @file_date 
+					where EOMONTH(convert(datetime,@t_file_date)) >= convert(datetime,b.Update_From_TS) 
+					and EOMONTH(convert(datetime,@t_file_date)) <= convert(datetime,isnull(b.Update_to_TS,@local_date))
+					--and a.File_Date = @file_date 
 					group by a.ID_Project,
 							 b.Project_Name  ) pd2
 				on pd.Project_Name like pd2.Project_Name+'%'
-				where EOMONTH(convert(datetime,@file_date)) >= convert(datetime,pd.Update_From_TS) 
-				and EOMONTH(convert(datetime,@file_date)) <= convert(datetime,isnull(pd.Update_to_TS,@local_date))
+				where EOMONTH(convert(datetime,@t_file_date)) >= convert(datetime,pd.Update_From_TS) 
+				and EOMONTH(convert(datetime,@t_file_date)) <= convert(datetime,isnull(pd.Update_to_TS,@local_date))
 				group by pd.ID_Project,
 						 pd.Project_Name) pd1
 			on bdf.ID_Project = pd1.ID_Project
-			where EOMONTH(convert(datetime,@file_date)) >= convert(datetime,bdf.Update_From_TS) 
-			and EOMONTH(convert(datetime,@file_date)) <= convert(datetime,isnull(bdf.Update_to_TS,@local_date))
+			where EOMONTH(convert(datetime,@t_file_date)) >= convert(datetime,bdf.Update_From_TS) 
+			and EOMONTH(convert(datetime,@t_file_date)) <= convert(datetime,isnull(bdf.Update_to_TS,@local_date))
 			group by case when charindex('II',pd1.Project_Name) > 0 then substring(pd1.Project_name,1,(charindex('II',pd1.Project_Name)-2)) else pd1.Project_Name end       
 			) as camt
 		on prjd.Project_Name = camt.Project_Name
-		where EOMONTH(convert(datetime,@file_date)) >= convert(datetime,prjd.Update_From_TS) 
-		and EOMONTH(convert(datetime,@file_date)) <= convert(datetime,isnull(prjd.Update_to_TS,@local_date))
+		where EOMONTH(convert(datetime,@t_file_date)) >= convert(datetime,prjd.Update_From_TS) 
+		and EOMONTH(convert(datetime,@t_file_date)) <= convert(datetime,isnull(prjd.Update_to_TS,@local_date))
 		group by prjd.ID_Project,
 				prjd.Project_Name,
 				prjd.Description,
@@ -156,9 +158,10 @@ as
 		left join core.Post_Codes b
 		 on (case when substring(af.Postcode,1,1) = '0' then substring(af.Postcode,2,len(af.Postcode)-1) else af.Postcode end) = b.postcode
 		left join core.Post_Codes_Electorate c
-		on b.postcode = c.Postcode    
-		     
-	  
+		on b.postcode = c.Postcode  
+   where (af.ID_Project = 'S2537'
+   and asd.Description in ('Solar Energy Battery','Solar Energy Equipment','Solar Energy Panels','Solar Water Heater')) or
+   af.ID_Project != 'S2537'
 	
 GO
 
