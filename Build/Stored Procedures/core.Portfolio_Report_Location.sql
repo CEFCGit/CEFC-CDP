@@ -103,6 +103,7 @@ FROM CORE.Base_Data_Fact b
 					  sum(Capitalised_Interest) as Capitalised_Interest,
 					  sum(Capitalised_Fees) as Capitalised_Fees
 		       from core.Commitments_Deployments_Fact 
+			   where To_Date = EOMONTH(dateadd(month,-1,@load_date))
 			   group by ID_Project_TNumber
 			   ) cdf
 	 on p.ID_Project_TNumber = cdf.ID_Project_TNumber
