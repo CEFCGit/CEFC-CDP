@@ -13,7 +13,7 @@ as
 
   	select @local_date =  DBO.FN_LOCALDATE (GETDATE());
 
-	select @file_date = dateadd(month,-1,cast(@file_date as datetime));
+	select @file_date = cast(@file_date as datetime);
 
 	select @t_file_date = case when @file_date = 'Mar  1 2018 12:00AM' then cast('Apr  1 2018 12:00AM' as datetime) else cast(@file_date as datetime) end; 
 
@@ -72,7 +72,7 @@ as
 		) 
 
 		
-		select af.[ID_Project]
+		select distinct af.[ID_Project]
 			  ,af.[Postcode]
 			  ,af.[Principal_Outstanding]
 			  ,af.[Total_Amount_Financed]
@@ -81,10 +81,10 @@ as
 			  ,t.Amt_CEFC
 			  ,t.ID_Project_TNumber
 			  ,b.state as postcode_state
-			  ,b.suburb
 			  ,c.Electoral_division as Electorate
 			  ,case when acd1.CEFC_Technology = '' then acd1.Asset_Category else acd1.CEFC_Technology end as CEFC_Technology
-			  ,af.Contract_Number  
+			  ,af.Contract_Number
+			  ,isnull(asd.Status,'Active') as Status
 		from core.Aggregation_Fact af
 		join (select  max(cast(af1.File_Date as datetime)) as Agg_FileDate
 				,af1.[ID_Project]   	    	  
@@ -118,6 +118,7 @@ as
    and asd.Description in ('Solar Energy Battery','Solar Energy Equipment','Solar Energy Panels','Solar Water Heater'))
     or
    af.ID_Project != 'S2537' 
+  
 
   
 	
