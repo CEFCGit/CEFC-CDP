@@ -8,12 +8,12 @@
   <LastBuildInfos>
     <ProjectBuildItemInfo>
       <Name>STGCDPDimFactLoad.dtsx</Name>
-      <LastWriteTime>2018-08-24T01:37:45.6073145Z</LastWriteTime>
+      <LastWriteTime>2018-09-14T05:00:25.6017137Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>IMTSTGLoad.dtsx</Name>
-      <LastWriteTime>2018-08-24T00:53:52.9624056Z</LastWriteTime>
+      <LastWriteTime>2018-09-14T06:00:37.5012035Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -43,7 +43,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>STGCDPAggDimFactLoad.dtsx</Name>
-      <LastWriteTime>2018-09-05T04:51:17.3702316Z</LastWriteTime>
+      <LastWriteTime>2018-09-05T14:03:41.2985829Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>
