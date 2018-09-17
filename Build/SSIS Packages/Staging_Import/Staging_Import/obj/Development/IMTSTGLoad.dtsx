@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="IMTSTGLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{C1924F61-59E1-4236-803E-27C10FA821A1}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{4C4C068A-B0B3-48C2-A04A-4C9F5BB1557E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -2987,7 +2987,7 @@
                   dataType="System.Int32"
                   description="The number of seconds before a command times out. A value of 0 indicates infinite time-out. "
                   expressionType="Notify"
-                  name="CommandTimeout">30</property>
+                  name="CommandTimeout">0</property>
                 <property
                   dataType="System.Boolean"
                   description="Specifies whether to use the SqlBulkCopy interface to improve the performance of bulk insert operations. Only certain providers support this interface."
