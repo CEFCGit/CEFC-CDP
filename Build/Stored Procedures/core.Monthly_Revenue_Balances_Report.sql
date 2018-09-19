@@ -21,7 +21,8 @@ as
 (
 	select 
 	    Account_Number,
-		Investment_Type,
+		iMart_TNum,
+		Investment_Type,		
 		case when To_Period >= 7 then year(To_Date)-1 else year(To_Date) end  as [year],
 		sum(case when To_Period = 1 then YTD_Total_TY end) Jul,
 		sum(case when To_Period = 2 then YTD_Total_TY end) Aug, 
@@ -37,40 +38,31 @@ as
 		sum(case when To_Period = 12 then YTD_Total_TY end) Jun 
 	from core.Revenue_Fact 
 	group by Account_Number,
+			 iMart_TNum,
 			 Investment_Type,
 			 case when To_Period >= 7 then year(To_Date)-1 else year(To_Date) end
 )
 
-select	fd.iMart_TNum as [iMart Deal],
+select	pt.iMart_TNum,
+		fd.iMart_TNum as [iMart Deal],
 		fd.Project_Name as Project,
 		fd.Account_Number+' - '+fd.Account_Description as [Financial Deal],
 		pt.Investment_Type,
 		[year],
 		Jul as July,
-		Aug as August,
-		Sep as September,
-		Oct as October,
-		Nov as November,
-		[Dec] as December,
-		Jan as January,
-		Feb as February,
-		Mar as March,
-		Apr as April,
-		May,
-		Jun as June,
-		Aug-Jul as August_Movement,
-		Sep-Aug as September_Movement,
-		Oct-Sep as October_Movement,
-		Nov-Oct as November_Movement,
-		[Dec]-Nov as December_Movement,
-		Jan-[Dec] as January_Movement,
-		Feb-Jan as February_Movement,
-		Mar-Feb as March_Movement,
-		Apr-Mar as April_Movement,
-		May-Apr as May_Movement,
-		Jun-May as June_Movement
+		Aug-Jul as August,
+		Sep-Aug as September,
+		Oct-Sep as October,
+		Nov-Oct as November,
+		[Dec]-Nov as December,
+		Jan-[Dec] as January,
+		Feb-Jan as February,
+		Mar-Feb as March,
+		Apr-Mar as April,
+		May-Apr as May,
+		Jun-May as June
 from Period_tots pt
-join core.FinDeal_Dimension fd
+left join core.FinDeal_Dimension fd
   on pt.Account_Number = fd.Account_Number
   order by pt.Account_Number
 
