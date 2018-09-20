@@ -3,7 +3,8 @@
 -- Create date: 15/05/2018
 -- Description:	Create stored procedure to build the Finance Report
 -- Version Control
---06/06(YM) Removed all reference to the Security Table
+-- 06/06(YM) Removed all reference to the Security Table
+-- 20/09(YM) : Added the CEFC_Strategic_Sector
 -- ==========================================================================
 
 Create or alter procedure [core].[Finance_Report] @load_date datetime
@@ -46,7 +47,8 @@ SELECT @load_date AS ParamIn ,
 	   pd.Priority,
 	   phd.ID_Phase,
 	   phd.Phase_Name,
-	   phd.Phase_Description
+	   phd.Phase_Description,
+	   p.CEFC_Strategic_Sector
 	   
 from core.Base_Data_Fact b
 left join core.Projects_Dimension p
@@ -78,7 +80,8 @@ group by --us.UserID ,
 	   pd.Priority,
 	   phd.ID_Phase,
 	   phd.Phase_Name,
-	   phd.Phase_Description
+	   phd.Phase_Description,
+	   p.CEFC_Strategic_Sector
 	   
 GO
 

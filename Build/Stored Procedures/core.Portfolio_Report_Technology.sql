@@ -3,9 +3,10 @@
 -- Create date: 15/05/2018
 -- Description:	Create stored procedure to build the Portfolio Report by Technology
 -- Version Control
---01/06/2018(YM) Added the Sub Amortisation Amount from Commitments_Deployments Fact
---06/06/2018(YM) Removed all references to the Security Table
---16/07/18(YM) Added the Live Commitment and NonTriggered Commitment
+--01/06/18(YM)	: Added the Sub Amortisation Amount from Commitments_Deployments Fact
+--06/06/18(YM)	: Removed all references to the Security Table
+--16/07/18(YM)  : Added the Live Commitment and NonTriggered Commitment
+--20/09/18(YM)  : Added the CEFC_Strategic_Sector
 -- ==========================================================================
 
 CREATE or alter procedure [core].[Portfolio_Report_Technology] @load_date datetime
@@ -89,7 +90,8 @@ SELECT @load_date AS ParamIn ,
 	   sum(cdf.Capitalised_Interest*td.Percent_of_Project_Amt) as Capitalised_Interest,
 	   sum(cdf.Capitalised_Fees*td.Percent_of_Project_Amt) as Capitalised_Fees,
 	   sum([Amt_cLiveCommitment]*td.Percent_of_Project_Amt) as Amt_cLiveCommitment,
-	   sum([Amt_cNonTriggeredCommitment]*td.Percent_of_Project_Amt) as Amt_cNonTriggeredCommitment
+	   sum([Amt_cNonTriggeredCommitment]*td.Percent_of_Project_Amt) as Amt_cNonTriggeredCommitment,
+	   P.CEFC_Strategic_Sector
 FROM CORE.Base_Data_Fact b
 	left JOIN core.Projects_Dimension p ON b.ID_Project = p.ID_Project
 	left join core.Priority_Dimension pd
@@ -156,6 +158,7 @@ group by --us.UserID ,
 	   td.Percent_of_Project_Amt,
 	   td.Percent_of_Project_tCO2_savings,
 	   td.Percent_renewable_calc,
-	   tm.Renewable
+	   tm.Renewable,
+	   p.CEFC_Strategic_Sector
 GO
 

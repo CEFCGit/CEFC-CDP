@@ -7,6 +7,7 @@
 -- 09/05(YM) : Added logic for the from and to dates to bring back the latest records from the dimension 
 -- 25/05(YM) : Removed the load date as a parameter. Pipeline shows the latest records
 -- 06/06(YM) : Removed all references to the Security Table
+-- 20/09(YM) : Added the CEFC_Strategic_Sector
 -- ==========================================================================
 
 CREATE or alter  procedure [core].[Pipeline_Report] --@load_date datetime
@@ -55,6 +56,7 @@ select
 		,datediff(day,convert(date,substring(pjd.rpt_note,1,charindex('-',pjd.rpt_Note)-1),3),@local_date) as Note_Days
 		,sum(bdf.Amt_cProject) as Amt_cProject
 		,sum(bdf.Amt_cCEFC) as Amt_cCEFC
+		,pjd.CEFC_Strategic_Sector 
 from core.Base_Data_Fact bdf 
 left join core.Projects_Dimension pjd
 	on bdf.ID_Project = pjd.ID_Project
@@ -103,7 +105,8 @@ group by --us.UserID
 		,pjd.cOrganisations
 		,fd.code
 		,fd.Description 
-		,datediff(day,convert(date,substring(pjd.rpt_note,1,charindex('-',pjd.rpt_Note)-1),3),@local_date) 
+		,datediff(day,convert(date,substring(pjd.rpt_note,1,charindex('-',pjd.rpt_Note)-1),3),@local_date)
+		,pjd.CEFC_Strategic_Sector
 
 GO
 

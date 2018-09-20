@@ -3,9 +3,10 @@
 -- Create date: 15/05/2018
 -- Description:	Create stored procedure to build the Portfolio Report by Location
 -- Version Control
---01/06/18(YM) Added the Sub Amortisation Amount from the Commitments_Deployments
---06/06/18(YM) Removed all references to the Security Table
---16/07/18(YM) Added the Live Commitment and NonTriggered Commitment
+-- 01/06/18(YM) : Added the Sub Amortisation Amount from the Commitments_Deployments
+-- 06/06/18(YM) : Removed all references to the Security Table
+-- 16/07/18(YM) : Added the Live Commitment and NonTriggered Commitment
+-- 20/09/18(YM) : Added the CEFC_Strategic_Sector
 -- ==========================================================================
 
 CREATE or alter procedure [core].[Portfolio_Report_Location] @load_date datetime
@@ -86,7 +87,9 @@ SELECT @load_date AS ParamIn ,
 	   sum(cdf.Capitalised_Interest*l.Percent_of_Project_Amt) as Capitalised_Interest,
 	   sum(cdf.Capitalised_Fees*l.Percent_of_Project_Amt) as Capitalised_Fees,
 	   sum([Amt_cLiveCommitment]*l.Percent_of_Project_Amt) as Amt_cLiveCommitment,
-	   sum([Amt_cNonTriggeredCommitment]*l.Percent_of_Project_Amt) as Amt_cNonTriggeredCommitment   
+	   sum([Amt_cNonTriggeredCommitment]*l.Percent_of_Project_Amt) as Amt_cNonTriggeredCommitment,
+	   p.CEFC_Strategic_Sector
+	      
 FROM CORE.Base_Data_Fact b
 	left join core.Projects_Dimension p
 	on b.ID_Project = p.ID_Project
@@ -149,6 +152,7 @@ group by --us.UserID ,
 	   pd.Priority,
 	   phd.ID_Phase,
 	   phd.Phase_Name,
-	   phd.Phase_Description
+	   phd.Phase_Description,
+	   p.CEFC_Strategic_Sector
 GO
 
