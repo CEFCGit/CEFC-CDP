@@ -55,14 +55,20 @@ CREATE TABLE [core].[Commitments_Deployments_Fact](
 	[Remaining_To_Fund] [numeric](15, 2) NULL,
 	[Code] [nvarchar](3) NULL,
 	[Business_Platform] [nvarchar](50) NULL,
-	[From_Date] [varchar](20) NULL,
+	[Commitment_Category] nvarchar(20),
+	[Adjustments_to_Facility_Limit] numeric(15,2),
+	[To_Period] [numeric](3, 0) NULL,
 	[To_Date] [varchar](20) NULL,
 	[Updated_by] [nvarchar](20) NULL,
 	[Update_from_TS] [datetime] NOT NULL,
 	[Update_to_TS] [datetime] NULL,
 	[Update_Reason] [nvarchar](20) NULL,
-PRIMARY KEY([Account_Number] ,[Update_from_TS])
-) 
+PRIMARY KEY CLUSTERED 
+(
+	[Account_Number] ASC,
+	[Update_from_TS] ASC
+)WITH (STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
 GO
 
 ALTER TABLE [core].[Commitments_Deployments_Fact] ADD  DEFAULT ('SSIS ETL') FOR [Updated_by]
@@ -73,4 +79,5 @@ GO
 
 ALTER TABLE [core].[Commitments_Deployments_Fact] ADD  DEFAULT ('Population process') FOR [Update_Reason]
 GO
+
 

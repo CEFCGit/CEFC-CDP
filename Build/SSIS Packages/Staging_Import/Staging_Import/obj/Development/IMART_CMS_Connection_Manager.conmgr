@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="IMART_CMS_Connection_Manager"
+  DTS:DTSID="{C8D8C942-9493-4054-A5A4-16EA213E1F89}"
+  DTS:CreationName="ODBC">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="uid=svcTransit;Dsn=iMart-CMS;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

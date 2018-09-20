@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="STGCDPFinDimFactComDepLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="34"
-  DTS:VersionGUID="{403BDFEF-8720-479D-A5BC-57D28C919CC1}">
+  DTS:VersionBuild="35"
+  DTS:VersionGUID="{09123210-CD1E-42B1-BE40-986ED8F96BFB}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -2430,14 +2430,6 @@
                       externalMetadataColumnId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].ExternalColumns[REPAY_Net_Movement]"
                       lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[Net Movement (Repayments)]" />
                     <inputColumn
-                      refId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].Columns[Book value excluding concession &amp; accrued interest &amp; fees]"
-                      cachedDataType="numeric"
-                      cachedName="Book value excluding concession &amp; accrued interest &amp; fees"
-                      cachedPrecision="15"
-                      cachedScale="2"
-                      externalMetadataColumnId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Book_Value_Excluding_Concession_Accrued_Interest_Fees]"
-                      lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[Book value excluding concession &amp; accrued interest &amp; fees]" />
-                    <inputColumn
                       refId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].Columns[Net Concession Reserve]"
                       cachedDataType="numeric"
                       cachedName="Net Concession Reserve"
@@ -2453,6 +2445,14 @@
                       cachedScale="2"
                       externalMetadataColumnId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Book_Value_Excluding_Accrued_Interest_Fees_Less_Net_Concession]"
                       lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[Book value excluding accrued interest &amp; fees less Net Concession]" />
+                    <inputColumn
+                      refId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].Columns[Book value excluding concession &amp; accrued interest &amp; fees]"
+                      cachedDataType="numeric"
+                      cachedName="Book value excluding concession &amp; accrued interest &amp; fees"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Book_Value_Excluding_Concession_Accrued_Interest_Fees]"
+                      lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[Book value excluding concession &amp; accrued interest &amp; fees]" />
                     <inputColumn
                       refId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].Columns[Maximum Facility]"
                       cachedDataType="numeric"
@@ -2504,6 +2504,21 @@
                       cachedName="Update_F_TS"
                       externalMetadataColumnId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Update_from_TS]"
                       lineageId="Package\Commitments_Deployments Fact\Derived Column.Outputs[Derived Column Output].Columns[Update_F_TS]" />
+                    <inputColumn
+                      refId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].Columns[Commitment Category]"
+                      cachedDataType="wstr"
+                      cachedLength="20"
+                      cachedName="Commitment Category"
+                      externalMetadataColumnId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Commitment_Category]"
+                      lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[Commitment Category]" />
+                    <inputColumn
+                      refId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].Columns[Adjustments to Facility Limit]"
+                      cachedDataType="numeric"
+                      cachedName="Adjustments to Facility Limit"
+                      cachedPrecision="15"
+                      cachedScale="2"
+                      externalMetadataColumnId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Adjustments_to_Facility_Limit]"
+                      lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[Adjustments to Facility Limit]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -2865,6 +2880,17 @@
                       dataType="wstr"
                       length="20"
                       name="Update_Reason" />
+                    <externalMetadataColumn
+                      refId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Commitment_Category]"
+                      dataType="wstr"
+                      length="20"
+                      name="Commitment_Category" />
+                    <externalMetadataColumn
+                      refId="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact.Inputs[ADO NET Destination Input].ExternalColumns[Adjustments_to_Facility_Limit]"
+                      dataType="numeric"
+                      name="Adjustments_to_Facility_Limit"
+                      precision="15"
+                      scale="2" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -3037,7 +3063,9 @@
       ,[Code]
       ,[Business Platform]
       ,[To Period]
-      ,[To Date]
+      ,[To Date],
+      [Commitment Category] ,
+      [Adjustments to Facility Limit]
   FROM [staging].[Commitments_Deployments]
 WHERE [Project Name] is NOT NULL</property>
                 <property
@@ -3706,6 +3734,27 @@ WHERE [Project Name] is NOT NULL</property>
                       lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[To Date]"
                       name="To Date"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[Commitment Category]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Commitment Category]"
+                      length="20"
+                      lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[Commitment Category]"
+                      name="Commitment Category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[Adjustments to Facility Limit]"
+                      dataType="numeric"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Adjustments to Facility Limit]"
+                      lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].Columns[Adjustments to Facility Limit]"
+                      name="Adjustments to Facility Limit"
+                      precision="15"
+                      scale="2"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -4049,6 +4098,17 @@ WHERE [Project Name] is NOT NULL</property>
                       dataType="wstr"
                       length="20"
                       name="To Date" />
+                    <externalMetadataColumn
+                      refId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Commitment Category]"
+                      dataType="wstr"
+                      length="20"
+                      name="Commitment Category" />
+                    <externalMetadataColumn
+                      refId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Output].ExternalColumns[Adjustments to Facility Limit]"
+                      dataType="numeric"
+                      name="Adjustments to Facility Limit"
+                      precision="15"
+                      scale="2" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -4454,6 +4514,19 @@ WHERE [Project Name] is NOT NULL</property>
                       length="20"
                       lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Error Output].Columns[To Date]"
                       name="To Date" />
+                    <outputColumn
+                      refId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Commitment Category]"
+                      dataType="wstr"
+                      length="20"
+                      lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Commitment Category]"
+                      name="Commitment Category" />
+                    <outputColumn
+                      refId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Adjustments to Facility Limit]"
+                      dataType="numeric"
+                      lineageId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Error Output].Columns[Adjustments to Facility Limit]"
+                      name="Adjustments to Facility Limit"
+                      precision="15"
+                      scale="2" />
                     <outputColumn
                       refId="Package\Commitments_Deployments Fact\Staging.Outputs[ADO NET Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
@@ -20623,25 +20696,25 @@ WHERE [Project Name] is NOT NULL</property>
         <NodeLayout
           Size="190.666666666667,42.6666666666667"
           Id="Package\Commitments_Deployments Fact\Commitments_Deployments_Fact"
-          TopLeft="171.5,216.833333333333" />
+          TopLeft="171.083333339542,216.833333333333" />
         <NodeLayout
           Size="132,42.6666666666667"
           Id="Package\Commitments_Deployments Fact\Derived Column"
           TopLeft="204.166666666667,116.166666666667" />
         <EdgeLayout
           Id="Package\Commitments_Deployments Fact.Paths[Derived Column Output]"
-          TopLeft="268.5,158.833333333333">
+          TopLeft="268.291666669771,158.833333333334">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,57.9999999999997"
+              EndConnector="0,57.9999999999993"
               Start="0,0"
-              End="0,50.4999999999997">
+              End="0,50.4999999999993">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.4999999999997" />
+                    End="0,50.4999999999993" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

@@ -54,8 +54,11 @@ CREATE TABLE [staging].[Commitments_Deployments](
 	[Remaining To Fund] [numeric](15, 2) NULL,
 	[Code] [nvarchar](3) NULL,
 	[Business Platform] [nvarchar](50) NULL,
-	[From Date] [varchar](20) NULL,
-	[To Date] [varchar](20) NULL
-)
+	[To Period] [varchar](3) NULL,
+	[To Date] [varchar](20) NULL,
+	[Commitment Category] nvarchar(20),
+	[Adjustments to Facility Limit] numeric(15,2)
+) ON [PRIMARY]
 GO
+
 

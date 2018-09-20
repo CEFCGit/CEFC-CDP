@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="FINSTGComDepLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="64"
-  DTS:VersionGUID="{F975BD0F-62D4-4CA8-9319-A7ACABCF39ED}">
+  DTS:VersionBuild="67"
+  DTS:VersionGUID="{EFCF2298-B8E6-492D-8B1F-6BAF8C55C1A3}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -187,7 +187,7 @@
                 <connection
                   refId="Package\AASB9 Subcategory\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="{2DBE07A5-1B57-4AEE-8D2D-388E479A0FF0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[FIN_Connection_Manager]"
+                  connectionManagerRefId="Project.ConnectionManagers[FINComDep_Connection_Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -446,7 +446,7 @@
                 <connection
                   refId="Package\Commitment Category\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="{2DBE07A5-1B57-4AEE-8D2D-388E479A0FF0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[FIN_Connection_Manager]"
+                  connectionManagerRefId="Project.ConnectionManagers[FINComDep_Connection_Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -705,7 +705,7 @@
                 <connection
                   refId="Package\Cost Centre\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="{2DBE07A5-1B57-4AEE-8D2D-388E479A0FF0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[FIN_Connection_Manager]"
+                  connectionManagerRefId="Project.ConnectionManagers[FINComDep_Connection_Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -809,11 +809,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging"
+              refId="Package\Deployments_Commitments\ADO NET Destination"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;2"
               description="Loads data into an ADO.NET-compliant database that uses a database table or view. Load data into a new or existing table. For example, use an ADO.NET provider for ODBC to load data into an ODBC destination."
-              name="Commitments_Deployments Table on Staging"
+              name="ADO NET Destination"
               usesDispositions="true"
               version="2">
               <properties>
@@ -844,7 +844,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Connections[IDbConnection]"
+                  refId="Package\Deployments_Commitments\ADO NET Destination.Connections[IDbConnection]"
                   connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
                   connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                   description="Managed connection manager"
@@ -852,718 +852,736 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input]"
+                  refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input]"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="ADO NET Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Project Name]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Project Name]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Project Name"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Project Name]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Project Name]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Project Name]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[iMart #]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[iMart #]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="iMart #"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[iMart #]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[iMart #]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[iMart #]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Investment Type]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Investment Type]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Investment Type"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Investment Type]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Investment Type]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Investment Type]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Principal (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Principal (BFB)]"
                       cachedDataType="r8"
                       cachedName="Principal (BFB)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Principal (BFB)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Principal (BFB)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Principal (BFB)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Capitalised Interest (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Capitalised Interest (BFB)]"
                       cachedDataType="r8"
                       cachedName="Capitalised Interest (BFB)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Interest (BFB)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Interest (BFB)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Capitalised Interest (BFB)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Capitalised Fees (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Capitalised Fees (BFB)]"
                       cachedDataType="r8"
                       cachedName="Capitalised Fees (BFB)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Fees (BFB)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Fees (BFB)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Capitalised Fees (BFB)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[FX Translation Gain/Loss (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[FX Translation Gain/Loss (BFB)]"
                       cachedDataType="r8"
                       cachedName="FX Translation Gain/Loss (BFB)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[FX Translation Gain/Loss (BFB)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FX Translation Gain/Loss (BFB)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[FX Translation Gain/Loss (BFB)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Fees Accrued (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Fees Accrued (BFB)]"
                       cachedDataType="r8"
                       cachedName="Fees Accrued (BFB)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Fees Accrued (BFB)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Fees Accrued (BFB)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fees Accrued (BFB)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Net Interest Accrued (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Net Interest Accrued (BFB)]"
                       cachedDataType="r8"
                       cachedName="Net Interest Accrued (BFB)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Net Interest Accrued (BFB)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Net Interest Accrued (BFB)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Net Interest Accrued (BFB)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Unrealised Gain /(Loss) (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Unrealised Gain /(Loss) (BFB)]"
                       cachedDataType="r8"
                       cachedName="Unrealised Gain /(Loss) (BFB)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Unrealised Gain /(Loss) (BFB)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Unrealised Gain /(Loss) (BFB)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unrealised Gain /(Loss) (BFB)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Realised Gain /(Loss) (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Realised Gain /(Loss) (BFB)]"
                       cachedDataType="r8"
                       cachedName="Realised Gain /(Loss) (BFB)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Realised Gain /(Loss) (BFB)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Realised Gain /(Loss) (BFB)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Realised Gain /(Loss) (BFB)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Realised impairment (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Realised impairment (BFB)]"
                       cachedDataType="r8"
                       cachedName="Realised impairment (BFB)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Realised impairment (BFB)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Realised impairment (BFB)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Realised impairment (BFB)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Total excluding concession (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Total excluding concession (BFB)]"
                       cachedDataType="r8"
                       cachedName="Total excluding concession (BFB)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Total excluding Concession (BFB)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Total excluding Concession (BFB)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total excluding concession (BFB)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Amounts Drawn (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Amounts Drawn (Repayments)]"
                       cachedDataType="r8"
                       cachedName="Amounts Drawn (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Amounts Drawn (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Amounts Drawn (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Amounts Drawn (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Interest Capitalised (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Interest Capitalised (Repayments)]"
                       cachedDataType="r8"
                       cachedName="Interest Capitalised (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Interest Capitalised (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Interest Capitalised (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Interest Capitalised (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Establishment Fees Capitalised (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Establishment Fees Capitalised (Repayments)]"
                       cachedDataType="r8"
                       cachedName="Establishment Fees Capitalised (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Establishment Fees Capitalised (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Establishment Fees Capitalised (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Establishment Fees Capitalised (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Commitment Fees Capitalised (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Commitment Fees Capitalised (Repayments)]"
                       cachedDataType="r8"
                       cachedName="Commitment Fees Capitalised (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Commitment Fees Capitalised (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Commitment Fees Capitalised (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Commitment Fees Capitalised (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Legal Fees Capitalised (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Legal Fees Capitalised (Repayments)]"
                       cachedDataType="r8"
                       cachedName="Legal Fees Capitalised (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Legal Fees Capitalised (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Legal Fees Capitalised (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Legal Fees Capitalised (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Commitment Fees Accrued (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Commitment Fees Accrued (Repayments)]"
                       cachedDataType="r8"
                       cachedName="Commitment Fees Accrued (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Commitment Fees Accrued (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Commitment Fees Accrued (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Commitment Fees Accrued (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Interest Accrued (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Interest Accrued (Repayments)]"
                       cachedDataType="r8"
                       cachedName="Interest Accrued (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Interest Accrued (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Interest Accrued (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Interest Accrued (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Discount Amortisation (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Discount Amortisation (Repayments)]"
                       cachedDataType="r8"
                       cachedName="Discount Amortisation (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Discount Amortisation (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Discount Amortisation (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Discount Amortisation (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Unrealised Gain /(Loss) (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Unrealised Gain /(Loss) (Repayments)]"
                       cachedDataType="r8"
                       cachedName="Unrealised Gain /(Loss) (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Unrealised Gain /(Loss) (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Unrealised Gain /(Loss) (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unrealised Gain /(Loss) (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Realised Gain /(Loss) (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Realised Gain /(Loss) (Repayments)]"
                       cachedDataType="r8"
                       cachedName="Realised Gain /(Loss) (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Realised Gain /(Loss) (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Realised Gain /(Loss) (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Realised Gain /(Loss) (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Realised Impairment (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Realised Impairment (Repayments)]"
                       cachedDataType="r8"
                       cachedName="Realised Impairment (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Realised Impairment (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Realised Impairment (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Realised Impairment (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Equity Acct'd Gain/(Loss) (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Equity Acct'd Gain/(Loss) (Repayments)]"
                       cachedDataType="r8"
                       cachedName="Equity Acct'd Gain/(Loss) (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Equity Acct'd Gain/(Loss) (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Equity Acct'd Gain/(Loss) (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Equity Acct'd Gain/(Loss) (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[FX Translation Gain/Loss (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[FX Translation Gain/Loss (Repayments)]"
                       cachedDataType="r8"
                       cachedName="FX Translation Gain/Loss (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[FX Translation Gain/Loss (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FX Translation Gain/Loss (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[FX Translation Gain/Loss (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Principal Repaid (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Principal Repaid (Repayments)]"
                       cachedDataType="r8"
                       cachedName="Principal Repaid (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Principal Repaid (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Principal Repaid (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Principal Repaid (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Capitalised Interest Repaid (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Capitalised Interest Repaid (Repayments)]"
                       cachedDataType="r8"
                       cachedName="Capitalised Interest Repaid (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Interest Repaid (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Interest Repaid (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Capitalised Interest Repaid (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Capitalised Fees Repaid (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Capitalised Fees Repaid (Repayments)]"
                       cachedDataType="r8"
                       cachedName="Capitalised Fees Repaid (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Fees Repaid (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Fees Repaid (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Capitalised Fees Repaid (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Interest Received (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Interest Received (Repayments)]"
                       cachedDataType="r8"
                       cachedName="Interest Received (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Interest Received (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Interest Received (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Interest Received (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Total excluding concession (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Total excluding concession (Repayments)]"
                       cachedDataType="r8"
                       cachedName="Total excluding concession (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Total excluding concession (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Total excluding concession (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total excluding concession (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Gross Principal]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Gross Principal]"
                       cachedDataType="r8"
                       cachedName="Gross Principal"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Gross Principal]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Gross Principal]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gross Principal]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Realised Gain /(Loss)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Realised Gain /(Loss)]"
                       cachedDataType="r8"
                       cachedName="Realised Gain /(Loss)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Realised Gain /(Loss)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Realised Gain /(Loss)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Realised Gain /(Loss)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Equity Acct'd Gain/(Loss)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Equity Acct'd Gain/(Loss)]"
                       cachedDataType="r8"
                       cachedName="Equity Acct'd Gain/(Loss)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Equity Acct'd Gain/(Loss)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Equity Acct'd Gain/(Loss)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Equity Acct'd Gain/(Loss)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Realised Impairment]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Realised Impairment]"
                       cachedDataType="r8"
                       cachedName="Realised Impairment"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Realised Impairment]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Realised Impairment]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Realised Impairment]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Principal net of capital losses]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Principal net of capital losses]"
                       cachedDataType="r8"
                       cachedName="Principal net of capital losses"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Principal net of capital losses]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Principal net of capital losses]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Principal net of capital losses]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Capitalised Interest]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Capitalised Interest]"
                       cachedDataType="r8"
                       cachedName="Capitalised Interest"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Interest]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Interest]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Capitalised Interest]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Discount Amortisation]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Discount Amortisation]"
                       cachedDataType="r8"
                       cachedName="Discount Amortisation"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Discount Amortisation]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Discount Amortisation]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Discount Amortisation]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Capitalised Fees]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Capitalised Fees]"
                       cachedDataType="r8"
                       cachedName="Capitalised Fees"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Fees]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Fees]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Capitalised Fees]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[FX Translation Gain/Loss]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[FX Translation Gain/Loss]"
                       cachedDataType="r8"
                       cachedName="FX Translation Gain/Loss"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[FX Translation Gain/Loss]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FX Translation Gain/Loss]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[FX Translation Gain/Loss]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Fees Accrued]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Fees Accrued]"
                       cachedDataType="r8"
                       cachedName="Fees Accrued"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Fees Accrued]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Fees Accrued]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fees Accrued]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Net Interest Accrued]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Net Interest Accrued]"
                       cachedDataType="r8"
                       cachedName="Net Interest Accrued"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Net Interest Accrued]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Net Interest Accrued]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Net Interest Accrued]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Unrealised Gain /(Loss)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Unrealised Gain /(Loss)]"
                       cachedDataType="r8"
                       cachedName="Unrealised Gain /(Loss)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Unrealised Gain /(Loss)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Unrealised Gain /(Loss)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Unrealised Gain /(Loss)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Total excluding concession]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Total excluding concession]"
                       cachedDataType="r8"
                       cachedName="Total excluding concession"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Total excluding concession]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Total excluding concession]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Total excluding concession]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Variance]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Variance]"
                       cachedDataType="r8"
                       cachedName="Variance"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Variance]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Variance]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Variance]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Book value excluding concession &amp; accrued interest &amp; fees (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Book value excluding concession &amp; accrued interest &amp; fees (BFB)]"
                       cachedDataType="r8"
                       cachedName="Book value excluding concession &amp; accrued interest &amp; fees (BFB)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Book value excluding concession &amp; accrued interest &amp; fees (BFB)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Book value excluding concession &amp; accrued interest &amp; fees (BFB)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Book value excluding concession &amp; accrued interest &amp; fees (BFB)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Net Movement (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Net Movement (Repayments)]"
                       cachedDataType="r8"
                       cachedName="Net Movement (Repayments)"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Net Movement (Repayments)]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Net Movement (Repayments)]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Net Movement (Repayments)]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Book value excluding concession &amp; accrued interest &amp; fees]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Book value excluding concession &amp; accrued interest &amp; fees]"
                       cachedDataType="r8"
                       cachedName="Book value excluding concession &amp; accrued interest &amp; fees"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Book value excluding concession &amp; accrued interest &amp; fees]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Book value excluding concession &amp; accrued interest &amp; fees]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Book value excluding concession &amp; accrued interest &amp; fees]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Net Concession Reserve]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Net Concession Reserve]"
                       cachedDataType="r8"
                       cachedName="Net Concession Reserve"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Net Concession Reserve]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Net Concession Reserve]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Net Concession Reserve]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Maximum Facility]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Commitment Category]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Commitment Category"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Commitment Category]"
+                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Commitment Category]" />
+                    <inputColumn
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Maximum Facility]"
                       cachedDataType="r8"
                       cachedName="Maximum Facility"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Maximum Facility]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Maximum Facility]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Maximum Facility]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Repaid / Cancelled / Discount Amort'n]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Adjustments to Facility Limit]"
+                      cachedDataType="r8"
+                      cachedName="Adjustments to Facility Limit"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Adjustments to Facility Limit]"
+                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Adjustments to Facility Limit]" />
+                    <inputColumn
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Repaid / Cancelled / Discount Amort'n]"
                       cachedDataType="r8"
                       cachedName="Repaid / Cancelled / Discount Amort'n"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Repaid / Cancelled / Discount Amort'n]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Repaid / Cancelled / Discount Amort'n]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Repaid / Cancelled / Discount Amort'n]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Remaining To Fund]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Remaining To Fund]"
                       cachedDataType="r8"
                       cachedName="Remaining To Fund"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Remaining To Fund]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Remaining To Fund]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Remaining To Fund]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Code]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Code]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Code"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Code]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Code]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Code]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Business Platform]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Business Platform]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="Business Platform"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Business Platform]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Business Platform]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Business Platform]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[To Date]"
-                      cachedDataType="date"
-                      cachedName="To Date"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[To Date]"
-                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[To Date]" />
-                    <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[To Period]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[To Period]"
                       cachedDataType="wstr"
                       cachedLength="255"
                       cachedName="To Period"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[To Period]"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[To Period]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[To Period]" />
                     <inputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].Columns[Book value excluding accrued interest &amp; fees]"
-                      cachedDataType="r8"
-                      cachedName="Book value excluding accrued interest &amp; fees"
-                      externalMetadataColumnId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Book value excluding accrued interest &amp; fees less Net Concession]"
-                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Book value excluding accrued interest &amp; fees]" />
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[To Date]"
+                      cachedDataType="date"
+                      cachedName="To Date"
+                      externalMetadataColumnId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[To Date]"
+                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[To Date]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Project Name]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Project Name]"
                       dataType="wstr"
                       length="100"
                       name="Project Name" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[iMart #]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[iMart #]"
                       dataType="wstr"
                       length="50"
                       name="iMart #" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Investment Type]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Investment Type]"
                       dataType="wstr"
                       length="3"
                       name="Investment Type" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Principal (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Principal (BFB)]"
                       dataType="numeric"
                       name="Principal (BFB)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Interest (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Interest (BFB)]"
                       dataType="numeric"
                       name="Capitalised Interest (BFB)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Fees (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Fees (BFB)]"
                       dataType="numeric"
                       name="Capitalised Fees (BFB)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[FX Translation Gain/Loss (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FX Translation Gain/Loss (BFB)]"
                       dataType="numeric"
                       name="FX Translation Gain/Loss (BFB)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Fees Accrued (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Fees Accrued (BFB)]"
                       dataType="numeric"
                       name="Fees Accrued (BFB)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Net Interest Accrued (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Net Interest Accrued (BFB)]"
                       dataType="numeric"
                       name="Net Interest Accrued (BFB)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Unrealised Gain /(Loss) (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Unrealised Gain /(Loss) (BFB)]"
                       dataType="numeric"
                       name="Unrealised Gain /(Loss) (BFB)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Realised Gain /(Loss) (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Realised Gain /(Loss) (BFB)]"
                       dataType="numeric"
                       name="Realised Gain /(Loss) (BFB)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Realised impairment (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Realised impairment (BFB)]"
                       dataType="numeric"
                       name="Realised impairment (BFB)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Total excluding Concession (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Total excluding Concession (BFB)]"
                       dataType="numeric"
                       name="Total excluding Concession (BFB)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Amounts Drawn (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Amounts Drawn (Repayments)]"
                       dataType="numeric"
                       name="Amounts Drawn (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Interest Capitalised (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Interest Capitalised (Repayments)]"
                       dataType="numeric"
                       name="Interest Capitalised (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Establishment Fees Capitalised (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Establishment Fees Capitalised (Repayments)]"
                       dataType="numeric"
                       name="Establishment Fees Capitalised (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Commitment Fees Capitalised (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Commitment Fees Capitalised (Repayments)]"
                       dataType="numeric"
                       name="Commitment Fees Capitalised (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Legal Fees Capitalised (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Legal Fees Capitalised (Repayments)]"
                       dataType="numeric"
                       name="Legal Fees Capitalised (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Commitment Fees Accrued (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Commitment Fees Accrued (Repayments)]"
                       dataType="numeric"
                       name="Commitment Fees Accrued (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Interest Accrued (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Interest Accrued (Repayments)]"
                       dataType="numeric"
                       name="Interest Accrued (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Discount Amortisation (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Discount Amortisation (Repayments)]"
                       dataType="numeric"
                       name="Discount Amortisation (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Unrealised Gain /(Loss) (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Unrealised Gain /(Loss) (Repayments)]"
                       dataType="numeric"
                       name="Unrealised Gain /(Loss) (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Realised Gain /(Loss) (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Realised Gain /(Loss) (Repayments)]"
                       dataType="numeric"
                       name="Realised Gain /(Loss) (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Realised Impairment (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Realised Impairment (Repayments)]"
                       dataType="numeric"
                       name="Realised Impairment (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Equity Acct'd Gain/(Loss) (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Equity Acct'd Gain/(Loss) (Repayments)]"
                       dataType="numeric"
                       name="Equity Acct'd Gain/(Loss) (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[FX Translation Gain/Loss (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FX Translation Gain/Loss (Repayments)]"
                       dataType="numeric"
                       name="FX Translation Gain/Loss (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Principal Repaid (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Principal Repaid (Repayments)]"
                       dataType="numeric"
                       name="Principal Repaid (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Interest Repaid (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Interest Repaid (Repayments)]"
                       dataType="numeric"
                       name="Capitalised Interest Repaid (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Fees Repaid (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Fees Repaid (Repayments)]"
                       dataType="numeric"
                       name="Capitalised Fees Repaid (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Interest Received (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Interest Received (Repayments)]"
                       dataType="numeric"
                       name="Interest Received (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Total excluding concession (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Total excluding concession (Repayments)]"
                       dataType="numeric"
                       name="Total excluding concession (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Gross Principal]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Gross Principal]"
                       dataType="numeric"
                       name="Gross Principal"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Realised Gain /(Loss)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Realised Gain /(Loss)]"
                       dataType="numeric"
                       name="Realised Gain /(Loss)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Equity Acct'd Gain/(Loss)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Equity Acct'd Gain/(Loss)]"
                       dataType="numeric"
                       name="Equity Acct'd Gain/(Loss)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Realised Impairment]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Realised Impairment]"
                       dataType="numeric"
                       name="Realised Impairment"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Principal net of capital losses]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Principal net of capital losses]"
                       dataType="numeric"
                       name="Principal net of capital losses"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Interest]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Interest]"
                       dataType="numeric"
                       name="Capitalised Interest"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Discount Amortisation]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Discount Amortisation]"
                       dataType="numeric"
                       name="Discount Amortisation"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Fees]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Capitalised Fees]"
                       dataType="numeric"
                       name="Capitalised Fees"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[FX Translation Gain/Loss]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[FX Translation Gain/Loss]"
                       dataType="numeric"
                       name="FX Translation Gain/Loss"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Fees Accrued]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Fees Accrued]"
                       dataType="numeric"
                       name="Fees Accrued"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Net Interest Accrued]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Net Interest Accrued]"
                       dataType="numeric"
                       name="Net Interest Accrued"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Unrealised Gain /(Loss)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Unrealised Gain /(Loss)]"
                       dataType="numeric"
                       name="Unrealised Gain /(Loss)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Total excluding concession]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Total excluding concession]"
                       dataType="numeric"
                       name="Total excluding concession"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Variance]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Variance]"
                       dataType="numeric"
                       name="Variance"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Book value excluding concession &amp; accrued interest &amp; fees (BFB)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Book value excluding concession &amp; accrued interest &amp; fees (BFB)]"
                       dataType="numeric"
                       name="Book value excluding concession &amp; accrued interest &amp; fees (BFB)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Net Movement (Repayments)]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Net Movement (Repayments)]"
                       dataType="numeric"
                       name="Net Movement (Repayments)"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Book value excluding concession &amp; accrued interest &amp; fees]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Book value excluding concession &amp; accrued interest &amp; fees]"
                       dataType="numeric"
                       name="Book value excluding concession &amp; accrued interest &amp; fees"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Net Concession Reserve]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Net Concession Reserve]"
                       dataType="numeric"
                       name="Net Concession Reserve"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Book value excluding accrued interest &amp; fees less Net Concession]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Book value excluding accrued interest &amp; fees less Net Concession]"
                       dataType="numeric"
                       name="Book value excluding accrued interest &amp; fees less Net Concession"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Maximum Facility]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Maximum Facility]"
                       dataType="numeric"
                       name="Maximum Facility"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Repaid / Cancelled / Discount Amort'n]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Repaid / Cancelled / Discount Amort'n]"
                       dataType="numeric"
                       name="Repaid / Cancelled / Discount Amort'n"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Remaining To Fund]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Remaining To Fund]"
                       dataType="numeric"
                       name="Remaining To Fund"
                       precision="15"
                       scale="2" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Code]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Code]"
                       dataType="wstr"
                       length="3"
                       name="Code" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[Business Platform]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Business Platform]"
                       dataType="wstr"
                       length="50"
                       name="Business Platform" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[To Period]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[To Period]"
                       dataType="wstr"
                       length="3"
                       name="To Period" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input].ExternalColumns[To Date]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[To Date]"
                       dataType="wstr"
                       length="20"
                       name="To Date" />
+                    <externalMetadataColumn
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Commitment Category]"
+                      dataType="wstr"
+                      length="20"
+                      name="Commitment Category" />
+                    <externalMetadataColumn
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Adjustments to Facility Limit]"
+                      dataType="numeric"
+                      name="Adjustments to Facility Limit"
+                      precision="15"
+                      scale="2" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Outputs[ADO NET Destination Error Output]"
+                  refId="Package\Deployments_Commitments\ADO NET Destination.Outputs[ADO NET Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="ADO NET Destination Error Output"
-                  synchronousInputId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input]">
+                  synchronousInputId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Deployments_Commitments\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Deployments_Commitments\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Deployments_Commitments\ADO NET Destination.Outputs[ADO NET Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -1597,7 +1615,7 @@
                   description="The SQL command to be executed."
                   name="SqlCommand"
                   UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select *
-FROM [Sheet1Report$A2:BK]</property>
+FROM [Sheet1Report$B2:BM]</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -1624,7 +1642,7 @@ FROM [Sheet1Report$A2:BK]</property>
                 <connection
                   refId="Package\Deployments_Commitments\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="{2DBE07A5-1B57-4AEE-8D2D-388E479A0FF0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[FIN_Connection_Manager]"
+                  connectionManagerRefId="Project.ConnectionManagers[FINComDep_Connection_Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -2087,6 +2105,16 @@ FROM [Sheet1Report$A2:BK]</property>
                       name="Book value excluding accrued interest &amp; fees"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
+                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Commitment Category]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Commitment Category]"
+                      length="255"
+                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Commitment Category]"
+                      name="Commitment Category"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
                       refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Maximum Facility]"
                       dataType="r8"
                       errorOrTruncationOperation="Conversion"
@@ -2094,6 +2122,15 @@ FROM [Sheet1Report$A2:BK]</property>
                       externalMetadataColumnId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Maximum Facility]"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Maximum Facility]"
                       name="Maximum Facility"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Adjustments to Facility Limit]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Adjustments to Facility Limit]"
+                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Adjustments to Facility Limit]"
+                      name="Adjustments to Facility Limit"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
                       refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].Columns[Repaid / Cancelled / Discount Amort'n]"
@@ -2155,11 +2192,6 @@ FROM [Sheet1Report$A2:BK]</property>
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[COLUMNS]"
-                      dataType="wstr"
-                      length="255"
-                      name="COLUMNS" />
                     <externalMetadataColumn
                       refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Project Name]"
                       dataType="wstr"
@@ -2288,9 +2320,9 @@ FROM [Sheet1Report$A2:BK]</property>
                       dataType="r8"
                       name="Total excluding concession (Repayments)" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F33]"
+                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F32]"
                       dataType="r8"
-                      name="F33" />
+                      name="F32" />
                     <externalMetadataColumn
                       refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Gross Principal]"
                       dataType="r8"
@@ -2308,9 +2340,9 @@ FROM [Sheet1Report$A2:BK]</property>
                       dataType="r8"
                       name="Realised Impairment" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F38]"
+                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F37]"
                       dataType="r8"
-                      name="F38" />
+                      name="F37" />
                     <externalMetadataColumn
                       refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Principal net of capital losses]"
                       dataType="r8"
@@ -2352,9 +2384,9 @@ FROM [Sheet1Report$A2:BK]</property>
                       dataType="r8"
                       name="Variance" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F49]"
+                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F48]"
                       dataType="r8"
-                      name="F49" />
+                      name="F48" />
                     <externalMetadataColumn
                       refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Book value excluding concession &amp; accrued interest &amp; fees (BFB)]"
                       dataType="r8"
@@ -2376,13 +2408,22 @@ FROM [Sheet1Report$A2:BK]</property>
                       dataType="r8"
                       name="Book value excluding accrued interest &amp; fees" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F55]"
+                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F54]"
                       dataType="r8"
-                      name="F55" />
+                      name="F54" />
+                    <externalMetadataColumn
+                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Commitment Category]"
+                      dataType="wstr"
+                      length="255"
+                      name="Commitment Category" />
                     <externalMetadataColumn
                       refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Maximum Facility]"
                       dataType="r8"
                       name="Maximum Facility" />
+                    <externalMetadataColumn
+                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Adjustments to Facility Limit]"
+                      dataType="r8"
+                      name="Adjustments to Facility Limit" />
                     <externalMetadataColumn
                       refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Repaid / Cancelled / Discount Amort'n]"
                       dataType="r8"
@@ -2392,10 +2433,10 @@ FROM [Sheet1Report$A2:BK]</property>
                       dataType="r8"
                       name="Remaining To Fund" />
                     <externalMetadataColumn
-                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F59]"
+                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[F60]"
                       dataType="wstr"
                       length="255"
-                      name="F59" />
+                      name="F60" />
                     <externalMetadataColumn
                       refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Code]"
                       dataType="wstr"
@@ -2422,18 +2463,6 @@ FROM [Sheet1Report$A2:BK]</property>
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
-                    <outputColumn
-                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
                     <outputColumn
                       refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Project Name]"
                       dataType="wstr"
@@ -2688,10 +2717,21 @@ FROM [Sheet1Report$A2:BK]</property>
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Book value excluding accrued interest &amp; fees]"
                       name="Book value excluding accrued interest &amp; fees" />
                     <outputColumn
+                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Commitment Category]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Commitment Category]"
+                      name="Commitment Category" />
+                    <outputColumn
                       refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Maximum Facility]"
                       dataType="r8"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Maximum Facility]"
                       name="Maximum Facility" />
+                    <outputColumn
+                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Adjustments to Facility Limit]"
+                      dataType="r8"
+                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Adjustments to Facility Limit]"
+                      name="Adjustments to Facility Limit" />
                     <outputColumn
                       refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Repaid / Cancelled / Discount Amort'n]"
                       dataType="r8"
@@ -2725,6 +2765,18 @@ FROM [Sheet1Report$A2:BK]</property>
                       dataType="date"
                       lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[To Date]"
                       name="To Date" />
+                    <outputColumn
+                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
                   </outputColumns>
                   <externalMetadataColumns />
                 </output>
@@ -2734,7 +2786,7 @@ FROM [Sheet1Report$A2:BK]</property>
           <paths>
             <path
               refId="Package\Deployments_Commitments.Paths[OLE DB Source Output]"
-              endId="Package\Deployments_Commitments\Commitments_Deployments Table on Staging.Inputs[ADO NET Destination Input]"
+              endId="Package\Deployments_Commitments\ADO NET Destination.Inputs[ADO NET Destination Input]"
               name="OLE DB Source Output"
               startId="Package\Deployments_Commitments\OLE DB Source.Outputs[OLE DB Source Output]" />
           </paths>
@@ -2911,7 +2963,7 @@ FROM [Sheet1Report$A2:BK]</property>
                 <connection
                   refId="Package\Entity\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="{2DBE07A5-1B57-4AEE-8D2D-388E479A0FF0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[FIN_Connection_Manager]"
+                  connectionManagerRefId="Project.ConnectionManagers[FINComDep_Connection_Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -3386,7 +3438,7 @@ FROM [Sheet1Report$A2:BK]</property>
                 <connection
                   refId="Package\FinDeal\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="{2DBE07A5-1B57-4AEE-8D2D-388E479A0FF0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[FIN_Connection_Manager]"
+                  connectionManagerRefId="Project.ConnectionManagers[FINComDep_Connection_Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4023,7 +4075,7 @@ FROM [Sheet1Report$A2:BK]</property>
                 <connection
                   refId="Package\Geographic Location\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="{2DBE07A5-1B57-4AEE-8D2D-388E479A0FF0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[FIN_Connection_Manager]"
+                  connectionManagerRefId="Project.ConnectionManagers[FINComDep_Connection_Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4294,7 +4346,7 @@ FROM [Sheet1Report$A2:BK]</property>
                 <connection
                   refId="Package\Investment Txn Type\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="{2DBE07A5-1B57-4AEE-8D2D-388E479A0FF0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[FIN_Connection_Manager]"
+                  connectionManagerRefId="Project.ConnectionManagers[FINComDep_Connection_Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4586,7 +4638,7 @@ FROM [Sheet1Report$A2:BK]</property>
                 <connection
                   refId="Package\Investment Type\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="{2DBE07A5-1B57-4AEE-8D2D-388E479A0FF0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[FIN_Connection_Manager]"
+                  connectionManagerRefId="Project.ConnectionManagers[FINComDep_Connection_Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -4866,7 +4918,7 @@ FROM [Sheet1Report$A2:BK]</property>
                 <connection
                   refId="Package\Mandate\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="{2DBE07A5-1B57-4AEE-8D2D-388E479A0FF0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[FIN_Connection_Manager]"
+                  connectionManagerRefId="Project.ConnectionManagers[FINComDep_Connection_Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5021,7 +5073,7 @@ FROM [Sheet1Report$A2:BK]</property>
                 <connection
                   refId="Package\Performance Rating\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="{2DBE07A5-1B57-4AEE-8D2D-388E479A0FF0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[FIN_Connection_Manager]"
+                  connectionManagerRefId="Project.ConnectionManagers[FINComDep_Connection_Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5280,7 +5332,7 @@ FROM [Sheet1Report$A2:BK]</property>
                 <connection
                   refId="Package\Phase\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="{2DBE07A5-1B57-4AEE-8D2D-388E479A0FF0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[FIN_Connection_Manager]"
+                  connectionManagerRefId="Project.ConnectionManagers[FINComDep_Connection_Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5539,7 +5591,7 @@ FROM [Sheet1Report$A2:BK]</property>
                 <connection
                   refId="Package\Platform\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="{2DBE07A5-1B57-4AEE-8D2D-388E479A0FF0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[FIN_Connection_Manager]"
+                  connectionManagerRefId="Project.ConnectionManagers[FINComDep_Connection_Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -5798,7 +5850,7 @@ FROM [Sheet1Report$A2:BK]</property>
                 <connection
                   refId="Package\SCR\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="{2DBE07A5-1B57-4AEE-8D2D-388E479A0FF0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[FIN_Connection_Manager]"
+                  connectionManagerRefId="Project.ConnectionManagers[FINComDep_Connection_Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -6057,7 +6109,7 @@ FROM [Sheet1Report$A2:BK]</property>
                 <connection
                   refId="Package\Technology Type\OLE DB Source.Connections[OleDbConnection]"
                   connectionManagerID="{2DBE07A5-1B57-4AEE-8D2D-388E479A0FF0}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[FIN_Connection_Manager]"
+                  connectionManagerRefId="Project.ConnectionManagers[FINComDep_Connection_Manager]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -7522,7 +7574,7 @@ FROM [Sheet1Report$A2:BK]</property>
     design-time-name="Package\AASB9 Subcategory">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\AASB9 Subcategory\OLE DB Source"
@@ -7550,7 +7602,9 @@ FROM [Sheet1Report$A2:BK]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7581,7 +7635,7 @@ FROM [Sheet1Report$A2:BK]</property>
     design-time-name="Package\Commitment Category">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Commitment Category\OLE DB Source"
@@ -7609,7 +7663,9 @@ FROM [Sheet1Report$A2:BK]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7640,7 +7696,7 @@ FROM [Sheet1Report$A2:BK]</property>
     design-time-name="Package\Cost Centre">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Cost Centre\OLE DB Source"
@@ -7668,7 +7724,9 @@ FROM [Sheet1Report$A2:BK]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7701,27 +7759,27 @@ FROM [Sheet1Report$A2:BK]</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="294.666666666667,42.6666666666667"
-          Id="Package\Deployments_Commitments\Commitments_Deployments Table on Staging"
-          TopLeft="102.250000962366,182.766666775147" />
-        <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Deployments_Commitments\OLE DB Source"
-          TopLeft="175.499997466803,14.5999998372793" />
+          TopLeft="177.583330769092,17.6333331163724" />
+        <NodeLayout
+          Size="180,42.6666666666667"
+          Id="Package\Deployments_Commitments\ADO NET Destination"
+          TopLeft="162.999997653067,154.566664001147" />
         <EdgeLayout
           Id="Package\Deployments_Commitments.Paths[OLE DB Source Output]"
-          TopLeft="250.208332547918,57.266666503946">
+          TopLeft="252.958330877746,60.2999997830391">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,125.500000271201"
+              EndConnector="0,94.2666642181079"
               Start="0,0"
-              End="0,118.000000271201">
+              End="0,86.7666642181079">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,118.000000271201" />
+                    End="0,86.7666642181079" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -7733,14 +7791,6 @@ FROM [Sheet1Report$A2:BK]</property>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Deployments_Commitments\Commitments_Deployments Table on Staging">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Deployments_Commitments\OLE DB Source">
     <Properties>
@@ -7758,7 +7808,7 @@ FROM [Sheet1Report$A2:BK]</property>
     design-time-name="Package\Entity">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Entity\OLE DB Source"
@@ -7786,7 +7836,9 @@ FROM [Sheet1Report$A2:BK]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7878,7 +7930,7 @@ FROM [Sheet1Report$A2:BK]</property>
     design-time-name="Package\Geographic Location">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Geographic Location\OLE DB Source"
@@ -7906,7 +7958,9 @@ FROM [Sheet1Report$A2:BK]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -7937,7 +7991,7 @@ FROM [Sheet1Report$A2:BK]</property>
     design-time-name="Package\Investment Txn Type">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Investment Txn Type\OLE DB Source"
@@ -7965,7 +8019,9 @@ FROM [Sheet1Report$A2:BK]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8057,7 +8113,7 @@ FROM [Sheet1Report$A2:BK]</property>
     design-time-name="Package\Mandate">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="150.666666666667,42.6666666666667"
           Id="Package\Mandate\OLE DB Source"
@@ -8085,7 +8141,9 @@ FROM [Sheet1Report$A2:BK]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8116,15 +8174,15 @@ FROM [Sheet1Report$A2:BK]</property>
     design-time-name="Package\Performance Rating">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150.666666666667,42.6666666666667"
-          Id="Package\Performance Rating\OLE DB Source"
-          TopLeft="211.5,18.8333333333333" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="226.666666666667,42.6666666666667"
           Id="Package\Performance Rating\Performance Rating on Staging"
           TopLeft="179.5,156.833333333333" />
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\Performance Rating\OLE DB Source"
+          TopLeft="211.5,18.8333333333333" />
         <EdgeLayout
           Id="Package\Performance Rating.Paths[OLE DB Source Output]"
           TopLeft="289.833333333333,61.5">
@@ -8144,7 +8202,9 @@ FROM [Sheet1Report$A2:BK]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8175,15 +8235,15 @@ FROM [Sheet1Report$A2:BK]</property>
     design-time-name="Package\Phase">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150.666666666667,42.6666666666667"
-          Id="Package\Phase\OLE DB Source"
-          TopLeft="238.166666666667,27.5" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="190.666666666667,42.6666666666667"
           Id="Package\Phase\Phase Table on Staging"
           TopLeft="214.166666666667,150.833333333333" />
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\Phase\OLE DB Source"
+          TopLeft="238.166666666667,27.5" />
         <EdgeLayout
           Id="Package\Phase.Paths[OLE DB Source Output]"
           TopLeft="311.5,70.1666666666667">
@@ -8203,7 +8263,9 @@ FROM [Sheet1Report$A2:BK]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8234,15 +8296,15 @@ FROM [Sheet1Report$A2:BK]</property>
     design-time-name="Package\Platform">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150.666666666667,42.6666666666667"
-          Id="Package\Platform\OLE DB Source"
-          TopLeft="233.5,26.8333333333333" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="201.333333333334,42.6666666666667"
           Id="Package\Platform\Platform Table on Staging"
           TopLeft="211.5,157.5" />
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\Platform\OLE DB Source"
+          TopLeft="233.5,26.8333333333333" />
         <EdgeLayout
           Id="Package\Platform.Paths[OLE DB Source Output]"
           TopLeft="310.5,69.5">
@@ -8262,7 +8324,9 @@ FROM [Sheet1Report$A2:BK]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8293,15 +8357,15 @@ FROM [Sheet1Report$A2:BK]</property>
     design-time-name="Package\SCR">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150.666666666667,42.6666666666667"
-          Id="Package\SCR\OLE DB Source"
-          TopLeft="224.166666666667,41.5" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="181.333333333334,42.6666666666667"
           Id="Package\SCR\SCR Table on Staging"
           TopLeft="206.833333333333,176.166666666667" />
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\SCR\OLE DB Source"
+          TopLeft="224.166666666667,41.5" />
         <EdgeLayout
           Id="Package\SCR.Paths[OLE DB Source Output]"
           TopLeft="298.5,84.1666666666667">
@@ -8321,7 +8385,9 @@ FROM [Sheet1Report$A2:BK]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8352,15 +8418,15 @@ FROM [Sheet1Report$A2:BK]</property>
     design-time-name="Package\Technology Type">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
-        <NodeLayout
-          Size="150.666666666667,42.6666666666667"
-          Id="Package\Technology Type\OLE DB Source"
-          TopLeft="236.166666666667,40.1666666666667" />
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="240,42.6666666666667"
           Id="Package\Technology Type\Technology Type table on Staging"
           TopLeft="192.833333333333,164.833333333333" />
+        <NodeLayout
+          Size="150.666666666667,42.6666666666667"
+          Id="Package\Technology Type\OLE DB Source"
+          TopLeft="236.166666666667,40.1666666666667" />
         <EdgeLayout
           Id="Package\Technology Type.Paths[OLE DB Source Output]"
           TopLeft="312.166666666667,82.8333333333333">
@@ -8380,7 +8446,9 @@ FROM [Sheet1Report$A2:BK]</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -8401,6 +8469,14 @@ FROM [Sheet1Report$A2:BK]</property>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Technology Type\Technology Type table on Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Deployments_Commitments\ADO NET Destination">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

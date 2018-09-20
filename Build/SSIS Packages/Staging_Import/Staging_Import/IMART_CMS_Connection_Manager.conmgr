@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="IMART_CMS_Connection_Manager"
+  DTS:DTSID="{C8D8C942-9493-4054-A5A4-16EA213E1F89}"
+  DTS:CreationName="ODBC">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="uid=svcTransit;Dsn=iMart-CMS;">
+      <DTS:Password
+        DTS:Name="pwd"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+B+lW1+uCkmyyVzKVAQ0uAAAAAACAAAAAAAQZgAAAAEAACAAAADylkpHprT9v0zhacgkHH7r+WXM62L51HUvs1md5MD5BgAAAAAOgAAAAAIAACAAAADwdJN2F2Lm9NgraOdGdXXtKBeEhDk2Qyr+JmRU+DfB+IAAAADKU2VKg1JakYRPcSKjReN+8lYFki2opzxd3IYiB1s2rvPs69Mw1J3uM9LQ0Tt4GMIZduJWFeZt77Dn4NrkdXrAbMTzu8x0LQsQaT8lzfUC0oyR7POY2+4fXjD+cMGksT1imrRAWhPTdS66uBVj+86PkIh3R3C8CWHJWrCFm5SeMUAAAAAjvQVCs6tHjaQTBWs7nTnIQBrox1wj1F0sbQzFDk9jCJ3W9FZ3NHbJDhYjGSK4NiSE7yHZ1GlgEBx+utoNUlIk</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
