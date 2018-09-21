@@ -89,7 +89,9 @@ as
 		) 
 
 		
-		select af.[ID_Project]
+		select max(af.Update_from_TS) as Update_from_TS
+			  ,max(af.Update_to_TS) as Update_to_TS
+			  ,af.[ID_Project]
 			  ,af.[Contract_Number]
 			  ,af.[Asset_Number]
 			  ,af.[ANZSIC_Code]
@@ -195,6 +197,57 @@ as
    and asd.Description in ('Solar Energy Battery','Solar Energy Equipment','Solar Energy Panels','Solar Water Heater'))
     or
    af.ID_Project != 'S2537' 
+
+   group by af.[ID_Project]
+			  ,af.[Contract_Number]
+			  ,af.[Asset_Number]
+			  ,af.[ANZSIC_Code]
+			  ,af.[Balloon_Amount]
+			  ,af.[Brand]
+			  ,af.[CEFC_Rebate_Monthly]
+			  ,af.[Contract_Start_Date]
+			  ,af.[Discounted_Interest_Rate]
+			  ,af.[Funder_Margin]
+			  ,af.[Maturity_Date]
+			  ,af.[Postcode]
+			  ,af.[Principal_Outstanding]
+			  ,af.[Product_Type]
+			  ,af.[Repayment_Frequency]
+			  ,af.[State]
+			  ,af.[Term]
+			  ,af.[Termination_Date]
+			  ,af.[Total_Amount_Financed]
+			  ,af.[Total_Rebate_to_date_exclGST]
+			  ,af.[Total_Rebate_to_date_inclGST]
+			  ,asd.[Category]
+			  ,asd.[Description]
+			  ,asd.[Variant]
+			  ,asd.[Make]
+			  ,asd.[Model]
+			  ,asd.[Year]
+			  ,asd.[Status]
+			  ,ad1.[Code]
+			  ,ad1.[Division]
+			  ,ad1.[Subdivision]
+			  ,ad1.[Description] 
+			  ,ad1.ABS_Division
+			  ,ad1.ABS_Subdivision
+			  ,t.Amt_CEFC
+			  ,t.Project_Name
+			  ,t.cOrganisations
+			  ,t.Description 
+			  ,t.rpt_Project_Description
+			  ,t.Project_Borrower_Entity
+			  ,t.ID_Project_TNumber
+			  ,b.state 
+			  ,b.suburb
+			  ,b.dc
+			  ,b.type 
+			  ,b.latitude
+			  ,b.longitude
+			  ,c.Electoral_division 
+			  ,c.[Percent] 
+			  ,case when acd1.CEFC_Technology = '' then acd1.Asset_Category else acd1.CEFC_Technology end 
 
   
 	

@@ -72,7 +72,9 @@ as
 		) 
 
 		
-		select distinct af.[ID_Project]
+		select max(af.Update_from_TS) as Update_from_TS
+			  ,max(af.Update_to_TS) as Update_to_TS
+			  ,af.[ID_Project]
 			  ,af.[Postcode]
 			  ,af.[Principal_Outstanding]
 			  ,af.[Total_Amount_Financed]
@@ -87,7 +89,7 @@ as
 			  ,isnull(asd.Status,'Active') as Status
 		from core.Aggregation_Fact af
 		join (select  max(cast(af1.File_Date as datetime)) as Agg_FileDate
-				,af1.[ID_Project]   	    	  
+		        	,af1.[ID_Project]   	    	  
 				from core.Aggregation_Fact af1
 				where cast(af1.file_date as datetime) <= eomonth(format(@file_date,'yyyy-MM-dd'))   
 				group by af1.[ID_Project]) max_dates 
@@ -118,6 +120,20 @@ as
    and asd.Description in ('Solar Energy Battery','Solar Energy Equipment','Solar Energy Panels','Solar Water Heater'))
     or
    af.ID_Project != 'S2537' 
+
+   group by  af.[ID_Project]
+			  ,af.[Postcode]
+			  ,af.[Principal_Outstanding]
+			  ,af.[Total_Amount_Financed]
+			  ,af.[Total_Rebate_to_date_exclGST]
+			  ,af.[Total_Rebate_to_date_inclGST]
+			  ,t.Amt_CEFC
+			  ,t.ID_Project_TNumber
+			  ,b.state 
+			  ,c.Electoral_division 
+			  ,case when acd1.CEFC_Technology = '' then acd1.Asset_Category else acd1.CEFC_Technology end 
+			  ,af.Contract_Number
+			  ,isnull(asd.Status,'Active') 
   
 
   
