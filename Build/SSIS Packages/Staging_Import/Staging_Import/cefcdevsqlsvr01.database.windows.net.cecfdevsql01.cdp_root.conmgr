@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="cefcdevsqlsvr01.database.windows.net.cecfdevsql01.cdp_root"
+  DTS:DTSID="{02954D86-B93C-4AD5-AC55-58DF3BB24F78}"
+  DTS:CreationName="ADO.NET:System.Data.SqlClient.SqlConnection, System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=cefcdevsqlsvr01.database.windows.net;User ID=cdp_root;Initial Catalog=cecfdevsql01;Application Name=SSIS-CDP Load-{02954D86-B93C-4AD5-AC55-58DF3BB24F78}cefcdevsqlsvr01.database.windows.net.cecfdevsql01.cdp_root;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA48/kv6Q0h0aOmEUTRRzqSwAAAAACAAAAAAAQZgAAAAEAACAAAABANT2ewg8aC1G+aX1ZPWcXi5MjwwSgiQdRnNFTf1vTdQAAAAAOgAAAAAIAACAAAADPaiDYAl6JIivlY8nVDekb7NbD3hqAXBAMrdPTGitH54AAAACemDL1NElVnRibFPS4miEU+zoaW6PvhHkpEo+1EKuPZ4AL3RqwZ2kos5lcq5b9O4klVo7YTSU729pLpPdu3fM/35iDf/sGTXWruw+wqlHhxM7AXGGokXwQqtSRZcXKSox68eg5gEtuDTWAZWQex2sCfcb4ywuY8DT5f8BowhMhqkAAAAB63zdvb9ULc1SfXTjTYOcqzg+BtGwzzVzVI3prl6MHGIk2R5GdiB//RfRf7J5dZsnB/dQ1+1ztwOVwJQealGAM</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

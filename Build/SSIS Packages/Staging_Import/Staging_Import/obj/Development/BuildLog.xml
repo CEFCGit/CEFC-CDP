@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>CDP Load</Name>
-    <LastWriteTime>2018-09-20T05:10:18.1960869Z</LastWriteTime>
+    <LastWriteTime>2018-11-05T08:03:35.3113061Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -38,12 +38,22 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>AGGSTGLoad.dtsx</Name>
-      <LastWriteTime>2018-09-20T04:47:29.5589897Z</LastWriteTime>
+      <LastWriteTime>2018-11-07T05:43:16.5658788Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>STGCDPAggDimFactLoad.dtsx</Name>
-      <LastWriteTime>2018-09-05T14:03:41.2985829Z</LastWriteTime>
+      <LastWriteTime>2018-11-09T00:29:59.9028983Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>STGCDPAggDimFactLoad_temp.dtsx</Name>
+      <LastWriteTime>2018-10-30T06:41:25.9505865Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>AGGSTGLoad2 (1) (1).dtsx</Name>
+      <LastWriteTime>2018-11-08T08:43:46.4546345Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

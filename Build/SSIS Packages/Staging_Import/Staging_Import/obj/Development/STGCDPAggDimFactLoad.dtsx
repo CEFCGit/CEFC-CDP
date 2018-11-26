@@ -11,8 +11,8 @@
   DTS:LocaleID="3081"
   DTS:ObjectName="STGCDPAggDimFactLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="80"
-  DTS:VersionGUID="{8D2C45E6-8751-4E8F-A650-E30F0A60F38E}">
+  DTS:VersionBuild="97"
+  DTS:VersionGUID="{C6A81061-B7E9-4E0F-8F4A-7175F4A76795}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -131,7 +131,6 @@
                     <outputColumn
                       refId="Package\Aggregation Fact\Derived Column 1.Outputs[Derived Column Output].Columns[Update_from_TS]"
                       dataType="dbTimeStamp"
-                      description="Update_from_TS"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Aggregation Fact\Derived Column 1.Outputs[Derived Column Output].Columns[Update_from_TS]"
@@ -440,7 +439,7 @@
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[ANZSIC_Code]"
                       dataType="wstr"
-                      length="5"
+                      length="6"
                       name="ANZSIC_Code" />
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Balloon_Amount]"
@@ -505,7 +504,7 @@
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
                       dataType="wstr"
-                      length="20"
+                      length="30"
                       name="State" />
                     <externalMetadataColumn
                       refId="Package\Aggregation Fact\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Term]"
@@ -5944,7 +5943,6 @@ where a.Contract_Number is not null</property>
                     <outputColumn
                       refId="Package\Assets Dimension - Active\Derived Column 1.Outputs[Derived Column Output].Columns[Update_from_TS]"
                       dataType="dbTimeStamp"
-                      description="Update_from_TS"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Assets Dimension - Active\Derived Column 1.Outputs[Derived Column Output].Columns[Update_from_TS]"
@@ -6116,7 +6114,7 @@ where a.Contract_Number is not null</property>
                     <inputColumn
                       refId="Package\Assets Dimension - Active\Insert Destination.Inputs[OLE DB Destination Input].Columns[Model]"
                       cachedDataType="wstr"
-                      cachedLength="100"
+                      cachedLength="150"
                       cachedName="Model"
                       externalMetadataColumnId="Package\Assets Dimension - Active\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Model]"
                       lineageId="Package\Assets Dimension - Active\Union All.Outputs[Union All Output 1].Columns[Model]" />
@@ -6130,7 +6128,7 @@ where a.Contract_Number is not null</property>
                     <inputColumn
                       refId="Package\Assets Dimension - Active\Insert Destination.Inputs[OLE DB Destination Input].Columns[Status]"
                       cachedDataType="wstr"
-                      cachedLength="14"
+                      cachedLength="6"
                       cachedName="Status"
                       externalMetadataColumnId="Package\Assets Dimension - Active\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
                       lineageId="Package\Assets Dimension - Active\Union All.Outputs[Union All Output 1].Columns[Status]" />
@@ -6188,7 +6186,7 @@ where a.Contract_Number is not null</property>
                     <externalMetadataColumn
                       refId="Package\Assets Dimension - Active\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Model]"
                       dataType="wstr"
-                      length="100"
+                      length="150"
                       name="Model" />
                     <externalMetadataColumn
                       refId="Package\Assets Dimension - Active\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
@@ -6269,7 +6267,14 @@ where a.Contract_Number is not null</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Assets_Dimension] SET [Update_to_TS] = ? WHERE [Asset_Number] = ? AND [Contract_Number] = ? AND [Description] = ? AND [ID_Project] = ? AND [Status] = ? AND [Update_to_TS] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Assets_Dimension] 
+SET [Update_to_TS] = ? 
+WHERE [Asset_Number] = ? 
+AND [Contract_Number] = ? 
+AND [Description] = ? 
+AND [ID_Project] = ? 
+AND [Status] = ? 
+AND [Update_to_TS] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6533,7 +6538,7 @@ where a.Contract_Number is not null</property>
                     <inputColumn
                       refId="Package\Assets Dimension - Active\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Model]"
                       cachedDataType="wstr"
-                      cachedLength="100"
+                      cachedLength="150"
                       cachedName="Model"
                       externalMetadataColumnId="Package\Assets Dimension - Active\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       lineageId="Package\Assets Dimension - Active\Staging.Outputs[ADO NET Source Output].Columns[Model]" />
@@ -6600,7 +6605,7 @@ where a.Contract_Number is not null</property>
                     <externalMetadataColumn
                       refId="Package\Assets Dimension - Active\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_3]"
                       dataType="wstr"
-                      length="100"
+                      length="150"
                       name="Param_3">
                       <properties>
                         <property
@@ -6889,7 +6894,7 @@ where a.Contract_Number is not null</property>
                     <inputColumn
                       refId="Package\Assets Dimension - Active\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Model]"
                       cachedDataType="wstr"
-                      cachedLength="100"
+                      cachedLength="150"
                       cachedName="Model"
                       externalMetadataColumnId="Package\Assets Dimension - Active\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Model]"
                       lineageId="Package\Assets Dimension - Active\Staging.Outputs[ADO NET Source Output].Columns[Model]">
@@ -7341,7 +7346,7 @@ where a.ACCOUNT_ID is not null</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Assets Dimension - Active\Staging.Outputs[ADO NET Source Output].ExternalColumns[Model]"
-                      length="100"
+                      length="150"
                       lineageId="Package\Assets Dimension - Active\Staging.Outputs[ADO NET Source Output].Columns[Model]"
                       name="Model"
                       truncationRowDisposition="FailComponent" />
@@ -7636,7 +7641,7 @@ where a.ACCOUNT_ID is not null</property>
                     <inputColumn
                       refId="Package\Assets Dimension - Active\Union All.Inputs[Union All Input 1].Columns[Model]"
                       cachedDataType="wstr"
-                      cachedLength="100"
+                      cachedLength="150"
                       cachedName="Model"
                       lineageId="Package\Assets Dimension - Active\Staging.Outputs[ADO NET Source Output].Columns[Model]">
                       <properties>
@@ -7798,7 +7803,7 @@ where a.ACCOUNT_ID is not null</property>
                     <inputColumn
                       refId="Package\Assets Dimension - Active\Union All.Inputs[Union All Input 2].Columns[Model]"
                       cachedDataType="wstr"
-                      cachedLength="100"
+                      cachedLength="150"
                       cachedName="Model"
                       lineageId="Package\Assets Dimension - Active\Staging.Outputs[ADO NET Source Output].Columns[Model]">
                       <properties>
@@ -7912,7 +7917,7 @@ where a.ACCOUNT_ID is not null</property>
                     <outputColumn
                       refId="Package\Assets Dimension - Active\Union All.Outputs[Union All Output 1].Columns[Model]"
                       dataType="wstr"
-                      length="100"
+                      length="150"
                       lineageId="Package\Assets Dimension - Active\Union All.Outputs[Union All Output 1].Columns[Model]"
                       name="Model" />
                     <outputColumn
@@ -7924,7 +7929,7 @@ where a.ACCOUNT_ID is not null</property>
                     <outputColumn
                       refId="Package\Assets Dimension - Active\Union All.Outputs[Union All Output 1].Columns[Status]"
                       dataType="wstr"
-                      length="14"
+                      length="6"
                       lineageId="Package\Assets Dimension - Active\Union All.Outputs[Union All Output 1].Columns[Status]"
                       name="Status" />
                     <outputColumn
@@ -8098,7 +8103,6 @@ where a.ACCOUNT_ID is not null</property>
                     <outputColumn
                       refId="Package\Assets Dimension - Removed Other\Derived Column 1.Outputs[Derived Column Output].Columns[Update_from_TS]"
                       dataType="dbTimeStamp"
-                      description="Update_from_TS"
                       errorOrTruncationOperation="Computation"
                       errorRowDisposition="FailComponent"
                       lineageId="Package\Assets Dimension - Removed Other\Derived Column 1.Outputs[Derived Column Output].Columns[Update_from_TS]"
@@ -8270,7 +8274,7 @@ where a.ACCOUNT_ID is not null</property>
                     <inputColumn
                       refId="Package\Assets Dimension - Removed Other\Insert Destination.Inputs[OLE DB Destination Input].Columns[Model]"
                       cachedDataType="wstr"
-                      cachedLength="100"
+                      cachedLength="150"
                       cachedName="Model"
                       externalMetadataColumnId="Package\Assets Dimension - Removed Other\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Model]"
                       lineageId="Package\Assets Dimension - Removed Other\Union All.Outputs[Union All Output 1].Columns[Model]" />
@@ -8335,7 +8339,7 @@ where a.ACCOUNT_ID is not null</property>
                     <externalMetadataColumn
                       refId="Package\Assets Dimension - Removed Other\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Model]"
                       dataType="wstr"
-                      length="100"
+                      length="150"
                       name="Model" />
                     <externalMetadataColumn
                       refId="Package\Assets Dimension - Removed Other\Insert Destination.Inputs[OLE DB Destination Input].ExternalColumns[Year]"
@@ -8654,7 +8658,7 @@ where a.ACCOUNT_ID is not null</property>
                     <inputColumn
                       refId="Package\Assets Dimension - Removed Other\OLE DB Command 1.Inputs[OLE DB Command Input].Columns[Model]"
                       cachedDataType="wstr"
-                      cachedLength="100"
+                      cachedLength="150"
                       cachedName="Model"
                       externalMetadataColumnId="Package\Assets Dimension - Removed Other\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       lineageId="Package\Assets Dimension - Removed Other\Staging.Outputs[ADO NET Source Output].Columns[Model]" />
@@ -8709,7 +8713,7 @@ where a.ACCOUNT_ID is not null</property>
                     <externalMetadataColumn
                       refId="Package\Assets Dimension - Removed Other\OLE DB Command 1.Inputs[OLE DB Command Input].ExternalColumns[Param_2]"
                       dataType="wstr"
-                      length="100"
+                      length="150"
                       name="Param_2">
                       <properties>
                         <property
@@ -8984,7 +8988,7 @@ where a.ACCOUNT_ID is not null</property>
                     <inputColumn
                       refId="Package\Assets Dimension - Removed Other\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].Columns[Model]"
                       cachedDataType="wstr"
-                      cachedLength="100"
+                      cachedLength="150"
                       cachedName="Model"
                       externalMetadataColumnId="Package\Assets Dimension - Removed Other\Slowly Changing Dimension.Inputs[Slowly Changing Dimension Input].ExternalColumns[Model]"
                       lineageId="Package\Assets Dimension - Removed Other\Staging.Outputs[ADO NET Source Output].Columns[Model]">
@@ -9548,7 +9552,7 @@ and (select count(1) from staging.ContractSummary_Natalie ) &gt; 0</property>
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
                       externalMetadataColumnId="Package\Assets Dimension - Removed Other\Staging.Outputs[ADO NET Source Output].ExternalColumns[Model]"
-                      length="100"
+                      length="150"
                       lineageId="Package\Assets Dimension - Removed Other\Staging.Outputs[ADO NET Source Output].Columns[Model]"
                       name="Model"
                       truncationRowDisposition="FailComponent" />
@@ -9613,7 +9617,7 @@ and (select count(1) from staging.ContractSummary_Natalie ) &gt; 0</property>
                     <externalMetadataColumn
                       refId="Package\Assets Dimension - Removed Other\Staging.Outputs[ADO NET Source Output].ExternalColumns[Model]"
                       dataType="wstr"
-                      length="100"
+                      length="150"
                       name="Model" />
                     <externalMetadataColumn
                       refId="Package\Assets Dimension - Removed Other\Staging.Outputs[ADO NET Source Output].ExternalColumns[Year]"
@@ -9822,7 +9826,7 @@ and (select count(1) from staging.ContractSummary_Natalie ) &gt; 0</property>
                     <inputColumn
                       refId="Package\Assets Dimension - Removed Other\Union All.Inputs[Union All Input 1].Columns[Model]"
                       cachedDataType="wstr"
-                      cachedLength="100"
+                      cachedLength="150"
                       cachedName="Model"
                       lineageId="Package\Assets Dimension - Removed Other\Staging.Outputs[ADO NET Source Output].Columns[Model]">
                       <properties>
@@ -9970,7 +9974,7 @@ and (select count(1) from staging.ContractSummary_Natalie ) &gt; 0</property>
                     <inputColumn
                       refId="Package\Assets Dimension - Removed Other\Union All.Inputs[Union All Input 2].Columns[Model]"
                       cachedDataType="wstr"
-                      cachedLength="100"
+                      cachedLength="150"
                       cachedName="Model"
                       lineageId="Package\Assets Dimension - Removed Other\Staging.Outputs[ADO NET Source Output].Columns[Model]">
                       <properties>
@@ -10070,7 +10074,7 @@ and (select count(1) from staging.ContractSummary_Natalie ) &gt; 0</property>
                     <outputColumn
                       refId="Package\Assets Dimension - Removed Other\Union All.Outputs[Union All Output 1].Columns[Model]"
                       dataType="wstr"
-                      length="100"
+                      length="150"
                       lineageId="Package\Assets Dimension - Removed Other\Union All.Outputs[Union All Output 1].Columns[Model]"
                       name="Model" />
                     <outputColumn
@@ -10199,87 +10203,6 @@ and (select count(1) from staging.ContractSummary_Natalie ) &gt; 0</property>
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="ADO NET Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].Columns[ID_Project]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="ID_Project"
-                      externalMetadataColumnId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].ExternalColumns[ID_Project]"
-                      lineageId="Package\Assets Dimension - Removed(Natalie,Condamine)\Staging.Outputs[ADO NET Source Output].Columns[ID_Project]" />
-                    <inputColumn
-                      refId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].Columns[Contract_Number]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Contract_Number"
-                      externalMetadataColumnId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].ExternalColumns[Contract_Number]"
-                      lineageId="Package\Assets Dimension - Removed(Natalie,Condamine)\Staging.Outputs[ADO NET Source Output].Columns[Contract_Number]" />
-                    <inputColumn
-                      refId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].Columns[Asset_Number]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="Asset_Number"
-                      externalMetadataColumnId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].ExternalColumns[Asset_Number]"
-                      lineageId="Package\Assets Dimension - Removed(Natalie,Condamine)\Staging.Outputs[ADO NET Source Output].Columns[Asset_Number]" />
-                    <inputColumn
-                      refId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].Columns[Category]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="Category"
-                      externalMetadataColumnId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].ExternalColumns[Category]"
-                      lineageId="Package\Assets Dimension - Removed(Natalie,Condamine)\Staging.Outputs[ADO NET Source Output].Columns[Category]" />
-                    <inputColumn
-                      refId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].Columns[Description]"
-                      cachedDataType="wstr"
-                      cachedLength="100"
-                      cachedName="Description"
-                      externalMetadataColumnId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].ExternalColumns[Description]"
-                      lineageId="Package\Assets Dimension - Removed(Natalie,Condamine)\Staging.Outputs[ADO NET Source Output].Columns[Description]" />
-                    <inputColumn
-                      refId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].Columns[Variant]"
-                      cachedDataType="i4"
-                      cachedName="Variant"
-                      externalMetadataColumnId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].ExternalColumns[Variant]"
-                      lineageId="Package\Assets Dimension - Removed(Natalie,Condamine)\Staging.Outputs[ADO NET Source Output].Columns[Variant]" />
-                    <inputColumn
-                      refId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].Columns[Make]"
-                      cachedDataType="i4"
-                      cachedName="Make"
-                      externalMetadataColumnId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].ExternalColumns[Make]"
-                      lineageId="Package\Assets Dimension - Removed(Natalie,Condamine)\Staging.Outputs[ADO NET Source Output].Columns[Make]" />
-                    <inputColumn
-                      refId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].Columns[Model]"
-                      cachedDataType="i4"
-                      cachedName="Model"
-                      externalMetadataColumnId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].ExternalColumns[Model]"
-                      lineageId="Package\Assets Dimension - Removed(Natalie,Condamine)\Staging.Outputs[ADO NET Source Output].Columns[Model]" />
-                    <inputColumn
-                      refId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].Columns[Year]"
-                      cachedDataType="i4"
-                      cachedName="Year"
-                      externalMetadataColumnId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].ExternalColumns[Year]"
-                      lineageId="Package\Assets Dimension - Removed(Natalie,Condamine)\Staging.Outputs[ADO NET Source Output].Columns[Year]" />
-                    <inputColumn
-                      refId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].Columns[Status]"
-                      cachedDataType="wstr"
-                      cachedLength="7"
-                      cachedName="Status"
-                      externalMetadataColumnId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].ExternalColumns[Status]"
-                      lineageId="Package\Assets Dimension - Removed(Natalie,Condamine)\Staging.Outputs[ADO NET Source Output].Columns[Status]" />
-                    <inputColumn
-                      refId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].Columns[FileDate]"
-                      cachedDataType="wstr"
-                      cachedLength="20"
-                      cachedName="FileDate"
-                      externalMetadataColumnId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].ExternalColumns[FileDate]"
-                      lineageId="Package\Assets Dimension - Removed(Natalie,Condamine)\Staging.Outputs[ADO NET Source Output].Columns[FileDate]" />
-                    <inputColumn
-                      refId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].Columns[F_TS]"
-                      cachedDataType="date"
-                      cachedName="F_TS"
-                      externalMetadataColumnId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].ExternalColumns[Update_from_TS]"
-                      lineageId="Package\Assets Dimension - Removed(Natalie,Condamine)\Derived Column.Outputs[Derived Column Output].Columns[F_TS]" />
-                  </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
@@ -10320,7 +10243,7 @@ and (select count(1) from staging.ContractSummary_Natalie ) &gt; 0</property>
                     <externalMetadataColumn
                       refId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].ExternalColumns[Model]"
                       dataType="wstr"
-                      length="100"
+                      length="150"
                       name="Model" />
                     <externalMetadataColumn
                       refId="Package\Assets Dimension - Removed(Natalie,Condamine)\Core.Inputs[ADO NET Destination Input].ExternalColumns[Year]"
@@ -11133,35 +11056,39 @@ and a.Category is not null</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="160,42.6666666666667"
+          Size="160,43"
           Id="Package\Aggregation Fact"
           TopLeft="761.796285026603,558.099999643569" />
         <NodeLayout
-          Size="168,42.6666666666667"
+          Size="168,43"
           Id="Package\ANZSIC Dimension"
           TopLeft="766.333321996033,87.633335750898" />
         <NodeLayout
-          Size="202.666666666667,42.6666666666667"
+          Size="203,43"
           Id="Package\Asset Category Dimension"
           TopLeft="744.37129569798,707.299997845888" />
         <NodeLayout
-          Size="200.666666666667,42.6666666666667"
+          Size="201,43"
           Id="Package\Assets Dimension - Active"
           TopLeft="743.83332233131,157.833334495623" />
         <NodeLayout
-          Size="246.666666666667,42.6666666666667"
+          Size="246,42"
           Id="Package\Assets Dimension - Removed Other"
           TopLeft="715.546286162817,314.66296324019" />
         <NodeLayout
-          Size="313.333333333334,42.6666666666667"
+          Size="313,43"
           Id="Package\Assets Dimension - Removed(Natalie,Condamine)"
           TopLeft="914.166654795409,226.540740674448" />
         <NodeLayout
-          Size="248,42.6666666666667"
+          Size="181,43"
+          Id="Package\New Asset Categories"
+          TopLeft="747.82346129512,632.56839235664" />
+        <NodeLayout
+          Size="247,42"
           Id="Package\Update FileDate for Removed Other"
           TopLeft="718.092581974136,382.381480512043" />
         <NodeLayout
-          Size="197.333333333334,42.6666666666667"
+          Size="197,43"
           Id="Package\Update Status for Repaid"
           TopLeft="741.598190779893,457.544896032342" />
         <EdgeLayout
@@ -11188,18 +11115,18 @@ and a.Category is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="841.523137580397,200.500001162289">
+          TopLeft="841.439804247063,200.833334495623">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,114.162962077901"
+              EndConnector="0,113.829628744567"
               Start="0,0"
-              End="0,106.662962077901">
+              End="0,106.329628744567">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,106.662962077901" />
+                    End="0,106.329628744567" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11210,18 +11137,18 @@ and a.Category is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="841.178719710348,425.04814717871">
+          TopLeft="840.845386377015,424.381480512043">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.496748853632"
+              EndConnector="0,33.163415520299"
               Start="0,0"
-              End="0,24.996748853632">
+              End="0,25.663415520299">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.996748853632" />
+                    End="0,25.663415520299" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11232,18 +11159,18 @@ and a.Category is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="840.486100735143,357.329629906857">
+          TopLeft="840.069434068477,356.66296324019">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,25.0518506051866"
+              EndConnector="0,25.718517271853"
               Start="0,0"
-              End="0,17.5518506051866">
+              End="0,18.218517271853">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.5518506051866" />
+                    End="0,18.218517271853" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -11274,10 +11201,6 @@ and a.Category is not null</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="181.333333333334,42.6666666666667"
-          Id="Package\New Asset Categories"
-          TopLeft="747.82346129512,632.56839235664" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 5]"
           TopLeft="840.143206494195,600.766666310235">
@@ -11331,35 +11254,35 @@ and a.Category is not null</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="114.666666666667,42.6666666666667"
+          Size="115,43"
           Id="Package\Aggregation Fact\Staging"
           TopLeft="173.5,4.83333333333326" />
         <NodeLayout
-          Size="209.333333333334,42.6666666666667"
+          Size="209,43"
           Id="Package\Aggregation Fact\Slowly Changing Dimension"
           TopLeft="126.166666666667,108.166666666666" />
         <NodeLayout
-          Size="164,42.6666666666667"
+          Size="164,43"
           Id="Package\Aggregation Fact\Derived Column 1"
           TopLeft="150.833333333333,518.833333333333" />
         <NodeLayout
-          Size="121.333333333334,42.6666666666667"
+          Size="121,43"
           Id="Package\Aggregation Fact\Union All"
           TopLeft="172.166666666667,416.166666666667" />
         <NodeLayout
-          Size="176,42.6666666666667"
+          Size="176,43"
           Id="Package\Aggregation Fact\OLE DB Command 1"
           TopLeft="293.833333333333,210.833333333333" />
         <NodeLayout
-          Size="164,42.6666666666667"
+          Size="164,43"
           Id="Package\Aggregation Fact\Insert Destination"
           TopLeft="150.833333333333,621.5" />
         <NodeLayout
-          Size="154.666666666667,42.6666666666667"
+          Size="155,43"
           Id="Package\Aggregation Fact\Derived Column"
           TopLeft="17.5,210.833333333333" />
         <NodeLayout
-          Size="166.666666666667,42.6666666666667"
+          Size="167,43"
           Id="Package\Aggregation Fact\OLE DB Command"
           TopLeft="5.50000000000004,313.5" />
         <EdgeLayout
@@ -11789,35 +11712,35 @@ and a.Category is not null</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="114.666666666667,42.6666666666667"
+          Size="115,43"
           Id="Package\ANZSIC Dimension\Staging"
           TopLeft="175.5,5.49999999999993" />
         <NodeLayout
-          Size="164,42.6666666666667"
+          Size="164,43"
           Id="Package\ANZSIC Dimension\Derived Column 1"
           TopLeft="150.833333333333,518.833333333333" />
         <NodeLayout
-          Size="164,42.6666666666667"
+          Size="164,43"
           Id="Package\ANZSIC Dimension\Insert Destination"
           TopLeft="150.833333333333,621.5" />
         <NodeLayout
-          Size="121.333333333334,42.6666666666667"
+          Size="121,43"
           Id="Package\ANZSIC Dimension\Union All"
           TopLeft="172.166666666667,416.166666666667" />
         <NodeLayout
-          Size="176,42.6666666666667"
+          Size="176,43"
           Id="Package\ANZSIC Dimension\OLE DB Command 1"
           TopLeft="293.833333333333,210.833333333333" />
         <NodeLayout
-          Size="166.666666666667,42.6666666666667"
+          Size="167,43"
           Id="Package\ANZSIC Dimension\OLE DB Command"
           TopLeft="5.50000000000004,313.5" />
         <NodeLayout
-          Size="154.666666666667,42.6666666666667"
+          Size="155,43"
           Id="Package\ANZSIC Dimension\Derived Column"
           TopLeft="17.5,210.833333333333" />
         <NodeLayout
-          Size="168,42.6666666666667"
+          Size="168,43"
           Id="Package\ANZSIC Dimension\ANZSIC Dimension"
           TopLeft="148.833333333333,108.166666666666" />
         <EdgeLayout
@@ -12192,7 +12115,9 @@ and a.Category is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12226,7 +12151,9 @@ and a.Category is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12356,7 +12283,9 @@ and a.Category is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12378,7 +12307,9 @@ and a.Category is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -12400,7 +12331,9 @@ and a.Category is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -12467,51 +12400,51 @@ and a.Category is not null</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="209.333333333334,42.6666666666667"
+          Size="209,43"
           Id="Package\Assets Dimension - Active\Slowly Changing Dimension"
-          TopLeft="128.166666666667,108.833333333333" />
+          TopLeft="128.958333333333,108.833333333333" />
         <NodeLayout
-          Size="166.666666666667,42.6666666666667"
+          Size="166,42"
           Id="Package\Assets Dimension - Active\OLE DB Command"
           TopLeft="5.50000000000004,313.5" />
         <NodeLayout
-          Size="121.333333333334,42.6666666666667"
+          Size="121,42"
           Id="Package\Assets Dimension - Active\Union All"
-          TopLeft="172.166666666667,416.166666666667" />
+          TopLeft="172.958333333333,422" />
         <NodeLayout
-          Size="164,42.6666666666667"
+          Size="164,43"
           Id="Package\Assets Dimension - Active\Derived Column 1"
-          TopLeft="150.833333333333,518.833333333333" />
+          TopLeft="151.458333333333,518.833333333333" />
         <NodeLayout
-          Size="176,42.6666666666667"
+          Size="176,43"
           Id="Package\Assets Dimension - Active\OLE DB Command 1"
           TopLeft="293.833333333333,210.833333333333" />
         <NodeLayout
-          Size="164,42.6666666666667"
+          Size="164,43"
           Id="Package\Assets Dimension - Active\Insert Destination"
-          TopLeft="150.833333333333,621.5" />
+          TopLeft="151.458333333333,621.5" />
         <NodeLayout
-          Size="154.666666666667,42.6666666666667"
+          Size="155,43"
           Id="Package\Assets Dimension - Active\Derived Column"
           TopLeft="17.5,210.833333333333" />
         <NodeLayout
-          Size="114.666666666667,42.6666666666667"
+          Size="114,42"
           Id="Package\Assets Dimension - Active\Staging"
           TopLeft="175.5,5.49999999999993" />
         <EdgeLayout
           Id="Package\Assets Dimension - Active.Paths[Union All Output 1]"
-          TopLeft="232.833333333333,458.833333333333">
+          TopLeft="233.458333333333,464">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,54.833333333333"
               Start="0,0"
-              End="0,52.5">
+              End="0,47.333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,47.333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12522,30 +12455,30 @@ and a.Category is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Assets Dimension - Active.Paths[OLE DB Command Output]"
-          TopLeft="88.8333333333334,356.166666666667">
+          TopLeft="88.5,355.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="125.111111111111,60.0000000000001"
+              EndConnector="126.125,66.5"
               Start="0,0"
-              End="125.111111111111,52.5000000000001">
+              End="126.125,59">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.531453362256" />
+                    End="0,35.3792822185971" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.531453362256"
-                    Point2="0,35.531453362256"
-                    Point3="4,35.531453362256" />
+                    Point1="0,35.3792822185971"
+                    Point2="0,39.3792822185971"
+                    Point3="4,39.3792822185971" />
                   <mssgle:LineSegment
-                    End="121.111111111111,35.531453362256" />
+                    End="122.125,39.3792822185971" />
                   <mssgle:CubicBezierSegment
-                    Point1="121.111111111111,35.531453362256"
-                    Point2="125.111111111111,35.531453362256"
-                    Point3="125.111111111111,39.531453362256" />
+                    Point1="122.125,39.3792822185971"
+                    Point2="126.125,39.3792822185971"
+                    Point3="126.125,43.3792822185971" />
                   <mssgle:LineSegment
-                    End="125.111111111111,52.5000000000001" />
+                    End="126.125,59" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12556,126 +12489,126 @@ and a.Category is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Assets Dimension - Active.Paths[New Output]"
-          TopLeft="232.833333333334,151.499999999999">
+          TopLeft="233.458333333333,151.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="18.8888888888889,264.666666666668"
+              EndConnector="18.8333333333333,270.166666666667"
               Start="0,0"
-              End="18.8888888888889,257.166666666668">
+              End="18.8333333333333,262.666666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,152.733188720174" />
+                    End="0,155.984502446982" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,152.733188720174"
-                    Point2="0,156.733188720174"
-                    Point3="4,156.733188720174" />
+                    Point1="0,155.984502446982"
+                    Point2="0,159.984502446982"
+                    Point3="4,159.984502446982" />
                   <mssgle:LineSegment
-                    End="14.8888888888889,156.733188720174" />
+                    End="14.8333333333333,159.984502446982" />
                   <mssgle:CubicBezierSegment
-                    Point1="14.8888888888889,156.733188720174"
-                    Point2="18.8888888888889,156.733188720174"
-                    Point3="18.8888888888889,160.733188720174" />
+                    Point1="14.8333333333333,159.984502446982"
+                    Point2="18.8333333333333,159.984502446982"
+                    Point3="18.8333333333333,163.984502446982" />
                   <mssgle:LineSegment
-                    End="18.8888888888889,257.166666666668" />
+                    End="18.8333333333333,262.666666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-17.6469422743056,161.733188720174,54.1827734375,11.43359375"
+              BoundingBox="-17.6747200520833,164.984502446982,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Assets Dimension - Active.Paths[Inferred Member Updates Output]"
-          TopLeft="283.166666666667,151.499999999999">
+          TopLeft="283.708333333333,151.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="98.666666666666,59.3333333333337"
+              EndConnector="98.1249999999997,59"
               Start="0,0"
-              End="98.666666666666,51.8333333333337">
+              End="98.1249999999997,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.2753319357094" />
+                    End="0,16.1622047244094" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.2753319357094"
-                    Point2="0,20.2753319357094"
-                    Point3="4,20.2753319357094" />
+                    Point1="0,16.1622047244094"
+                    Point2="0,20.1622047244094"
+                    Point3="4,20.1622047244094" />
                   <mssgle:LineSegment
-                    End="94.666666666666,20.2753319357094" />
+                    End="94.1249999999997,20.1622047244094" />
                   <mssgle:CubicBezierSegment
-                    Point1="94.666666666666,20.2753319357094"
-                    Point2="98.666666666666,20.2753319357094"
-                    Point3="98.666666666666,24.2753319357094" />
+                    Point1="94.1249999999997,20.1622047244094"
+                    Point2="98.1249999999997,20.1622047244094"
+                    Point3="98.1249999999997,24.1622047244094" />
                   <mssgle:LineSegment
-                    End="98.666666666666,51.8333333333337" />
+                    End="98.1249999999997,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.069654947917,25.2753319357094,148.8059765625,11.658203125"
+              BoundingBox="-25.3404882812501,25.1622047244094,148.8059765625,11.658203125"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Assets Dimension - Active.Paths[Historical Attribute Inserts Output]"
-          TopLeft="182.5,151.499999999999">
+          TopLeft="183.208333333333,151.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-87.666666666667,59.3333333333337"
+              EndConnector="-88.2083333333333,59"
               Start="0,0"
-              End="-87.666666666667,51.8333333333337">
+              End="-88.2083333333333,51.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.2753319357094" />
+                    End="0,16.1622047244094" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.2753319357094"
-                    Point2="0,20.2753319357094"
-                    Point3="-4,20.2753319357094" />
+                    Point1="0,16.1622047244094"
+                    Point2="0,20.1622047244094"
+                    Point3="-4,20.1622047244094" />
                   <mssgle:LineSegment
-                    End="-83.666666666667,20.2753319357094" />
+                    End="-84.2083333333333,20.1622047244094" />
                   <mssgle:CubicBezierSegment
-                    Point1="-83.666666666667,20.2753319357094"
-                    Point2="-87.666666666667,20.2753319357094"
-                    Point3="-87.666666666667,24.2753319357094" />
+                    Point1="-84.2083333333333,20.1622047244094"
+                    Point2="-88.2083333333333,20.1622047244094"
+                    Point3="-88.2083333333333,24.1622047244094" />
                   <mssgle:LineSegment
-                    End="-87.666666666667,51.8333333333337" />
+                    End="-88.2083333333333,51.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-118.889720052084,25.2753319357094,150.1127734375,11.609375"
+              BoundingBox="-119.160553385417,25.1622047244094,150.1127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Assets Dimension - Active.Paths[Derived Column Output1]"
-          TopLeft="232.833333333333,561.5">
+          TopLeft="233.458333333333,561.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="0,59.666666666667"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="0,52.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,52.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12686,18 +12619,18 @@ and a.Category is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Assets Dimension - Active.Paths[Derived Column Output]"
-          TopLeft="91.8333333333334,253.5">
+          TopLeft="91.75,253.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="0,59.666666666667"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="0,52.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,52.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12708,18 +12641,18 @@ and a.Category is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Assets Dimension - Active.Paths[ADO NET Source Output]"
-          TopLeft="232.833333333333,48.1666666666666">
+          TopLeft="232.979166666667,47.4999999999999">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.6666666666661"
+              EndConnector="0,61.3333333333331"
               Start="0,0"
-              End="0,53.1666666666661">
+              End="0,53.8333333333331">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,53.1666666666661" />
+                    End="0,53.8333333333331" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -12833,6 +12766,19 @@ and a.Category is not null</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Assets Dimension - Active\Insert Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Assets Dimension - Active\Staging">
     <Properties>
       <Property>
@@ -12846,126 +12792,130 @@ and a.Category is not null</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="121.333333333334,42.6666666666667"
+          Size="121,42"
           Id="Package\Assets Dimension - Removed Other\Union All"
-          TopLeft="172.166666666667,416.166666666667" />
+          TopLeft="175,430" />
         <NodeLayout
-          Size="114.666666666667,42.6666666666667"
+          Size="115,43"
           Id="Package\Assets Dimension - Removed Other\Staging"
           TopLeft="175.5,5.93333332558466" />
         <NodeLayout
-          Size="166.666666666667,42.6666666666667"
+          Size="167,43"
           Id="Package\Assets Dimension - Removed Other\OLE DB Command"
           TopLeft="5.50000000000004,313.5" />
         <NodeLayout
-          Size="164,42.6666666666667"
+          Size="163,42"
           Id="Package\Assets Dimension - Removed Other\Derived Column 1"
           TopLeft="150.833333333333,518.833333333333" />
         <NodeLayout
-          Size="209.333333333334,42.6666666666667"
+          Size="209,43"
           Id="Package\Assets Dimension - Removed Other\Slowly Changing Dimension"
           TopLeft="128.166666666667,108.166666666666" />
         <NodeLayout
-          Size="164,42.6666666666667"
+          Size="164,43"
           Id="Package\Assets Dimension - Removed Other\Insert Destination"
           TopLeft="150.833333333333,621.5" />
         <NodeLayout
-          Size="176,42.6666666666667"
+          Size="176,43"
           Id="Package\Assets Dimension - Removed Other\OLE DB Command 1"
           TopLeft="293.833333333333,210.833333333333" />
         <NodeLayout
-          Size="154.666666666667,42.6666666666667"
+          Size="155,43"
           Id="Package\Assets Dimension - Removed Other\Derived Column"
           TopLeft="17.5,210.833333333333" />
         <EdgeLayout
           Id="Package\Assets Dimension - Removed Other.Paths[Union All Output 1]"
-          TopLeft="232.833333333333,458.833333333333">
+          TopLeft="233.916666666667,472">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,46.833333333333"
               Start="0,0"
-              End="0,52.5">
+              End="0,39.333333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Assets Dimension - Removed Other.Paths[OLE DB Command Output]"
-          TopLeft="88.8333333333334,356.166666666667">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="125.111111111111,60.0000000000001"
-              Start="0,0"
-              End="125.111111111111,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,31.531453362256" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,31.531453362256"
-                    Point2="0,35.531453362256"
-                    Point3="4,35.531453362256" />
-                  <mssgle:LineSegment
-                    End="121.111111111111,35.531453362256" />
-                  <mssgle:CubicBezierSegment
-                    Point1="121.111111111111,35.531453362256"
-                    Point2="125.111111111111,35.531453362256"
-                    Point3="125.111111111111,39.531453362256" />
-                  <mssgle:LineSegment
-                    End="125.111111111111,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Assets Dimension - Removed Other.Paths[New Output]"
-          TopLeft="232.833333333333,150.833333333333">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="18.8888888888889,265.333333333333"
-              Start="0,0"
-              End="18.8888888888889,257.833333333333">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,153.127982646421" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,153.127982646421"
-                    Point2="0,157.127982646421"
-                    Point3="4,157.127982646421" />
-                  <mssgle:LineSegment
-                    End="14.8888888888889,157.127982646421" />
-                  <mssgle:CubicBezierSegment
-                    Point1="14.8888888888889,157.127982646421"
-                    Point2="18.8888888888889,157.127982646421"
-                    Point3="18.8888888888889,161.127982646421" />
-                  <mssgle:LineSegment
-                    End="18.8888888888889,257.833333333333" />
+                    End="0,39.333333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-17.6469422743056,162.127982646421,54.1827734375,11.43359375"
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Assets Dimension - Removed Other.Paths[OLE DB Command Output]"
+          TopLeft="89,356.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="127.666666666667,73.5"
+              Start="0,0"
+              End="127.666666666667,66">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,39.5244698205547" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,39.5244698205547"
+                    Point2="0,43.5244698205547"
+                    Point3="4,43.5244698205547" />
+                  <mssgle:LineSegment
+                    End="123.666666666667,43.5244698205547" />
+                  <mssgle:CubicBezierSegment
+                    Point1="123.666666666667,43.5244698205547"
+                    Point2="127.666666666667,43.5244698205547"
+                    Point3="127.666666666667,47.5244698205547" />
+                  <mssgle:LineSegment
+                    End="127.666666666667,66" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Assets Dimension - Removed Other.Paths[New Output]"
+          TopLeft="232.666666666667,151.166666666666">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="21.6666666666663,278.833333333334"
+              Start="0,0"
+              End="21.6666666666663,271.333333333334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,161.116639477978" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,161.116639477978"
+                    Point2="0,165.116639477978"
+                    Point3="4,165.116639477978" />
+                  <mssgle:LineSegment
+                    End="17.6666666666663,165.116639477978" />
+                  <mssgle:CubicBezierSegment
+                    Point1="17.6666666666663,165.116639477978"
+                    Point2="21.6666666666663,165.116639477978"
+                    Point3="21.6666666666663,169.116639477978" />
+                  <mssgle:LineSegment
+                    End="21.6666666666663,271.333333333334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-16.2580533854168,170.116639477978,54.1827734375,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -13043,24 +12993,26 @@ and a.Category is not null</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Assets Dimension - Removed Other.Paths[Derived Column Output1]"
-          TopLeft="232.833333333333,561.5">
+          TopLeft="232.583333333333,560.833333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
+              EndConnector="0,60.666666666667"
               Start="0,0"
-              End="0,52.5000000000001">
+              End="0,53.166666666667">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5000000000001" />
+                    End="0,53.166666666667" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13082,7 +13034,9 @@ and a.Category is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13104,7 +13058,9 @@ and a.Category is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13217,19 +13173,19 @@ and a.Category is not null</property>
     design-time-name="Package\Assets Dimension - Removed(Natalie,Condamine)">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="154.666666666667,42.6666666666667"
-          Id="Package\Assets Dimension - Removed(Natalie,Condamine)\Derived Column"
-          TopLeft="214.833333333333,106.833333333333" />
-        <NodeLayout
-          Size="100.666666666667,42.6666666666667"
+          Size="101,43"
           Id="Package\Assets Dimension - Removed(Natalie,Condamine)\Core"
           TopLeft="243.5,195.5" />
         <NodeLayout
-          Size="114.666666666667,42.6666666666667"
+          Size="115,43"
           Id="Package\Assets Dimension - Removed(Natalie,Condamine)\Staging"
           TopLeft="236.166666666667,12.1666666666667" />
+        <NodeLayout
+          Size="155,43"
+          Id="Package\Assets Dimension - Removed(Natalie,Condamine)\Derived Column"
+          TopLeft="214.833333333333,106.833333333333" />
         <EdgeLayout
           Id="Package\Assets Dimension - Removed(Natalie,Condamine).Paths[Derived Column Output]"
           TopLeft="293,149.5">
@@ -13249,9 +13205,7 @@ and a.Category is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -13273,9 +13227,7 @@ and a.Category is not null</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -13303,13 +13255,13 @@ and a.Category is not null</property>
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="150.666666666667,42.6666666666667"
-          Id="Package\New Asset Categories\Asset Category"
-          TopLeft="216.833333333333,45.5" />
-        <NodeLayout
-          Size="192,42.6666666666667"
+          Size="192,43"
           Id="Package\New Asset Categories\Asset Category Lookups"
           TopLeft="190.833333333333,170.166666666667" />
+        <NodeLayout
+          Size="151,43"
+          Id="Package\New Asset Categories\Asset Category"
+          TopLeft="216.833333333333,45.5" />
         <EdgeLayout
           Id="Package\New Asset Categories.Paths[ADO NET Source Output]"
           TopLeft="289.5,88.1666666666667">

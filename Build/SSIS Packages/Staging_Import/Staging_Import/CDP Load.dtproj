@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">cefcdevssis01</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA+B+lW1+uCkmyyVzKVAQ0uAAAAAACAAAAAAAQZgAAAAEAACAAAACZcsbTw9CrBk7rW3Vwcw9ExfoYRPDpq4IgivGx29Q/vgAAAAAOgAAAAAIAACAAAAC9H/pbQR/M3Bx+Va1/zAd2XhJ/12jY/Lbzrsg0ycLoeZAAAAAPSPdnm5CCxuHTznAVmDFcs8enPAChYlm1l96cJhpxt8SoofFlUFcUvcikGhZuTsmrXtqsdTEmqKK/QzSR4HTH4Eeng/5dLpsyfzhj3YQtg86QES0e7YgT26RrL73x2k3X1TwxWQrtzaAIGJEvq87bUflHnhzXVzi08UUZV8oJtBKIyoMQNk3tUMiBC7kVJH1AAAAAWDab0jS62Wvitkk0LAcxwIpVb2lW5TZNPuFmyCa21tQS0VvXmXcjuYQxGw8VmZw322mO2x9sgkDUbD+movMVWQ==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA48/kv6Q0h0aOmEUTRRzqSwAAAAACAAAAAAAQZgAAAAEAACAAAABpTpHaxNGrF9ZKVEf3V9u417lfpWq6XQZMj/dS+yNx2wAAAAAOgAAAAAIAACAAAABKBZC0orEdGPIh1weMj/qPVhAVP+5MVqUXeZszhUCMwpAAAAADVdudlFw3fEdlhyzPytDiglm0mLLBCPcRmWT0CIeN8GwV9Y0KlSfk1NSf84GJOj2uPZxo+UhbtU7fWyFDgTcuSJoOlydJ0LSszKYDYpPAcQfCNQ5oAhaNAiWNxOAOXCAelYtauZ4EqnGLrr75FXLxI/jgnOMmxlOXif4JIlJOWr7g4g9soQSTQaAoacO8w+xAAAAAFQNfZlrke/mTqIEqPECq7rThUNiLte1Wibb3oERQgdnxX693L8pPC+ecPNikgCBAXmZZj3cXXUOsByo4pKb7aA==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -36,8 +36,10 @@
           <SSIS:Package SSIS:Name="STGCDPFinDimFactComDepLoad.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="FINSTGRevLoad.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="STGCDPFinFactRevLoad.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="AGGSTGLoad.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="STGCDPAggDimFactLoad.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="STGCDPAggDimFactLoad_temp.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="AGGSTGLoad_bkp.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="AGGSTGLoad (1).dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="EDW_Connection_Manager.conmgr" />
@@ -509,7 +511,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\Annan.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties="excel 12.0;IMEX=1;";</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=C:\Aggregation Files\Annan.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties="excel 12.0;IMEX=1;";</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -567,7 +569,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\Annan.xlsx</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Aggregation Files\Annan.xlsx</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -596,7 +598,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\Condamine.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties="excel 12.0;IMEX=1;HDR=YES;";</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=C:\Aggregation Files\Condamine.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties="excel 12.0;IMEX=1;HDR=YES;";</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -654,7 +656,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\Condamine.xlsx</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Aggregation Files\Condamine.xlsx</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -683,7 +685,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\Flynn.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=excel 12.0;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=C:\Aggregation Files\Flynn.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Persist Security Info=False;Extended Properties=excel 12.0;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -741,7 +743,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\Flynn.xlsx</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Aggregation Files\Flynn.xlsx</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -770,7 +772,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\Macleay.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=excel 12.0;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=C:\Aggregation Files\Macleay.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Persist Security Info=False;Extended Properties=excel 12.0;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -828,7 +830,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\Macleay.xlsx</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Aggregation Files\Macleay.xlsx</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -857,7 +859,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\Murchison.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=excel 12.0;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=C:\Aggregation Files\Murchison.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=excel 12.0;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -915,7 +917,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\Murchison.xlsx</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Aggregation Files\Murchison.xlsx</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -944,7 +946,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\Natalie.xlsm;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=excel 12.0;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=C:\Aggregation Files\Natalie.xlsm;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=excel 12.0;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1002,7 +1004,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\Natalie.xlsm</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Aggregation Files\Natalie.xlsm</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1031,7 +1033,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\Othello.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=excel 12.0;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=C:\Aggregation Files\Othello.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=excel 12.0;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1089,7 +1091,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\Othello.xlsx</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Aggregation Files\Othello.xlsx</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1118,7 +1120,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\Roper.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=excel 12.0;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=C:\Aggregation Files\Roper.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=excel 12.0;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1176,7 +1178,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\Roper.xlsx</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Aggregation Files\Roper.xlsx</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1205,7 +1207,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\ANZSIC_all programs.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=excel 12.0;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=C:\Aggregation Files\ANZSIC_all programs.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=excel 12.0;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1263,7 +1265,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\ANZSIC_all programs.xlsx</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Aggregation Files\ANZSIC_all programs.xlsx</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1292,7 +1294,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">Data Source=C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\Wingecarribee.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=excel 12.0;</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">Data Source=C:\Aggregation Files\Wingecarribee.xlsx;Provider=Microsoft.ACE.OLEDB.12.0;Extended Properties=excel 12.0;</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1350,7 +1352,7 @@
                 <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                 <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="Value">C:\Users\yolinda.moodley\Clean Energy Finance Corporation\EIM Collaboration - CDP\Aggregation\Aggregation Files\Wingecarribee.xlsx</SSIS:Property>
+                <SSIS:Property SSIS:Name="Value">C:\Aggregation Files\Wingecarribee.xlsx</SSIS:Property>
                 <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
               </SSIS:Properties>
             </SSIS:Parameter>
@@ -1497,10 +1499,10 @@
                 <SSIS:Property SSIS:Name="Name">FINSTGComDepLoad</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">64</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">67</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{F975BD0F-62D4-4CA8-9319-A7ACABCF39ED}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{EFCF2298-B8E6-492D-8B1F-6BAF8C55C1A3}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1559,16 +1561,16 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="AGGSTGLoad.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="STGCDPAggDimFactLoad.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{25A77AF0-D33A-427E-BE73-6E222AC27939}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">AGGSTGLoad</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{EBAF1449-0B0C-4130-A3E4-2643B8183969}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">STGCDPAggDimFactLoad</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">143</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">97</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{C7C3B1F0-AE7D-4C71-8E94-476BAF4947D4}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{C6A81061-B7E9-4E0F-8F4A-7175F4A76795}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1576,16 +1578,50 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="STGCDPAggDimFactLoad.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="STGCDPAggDimFactLoad_temp.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{EBAF1449-0B0C-4130-A3E4-2643B8183969}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">STGCDPAggDimFactLoad</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{B2997C0A-9160-4978-B5DA-15345A5268ED}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">STGCDPAggDimFactLoad_temp</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">17</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">85</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{E7F5389F-3670-4615-99B3-CDF6854BCF10}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{4B44AED4-00F8-44D4-881A-B4087D3154A3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="AGGSTGLoad_bkp.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{25A77AF0-D33A-427E-BE73-6E222AC27939}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">AGGSTGLoad</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">178</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{AFE9A24E-540A-4D14-8D47-E29BB1D0A9D2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="AGGSTGLoad (1).dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{BB532D8D-4FE2-478F-B0DD-EDEF8857B843}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">AGGSTGLoad</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">214</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{4F08DB6C-56B9-4117-A748-EA7390FA0C2E}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
