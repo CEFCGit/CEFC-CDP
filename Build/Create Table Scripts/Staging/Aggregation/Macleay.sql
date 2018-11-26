@@ -1,3 +1,4 @@
+--drop table staging.ContractSummary_Macleay;
 create table staging.ContractSummary_Macleay
 (
 [Loan_Number] nvarchar(20),
@@ -7,20 +8,20 @@ create table staging.ContractSummary_Macleay
 [Sec_AssetType] nvarchar(50),
 [Sec_CO2] nvarchar(20),
 [Sec_Make] nvarchar(20),
-[Sec_Model] nvarchar(100),
+[Sec_Model] nvarchar(150),
 [Sec_Variant] nvarchar(50),
 [Sec_VehicleGroup] nvarchar(50),
 [Sec_VehicleCategory] nvarchar(50),
 [GV_VehicleSegment] nvarchar(50),
 [GV_ClassName] nvarchar(50),
-[DiscountedRate] nvarchar(5),
-[UndiscountedRate] nvarchar(5),
-[Quo_AmountFinanced] nvarchar(15),
+[DiscountedRate] nvarchar(10),
+[UndiscountedRate] nvarchar(10),
+[Quo_AmountFinanced] nvarchar(20),
 [Quo_GSTFinanced] nvarchar(15),
 [TermPeriod] nvarchar(3),
-[CurrentLoanAmt] nvarchar(15),
+[CurrentLoanAmt] nvarchar(20),
 [WDV] nvarchar(15),
-[Quo_ResidualAmount] nvarchar(15),
+[Quo_ResidualAmount] nvarchar(20),
 [Quo_ResidualPercent] nvarchar(15),
 [Add_PostCode] nvarchar(10),
 [Add_State] nvarchar(20),
@@ -31,5 +32,3 @@ create table staging.ContractSummary_Macleay
 [FinalisedDate] nvarchar(20),
 [FileDate] nvarchar(20)
 )
-
-
