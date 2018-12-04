@@ -6,8 +6,20 @@
       <Options>
         <ServerName>cefcdevssis01\SSISDEVSQL01</ServerName>
         <PathOnServer>/SSISDB/CDP_Load/CDP Load</PathOnServer>
-        <UserIDs />
-        <UserPasswords />
+        <UserIDs>
+          <ConfigurationSetting>
+            <Id>{8E16ACCB-0787-4D16-9937-2A153AD345E4}</Id>
+            <Name>{8E16ACCB-0787-4D16-9937-2A153AD345E4}</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAApXwyHevF/kG6LD1aisTxPgAAAABOAAAAewA4AEUAMQA2AEEAQwBDAEIALQAwADcAOAA3AC0ANABEADEANgAtADkAOQAzADcALQAyAEEAMQA1ADMAQQBEADMANAA1AEUANAB9AAAAA2YAAMAAAAAQAAAANXOIgzMTDS7xyFLKXq3GxwAAAAAEgAAAoAAAABAAAACxbpgaNWcXr+AWUXWnX5kBGAAAADd/liQr1+prs/4fdtFBMhYkJXo/63MSuhQAAABiRHJX6b3eZjmlTwp7kLJIzD5C6Q==</Value>
+          </ConfigurationSetting>
+        </UserIDs>
+        <UserPasswords>
+          <ConfigurationSetting>
+            <Id>{8E16ACCB-0787-4D16-9937-2A153AD345E4}</Id>
+            <Name>{8E16ACCB-0787-4D16-9937-2A153AD345E4}</Name>
+            <Value xsi:type="xsd:string">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAApXwyHevF/kG6LD1aisTxPgAAAABOAAAAewA4AEUAMQA2AEEAQwBDAEIALQAwADcAOAA3AC0ANABEADEANgAtADkAOQAzADcALQAyAEEAMQA1ADMAQQBEADMANAA1AEUANAB9AAAAA2YAAMAAAAAQAAAAe8BXsacOixSlUwGpsgOu7AAAAAAEgAAAoAAAABAAAABeYNLlx1C/jesaQRj5zAdPIAAAADnXCoG4Sks6Ksfwub54BUt+e76tkUCVkWkf1Sy3fLe1FAAAAIiyiv6TZzrsXtwuxC/oWIN77nDf</Value>
+          </ConfigurationSetting>
+        </UserPasswords>
         <OfflineMode>false</OfflineMode>
         <ProgressReporting>true</ProgressReporting>
         <ParameterConfigurationSensitiveValues>

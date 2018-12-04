@@ -7,7 +7,7 @@
   DTS:CreatorName="cefcdevssis01\yolinda.moodley"
   DTS:DTSID="{0F5AFF54-7EBF-47E0-9788-1428E677D091}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.3002.106"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="3081"
   DTS:ObjectName="FINSTGRevLoad"
   DTS:PackageType="5"
@@ -56,7 +56,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select *
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select *
 FROM [Sheet1Report$B2:AE]</property>
                 <property
                   dataType="System.String"

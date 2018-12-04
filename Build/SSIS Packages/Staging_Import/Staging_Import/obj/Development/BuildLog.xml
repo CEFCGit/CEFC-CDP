@@ -2,7 +2,7 @@
 <BuildLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ProjectInfo>
     <Name>CDP Load</Name>
-    <LastWriteTime>2018-11-05T08:03:35.3113061Z</LastWriteTime>
+    <LastWriteTime>2018-11-28T06:41:00.5097005Z</LastWriteTime>
     <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
   </ProjectInfo>
   <LastBuildInfos>
@@ -13,7 +13,7 @@
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
       <Name>IMTSTGLoad.dtsx</Name>
-      <LastWriteTime>2018-09-16T23:32:22.0392164Z</LastWriteTime>
+      <LastWriteTime>2018-11-28T06:41:00.4635732Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
@@ -37,11 +37,6 @@
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>AGGSTGLoad.dtsx</Name>
-      <LastWriteTime>2018-11-07T05:43:16.5658788Z</LastWriteTime>
-      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
-    </ProjectBuildItemInfo>
-    <ProjectBuildItemInfo>
       <Name>STGCDPAggDimFactLoad.dtsx</Name>
       <LastWriteTime>2018-11-09T00:29:59.9028983Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
@@ -52,8 +47,18 @@
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
     <ProjectBuildItemInfo>
-      <Name>AGGSTGLoad2 (1) (1).dtsx</Name>
-      <LastWriteTime>2018-11-08T08:43:46.4546345Z</LastWriteTime>
+      <Name>AGGSTGLoad_bkp.dtsx</Name>
+      <LastWriteTime>2018-11-07T05:43:16.5658788Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>AGGSTGLoad (1).dtsx</Name>
+      <LastWriteTime>2018-11-28T06:41:00.395388Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
+    </ProjectBuildItemInfo>
+    <ProjectBuildItemInfo>
+      <Name>Package1.dtsx</Name>
+      <LastWriteTime>2018-11-28T06:41:00.4284775Z</LastWriteTime>
       <LastKnownProtectionLevel>EncryptSensitiveWithUserKey</LastKnownProtectionLevel>
     </ProjectBuildItemInfo>
   </LastBuildInfos>

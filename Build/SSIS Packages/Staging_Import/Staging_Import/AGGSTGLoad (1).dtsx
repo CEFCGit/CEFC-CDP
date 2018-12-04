@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="7/6/2018 11:43:10 AM"
@@ -7,12 +7,12 @@
   DTS:CreatorName="cefcdevssis01\yolinda.moodley"
   DTS:DTSID="{BB532D8D-4FE2-478F-B0DD-EDEF8857B843}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.3002.106"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="3081"
   DTS:ObjectName="AGGSTGLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="214"
-  DTS:VersionGUID="{4F08DB6C-56B9-4117-A748-EA7390FA0C2E}">
+  DTS:VersionBuild="215"
+  DTS:VersionGUID="{219A77C4-DDAB-44E3-9090-A6949E562131}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -66,7 +66,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -92,8 +92,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Annan\Annan Asset Details\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{553710F6-3454-438D-B5C1-48664426C5BF}:invalid"
-                      connectionManagerRefId="{553710F6-3454-438D-B5C1-48664426C5BF}:invalid"
+                      connectionManagerID="{553710F6-3454-438D-B5C1-48664426C5BF}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGAnnan_Connection_Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -412,8 +412,8 @@
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Annan\Annan Asset Details\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -818,7 +818,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select *
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select *
 from [contractSummary$A4:T]</property>
                     <property
                       dataType="System.String"
@@ -845,8 +845,8 @@ from [contractSummary$A4:T]</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Annan\Annan ContractSummary\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{553710F6-3454-438D-B5C1-48664426C5BF}:invalid"
-                      connectionManagerRefId="{553710F6-3454-438D-B5C1-48664426C5BF}:invalid"
+                      connectionManagerID="{553710F6-3454-438D-B5C1-48664426C5BF}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGAnnan_Connection_Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -1330,8 +1330,8 @@ from [contractSummary$A4:T]</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Annan\Annan ContractSummary\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -1713,7 +1713,7 @@ from [contractSummary$A4:T]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -1739,8 +1739,8 @@ from [contractSummary$A4:T]</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Condamine\Condamine ContractSummary\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{E8285585-DBE4-407C-A66C-F90B1530E606}:invalid"
-                      connectionManagerRefId="{E8285585-DBE4-407C-A66C-F90B1530E606}:invalid"
+                      connectionManagerID="{E8285585-DBE4-407C-A66C-F90B1530E606}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGCondamine_Connection_Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -2545,8 +2545,8 @@ from [contractSummary$A4:T]</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Condamine\Condamine ContractSummary\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -3147,7 +3147,7 @@ from [contractSummary$A4:T]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -3173,8 +3173,8 @@ from [contractSummary$A4:T]</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Condamine\Condamine Removed Assets\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{E8285585-DBE4-407C-A66C-F90B1530E606}:invalid"
-                      connectionManagerRefId="{E8285585-DBE4-407C-A66C-F90B1530E606}:invalid"
+                      connectionManagerID="{E8285585-DBE4-407C-A66C-F90B1530E606}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGCondamine_Connection_Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -3723,8 +3723,8 @@ from [contractSummary$A4:T]</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Condamine\Condamine Removed Assets\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -4098,7 +4098,7 @@ from [contractSummary$A4:T]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT   *
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT   *
 FROM  [Cumulative Green Receivables $A5:AF]
 WHERE [Lease Id] is not NULL</property>
                     <property
@@ -4126,8 +4126,8 @@ WHERE [Lease Id] is not NULL</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Flynn\Flynn\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{92CFE0F1-B915-430F-9D80-CA924A47412E}:invalid"
-                      connectionManagerRefId="{92CFE0F1-B915-430F-9D80-CA924A47412E}:invalid"
+                      connectionManagerID="{92CFE0F1-B915-430F-9D80-CA924A47412E}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGFlynn_Connection_Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -4860,8 +4860,8 @@ WHERE [Lease Id] is not NULL</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Flynn\Flynn\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -5374,7 +5374,7 @@ WHERE [Lease Id] is not NULL</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -5400,8 +5400,8 @@ WHERE [Lease Id] is not NULL</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Macleay\Macleay\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{74206A10-86DB-4ECD-82FC-670EC1F88A41}:invalid"
-                      connectionManagerRefId="{74206A10-86DB-4ECD-82FC-670EC1F88A41}:invalid"
+                      connectionManagerID="{74206A10-86DB-4ECD-82FC-670EC1F88A41}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGMacleay_Connection_Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -6134,8 +6134,8 @@ WHERE [Lease Id] is not NULL</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Macleay\Macleay\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -6714,7 +6714,7 @@ WHERE [Lease Id] is not NULL</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT *
 FROM 
 [ContractSummary$A8:AA]</property>
                     <property
@@ -6742,8 +6742,8 @@ FROM
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Murchison\Murchison\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{D5CAFC1F-4DD4-4FA0-AD4B-A6426DD0BC68}:invalid"
-                      connectionManagerRefId="{D5CAFC1F-4DD4-4FA0-AD4B-A6426DD0BC68}:invalid"
+                      connectionManagerID="{D5CAFC1F-4DD4-4FA0-AD4B-A6426DD0BC68}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGMurchison_Connection_Manager xlsx]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -7374,8 +7374,8 @@ FROM
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Murchison\Murchison\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -7834,7 +7834,7 @@ FROM
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT   [Contract No#], [Asset No#], [Lease type], [Equipment type], Make, Model, [Year], [Interest rate], [Discretion applied], [Check], [Repayment frequency], [Total amount financed], Term, [Outstanding balance], [Principal Outstanding], [ Balloon / Residual amount ], [LOIS CEFC Note], [LQS CEFC Note], [Asset Group], State, Postcode, 
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT   [Contract No#], [Asset No#], [Lease type], [Equipment type], Make, Model, [Year], [Interest rate], [Discretion applied], [Check], [Repayment frequency], [Total amount financed], Term, [Outstanding balance], [Principal Outstanding], [ Balloon / Residual amount ], [LOIS CEFC Note], [LQS CEFC Note], [Asset Group], State, Postcode, 
              [Industry class], [Drawdown date], [Day Count], [Monthly Day Count], [CEFC Rate Adjustment], [Total repayable amount], FileDate
 FROM     [ContractSummary$]
 WHERE   ([Contract No#] IS NOT NULL)</property>
@@ -7863,8 +7863,8 @@ WHERE   ([Contract No#] IS NOT NULL)</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Natalie\Natalie ContractSummary\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{A04C4137-1B19-4C64-972B-2C38CAD45443}:invalid"
-                      connectionManagerRefId="{A04C4137-1B19-4C64-972B-2C38CAD45443}:invalid"
+                      connectionManagerID="{A04C4137-1B19-4C64-972B-2C38CAD45443}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGNatalie_Connection_Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -8510,8 +8510,8 @@ WHERE   ([Contract No#] IS NOT NULL)</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Natalie\Natalie ContractSummary\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -8934,7 +8934,7 @@ WHERE   ([Contract No#] IS NOT NULL)</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT *
 FROM
 [Deleted Contracts$B2:D]</property>
                     <property
@@ -8962,8 +8962,8 @@ FROM
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Natalie\Natalie Deleted Contracts\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{A04C4137-1B19-4C64-972B-2C38CAD45443}:invalid"
-                      connectionManagerRefId="{A04C4137-1B19-4C64-972B-2C38CAD45443}:invalid"
+                      connectionManagerID="{A04C4137-1B19-4C64-972B-2C38CAD45443}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGNatalie_Connection_Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -9096,8 +9096,8 @@ FROM
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Natalie\Natalie Deleted Contracts\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -9274,7 +9274,7 @@ FROM
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -9300,8 +9300,8 @@ FROM
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Othello\Othello\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{2B656386-4AD8-463E-97D0-D44834BCE771}:invalid"
-                      connectionManagerRefId="{2B656386-4AD8-463E-97D0-D44834BCE771}:invalid"
+                      connectionManagerID="{2B656386-4AD8-463E-97D0-D44834BCE771}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGOthello_Connection_Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -9557,8 +9557,8 @@ FROM
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Othello\Othello\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -9798,7 +9798,7 @@ FROM
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT   *
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT   *
 FROM     [RSLoanBook$A9:P]</property>
                     <property
                       dataType="System.String"
@@ -9825,8 +9825,8 @@ FROM     [RSLoanBook$A9:P]</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Roper\Roper\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{885D3335-E3DD-4BDE-8E5E-5F6431A32535}:invalid"
-                      connectionManagerRefId="{885D3335-E3DD-4BDE-8E5E-5F6431A32535}:invalid"
+                      connectionManagerID="{885D3335-E3DD-4BDE-8E5E-5F6431A32535}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGRoper_Connection_Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -10229,8 +10229,8 @@ FROM     [RSLoanBook$A9:P]</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Roper\Roper\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -10571,7 +10571,7 @@ FROM     [RSLoanBook$A9:P]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -10597,8 +10597,8 @@ FROM     [RSLoanBook$A9:P]</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Wingecarribee\Wingecarribee Assets\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{6BD5745E-716B-4007-8F8F-F8BF99813542}:invalid"
-                      connectionManagerRefId="{6BD5745E-716B-4007-8F8F-F8BF99813542}:invalid"
+                      connectionManagerID="{6BD5745E-716B-4007-8F8F-F8BF99813542}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGWingecarribee_Connection_Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -10878,8 +10878,8 @@ FROM     [RSLoanBook$A9:P]</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Wingecarribee\Wingecarribee Assets\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -11090,7 +11090,7 @@ FROM     [RSLoanBook$A9:P]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -11116,8 +11116,8 @@ FROM     [RSLoanBook$A9:P]</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Wingecarribee\Wingecarribee ContractSummary\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{6BD5745E-716B-4007-8F8F-F8BF99813542}:invalid"
-                      connectionManagerRefId="{6BD5745E-716B-4007-8F8F-F8BF99813542}:invalid"
+                      connectionManagerID="{6BD5745E-716B-4007-8F8F-F8BF99813542}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGWingecarribee_Connection_Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -11644,8 +11644,8 @@ FROM     [RSLoanBook$A9:P]</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Wingecarribee\Wingecarribee ContractSummary\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -11997,7 +11997,7 @@ FROM     [RSLoanBook$A9:P]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -12023,8 +12023,8 @@ FROM     [RSLoanBook$A9:P]</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Wingecarribee\Wingecarribee NQ Assets\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{6BD5745E-716B-4007-8F8F-F8BF99813542}:invalid"
-                      connectionManagerRefId="{6BD5745E-716B-4007-8F8F-F8BF99813542}:invalid"
+                      connectionManagerID="{6BD5745E-716B-4007-8F8F-F8BF99813542}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGWingecarribee_Connection_Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -12568,8 +12568,8 @@ FROM     [RSLoanBook$A9:P]</property>
                   <connections>
                     <connection
                       refId="Package\Load Aggregated Data - Wingecarribee\Wingecarribee NQ Assets\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -12962,7 +12962,7 @@ FROM     [RSLoanBook$A9:P]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -12988,8 +12988,8 @@ FROM     [RSLoanBook$A9:P]</property>
                   <connections>
                     <connection
                       refId="Package\Load ANZSIC Codes\ANZSIC Codes - Annan\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{4BECFFBF-3067-4E93-95DB-6AF4FDD4AF60}:invalid"
-                      connectionManagerRefId="{4BECFFBF-3067-4E93-95DB-6AF4FDD4AF60}:invalid"
+                      connectionManagerID="{4BECFFBF-3067-4E93-95DB-6AF4FDD4AF60}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGANZSIC_Connection_Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -13146,8 +13146,8 @@ FROM     [RSLoanBook$A9:P]</property>
                   <connections>
                     <connection
                       refId="Package\Load ANZSIC Codes\ANZSIC Codes - Annan\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -13287,7 +13287,7 @@ FROM     [RSLoanBook$A9:P]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -13313,8 +13313,8 @@ FROM     [RSLoanBook$A9:P]</property>
                   <connections>
                     <connection
                       refId="Package\Load ANZSIC Codes\ANZSIC Codes - Condamine\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{4BECFFBF-3067-4E93-95DB-6AF4FDD4AF60}:invalid"
-                      connectionManagerRefId="{4BECFFBF-3067-4E93-95DB-6AF4FDD4AF60}:invalid"
+                      connectionManagerID="{4BECFFBF-3067-4E93-95DB-6AF4FDD4AF60}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGANZSIC_Connection_Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -13471,8 +13471,8 @@ FROM     [RSLoanBook$A9:P]</property>
                   <connections>
                     <connection
                       refId="Package\Load ANZSIC Codes\ANZSIC Codes - Condamine\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -13612,7 +13612,7 @@ FROM     [RSLoanBook$A9:P]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -13638,8 +13638,8 @@ FROM     [RSLoanBook$A9:P]</property>
                   <connections>
                     <connection
                       refId="Package\Load ANZSIC Codes\ANZSIC Codes - Murchison\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{4BECFFBF-3067-4E93-95DB-6AF4FDD4AF60}:invalid"
-                      connectionManagerRefId="{4BECFFBF-3067-4E93-95DB-6AF4FDD4AF60}:invalid"
+                      connectionManagerID="{4BECFFBF-3067-4E93-95DB-6AF4FDD4AF60}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGANZSIC_Connection_Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -13793,8 +13793,8 @@ FROM     [RSLoanBook$A9:P]</property>
                   <connections>
                     <connection
                       refId="Package\Load ANZSIC Codes\ANZSIC Codes - Murchison\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -13933,7 +13933,7 @@ FROM     [RSLoanBook$A9:P]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -13959,8 +13959,8 @@ FROM     [RSLoanBook$A9:P]</property>
                   <connections>
                     <connection
                       refId="Package\Load ANZSIC Codes\ANZSIC Codes - Natalie\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{4BECFFBF-3067-4E93-95DB-6AF4FDD4AF60}:invalid"
-                      connectionManagerRefId="{4BECFFBF-3067-4E93-95DB-6AF4FDD4AF60}:invalid"
+                      connectionManagerID="{4BECFFBF-3067-4E93-95DB-6AF4FDD4AF60}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGANZSIC_Connection_Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -14117,8 +14117,8 @@ FROM     [RSLoanBook$A9:P]</property>
                   <connections>
                     <connection
                       refId="Package\Load ANZSIC Codes\ANZSIC Codes - Natalie\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -14258,7 +14258,7 @@ FROM     [RSLoanBook$A9:P]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -14284,8 +14284,8 @@ FROM     [RSLoanBook$A9:P]</property>
                   <connections>
                     <connection
                       refId="Package\Load ANZSIC Codes\ANZSIC Codes - Wingecarribee\OLE DB Source.Connections[OleDbConnection]"
-                      connectionManagerID="{4BECFFBF-3067-4E93-95DB-6AF4FDD4AF60}:invalid"
-                      connectionManagerRefId="{4BECFFBF-3067-4E93-95DB-6AF4FDD4AF60}:invalid"
+                      connectionManagerID="{4BECFFBF-3067-4E93-95DB-6AF4FDD4AF60}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[AGGANZSIC_Connection_Manager]"
                       description="The OLE DB runtime connection used to access the database."
                       name="OleDbConnection" />
                   </connections>
@@ -14442,8 +14442,8 @@ FROM     [RSLoanBook$A9:P]</property>
                   <connections>
                     <connection
                       refId="Package\Load ANZSIC Codes\ANZSIC Codes - Wingecarribee\Staging.Connections[IDbConnection]"
-                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
-                      connectionManagerRefId="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:invalid"
+                      connectionManagerID="{8E16ACCB-0787-4D16-9937-2A153AD345E4}:external"
+                      connectionManagerRefId="Project.ConnectionManagers[EDW_Connection_Manager]"
                       description="Managed connection manager"
                       name="IDbConnection" />
                   </connections>
@@ -14699,30 +14699,30 @@ FROM     [RSLoanBook$A9:P]</property>
           Id="Package\Load Aggregated Data - Annan\Annan ContractSummary"
           TopLeft="5.50000000000003,210.5" />
         <NodeLayout
-          Size="193,43"
+          Size="188,42"
           Id="Package\Load Aggregated Data - Annan\Truncate Annan Tables"
           TopLeft="7.00000000000001,5.5" />
         <EdgeLayout
           Id="Package\Load Aggregated Data - Annan.PrecedenceConstraints[Constraint]"
-          TopLeft="103.5,48.5">
+          TopLeft="102.25,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,61"
               Start="0,0"
-              End="0,52.5">
+              End="0,53.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,53.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,20.4453125,50.60890625,11.609375"
+              BoundingBox="-25.304453125,20.9453125,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

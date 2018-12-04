@@ -8,7 +8,7 @@
       DTS:ConnectionString="uid=svcTransit;Dsn=iMart;">
       <DTS:Password
         DTS:Name="pwd"
-        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA48/kv6Q0h0aOmEUTRRzqSwAAAAACAAAAAAAQZgAAAAEAACAAAAAp0YpQhD+akKiVKXS+8b+CZyLMZposv2gBfnaWa7ozlwAAAAAOgAAAAAIAACAAAAD37YvuiMzGO8Vsd4RIdhSZnUCgiFQeOJi7t8SwA0azaoAAAADoBDg+/tmiYCtSJVpRr6x0V4IC71wgRn9XIT7zYpdl1DmOyx5WaWDVwmfDU5tKVF8iXCd3AkdV2vizULOdQR31ErsR6zjZ1fUeCHLBc3JtQiIzSYkdfiNgXqutb+x4XNyMYv5jdWNtwv43x7nOjExjhBBmA1omZRLLWdh+eklxmUAAAACjYPlE6tM+vmXTr5HaxjtFThqR5svRikTjlVEXzVdjDGHmwfkASEYffpwzagho2YqFzkTkTg4ylauqyPusIjMZ</DTS:Password>
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAApXwyHevF/kG6LD1aisTxPgAAAAACAAAAAAADZgAAwAAAABAAAACkCfBzdAKJIqyltnxp2JcnAAAAAASAAACgAAAAEAAAAB1X2ENG4wFxF8sxmiSlQCR4AAAAYhD3JPRV1Gan04z5IbityiFvkBx19bGtVIOrSpCcnBl0RoZao7KMqaQHf0ozdHfGCA33cRgEZOeQlpvj76i17Xknt5+BdMfQEN7QfBV+JlwjhvY5x6Q8zA3bgygZld4kiWc60L11na1sm3a6NziIIOCpqTiUbzcYFAAAAFZBVVt9efewsn57STvTm6SBXDyK</DTS:Password>
     </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>

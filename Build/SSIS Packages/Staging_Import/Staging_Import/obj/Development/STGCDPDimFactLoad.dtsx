@@ -7,7 +7,7 @@
   DTS:CreatorName="cefcdevssis01\wayne.custodio"
   DTS:DTSID="{36135454-1A9D-4A5C-8D40-B627CFD6B7E5}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.3002.106"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="1033"
   DTS:ObjectName="STGCDPDimFactLoad"
   DTS:PackageType="5"
@@ -204,7 +204,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -853,7 +853,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Base_Data_Fact] SET [Update_to_TS] = ? WHERE [ID_Project] = ? AND [Update_to_TS] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Base_Data_Fact] SET [Update_to_TS] = ? WHERE [ID_Project] = ? AND [Update_to_TS] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -967,7 +967,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Base_Data_Fact] SET [Amt_cBoardApproved] = ?,[Amt_cBoardApproved_Expiry] = ?,[Amt_cBoardApprovedNotes] = ?,[Amt_cCEFC] = ?,[Amt_cCEFC_Renewable] = ?,[Amt_cCEFCweighted] = ?,[Amt_cCGBR_5yr] = ?,[Amt_cCommitment] = ?,[Amt_cConcessionality] = ?,[Amt_cEquity_Internal] = ?,[Amt_cEquity_Other] = ?,[Amt_cFunding_3rd_Party] = ?,[Amt_cFunding_Grant] = ?,[Amt_cFunding_Partner] = ?,[Amt_cLiveCommitment] = ?,[Amt_cNonTriggeredCommitment] = ?,[Amt_cProject] = ?,[Amt_cSum_Funding_Other] = ?,[Amt_cTenor] = ?,[Amt_cYield] = ?,[cAssessment_Credit_Risk] = ?,[cAssessment_NPV_CEFC_Cost] = ?,[cAssessment_NPV_Gov_Cost] = ?,[cAssessment_Savings_Annual_TCO2] = ?,[cAssessment_Savings_TCO2_Life] = ?,[ID_Client_Sector] = ?,[ID_Focus] = ?,[ID_Phase] = ?,[ID_Priority] = ?,[Leverage_PrivateSector] = ?,[Leverage_Total] = ?,[Loss_Estimated_dollar] = ?,[Loss_Estimated_pct] = ?,[Loss_Given_Default_pct] = ?,[Nameplate_Generation_CapacityMW_Existing] = ?,[Nameplate_Generation_CapacityMW_New] = ?,[Secondary_Leverage_Amt] = ? WHERE [ID_Project] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Base_Data_Fact] SET [Amt_cBoardApproved] = ?,[Amt_cBoardApproved_Expiry] = ?,[Amt_cBoardApprovedNotes] = ?,[Amt_cCEFC] = ?,[Amt_cCEFC_Renewable] = ?,[Amt_cCEFCweighted] = ?,[Amt_cCGBR_5yr] = ?,[Amt_cCommitment] = ?,[Amt_cConcessionality] = ?,[Amt_cEquity_Internal] = ?,[Amt_cEquity_Other] = ?,[Amt_cFunding_3rd_Party] = ?,[Amt_cFunding_Grant] = ?,[Amt_cFunding_Partner] = ?,[Amt_cLiveCommitment] = ?,[Amt_cNonTriggeredCommitment] = ?,[Amt_cProject] = ?,[Amt_cSum_Funding_Other] = ?,[Amt_cTenor] = ?,[Amt_cYield] = ?,[cAssessment_Credit_Risk] = ?,[cAssessment_NPV_CEFC_Cost] = ?,[cAssessment_NPV_Gov_Cost] = ?,[cAssessment_Savings_Annual_TCO2] = ?,[cAssessment_Savings_TCO2_Life] = ?,[ID_Client_Sector] = ?,[ID_Focus] = ?,[ID_Phase] = ?,[ID_Priority] = ?,[Leverage_PrivateSector] = ?,[Leverage_Total] = ?,[Loss_Estimated_dollar] = ?,[Loss_Estimated_pct] = ?,[Loss_Given_Default_pct] = ?,[Nameplate_Generation_CapacityMW_Existing] = ?,[Nameplate_Generation_CapacityMW_New] = ?,[Secondary_Leverage_Amt] = ? WHERE [ID_Project] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1836,7 +1836,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -3097,7 +3097,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Amt_cBoardApproved], [Amt_cBoardApproved_Expiry], [Amt_cBoardApprovedNotes], [Amt_cCEFC], [Amt_cCEFC_Renewable], [Amt_cCEFCweighted], [Amt_cCGBR_5yr], [Amt_cCommitment], [Amt_cConcessionality], [Amt_cEquity_Internal], [Amt_cEquity_Other], [Amt_cFunding_3rd_Party], [Amt_cFunding_Grant], [Amt_cFunding_Partner], [Amt_cLiveCommitment], [Amt_cNonTriggeredCommitment], [Amt_cProject], [Amt_cSum_Funding_Other], [Amt_cTenor], [Amt_cYield], [cAssessment_Credit_Risk], [cAssessment_NPV_CEFC_Cost], [cAssessment_NPV_Gov_Cost], [cAssessment_Savings_Annual_TCO2], [cAssessment_Savings_TCO2_Life], [ID_Client_Sector], [ID_Focus], [ID_Phase], [ID_Priority], [ID_Project], [Leverage_PrivateSector], [Leverage_Total], [Loss_Estimated_dollar], [Loss_Estimated_pct], [Loss_Given_Default_pct], [Nameplate_Generation_CapacityMW_Existing], [Nameplate_Generation_CapacityMW_New], [Secondary_Leverage_Amt],[Update_From_TS],[Update_to_TS] FROM [core].[Base_Data_Fact]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Amt_cBoardApproved], [Amt_cBoardApproved_Expiry], [Amt_cBoardApprovedNotes], [Amt_cCEFC], [Amt_cCEFC_Renewable], [Amt_cCEFCweighted], [Amt_cCGBR_5yr], [Amt_cCommitment], [Amt_cConcessionality], [Amt_cEquity_Internal], [Amt_cEquity_Other], [Amt_cFunding_3rd_Party], [Amt_cFunding_Grant], [Amt_cFunding_Partner], [Amt_cLiveCommitment], [Amt_cNonTriggeredCommitment], [Amt_cProject], [Amt_cSum_Funding_Other], [Amt_cTenor], [Amt_cYield], [cAssessment_Credit_Risk], [cAssessment_NPV_CEFC_Cost], [cAssessment_NPV_Gov_Cost], [cAssessment_Savings_Annual_TCO2], [cAssessment_Savings_TCO2_Life], [ID_Client_Sector], [ID_Focus], [ID_Phase], [ID_Priority], [ID_Project], [Leverage_PrivateSector], [Leverage_Total], [Loss_Estimated_dollar], [Loss_Estimated_pct], [Loss_Given_Default_pct], [Nameplate_Generation_CapacityMW_Existing], [Nameplate_Generation_CapacityMW_New], [Secondary_Leverage_Amt],[Update_From_TS],[Update_to_TS] FROM [core].[Base_Data_Fact]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -5670,7 +5670,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5851,7 +5851,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Business_Platform_Dimension] SET [Update_to_TS] = ? WHERE [Business_Platform] = ? AND [Update_to_TS] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Business_Platform_Dimension] SET [Update_to_TS] = ? WHERE [Business_Platform] = ? AND [Update_to_TS] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5965,7 +5965,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Business_Platform_Dimension] SET [Focus__Focus_Area] = ?,[Hex] = ?,[ID_Primaryfocus] = ?,[Sort_Order] = ? WHERE [Business_Platform] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Business_Platform_Dimension] SET [Focus__Focus_Area] = ?,[Hex] = ?,[ID_Primaryfocus] = ?,[Sort_Order] = ? WHERE [Business_Platform] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6141,7 +6141,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -6315,7 +6315,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Business_Platform], [Focus__Focus_Area], [Hex], [ID_Primaryfocus], [Sort_Order],[Update_from_TS],[Update_to_TS] FROM [core].[Business_Platform_Dimension]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Business_Platform], [Focus__Focus_Area], [Hex], [ID_Primaryfocus], [Sort_Order],[Update_from_TS],[Update_to_TS] FROM [core].[Business_Platform_Dimension]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -6957,7 +6957,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7221,7 +7221,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Focus_Dimension] SET [Update_to_TS] = ? WHERE [ID_Focus] = ? AND [Update_to_TS] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Focus_Dimension] SET [Update_to_TS] = ? WHERE [ID_Focus] = ? AND [Update_to_TS] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7335,7 +7335,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Focus_Dimension] SET [code] = ?,[Created_By] = ?,[Created_Date] = ?,[Description] = ?,[Focus_Area] = ?,[id_constant] = ?,[Lead] = ?,[Modified_By] = ?,[Modified_Date] = ?,[Sort_Order] = ?,[temp_ID] = ? WHERE [ID_Focus] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Focus_Dimension] SET [code] = ?,[Created_By] = ?,[Created_Date] = ?,[Description] = ?,[Focus_Area] = ?,[id_constant] = ?,[Lead] = ?,[Modified_By] = ?,[Modified_Date] = ?,[Sort_Order] = ?,[temp_ID] = ? WHERE [ID_Focus] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -7648,7 +7648,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -7975,7 +7975,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [code], [Created_By], [Created_Date], [Description], [Focus_Area], [id_constant], [ID_Focus], [Lead], [Modified_By], [Modified_Date], [Sort_Order], [temp_ID],[Update_from_TS],[Update_to_TS] FROM [core].[Focus_Dimension]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [code], [Created_By], [Created_Date], [Description], [Focus_Area], [id_constant], [ID_Focus], [Lead], [Modified_By], [Modified_Date], [Sort_Order], [temp_ID],[Update_from_TS],[Update_to_TS] FROM [core].[Focus_Dimension]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -8998,7 +8998,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -9701,7 +9701,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Location_Dimension] SET [Update_to_TS] = ? WHERE [ID_LocationLink] = ? AND [Update_to_TS] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Location_Dimension] SET [Update_to_TS] = ? WHERE [ID_LocationLink] = ? AND [Update_to_TS] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -9815,7 +9815,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Location_Dimension] SET [Created_By] = ?,[Created_Date] = ?,[id_constant] = ?,[ID_Location] = ?,[id_project] = ?,[ID_Technology] = ?,[Loc_Electorate] = ?,[Loc_Postcode] = ?,[Loc_State] = ?,[Modified_By] = ?,[Modified_Date] = ?,[Percent_of_Project_Amt] = ?,[Percent_of_Project_tCO2_savings] = ?,[zzzid_organisation] = ? WHERE [ID_LocationLink] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Location_Dimension] SET [Created_By] = ?,[Created_Date] = ?,[id_constant] = ?,[ID_Location] = ?,[id_project] = ?,[ID_Technology] = ?,[Loc_Electorate] = ?,[Loc_Postcode] = ?,[Loc_State] = ?,[Modified_By] = ?,[Modified_Date] = ?,[Percent_of_Project_Amt] = ?,[Percent_of_Project_tCO2_savings] = ?,[zzzid_organisation] = ? WHERE [ID_LocationLink] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -10176,7 +10176,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Created_By], [Created_Date], [id_constant], [ID_Location], [ID_LocationLink], [id_project], [ID_Technology], [Loc_Electorate], [Loc_Postcode], [Loc_State], [Modified_By], [Modified_Date], [Percent_of_Project_Amt], [Percent_of_Project_tCO2_savings], [zzzid_organisation],[Update_from_TS],[Update_to_TS] FROM [core].[Location_Dimension]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Created_By], [Created_Date], [id_constant], [ID_Location], [ID_LocationLink], [id_project], [ID_Technology], [Loc_Electorate], [Loc_Postcode], [Loc_State], [Modified_By], [Modified_Date], [Percent_of_Project_Amt], [Percent_of_Project_tCO2_savings], [zzzid_organisation],[Update_from_TS],[Update_to_TS] FROM [core].[Location_Dimension]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -11368,7 +11368,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -11728,7 +11728,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Phases_Dimension] SET [Update_to_ts] = ? WHERE [ID_Phase] = ? AND [Update_to_ts] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Phases_Dimension] SET [Update_to_ts] = ? WHERE [ID_Phase] = ? AND [Update_to_ts] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -11842,7 +11842,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Phases_Dimension] SET [_ID_Constant] = ?,[Act_PhaseID] = ?,[Default_Field] = ?,[DM_Activities] = ?,[DM_Documents_Required] = ?,[DM_GateKeepers] = ?,[DM_Gates] = ?,[DM_Information_Outcomes] = ?,[DM_Staff] = ?,[DM_Target_Days] = ?,[DM_Target_Outcomes] = ?,[Field_12] = ?,[Likelyhood] = ?,[Likelyhood_Model] = ?,[Phase_Description] = ?,[Phase_Gate_Description] = ?,[Phase_Name] = ?,[Phase_Name_Model] = ?,[Process_Link] = ? WHERE [ID_Phase] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Phases_Dimension] SET [_ID_Constant] = ?,[Act_PhaseID] = ?,[Default_Field] = ?,[DM_Activities] = ?,[DM_Documents_Required] = ?,[DM_GateKeepers] = ?,[DM_Gates] = ?,[DM_Information_Outcomes] = ?,[DM_Staff] = ?,[DM_Target_Days] = ?,[DM_Target_Outcomes] = ?,[Field_12] = ?,[Likelyhood] = ?,[Likelyhood_Model] = ?,[Phase_Description] = ?,[Phase_Gate_Description] = ?,[Phase_Name] = ?,[Phase_Name_Model] = ?,[Process_Link] = ? WHERE [ID_Phase] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -12307,7 +12307,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -12802,7 +12802,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [_ID_Constant], [Act_PhaseID], [Default_Field], [DM_Activities], [DM_Documents_Required], [DM_GateKeepers], [DM_Gates], [DM_Information_Outcomes], [DM_Staff], [DM_Target_Days], [DM_Target_Outcomes], [Field_12], [ID_Phase], [Likelyhood], [Likelyhood_Model], [Phase_Description], [Phase_Gate_Description], [Phase_Name], [Phase_Name_Model], [Process_Link],[Update_from_ts],[Update_to_ts] FROM [core].[Phases_Dimension]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [_ID_Constant], [Act_PhaseID], [Default_Field], [DM_Activities], [DM_Documents_Required], [DM_GateKeepers], [DM_Gates], [DM_Information_Outcomes], [DM_Staff], [DM_Target_Days], [DM_Target_Outcomes], [Field_12], [ID_Phase], [Likelyhood], [Likelyhood_Model], [Phase_Description], [Phase_Gate_Description], [Phase_Name], [Phase_Name_Model], [Process_Link],[Update_from_ts],[Update_to_ts] FROM [core].[Phases_Dimension]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -14249,7 +14249,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -14446,7 +14446,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Priority_Dimension] SET [Update_to_TS] = ? WHERE [ID_Priority] = ? AND [Update_to_TS] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Priority_Dimension] SET [Update_to_TS] = ? WHERE [ID_Priority] = ? AND [Update_to_TS] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -14560,7 +14560,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Priority_Dimension] SET [constant] = ?,[Percent] = ?,[Priority] = ?,[Sort] = ?,[txt_Priority] = ? WHERE [ID_Priority] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Priority_Dimension] SET [constant] = ?,[Percent] = ?,[Priority] = ?,[Sort] = ?,[txt_Priority] = ? WHERE [ID_Priority] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -14759,7 +14759,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -14960,7 +14960,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [constant], [ID_Priority], [Percent], [Priority], [Sort], [txt_Priority],[Update_from_TS],[Update_to_TS] FROM [core].[Priority_Dimension]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [constant], [ID_Priority], [Percent], [Priority], [Sort], [txt_Priority],[Update_from_TS],[Update_to_TS] FROM [core].[Priority_Dimension]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -15665,7 +15665,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -16515,7 +16515,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Projects_Dimension] SET [Update_To_TS] = ? WHERE [ID_Project] = ? AND [Update_To_TS] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Projects_Dimension] SET [Update_To_TS] = ? WHERE [ID_Project] = ? AND [Update_To_TS] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -16629,7 +16629,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Projects_Dimension] SET [cAssessment_Date] = ?,[cAssessment_Start_Date] = ?,[cAssessment_Status] = ?,[cAssessment_Tech_Outcome] = ?,[cAssessment_Tech_Review_Date] = ?,[cAssessment_Working_Notes] = ?,[CEFC_Focus] = ?,[CEFC_Section] = ?,[CEFC_Special_Focus_Area] = ?,[CEFC_Strategic_Sector] = ?,[cExecution_Target_Date] = ?,[cFocus] = ?,[cInvestment_Priority] = ?,[cMasterProject] = ?,[cOrganisations] = ?,[cPhase] = ?,[cStatus] = ?,[cTransaction_Analyst] = ?,[cTransaction_Credit] = ?,[cTransaction_ED] = ?,[cTransaction_ExtLegal] = ?,[cTransaction_Lead] = ?,[cTransaction_Legal] = ?,[cTransaction_PM] = ?,[cTransaction_ReviewAnalyst] = ?,[Date_Commitment] = ?,[Date_Created] = ?,[Date_Modified] = ?,[Description] = ?,[Direct_Indirect] = ?,[Exposure_LRET] = ?,[Exposure_Merchant] = ?,[Externalities] = ?,[Finance_Type] = ?,[Finance_Type_End_Borrower_Risk] = ?,[flag_Information_Barrier] = ?,[flag_Information_Barrier_Current] = ?,[Fund_Cities] = ?,[Fund_Innovation] = ?,[Fund_North] = ?,[Fund_Reef] = ?,[Grant_Funding] = ?,[ID_is_master] = ?,[ID_Master_Project] = ?,[ID_Project_TNumber] = ?,[Industry_Division] = ?,[LCAL_Deal] = ?,[Performance_Rating] = ?,[Permited_Investment] = ?,[Project_Borrower_Entity] = ?,[Project_Name] = ?,[rpt_Note] = ?,[rpt_Project_Description] = ?,[Secondary_Leverage] = ?,[Secondary_Leverage_Note] = ?,[Shadow_Credit_Rating] = ?,[State] = ?,[UserName_Created] = ?,[UserName_Modified] = ? WHERE [ID_Project] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Projects_Dimension] SET [cAssessment_Date] = ?,[cAssessment_Start_Date] = ?,[cAssessment_Status] = ?,[cAssessment_Tech_Outcome] = ?,[cAssessment_Tech_Review_Date] = ?,[cAssessment_Working_Notes] = ?,[CEFC_Focus] = ?,[CEFC_Section] = ?,[CEFC_Special_Focus_Area] = ?,[CEFC_Strategic_Sector] = ?,[cExecution_Target_Date] = ?,[cFocus] = ?,[cInvestment_Priority] = ?,[cMasterProject] = ?,[cOrganisations] = ?,[cPhase] = ?,[cStatus] = ?,[cTransaction_Analyst] = ?,[cTransaction_Credit] = ?,[cTransaction_ED] = ?,[cTransaction_ExtLegal] = ?,[cTransaction_Lead] = ?,[cTransaction_Legal] = ?,[cTransaction_PM] = ?,[cTransaction_ReviewAnalyst] = ?,[Date_Commitment] = ?,[Date_Created] = ?,[Date_Modified] = ?,[Description] = ?,[Direct_Indirect] = ?,[Exposure_LRET] = ?,[Exposure_Merchant] = ?,[Externalities] = ?,[Finance_Type] = ?,[Finance_Type_End_Borrower_Risk] = ?,[flag_Information_Barrier] = ?,[flag_Information_Barrier_Current] = ?,[Fund_Cities] = ?,[Fund_Innovation] = ?,[Fund_North] = ?,[Fund_Reef] = ?,[Grant_Funding] = ?,[ID_is_master] = ?,[ID_Master_Project] = ?,[ID_Project_TNumber] = ?,[Industry_Division] = ?,[LCAL_Deal] = ?,[Performance_Rating] = ?,[Permited_Investment] = ?,[Project_Borrower_Entity] = ?,[Project_Name] = ?,[rpt_Note] = ?,[rpt_Project_Description] = ?,[Secondary_Leverage] = ?,[Secondary_Leverage_Note] = ?,[Shadow_Credit_Rating] = ?,[State] = ?,[UserName_Created] = ?,[UserName_Modified] = ? WHERE [ID_Project] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -17854,7 +17854,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -19463,7 +19463,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [cAssessment_Date], [cAssessment_Start_Date], [cAssessment_Status], [cAssessment_Tech_Outcome], [cAssessment_Tech_Review_Date], [cAssessment_Working_Notes], [CEFC_Focus], [CEFC_Section], [CEFC_Special_Focus_Area], [CEFC_Strategic_Sector], [cExecution_Target_Date], [cFocus], [cInvestment_Priority], [cMasterProject], [cOrganisations], [cPhase], [cStatus], [cTransaction_Analyst], [cTransaction_Credit], [cTransaction_ED], [cTransaction_ExtLegal], [cTransaction_Lead], [cTransaction_Legal], [cTransaction_PM], [cTransaction_ReviewAnalyst], [Date_Commitment], [Date_Created], [Date_Modified], [Description], [Direct_Indirect], [Exposure_LRET], [Exposure_Merchant], [Externalities], [Finance_Type], [Finance_Type_End_Borrower_Risk], [flag_Information_Barrier], [flag_Information_Barrier_Current], [Fund_Cities], [Fund_Innovation], [Fund_North], [Fund_Reef], [Grant_Funding], [ID_is_master], [ID_Master_Project], [ID_Project], [ID_Project_TNumber], [Industry_Division], [LCAL_Deal], [Performance_Rating], [Permited_Investment], [Project_Borrower_Entity], [Project_Name], [rpt_Note], [rpt_Project_Description], [Secondary_Leverage], [Secondary_Leverage_Note], [Shadow_Credit_Rating], [State], [UserName_Created], [UserName_Modified],[Update_From_TS],[Update_To_TS] FROM [core].[Projects_Dimension]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [cAssessment_Date], [cAssessment_Start_Date], [cAssessment_Status], [cAssessment_Tech_Outcome], [cAssessment_Tech_Review_Date], [cAssessment_Working_Notes], [CEFC_Focus], [CEFC_Section], [CEFC_Special_Focus_Area], [CEFC_Strategic_Sector], [cExecution_Target_Date], [cFocus], [cInvestment_Priority], [cMasterProject], [cOrganisations], [cPhase], [cStatus], [cTransaction_Analyst], [cTransaction_Credit], [cTransaction_ED], [cTransaction_ExtLegal], [cTransaction_Lead], [cTransaction_Legal], [cTransaction_PM], [cTransaction_ReviewAnalyst], [Date_Commitment], [Date_Created], [Date_Modified], [Description], [Direct_Indirect], [Exposure_LRET], [Exposure_Merchant], [Externalities], [Finance_Type], [Finance_Type_End_Borrower_Risk], [flag_Information_Barrier], [flag_Information_Barrier_Current], [Fund_Cities], [Fund_Innovation], [Fund_North], [Fund_Reef], [Grant_Funding], [ID_is_master], [ID_Master_Project], [ID_Project], [ID_Project_TNumber], [Industry_Division], [LCAL_Deal], [Performance_Rating], [Permited_Investment], [Project_Borrower_Entity], [Project_Name], [rpt_Note], [rpt_Project_Description], [Secondary_Leverage], [Secondary_Leverage_Note], [Shadow_Credit_Rating], [State], [UserName_Created], [UserName_Modified],[Update_From_TS],[Update_To_TS] FROM [core].[Projects_Dimension]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -23018,7 +23018,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -23316,7 +23316,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -23712,7 +23712,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -24096,7 +24096,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Sector_Dimension] SET [Update_to_TS] = ? WHERE [ID_Client_Sector] = ? AND [Update_to_TS] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Sector_Dimension] SET [Update_to_TS] = ? WHERE [ID_Client_Sector] = ? AND [Update_to_TS] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -24210,7 +24210,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Sector_Dimension] SET [Business_Platform] = ?,[cColour] = ?,[cFocus] = ?,[Created_By] = ?,[Created_Date] = ?,[ctColour] = ?,[Decarbonisationpathway] = ?,[DecarbonisationSector] = ?,[Description] = ?,[ED] = ?,[icon] = ?,[id_constant] = ?,[ID_PrimaryFocus] = ?,[Lead] = ?,[Modified_By] = ?,[Modified_Date] = ?,[Sort_Order] = ?,[Strategic_Priority_Area] = ?,[Strategic_sector] = ?,[tColour] = ?,[temp_ID] = ? WHERE [ID_Client_Sector] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Sector_Dimension] SET [Business_Platform] = ?,[cColour] = ?,[cFocus] = ?,[Created_By] = ?,[Created_Date] = ?,[ctColour] = ?,[Decarbonisationpathway] = ?,[DecarbonisationSector] = ?,[Description] = ?,[ED] = ?,[icon] = ?,[id_constant] = ?,[ID_PrimaryFocus] = ?,[Lead] = ?,[Modified_By] = ?,[Modified_Date] = ?,[Sort_Order] = ?,[Strategic_Priority_Area] = ?,[Strategic_sector] = ?,[tColour] = ?,[temp_ID] = ? WHERE [ID_Client_Sector] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -24713,7 +24713,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -25250,7 +25250,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Business_Platform], [cColour], [cFocus], [Created_By], [Created_Date], [ctColour], [Decarbonisationpathway], [DecarbonisationSector], [Description], [ED], [icon], [ID_Client_Sector], [id_constant], [ID_PrimaryFocus], [Lead], [Modified_By], [Modified_Date], [Sort_Order], [Strategic_Priority_Area], [Strategic_sector], [tColour], [temp_ID],[Update_from_TS],[Update_to_TS] FROM [core].[Sector_Dimension]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Business_Platform], [cColour], [cFocus], [Created_By], [Created_Date], [ctColour], [Decarbonisationpathway], [DecarbonisationSector], [Description], [ED], [icon], [ID_Client_Sector], [id_constant], [ID_PrimaryFocus], [Lead], [Modified_By], [Modified_Date], [Sort_Order], [Strategic_Priority_Area], [Strategic_sector], [tColour], [temp_ID],[Update_from_TS],[Update_to_TS] FROM [core].[Sector_Dimension]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -26803,7 +26803,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -27055,7 +27055,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[TechMatrix_Dimension] SET [Update_to_TS] = ? WHERE [ID_Technology] = ? AND [Update_to_TS] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[TechMatrix_Dimension] SET [Update_to_TS] = ? WHERE [ID_Technology] = ? AND [Update_to_TS] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -27169,7 +27169,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[TechMatrix_Dimension] SET [Category_Equipment] = ?,[CEFC_Section] = ?,[Created_By] = ?,[Created_Date] = ?,[id_constant] = ?,[Modified_By] = ?,[Modified_Date] = ?,[Note] = ?,[Renewable] = ?,[Technology] = ? WHERE [ID_Technology] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[TechMatrix_Dimension] SET [Category_Equipment] = ?,[CEFC_Section] = ?,[Created_By] = ?,[Created_Date] = ?,[id_constant] = ?,[Modified_By] = ?,[Modified_Date] = ?,[Note] = ?,[Renewable] = ?,[Technology] = ? WHERE [ID_Technology] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -27450,7 +27450,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Category_Equipment], [CEFC_Section], [Created_By], [Created_Date], [id_constant], [ID_Technology], [Modified_By], [Modified_Date], [Note], [Renewable], [Technology],[Update_from_TS],[Update_to_TS] FROM [core].[TechMatrix_Dimension]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Category_Equipment], [CEFC_Section], [Created_By], [Created_Date], [id_constant], [ID_Technology], [Modified_By], [Modified_Date], [Note], [Renewable], [Technology],[Update_from_TS],[Update_to_TS] FROM [core].[TechMatrix_Dimension]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -28729,7 +28729,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -29097,7 +29097,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Technology_Dimension] SET [Update_to_TS] = ? WHERE [ID_TechnologyLink] = ? AND [Update_to_TS] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Technology_Dimension] SET [Update_to_TS] = ? WHERE [ID_TechnologyLink] = ? AND [Update_to_TS] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -29211,7 +29211,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Technology_Dimension] SET [Created_By] = ?,[Created_Date] = ?,[cTechnology] = ?,[id_constant] = ?,[ID_Organisation] = ?,[ID_Project] = ?,[ID_Technology] = ?,[Modified_By] = ?,[Modified_Date] = ?,[Percent_of_Project_Amt] = ?,[Percent_of_Project_tCO2_savings] = ?,[Percent_renewable_calc] = ?,[Tec_Category_Equipment] = ?,[Tec_CEFC_Section] = ?,[Tec_Technology] = ?,[Technology_Description] = ?,[temp_ID] = ?,[temp_ID_old] = ?,[xxxPercent_renewable] = ? WHERE [ID_TechnologyLink] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Technology_Dimension] SET [Created_By] = ?,[Created_Date] = ?,[cTechnology] = ?,[id_constant] = ?,[ID_Organisation] = ?,[ID_Project] = ?,[ID_Technology] = ?,[Modified_By] = ?,[Modified_Date] = ?,[Percent_of_Project_Amt] = ?,[Percent_of_Project_tCO2_savings] = ?,[Percent_renewable_calc] = ?,[Tec_Category_Equipment] = ?,[Tec_CEFC_Section] = ?,[Tec_Technology] = ?,[Technology_Description] = ?,[temp_ID] = ?,[temp_ID_old] = ?,[xxxPercent_renewable] = ? WHERE [ID_TechnologyLink] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -29671,7 +29671,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Created_By], [Created_Date], [cTechnology], [id_constant], [ID_Organisation], [ID_Project], [ID_Technology], [ID_TechnologyLink], [Modified_By], [Modified_Date], [Percent_of_Project_Amt], [Percent_of_Project_tCO2_savings], [Percent_renewable_calc], [Tec_Category_Equipment], [Tec_CEFC_Section], [Tec_Technology], [Technology_Description], [temp_ID], [temp_ID_old], [xxxPercent_renewable],[Update_from_TS],[Update_to_TS] FROM [core].[Technology_Dimension]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Created_By], [Created_Date], [cTechnology], [id_constant], [ID_Organisation], [ID_Project], [ID_Technology], [ID_TechnologyLink], [Modified_By], [Modified_Date], [Percent_of_Project_Amt], [Percent_of_Project_tCO2_savings], [Percent_renewable_calc], [Tec_Category_Equipment], [Tec_CEFC_Section], [Tec_Technology], [Technology_Description], [temp_ID], [temp_ID_old], [xxxPercent_renewable],[Update_from_TS],[Update_to_TS] FROM [core].[Technology_Dimension]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."

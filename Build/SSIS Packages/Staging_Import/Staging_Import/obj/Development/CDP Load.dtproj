@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <DeploymentModel>Project</DeploymentModel>
-  <ProductVersion>14.0.3002.106</ProductVersion>
+  <ProductVersion>15.0.900.40</ProductVersion>
   <SchemaVersion>9.0.1.0</SchemaVersion>
   <State>$base64$PFNvdXJjZUNvbnRyb2xJbmZvIHhtbG5zOnhzZD0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIHhtbG5zOmRkbDI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yIiB4bWxuczpkZGwyXzI9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDAzL2VuZ2luZS8yLzIiIHhtbG5zOmRkbDEwMF8xMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDA4L2VuZ2luZS8xMDAvMTAwIiB4bWxuczpkZGwyMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAiIHhtbG5zOmRkbDIwMF8yMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEwL2VuZ2luZS8yMDAvMjAwIiB4bWxuczpkZGwzMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAiIHhtbG5zOmRkbDMwMF8zMDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDExL2VuZ2luZS8zMDAvMzAwIiB4bWxuczpkZGw0MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAiIHhtbG5zOmRkbDQwMF80MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEyL2VuZ2luZS80MDAvNDAwIiB4bWxuczpkZGw1MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAiIHhtbG5zOmRkbDUwMF81MDA9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vYW5hbHlzaXNzZXJ2aWNlcy8yMDEzL2VuZ2luZS81MDAvNTAwIiB4bWxuczpkd2Q9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vRGF0YVdhcmVob3VzZS9EZXNpZ25lci8xLjAiPg0KICA8RW5hYmxlZD5mYWxzZTwvRW5hYmxlZD4NCiAgPFByb2plY3ROYW1lPjwvUHJvamVjdE5hbWU+DQogIDxBdXhQYXRoPjwvQXV4UGF0aD4NCiAgPExvY2FsUGF0aD48L0xvY2FsUGF0aD4NCiAgPFByb3ZpZGVyPjwvUHJvdmlkZXI+DQo8L1NvdXJjZUNvbnRyb2xJbmZvPg==</State>
   <Database>
@@ -26,7 +26,7 @@
           <SSIS:Property SSIS:Name="CreatorComputerName">cefcdevssis01</SSIS:Property>
           <SSIS:Property SSIS:Name="Description">
           </SSIS:Property>
-          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA48/kv6Q0h0aOmEUTRRzqSwAAAAACAAAAAAAQZgAAAAEAACAAAADuiykmY2gsgH1XjLJ6qJ2l621dz/dBYz6CI65JVkN1BwAAAAAOgAAAAAIAACAAAADQqAHe0BFpsdhTVTIvtuAOz3t4Z+gmKVVWLqj+kyzCV5AAAACmuJz9JnF/FHHESLZuCfnFyspa6ZkusFl7ncGqFyPh+zUdDuG63qU6DOFm6LUe3z4m9kYxiBbRdfnTzLWSk2Clqr/aF8Fgu4nWOJTH75BqJSb7Gdi4iuro5eDtox/U8RmdUcL3qdw6HMCFQIzX3FrMZZgXxAZJg1XwLc2w/9tStQv7KL2go5yhR7Uk6TBMqa9AAAAA2EscWgMxXkM/Nbo0Fry+kfDXW2MJPabdETAY2N9j98UKXC/jJk2ZDFGchEyvpWOgkszoCC8oa9OwzLNWIuUtKA==</SSIS:Property>
+          <SSIS:Property SSIS:Name="PasswordVerifier" SSIS:Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAApXwyHevF/kG6LD1aisTxPgAAAAACAAAAAAADZgAAwAAAABAAAADpWEz9lLfMmJM42yid16JlAAAAAASAAACgAAAAEAAAANV2jtIzpZ6pzLitzGmllwCIAAAAukVfX4fNNYitROjqCIN+5twGld2b5DmQI0pk/lMMNodwc4lmqR6QaslZ+yQsiforF92sWXr5ivYBIKQQ4IzNIl+5cpz1nq8fN1Mp+LpADjK3HRdR9nbqjpEtzPUOVDcnVwMZSIwsl8lLfZ02ateFPdMaHyve+ET05yDjRsUufVXrsDau7kgc7BQAAAACNwO0dRDinYQjzsn21DvQdXCidg==</SSIS:Property>
           <SSIS:Property SSIS:Name="FormatVersion">1</SSIS:Property>
         </SSIS:Properties>
         <SSIS:Packages>
@@ -36,10 +36,11 @@
           <SSIS:Package SSIS:Name="STGCDPFinDimFactComDepLoad.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="FINSTGRevLoad.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="STGCDPFinFactRevLoad.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="AGGSTGLoad.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="STGCDPAggDimFactLoad.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="STGCDPAggDimFactLoad_temp.dtsx" SSIS:EntryPoint="1" />
-          <SSIS:Package SSIS:Name="AGGSTGLoad2 (1) (1).dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="AGGSTGLoad_bkp.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="AGGSTGLoad (1).dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Package1.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers>
           <SSIS:ConnectionManager SSIS:Name="EDW_Connection_Manager.conmgr" />
@@ -1465,10 +1466,10 @@
                 <SSIS:Property SSIS:Name="Name">STGCDPDimFactLoad</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">73</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">86</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{A34E9DF2-4E0B-44DD-89C1-0CB4DAAEE3DE}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{82C96CE1-F4CC-4091-883D-7A16C3C555EC}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1482,10 +1483,10 @@
                 <SSIS:Property SSIS:Name="Name">IMTSTGLoad</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">13</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">40</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{18EC27B8-1376-42C7-BE00-BC111F022AD1}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{91124AD9-0EA7-42AF-9372-E6F5E8F3EC56}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1499,10 +1500,10 @@
                 <SSIS:Property SSIS:Name="Name">FINSTGComDepLoad</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">64</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">67</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{F975BD0F-62D4-4CA8-9319-A7ACABCF39ED}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{EFCF2298-B8E6-492D-8B1F-6BAF8C55C1A3}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1561,23 +1562,6 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="AGGSTGLoad.dtsx">
-              <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{25A77AF0-D33A-427E-BE73-6E222AC27939}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">AGGSTGLoad</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">178</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionComments">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{AFE9A24E-540A-4D14-8D47-E29BB1D0A9D2}</SSIS:Property>
-                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
-                <SSIS:Property SSIS:Name="Description">
-                </SSIS:Property>
-                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
-              </SSIS:Properties>
-              <SSIS:Parameters />
-            </SSIS:PackageMetaData>
             <SSIS:PackageMetaData SSIS:Name="STGCDPAggDimFactLoad.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{EBAF1449-0B0C-4130-A3E4-2643B8183969}</SSIS:Property>
@@ -1601,10 +1585,10 @@
                 <SSIS:Property SSIS:Name="Name">STGCDPAggDimFactLoad_temp</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">85</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">86</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{4B44AED4-00F8-44D4-881A-B4087D3154A3}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{33E7DD4E-A63B-43D0-8BB9-2A860A6DD220}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -1612,16 +1596,50 @@
               </SSIS:Properties>
               <SSIS:Parameters />
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="AGGSTGLoad2 (1) (1).dtsx">
+            <SSIS:PackageMetaData SSIS:Name="AGGSTGLoad_bkp.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{1FA5E9B3-E402-43CA-A628-F8EFC0A8279F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{25A77AF0-D33A-427E-BE73-6E222AC27939}</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">AGGSTGLoad</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">214</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">178</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{F3E5F4B2-5799-41CA-A97A-50570C0F7E06}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{AFE9A24E-540A-4D14-8D47-E29BB1D0A9D2}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="AGGSTGLoad (1).dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{BB532D8D-4FE2-478F-B0DD-EDEF8857B843}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">AGGSTGLoad</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">215</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{219A77C4-DDAB-44E3-9090-A6949E562131}</SSIS:Property>
+                <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
+                <SSIS:Property SSIS:Name="Description">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="ProtectionLevel">1</SSIS:Property>
+              </SSIS:Properties>
+              <SSIS:Parameters />
+            </SSIS:PackageMetaData>
+            <SSIS:PackageMetaData SSIS:Name="Package1.dtsx">
+              <SSIS:Properties>
+                <SSIS:Property SSIS:Name="ID">{A93133ED-A487-4A8A-96A4-98ACD182A2DD}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">1</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionComments">
+                </SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{3A73D2CE-15F6-4E6C-B017-A08469936F36}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>

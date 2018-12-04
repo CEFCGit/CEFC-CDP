@@ -7,7 +7,7 @@
   DTS:CreatorName="cefcdevssis01\yolinda.moodley"
   DTS:DTSID="{EBAF1449-0B0C-4130-A3E4-2643B8183969}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.3002.106"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="3081"
   DTS:ObjectName="STGCDPAggDimFactLoad"
   DTS:PackageType="5"
@@ -203,7 +203,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -603,7 +603,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Aggregation_Fact] SET [Update_to_TS] = ? WHERE [Asset_Number] = ? AND [Contract_Number] = ? AND [ID_Project] = ? AND [Update_to_TS] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Aggregation_Fact] SET [Update_to_TS] = ? WHERE [Asset_Number] = ? AND [Contract_Number] = ? AND [ID_Project] = ? AND [Update_to_TS] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -755,7 +755,7 @@
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Aggregation_Fact] SET [ANZSIC_Code] = ?,[Balloon_Amount] = ?,[Brand] = ?,[CEFC_Rebate_Monthly] = ?,[Contract_Start_Date] = ?,[Discounted_Interest_Rate] = ?,[File_Date] = ?,[Funder_Margin] = ?,[Maturity_Date] = ?,[Postcode] = ?,[Principal_Outstanding] = ?,[Product_Type] = ?,[Repayment_Frequency] = ?,[State] = ?,[Term] = ?,[Termination_Date] = ?,[Total_Amount_Financed] = ?,[Total_Rebate_to_date_exclGST] = ?,[Total_Rebate_to_date_inclGST] = ? WHERE [Asset_Number] = ? AND [Contract_Number] = ? AND [ID_Project] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Aggregation_Fact] SET [ANZSIC_Code] = ?,[Balloon_Amount] = ?,[Brand] = ?,[CEFC_Rebate_Monthly] = ?,[Contract_Start_Date] = ?,[Discounted_Interest_Rate] = ?,[File_Date] = ?,[Funder_Margin] = ?,[Maturity_Date] = ?,[Postcode] = ?,[Principal_Outstanding] = ?,[Product_Type] = ?,[Repayment_Frequency] = ?,[State] = ?,[Term] = ?,[Termination_Date] = ?,[Total_Amount_Financed] = ?,[Total_Rebate_to_date_exclGST] = ?,[Total_Rebate_to_date_inclGST] = ? WHERE [Asset_Number] = ? AND [Contract_Number] = ? AND [ID_Project] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -1261,7 +1261,7 @@
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [ANZSIC_Code], [Asset_Number], [Balloon_Amount], [Brand], [CEFC_Rebate_Monthly], [Contract_Number], [Contract_Start_Date], [Discounted_Interest_Rate], [File_Date], [Funder_Margin], [ID_Project], [Maturity_Date], [Postcode], [Principal_Outstanding], [Product_Type], [Repayment_Frequency], [State], [Term], [Termination_Date], [Total_Amount_Financed], [Total_Rebate_to_date_exclGST], [Total_Rebate_to_date_inclGST],[Update_from_TS],[Update_to_TS] FROM [core].[Aggregation_Fact]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [ANZSIC_Code], [Asset_Number], [Balloon_Amount], [Brand], [CEFC_Rebate_Monthly], [Contract_Number], [Contract_Start_Date], [Discounted_Interest_Rate], [File_Date], [Funder_Margin], [ID_Project], [Maturity_Date], [Postcode], [Principal_Outstanding], [Product_Type], [Repayment_Frequency], [State], [Term], [Termination_Date], [Total_Amount_Financed], [Total_Rebate_to_date_exclGST], [Total_Rebate_to_date_inclGST],[Update_from_TS],[Update_to_TS] FROM [core].[Aggregation_Fact]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -3506,7 +3506,7 @@ where a.Contract_Number is not null</property>
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Code], [Description], [Division], [ID_Project], [Subdivision],[Update_from_TS],[Update_to_TS] FROM [core].[ANZSIC_Dimension]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Code], [Description], [Division], [ID_Project], [Subdivision],[Update_from_TS],[Update_to_TS] FROM [core].[ANZSIC_Dimension]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -3887,7 +3887,7 @@ where a.Contract_Number is not null</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4077,7 +4077,7 @@ where a.Contract_Number is not null</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[ANZSIC_Dimension] SET [Update_to_TS] = ? WHERE [Code] = ? AND [ID_Project] = ? AND [Update_to_TS] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[ANZSIC_Dimension] SET [Update_to_TS] = ? WHERE [Code] = ? AND [ID_Project] = ? AND [Update_to_TS] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -4210,7 +4210,7 @@ where a.Contract_Number is not null</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[ANZSIC_Dimension] SET [Description] = ?,[Division] = ?,[Subdivision] = ? WHERE [Code] = ? AND [ID_Project] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[ANZSIC_Dimension] SET [Description] = ?,[Division] = ?,[Subdivision] = ? WHERE [Code] = ? AND [ID_Project] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5035,7 +5035,7 @@ where a.Contract_Number is not null</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5179,7 +5179,7 @@ where a.Contract_Number is not null</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Asset_Category_Dimension] SET [Update_to_TS] = ? WHERE [Asset_Category] = ? AND [Update_to_TS] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Asset_Category_Dimension] SET [Update_to_TS] = ? WHERE [Asset_Category] = ? AND [Update_to_TS] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5293,7 +5293,7 @@ where a.Contract_Number is not null</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Asset_Category_Dimension] SET [CEFC_Technology] = ? WHERE [Asset_Category] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Asset_Category_Dimension] SET [CEFC_Technology] = ? WHERE [Asset_Category] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -5403,7 +5403,7 @@ where a.Contract_Number is not null</property>
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Asset_Category], [CEFC_Technology],[Update_from_TS],[Update_to_TS] FROM [core].[Asset_Category_Dimension]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Asset_Category], [CEFC_Technology],[Update_from_TS],[Update_to_TS] FROM [core].[Asset_Category_Dimension]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -6015,7 +6015,7 @@ where a.Contract_Number is not null</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6267,7 +6267,7 @@ where a.Contract_Number is not null</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Assets_Dimension] 
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Assets_Dimension] 
 SET [Update_to_TS] = ? 
 WHERE [Asset_Number] = ? 
 AND [Contract_Number] = ? 
@@ -6464,7 +6464,7 @@ AND [Update_to_TS] IS NULL</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Assets_Dimension] SET [Category] = ?,[FileDate] = ?,[Make] = ?,[Model] = ?,[Variant] = ?,[Year] = ? WHERE [Asset_Number] = ? AND [Contract_Number] = ? AND [Description] = ? AND [ID_Project] = ? AND [Status] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Assets_Dimension] SET [Category] = ?,[FileDate] = ?,[Make] = ?,[Model] = ?,[Variant] = ?,[Year] = ? WHERE [Asset_Number] = ? AND [Contract_Number] = ? AND [Description] = ? AND [ID_Project] = ? AND [Status] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -6745,7 +6745,7 @@ AND [Update_to_TS] IS NULL</property>
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Asset_Number], [Category], [Contract_Number], [Description], [FileDate], [ID_Project], [Make], [Model], [Status], [Variant], [Year],[Update_from_TS],[Update_to_TS] FROM [core].[Assets_Dimension]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Asset_Number], [Category], [Contract_Number], [Description], [FileDate], [ID_Project], [Make], [Model], [Status], [Variant], [Year],[Update_from_TS],[Update_to_TS] FROM [core].[Assets_Dimension]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."
@@ -8175,7 +8175,7 @@ where a.ACCOUNT_ID is not null</property>
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -8420,7 +8420,7 @@ where a.ACCOUNT_ID is not null</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Assets_Dimension] SET [Update_to_TS] = ? WHERE [Asset_Number] = ? AND [Contract_Number] = ? AND [Description] = ? AND [ID_Project] = ? AND [Update_to_TS] IS NULL</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Assets_Dimension] SET [Update_to_TS] = ? WHERE [Asset_Number] = ? AND [Contract_Number] = ? AND [Description] = ? AND [ID_Project] = ? AND [Update_to_TS] IS NULL</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -8591,7 +8591,7 @@ where a.ACCOUNT_ID is not null</property>
                   description="The SQL command to be executed."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">UPDATE [core].[Assets_Dimension] SET [Category] = ?,[Make] = ?,[Model] = ?,[Status] = ?,[Variant] = ?,[Year] = ? WHERE [Asset_Number] = ? AND [Contract_Number] = ? AND [Description] = ? AND [ID_Project] = ?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [core].[Assets_Dimension] SET [Category] = ?,[Make] = ?,[Model] = ?,[Status] = ?,[Variant] = ?,[Year] = ? WHERE [Asset_Number] = ? AND [Contract_Number] = ? AND [Description] = ? AND [ID_Project] = ?</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -8853,7 +8853,7 @@ where a.ACCOUNT_ID is not null</property>
                   dataType="System.String"
                   description="Specifies the SELECT statement used to create a schema rowset."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT [Asset_Number], [Category], [Contract_Number], [Description], [ID_Project], [Make], [Model], [Status], [Variant], [Year],[Update_from_TS],[Update_to_TS] FROM [core].[Assets_Dimension]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Asset_Number], [Category], [Contract_Number], [Description], [ID_Project], [Make], [Model], [Status], [Variant], [Year],[Update_from_TS],[Update_to_TS] FROM [core].[Assets_Dimension]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the WHERE clause in the SELECT statement that selects the current row among rows with identical business keys."

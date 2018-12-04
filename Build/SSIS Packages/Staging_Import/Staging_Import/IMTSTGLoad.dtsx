@@ -7,12 +7,12 @@
   DTS:CreatorName="cefcdevssis01\yolinda.moodley"
   DTS:DTSID="{9219EFED-211E-40AA-BC91-92C612F20D4D}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.3002.106"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="3081"
   DTS:ObjectName="IMTSTGLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="35"
-  DTS:VersionGUID="{4C4C068A-B0B3-48C2-A04A-4C9F5BB1557E}">
+  DTS:VersionBuild="40"
+  DTS:VersionGUID="{91124AD9-0EA7-42AF-9372-E6F5E8F3EC56}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -107,13 +107,15 @@
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[ID_Gold]" />
                     <inputColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Creation_date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="bytes"
+                      cachedLength="10"
                       cachedName="Creation_date"
                       externalMetadataColumnId="Package\Load DAT_Golden_Dates Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Creation_date]"
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Creation_date]" />
                     <inputColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Creation_time]"
-                      cachedDataType="dbTime"
+                      cachedDataType="bytes"
+                      cachedLength="8"
                       cachedName="Creation_time"
                       externalMetadataColumnId="Package\Load DAT_Golden_Dates Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Creation_time]"
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Creation_time]" />
@@ -126,7 +128,8 @@
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Creation_name]" />
                     <inputColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Modification_date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="bytes"
+                      cachedLength="10"
                       cachedName="Modification_date"
                       externalMetadataColumnId="Package\Load DAT_Golden_Dates Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Modification_date]"
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modification_date]" />
@@ -139,7 +142,8 @@
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modification_name]" />
                     <inputColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Modification_time]"
-                      cachedDataType="dbTime"
+                      cachedDataType="bytes"
+                      cachedLength="8"
                       cachedName="Modification_time"
                       externalMetadataColumnId="Package\Load DAT_Golden_Dates Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Modification_time]"
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modification_time]" />
@@ -158,7 +162,8 @@
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Label]" />
                     <inputColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Target_Load_Date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="bytes"
+                      cachedLength="10"
                       cachedName="Target_Load_Date"
                       externalMetadataColumnId="Package\Load DAT_Golden_Dates Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Target_Load_Date]"
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Target_Load_Date]" />
@@ -246,7 +251,6 @@
             <component
               refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart"
               componentClassID="Attunity.SSISODBCSrc"
-              contactInfo="ODBC Source;Connector for Open Database Connectivity (ODBC) by Attunity; Attunity Ltd.; All Rights Reserved; http://www.attunity.com;7"
               description="ODBC Source"
               name="iMart"
               usesDispositions="true"
@@ -335,14 +339,16 @@
                       name="ID_Gold" />
                     <outputColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Creation_date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Creation_date]"
+                      length="10"
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Creation_date]"
                       name="Creation_date" />
                     <outputColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Creation_time]"
-                      dataType="dbTime"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Creation_time]"
+                      length="8"
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Creation_time]"
                       name="Creation_time" />
                     <outputColumn
@@ -354,8 +360,9 @@
                       name="Creation_name" />
                     <outputColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modification_date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modification_date]"
+                      length="10"
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modification_date]"
                       name="Modification_date" />
                     <outputColumn
@@ -367,8 +374,9 @@
                       name="Modification_name" />
                     <outputColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modification_time]"
-                      dataType="dbTime"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modification_time]"
+                      length="8"
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modification_time]"
                       name="Modification_time" />
                     <outputColumn
@@ -386,8 +394,9 @@
                       name="Label" />
                     <outputColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Target_Load_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Target_Load_Date]"
+                      length="10"
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Target_Load_Date]"
                       name="Target_Load_Date" />
                   </outputColumns>
@@ -400,11 +409,13 @@
                       name="ID_Gold" />
                     <externalMetadataColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Creation_date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Creation_date" />
                     <externalMetadataColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Creation_time]"
-                      dataType="dbTime"
+                      dataType="bytes"
+                      length="8"
                       name="Creation_time" />
                     <externalMetadataColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Creation_name]"
@@ -413,7 +424,8 @@
                       name="Creation_name" />
                     <externalMetadataColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modification_date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Modification_date" />
                     <externalMetadataColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modification_name]"
@@ -422,7 +434,8 @@
                       name="Modification_name" />
                     <externalMetadataColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modification_time]"
-                      dataType="dbTime"
+                      dataType="bytes"
+                      length="8"
                       name="Modification_time" />
                     <externalMetadataColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[id_constant]"
@@ -435,7 +448,8 @@
                       name="Label" />
                     <externalMetadataColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Target_Load_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Target_Load_Date" />
                   </externalMetadataColumns>
                 </output>
@@ -453,14 +467,16 @@
                       name="ID_Gold" />
                     <outputColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Creation_date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Creation_date]"
+                      length="10"
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Creation_date]"
                       name="Creation_date" />
                     <outputColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Creation_time]"
-                      dataType="dbTime"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Creation_time]"
+                      length="8"
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Creation_time]"
                       name="Creation_time" />
                     <outputColumn
@@ -472,8 +488,9 @@
                       name="Creation_name" />
                     <outputColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Modification_date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modification_date]"
+                      length="10"
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Modification_date]"
                       name="Modification_date" />
                     <outputColumn
@@ -485,8 +502,9 @@
                       name="Modification_name" />
                     <outputColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Modification_time]"
-                      dataType="dbTime"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modification_time]"
+                      length="8"
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Modification_time]"
                       name="Modification_time" />
                     <outputColumn
@@ -504,8 +522,9 @@
                       name="Label" />
                     <outputColumn
                       refId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Target_Load_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Target_Load_Date]"
+                      length="10"
                       lineageId="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Target_Load_Date]"
                       name="Target_Load_Date" />
                     <outputColumn
@@ -601,13 +620,15 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Load Focus Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Created_Date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="bytes"
+                      cachedLength="50"
                       cachedName="Created_Date"
                       externalMetadataColumnId="Package\Load Focus Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Created_Date]"
                       lineageId="Package\Load Focus Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Created_Date]" />
                     <inputColumn
                       refId="Package\Load Focus Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Modified_Date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="bytes"
+                      cachedLength="50"
                       cachedName="Modified_Date"
                       externalMetadataColumnId="Package\Load Focus Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Modified_Date]"
                       lineageId="Package\Load Focus Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modified_Date]" />
@@ -765,7 +786,6 @@
             <component
               refId="Package\Load Focus Table from iMart to Staging\iMart"
               componentClassID="Attunity.SSISODBCSrc"
-              contactInfo="ODBC Source;Connector for Open Database Connectivity (ODBC) by Attunity; Attunity Ltd.; All Rights Reserved; http://www.attunity.com;7"
               description="ODBC Source"
               name="iMart"
               usesDispositions="true"
@@ -775,7 +795,7 @@
                   dataType="System.String"
                   description="The name of the table to be fetched."
                   expressionType="Notify"
-                  name="TableName">"땀ॣ카േᓞ∰칐േ耈"."Focus"</property>
+                  name="TableName">Focus</property>
                 <property
                   dataType="System.String"
                   description="The SQL command to be executed."
@@ -847,14 +867,16 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Load Focus Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Created_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load Focus Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Created_Date]"
+                      length="50"
                       lineageId="Package\Load Focus Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Created_Date]"
                       name="Created_Date" />
                     <outputColumn
                       refId="Package\Load Focus Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modified_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load Focus Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_Date]"
+                      length="50"
                       lineageId="Package\Load Focus Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modified_Date]"
                       name="Modified_Date" />
                     <outputColumn
@@ -922,11 +944,13 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Load Focus Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Created_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Created_Date" />
                     <externalMetadataColumn
                       refId="Package\Load Focus Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Modified_Date" />
                     <externalMetadataColumn
                       refId="Package\Load Focus Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_By]"
@@ -977,14 +1001,16 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Load Focus Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Created_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load Focus Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Created_Date]"
+                      length="10"
                       lineageId="Package\Load Focus Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Created_Date]"
                       name="Created_Date" />
                     <outputColumn
                       refId="Package\Load Focus Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Modified_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load Focus Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_Date]"
+                      length="10"
                       lineageId="Package\Load Focus Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Modified_Date]"
                       name="Modified_Date" />
                     <outputColumn
@@ -1140,13 +1166,15 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Load LOC_Location Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Created_Date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="bytes"
+                      cachedLength="10"
                       cachedName="Created_Date"
                       externalMetadataColumnId="Package\Load LOC_Location Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Created_Date]"
                       lineageId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Created_Date]" />
                     <inputColumn
                       refId="Package\Load LOC_Location Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Modified_Date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="bytes"
+                      cachedLength="10"
                       cachedName="Modified_Date"
                       externalMetadataColumnId="Package\Load LOC_Location Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Modified_Date]"
                       lineageId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modified_Date]" />
@@ -1349,7 +1377,6 @@
             <component
               refId="Package\Load LOC_Location Table from iMart to Staging\iMart"
               componentClassID="Attunity.SSISODBCSrc"
-              contactInfo="ODBC Source;Connector for Open Database Connectivity (ODBC) by Attunity; Attunity Ltd.; All Rights Reserved; http://www.attunity.com;7"
               description="ODBC Source"
               name="iMart"
               usesDispositions="true"
@@ -1359,7 +1386,7 @@
                   dataType="System.String"
                   description="The name of the table to be fetched."
                   expressionType="Notify"
-                  name="TableName">"瑨ᥭ챬⇅ᓞ⎁챈⇅耈"."LOC_Location"</property>
+                  name="TableName">LOC_Location</property>
                 <property
                   dataType="System.String"
                   description="The SQL command to be executed."
@@ -1431,14 +1458,16 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Created_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Created_Date]"
+                      length="10"
                       lineageId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Created_Date]"
                       name="Created_Date" />
                     <outputColumn
                       refId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modified_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_Date]"
+                      length="10"
                       lineageId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modified_Date]"
                       name="Modified_Date" />
                     <outputColumn
@@ -1534,11 +1563,13 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Created_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Created_Date" />
                     <externalMetadataColumn
                       refId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Modified_Date" />
                     <externalMetadataColumn
                       refId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_By]"
@@ -1611,14 +1642,16 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Created_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Created_Date]"
+                      length="10"
                       lineageId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Created_Date]"
                       name="Created_Date" />
                     <outputColumn
                       refId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Modified_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_Date]"
+                      length="10"
                       lineageId="Package\Load LOC_Location Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Modified_Date]"
                       name="Modified_Date" />
                     <outputColumn
@@ -2070,7 +2103,6 @@
             <component
               refId="Package\Load PHA_Phases Table from iMart into Staging\iMart"
               componentClassID="Attunity.SSISODBCSrc"
-              contactInfo="ODBC Source;Connector for Open Database Connectivity (ODBC) by Attunity; Attunity Ltd.; All Rights Reserved; http://www.attunity.com;7"
               description="ODBC Source"
               name="iMart"
               usesDispositions="true"
@@ -2080,7 +2112,7 @@
                   dataType="System.String"
                   description="The name of the table to be fetched."
                   expressionType="Notify"
-                  name="TableName">"ꙸᥰ짬⹫ᓞ᳓질⹫∶᳒"."PHA_Phases"</property>
+                  name="TableName">PHA_Phases</property>
                 <property
                   dataType="System.String"
                   description="The SQL command to be executed."
@@ -2723,7 +2755,6 @@
             <component
               refId="Package\Load PRJ_Priority Table from iMart into Staging\iMart"
               componentClassID="Attunity.SSISODBCSrc"
-              contactInfo="ODBC Source;Connector for Open Database Connectivity (ODBC) by Attunity; Attunity Ltd.; All Rights Reserved; http://www.attunity.com;7"
               description="ODBC Source"
               name="iMart"
               usesDispositions="true"
@@ -2733,7 +2764,7 @@
                   dataType="System.String"
                   description="The name of the table to be fetched."
                   expressionType="Notify"
-                  name="TableName">"詨᧽쬔᷼ᓞ⣒쫰᷼∶⣑"."PRJ_Priority"</property>
+                  name="TableName">PRJ_Priority</property>
                 <property
                   dataType="System.String"
                   description="The SQL command to be executed."
@@ -3305,19 +3336,22 @@
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[cTransaction_ReviewAnalyst]" />
                     <inputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Date_Commitment]"
-                      cachedDataType="dbDate"
+                      cachedDataType="bytes"
+                      cachedLength="50"
                       cachedName="Date_Commitment"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Date_Commitment]"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Date_Commitment]" />
                     <inputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Date_Created]"
-                      cachedDataType="dbDate"
+                      cachedDataType="bytes"
+                      cachedLength="50"
                       cachedName="Date_Created"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Date_Created]"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Date_Created]" />
                     <inputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[Date_Modified]"
-                      cachedDataType="dbDate"
+                      cachedDataType="bytes"
+                      cachedLength="50"
                       cachedName="Date_Modified"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[Date_Modified]"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Date_Modified]" />
@@ -3614,7 +3648,8 @@
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Nameplate_Generation_CapacityMW_existing]" />
                     <inputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[cAssessment _Start_Date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="bytes"
+                      cachedLength="50"
                       cachedName="cAssessment _Start_Date"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[cAssessment_Start_Date]"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[cAssessment _Start_Date]" />
@@ -3633,7 +3668,8 @@
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[cAssessment _Working_Notes]" />
                     <inputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\ADO NET Destination.Inputs[ADO NET Destination Input].Columns[cAssessment _Date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="bytes"
+                      cachedLength="50"
                       cachedName="cAssessment _Date"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\ADO NET Destination.Inputs[ADO NET Destination Input].ExternalColumns[cAssessment_Date]"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[cAssessment _Date]" />
@@ -4201,7 +4237,6 @@
             <component
               refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart"
               componentClassID="Attunity.SSISODBCSrc"
-              contactInfo="ODBC Source;Connector for Open Database Connectivity (ODBC) by Attunity; Attunity Ltd.; All Rights Reserved; http://www.attunity.com;7"
               description="ODBC Source"
               name="iMart"
               usesDispositions="true"
@@ -4211,7 +4246,7 @@
                   dataType="System.String"
                   description="The name of the table to be fetched."
                   expressionType="Notify"
-                  name="TableName">"䪨❽쭤⼔ᓞ⌹쭀⼔∶⌸"."PRJ_Projects"</property>
+                  name="TableName">PRJ_Projects</property>
                 <property
                   dataType="System.String"
                   description="The SQL command to be executed."
@@ -4431,9 +4466,10 @@
                       name="cAssessment_Credit_Risk" />
                     <outputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[cAssessment _Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       errorOrTruncationOperation="Insert"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment _Date]"
+                      length="50"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[cAssessment _Date]"
                       name="cAssessment _Date" />
                     <outputColumn
@@ -4459,9 +4495,10 @@
                       name="cAssessment_Savings_TCO2_Life" />
                     <outputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[cAssessment _Start_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       errorOrTruncationOperation="Insert"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment _Start_Date]"
+                      length="50"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[cAssessment _Start_Date]"
                       name="cAssessment _Start_Date" />
                     <outputColumn
@@ -4664,23 +4701,26 @@
                       name="cTransaction_ReviewAnalyst" />
                     <outputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Date_Commitment]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       errorOrTruncationOperation="Insert"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Date_Commitment]"
+                      length="50"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Date_Commitment]"
                       name="Date_Commitment" />
                     <outputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Date_Created]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       errorOrTruncationOperation="Insert"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Date_Created]"
+                      length="50"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Date_Created]"
                       name="Date_Created" />
                     <outputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Date_Modified]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       errorOrTruncationOperation="Insert"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Date_Modified]"
+                      length="50"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Date_Modified]"
                       name="Date_Modified" />
                     <outputColumn
@@ -5031,19 +5071,23 @@
                       name="ID_Project" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Date_Created]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Date_Created" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Date_Due]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Date_Due" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Date_Modified]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Date_Modified" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Date_Start]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Date_Start" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Description]"
@@ -5117,7 +5161,8 @@
                       name="flag_status" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Date_End]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Date_End" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[id_current_to_do]"
@@ -5255,7 +5300,8 @@
                       name="Leverage_Total" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Open_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Open_Date" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Property_Type]"
@@ -5352,7 +5398,8 @@
                       name="Amt_cCommitment" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Date_Commitment]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Date_Commitment" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[sum_Amt_Commitment]"
@@ -5469,7 +5516,8 @@
                       name="cReferral_Partner" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment _Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="cAssessment _Date" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment _count]"
@@ -5522,7 +5570,8 @@
                       name="xxxID_ACT_Oportunity" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[xMilestone_Next]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="xMilestone_Next" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[zzACT_PhaseID]"
@@ -5689,7 +5738,8 @@
                       name="cAssessment_Assumed_Project_Life" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment_Assumed_Operation_Start_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="cAssessment_Assumed_Operation_Start_Date" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[xxPartner_is]"
@@ -5736,11 +5786,13 @@
                       name="xxpartner_Percent_Commitment" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment_Loan_Agreement_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="cAssessment_Loan_Agreement_Date" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment_Loan_Availability_Period]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="cAssessment_Loan_Availability_Period" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment_Loan_Agreement_Status]"
@@ -5757,11 +5809,13 @@
                       name="cAssessment_Savings_TCO2_toDate" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment _Tech_Review_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="cAssessment _Tech_Review_Date" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment _Fin_Review_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="cAssessment _Fin_Review_Date" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment _Status]"
@@ -5775,11 +5829,13 @@
                       name="cAssessment _Tech_Outcome" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment _Start_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="cAssessment _Start_Date" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment _Due_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="cAssessment _Due_Date" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment _Working_Notes]"
@@ -5793,19 +5849,23 @@
                       name="cAssessment _Outcome" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment _Completed]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="cAssessment _Completed" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment_Assumed_Completion_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="cAssessment_Assumed_Completion_Date" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment_Assumed_Drawdown]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="cAssessment_Assumed_Drawdown" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment_Assumed_Commitment]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="cAssessment_Assumed_Commitment" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Test]"
@@ -5886,11 +5946,13 @@
                       name="Amt_cFunding_3rd_Party" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Current_Phase_Target_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Current_Phase_Target_Date" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Current_Phase_Start_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Current_Phase_Start_Date" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[ID_Master_Project]"
@@ -6026,11 +6088,13 @@
                       name="countObligations_Past_Due" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cPhase_Target_Date_EIC]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="cPhase_Target_Date_EIC" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cExecution_Target_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="cExecution_Target_Date" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cL_Doc_Base_File_Path]"
@@ -6093,7 +6157,8 @@
                       name="Amt_cCommitment Copy" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Amt_cBoardApproved_Expiry]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Amt_cBoardApproved_Expiry" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cTransaction_ED]"
@@ -6319,7 +6384,8 @@
                       name="gFilter" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[gTargetExecutionDate]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="gTargetExecutionDate" />
                     <externalMetadataColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Secondary_Leverage]"
@@ -6496,8 +6562,9 @@
                       name="Amt_cBoardApproved" />
                     <outputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Amt_cBoardApproved_Expiry]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Amt_cBoardApproved_Expiry]"
+                      length="10"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Amt_cBoardApproved_Expiry]"
                       name="Amt_cBoardApproved_Expiry" />
                     <outputColumn
@@ -6617,8 +6684,9 @@
                       name="cAssessment_Credit_Risk" />
                     <outputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[cAssessment _Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment _Date]"
+                      length="10"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[cAssessment _Date]"
                       name="cAssessment _Date" />
                     <outputColumn
@@ -6641,8 +6709,9 @@
                       name="cAssessment_Savings_TCO2_Life" />
                     <outputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[cAssessment _Start_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment _Start_Date]"
+                      length="10"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[cAssessment _Start_Date]"
                       name="cAssessment _Start_Date" />
                     <outputColumn
@@ -6661,8 +6730,9 @@
                       name="cAssessment _Tech_Outcome" />
                     <outputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[cAssessment _Tech_Review_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cAssessment _Tech_Review_Date]"
+                      length="10"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[cAssessment _Tech_Review_Date]"
                       name="cAssessment _Tech_Review_Date" />
                     <outputColumn
@@ -6709,8 +6779,9 @@
                       name="CEFC_Strategic_Sector" />
                     <outputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[cExecution_Target_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[cExecution_Target_Date]"
+                      length="10"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[cExecution_Target_Date]"
                       name="cExecution_Target_Date" />
                     <outputColumn
@@ -6820,20 +6891,23 @@
                       name="cTransaction_ReviewAnalyst" />
                     <outputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Date_Commitment]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Date_Commitment]"
+                      length="10"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Date_Commitment]"
                       name="Date_Commitment" />
                     <outputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Date_Created]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Date_Created]"
+                      length="10"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Date_Created]"
                       name="Date_Created" />
                     <outputColumn
                       refId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Date_Modified]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Date_Modified]"
+                      length="10"
                       lineageId="Package\Load PRJ_Projects Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Date_Modified]"
                       name="Date_Modified" />
                     <outputColumn
@@ -7207,13 +7281,15 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Load Sector Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Created_Date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="bytes"
+                      cachedLength="50"
                       cachedName="Created_Date"
                       externalMetadataColumnId="Package\Load Sector Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Created_Date]"
                       lineageId="Package\Load Sector Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Created_Date]" />
                     <inputColumn
                       refId="Package\Load Sector Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Modified_Date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="bytes"
+                      cachedLength="50"
                       cachedName="Modified_Date"
                       externalMetadataColumnId="Package\Load Sector Table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Modified_Date]"
                       lineageId="Package\Load Sector Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modified_Date]" />
@@ -7495,7 +7571,6 @@
             <component
               refId="Package\Load Sector Table from iMart to Staging\iMart"
               componentClassID="Attunity.SSISODBCSrc"
-              contactInfo="ODBC Source;Connector for Open Database Connectivity (ODBC) by Attunity; Attunity Ltd.; All Rights Reserved; http://www.attunity.com;7"
               description="ODBC Source"
               name="iMart"
               usesDispositions="true"
@@ -7505,7 +7580,7 @@
                   dataType="System.String"
                   description="The name of the table to be fetched."
                   expressionType="Notify"
-                  name="TableName">"識ᥰ퀌⏺ᓞ༓쿨⏺∶༒"."Sector"</property>
+                  name="TableName">Sector</property>
                 <property
                   dataType="System.String"
                   description="The SQL command to be executed."
@@ -7577,14 +7652,16 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Load Sector Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Created_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load Sector Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Created_Date]"
+                      length="50"
                       lineageId="Package\Load Sector Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Created_Date]"
                       name="Created_Date" />
                     <outputColumn
                       refId="Package\Load Sector Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modified_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load Sector Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_Date]"
+                      length="50"
                       lineageId="Package\Load Sector Table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modified_Date]"
                       name="Modified_Date" />
                     <outputColumn
@@ -7726,11 +7803,13 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Load Sector Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Created_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Created_Date" />
                     <externalMetadataColumn
                       refId="Package\Load Sector Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Modified_Date" />
                     <externalMetadataColumn
                       refId="Package\Load Sector Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_By]"
@@ -7835,14 +7914,16 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Load Sector Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Created_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load Sector Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Created_Date]"
+                      length="10"
                       lineageId="Package\Load Sector Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Created_Date]"
                       name="Created_Date" />
                     <outputColumn
                       refId="Package\Load Sector Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Modified_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load Sector Table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_Date]"
+                      length="10"
                       lineageId="Package\Load Sector Table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Modified_Date]"
                       name="Modified_Date" />
                     <outputColumn
@@ -8072,13 +8153,15 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Load TEC_Matrix table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Created_Date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="bytes"
+                      cachedLength="50"
                       cachedName="Created_Date"
                       externalMetadataColumnId="Package\Load TEC_Matrix table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Created_Date]"
                       lineageId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Created_Date]" />
                     <inputColumn
                       refId="Package\Load TEC_Matrix table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Modified_Date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="bytes"
+                      cachedLength="50"
                       cachedName="Modified_Date"
                       externalMetadataColumnId="Package\Load TEC_Matrix table from iMart to Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Modified_Date]"
                       lineageId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modified_Date]" />
@@ -8232,7 +8315,6 @@
             <component
               refId="Package\Load TEC_Matrix table from iMart to Staging\iMart"
               componentClassID="Attunity.SSISODBCSrc"
-              contactInfo="ODBC Source;Connector for Open Database Connectivity (ODBC) by Attunity; Attunity Ltd.; All Rights Reserved; http://www.attunity.com;7"
               description="ODBC Source"
               name="iMart"
               usesDispositions="true"
@@ -8242,7 +8324,7 @@
                   dataType="System.String"
                   description="The name of the table to be fetched."
                   expressionType="Notify"
-                  name="TableName">"ࢸ཭쾼ᛳᓞ↶쾘ᛳ∶↵"."TEC_Matrix"</property>
+                  name="TableName">TEC_Matrix</property>
                 <property
                   dataType="System.String"
                   description="The SQL command to be executed."
@@ -8314,14 +8396,16 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Created_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Created_Date]"
+                      length="50"
                       lineageId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Created_Date]"
                       name="Created_Date" />
                     <outputColumn
                       refId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modified_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_Date]"
+                      length="50"
                       lineageId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].Columns[Modified_Date]"
                       name="Modified_Date" />
                     <outputColumn
@@ -8397,11 +8481,13 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Created_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Created_Date" />
                     <externalMetadataColumn
                       refId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Modified_Date" />
                     <externalMetadataColumn
                       refId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_By]"
@@ -8460,14 +8546,16 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Created_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Created_Date]"
+                      length="10"
                       lineageId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Created_Date]"
                       name="Created_Date" />
                     <outputColumn
                       refId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Modified_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_Date]"
+                      length="10"
                       lineageId="Package\Load TEC_Matrix table from iMart to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Modified_Date]"
                       name="Modified_Date" />
                     <outputColumn
@@ -8631,13 +8719,15 @@
                   <inputColumns>
                     <inputColumn
                       refId="Package\Load TEC_Technology Table from IMART to Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Created_Date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="bytes"
+                      cachedLength="50"
                       cachedName="Created_Date"
                       externalMetadataColumnId="Package\Load TEC_Technology Table from IMART to Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Created_Date]"
                       lineageId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].Columns[Created_Date]" />
                     <inputColumn
                       refId="Package\Load TEC_Technology Table from IMART to Staging\Azure - Staging.Inputs[ADO NET Destination Input].Columns[Modified_Date]"
-                      cachedDataType="dbDate"
+                      cachedDataType="bytes"
+                      cachedLength="50"
                       cachedName="Modified_Date"
                       externalMetadataColumnId="Package\Load TEC_Technology Table from IMART to Staging\Azure - Staging.Inputs[ADO NET Destination Input].ExternalColumns[Modified_Date]"
                       lineageId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].Columns[Modified_Date]" />
@@ -8900,7 +8990,6 @@
             <component
               refId="Package\Load TEC_Technology Table from IMART to Staging\iMart"
               componentClassID="Attunity.SSISODBCSrc"
-              contactInfo="ODBC Source;Connector for Open Database Connectivity (ODBC) by Attunity; Attunity Ltd.; All Rights Reserved; http://www.attunity.com;7"
               description="ODBC Source"
               name="iMart"
               usesDispositions="true"
@@ -8910,7 +8999,7 @@
                   dataType="System.String"
                   description="The name of the table to be fetched."
                   expressionType="Notify"
-                  name="TableName">"Ꚑ៼쾜῵ᓞ⭬콸῵耈"."TEC_Technology"</property>
+                  name="TableName">TEC_Technology</property>
                 <property
                   dataType="System.String"
                   description="The SQL command to be executed."
@@ -8982,14 +9071,16 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].Columns[Created_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Created_Date]"
+                      length="50"
                       lineageId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].Columns[Created_Date]"
                       name="Created_Date" />
                     <outputColumn
                       refId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].Columns[Modified_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_Date]"
+                      length="50"
                       lineageId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].Columns[Modified_Date]"
                       name="Modified_Date" />
                     <outputColumn
@@ -9125,11 +9216,13 @@
                     isUsed="True">
                     <externalMetadataColumn
                       refId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Created_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Created_Date" />
                     <externalMetadataColumn
                       refId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
+                      length="10"
                       name="Modified_Date" />
                     <externalMetadataColumn
                       refId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_By]"
@@ -9230,14 +9323,16 @@
                   <outputColumns>
                     <outputColumn
                       refId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Created_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Created_Date]"
+                      length="10"
                       lineageId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Created_Date]"
                       name="Created_Date" />
                     <outputColumn
                       refId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Modified_Date]"
-                      dataType="dbDate"
+                      dataType="bytes"
                       externalMetadataColumnId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Output].ExternalColumns[Modified_Date]"
+                      length="10"
                       lineageId="Package\Load TEC_Technology Table from IMART to Staging\iMart.Outputs[ODBC Source Error Output].Columns[Modified_Date]"
                       name="Modified_Date" />
                     <outputColumn
@@ -9710,95 +9805,95 @@
       <GraphLayout
         Capacity="64" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="186.666666666667,42.6666666666667"
+          Size="231,42"
           Id="Package\Backup Staging and Core Tables"
           TopLeft="246.166666666667,13.5226140283634" />
         <NodeLayout
-          Size="329.333333333334,42.6666666666667"
+          Size="329,42"
           Id="Package\Load DAT_Golden_Dates Table from iMart to Staging"
           TopLeft="174.666666666667,151.433331427178" />
         <NodeLayout
-          Size="265.333333333334,42.6666666666667"
+          Size="265,43"
           Id="Package\Load Focus Table from iMart to Staging"
           TopLeft="198,322.198641914401" />
         <NodeLayout
-          Size="302.666666666667,42.6666666666667"
+          Size="303,43"
           Id="Package\Load LOC_Location Table from iMart to Staging"
           TopLeft="175.041666651145,481.164283781009" />
         <NodeLayout
-          Size="304,42.6666666666667"
+          Size="304,43"
           Id="Package\Load PHA_Phases Table from iMart into Staging"
           TopLeft="174,685.666662831109" />
         <NodeLayout
-          Size="302.666666666667,42.6666666666667"
+          Size="303,43"
           Id="Package\Load PRJ_Priority Table from iMart into Staging"
           TopLeft="175.333333333333,879.766661196153" />
         <NodeLayout
-          Size="298.666666666667,42"
+          Size="299,42"
           Id="Package\Load PRJ_Projects Table from iMart to Staging"
           TopLeft="173.583333339542,1661.43517644864" />
         <NodeLayout
-          Size="268,42.6666666666667"
+          Size="268,43"
           Id="Package\Load Sector Table from iMart to Staging"
           TopLeft="191.777777777778,1064.89999295652" />
         <NodeLayout
-          Size="224,42.6666666666667"
+          Size="224,43"
           Id="Package\Load TEC_Matrix table from iMart to Staging"
           TopLeft="208.074074074074,1258.08517814171" />
         <NodeLayout
-          Size="250.666666666667,42.6666666666667"
+          Size="251,43"
           Id="Package\Load TEC_Technology Table from IMART to Staging"
           TopLeft="199.925925925926,1464.08517814171" />
         <NodeLayout
-          Size="298.666666666667,42.6666666666667"
+          Size="299,43"
           Id="Package\Truncate DAT_Golden_Dates Table on Staging"
           TopLeft="183.916666337599,83.3333333333334" />
         <NodeLayout
-          Size="185.333333333334,42.6666666666667"
+          Size="185,43"
           Id="Package\Truncate Focus table on Staging"
           TopLeft="239.08333314086,228.766664760511" />
         <NodeLayout
-          Size="242.666666666667,42.6666666666667"
+          Size="243,43"
           Id="Package\Truncate LOC_Location on Staging"
           TopLeft="205.249999534339,405.333333333334" />
         <NodeLayout
-          Size="262.666666666667,42.6666666666667"
+          Size="263,43"
           Id="Package\Truncate table PHA_Phases on Staging"
           TopLeft="191.999999813735,581.533331458171" />
         <NodeLayout
-          Size="264,42.6666666666667"
+          Size="264,43"
           Id="Package\Truncate Table PRJ_Priority on Staging"
           TopLeft="194.833333022892,788.333329497775" />
         <NodeLayout
-          Size="265.333333333334,42.6666666666667"
+          Size="265,43"
           Id="Package\Truncate table PRJ_Projects on Staging"
           TopLeft="187.333333134651,1566.75184480838" />
         <NodeLayout
-          Size="237.333333333334,42.6666666666667"
+          Size="237,43"
           Id="Package\Truncate Table Sector on Staging"
           TopLeft="208.944444369939,986.877772307264" />
         <NodeLayout
-          Size="204,42.6666666666667"
+          Size="204,43"
           Id="Package\Truncate TEC_Matrix table on Staging"
           TopLeft="219.851851851852,1169.04814110467" />
         <NodeLayout
-          Size="222.666666666667,42.6666666666667"
+          Size="223,43"
           Id="Package\Truncate TEC_Technology table on Staging"
           TopLeft="213.62962962963,1359.70369665247" />
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint]"
-          TopLeft="336.291666502133,126">
+          TopLeft="336.291666502133,126.333333333333">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,25.4333314271776"
+              EndConnector="0,25.0999980938446"
               Start="0,0"
-              End="0,17.9333314271776">
+              End="0,17.5999980938446">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.9333314271776" />
+                    End="0,17.5999980938446" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -9985,18 +10080,30 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 17]"
-          TopLeft="336.374999835466,56.18928069503">
+          TopLeft="361.666666666667,55.5226140283634">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,27.1440526383033"
+              EndConnector="-28.250000329068,27.81071930497"
               Start="0,0"
-              End="0,19.6440526383033">
+              End="-28.250000329068,20.31071930497">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.6440526383033" />
+                    End="0,9.905359652485" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.905359652485"
+                    Point2="0,13.905359652485"
+                    Point3="-4,13.905359652485" />
+                  <mssgle:LineSegment
+                    End="-24.250000329068,13.905359652485" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-24.250000329068,13.905359652485"
+                    Point2="-28.250000329068,13.905359652485"
+                    Point3="-28.250000329068,17.905359652485" />
+                  <mssgle:LineSegment
+                    End="-28.250000329068,20.31071930497" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10007,18 +10114,18 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="335.54166657043,194.099998093844">
+          TopLeft="335.374999903763,193.433331427178">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,34.6666666666667"
+              EndConnector="0,35.333333333333"
               Start="0,0"
-              End="0,27.1666666666667">
+              End="0,27.833333333333">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,27.1666666666667" />
+                    End="0,27.833333333333" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -10190,11 +10297,11 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="104,42.6666666666667"
+          Size="104,43"
           Id="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart"
           TopLeft="131.333331905305,22.0666669068734" />
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="152,43"
           Id="Package\Load DAT_Golden_Dates Table from iMart to Staging\Azure - Staging"
           TopLeft="104.666666530073,143.16666581432" />
         <EdgeLayout
@@ -10222,17 +10329,38 @@
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load DAT_Golden_Dates Table from iMart to Staging\Azure - Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load DAT_Golden_Dates Table from iMart to Staging\iMart">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load Focus Table from iMart to Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="104,42.6666666666667"
+          Size="104,43"
           Id="Package\Load Focus Table from iMart to Staging\iMart"
           TopLeft="121.333331607282,11.1333332326015" />
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="152,43"
           Id="Package\Load Focus Table from iMart to Staging\Azure - Staging"
           TopLeft="100.8333318308,116.899997993112" />
         <EdgeLayout
@@ -10254,9 +10382,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10270,19 +10396,22 @@
         <Value
           type="q2:string">Table</Value>
       </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load LOC_Location Table from iMart to Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="152,43"
           Id="Package\Load LOC_Location Table from iMart to Staging\Azure - Staging"
           TopLeft="107.583331812173,168.866663745443" />
         <NodeLayout
-          Size="104,42.6666666666667"
+          Size="104,43"
           Id="Package\Load LOC_Location Table from iMart to Staging\iMart"
           TopLeft="129.666664816439,79.166665349404" />
         <EdgeLayout
@@ -10304,9 +10433,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10328,19 +10455,22 @@
         <Value
           type="q2:string">Table</Value>
       </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load PHA_Phases Table from iMart into Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="104,42.6666666666667"
+          Size="104,43"
           Id="Package\Load PHA_Phases Table from iMart into Staging\iMart"
           TopLeft="130.916664797813,6.36666665116946" />
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="152,43"
           Id="Package\Load PHA_Phases Table from iMart into Staging\Azure - Staging"
           TopLeft="100.499999031425,100.533332194288" />
         <EdgeLayout
@@ -10362,25 +10492,36 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load PHA_Phases Table from iMart into Staging\iMart">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load PRJ_Priority Table from iMart into Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="104,42.6666666666667"
+          Size="104,43"
           Id="Package\Load PRJ_Priority Table from iMart into Staging\iMart"
           TopLeft="146.333331234753,9.39999993026257" />
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="152,43"
           Id="Package\Load PRJ_Priority Table from iMart into Staging\Azure - Staging"
           TopLeft="126.749998640269,101.366665488879" />
         <EdgeLayout
@@ -10402,14 +10543,25 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load PRJ_Priority Table from iMart into Staging\iMart">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load PRJ_Projects Table from iMart to Staging">
     <LayoutInfo>
@@ -10420,7 +10572,7 @@
           Id="Package\Load PRJ_Projects Table from iMart to Staging\iMart"
           TopLeft="138.416664686054,12.2333332248529" />
         <NodeLayout
-          Size="180,42.6666666666667"
+          Size="180,43"
           Id="Package\Load PRJ_Projects Table from iMart to Staging\ADO NET Destination"
           TopLeft="106.3333318308,91.7999988144636" />
         <EdgeLayout
@@ -10464,19 +10616,22 @@
         <Value
           type="q2:string">Table</Value>
       </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
     </Properties>
   </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load Sector Table from iMart to Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="152,42.6666666666667"
+          Size="152,43"
           Id="Package\Load Sector Table from iMart to Staging\Azure - Staging"
           TopLeft="119.166664890945,75.1666646907729" />
         <NodeLayout
-          Size="104,42.6666666666667"
+          Size="104,43"
           Id="Package\Load Sector Table from iMart to Staging\iMart"
           TopLeft="139.999997913837,1.06581410364015E-14" />
         <EdgeLayout
@@ -10498,25 +10653,36 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Sector Table from iMart to Staging\iMart">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load TEC_Matrix table from iMart to Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="130.666666666667,42.6666666666667"
+          Size="131,43"
           Id="Package\Load TEC_Matrix table from iMart to Staging\Azure - Staging"
           TopLeft="216.833333333333,162.166666666667" />
         <NodeLayout
-          Size="96,42.6666666666667"
+          Size="96,43"
           Id="Package\Load TEC_Matrix table from iMart to Staging\iMart"
           TopLeft="234.166666666667,39.5" />
         <EdgeLayout
@@ -10538,25 +10704,36 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load TEC_Matrix table from iMart to Staging\iMart">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
   <TaskHost
     design-time-name="Package\Load TEC_Technology Table from IMART to Staging">
     <LayoutInfo>
       <GraphLayout
-        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="96,42.6666666666667"
+          Size="96,43"
           Id="Package\Load TEC_Technology Table from IMART to Staging\iMart"
           TopLeft="221.5,23.5" />
         <NodeLayout
-          Size="130.666666666667,42.6666666666667"
+          Size="131,43"
           Id="Package\Load TEC_Technology Table from IMART to Staging\Azure - Staging"
           TopLeft="208.166666666667,150.833333333333" />
         <EdgeLayout
@@ -10578,9 +10755,7 @@
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
@@ -10601,6 +10776,9 @@
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

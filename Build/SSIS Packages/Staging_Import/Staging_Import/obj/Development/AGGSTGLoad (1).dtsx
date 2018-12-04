@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="cefcdevssis01"
   DTS:CreatorName="cefcdevssis01\yolinda.moodley"
-  DTS:DTSID="{1FA5E9B3-E402-43CA-A628-F8EFC0A8279F}"
+  DTS:DTSID="{BB532D8D-4FE2-478F-B0DD-EDEF8857B843}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="14.0.3002.106"
+  DTS:LastModifiedProductVersion="15.0.0900.40"
   DTS:LocaleID="3081"
   DTS:ObjectName="AGGSTGLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="214"
-  DTS:VersionGUID="{F3E5F4B2-5799-41CA-A97A-50570C0F7E06}">
+  DTS:VersionBuild="215"
+  DTS:VersionGUID="{219A77C4-DDAB-44E3-9090-A6949E562131}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:Variables />
@@ -21,7 +21,7 @@
       DTS:refId="Package\Load Aggregated Data - Annan"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{65B9932A-AA71-4059-9472-FEE6ED4683E2}"
+      DTS:DTSID="{D0FD3A29-AA09-41FA-933A-7A6ACAC334B0}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load Aggregated Data - Annan">
@@ -31,7 +31,7 @@
           DTS:refId="Package\Load Aggregated Data - Annan\Annan Asset Details"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{0D72F510-78FD-4F65-A0A6-2C8ADF82E34E}"
+          DTS:DTSID="{FD1E66D7-6E21-44B2-A584-5373B80F98F9}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Annan Asset Details"
@@ -66,7 +66,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -612,7 +612,7 @@
           DTS:refId="Package\Load Aggregated Data - Annan\Annan ContractSummary"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{2616855E-C5DE-4FE3-9162-465C9443F20C}"
+          DTS:DTSID="{FC33AE36-11FB-4AB5-9036-218294716977}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Annan ContractSummary"
@@ -818,7 +818,7 @@
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select *
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">select *
 from [contractSummary$A4:T]</property>
                     <property
                       dataType="System.String"
@@ -1628,7 +1628,7 @@ from [contractSummary$A4:T]</property>
           DTS:refId="Package\Load Aggregated Data - Annan\Truncate Annan Tables"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{7082D52F-AB4E-4705-B2AE-7B6F1B149545}"
+          DTS:DTSID="{BBC46804-78DB-4373-BC8D-A0D14E01C3A5}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Annan Tables"
@@ -1647,7 +1647,7 @@ from [contractSummary$A4:T]</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Aggregated Data - Annan.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{8C5B224B-2CB5-45F5-A352-3B646E22572D}"
+          DTS:DTSID="{0C1A5DBF-1F5D-4906-8988-F68A40CA1F07}"
           DTS:From="Package\Load Aggregated Data - Annan\Truncate Annan Tables"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -1656,7 +1656,7 @@ from [contractSummary$A4:T]</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Aggregated Data - Annan.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{CCCBC2B1-B5DB-4C07-976C-4409DB455AE0}"
+          DTS:DTSID="{8972165F-C240-47EB-89DA-1F577F0F0C7A}"
           DTS:From="Package\Load Aggregated Data - Annan\Annan Asset Details"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -1668,7 +1668,7 @@ from [contractSummary$A4:T]</property>
       DTS:refId="Package\Load Aggregated Data - Condamine"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{E67591F0-E913-41D8-A3D3-E402EA6EFF1A}"
+      DTS:DTSID="{A68E71C8-5A31-4BDB-8940-A711477E391D}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load Aggregated Data - Condamine">
@@ -1678,7 +1678,7 @@ from [contractSummary$A4:T]</property>
           DTS:refId="Package\Load Aggregated Data - Condamine\Condamine ContractSummary"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{E8D74B38-4451-4992-ACCA-0A379EEA0A0A}"
+          DTS:DTSID="{934E4675-22E9-4C5B-9624-735713146A02}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Condamine ContractSummary"
@@ -1713,7 +1713,7 @@ from [contractSummary$A4:T]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -3022,7 +3022,7 @@ from [contractSummary$A4:T]</property>
           DTS:refId="Package\Load Aggregated Data - Condamine\Condamine Removed Assets"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{E36FBB3C-8155-46F2-A204-572E700EA896}"
+          DTS:DTSID="{D1654C6D-1664-4790-A8A1-F65E92C496E9}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Condamine Removed Assets"
@@ -3147,7 +3147,7 @@ from [contractSummary$A4:T]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -4013,7 +4013,7 @@ from [contractSummary$A4:T]</property>
           DTS:refId="Package\Load Aggregated Data - Condamine\Truncate Condamine Tables"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{1DE6EEB0-E752-4770-A2BD-7E82EFEC8FE6}"
+          DTS:DTSID="{B84B84EF-0196-4FED-B800-9CD5CC773E78}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Condamine Tables"
@@ -4032,7 +4032,7 @@ from [contractSummary$A4:T]</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Aggregated Data - Condamine.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{21026793-F0BE-4907-8E8B-1D48615BB559}"
+          DTS:DTSID="{CACD3C71-5532-415D-9024-3FFDE05A3E0B}"
           DTS:From="Package\Load Aggregated Data - Condamine\Truncate Condamine Tables"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -4041,7 +4041,7 @@ from [contractSummary$A4:T]</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Aggregated Data - Condamine.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{52AD0F07-D4ED-4F64-8D81-63DDB3F1ADAA}"
+          DTS:DTSID="{2101821D-C600-4F8B-80DC-133CA05BA412}"
           DTS:From="Package\Load Aggregated Data - Condamine\Condamine Removed Assets"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -4053,7 +4053,7 @@ from [contractSummary$A4:T]</property>
       DTS:refId="Package\Load Aggregated Data - Flynn"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{49BA7800-158D-4529-B857-1E38792D3ED1}"
+      DTS:DTSID="{33EFA208-C9A3-4056-92F0-232B01CC91C3}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load Aggregated Data - Flynn">
@@ -4063,7 +4063,7 @@ from [contractSummary$A4:T]</property>
           DTS:refId="Package\Load Aggregated Data - Flynn\Flynn"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{9142EF2A-972C-451C-9AA4-63A091F88099}"
+          DTS:DTSID="{62B216AC-710B-49BB-93B1-521158354993}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Flynn"
@@ -4098,7 +4098,7 @@ from [contractSummary$A4:T]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT   *
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT   *
 FROM  [Cumulative Green Receivables $A5:AF]
 WHERE [Lease Id] is not NULL</property>
                     <property
@@ -5298,7 +5298,7 @@ WHERE [Lease Id] is not NULL</property>
           DTS:refId="Package\Load Aggregated Data - Flynn\Truncate Flynn Table"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{2EAC4507-6413-4846-BB67-D4095E111792}"
+          DTS:DTSID="{BA5A2C23-25EB-4A16-A816-9E10AFA5DF37}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Flynn Table"
@@ -5317,7 +5317,7 @@ WHERE [Lease Id] is not NULL</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Aggregated Data - Flynn.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{58D69C28-00D9-439A-B3E3-D094450C0AA6}"
+          DTS:DTSID="{6A40D175-F240-4BBB-BC9F-1581EB42FBD8}"
           DTS:From="Package\Load Aggregated Data - Flynn\Truncate Flynn Table"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -5329,7 +5329,7 @@ WHERE [Lease Id] is not NULL</property>
       DTS:refId="Package\Load Aggregated Data - Macleay"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{17273EC5-6FB2-49BF-AB01-81AE25042048}"
+      DTS:DTSID="{A00A7660-1806-4D50-B1F7-2F1D401F546A}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load Aggregated Data - Macleay">
@@ -5339,7 +5339,7 @@ WHERE [Lease Id] is not NULL</property>
           DTS:refId="Package\Load Aggregated Data - Macleay\Macleay"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{7FD53274-2940-4422-BF8C-B72445DFEAC0}"
+          DTS:DTSID="{A2373C46-B3AC-42B2-9435-810427E34DA8}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Macleay"
@@ -5374,7 +5374,7 @@ WHERE [Lease Id] is not NULL</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -6548,7 +6548,7 @@ WHERE [Lease Id] is not NULL</property>
           DTS:refId="Package\Load Aggregated Data - Macleay\Truncate Macleay Table"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{8EC8F8C9-3523-4B86-8C0D-B9890A9769F3}"
+          DTS:DTSID="{AC75740E-3DF1-42B8-8007-310937DBD169}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Macleay Table"
@@ -6567,7 +6567,7 @@ WHERE [Lease Id] is not NULL</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Aggregated Data - Macleay.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{7019CB04-9524-405A-91EE-270EF70E3C34}"
+          DTS:DTSID="{7AA922CF-D1BF-4025-B129-DE0E379EC608}"
           DTS:From="Package\Load Aggregated Data - Macleay\Truncate Macleay Table"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -6579,7 +6579,7 @@ WHERE [Lease Id] is not NULL</property>
       DTS:refId="Package\Load Aggregated Data - Murchison"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{29ED975F-2835-4D7C-9F04-EBEC040278C6}"
+      DTS:DTSID="{8C2CCAAD-076A-4E2F-9389-8CEA0A6F4B61}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load Aggregated Data - Murchison">
@@ -6589,7 +6589,7 @@ WHERE [Lease Id] is not NULL</property>
           DTS:refId="Package\Load Aggregated Data - Murchison\Murchison"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{E73BC5AD-2089-4F6E-8EBF-76CB208C3BFB}"
+          DTS:DTSID="{F6AA34D5-5DF5-4E3D-BFBE-2C85C00DF4B5}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Murchison"
@@ -6714,7 +6714,7 @@ WHERE [Lease Id] is not NULL</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT *
 FROM 
 [ContractSummary$A8:AA]</property>
                     <property
@@ -7758,7 +7758,7 @@ FROM
           DTS:refId="Package\Load Aggregated Data - Murchison\Truncate Murchison Table"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{FC39D848-5007-44C6-B66B-A6EB2134035C}"
+          DTS:DTSID="{B2D44BD5-D1DC-42F5-8CF9-FD58BF1496D7}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Murchison Table"
@@ -7777,7 +7777,7 @@ FROM
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Aggregated Data - Murchison.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{416560FA-456D-41BC-9EE1-E8592940B098}"
+          DTS:DTSID="{3687B5BF-2EB7-490C-A640-80BAD42AE916}"
           DTS:From="Package\Load Aggregated Data - Murchison\Truncate Murchison Table"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -7789,7 +7789,7 @@ FROM
       DTS:refId="Package\Load Aggregated Data - Natalie"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{1DAE6476-3879-4D18-8B15-E81FDFE8FD3A}"
+      DTS:DTSID="{F51185B5-8CD2-452B-AFC6-F0B2CE573891}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load Aggregated Data - Natalie">
@@ -7799,7 +7799,7 @@ FROM
           DTS:refId="Package\Load Aggregated Data - Natalie\Natalie ContractSummary"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{C9507715-80B1-49B6-AE4A-A6F85AC3F3F8}"
+          DTS:DTSID="{107B5872-33D2-40F3-9C8B-126879419E92}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Natalie ContractSummary"
@@ -7834,7 +7834,7 @@ FROM
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT   [Contract No#], [Asset No#], [Lease type], [Equipment type], Make, Model, [Year], [Interest rate], [Discretion applied], [Check], [Repayment frequency], [Total amount financed], Term, [Outstanding balance], [Principal Outstanding], [ Balloon / Residual amount ], [LOIS CEFC Note], [LQS CEFC Note], [Asset Group], State, Postcode, 
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT   [Contract No#], [Asset No#], [Lease type], [Equipment type], Make, Model, [Year], [Interest rate], [Discretion applied], [Check], [Repayment frequency], [Total amount financed], Term, [Outstanding balance], [Principal Outstanding], [ Balloon / Residual amount ], [LOIS CEFC Note], [LQS CEFC Note], [Asset Group], State, Postcode, 
              [Industry class], [Drawdown date], [Day Count], [Monthly Day Count], [CEFC Rate Adjustment], [Total repayable amount], FileDate
 FROM     [ContractSummary$]
 WHERE   ([Contract No#] IS NOT NULL)</property>
@@ -8899,7 +8899,7 @@ WHERE   ([Contract No#] IS NOT NULL)</property>
           DTS:refId="Package\Load Aggregated Data - Natalie\Natalie Deleted Contracts"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{16FE0A6C-1440-485E-9334-C1B90FF2317E}"
+          DTS:DTSID="{0C7687C0-679D-463A-A3A2-AA8FB6B0864A}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Natalie Deleted Contracts"
@@ -8934,7 +8934,7 @@ WHERE   ([Contract No#] IS NOT NULL)</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT *
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT *
 FROM
 [Deleted Contracts$B2:D]</property>
                     <property
@@ -9189,7 +9189,7 @@ FROM
           DTS:refId="Package\Load Aggregated Data - Natalie\Truncate Natalie Tables"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{8CE987DB-3E29-4649-A9FD-4F5B0B90515A}"
+          DTS:DTSID="{D4142B39-1FFF-4BA6-BBE1-50C74FFB0931}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Natalie Tables"
@@ -9208,7 +9208,7 @@ FROM
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Aggregated Data - Natalie.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{4781E5D7-74AC-4A41-8A0E-D51EDCD0B293}"
+          DTS:DTSID="{A24D81DA-CECB-42F8-A8F5-7EB160BB8796}"
           DTS:From="Package\Load Aggregated Data - Natalie\Truncate Natalie Tables"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -9217,7 +9217,7 @@ FROM
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Aggregated Data - Natalie.PrecedenceConstraints[Constraint 1]"
           DTS:CreationName=""
-          DTS:DTSID="{E5CA5304-511F-46A1-A38D-0CF0049FB178}"
+          DTS:DTSID="{877335DC-DCB4-4F97-A84E-9120B2CDC3C4}"
           DTS:From="Package\Load Aggregated Data - Natalie\Natalie Deleted Contracts"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 1"
@@ -9229,7 +9229,7 @@ FROM
       DTS:refId="Package\Load Aggregated Data - Othello"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{40934450-E5C6-4A9D-9270-4C7DB0153339}"
+      DTS:DTSID="{F289D189-8ABB-4F56-BA32-71FC63E1ADFB}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load Aggregated Data - Othello">
@@ -9239,7 +9239,7 @@ FROM
           DTS:refId="Package\Load Aggregated Data - Othello\Othello"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{1b3601d5-541a-4ab7-8927-56931fd3d583}"
+          DTS:DTSID="{B280B477-3376-4725-8B9E-759921064464}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Othello"
@@ -9274,7 +9274,7 @@ FROM
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -9721,7 +9721,7 @@ FROM
           DTS:refId="Package\Load Aggregated Data - Othello\Truncate Othello Table"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{45fdb46e-ec0c-4b42-b1e9-0af897c64e5d}"
+          DTS:DTSID="{65C38A6E-39CC-47EA-A405-7B933D2CCDC6}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Othello Table"
@@ -9740,7 +9740,7 @@ FROM
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Aggregated Data - Othello.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{869E06CF-82C5-4059-98BB-61587415D891}"
+          DTS:DTSID="{35F87905-0E8B-43C0-8E9D-3C01E8FC454B}"
           DTS:From="Package\Load Aggregated Data - Othello\Truncate Othello Table"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -9752,7 +9752,7 @@ FROM
       DTS:refId="Package\Load Aggregated Data - Roper"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{FD84E44F-E1A1-48E1-A4F1-0FBF3B12165B}"
+      DTS:DTSID="{FAA4F27A-1EEC-457E-97E4-C1DE5D837946}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load Aggregated Data - Roper">
@@ -9762,7 +9762,7 @@ FROM
           DTS:refId="Package\Load Aggregated Data - Roper\Roper"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{aee1c1ef-c4e0-4918-b901-53f42e974f92}"
+          DTS:DTSID="{3347FF4D-32BD-46C1-B409-B16C8FDCB6D4}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Roper"
@@ -9798,7 +9798,7 @@ FROM
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT   *
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT   *
 FROM     [RSLoanBook$A9:P]</property>
                     <property
                       dataType="System.String"
@@ -10477,7 +10477,7 @@ FROM     [RSLoanBook$A9:P]</property>
           DTS:refId="Package\Load Aggregated Data - Roper\Truncate Roper Table"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{1eb5632c-e761-4c69-bea5-667ef202d46a}"
+          DTS:DTSID="{567B2929-A22F-4EC3-847D-552929E5A24F}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Roper Table"
@@ -10496,7 +10496,7 @@ FROM     [RSLoanBook$A9:P]</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Aggregated Data - Roper.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{16CAE145-3208-44F5-9F40-84A0D812215F}"
+          DTS:DTSID="{244DBCBE-7AA1-41AE-BDB5-7926F7D1727C}"
           DTS:From="Package\Load Aggregated Data - Roper\Truncate Roper Table"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -10508,7 +10508,7 @@ FROM     [RSLoanBook$A9:P]</property>
       DTS:refId="Package\Load Aggregated Data - Wingecarribee"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{F1954E18-FECE-40D9-8F9A-3E8ED3CF4437}"
+      DTS:DTSID="{F44D37A1-0485-480D-8BE3-8E6BC5182392}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load Aggregated Data - Wingecarribee">
@@ -10518,7 +10518,7 @@ FROM     [RSLoanBook$A9:P]</property>
           DTS:refId="Package\Load Aggregated Data - Wingecarribee\Truncate Wingecarribee Tables"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{aebb8190-d7c5-41d4-b787-2d81a64f2845}"
+          DTS:DTSID="{18FD7220-16C7-46AA-8EBF-8DABF753D344}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate Wingecarribee Tables"
@@ -10536,7 +10536,7 @@ FROM     [RSLoanBook$A9:P]</property>
           DTS:refId="Package\Load Aggregated Data - Wingecarribee\Wingecarribee Assets"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{34F6A521-D049-4EE8-8D37-9E5875D33DC0}"
+          DTS:DTSID="{E4E1A6F8-90C9-4785-9ACF-FF76386F3232}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Wingecarribee Assets"
@@ -10571,7 +10571,7 @@ FROM     [RSLoanBook$A9:P]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -11055,7 +11055,7 @@ FROM     [RSLoanBook$A9:P]</property>
           DTS:refId="Package\Load Aggregated Data - Wingecarribee\Wingecarribee ContractSummary"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{71ADC2BA-186D-448D-BD7B-5E2632FD3CE6}"
+          DTS:DTSID="{3949C1F5-1D94-473B-A919-5F1761646531}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Wingecarribee ContractSummary"
@@ -11090,7 +11090,7 @@ FROM     [RSLoanBook$A9:P]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -11962,7 +11962,7 @@ FROM     [RSLoanBook$A9:P]</property>
           DTS:refId="Package\Load Aggregated Data - Wingecarribee\Wingecarribee NQ Assets"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{2682A088-08AE-4991-AFFA-45C5E148EFEA}"
+          DTS:DTSID="{44426AF4-83AF-41B8-A772-8FD732BA075C}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="Wingecarribee NQ Assets"
@@ -11997,7 +11997,7 @@ FROM     [RSLoanBook$A9:P]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -12887,7 +12887,7 @@ FROM     [RSLoanBook$A9:P]</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Aggregated Data - Wingecarribee.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{9A4E6F84-DBD1-4AE7-9F10-A1D7CB8AD80D}"
+          DTS:DTSID="{A49319C5-24E0-4753-B237-EE2DC07871DF}"
           DTS:From="Package\Load Aggregated Data - Wingecarribee\Truncate Wingecarribee Tables"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -12896,7 +12896,7 @@ FROM     [RSLoanBook$A9:P]</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Aggregated Data - Wingecarribee.PrecedenceConstraints[Constraint 12]"
           DTS:CreationName=""
-          DTS:DTSID="{2CCC40F9-10DD-400A-AA4E-AD96844396C9}"
+          DTS:DTSID="{DF7DFF8F-79A7-4CD7-A3BD-C97C43AFC3CE}"
           DTS:From="Package\Load Aggregated Data - Wingecarribee\Wingecarribee Assets"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 12"
@@ -12905,7 +12905,7 @@ FROM     [RSLoanBook$A9:P]</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load Aggregated Data - Wingecarribee.PrecedenceConstraints[Constraint 15]"
           DTS:CreationName=""
-          DTS:DTSID="{219BD048-627D-4258-9033-1120174E7814}"
+          DTS:DTSID="{5DD27E9F-BA74-4C84-9A20-9963E75434DA}"
           DTS:From="Package\Load Aggregated Data - Wingecarribee\Wingecarribee NQ Assets"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 15"
@@ -12917,7 +12917,7 @@ FROM     [RSLoanBook$A9:P]</property>
       DTS:refId="Package\Load ANZSIC Codes"
       DTS:CreationName="STOCK:SEQUENCE"
       DTS:Description="Sequence Container"
-      DTS:DTSID="{D698C52B-46B3-47E1-948C-7E3768C28811}"
+      DTS:DTSID="{905F23CD-1C66-48D3-89ED-A6355EA67404}"
       DTS:ExecutableType="STOCK:SEQUENCE"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load ANZSIC Codes">
@@ -12927,7 +12927,7 @@ FROM     [RSLoanBook$A9:P]</property>
           DTS:refId="Package\Load ANZSIC Codes\ANZSIC Codes - Annan"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{ABFF6270-DF04-41BC-9558-92353BC15699}"
+          DTS:DTSID="{28AC904B-AF56-4F3F-A3C3-EBA649349166}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="ANZSIC Codes - Annan"
@@ -12962,7 +12962,7 @@ FROM     [RSLoanBook$A9:P]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -13252,7 +13252,7 @@ FROM     [RSLoanBook$A9:P]</property>
           DTS:refId="Package\Load ANZSIC Codes\ANZSIC Codes - Condamine"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{0B71EC8F-6A60-4B58-98A0-12879BF6F5E6}"
+          DTS:DTSID="{B0B28493-7D44-42C9-9965-0C5FBA770B26}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="ANZSIC Codes - Condamine"
@@ -13287,7 +13287,7 @@ FROM     [RSLoanBook$A9:P]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -13577,7 +13577,7 @@ FROM     [RSLoanBook$A9:P]</property>
           DTS:refId="Package\Load ANZSIC Codes\ANZSIC Codes - Murchison"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{2852C928-A86C-4D0B-A329-40505196C17C}"
+          DTS:DTSID="{E5DB98CB-A45A-491E-B9FF-949F38B18B36}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="ANZSIC Codes - Murchison"
@@ -13612,7 +13612,7 @@ FROM     [RSLoanBook$A9:P]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -13898,7 +13898,7 @@ FROM     [RSLoanBook$A9:P]</property>
           DTS:refId="Package\Load ANZSIC Codes\ANZSIC Codes - Natalie"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{2ED02FBA-C1D0-42B4-99E3-F213881D2412}"
+          DTS:DTSID="{6DE0C3D9-D355-4A35-A107-98946158CACC}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="ANZSIC Codes - Natalie"
@@ -13933,7 +13933,7 @@ FROM     [RSLoanBook$A9:P]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -14223,7 +14223,7 @@ FROM     [RSLoanBook$A9:P]</property>
           DTS:refId="Package\Load ANZSIC Codes\ANZSIC Codes - Wingecarribee"
           DTS:CreationName="Microsoft.Pipeline"
           DTS:Description="Data Flow Task"
-          DTS:DTSID="{977877AD-4CFA-4E78-BBB2-819E532939FD}"
+          DTS:DTSID="{22C46B42-0F69-4226-B1BC-FA3E9F483687}"
           DTS:ExecutableType="Microsoft.Pipeline"
           DTS:LocaleID="-1"
           DTS:ObjectName="ANZSIC Codes - Wingecarribee"
@@ -14258,7 +14258,7 @@ FROM     [RSLoanBook$A9:P]</property>
                       dataType="System.String"
                       description="The SQL command to be executed."
                       name="SqlCommand"
-                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                      UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
                     <property
                       dataType="System.String"
                       description="The variable that contains the SQL command to be executed."
@@ -14548,7 +14548,7 @@ FROM     [RSLoanBook$A9:P]</property>
           DTS:refId="Package\Load ANZSIC Codes\Truncate ANZSIC Tables"
           DTS:CreationName="Microsoft.ExecuteSQLTask"
           DTS:Description="Execute SQL Task"
-          DTS:DTSID="{0402682f-ce88-45f9-a2a9-b6f0d752b033}"
+          DTS:DTSID="{A8CD034D-7B8E-4F6D-BCFB-8E736BECD543}"
           DTS:ExecutableType="Microsoft.ExecuteSQLTask"
           DTS:LocaleID="-1"
           DTS:ObjectName="Truncate ANZSIC Tables"
@@ -14567,7 +14567,7 @@ FROM     [RSLoanBook$A9:P]</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load ANZSIC Codes.PrecedenceConstraints[Constraint]"
           DTS:CreationName=""
-          DTS:DTSID="{6B3DCACE-CC2B-4EC4-9602-1672DDBFAACA}"
+          DTS:DTSID="{3EE04113-07EA-4696-82A4-8B948D27745F}"
           DTS:From="Package\Load ANZSIC Codes\Truncate ANZSIC Tables"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint"
@@ -14576,7 +14576,7 @@ FROM     [RSLoanBook$A9:P]</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load ANZSIC Codes.PrecedenceConstraints[Constraint 16]"
           DTS:CreationName=""
-          DTS:DTSID="{44214858-DC26-4CBC-B0D3-97071EF202E7}"
+          DTS:DTSID="{48C19F02-1890-48B9-B32A-45FE3E033F86}"
           DTS:From="Package\Load ANZSIC Codes\ANZSIC Codes - Annan"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 16"
@@ -14585,7 +14585,7 @@ FROM     [RSLoanBook$A9:P]</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load ANZSIC Codes.PrecedenceConstraints[Constraint 17]"
           DTS:CreationName=""
-          DTS:DTSID="{860F68F6-AC0C-48B8-A94F-19AFD33086BB}"
+          DTS:DTSID="{2FB12D62-3872-46DF-965B-8DFA8F932C32}"
           DTS:From="Package\Load ANZSIC Codes\ANZSIC Codes - Condamine"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 17"
@@ -14594,7 +14594,7 @@ FROM     [RSLoanBook$A9:P]</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load ANZSIC Codes.PrecedenceConstraints[Constraint 18]"
           DTS:CreationName=""
-          DTS:DTSID="{46C65DB7-EB8B-41D6-9121-918DF777C2C6}"
+          DTS:DTSID="{B9D06B76-8BC2-4E10-BB2A-360F86098427}"
           DTS:From="Package\Load ANZSIC Codes\ANZSIC Codes - Murchison"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 18"
@@ -14603,7 +14603,7 @@ FROM     [RSLoanBook$A9:P]</property>
         <DTS:PrecedenceConstraint
           DTS:refId="Package\Load ANZSIC Codes.PrecedenceConstraints[Constraint 19]"
           DTS:CreationName=""
-          DTS:DTSID="{61F475B5-6850-4B6B-82D1-F2F275EDB87C}"
+          DTS:DTSID="{DF73EB75-1985-4581-B2B5-D41AC25B08D9}"
           DTS:From="Package\Load ANZSIC Codes\ANZSIC Codes - Natalie"
           DTS:LogicalAnd="True"
           DTS:ObjectName="Constraint 19"
@@ -14616,7 +14616,7 @@ FROM     [RSLoanBook$A9:P]</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{C280ACDD-579D-4630-8AE7-76FB21334822}"
+      DTS:DTSID="{DE23D9E5-A262-4437-A948-A416E39057BD}"
       DTS:From="Package\Load Aggregated Data - Annan"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -14624,7 +14624,7 @@ FROM     [RSLoanBook$A9:P]</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{E0EAF891-9101-47FF-B721-8296818FCBE7}"
+      DTS:DTSID="{7D6F484C-A15E-46A6-A9F3-D5FE151EBF99}"
       DTS:From="Package\Load Aggregated Data - Condamine"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -14632,7 +14632,7 @@ FROM     [RSLoanBook$A9:P]</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{2B67AA91-7624-4C41-ABA0-17894A1CF9FA}"
+      DTS:DTSID="{5B708D9B-5B8A-4CFA-A617-5D21A09CD8E6}"
       DTS:From="Package\Load Aggregated Data - Flynn"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -14640,7 +14640,7 @@ FROM     [RSLoanBook$A9:P]</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{64C52E31-052D-4F14-9897-4DE63A17E01E}"
+      DTS:DTSID="{48A8434C-6AB1-4BCA-AE2D-C424129CD0B1}"
       DTS:From="Package\Load Aggregated Data - Macleay"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -14648,7 +14648,7 @@ FROM     [RSLoanBook$A9:P]</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{11571E75-204C-4AC9-BD17-63FA1466FE2F}"
+      DTS:DTSID="{FEE66246-9DED-4951-9D02-CB0E89F97118}"
       DTS:From="Package\Load Aggregated Data - Othello"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
@@ -14656,7 +14656,7 @@ FROM     [RSLoanBook$A9:P]</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 5]"
       DTS:CreationName=""
-      DTS:DTSID="{62AA57F4-FA1F-4657-9B8B-2E4A4AB8BA8E}"
+      DTS:DTSID="{F72D8FF7-05AD-4F4E-958F-D233E6877281}"
       DTS:From="Package\Load Aggregated Data - Wingecarribee"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 5"
@@ -14664,7 +14664,7 @@ FROM     [RSLoanBook$A9:P]</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 6]"
       DTS:CreationName=""
-      DTS:DTSID="{691BFC32-E803-4B41-B966-A2B8CE5DE06C}"
+      DTS:DTSID="{C24AA16C-5DCD-4D91-A47C-FFB5D7C63B5C}"
       DTS:From="Package\Load Aggregated Data - Natalie"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 6"
@@ -14672,7 +14672,7 @@ FROM     [RSLoanBook$A9:P]</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 7]"
       DTS:CreationName=""
-      DTS:DTSID="{067A05E1-4022-4366-8227-8EAAE514FA32}"
+      DTS:DTSID="{162A49B1-A015-4561-A8E6-80EB46C04D88}"
       DTS:From="Package\Load Aggregated Data - Roper"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 7"
@@ -14699,30 +14699,30 @@ FROM     [RSLoanBook$A9:P]</property>
           Id="Package\Load Aggregated Data - Annan\Annan ContractSummary"
           TopLeft="5.50000000000003,210.5" />
         <NodeLayout
-          Size="193,43"
+          Size="188,42"
           Id="Package\Load Aggregated Data - Annan\Truncate Annan Tables"
           TopLeft="7.00000000000001,5.5" />
         <EdgeLayout
           Id="Package\Load Aggregated Data - Annan.PrecedenceConstraints[Constraint]"
-          TopLeft="103.5,48.5">
+          TopLeft="102.25,47.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,60"
+              EndConnector="0,61"
               Start="0,0"
-              End="0,52.5">
+              End="0,53.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,52.5" />
+                    End="0,53.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-25.304453125,20.4453125,50.60890625,11.609375"
+              BoundingBox="-25.304453125,20.9453125,50.60890625,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

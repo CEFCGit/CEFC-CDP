@@ -5,6 +5,10 @@
   DTS:CreationName="ODBC">
   <DTS:ObjectData>
     <DTS:ConnectionManager
-      DTS:ConnectionString="uid=svcTransit;Dsn=iMart-CMS;" />
+      DTS:ConnectionString="uid=svcTransit;Dsn=iMart-CMS;">
+      <DTS:Password
+        DTS:Name="pwd"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAApXwyHevF/kG6LD1aisTxPgAAAAACAAAAAAADZgAAwAAAABAAAAAETvuLzpCVZrgb9/tDpYvuAAAAAASAAACgAAAAEAAAAAWAOO56t3J61gJ5NqPcYWN4AAAAY0AQwS7V0NTjC1SRDLPvOED3wVDVYe7EuCVqgY3i5LsUqu6g2PMsH3BzVlpKpX36W4FIkUHh08tJnS/gFiW8XXc5uhdiGg9WAZIageGTvl2gOP1CJXmC752zEYVkK+AuyXLcrrRfoCpebWtiEtd7Nn6R/BNXisIDFAAAABzPBSKMY3adjqKRmY7YCS5KWGrv</DTS:Password>
+    </DTS:ConnectionManager>
   </DTS:ObjectData>
 </DTS:ConnectionManager>
